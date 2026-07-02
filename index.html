@@ -9,12 +9,35 @@
 <meta property="og:title" content="Luna Yapım — Bursa Drone &amp; Sinema Video Prodüksiyon">
 <meta property="og:description" content="Bursa merkezli sinematik video prodüksiyon ajansı. Drone & FPV çekim, işletme tanıtımı, düğün ve emlak videosu. Türkiye genelinde hizmet.">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://lunayapim.com/assets/og-image.png">
+<meta property="og:image" content="https://lunayapim.com/assets/og-image.png">
+<meta property="og:url" content="https://lunayapim.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
 <link rel="stylesheet" href="assets/style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Luna Yapım",
+  "description": "Bursa merkezli sinematik video prodüksiyon ajansı. Drone ve FPV çekim, işletme tanıtımı, düğün ve emlak videosu.",
+  "url": "https://lunayapim.com",
+  "telephone": "+905411602603",
+  "image": "https://lunayapim.com/assets/og-image.png",
+  "priceRange": "₺₺",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bursa",
+    "addressCountry": "TR"
+  },
+  "areaServed": "TR",
+  "sameAs": []
+}
+</script>
 </head>
 <body>
 <header>
@@ -28,8 +51,21 @@
   </nav>
 </header>
 
-<div class="page-hero" style="padding-top:160px;border-bottom:none">
-  <div class="wrap">
+<div class="cinema-hero" id="cinemaHero">
+  <div class="cine-layer cine-sky"></div>
+  <div class="cine-layer cine-glow" id="cineGlow"></div>
+  <div class="cine-layer cine-stars" id="cineStars"></div>
+  <div class="cine-layer cine-mountains-far" id="mtFar">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice"><path d="M0,320 L0,190 L180,120 L360,180 L540,90 L720,160 L900,70 L1080,150 L1260,100 L1440,170 L1440,320 Z" fill="#17130d"/></svg>
+  </div>
+  <div class="cine-layer cine-mountains-mid" id="mtMid">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice"><path d="M0,320 L0,240 L200,180 L420,250 L640,160 L860,240 L1080,150 L1300,230 L1440,190 L1440,320 Z" fill="#100d09"/></svg>
+  </div>
+  <div class="cine-layer cine-grain"></div>
+  <div class="cine-vignette"></div>
+  <div class="cine-bars"><span></span><span></span></div>
+
+  <div class="wrap cine-content" id="cineContent">
     <div class="eyebrow">Sinematik Video Prodüksiyon · Bursa &amp; Türkiye</div>
     <h1>Markanı <em>sinema</em> diliyle anlatıyoruz.</h1>
     <p class="lede">İşletme tanıtımından havadan FPV çekime, düğünden emlağa — çekim ve kurgu tek elden, sinematik kalitede. Bursa merkezli, Türkiye genelinde çözüm ortağı ağıyla.</p>
@@ -38,6 +74,7 @@
       <a href="hizmetler/index.html" class="btn btn-ghost">Hizmetleri Gör</a>
     </div>
   </div>
+  <div class="cine-scroll">KAYDIR<span></span></div>
 </div>
 
 <section>
@@ -103,5 +140,38 @@
     <div class="foot-bottom">© 2026 Luna Yapım · Bursa Drone &amp; Sinema Video Prodüksiyon · Tüm hakları saklıdır.</div>
   </div>
 </footer>
+<script>
+  (function(){
+    const hero = document.getElementById('cinemaHero');
+    if(!hero) return;
+    const glow = document.getElementById('cineGlow');
+    const stars = document.getElementById('cineStars');
+    const mtFar = document.getElementById('mtFar');
+    const mtMid = document.getElementById('mtMid');
+    const content = document.getElementById('cineContent');
+    const bars = hero.querySelectorAll('.cine-bars span');
+    const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    if(reduce) return;
+
+    let ticking = false;
+    function update(){
+      const y = window.scrollY;
+      const h = hero.offsetHeight;
+      const p = Math.min(y / h, 1);
+      if(stars)  stars.style.transform  = `translate3d(${p*-30}px, ${y*0.15}px, 0) scale(${1+p*0.05})`;
+      if(glow)   glow.style.transform   = `translate3d(${p*40}px, ${y*0.25}px, 0)`;
+      if(mtFar)  mtFar.style.transform  = `translate3d(${p*-20}px, ${y*0.32}px, 0) scale(${1+p*0.08})`;
+      if(mtMid)  mtMid.style.transform  = `translate3d(${p*30}px, ${y*0.45}px, 0) scale(${1+p*0.12})`;
+      if(content){content.style.transform = `translateY(${y*0.35}px)`; content.style.opacity = String(1 - p*1.1);}
+      const bar = Math.min(p*70, 60);
+      if(bars.length){bars[0].style.height = bar+'px'; bars[1].style.height = bar+'px';}
+      ticking = false;
+    }
+    window.addEventListener('scroll', ()=>{
+      if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    update();
+  })();
+</script>
 </body>
 </html>
