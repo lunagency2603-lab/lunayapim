@@ -2,6 +2,15 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288531900"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18288531900');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luna Yapım — Bursa Drone &amp; Sinema Video Prodüksiyon</title>
 <meta name="description" content="Bursa merkezli sinematik video prodüksiyon ajansı. Drone & FPV çekim, işletme tanıtımı, düğün ve emlak videosu. Türkiye genelinde hizmet.">
@@ -154,8 +163,8 @@
       const y = window.scrollY;
       const h = hero.offsetHeight;
       const p = Math.min(y / h, 1);
-      // video hafif zoom + yukarı kayma (kamera hissi)
-      if(video) video.style.transform = `scale(${1+p*0.12}) translateY(${y*0.15}px)`;
+      // video hafif yukarı kayma (yatay taşma olmaması için scale yok)
+      if(video) video.style.transform = `translateY(${y*0.12}px)`;
       // içerik süzülüp solar
       if(content){content.style.transform = `translateY(${y*0.35}px)`; content.style.opacity = String(1 - p*1.1);}
       // sinema şeritleri kapanır
