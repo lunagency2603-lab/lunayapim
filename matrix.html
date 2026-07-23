@@ -248,6 +248,25 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
 .kul-not{margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:9.5px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3)}
 .kul.mezun .kul-not{color:var(--amber)}
+
+.onay-kapi{position:fixed;inset:0;z-index:200;background:rgba(6,9,15,.97);
+  display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
+.onay-kapi[hidden]{display:none}
+.onay-kutu{max-width:600px;width:100%;background:var(--panel,rgba(255,255,255,.04));
+  border:1px solid var(--line);border-radius:8px;padding:38px 34px}
+.onay-kutu h2{font-family:"Archivo",sans-serif;font-size:30px;margin:10px 0 18px;letter-spacing:-.02em}
+.onay-metin{font-size:15px;color:var(--txt-2);line-height:1.65;margin-bottom:24px}
+.onay-sec{display:flex;gap:12px;align-items:flex-start;padding:12px 0;
+  border-top:1px solid rgba(150,175,205,.09);font-size:14.5px;color:var(--txt-2);cursor:pointer}
+.onay-sec input{margin-top:3px;width:17px;height:17px;accent-color:var(--glow);flex-shrink:0}
+.onay-sec b{color:var(--txt)}
+.onay-sec a{color:var(--glow)}
+.onay-btn{width:100%;margin-top:22px;border:0;font-family:"Archivo",sans-serif;cursor:pointer;
+  font-size:15px;padding:15px}
+.onay-btn:disabled{opacity:.35;cursor:not-allowed}
+.onay-alt{margin-top:14px;font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  letter-spacing:.1em;color:var(--txt-3);text-align:center}
+body.kilitli{overflow:hidden}
 @media (max-width:940px){.hero-grid{grid-template-columns:1fr;gap:30px}}
 @media (max-width:620px){
   .kayit{grid-template-columns:auto 1fr auto;row-gap:6px}
@@ -258,6 +277,26 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
 </style>
 </head>
 <body>
+
+<div class="onay-kapi" id="onayKapi" hidden>
+  <div class="onay-kutu">
+    <p class="etk" style="color:var(--kirmizi)">Devam etmeden önce</p>
+    <h2>Risk bildirimi ve onay</h2>
+    <p class="onay-metin">Matrix-KDA bir <b>bilgi ürünüdür</b>. Paylaşılan içerik yatırım
+      danışmanlığı, yatırım tavsiyesi veya alım-satım önerisi <b>değildir</b>. Kripto varlık
+      piyasaları yüksek risk taşır; yatırdığınız tutarın tamamını kaybedebilirsiniz. Geçmiş
+      performans gelecek için gösterge değildir ve hiçbir kazanç vaat edilmez.</p>
+    <label class="onay-sec"><input type="checkbox" id="ok1">
+      <span>İçeriğin <b>yatırım tavsiyesi olmadığını</b> anladım.</span></label>
+    <label class="onay-sec"><input type="checkbox" id="ok2">
+      <span>Piyasa risklerini biliyorum ve <b>tüm riskleri kendi sorumluluğumda</b> kabul ediyorum.</span></label>
+    <label class="onay-sec"><input type="checkbox" id="ok3">
+      <span>18 yaşından büyüğüm ve <a href="kosullar.html" target="_blank">Kullanım Şartları</a>'nı okudum.</span></label>
+    <button class="btn btn-dolu onay-btn" id="onayBtn" disabled>Kabul ediyorum ve devam et</button>
+    <p class="onay-alt">Onaylamadan içeriği görüntüleyemezsiniz. Sürüm 1.0 · 24.07.2026</p>
+  </div>
+</div>
+
 
 <div class="lunabar"><div class="wrap">
   <a class="luna-logo" href="index.html">LUNA YAPIM</a>
@@ -418,7 +457,7 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
         <li class="var"><b>Gelişim raporları</b> — sistem bu hafta ne öğrendi</li>
         <li class="var">Aynı veri kaynağı, aynı gerçek oranlar</li>
       </ul>
-      <a class="btn btn-tam" href="https://t.me/kdamatrix">7 günlük denemeyi başlat</a>
+      <a class="btn btn-tam" href="https://t.me/matrix263_bot?start=site">Premium sırasına gir</a>
       <p class="minik">Deneme sonunda devam ederseniz kalan tutarı ödeyip aya tamamlarsınız.</p>
     </div>
   </div>
@@ -456,7 +495,7 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
   <div class="cta">
     <div><h3>Akışı canlı izleyin</h3>
       <p>Sinyaller açıldığı anda ve sonuçlandığında Telegram kanalına düşer. Ücretsiz.</p></div>
-    <a class="btn" id="tgLink" href="https://t.me/kdamatrix">Telegram kanalı</a>
+    <a class="btn" id="tgLink" href="https://t.me/matrix263_bot?start=site">Telegram'dan başla</a>
   </div>
 </section>
 
@@ -468,7 +507,7 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
     no outcome is promised.</p>
   <div class="imza">
     <span class="luna">Matrix-KDA, <a href="index.html" style="color:var(--txt);font-weight:700;text-decoration:none">Luna Yapım</a>'ın otonom piyasa araştırma ürünüdür.</span>
-    <span class="mono" id="ayak"></span></div>
+    <span class="mono"><a href="kosullar.html" style="color:var(--txt-3)">Kullanım Şartları</a> · <span id="ayak"></span></span></div>
 </footer>
 
 <script>
@@ -703,6 +742,27 @@ async function cek(u){const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw n
 async function yukle(){try{let d;try{d=await cek("/api/vitrin");}catch(_){d=await cek(UZAK);}ciz(d);}
   catch(e){document.getElementById("hatlar").innerHTML='<p class="durum">Veri alınamıyor ('+esc(e.message)+').</p>';}}
 kuluckaCiz();
+
+// ---- risk onay kapisi ----
+(function(){
+  var SURUM="1.0";
+  var kutu=document.getElementById("onayKapi");
+  if(!kutu) return;
+  var kayit=null;
+  try{ kayit=localStorage.getItem("kda_onay"); }catch(e){}
+  if(kayit===SURUM) return;                       // daha once onaylanmis
+  kutu.hidden=false; document.body.classList.add("kilitli");
+  var kutucuklar=["ok1","ok2","ok3"].map(function(i){return document.getElementById(i);});
+  var btn=document.getElementById("onayBtn");
+  function kontrol(){ btn.disabled=!kutucuklar.every(function(c){return c&&c.checked;}); }
+  kutucuklar.forEach(function(c){ if(c) c.addEventListener("change",kontrol); });
+  btn.addEventListener("click",function(){
+    try{ localStorage.setItem("kda_onay",SURUM);
+         localStorage.setItem("kda_onay_ts",new Date().toISOString()); }catch(e){}
+    kutu.hidden=true; document.body.classList.remove("kilitli");
+  });
+})();
+
 yukle(); setInterval(yukle,60000);
 </script>
 </body>
