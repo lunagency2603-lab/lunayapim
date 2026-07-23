@@ -424,8 +424,10 @@ function beyinCiz(b,karneler){
   for(let i=0;i<n;i++) st.appendChild(el("line",{x1:0,y1:540+i*22,x2:620,y2:540+i*22,class:"strat"}));
 
   const g=document.getElementById("damarlar"); g.innerHTML="";
-  (karneler||[]).slice(0,DAMAR.length).forEach((h,i)=>{
-    const yol=DAMAR[i], canli=!!h.artida;
+  // TUM yayin organlari gorunur; sadece SU AN sinyal ureten damar canli akar
+  const sirali=(karneler||[]).slice().sort((a,b)=>((b.bugun||0)-(a.bugun||0)));
+  sirali.slice(0,DAMAR.length).forEach((h,i)=>{
+    const yol=DAMAR[i], canli=((h.bugun||0)>0);
     g.appendChild(el("path",{d:yol,class:"damar akis"+(canli?" canli":"")}));
     for(let p=0;p<(canli?3:1);p++){
       const c=el("circle",{r:canli?3:1.9,fill:canli?"#5FC9D6":"#1B3A57",opacity:canli?.85:.4});
@@ -444,7 +446,7 @@ function ciz(d){
   document.getElementById("gIsabet").textContent=(bi==null)?"—":bi.toFixed(1)+"%";
 
   const hepsi=d.karneler||[], acik=hepsi.filter(k=>k.artida), gizli=hepsi.length-acik.length;
-  document.getElementById("gHat").textContent=acik.length;
+  document.getElementById("gHat").textContent=hepsi.filter(k=>(k.bugun||0)>0).length;
   beyinCiz(d.beyin||{},hepsi);
 
   document.getElementById("hatlar").innerHTML=!acik.length
