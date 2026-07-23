@@ -205,6 +205,36 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
   paint-order:stroke;stroke:rgba(6,9,15,.85);stroke-width:2.5px;stroke-linejoin:round}
 .org-etk.on{fill:#9FE6EC}
 .org-etk.off{fill:#4A5A70}
+
+.bolge{fill:rgba(95,201,214,.055);stroke:rgba(95,201,214,.12);stroke-width:.8;
+  transition:fill .6s,stroke .6s}
+.bolge.derin{fill:rgba(95,201,214,.09)}
+.bolge.on{fill:rgba(95,201,214,.20);stroke:rgba(95,201,214,.45);stroke-width:1.1;
+  animation:nefes 4s ease-in-out infinite}
+.bolge-yol.on{fill:rgba(95,201,214,.22);animation:nefes 4.6s ease-in-out infinite}
+@keyframes nefes{0%,100%{opacity:.55}50%{opacity:1}}
+.sinir{fill:none;stroke:rgba(95,201,214,.14);stroke-width:1;stroke-dasharray:3 6}
+.sinaps-c{fill:#9FE6EC}
+.org-nokta{transition:opacity .3s}
+.org-etk{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.1em;
+  paint-order:stroke;stroke:rgba(6,9,15,.9);stroke-width:2.6px;stroke-linejoin:round}
+.org-etk.on{fill:#A8ECF2}
+.org-etk.off{fill:#46566C}
+
+.serit{border-bottom:1px solid var(--line);background:#050810;overflow:hidden;
+  position:relative;height:34px}
+.serit::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,#050810 0%,transparent 8%,transparent 92%,#050810 100%)}
+.serit-ic{display:flex;gap:34px;align-items:center;height:34px;white-space:nowrap;
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--txt-3);
+  animation:kay 46s linear infinite;padding-left:100%}
+.serit-ic b{color:var(--txt-2);font-weight:500}
+.serit-ic .art{color:var(--ok)}
+.serit-ic .nb{width:6px;height:6px;border-radius:50%;background:var(--ok);
+  display:inline-block;margin-right:7px;animation:yanip 2.2s ease-in-out infinite}
+@keyframes kay{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes yanip{0%,100%{opacity:.25}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.serit-ic{animation:none;padding-left:0}}
 @media (max-width:940px){.hero-grid{grid-template-columns:1fr;gap:30px}}
 @media (max-width:620px){
   .kayit{grid-template-columns:auto 1fr auto;row-gap:6px}
@@ -232,6 +262,8 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
   <span class="kicker">Otonom piyasa araştırma sistemi</span>
 </div></div>
 
+<div class="serit"><div class="serit-ic" id="serit"></div></div>
+
 <header class="hero">
  <div class="wrap hero-grid">
   <div>
@@ -243,7 +275,8 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
     <div class="gauges">
       <div class="gauge"><span class="k">Bugün taranan</span><span class="v mono" id="gToplam">—</span></div>
       <div class="gauge"><span class="k">Bugün isabet</span><span class="v mono" id="gIsabet">—</span></div>
-      <div class="gauge"><span class="k">Besleyen hat</span><span class="v mono" id="gHat">—</span></div>
+      <div class="gauge"><span class="k">Aktif hat</span><span class="v mono" id="gHat">—</span></div>
+      <div class="gauge"><span class="k">Aktif bölge</span><span class="v mono" id="gBolge">—</span></div>
     </div>
   </div>
 
@@ -264,27 +297,44 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
 
     <g id="stratlar"></g>
 
+    <!-- BEYIN BOLGELERI (klip icinde, lob lob) -->
     <g clip-path="url(#klip)">
       <rect id="dolguRect" class="dolgu" x="-40" y="500" width="700" height="0"/>
       <g id="dalgaG" class="dalga-h"><path id="dalga" class="dalga" d=""/></g>
+
+      <g id="bolgeler">
+        <ellipse id="r-frontal"     class="bolge" cx="190" cy="208" rx="108" ry="128"/>
+        <ellipse id="r-motor"       class="bolge" cx="278" cy="118" rx="62"  ry="72"/>
+        <ellipse id="r-parietal"    class="bolge" cx="372" cy="142" rx="86"  ry="92"/>
+        <ellipse id="r-oksipital"   class="bolge" cx="458" cy="216" rx="72"  ry="86"/>
+        <ellipse id="r-temporal"    class="bolge" cx="262" cy="372" rx="112" ry="70"/>
+        <ellipse id="r-talamus"     class="bolge derin" cx="300" cy="240" rx="44" ry="31"/>
+        <ellipse id="r-hipotalamus" class="bolge derin" cx="296" cy="292" rx="33" ry="22"/>
+        <ellipse id="r-bazal"       class="bolge derin" cx="358" cy="268" rx="39" ry="29"/>
+        <ellipse id="r-hipokampus"  class="bolge derin" cx="246" cy="336" rx="46" ry="24"/>
+        <ellipse id="r-amigdala"    class="bolge derin" cx="216" cy="376" rx="29" ry="20"/>
+      </g>
+      <!-- lob sinirlari -->
+      <path class="sinir" d="M300 60 C296 160 292 260 288 330"/>
+      <path class="sinir" d="M120 300 C220 330 330 336 430 300"/>
+      <path class="sinir" d="M406 70 C400 160 404 250 420 320"/>
+      <g id="sinaps"></g>
     </g>
 
-    <!-- serebrum -->
+    <!-- serebrum konturu -->
     <path class="kabuk" d="M170 330 C130 322 106 288 116 254 C86 236 84 196 106 174 C98 144 120 116 152 110 C160 80 194 58 230 66 C252 44 290 38 314 58 C344 40 384 46 402 74 C442 70 474 98 472 134 C504 150 512 192 492 218 C506 244 494 278 468 290 C470 312 456 330 436 336 C438 358 424 374 404 378 C400 396 384 408 366 406 C356 424 334 432 316 424 C300 438 274 440 258 428 C232 432 206 420 196 400 C172 396 158 376 162 356 Z"/>
-    <!-- lateral sulkus + giruslar -->
     <path class="gyrus akis" d="M176 336 C232 352 296 356 352 338 C392 326 416 306 424 286"/>
     <path class="gyrus akis" d="M150 150 C186 168 200 200 176 224 C204 240 210 274 184 292"/>
-    <path class="gyrus akis" d="M236 96 C256 140 224 172 244 214 C262 252 234 282 252 320"/>
-    <path class="gyrus akis" d="M322 78 C310 128 348 156 332 200 C316 244 352 268 338 312"/>
-    <path class="gyrus akis" d="M410 96 C382 132 404 168 432 180 C408 204 412 244 442 254"/>
-    <path class="gyrus akis" d="M466 148 C438 166 436 200 462 214"/>
-    <!-- serebellum -->
-    <path class="serebellum" d="M404 378 C432 370 466 380 474 402 C480 424 458 440 430 438 C404 436 390 416 394 398 Z"/>
+    <path class="gyrus akis" d="M282 118 C302 175 265 205 285 250 C305 290 275 320 295 362"/>
+    <path class="gyrus akis" d="M372 128 C355 180 392 210 375 255 C358 300 395 325 380 372"/>
+    <path class="gyrus akis" d="M442 188 C405 215 415 260 447 275 C420 300 425 345 456 356"/>
+
+    <!-- serebellum + sap (bolge olarak da kullanilir) -->
+    <path id="r-serebellum" class="serebellum bolge-yol" d="M404 378 C432 370 466 380 474 402 C480 424 458 440 430 438 C404 436 390 416 394 398 Z"/>
     <path class="gyrus" d="M400 392 C424 386 452 390 466 402"/>
     <path class="gyrus" d="M398 406 C422 400 452 404 468 416"/>
     <path class="gyrus" d="M402 420 C424 416 448 420 462 428"/>
-    <!-- beyin sapı -->
-    <path class="sap" d="M318 424 L344 424 C348 456 344 486 334 506 L324 506 C314 484 314 452 318 424 Z"/>
+    <path id="r-pons" class="sap bolge-yol" d="M318 424 L344 424 C348 456 344 486 334 506 L324 506 C314 484 314 452 318 424 Z"/>
 
     <g id="organlar"></g>
     <g id="damarlar"></g>
@@ -416,30 +466,65 @@ function dalgaYolu(y){let d=`M-180 ${y}`;
   for(let x=-180;x<=800;x+=76) d+=` q 19 -8 38 0 t 38 0`;
   return d+` L800 ${ALT+60} L-180 ${ALT+60} Z`;}
 
-// beyin bolgeleri — maskeli organ adlari buraya oturur (SVG koordinati)
-const ORGAN_YER={
- "PREFRONTAL KORTEKS":[168,196],"MOTOR KORTEKS":[252,124],"PARİETAL LOB":[352,120],
- "OKSİPİTAL LOB":[452,186],"TALAMUS":[292,236],"HİPOTALAMUS":[286,288],
- "HİPOKAMPUS":[236,330],"BAZAL GANGLİA":[356,268],"AMİGDALA":[214,372],
- "SEREBELLUM":[430,404],"PONS":[332,470]
+// maskeli organ -> beyin bolgesi (SVG id + etiket konumu)
+const ORGAN_BOLGE={
+ "PREFRONTAL KORTEKS":["r-frontal",[104,214]],
+ "MOTOR KORTEKS":["r-motor",[246,96]],
+ "PARİETAL LOB":["r-parietal",[344,110]],
+ "OKSİPİTAL LOB":["r-oksipital",[440,196]],
+ "TALAMUS":["r-talamus",[282,240]],
+ "HİPOTALAMUS":["r-hipotalamus",[272,296]],
+ "BAZAL GANGLİA":["r-bazal",[340,268]],
+ "HİPOKAMPUS":["r-hipokampus",[214,338]],
+ "AMİGDALA":["r-amigdala",[190,380]],
+ "SEREBELLUM":["r-serebellum",[420,412]],
+ "PONS":["r-pons",[300,492]]
 };
+const BOLGE_MERKEZ={"r-frontal":[190,208],"r-motor":[278,118],"r-parietal":[372,142],
+ "r-oksipital":[458,216],"r-talamus":[300,240],"r-hipotalamus":[296,292],
+ "r-bazal":[358,268],"r-hipokampus":[246,336],"r-amigdala":[216,376],
+ "r-serebellum":[434,406],"r-pons":[331,464]};
+
 function organCiz(organlar){
   const g=document.getElementById("organlar"); if(!g) return;
   g.innerHTML="";
-  (organlar||[]).forEach(o=>{
-    const yer=ORGAN_YER[o.ad]; if(!yer) return;
-    const on=!!o.aktif;
-    const c=el("circle",{cx:yer[0],cy:yer[1],r:on?4:3,class:"org-nokta",
-      fill:on?"#5FC9D6":"#33465C",opacity:on?"0.95":"0.5"});
-    if(on){
-      const a=el("animate",{attributeName:"opacity",values:"0.35;1;0.35",
-        dur:(2.6+Math.random()*1.8).toFixed(1)+"s",repeatCount:"indefinite"});
-      c.appendChild(a);
+  // once tum bolgeleri sondur
+  Object.values(ORGAN_BOLGE).forEach(([id])=>{
+    const e=document.getElementById(id); if(e) e.classList.remove("on");
+  });
+  const aktifMerkez=[];
+  (organlar||[]).forEach((o,i)=>{
+    const eş=ORGAN_BOLGE[o.ad]; if(!eş) return;
+    const [id,yer]=eş, on=!!o.aktif;
+    const bolge=document.getElementById(id);
+    if(bolge && on){
+      bolge.classList.add("on");
+      bolge.style.animationDelay=(i*0.35).toFixed(2)+"s";
+      const m=BOLGE_MERKEZ[id]; if(m) aktifMerkez.push(m);
     }
-    g.appendChild(c);
-    const t=el("text",{x:yer[0]+9,y:yer[1]+3,class:"org-etk "+(on?"on":"off")});
+    const t=el("text",{x:yer[0],y:yer[1],class:"org-etk "+(on?"on":"off")});
     t.textContent=o.ad; g.appendChild(t);
   });
+  sinapsCiz(aktifMerkez);
+}
+
+// aktif bolgeler arasinda gezinen sinaptik kivilcimlar
+function sinapsCiz(merkezler){
+  const g=document.getElementById("sinaps"); if(!g) return;
+  g.innerHTML="";
+  if(merkezler.length<2) return;
+  const kac=Math.min(7,merkezler.length);
+  for(let i=0;i<kac;i++){
+    const a=merkezler[i], b=merkezler[(i+2)%merkezler.length];
+    const mx=(a[0]+b[0])/2+(Math.random()*40-20), my=(a[1]+b[1])/2-24;
+    const yol=`M${a[0]} ${a[1]} Q${mx} ${my} ${b[0]} ${b[1]}`;
+    g.appendChild(el("path",{d:yol,fill:"none",stroke:"rgba(95,201,214,.14)",
+      "stroke-width":.7,"stroke-dasharray":"2 8"}));
+    const c=el("circle",{r:1.9,class:"sinaps-c",opacity:".85"});
+    c.appendChild(el("animateMotion",{dur:(2.4+i*0.6).toFixed(1)+"s",
+      repeatCount:"indefinite",path:yol,begin:(i*0.45).toFixed(2)+"s"}));
+    g.appendChild(c);
+  }
 }
 
 function beyinCiz(b,karneler){
@@ -449,11 +534,25 @@ function beyinCiz(b,karneler){
   r.setAttribute("y",y); r.setAttribute("height",ALT-y+60);
   document.getElementById("dalga").setAttribute("d",dalgaYolu(y));
   document.getElementById("skorTxt").textContent=dol;
+  // canli serit: son basarililar + sistem nabzi
+  const _s=document.getElementById("serit");
+  if(_s){
+    const par=[];
+    par.push(`<span><span class="nb"></span><b>SİSTEM ÇALIŞIYOR</b></span>`);
+    (window.__bas||[]).slice(0,8).forEach(t=>{
+      par.push(`<span><b>${esc(t.maske)}</b> ${esc(t.sym)} ${esc(t.yon)} <span class="art">${pct(t.r_pct)}</span></span>`);
+    });
+    par.push(`<span>bugün <b>${s(window.__rap&&window.__rap.bugun_toplam)}</b> sinyal tarandı</span>`);
+    par.push(`<span>beyin doluluğu <b>%${s(window.__bey&&window.__bey.doluluk)}</b></span>`);
+    _s.innerHTML=par.concat(par).join("");
+  }
   const _org=(window.__organlar||[]);
   const _ak=_org.filter(o=>o.aktif).length;
   document.getElementById("beyinAlt").textContent=
     `${s(b&&b.sembol)} sembol · ${s(b&&b.derinlik)} zaman dilimi · ${s(b&&b.toplam_sinyal)} sinyal tarandı`
     + (_org.length?` · ${_ak}/${_org.length} bölge aktif`:"");
+  const _gb=document.getElementById("gBolge");
+  if(_gb) _gb.textContent=_org.length?`${_ak}/${_org.length}`:"—";
 
   const st=document.getElementById("stratlar"); st.innerHTML="";
   const n=Math.max(3,Math.min(7,(b&&b.derinlik)||4));
@@ -478,6 +577,8 @@ function beyinCiz(b,karneler){
 
 function ciz(d){
   window.__organlar=d.organlar||[];
+  window.__rap=d.rapor||{};
+  window.__bey=d.beyin||{};
   document.getElementById("gToplam").textContent=s(d.rapor&&d.rapor.bugun_toplam);
   const bi=d.rapor&&d.rapor.bugun_isabet;
   document.getElementById("gIsabet").textContent=(bi==null)?"—":bi.toFixed(1)+"%";
@@ -496,6 +597,7 @@ function ciz(d){
         <div class="satir"><span>Sinyal · sonuçlanan</span><span class="mono">${s(k.n)} · ${s(k.cozulen)}</span></div>
         <div class="olgun"><div class="etiket"><span>Olgunluk</span><span>${s(k.cozulen)}/40${tam?" ✓":""}</span></div>
           <div class="bar${tam?" tam":""}"><i style="width:${oran}%"></i></div></div></article>`;}).join("");
+  window.__bas=(d.basarililar&&d.basarililar.length)?d.basarililar:((d.top10||[]).filter(t=>t.sonuc==="BASARILI"));
   document.getElementById("kulucka").textContent = gizli>0
     ? `${gizli} hat kuluçkada — olgunlaşınca ya da artıya geçince buraya girer.` : "";
 
