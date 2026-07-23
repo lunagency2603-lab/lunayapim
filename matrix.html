@@ -235,6 +235,19 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
 @keyframes kay{from{transform:translateX(0)}to{transform:translateX(-100%)}}
 @keyframes yanip{0%,100%{opacity:.25}50%{opacity:1}}
 @media (prefers-reduced-motion:reduce){.serit-ic{animation:none;padding-left:0}}
+
+.kuluckalar{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.kul{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:14px 16px}
+.kul.mezun{border-color:rgba(217,164,65,.34)}
+.kul-ust{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.kul-ad{font-family:"Archivo",sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em}
+.kul-sayi{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--txt-3)}
+.kul .bar{height:4px}
+.kul .bar i{background:linear-gradient(90deg,var(--deep),var(--glow))}
+.kul.mezun .bar i{background:linear-gradient(90deg,var(--amber),#f0cd82)}
+.kul-not{margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--txt-3)}
+.kul.mezun .kul-not{color:var(--amber)}
 @media (max-width:940px){.hero-grid{grid-template-columns:1fr;gap:30px}}
 @media (max-width:620px){
   .kayit{grid-template-columns:auto 1fr auto;row-gap:6px}
@@ -358,6 +371,15 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
     kazanan ve kaybeden bütün sinyaller dahil.</p>
   <div class="hatlar" id="hatlar"><p class="durum">Yükleniyor…</p></div>
   <p class="kuluc" id="kulucka"></p>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="sec-head"><h2>Kuluçka</h2><span class="kicker">Sınavdaki hatlar</span></div>
+  <p class="sec-note">Geliştirdiğimiz yeni okuma hatları burada sınava giriyor: her biri
+    <b>40 sonuçlanmış sinyal</b> tamamlamadan yayına çıkmıyor. Sınavı geçene kadar performansları
+    yayınlanmaz — yalnızca ilerlemeleri görünür. Bir hat eşiği geçip artıya çıkarsa yukarıdaki
+    listeye terfi eder.</p>
+  <div class="kuluckalar" id="kuluckalar"></div>
 </section>
 
 <section class="wrap">
@@ -575,6 +597,32 @@ function beyinCiz(b,karneler){
   });
 }
 
+
+// ---- KULUÇKA: sınavdaki hatlar (taze-40 yolu) ----
+// Sayıları elle güncelle: [görünen ad, tamamlanan sinyal]
+const KULUCKA=[
+  ["ADAY 1", 76],
+  ["ADAY 2", 36],
+  ["ADAY 3", 16],
+  ["ADAY 4", 12],
+  ["ADAY 5", 10],
+  ["ADAY 6", 5],
+  ["ADAY 7", 2],
+  ["ADAY 8", 0]
+];
+function kuluckaCiz(){
+  const k=document.getElementById("kuluckalar"); if(!k) return;
+  k.innerHTML=KULUCKA.map(([ad,n])=>{
+    const tam=n>=40, oran=Math.min(100,Math.round(n/40*100));
+    return `<div class="kul${tam?" mezun":""}">
+      <div class="kul-ust"><span class="kul-ad">${esc(ad)}</span>
+        <span class="kul-sayi">${n}/40</span></div>
+      <div class="bar"><i style="width:${oran}%"></i></div>
+      <div class="kul-not">${tam?"sınav tamamlandı · değerlendirmede":(n?"sınavda":"henüz başlamadı")}</div>
+    </div>`;
+  }).join("");
+}
+
 function ciz(d){
   window.__organlar=d.organlar||[];
   window.__rap=d.rapor||{};
@@ -654,6 +702,7 @@ const UZAK="https://kda.lunayapim.com/api/vitrin";
 async function cek(u){const r=await fetch(u,{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}
 async function yukle(){try{let d;try{d=await cek("/api/vitrin");}catch(_){d=await cek(UZAK);}ciz(d);}
   catch(e){document.getElementById("hatlar").innerHTML='<p class="durum">Veri alınamıyor ('+esc(e.message)+').</p>';}}
+kuluckaCiz();
 yukle(); setInterval(yukle,60000);
 </script>
 </body>
