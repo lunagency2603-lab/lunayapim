@@ -199,6 +199,12 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
 .luna-nav a:hover{color:var(--txt-2)}
 .luna-nav a.aktif{color:var(--glow)}
 @media (max-width:640px){.luna-nav{gap:14px}.luna-nav a{font-size:11.5px}}
+
+.org-nokta{transition:opacity .3s}
+.org-etk{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.1em;
+  paint-order:stroke;stroke:rgba(6,9,15,.85);stroke-width:2.5px;stroke-linejoin:round}
+.org-etk.on{fill:#9FE6EC}
+.org-etk.off{fill:#4A5A70}
 @media (max-width:940px){.hero-grid{grid-template-columns:1fr;gap:30px}}
 @media (max-width:620px){
   .kayit{grid-template-columns:auto 1fr auto;row-gap:6px}
@@ -280,6 +286,7 @@ a{color:var(--glow)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--g
     <!-- beyin sapı -->
     <path class="sap" d="M318 424 L344 424 C348 456 344 486 334 506 L324 506 C314 484 314 452 318 424 Z"/>
 
+    <g id="organlar"></g>
     <g id="damarlar"></g>
    </svg>
 
@@ -409,6 +416,32 @@ function dalgaYolu(y){let d=`M-180 ${y}`;
   for(let x=-180;x<=800;x+=76) d+=` q 19 -8 38 0 t 38 0`;
   return d+` L800 ${ALT+60} L-180 ${ALT+60} Z`;}
 
+// beyin bolgeleri — maskeli organ adlari buraya oturur (SVG koordinati)
+const ORGAN_YER={
+ "PREFRONTAL KORTEKS":[168,196],"MOTOR KORTEKS":[252,124],"PARİETAL LOB":[352,120],
+ "OKSİPİTAL LOB":[452,186],"TALAMUS":[292,236],"HİPOTALAMUS":[286,288],
+ "HİPOKAMPUS":[236,330],"BAZAL GANGLİA":[356,268],"AMİGDALA":[214,372],
+ "SEREBELLUM":[430,404],"PONS":[332,470]
+};
+function organCiz(organlar){
+  const g=document.getElementById("organlar"); if(!g) return;
+  g.innerHTML="";
+  (organlar||[]).forEach(o=>{
+    const yer=ORGAN_YER[o.ad]; if(!yer) return;
+    const on=!!o.aktif;
+    const c=el("circle",{cx:yer[0],cy:yer[1],r:on?4:3,class:"org-nokta",
+      fill:on?"#5FC9D6":"#33465C",opacity:on?"0.95":"0.5"});
+    if(on){
+      const a=el("animate",{attributeName:"opacity",values:"0.35;1;0.35",
+        dur:(2.6+Math.random()*1.8).toFixed(1)+"s",repeatCount:"indefinite"});
+      c.appendChild(a);
+    }
+    g.appendChild(c);
+    const t=el("text",{x:yer[0]+9,y:yer[1]+3,class:"org-etk "+(on?"on":"off")});
+    t.textContent=o.ad; g.appendChild(t);
+  });
+}
+
 function beyinCiz(b,karneler){
   const dol=Math.max(0,Math.min(100,(b&&b.doluluk)||0));
   const y=ALT-(ALT-UST)*(dol/100);
@@ -416,8 +449,11 @@ function beyinCiz(b,karneler){
   r.setAttribute("y",y); r.setAttribute("height",ALT-y+60);
   document.getElementById("dalga").setAttribute("d",dalgaYolu(y));
   document.getElementById("skorTxt").textContent=dol;
+  const _org=(window.__organlar||[]);
+  const _ak=_org.filter(o=>o.aktif).length;
   document.getElementById("beyinAlt").textContent=
-    `${s(b&&b.sembol)} sembol · ${s(b&&b.derinlik)} zaman dilimi · ${s(b&&b.toplam_sinyal)} sinyal tarandı`;
+    `${s(b&&b.sembol)} sembol · ${s(b&&b.derinlik)} zaman dilimi · ${s(b&&b.toplam_sinyal)} sinyal tarandı`
+    + (_org.length?` · ${_ak}/${_org.length} bölge aktif`:"");
 
   const st=document.getElementById("stratlar"); st.innerHTML="";
   const n=Math.max(3,Math.min(7,(b&&b.derinlik)||4));
@@ -441,6 +477,7 @@ function beyinCiz(b,karneler){
 }
 
 function ciz(d){
+  window.__organlar=d.organlar||[];
   document.getElementById("gToplam").textContent=s(d.rapor&&d.rapor.bugun_toplam);
   const bi=d.rapor&&d.rapor.bugun_isabet;
   document.getElementById("gIsabet").textContent=(bi==null)?"—":bi.toFixed(1)+"%";
@@ -448,6 +485,7 @@ function ciz(d){
   const hepsi=d.karneler||[], acik=hepsi.filter(k=>k.artida), gizli=hepsi.length-acik.length;
   document.getElementById("gHat").textContent=hepsi.filter(k=>(k.bugun||0)>0).length;
   beyinCiz(d.beyin||{},hepsi);
+  organCiz(d.organlar||[]);
 
   document.getElementById("hatlar").innerHTML=!acik.length
     ? '<p class="durum">Bu pencerede artıda kapanan hat yok.</p>'
