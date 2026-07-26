@@ -274,6 +274,43 @@ body.kilitli{overflow:hidden}
   .gauges{gap:20px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- ordu galaksisi + evrim ---------- */
+.sayi-serit{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 4px}
+.sayi{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sayi .v{font-size:30px;font-weight:700;letter-spacing:-.02em}
+.sayi .k{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--txt-3);margin-top:4px}
+.galaksi{position:relative;display:flex;justify-content:center;margin:26px 0 6px}
+.halka{position:relative;width:min(560px,92vw);aspect-ratio:1;border-radius:50%}
+.halka::before{content:"";position:absolute;inset:12%;border:1px dashed var(--line);border-radius:50%}
+.halka::after{content:"";position:absolute;inset:32%;border:1px dashed var(--line);border-radius:50%}
+.halka-don{position:absolute;inset:0;animation:don 140s linear infinite}
+.halka-don.ic{animation-duration:200s;animation-direction:reverse}
+@keyframes don{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.halka-don{animation:none}}
+.uydu{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;padding:5px 9px;
+  border-radius:999px;border:1px solid var(--line);background:rgba(10,16,24,.88);white-space:nowrap}
+.uydu i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.u-kanit i{background:var(--ok);box-shadow:0 0 8px var(--ok)} .u-kanit{border-color:rgba(79,191,139,.5)}
+.u-hukum i{background:var(--no)} .u-sinav i{background:var(--amber);animation:nabiz 2.2s ease-in-out infinite}
+.u-av i{background:var(--glow)} .u-izleme i{background:var(--txt-3)}
+@keyframes nabiz{50%{opacity:.35}}
+.gal-merkez{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+.gal-merkez .v{font-size:44px;font-weight:700}
+.gal-merkez .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--txt-3)}
+.lejant{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:14px;
+  font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--txt-2)}
+.lejant i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.evrim-kutu{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:22px;overflow-x:auto}
+.evrim-cizgi{display:flex;align-items:flex-end;gap:5px;min-width:640px;height:120px;padding-top:26px;position:relative}
+.ev-gun{flex:1;display:flex;flex-direction:column;align-items:center;gap:0;position:relative}
+.ev-bar{width:100%;max-width:22px;background:linear-gradient(180deg,var(--glow),var(--deep));border-radius:4px 4px 0 0;min-height:3px;opacity:.85}
+.ev-bar.hukumlu{background:linear-gradient(180deg,var(--amber),#7a5a1f)}
+.ev-dogum{position:absolute;top:-24px;font-size:12px;line-height:1;cursor:default}
+.ev-tarih{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:var(--txt-3);margin-top:6px;
+  writing-mode:vertical-rl;letter-spacing:.06em}
+@media (max-width:640px){.halka{width:96vw}.uydu{font-size:8.5px;padding:4px 7px}.gal-merkez .v{font-size:34px}}
 </style>
 </head>
 <body>
@@ -420,6 +457,71 @@ body.kilitli{overflow:hidden}
     listeye terfi eder.</p>
   <div class="kuluckalar" id="kuluckalar"></div>
 </section>
+
+<section class="wrap" id="ordu">
+  <span class="kicker">Sistemin gözleri</span>
+  <h2>Ordu — her biri ayrı bir okuma</h2>
+  <p style="max-width:640px;color:var(--txt-2)">Sistem piyasaya tek gözle bakmaz. Aşağıdaki her ad, ayrı bir
+    izleme kaynağının kod adıdır: kimi kanıtını vermiş yayındadır, kimi mahkemesini beklemektedir, kimi daha
+    keşfedilmiş yeni bir avdır. <em>Adlar gerçek, tarifler mahremdir</em> — sistemin gücü sayının kendisidir.</p>
+  <div class="sayi-serit" id="sayiSerit"></div>
+  <div class="galaksi">
+    <div class="halka" id="halka" aria-label="İzleme kaynakları halkası">
+      <div class="gal-merkez"><div class="v mono" id="galN">—</div><div class="k">izleme kaynağı</div></div>
+    </div>
+  </div>
+  <div class="lejant">
+    <span><i style="background:var(--ok)"></i>kanıtlı</span>
+    <span><i style="background:var(--amber)"></i>sınavda</span>
+    <span><i style="background:var(--no)"></i>hükümlü</span>
+    <span><i style="background:var(--glow)"></i>yeni av</span>
+    <span><i style="background:var(--txt-3)"></i>izlemede</span>
+  </div>
+
+  <div class="evrim-kutu">
+    <span class="kicker">Evrim ağacı</span>
+    <h3 style="margin:6px 0 2px">Sistem her gün büyüyor</h3>
+    <p style="color:var(--txt-2);font-size:14px;margin-top:4px">Çubuklar günlük karar (mühür) yoğunluğu; turuncu
+      günler mahkeme hükmü içerir. Üstteki işaretler yeni kaynak doğumları. Kayıplar da bu deftere yazılır —
+      şeffaflık, sistemin ilk kuralıdır.</p>
+    <div class="evrim-cizgi" id="evrimCizgi"></div>
+  </div>
+</section>
+
+<script>
+(async function(){
+  try{
+    const h=await (await fetch("https://kda.lunayapim.com/api/halka",{cache:"no-store"})).json();
+    const S=h.sayilar||{};
+    document.getElementById("sayiSerit").innerHTML=[
+      [S.muhur,"mühürlü karar"],[S.hukum,"mahkeme hükmü"],[S.kaynak,"izleme kaynağı"],[S.silah,"canlı silah"]
+    ].map(([v,k])=>`<div class="sayi"><span class="v mono">${v??"—"}</span><span class="k">${k}</span></div>`).join("");
+    const K=h.kaynaklar||[]; document.getElementById("galN").textContent=K.length;
+    const halka=document.getElementById("halka");
+    const don1=document.createElement("div");don1.className="halka-don";
+    const don2=document.createElement("div");don2.className="halka-don ic";
+    K.forEach((k,i)=>{
+      const dis=(k.durum==="av"||k.durum==="izleme");
+      const hedef=dis?don1:don2, dizi=K.filter(x=>((x.durum==="av"||x.durum==="izleme"))===dis);
+      const j=dizi.indexOf(k), acy=(j/dizi.length)*2*Math.PI-Math.PI/2, r=dis?44:27;
+      const u=document.createElement("span");
+      u.className="uydu u-"+k.durum;
+      u.style.left=(50+r*Math.cos(acy))+"%"; u.style.top=(50+r*Math.sin(acy))+"%";
+      u.innerHTML="<i></i>"+k.ad; hedef.appendChild(u);
+    });
+    halka.prepend(don2); halka.prepend(don1);
+    const ak=(h.evrim&&h.evrim.akis)||[], dg=(h.evrim&&h.evrim.dogumlar)||[];
+    const gun={}; ak.forEach(a=>{const g=gun[a.gun]=gun[a.gun]||{n:0,hukum:false}; g.n+=a.n; if(a.tur==="HUKUM")g.hukum=true;});
+    const dgun={}; dg.forEach(d=>{(dgun[d.gun]=dgun[d.gun]||[]).push(d.ad);});
+    const gunler=Object.keys(gun).sort(), maxN=Math.max(...gunler.map(g=>gun[g].n),1);
+    document.getElementById("evrimCizgi").innerHTML=gunler.map(g=>{
+      const yuk=Math.max(3,Math.round(gun[g].n/maxN*88));
+      const d=dgun[g]?`<span class="ev-dogum" title="Doğum: ${dgun[g].join(", ")}">✦</span>`:"";
+      return `<div class="ev-gun" title="${g} · ${gun[g].n} mühür">${d}<div class="ev-bar${gun[g].hukum?" hukumlu":""}" style="height:${yuk}px"></div><span class="ev-tarih">${g.slice(5)}</span></div>`;
+    }).join("");
+  }catch(e){/* halka ucu yoksa bölüm sessiz kalır */}
+})();
+</script>
 
 <section class="wrap">
   <div class="sec-head"><h2>Son başarılı sinyaller</h2><span class="kicker">Örnek kayıtlar</span></div>
@@ -759,6 +861,16 @@ kuluckaCiz();
   btn.addEventListener("click",function(){
     try{ localStorage.setItem("kda_onay",SURUM);
          localStorage.setItem("kda_onay_ts",new Date().toISOString()); }catch(e){}
+    // onayi sunucuya kaydet (IP + zaman + surum)
+    try{
+      var kaynak="";
+      try{ kaynak=new URLSearchParams(location.search).get("k")||""; }catch(e){}
+      fetch("https://kda.lunayapim.com/api/onay",{
+        method:"POST",headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({onay:true,surum:SURUM,sayfa:location.pathname,kaynak:kaynak}),
+        keepalive:true
+      }).catch(function(){});
+    }catch(e){}
     kutu.hidden=true; document.body.classList.remove("kilitli");
   });
 })();
