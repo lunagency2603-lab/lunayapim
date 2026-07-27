@@ -299,6 +299,14 @@ body.kilitli{overflow:hidden}
 .gal-merkez{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
 .gal-merkez .v{font-size:44px;font-weight:700}
 .gal-merkez .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--txt-3)}
+.fener-durum{margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;
+  padding:5px 12px;border-radius:999px;border:1px solid var(--line);display:inline-block}
+.fener-durum.yanik{color:#ffb454;border-color:rgba(255,180,84,.55);text-shadow:0 0 12px rgba(255,180,84,.6)}
+.fener-durum.sonuk{color:var(--txt-3)}
+.halka.pulsar::before{animation:pulsar 3.2s ease-out infinite;border-color:rgba(255,180,84,.5)}
+.halka.pulsar::after{animation:pulsar 3.2s 1.6s ease-out infinite;border-color:rgba(255,180,84,.35)}
+@keyframes pulsar{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.06);opacity:.15}}
+@media (prefers-reduced-motion:reduce){.halka.pulsar::before,.halka.pulsar::after{animation:none}}
 .lejant{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:14px;
   font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--txt-2)}
 .lejant i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
@@ -467,7 +475,7 @@ body.kilitli{overflow:hidden}
   <div class="sayi-serit" id="sayiSerit"></div>
   <div class="galaksi">
     <div class="halka" id="halka" aria-label="İzleme kaynakları halkası">
-      <div class="gal-merkez"><div class="v mono" id="galN">—</div><div class="k">izleme kaynağı</div></div>
+      <div class="gal-merkez"><div class="v mono" id="galN">—</div><div class="k">izleme kaynağı</div><div class="fener-durum" id="fenerRozet">🔦 fener okunuyor…</div></div>
     </div>
   </div>
   <div class="lejant">
@@ -497,6 +505,10 @@ body.kilitli{overflow:hidden}
       [S.muhur,"mühürlü karar"],[S.hukum,"mahkeme hükmü"],[S.kaynak,"izleme kaynağı"],[S.silah,"canlı silah"]
     ].map(([v,k])=>`<div class="sayi"><span class="v mono">${v??"—"}</span><span class="k">${k}</span></div>`).join("");
     const K=h.kaynaklar||[]; document.getElementById("galN").textContent=K.length;
+    const F=h.fener||{}, fr=document.getElementById("fenerRozet");
+    if(F.yanik){fr.textContent="🔦 "+(F.kaynak||"")+" feneri: NÖBETTE"; fr.className="fener-durum yanik";
+      document.getElementById("halka").classList.add("pulsar");
+    } else {fr.textContent="🔦 "+(F.kaynak||"")+" feneri: sönük — gökyüzü sakin"; fr.className="fener-durum sonuk";}
     const halka=document.getElementById("halka");
     const don1=document.createElement("div");don1.className="halka-don";
     const don2=document.createElement("div");don2.className="halka-don ic";
