@@ -35,13 +35,14 @@
       <span><b style="display:block">LUNA YAPIM</b><span>YAZILIM &amp; YAPIM</span></span>
     </a>
     <nav>
-      <a href="#urunler">Ürünler</a>
+      <a href="index.html#urunler">Ürünler</a>
       <a href="yazilim.html">Yazılım</a>
-      <a href="#produksiyon">Prodüksiyon</a>
-      <a href="#isler">İşler</a>
+      <a href="hizmetler/index.html">Prodüksiyon</a>
+      <a href="hizmetler/insaat-3d-modelleme.html">3D Modelleme</a>
+      <a href="isler.html">İşler</a>
       <a href="sehir/index.html">İller</a>
       <a href="blog/index.html">Blog</a>
-      <a href="iletisim.html" style="opacity:1;color:var(--kirmizi)">İletişim</a>
+      <a href="iletisim.html">İletişim</a>
     </nav>
     <a class="hbtn" href="https://wa.me/905411602603">Teklif Al</a>
   </div>
@@ -83,10 +84,11 @@
         <a href="yazilim.html#trendyol">Trendyol Otomasyonu</a>
         <a href="yazilim.html#fabrika">Luna Fabrika</a></div>
       <div><h4>Hizmetler</h4>
-        <a href="yazilim.html">Yazılım</a>
-        <a href="hizmetler/index.html">Prodüksiyon</a>
-        <a href="isler.html">İşler</a>
-        <a href="blog/index.html">Blog</a></div>
+        <a href="hizmetler/insaat-3d-modelleme.html">İnşaat 3D Modelleme</a>
+        <a href="hizmetler/urun-animasyon.html">Ürün Animasyonu</a>
+        <a href="hizmetler/klip-cekimi.html">Klip Çekimi</a>
+        <a href="hizmetler/index.html">Tüm prodüksiyon</a>
+        <a href="yazilim.html">Yazılım</a></div>
       <div><h4>İletişim</h4>
         <a href="https://wa.me/905411602603">WhatsApp</a>
         <a href="tel:+905411602603">0541 160 26 03</a>
@@ -103,18 +105,6 @@
   <button class="vkapat" onclick="vkapat()" aria-label="Kapat">✕</button>
   <iframe id="vframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<script>
-document.getElementById('yil').textContent=new Date().getFullYear();
-document.querySelectorAll('.is').forEach(function(k){
-  k.addEventListener('click',function(){
-    var v=k.dataset.vid; if(!v) return;
-    document.getElementById('vframe').src='https://www.youtube.com/embed/'+v+'?autoplay=1&rel=0';
-    document.getElementById('vmodal').classList.add('on');
-  });
-});
-function vkapat(){document.getElementById('vmodal').classList.remove('on');document.getElementById('vframe').src='';}
-document.getElementById('vmodal').addEventListener('click',function(e){if(e.target.id==='vmodal')vkapat();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')vkapat();});
-</script>
+<script src="assets/videolar.js"></script>
 </body>
 </html>

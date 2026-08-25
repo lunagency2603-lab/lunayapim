@@ -26,6 +26,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/luna.css">
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://lunayapim.com/"},
+{"@type":"ListItem","position":2,"name":"Hizmetler","item":"https://lunayapim.com/hizmetler/"},
+{"@type":"ListItem","position":3,"name":"İşletme Tanıtım ve Sosyal Medya","item":"https://lunayapim.com/hizmetler/isletme-tanitim.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"İşletme Tanıtım Videosu ve Sosyal Medya İçerik Üretimi","name":"İşletme Tanıtım ve Sosyal Medya","description":"Kafe, restoran, mağaza, salon ve yerel işletmeler için tanıtım videosu ve düzenli sosyal medya içeriği üretimi.",
+"url":"https://lunayapim.com/hizmetler/isletme-tanitim.html",
+"provider":{"@type":"LocalBusiness","name":"Luna Yapım","image":"https://lunayapim.com/assets/og-image.png","telephone":"+905411602603","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Bursa","addressRegion":"Bursa","addressCountry":"TR"},"url":"https://lunayapim.com"},
+"areaServed":{"@type":"Country","name":"Türkiye"},
+"audience":{"@type":"Audience","audienceType":"Kafe ve restoranlar, mağazalar, güzellik salonları, yerel hizmet işletmeleri"}}
+</script>
 </head>
 <body>
 <header>
@@ -37,8 +50,9 @@
     <nav>
       <a href="../index.html#urunler">Ürünler</a>
       <a href="../yazilim.html">Yazılım</a>
-      <a href="../index.html#produksiyon">Prodüksiyon</a>
-      <a href="../index.html#isler">İşler</a>
+      <a href="index.html">Prodüksiyon</a>
+      <a href="insaat-3d-modelleme.html">3D Modelleme</a>
+      <a href="../isler.html">İşler</a>
       <a href="../sehir/index.html">İller</a>
       <a href="../blog/index.html">Blog</a>
       <a href="../iletisim.html">İletişim</a>
@@ -70,6 +84,26 @@
     <p style="margin-top:30px"><a href="https://wa.me/905411602603" class="btn btn-dolu">Bu hizmet için teklif al</a></p>
   </div>
 </section>
+<section class="acik" data-video-bolum>
+  <div class="wrap">
+    <div class="bas"><span class="no">▶</span><div><h2>İşletme tanıtım işlerimizden</h2>
+      <p class="aciklama">Oynatmak için bir işin üzerine dokun.</p></div></div>
+    <div class="isler" data-video="isletme"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap prose">
+    <h2>İlgili sayfalar</h2>
+    <div class="ilgili">
+      <a href="insaat-3d-modelleme.html"><b>İnşaat 3D Modelleme</b><span>Mimari görselleştirme ve proje animasyonu</span></a>
+      <a href="urun-animasyon.html"><b>Ürün &amp; Hizmet Animasyonu</b><span>Ürününüzü 3D ile anlatın</span></a>
+      <a href="klip-cekimi.html"><b>Klip Çekimi</b><span>Müzik ve marka klibi prodüksiyonu</span></a>
+      <a href="index.html"><b>Tüm hizmetler</b><span>Yedi hizmet alanına göz atın</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="cta">
   <img class="karga-buyuk" src="../assets/karga.png" alt="">
   <div class="wrap">
@@ -96,10 +130,11 @@
         <a href="../yazilim.html#trendyol">Trendyol Otomasyonu</a>
         <a href="../yazilim.html#fabrika">Luna Fabrika</a></div>
       <div><h4>Hizmetler</h4>
-        <a href="../yazilim.html">Yazılım</a>
-        <a href="../hizmetler/index.html">Prodüksiyon</a>
-        <a href="../isler.html">İşler</a>
-        <a href="../blog/index.html">Blog</a></div>
+        <a href="insaat-3d-modelleme.html">İnşaat 3D Modelleme</a>
+        <a href="urun-animasyon.html">Ürün Animasyonu</a>
+        <a href="klip-cekimi.html">Klip Çekimi</a>
+        <a href="index.html">Tüm prodüksiyon</a>
+        <a href="../yazilim.html">Yazılım</a></div>
       <div><h4>İletişim</h4>
         <a href="https://wa.me/905411602603">WhatsApp</a>
         <a href="tel:+905411602603">0541 160 26 03</a>
@@ -116,18 +151,6 @@
   <button class="vkapat" onclick="vkapat()" aria-label="Kapat">✕</button>
   <iframe id="vframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<script>
-document.getElementById('yil').textContent=new Date().getFullYear();
-document.querySelectorAll('.is').forEach(function(k){
-  k.addEventListener('click',function(){
-    var v=k.dataset.vid; if(!v) return;
-    document.getElementById('vframe').src='https://www.youtube.com/embed/'+v+'?autoplay=1&rel=0';
-    document.getElementById('vmodal').classList.add('on');
-  });
-});
-function vkapat(){document.getElementById('vmodal').classList.remove('on');document.getElementById('vframe').src='';}
-document.getElementById('vmodal').addEventListener('click',function(e){if(e.target.id==='vmodal')vkapat();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')vkapat();});
-</script>
+<script src="../assets/videolar.js"></script>
 </body>
 </html>
