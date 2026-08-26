@@ -302,3 +302,40 @@ footer{border-top:1px solid var(--cizgi);padding:64px 0 44px}
 .wrap.prose{max-width:1240px}
 .wrap.prose>p,.wrap.prose>ul,.wrap.prose>ol,.wrap.prose>h2,.wrap.prose>h3,
 .wrap.prose>.kutu,.wrap.prose>.sss,.wrap.prose>.rozetler,.wrap.prose>figure{max-width:76ch}
+
+/* ---------------------------------------------------------- teklif formu */
+.tform{border:1px solid var(--cizgi);border-radius:6px;padding:26px;background:rgba(255,255,255,.02);max-width:720px}
+.tform-satir{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.tform-satir{grid-template-columns:1fr}}
+.tform-alan{margin-bottom:16px;display:flex;flex-direction:column}
+.tform label{font-family:"Space Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;
+text-transform:uppercase;color:var(--kirmizi);margin-bottom:7px}
+.tform input,.tform select,.tform textarea{background:var(--ink);border:1px solid var(--cizgi);
+color:var(--bone);border-radius:4px;padding:11px 13px;font:inherit;font-size:15px;width:100%}
+.tform textarea{resize:vertical;line-height:1.55}
+.tform input:focus,.tform select:focus,.tform textarea:focus{outline:none;border-color:var(--kirmizi)}
+.tform input::placeholder,.tform textarea::placeholder{color:rgba(239,237,232,.32)}
+.tform-dug{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.tform-dug .btn{cursor:pointer;border:1px solid rgba(239,237,232,.3);background:transparent;
+color:var(--bone);font-family:inherit}
+.tform-dug .btn:hover{border-color:var(--bone);background:rgba(239,237,232,.06)}
+.tform-dug .btn-dolu{background:var(--kirmizi);border-color:var(--kirmizi);color:#fff}
+.tform-dug .btn-dolu:hover{background:var(--kirmizi-2);border-color:var(--kirmizi-2)}
+.tform-not{font-size:13px;color:rgba(239,237,232,.5);margin-top:14px}
+.tform-uyari{font-size:13.5px;color:var(--kirmizi);margin-top:10px}
+
+/* ---------------------------------------------------------- müşteri sözleri */
+.sozler{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px}
+.soz{border:1px solid var(--cizgi);border-radius:6px;padding:24px;margin:0;background:rgba(255,255,255,.02)}
+.soz blockquote{font-size:17px;line-height:1.6;margin:0 0 16px;quotes:"\201C" "\201D"}
+.soz blockquote::before{content:open-quote;color:var(--kirmizi);font-size:30px;line-height:0;
+vertical-align:-8px;margin-right:3px}
+.soz figcaption{font-size:13.5px;color:rgba(239,237,232,.62);border-top:1px solid var(--cizgi);padding-top:13px}
+.soz-is{display:block;font-family:"Space Mono",ui-monospace,monospace;font-size:10.5px;
+letter-spacing:.14em;text-transform:uppercase;color:var(--kirmizi);margin-top:5px}
+
+/* ---------------------------------------------------------- sosyal şerit */
+.sosyal-serit{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.sosyal-serit a{display:inline-block;border:1px solid var(--cizgi);border-radius:99px;
+padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transition:.16s}
+.sosyal-serit a:hover{border-color:var(--kirmizi);color:var(--kirmizi)}

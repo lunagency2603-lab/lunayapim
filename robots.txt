@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /kda.db
+Disallow: /PROJE_DURUM.md
+Disallow: /README.md
 
 Sitemap: https://lunayapim.com/sitemap.xml
