@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img"
+     aria-label="Hizmet tanıtım animasyonu" style="width:100%;height:auto;display:block">
+  <style>
+    .z{fill:#14110f} .k{fill:#efe7dd} .r{fill:#e8452c} .g{fill:#8a8079}
+    .cz{stroke:#2a2724;stroke-width:1;fill:none}
+    .yz{font-family:'Manrope',system-ui,sans-serif;font-size:15px}
+    .bs{font-family:'Bricolage Grotesque','Manrope',sans-serif;font-weight:800;font-size:26px}
+    .et{font-family:'Space Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em}
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; opacity: 1 !important; }
+    }
+  </style>
+  <rect class="z" width="640" height="300"/>
+  <rect class="cz" x="12" y="12" width="616" height="276" rx="6"/>
+  <text x="70" y="66" class="bs k">Ürünün içini gösterir</text><line x1="70" y1="84" x2="130" y2="84" stroke="#e8452c" stroke-width="3"/><circle cx="120" cy="165" r="46" fill="none" stroke="#2a2724" stroke-width="1.5" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.05;0.14;0.9;1" dur="8s" repeatCount="indefinite"/></circle><path d="M120 119 L120 211" fill="none" stroke="#e8452c" stroke-width="1" stroke-linecap="round" stroke-dasharray="95" stroke-dashoffset="95"><animate attributeName="stroke-dashoffset" values="95;95;0;0;95" keyTimes="0;0.225;0.400;0.9;1" dur="8s" repeatCount="indefinite"/></path><path d="M300 130 A 46 46 0 0 1 300 200" fill="none" stroke="#e8452c" stroke-width="2" stroke-linecap="round" stroke-dasharray="120" stroke-dashoffset="120"><animate attributeName="stroke-dashoffset" values="120;120;0;0;120" keyTimes="0;0.300;0.475;0.9;1" dur="8s" repeatCount="indefinite"/></path><rect x="262" y="155" width="14" height="30" fill="#e8452c" stroke="#e8452c" stroke-width="1.5" opacity="0" transform-origin="262 185"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.350;0.425;0.9;1" dur="8s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="scale" values="1 0;1 0;1 1;1 1;1 1" keyTimes="0;0.350;0.425;0.9;1" dur="8s" repeatCount="indefinite"/></rect><text x="430" y="150" class="yz g" opacity="0">60 saniyede<animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.500;0.562;0.86;0.94;1" dur="8s" repeatCount="indefinite"/></text><text x="430" y="178" class="bs k" opacity="0">nasıl çalıştığı<animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.550;0.613;0.86;0.94;1" dur="8s" repeatCount="indefinite"/></text><text x="70" y="272" class="et g" opacity="0">Ürün<animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.075;0.138;0.86;0.94;1" dur="8s" repeatCount="indefinite"/></text><text x="275" y="272" class="et g" opacity="0">Kesit<animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.275;0.338;0.86;0.94;1" dur="8s" repeatCount="indefinite"/></text><text x="251" y="272" class="et g" opacity=".35">→</text><text x="445" y="272" class="et g" opacity="0">Anlatım<animate attributeName="opacity" values="0;0;1;1;1;0" keyTimes="0;0.475;0.538;0.86;0.94;1" dur="8s" repeatCount="indefinite"/></text><text x="421" y="272" class="et g" opacity=".35">→</text>
+</svg>
