@@ -23,14 +23,22 @@ window.LUNA_OLCUM = {
   var o = window.LUNA_OLCUM || {};
 
   if (o.ga4) {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(o.ga4);
-    document.head.appendChild(s);
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
     window.gtag = window.gtag || gtag;
-    gtag("js", new Date());
+
+    /* Sayfada Google Ads etiketi varsa gtag zaten yüklenmiş oluyor.
+       İkinci kez yüklemek gereksiz istek ve yavaşlama demek — bu yüzden
+       önce bakıyoruz, yoksa yüklüyoruz. */
+    var yuklu = !!document.querySelector(
+      'script[src*="googletagmanager.com/gtag/js"]');
+    if (!yuklu) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(o.ga4);
+      document.head.appendChild(s);
+      gtag("js", new Date());
+    }
     gtag("config", o.ga4);
   }
 
