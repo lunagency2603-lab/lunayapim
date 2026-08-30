@@ -66,23 +66,40 @@ window.LUNA_HARITA = "";
     });
   }
 
-  /* 2) JSON-LD şemasına sameAs ekle */
+  /* 2) JSON-LD şemasına sameAs (ve varsa harita bağlantısı) ekle
+        Şehir sayfalarında şema @graph içinde duruyor; sadece üst seviyeye
+        bakmak o sayfaları atlıyordu — artık iç içe de geziliyor. */
+  function firma_mi(n) {
+    if (!n || !n["@type"]) return false;
+    var t = String(n["@type"]);
+    return t.indexOf("Organization") !== -1 ||
+           t.indexOf("LocalBusiness") !== -1 ||
+           t.indexOf("ProfessionalService") !== -1;
+  }
+
+  function dugumler(v, topla) {
+    if (Array.isArray(v)) { v.forEach(function (x) { dugumler(x, topla); }); return topla; }
+    if (v && typeof v === "object") {
+      topla.push(v);
+      if (v["@graph"]) dugumler(v["@graph"], topla);
+    }
+    return topla;
+  }
+
   function semaya_ekle() {
     var url = baglantilar();
-    if (!url.length) return;
+    var harita = window.LUNA_HARITA || "";
+    if (!url.length && !harita) return;
     document.querySelectorAll('script[type="application/ld+json"]').forEach(function (s) {
       var v;
       try { v = JSON.parse(s.textContent); } catch (e) { return; }
-      var liste = Array.isArray(v) ? v : [v];
       var degisti = false;
-      liste.forEach(function (n) {
-        if (!n || !n["@type"]) return;
-        var t = String(n["@type"]);
-        if (t.indexOf("Organization") !== -1 || t.indexOf("LocalBusiness") !== -1) {
-          n.sameAs = url; degisti = true;
-        }
+      dugumler(v, []).forEach(function (n) {
+        if (!firma_mi(n)) return;
+        if (url.length) { n.sameAs = url; degisti = true; }
+        if (harita) { n.hasMap = harita; degisti = true; }
       });
-      if (degisti) s.textContent = JSON.stringify(Array.isArray(v) ? v : liste[0]);
+      if (degisti) s.textContent = JSON.stringify(v);
     });
   }
 

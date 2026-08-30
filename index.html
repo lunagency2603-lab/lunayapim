@@ -30,14 +30,21 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "name": "Luna Yapım",
   "description": "Bursa merkezli yazılım ve yapım şirketi. Otonom sistemler, iş otomasyonu ve kendi yazılım ürünleri; yapay zekâ destekli reklam ve görsel üretim.",
   "url": "https://lunayapim.com",
   "telephone": "+905411602603",
   "logo": "https://lunayapim.com/assets/og-image.png",
   "address": { "@type": "PostalAddress", "addressLocality": "Bursa", "addressCountry": "TR" },
-  "areaServed": "TR",
+  "areaServed": [
+    { "@type": "Country", "name": "Türkiye" },
+    { "@type": "City", "name": "Bursa" },
+    { "@type": "City", "name": "İstanbul" },
+    { "@type": "City", "name": "Ankara" },
+    { "@type": "City", "name": "İzmir" },
+    { "@type": "City", "name": "Kocaeli" }
+  ],
   "knowsAbout": ["İnşaat 3D modelleme","Mimari görselleştirme","Emlak tanıtım videosu","3D ürün animasyonu","Klip çekimi","Drone ve FPV çekim","Kurumsal tanıtım filmi","İş otomasyonu yazılımı"],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "İnşaat 3D Modelleme ve Mimari Görselleştirme", "url": "https://lunayapim.com/hizmetler/insaat-3d-modelleme.html" } },
