@@ -109,7 +109,13 @@
 
 
 <div class="wrap hizmet-animasyon" style="margin:28px auto 0">
-  <img src="../assets/animasyon/klip-cekimi.svg" alt="KLİP ÇEKİMİ — nasıl çalıştığını anlatan animasyon" loading="lazy" style="width:100%;height:auto;border-radius:10px">
+  <video data-luna muted loop playsinline preload="none"
+         poster="../assets/video/klip-cekimi.jpg"
+         style="width:100%;height:auto;border-radius:10px;display:block"
+         aria-label="Klip Çekimi — nasıl çalıştığını anlatan kısa tanıtım videosu">
+    <source src="../assets/video/klip-cekimi.webm" type="video/webm">
+    <source src="../assets/video/klip-cekimi.mp4" type="video/mp4">
+  </video>
 </div>
 <section>
   <div class="wrap prose">
@@ -301,6 +307,7 @@
 </div>
 <script src="../assets/videolar.js"></script>
 <script src="../assets/sosyal.js"></script>
+<script src="../assets/video.js" defer></script>
 <script src="../assets/olcum.js"></script>
 </body>
 </html>
