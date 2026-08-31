@@ -48,7 +48,7 @@ window.LUNA_VIDEOLAR = [
   { id:"", baslik:"Ürün Patlatılmış Görünüm (Exploded)", kat:"Ürün 3D",     etiket:["isler","urun-animasyon"] },
 
   /* ---------- KLİP ÇEKİMİ (kimlik bekliyor) ---------- */
-  { id:"", baslik:"Müzik Klibi",                         kat:"Klip",        etiket:["isler","klip"] },
+  { id:"SAL0X164pbA", baslik:"Müzik Klibi",               kat:"Klip",        etiket:["isler","klip"] },
   { id:"", baslik:"Marka Klibi",                         kat:"Klip",        etiket:["isler","klip"] },
   { id:"", baslik:"Sanatçı Tanıtım Klibi",               kat:"Klip",        etiket:["isler","klip"] },
 
