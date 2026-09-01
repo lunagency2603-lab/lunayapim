@@ -18,6 +18,7 @@
 
    etiket → videonun hangi sayfalarda çıkacağını belirler:
      isler          → İşler sayfası + ana sayfa (hepsi buraya girer)
+     ornek          → "Örnek işler" bölümü (kendi dosyalarımız)
      insaat-3d      → hizmetler/insaat-3d-modelleme.html
      urun-animasyon → hizmetler/urun-animasyon.html
      klip           → hizmetler/klip-cekimi.html
@@ -31,9 +32,9 @@ window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
   { yerel:"ornek-cm", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
-    musteri:"CM Vorarlberg · Avusturya", etiket:["isler","insaat-3d","emlak"] },
+    musteri:"CM Vorarlberg · Avusturya", etiket:["isler","ornek","insaat-3d","emlak"] },
   { yerel:"ornek-galzura", baslik:"Galzura Tanıtım Animasyonu", kat:"Animasyon",
-    musteri:"Galzura · Avusturya", etiket:["isler","urun-animasyon"] },
+    musteri:"Galzura · Avusturya", etiket:["isler","ornek","urun-animasyon"] },
 
   /* ---------- YAYINDA ---------- */
   { id:"TjUTFk9LZSs", baslik:"Kısa Film",              kat:"Kısa Film",      etiket:["isler"] },
@@ -89,7 +90,7 @@ window.LUNA_VIDEOLAR = [
   var KOK = (function(){
     var l = document.querySelector('link[rel="stylesheet"][href*="luna.css"]');
     var h = l ? l.getAttribute('href') : 'assets/luna.css';
-    return h.replace(/luna\.css$/, '');
+    return h.replace(/luna\.css.*$/, '');
   })();
 
   function kacir(s){ return String(s == null ? '' : s)
@@ -195,83 +196,96 @@ window.LUNA_VIDEOLAR = [
   };
   window.vkapat = window.lunaVideoKapat;   /* sayfalardaki kapat düğmesi bunu çağırıyor */
 
-  /* ---------- spiral: dönen 3B katalog ---------- */
-  function spiral(kap, kutu){
+  /* ---------- küre: dönen 3B katalog ----------
+     Kartlar bir kürenin yüzeyine dağıtılıyor ama hep okura dönük duruyor;
+     derinlik ölçek ve saydamlıkla anlatılıyor. */
+  function kure(kap, kutu){
     var sahne = kap._sahne;
     if(!sahne) return;
-    var aci = 0, hiz = -0.10, sur = null, durdu = false, gorunur = false, raf = 0, yari = 460;
+    var ay = 0, ax = -0.12, hiz = -0.0035, sur = null, durdu = false,
+        gorunur = false, raf = 0;
+    var kartlar = [], nokta = [], R = 244, YASSI = 0.80, P = 1200;
 
     function yerlestir(){
-      /* önceki klonları temizle */
       [].slice.call(sahne.querySelectorAll('[data-kopya]')).forEach(function(c){
         c.parentNode.removeChild(c);
       });
       var asil = [].slice.call(sahne.children).filter(function(c){ return !c.hidden; });
       var n = asil.length; if(!n) return;
       var dar = window.innerWidth < 760;
-      var gen = dar ? 196 : 262;
 
-      /* 6+ iş varsa dizi bir kez daha dizilir → iki tam tur, gerçek sarmal */
-      var tur = n >= 6 ? 2 : 1;
-      var k = asil.slice();
-      if(tur === 2){
-        /* ikinci tur yarım liste kaydırılıyor: aynı açıda aynı iş iki kez durmasın */
-        var kaydir = Math.floor(n / 2);
-        asil.map(function(_, i){ return asil[(i + kaydir) % n]; }).forEach(function(c){
-          var kl = c.cloneNode(true);
-          kl.setAttribute('data-kopya', '1');
-          kl.setAttribute('aria-hidden', 'true');
-          kl.setAttribute('tabindex', '-1');
-          kl.classList.remove('oynuyor');
-          var o = kl.querySelector('.is-onizle'); if(o) o.parentNode.removeChild(o);
-          sahne.appendChild(kl); k.push(kl);
-        });
-      }
-
-      var say = k.length;
-      var adim = 360 / n;
-      var R   = Math.round(Math.max(330, (n * (gen + 34)) / (2 * Math.PI)));
-      var yayilim = dar ? (tur === 2 ? 290 : 165) : (tur === 2 ? 424 : 225);
-      var tirman = say > 1 ? yayilim / (say - 1) : 0;
-      yari = R;
-      var yazi = dar ? 52 : 62;
+      /* her iş bir kez: küre üzerinde üst üste binmesinler */
+      kartlar = asil.slice();
+      var say = kartlar.length;
+      var gen = dar ? 116 : (say > 12 ? 126 : 144);
+      /* komşu iki nokta arası yay ≈ 2·√(π/n)·R — kart genişliğinden büyük olmalı */
+      var acisal = 2 * Math.sqrt(Math.PI / Math.max(4, say));
+      R = Math.round(Math.max(dar ? 168 : 244, (gen * 2.0) / acisal));
+      P = dar ? 850 : 1200;
+      var yazi = dar ? 34 : 42;
+      var kartYuk = Math.round(gen * 0.5625) + yazi;
+      var enB = R * (P / (P - R));
+      var boyB = enB * YASSI;
       sahne.style.setProperty('--gen', gen + 'px');
-      sahne.style.top = Math.round(40 + yayilim / 2) + 'px';
-      kap.style.setProperty('--yuk',
-        Math.round(gen * 0.5625 + yazi + yayilim + 80) + 'px');
-      k.forEach(function(c, i){
-        c.style.transform = 'rotateY(' + (i * adim).toFixed(2) + 'deg) translateZ(' + R + 'px) ' +
-                            'translateY(' + (i * tirman - yayilim / 2).toFixed(1) + 'px)';
+      sahne.style.setProperty('--kyuk', kartYuk + 'px');
+      sahne.style.top = Math.round(boyB + kartYuk / 2 + 16) + 'px';
+      kap.style.setProperty('--yuk', Math.round(2 * boyB + kartYuk + 34) + 'px');
+
+      /* Fibonacci küresi: noktalar yüzeye eşit dağılıyor */
+      var ALTIN = Math.PI * (3 - Math.sqrt(5));
+      nokta = kartlar.map(function(_, i){
+        var y = 1 - (2 * (i + 0.5)) / say;
+        var r = Math.sqrt(Math.max(0, 1 - y * y));
+        var th = ALTIN * i;
+        return { x: Math.cos(th) * r, y: y, z: Math.sin(th) * r };
       });
       [].slice.call(sahne.children).forEach(function(c){
-        if(c.hidden) c.style.transform = 'translateZ(-4000px)';
+        if(c.hidden){ c.style.transform = 'scale(0)'; c.style.opacity = '0'; }
       });
+      ciz(true);
     }
-    kap._yerlestir = function(){ if(kap.classList.contains('spiral')) yerlestir(); };
+    kap._yerlestir = function(){ if(kap.classList.contains('kure')) yerlestir(); };
 
-    function ciz(){
-      raf = 0;
-      if(!sur && !durdu) aci += hiz;
-      sahne.style.transform = 'translateZ(' + (-yari) + 'px) rotateY(' + aci.toFixed(2) + 'deg)';
-      if(gorunur && kap.classList.contains('spiral')) raf = requestAnimationFrame(ciz);
+    function ciz(tek){
+      if(!tek) raf = 0;
+      if(!sur && !durdu && !tek) ay += hiz;
+      var cy = Math.cos(ay), sy = Math.sin(ay);
+      var cx = Math.cos(ax), sx = Math.sin(ax);
+      for(var i = 0; i < kartlar.length; i++){
+        var p = nokta[i]; if(!p) continue;
+        var x1 =  p.x * cy + p.z * sy;
+        var z1 = -p.x * sy + p.z * cy;
+        var y2 =  p.y * cx - z1 * sx;
+        var z2 =  p.y * sx + z1 * cx;
+        var o  = P / (P - z2 * R);
+        var e  = kartlar[i];
+        e.style.transform = 'translate3d(' + (x1 * R * o).toFixed(1) + 'px,' +
+                            (y2 * R * YASSI * o).toFixed(1) + 'px,0) scale(' + o.toFixed(3) + ')';
+        e.style.opacity = (0.26 + 0.74 * ((z2 + 1) / 2)).toFixed(3);
+        e.style.zIndex = String(1000 + Math.round(z2 * 400));
+      }
+      if(!tek && gorunur && kap.classList.contains('kure'))
+        raf = requestAnimationFrame(function(){ ciz(); });
     }
-    function surdur(){ if(!raf && gorunur) raf = requestAnimationFrame(ciz); }
+    function surdur(){ if(!raf && gorunur) raf = requestAnimationFrame(function(){ ciz(); }); }
 
     /* fare üstündeyken dönme dursun ki videoyu izleyebilesin */
     kap.addEventListener('mouseenter', function(){ durdu = true; });
     kap.addEventListener('mouseleave', function(){ durdu = false; surdur(); });
 
-    /* sürükleyerek çevir */
+    /* sürükleyerek çevir — yatayda boylam, dikeyde enlem */
     kap.addEventListener('pointerdown', function(e){
-      sur = { x:e.clientX, a:aci, kaydi:false }; kap.classList.add('suruk');
+      sur = { x:e.clientX, y:e.clientY, ay:ay, ax:ax, kaydi:false };
+      kap.classList.add('suruk');
       try { kap.setPointerCapture(e.pointerId); } catch(x){}
     });
     kap.addEventListener('pointermove', function(e){
       if(!sur) return;
-      var f = e.clientX - sur.x;
-      if(Math.abs(f) > 5) sur.kaydi = true;
-      aci = sur.a + f * 0.30;
-      sahne.style.transform = 'translateZ(' + (-yari) + 'px) rotateY(' + aci.toFixed(2) + 'deg)';
+      var fx = e.clientX - sur.x, fy = e.clientY - sur.y;
+      if(Math.abs(fx) > 5 || Math.abs(fy) > 5) sur.kaydi = true;
+      ay = sur.ay + fx * 0.0075;
+      ax = Math.max(-0.7, Math.min(0.7, sur.ax - fy * 0.006));
+      ciz(true);
     });
     ['pointerup','pointercancel'].forEach(function(t){
       kap.addEventListener(t, function(){
@@ -289,41 +303,44 @@ window.LUNA_VIDEOLAR = [
       }, { threshold:0.05 }).observe(kap);
     } else { gorunur = true; }
 
-    window.addEventListener('resize', function(){ if(kap.classList.contains('spiral')) yerlestir(); });
+    window.addEventListener('resize', function(){ if(kap.classList.contains('kure')) yerlestir(); });
 
-    function ac(spiralMi){
-      kap.classList.toggle('spiral', spiralMi);
-      if(spiralMi){ yerlestir(); gorunur = true; surdur(); }
+    function ac(kureMi){
+      kap.classList.toggle('kure', kureMi);
+      if(kureMi){ yerlestir(); gorunur = true; surdur(); }
       else {
-        sahne.style.transform = ''; sahne.style.top = '';
+        sahne.style.top = '';
         [].slice.call(sahne.querySelectorAll('[data-kopya]')).forEach(function(c){
           c.parentNode.removeChild(c); });
-        [].slice.call(sahne.children).forEach(function(c){ c.style.transform = ''; });
+        [].slice.call(sahne.children).forEach(function(c){
+          c.style.transform = ''; c.style.opacity = ''; c.style.zIndex = ''; });
       }
       if(kutu){
-        var d = kutu.querySelectorAll('[data-gor]');
-        d.forEach(function(b){ b.setAttribute('aria-pressed', String((b.dataset.gor === 'spiral') === spiralMi)); });
+        kutu.querySelectorAll('[data-gor]').forEach(function(b){
+          b.setAttribute('aria-pressed', String((b.dataset.gor === 'kure') === kureMi));
+        });
       }
-      try { localStorage.setItem('luna-isler-gorunum', spiralMi ? 'spiral' : 'izgara'); } catch(x){}
+      try { localStorage.setItem('luna-isler-gorunum', kureMi ? 'kure' : 'izgara'); } catch(x){}
     }
 
     if(kutu && !kutu.querySelector('[data-gor]')){
       var g = document.createElement('span');
       g.className = 'is-gorunum';
-      g.innerHTML = '<button type="button" data-gor="spiral" aria-pressed="true" title="Spiral görünüm">Spiral</button>'+
+      g.innerHTML = '<button type="button" data-gor="kure" aria-pressed="true" title="Küre görünüm">Küre</button>'+
                     '<button type="button" data-gor="izgara" aria-pressed="false" title="Izgara görünüm">Izgara</button>';
-      var say = kutu.querySelector('.is-sayac');
-      if(say) kutu.insertBefore(g, say); else kutu.appendChild(g);
+      var sy = kutu.querySelector('.is-sayac');
+      if(sy) kutu.insertBefore(g, sy); else kutu.appendChild(g);
       g.addEventListener('click', function(e){
         var b = e.target.closest('[data-gor]'); if(!b) return;
-        ac(b.dataset.gor === 'spiral');
+        ac(b.dataset.gor === 'kure');
       });
     }
 
-    var tercih = 'spiral';
-    try { tercih = localStorage.getItem('luna-isler-gorunum') || 'spiral'; } catch(x){}
+    var tercih = 'kure';
+    try { tercih = localStorage.getItem('luna-isler-gorunum') || 'kure'; } catch(x){}
+    if(tercih === 'spiral') tercih = 'kure';
     if(AZALT || !FARE) tercih = 'izgara';
-    ac(tercih === 'spiral');
+    ac(tercih === 'kure');
   }
 
   /* ---------- kategori süzgeci ---------- */
@@ -375,7 +392,7 @@ window.LUNA_VIDEOLAR = [
 
       var kutu = (kap.parentNode || document).querySelector('[data-filtre]');
       if(kutu && !kutu.dataset.kurulu){ kutu.dataset.kurulu = '1'; suzgec(kutu, kap, sec); }
-      spiral(kap, kutu);
+      if(kap.hasAttribute('data-kure')) kure(kap, kutu);
 
       if(!kap.dataset.bagliKart){
         kap.dataset.bagliKart = '1';

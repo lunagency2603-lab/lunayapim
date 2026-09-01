@@ -479,38 +479,39 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
   .is-sayac{margin-left:0;width:100%}
 }
 
-/* ================= v5 — spiral katalog ================= */
+/* ================= v5 — küre katalog ================= */
 
-.isler:not(.spiral) .sahne{display:contents}
+.isler:not(.kure) .sahne{display:contents}
 
-.isler.spiral{display:block !important;position:relative;height:var(--yuk,640px);
-  perspective:1750px;perspective-origin:50% 44%;overflow:hidden;
-  margin:0 calc(50% - 50vw);width:100vw;max-width:100vw;
+.isler.kure{display:block !important;position:relative;height:var(--yuk,660px);
+  overflow:hidden;margin:0 calc(50% - 50vw);width:100vw;max-width:100vw;
   cursor:grab;-webkit-user-select:none;user-select:none;touch-action:pan-y}
-.isler.spiral.suruk{cursor:grabbing}
-.isler.spiral .sahne{position:absolute;left:50%;top:150px;width:0;height:0;
-  transform-style:preserve-3d;will-change:transform}
+.isler.kure.suruk{cursor:grabbing}
+.isler.kure .sahne{position:absolute;left:50%;top:340px;width:0;height:0}
 
-.isler.spiral > .sahne > .is{position:absolute;left:0;top:0;
-  width:var(--gen,330px);margin-left:calc(var(--gen,330px) / -2);
-  transform-style:preserve-3d;backface-visibility:hidden;
-  transition:none}
-.isler.spiral > .sahne > .is[hidden]{display:block !important;
-  opacity:0;pointer-events:none}
-.isler.spiral .kapak{box-shadow:0 34px 70px -34px rgba(0,0,0,.95)}
-.isler.spiral .is-alt{padding-top:11px}
-.isler.spiral .is h3{font-size:17px}
-.isler.spiral .is-alt .musteri{font-size:12.5px}
+.isler.kure > .sahne > .is{position:absolute;left:0;top:0;
+  width:var(--gen,190px);margin-left:calc(var(--gen,190px) / -2);
+  margin-top:calc(var(--kyuk,150px) / -2);
+  will-change:transform,opacity;transition:none}
+.isler.kure > .sahne > .is[hidden]{display:block !important;opacity:0;pointer-events:none}
+.isler.kure .kapak{box-shadow:0 22px 46px -26px rgba(0,0,0,.95)}
+.isler.kure .is-alt{padding-top:8px;gap:2px}
+.isler.kure .is .kat{font-size:8.5px;letter-spacing:.14em}
+.isler.kure .is h3{font-size:13.5px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical;overflow:hidden}
+.isler.kure .is-alt .musteri{display:none}
+.isler.kure .is .im{width:26px;height:26px;left:8px;bottom:8px}
+.isler.kure .is .im::after{border-left-width:8px;border-top-width:5px;border-bottom-width:5px}
 
-/* kenarlarda yumuşak sönüm — sahne kesildiği belli olmasın */
-.isler.spiral::before,.isler.spiral::after{content:"";position:absolute;top:0;bottom:0;width:11vw;
+/* kenarlarda yumuşak sönüm — küre kesildiği belli olmasın */
+.isler.kure::before,.isler.kure::after{content:"";position:absolute;top:0;bottom:0;width:13vw;
   z-index:20;pointer-events:none}
-.isler.spiral::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
-.isler.spiral::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
-.acik .isler.spiral::before{background:linear-gradient(to right,var(--bone),transparent)}
-.acik .isler.spiral::after{background:linear-gradient(to left,var(--bone),transparent)}
+.isler.kure::before{left:0;background:linear-gradient(to right,var(--ink),transparent)}
+.isler.kure::after{right:0;background:linear-gradient(to left,var(--ink),transparent)}
+.acik .isler.kure::before{background:linear-gradient(to right,var(--bone),transparent)}
+.acik .isler.kure::after{background:linear-gradient(to left,var(--bone),transparent)}
 
-/* süzgeç şeridi sarmalın üstünde kalsın */
+/* süzgeç şeridi kürenin üstünde kalsın */
 .is-filtre{position:relative;z-index:40}
 
 /* görünüm değiştirici */
@@ -525,10 +526,11 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
 .is-gorunum button:hover{color:var(--kirmizi)}
 .is-gorunum button[aria-pressed="true"]:hover{color:inherit}
 
+/* örnek işler: iki büyük kart */
+.isler-ornek{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(380px,1fr)) !important;gap:26px}
+.isler-ornek .is h3{font-size:22px}
+@media(max-width:820px){.isler-ornek{grid-template-columns:1fr !important}}
+
 @media(max-width:760px){
-  .isler.spiral{perspective:1150px}
-  .isler.spiral::before,.isler.spiral::after{width:9vw}
-}
-@media(prefers-reduced-motion:reduce){
-  .isler.spiral .sahne{animation:none}
+  .isler.kure::before,.isler.kure::after{width:8vw}
 }

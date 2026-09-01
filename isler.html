@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/luna.css">
+<link rel="stylesheet" href="assets/luna.css?v=5">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://lunayapim.com/assets/og-image.png">
@@ -63,10 +63,20 @@
     <p class="lede">Kısa filmden reklama, düğünden sinematografiye — kameranın arkasında ürettiklerimizden bir seçki. Fareyi bir işin üzerinde tut, sessiz oynasın; tıklayınca sesli açılır. Üstteki kategorilerden süzebilirsin.</p>
   </div>
 </div>
+<section class="acik" id="ornek-isler">
+  <div class="wrap">
+    <div class="bas"><span class="no">01</span><div><h2>Örnek işler</h2>
+      <p class="aciklama">Müşteri adıyla, kendi arşivimizden. Fareyi üzerinde tut — sessiz oynar;
+        tıklayınca tam sürüm açılır.</p></div></div>
+    <div class="isler isler-ornek" data-video="ornek"></div>
+  </div>
+</section>
 <section>
   <div class="wrap">
+    <div class="bas"><span class="no">02</span><div><h2>Tüm işler</h2>
+      <p class="aciklama">Küreyi sürükleyerek çevirebilirsin; fare üzerindeyken durur ve video oynar.</p></div></div>
     <div class="is-filtre" data-filtre></div>
-    <div class="isler" data-video="isler"></div>
+    <div class="isler" data-video="isler" data-kure></div>
   </div>
 </section>
 <section>
@@ -157,8 +167,8 @@
   <button class="vkapat" onclick="vkapat()" aria-label="Kapat">✕</button>
   <iframe id="vframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<script src="assets/video.js"></script>
-<script src="assets/videolar.js"></script>
+<script src="assets/video.js?v=5"></script>
+<script src="assets/videolar.js?v=5"></script>
 <script src="assets/sosyal.js"></script>
 <script src="assets/olcum.js"></script>
 </body>
