@@ -534,3 +534,55 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
 @media(max-width:760px){
   .isler.kure::before,.isler.kure::after{width:8vw}
 }
+
+/* ================= v6 — arama gündemi tablosu ================= */
+
+.sg-sar{overflow-x:auto;border:1px solid var(--cizgi);border-radius:4px}
+.acik .sg-sar{border-color:var(--cizgi-koyu)}
+.sg-tablo{width:100%;border-collapse:collapse;font-size:15.5px;min-width:620px}
+.sg-tablo th{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gri);font-weight:400;text-align:left;
+  padding:14px 16px;border-bottom:1px solid var(--cizgi)}
+.acik .sg-tablo th{border-color:var(--cizgi-koyu)}
+.sg-tablo td{padding:13px 16px;border-bottom:1px solid var(--cizgi);vertical-align:top}
+.acik .sg-tablo td{border-color:var(--cizgi-koyu)}
+.sg-tablo tr:last-child td{border-bottom:0}
+.sg-tablo tbody tr{transition:background .2s}
+.sg-tablo tbody tr:hover{background:rgba(232,69,44,.06)}
+.sg-no{font-family:"Space Mono",monospace;font-size:12px;color:var(--gri);width:52px}
+.sg-sorgu{font-weight:600;max-width:44ch}
+.sg-hiz{white-space:nowrap}
+.sg-hiz a{color:var(--kirmizi);text-decoration:none;font-size:14.5px}
+.sg-hiz a:hover{text-decoration:underline}
+.sg-sira{font-family:"Space Mono",monospace;font-size:13px;color:var(--gri);
+  text-align:right;width:76px}
+.sg-rozet{display:inline-block;margin-left:9px;padding:3px 8px;border-radius:2px;
+  font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;border:1px solid var(--cizgi);color:var(--gri);
+  vertical-align:middle}
+.acik .sg-rozet{border-color:var(--cizgi-koyu);color:var(--gri-2)}
+.sg-rozet.sg-yeni{border-color:var(--kirmizi);color:var(--kirmizi)}
+.sg-tarih{max-width:1240px;margin:0 auto;padding:0 32px 54px;
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gri)}
+
+/* sık sorulanlar */
+details.sss{border-top:1px solid var(--cizgi);padding:0}
+.acik details.sss{border-color:var(--cizgi-koyu)}
+details.sss:last-of-type{border-bottom:1px solid var(--cizgi)}
+.acik details.sss:last-of-type{border-color:var(--cizgi-koyu)}
+details.sss summary{cursor:pointer;list-style:none;padding:18px 34px 18px 0;
+  position:relative;font-family:"Bricolage Grotesque","Manrope",sans-serif;
+  font-weight:600;font-size:19px;letter-spacing:-.02em}
+details.sss summary::-webkit-details-marker{display:none}
+details.sss summary::after{content:"+";position:absolute;right:4px;top:50%;
+  transform:translateY(-50%);font-family:"Space Mono",monospace;font-size:20px;
+  color:var(--kirmizi);transition:transform .25s}
+details.sss[open] summary::after{content:"−"}
+details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
+.acik details.sss p{color:var(--gri-2)}
+
+@media(max-width:640px){
+  .sg-tablo{font-size:14.5px}
+  .sg-tarih{padding:0 18px 40px}
+}
