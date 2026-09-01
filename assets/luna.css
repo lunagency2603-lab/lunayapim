@@ -433,3 +433,72 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
   .marka-film .serit{font-size:9px;letter-spacing:.12em;padding:10px 18px}
   .marka-film .serit span:nth-child(2){display:none}
 }
+
+/* ================= v4 — iş kataloğu (v3'teki vitrin düzenini geçersiz kılar) ================= */
+
+.isler{display:grid !important;grid-template-columns:repeat(auto-fill,minmax(324px,1fr)) !important;
+  gap:30px 22px;overflow:visible;perspective:none;padding:0;margin:0;cursor:auto}
+.isler::before,.isler::after{content:none;display:none}
+
+.is{position:relative;cursor:pointer;background:none;border-radius:0;overflow:visible;
+  isolation:auto;transform:none !important;opacity:1 !important;box-shadow:none;
+  transform-style:flat;flex:none}
+.is::after{content:none;display:none}
+.is[hidden]{display:none !important}
+
+.is .kapak{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:4px;
+  background:var(--ink-2);box-shadow:0 22px 46px -30px rgba(0,0,0,.9)}
+.acik .is .kapak{background:#d8d5cd}
+.is .kapak img,.is .kapak video,.is .kapak iframe{position:absolute;inset:0;
+  width:100%;height:100%;object-fit:cover;display:block;border:0}
+.is .kapak img{filter:grayscale(.32) brightness(.94);
+  transition:filter .45s ease,transform .6s cubic-bezier(.2,.8,.3,1)}
+.is:hover .kapak img,.is:focus-visible .kapak img{filter:none;transform:scale(1.04)}
+.is .kapak::after{content:"";position:absolute;inset:0;border-radius:4px;pointer-events:none;z-index:4;
+  box-shadow:inset 0 0 0 1px rgba(239,237,232,.12);transition:box-shadow .3s}
+.acik .is .kapak::after{box-shadow:inset 0 0 0 1px rgba(10,10,12,.12)}
+.is:hover .kapak::after,.is:focus-visible .kapak::after{box-shadow:inset 0 0 0 1px rgba(232,69,44,.65)}
+.is:focus-visible{outline:none}
+
+/* v3'teki büyük kırmızı oynat dairesi kaldırıldı */
+.is .oynat{display:none !important}
+.is .im{position:absolute;left:12px;bottom:12px;width:34px;height:34px;border-radius:50%;z-index:5;
+  background:rgba(10,10,12,.6);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(7px);transition:opacity .3s,transform .3s}
+.is .im::after{content:"";border-left:10px solid #fff;border-top:6px solid transparent;
+  border-bottom:6px solid transparent;margin-left:3px}
+.is:hover .im,.is:focus-visible .im{opacity:1;transform:none}
+
+.is-onizle{z-index:2;opacity:0;animation:isOnizGir .5s ease .12s forwards}
+.is.oynuyor .kapak img{opacity:0;transition:opacity .4s .12s}
+.is-onizle.yt{transform:scale(1.34);transform-origin:center;pointer-events:none}
+
+/* başlık artık görselin altında */
+.is .kat{position:static;background:none;padding:0;border-radius:0;color:var(--kirmizi);
+  font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.is-alt{padding-top:13px;display:flex;flex-direction:column;gap:4px}
+.is h3{position:static;left:auto;bottom:auto;font-size:19.5px;font-weight:800;
+  font-family:"Bricolage Grotesque","Manrope",sans-serif;letter-spacing:-.025em;
+  line-height:1.15;text-shadow:none}
+.is-alt .musteri{font-size:13.5px;color:var(--gri);letter-spacing:.01em}
+.acik .is-alt .musteri{color:var(--gri-2)}
+
+/* kategori süzgeci */
+.is-filtre{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 28px}
+.is-filtre button{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;padding:9px 15px;border:1px solid var(--cizgi);background:none;
+  color:inherit;border-radius:2px;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.is-filtre button:hover{border-color:var(--kirmizi);color:var(--kirmizi)}
+.is-filtre button[aria-pressed="true"]{background:var(--kirmizi);border-color:var(--kirmizi);color:#fff}
+.acik .is-filtre button{border-color:var(--cizgi-koyu)}
+.is-sayac{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gri);margin-left:auto}
+
+/* büyük oynatıcıda kendi dosyalarımız */
+#vlokal{display:none;width:min(1180px,92vw);max-height:84vh;background:#000;border-radius:4px}
+
+@media(max-width:640px){
+  .isler{grid-template-columns:1fr !important;gap:26px}
+  .is-sayac{margin-left:0;width:100%}
+}
