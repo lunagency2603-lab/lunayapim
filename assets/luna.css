@@ -496,11 +496,11 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
 .isler.kure > .sahne > .is[hidden]{display:block !important;opacity:0;pointer-events:none}
 .isler.kure .kapak{box-shadow:0 22px 46px -26px rgba(0,0,0,.95)}
 .isler.kure .is-alt{padding-top:8px;gap:2px}
-.isler.kure .is .kat{font-size:8.5px;letter-spacing:.14em}
-.isler.kure .is h3{font-size:13.5px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;
+.isler.kure .is .kat{font-size:9.5px;letter-spacing:.14em}
+.isler.kure .is h3{font-size:15.5px;line-height:1.22;display:-webkit-box;-webkit-line-clamp:2;
   -webkit-box-orient:vertical;overflow:hidden}
 .isler.kure .is-alt .musteri{display:none}
-.isler.kure .is .im{width:26px;height:26px;left:8px;bottom:8px}
+.isler.kure .is .im{width:32px;height:32px;left:10px;bottom:10px}
 .isler.kure .is .im::after{border-left-width:8px;border-top-width:5px;border-bottom-width:5px}
 
 /* kenarlarda yumuşak sönüm — küre kesildiği belli olmasın */

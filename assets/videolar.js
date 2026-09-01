@@ -204,7 +204,7 @@ window.LUNA_VIDEOLAR = [
     if(!sahne) return;
     var ay = 0, ax = -0.12, hiz = -0.0035, sur = null, durdu = false,
         gorunur = false, raf = 0;
-    var kartlar = [], nokta = [], R = 244, YASSI = 0.80, P = 1200;
+    var kartlar = [], nokta = [], R = 300, YASSI = 0.66, P = 950;
 
     function yerlestir(){
       [].slice.call(sahne.querySelectorAll('[data-kopya]')).forEach(function(c){
@@ -217,12 +217,13 @@ window.LUNA_VIDEOLAR = [
       /* her iş bir kez: küre üzerinde üst üste binmesinler */
       kartlar = asil.slice();
       var say = kartlar.length;
-      var gen = dar ? 116 : (say > 12 ? 126 : 144);
+      var gen = dar ? 150 : (say > 12 ? 168 : 190);
       /* komşu iki nokta arası yay ≈ 2·√(π/n)·R — kart genişliğinden büyük olmalı */
       var acisal = 2 * Math.sqrt(Math.PI / Math.max(4, say));
-      R = Math.round(Math.max(dar ? 168 : 244, (gen * 2.0) / acisal));
-      P = dar ? 850 : 1200;
-      var yazi = dar ? 34 : 42;
+      R = Math.round(Math.max(dar ? 190 : 300, (gen * 1.95) / acisal));
+      /* bakış noktası yakın: öndeki kart belirgin büyüsün */
+      P = dar ? 720 : 950;
+      var yazi = dar ? 38 : 46;
       var kartYuk = Math.round(gen * 0.5625) + yazi;
       var enB = R * (P / (P - R));
       var boyB = enB * YASSI;
