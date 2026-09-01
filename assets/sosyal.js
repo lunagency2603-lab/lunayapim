@@ -20,6 +20,7 @@ window.LUNA_SOSYAL = [
   { ag:"youtube",   ad:"YouTube",   kullanici:"", adres:"https://www.youtube.com/@%s" },
   { ag:"linkedin",  ad:"LinkedIn",  kullanici:"", adres:"https://www.linkedin.com/company/%s" },
   { ag:"tiktok",    ad:"TikTok",    kullanici:"", adres:"https://www.tiktok.com/@%s" },
+  { ag:"x",         ad:"X",         kullanici:"", adres:"https://x.com/%s" },
   { ag:"behance",   ad:"Behance",   kullanici:"", adres:"https://www.behance.net/%s" },
   { ag:"vimeo",     ad:"Vimeo",     kullanici:"", adres:"https://vimeo.com/%s" }
 ];
