@@ -586,3 +586,73 @@ details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
   .sg-tablo{font-size:14.5px}
   .sg-tarih{padding:0 18px 40px}
 }
+
+/* ================= v7 · Luna Asistan ================= */
+#luna-as{position:fixed;right:20px;bottom:20px;z-index:120;
+  font-family:"Manrope",system-ui,sans-serif}
+.las-dug{display:flex;align-items:center;gap:9px;padding:11px 16px 11px 12px;
+  border:1px solid var(--cizgi);border-radius:999px;cursor:pointer;
+  background:var(--ink-2);color:var(--bone);font:inherit;font-size:14.5px;font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .25s cubic-bezier(.3,1.4,.5,1),
+  border-color .25s}
+.las-dug:hover{transform:translateY(-2px);border-color:var(--kirmizi)}
+.las-dug:focus-visible{outline:2px solid var(--kirmizi);outline-offset:3px}
+.las-dug img{display:block}
+#luna-as.las-acik .las-dug span{display:none}
+.las-kutu{position:absolute;right:0;bottom:56px;width:min(380px,calc(100vw - 40px));
+  background:var(--ink-2);border:1px solid var(--cizgi);border-radius:16px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.6);display:flex;flex-direction:column;
+  max-height:min(560px,calc(100vh - 120px))}
+.las-bas{display:flex;align-items:center;gap:10px;padding:13px 16px;
+  border-bottom:1px solid var(--cizgi)}
+.las-bas>div{min-width:0}
+.las-bas b{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;letter-spacing:-.02em}
+.las-bas span{display:block;font-family:"Space Mono",monospace;font-size:9px;
+  letter-spacing:.13em;color:var(--gri);text-transform:uppercase;margin-top:2px}
+.las-kapa{margin-left:auto;background:none;border:0;color:var(--gri);font-size:22px;
+  line-height:1;cursor:pointer;padding:0 2px}
+.las-kapa:hover{color:var(--bone)}
+.las-govde{padding:14px 16px;overflow-y:auto;flex:1;font-size:14.5px;line-height:1.62;
+  color:var(--bone)}
+.las-c p,.las-c b,.las-sayfa b{color:var(--bone)}
+.las-ben{background:var(--kirmizi);color:#fff;padding:8px 13px;border-radius:12px 12px 3px 12px;
+  margin:0 0 12px auto;width:fit-content;max-width:85%;font-size:14px}
+.las-c{background:rgba(239,237,232,.05);border:1px solid var(--cizgi);
+  border-radius:12px 12px 12px 3px;padding:12px 14px;margin-bottom:12px}
+.las-c b{color:var(--bone);font-weight:700}
+.las-c p{margin:6px 0 0}
+.las-c p:first-child{margin-top:0}
+.las-kaynak{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--kirmizi);
+  text-decoration:none;border-bottom:1px solid rgba(232,69,44,.4)}
+.las-kaynak:hover{border-bottom-color:var(--kirmizi)}
+.las-uyari{color:var(--gri);font-size:13px}
+.las-sayfa{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+.las-sayfa a{display:block;text-decoration:none;padding:9px 11px;border-radius:9px;
+  border:1px solid var(--cizgi);transition:border-color .2s,background .2s}
+.las-sayfa a:hover{border-color:var(--kirmizi);background:rgba(232,69,44,.06)}
+.las-sayfa b{display:block;font-size:13.5px}
+.las-sayfa span{display:block;color:var(--gri);font-size:12px;line-height:1.45;margin-top:2px}
+.las-oner{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;align-items:center}
+.las-oner span{font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.14em;
+  color:var(--gri);text-transform:uppercase;width:100%}
+.las-oner button{background:none;border:1px solid var(--cizgi);color:var(--bone);
+  border-radius:999px;padding:6px 12px;font:inherit;font-size:12.5px;cursor:pointer;
+  transition:border-color .2s,color .2s;text-align:left}
+.las-oner button:hover{border-color:var(--kirmizi);color:var(--kirmizi)}
+.las-bag{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.las-bag a{flex:1;min-width:88px;text-align:center;text-decoration:none;font-size:13px;
+  font-weight:600;padding:9px 10px;border-radius:9px;border:1px solid var(--cizgi)}
+.las-bag a:first-child{background:var(--kirmizi);border-color:var(--kirmizi);color:#fff}
+.las-bag a:hover{border-color:var(--kirmizi)}
+.las-alt{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--cizgi)}
+.las-alt input{flex:1;background:rgba(239,237,232,.06);border:1px solid var(--cizgi);
+  border-radius:9px;padding:10px 12px;color:var(--bone);font:inherit;font-size:14px}
+.las-alt input:focus{outline:none;border-color:var(--kirmizi)}
+.las-alt button{background:var(--kirmizi);border:0;color:#fff;border-radius:9px;
+  width:44px;font-size:19px;cursor:pointer}
+.las-not{padding:0 14px 12px;color:var(--gri);font-size:11.5px;line-height:1.45}
+@media(max-width:560px){
+  #luna-as{right:12px;bottom:12px}
+  .las-kutu{width:calc(100vw - 24px);max-height:calc(100vh - 100px)}
+}
+@media(prefers-reduced-motion:reduce){.las-dug{transition:none}}
