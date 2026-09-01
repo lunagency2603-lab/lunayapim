@@ -356,3 +356,79 @@ padding:8px 17px;font-size:14px;text-decoration:none;color:var(--bone);transitio
   .taahhut > div{border-left:none;border-top:1px solid var(--cizgi);padding:22px 0 0}
   .taahhut > div:first-child{border-top:none;padding-top:0}
 }
+
+/* ================= v3 — katalog, örnek çalışma, ana sayfa filmi ================= */
+
+/* ---------- iş kartı: fare üzerindeyken sessiz önizleme ---------- */
+.is{isolation:isolate}
+.is::after{content:"";position:absolute;inset:0;z-index:4;
+  box-shadow:inset 0 0 0 1px rgba(239,237,232,.10);border-radius:3px;pointer-events:none;
+  transition:box-shadow .3s}
+.is:hover::after,.is:focus-visible::after{box-shadow:inset 0 0 0 1px rgba(232,69,44,.55)}
+.is:focus-visible{outline:none}
+.is-onizle{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;
+  pointer-events:none;opacity:0;transform:scale(1.34);transform-origin:center;
+  animation:isOnizGir .5s ease .15s forwards}
+@keyframes isOnizGir{to{opacity:1}}
+.is.oynuyor img{opacity:0;transition:opacity .4s .15s}
+.is.oynuyor .oynat{opacity:0;transition:opacity .25s}
+.is .kat,.is h3{z-index:3}
+.is h3{text-shadow:0 2px 18px rgba(10,10,12,.85)}
+.is .oynat{transition:opacity .25s}
+
+/* ---------- vitrin: kavisli katalog ---------- */
+.vitrin{display:flex !important;grid-template-columns:none !important;
+  gap:24px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
+  perspective:1500px;perspective-origin:50% 46%;
+  padding:26px 0 34px;margin:0 -32px;cursor:grab;
+  scrollbar-width:none;-ms-overflow-style:none;overscroll-behavior-x:contain}
+.vitrin::-webkit-scrollbar{display:none}
+.vitrin.suruk{cursor:grabbing}
+.vitrin > .is{flex:0 0 min(580px,72vw);scroll-snap-align:center;
+  transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,opacity;
+  transition:opacity .35s ease,box-shadow .35s ease;
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.85)}
+.vitrin > .is img{aspect-ratio:16/9;filter:grayscale(.25)}
+.vitrin > .is:hover img{filter:none}
+.vitrin::before,.vitrin::after{content:"";flex:0 0 max(8px,calc(50% - min(290px,36vw)));
+  scroll-snap-align:none}
+.vitrin-alt{display:flex;align-items:center;gap:14px;margin-top:2px;
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gri)}
+.vitrin-alt i{flex:1;height:1px;background:var(--cizgi);display:block}
+.acik .vitrin-alt i{background:var(--cizgi-koyu)}
+
+/* ---------- örnek çalışma ---------- */
+.ornek{display:grid;grid-template-columns:1.55fr .95fr;gap:0;
+  border:1px solid var(--cizgi-koyu);border-radius:4px;overflow:hidden;background:#fff}
+.acik .ornek{border-color:var(--cizgi-koyu)}
+.ornek video{width:100%;height:100%;object-fit:cover;display:block;background:#0A0A0C;
+  aspect-ratio:16/9}
+.ornek-kunye{padding:30px 30px 26px;display:flex;flex-direction:column;gap:0}
+.ornek-kunye > div{padding:13px 0;border-top:1px solid var(--cizgi-koyu)}
+.ornek-kunye > div:first-child{border-top:0;padding-top:0}
+.ornek-kunye b{display:block;font-family:"Space Mono",monospace;font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--kirmizi);font-weight:400;
+  margin-bottom:5px}
+.ornek-kunye span{display:block;font-size:15.5px;line-height:1.45;color:var(--gri-2)}
+.ornek-not{margin-top:16px;font-size:14.5px;color:var(--gri);max-width:76ch;
+  border-left:2px solid var(--kirmizi);padding-left:14px}
+.acik .ornek-not{color:var(--gri-2)}
+
+/* ---------- ana sayfa filmi ---------- */
+.marka-film{position:relative;border-top:1px solid var(--cizgi);
+  border-bottom:1px solid var(--cizgi);background:var(--ink)}
+.marka-film video{width:100%;height:auto;display:block}
+.marka-film .serit{position:absolute;left:0;right:0;bottom:0;display:flex;
+  justify-content:space-between;gap:18px;padding:14px 32px;
+  background:linear-gradient(to top,rgba(10,10,12,.9),rgba(10,10,12,0));
+  font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(239,237,232,.72);pointer-events:none}
+
+@media(max-width:900px){
+  .ornek{grid-template-columns:1fr}
+  .ornek-kunye{padding:22px 22px 20px}
+  .vitrin > .is{flex:0 0 84vw}
+  .marka-film .serit{font-size:9px;letter-spacing:.12em;padding:10px 18px}
+  .marka-film .serit span:nth-child(2){display:none}
+}
