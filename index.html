@@ -59,7 +59,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/luna.css?v=8">
+<link rel="stylesheet" href="assets/luna.css?v=9">
 
 </head>
 <body>
@@ -99,6 +99,19 @@
       <a class="btn btn-dolu" href="matrix">Çalışan bir sistemi gör</a>
       <a class="btn btn-cizgi" href="#urunler">Ürünlerimiz</a>
     </div>
+    <form class="hero-sor" id="hero-sor" autocomplete="off">
+      <label for="hero-giris">Bir şey sor — bu sitedeki 336 sayfadan cevaplasın</label>
+      <div class="hero-sor-alan">
+        <input id="hero-giris" type="text" maxlength="120"
+               placeholder="Örn. 3D render kaç günde teslim ediliyor?">
+        <button type="submit" aria-label="Sor">Sor</button>
+      </div>
+      <div class="hero-oner">
+        <button type="button" data-s="Fiyatlar ne kadar?">Fiyatlar ne kadar?</button>
+        <button type="button" data-s="Drone çekimi için izin gerekiyor mu?">Drone izni gerekiyor mu?</button>
+        <button type="button" data-s="Bursa dışında çalışıyor musunuz?">Bursa dışında çalışıyor musunuz?</button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -110,6 +123,30 @@
     <source src="assets/video/luna-marka.mp4" type="video/mp4">
   </video>
 </div>
+
+<div class="marka-film karga-serit">
+  <video data-luna muted loop playsinline preload="none"
+         poster="assets/video/karga-k1.jpg"
+         aria-label="Luna Yapım sembolü — arkadan ışıklı karga silueti">
+    <source src="assets/video/karga-k1.webm" type="video/webm">
+    <source src="assets/video/karga-k1.mp4" type="video/mp4">
+  </video>
+  <div class="serit">
+    <span>Karga · Luna Yapım sembolü</span>
+    <span>Kendi üretimimiz · Seedance 2 · 5 sn</span>
+    <span>Renk ve kodlama bize ait</span>
+  </div>
+</div>
+
+<section id="motor">
+  <div class="wrap">
+    <div class="bas"><span class="no">◆</span><div>
+      <h2>Bu siteyi bir <i>sistem</i> işletiyor</h2>
+      <p class="aciklama">Aşağıdaki sayılar pazarlama cümlesi değil — depodaki dosyalardan
+        sayıldı. Sayamadığımız hiçbir şey burada yazmıyor.</p></div></div>
+    <div id="luna-motor" class="motor"></div>
+  </div>
+</section>
 
 <section class="acik" id="urunler">
   <div class="wrap">
@@ -319,6 +356,20 @@
 <script src="assets/sosyal.js"></script>
 <script src="assets/olcum.js"></script>
 <script src="assets/yorumlar.js"></script>
-<script src="assets/asistan.js?v=1" defer></script>
+<script src="assets/motor.js?v=1" defer></script>
+<script src="assets/asistan.js?v=2" defer></script>
+<script id="hero-sor-baglama">
+(function(){
+  var f=document.getElementById("hero-sor"); if(!f) return;
+  var g=document.getElementById("hero-giris");
+  function sor(m){ m=(m||"").trim(); if(!m) return;
+    if(typeof window.lunaAsistanSor==="function") window.lunaAsistanSor(m);
+    else location.href="yapay-zeka/"; }
+  f.addEventListener("submit",function(e){ e.preventDefault(); sor(g.value); });
+  f.addEventListener("click",function(e){
+    var b=e.target.closest("[data-s]"); if(!b) return;
+    e.preventDefault(); g.value=b.getAttribute("data-s"); sor(g.value); });
+})();
+</script>
 </body>
 </html>

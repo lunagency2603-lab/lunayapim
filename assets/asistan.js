@@ -12,7 +12,7 @@
     return h ? h.getAttribute("href").replace(/luna\.css.*$/, "") : "assets/";
   })();
 
-  var V = null, yukleniyor = false, acik = false, sonSorgu = "";
+  var V = null, yukleniyor = false, acik = false, sonSorgu = "", kuyruk = [];
 
   /* ---------------- metin araçları ---------------- */
   var DUR = {"ve":1,"ile":1,"icin":1,"bir":1,"bu":1,"da":1,"de":1,"mi":1,"mu":1,
@@ -35,14 +35,17 @@
 
   /* ---------------- veri ---------------- */
   function veriYukle(sonra) {
-    if (V) { sonra(); return; }
+    if (V !== null) { sonra(); return; }
+    /* Yükleme sürerken gelen ikinci istek kaybolmasın — sıraya alınıyor.
+       (Kahraman kutusundan gelen soru tam da bu ana denk geliyordu.) */
+    kuyruk.push(sonra);
     if (yukleniyor) return;
     yukleniyor = true;
     var x = new XMLHttpRequest();
     x.open("GET", KOK + "asistan-veri.json", true);
     x.onload = function () {
       yukleniyor = false;
-      if (x.status < 200 || x.status >= 300) { V = false; sonra(); return; }
+      if (x.status < 200 || x.status >= 300) { V = false; bosalt(); return; }
       try { V = JSON.parse(x.responseText); } catch (e) { V = false; }
       if (V && V.soru) {
         for (var i = 0; i < V.soru.length; i++) {
@@ -55,10 +58,16 @@
           p._b = sade(p.b || "");
         }
       }
-      sonra();
+      bosalt();
     };
-    x.onerror = function () { yukleniyor = false; V = false; sonra(); };
+    x.onerror = function () { yukleniyor = false; V = false; bosalt(); };
     x.send();
+
+    function bosalt() {
+      var k = kuyruk.slice();
+      kuyruk.length = 0;
+      k.forEach(function (f) { try { f(); } catch (e) {} });
+    }
   }
 
   /* ---------------- arama ---------------- */
@@ -256,6 +265,15 @@
     g.scrollTop = g.scrollHeight;
     olcum(sorgu, iyi || s.length > 0);
   }
+
+  /* Dışarıdan çağrı: ana sayfadaki kahraman kutusu bunu kullanıyor. */
+  window.lunaAsistanSor = function (metin) {
+    if (!document.getElementById("luna-as")) kur();
+    if (!acik) ac();
+    var g = el("las-giris");
+    if (g) g.value = metin || "";
+    if (metin) sor(metin);
+  };
 
   if (document.readyState === "loading")
     document.addEventListener("DOMContentLoaded", kur);

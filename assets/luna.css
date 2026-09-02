@@ -748,3 +748,73 @@ details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
   font-size:14.5px;line-height:1.5}
 .kapsam li span{display:block;font-family:"Space Mono",monospace;font-size:9.5px;
   letter-spacing:.16em;text-transform:uppercase;color:var(--gri);margin-bottom:3px}
+
+/* ================= v10 · Kahraman soru kutusu + Motor =================
+   Amaç: ilk giren kişi yazılımı OKUMASIN, DENESİN. Kutuya yazdığı an
+   sitenin kendi cevap katmanı çalışıyor. */
+.hero-sor{margin-top:34px;max-width:560px}
+.hero-sor label{display:block;font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--kirmizi);margin-bottom:10px}
+.hero-sor-alan{display:flex;gap:9px}
+.hero-sor input{flex:1;min-width:0;background:rgba(10,10,12,.62);backdrop-filter:blur(10px);
+  border:1px solid rgba(239,237,232,.22);border-radius:10px;padding:14px 16px;
+  color:var(--bone);font:inherit;font-size:15.5px}
+.hero-sor input::placeholder{color:rgba(239,237,232,.45)}
+.hero-sor input:focus{outline:none;border-color:var(--kirmizi);
+  box-shadow:0 0 0 3px rgba(232,69,44,.16)}
+.hero-sor-alan button{background:var(--kirmizi);border:0;color:#fff;border-radius:10px;
+  padding:0 22px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;
+  transition:background .2s}
+.hero-sor-alan button:hover{background:var(--kirmizi-2)}
+.hero-oner{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.hero-oner button{background:rgba(10,10,12,.5);backdrop-filter:blur(8px);
+  border:1px solid rgba(239,237,232,.18);color:rgba(239,237,232,.86);border-radius:999px;
+  padding:6px 13px;font:inherit;font-size:12.5px;cursor:pointer;
+  transition:border-color .2s,color .2s}
+.hero-oner button:hover{border-color:var(--kirmizi);color:var(--bone)}
+
+/* --- motor --- */
+.motor{margin-top:8px}
+.mtr-sayac{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;background:var(--cizgi);border:1px solid var(--cizgi);border-radius:12px;
+  overflow:hidden}
+.mtr-k{background:var(--ink);padding:24px 22px 22px}
+.mtr-k b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:44px;line-height:.9;letter-spacing:-.045em;color:var(--bone);
+  font-variant-numeric:tabular-nums}
+.mtr-e{display:block;margin-top:9px;font-size:14.5px;color:var(--bone);opacity:.9}
+.mtr-a{display:block;margin-top:5px;font-size:12.5px;line-height:1.45;color:var(--gri)}
+.mtr-on .mtr-k b{color:var(--kirmizi);transition:color .5s .3s}
+
+/* akış — adımlar sırayla beliriyor */
+.mtr-boru{margin-top:30px}
+.mtr-adim{list-style:none;padding:0;margin:14px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;
+  counter-reset:adim}
+.mtr-adim li{position:relative;border-top:2px solid var(--cizgi);padding:13px 0 0;
+  opacity:0;transform:translateY(8px)}
+.mtr-on .mtr-adim li{opacity:1;transform:none;
+  transition:opacity .5s var(--g),transform .5s var(--g),border-color .5s var(--g)}
+.mtr-on .mtr-adim li{border-top-color:var(--kirmizi)}
+.mtr-adim code{display:block;font-family:"Space Mono",monospace;font-size:12.5px;
+  letter-spacing:.06em;color:var(--kirmizi)}
+.mtr-adim code::before{counter-increment:adim;content:counter(adim,decimal-leading-zero) " ";
+  color:var(--gri)}
+.mtr-adim span{display:block;margin-top:6px;font-size:13.5px;line-height:1.5;color:var(--gri)}
+.mtr-not{margin-top:22px;font-size:13px;color:var(--gri)}
+.mtr-not b{color:var(--bone);font-weight:600}
+@media(prefers-reduced-motion:reduce){
+  .mtr-adim li{opacity:1;transform:none}
+  .mtr-on .mtr-k b{transition:none}
+}
+@media(max-width:560px){
+  .mtr-k b{font-size:36px}
+  .hero-sor-alan{flex-direction:column}
+  .hero-sor-alan button{padding:13px}
+}
+
+/* karga şeridi — motor bölümünün girişi */
+.karga-serit video{max-height:420px;object-fit:cover}
+.karga-serit::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(10,10,12,.35),rgba(10,10,12,0) 32%,
+             rgba(10,10,12,0) 62%,rgba(10,10,12,.55))}
