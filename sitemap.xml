@@ -360,4 +360,8 @@
   <url><loc>https://lunayapim.com/fiyatlar</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lunayapim.com/seffaflik</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lunayapim.com/yapay-zeka/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lunayapim.com/gundem/</loc><lastmod>2026-09-02</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lunayapim.com/gundem/2026-09-02</loc><lastmod>2026-09-02</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lunayapim.com/bulten/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lunayapim.com/bulten/00-sistem</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
