@@ -18,8 +18,8 @@ h1,h2,h3{font-family:"Bricolage Grotesque","Manrope",sans-serif;font-weight:800;
 a{color:inherit}
 
 /* ---------- header ---------- */
-header{position:sticky;top:0;z-index:60;background:rgba(10,10,12,.82);
-  backdrop-filter:blur(14px);border-bottom:1px solid var(--cizgi)}
+header{position:sticky;top:0;z-index:60;background:rgba(10,10,12,.965);
+  backdrop-filter:blur(18px) saturate(1.1);border-bottom:1px solid var(--cizgi)}
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:13px 0}
 .marka{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
 .marka img{width:34px;height:auto;display:block;transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
@@ -818,3 +818,17 @@ details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
 .karga-serit::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to bottom,rgba(10,10,12,.35),rgba(10,10,12,0) 32%,
              rgba(10,10,12,0) 62%,rgba(10,10,12,.55))}
+
+/* ================= v11 · Düzen hataları =================
+   1) Tablolar dar ekranda sayfayı yatay kaydırıyordu — artık kendi içinde kayıyor.
+   2) Uzun kelimeler dev başlıklarda kutudan taşıyordu. */
+.tablo-kaydir{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:22px 0;
+  border-radius:8px}
+.tablo-kaydir>table{margin:0;min-width:520px}
+.tablo-kaydir::-webkit-scrollbar{height:6px}
+.tablo-kaydir::-webkit-scrollbar-thumb{background:var(--cizgi);border-radius:3px}
+h1,h2,h3,h4{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+.prose table,.wrap table{max-width:100%}
+@media(max-width:560px){
+  .tablo-kaydir{margin-inline:-4px}
+}
