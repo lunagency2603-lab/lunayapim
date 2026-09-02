@@ -599,6 +599,7 @@ details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
 .las-dug:focus-visible{outline:2px solid var(--kirmizi);outline-offset:3px}
 .las-dug img{display:block}
 #luna-as.las-acik .las-dug span{display:none}
+.las-kutu[hidden]{display:none !important}
 .las-kutu{position:absolute;right:0;bottom:56px;width:min(380px,calc(100vw - 40px));
   background:var(--ink-2);border:1px solid var(--cizgi);border-radius:16px;overflow:hidden;
   box-shadow:0 24px 70px rgba(0,0,0,.6);display:flex;flex-direction:column;
@@ -656,3 +657,94 @@ details.sss p{padding:0 0 20px;color:var(--gri);max-width:78ch}
   .las-kutu{width:calc(100vw - 24px);max-height:calc(100vh - 100px)}
 }
 @media(prefers-reduced-motion:reduce){.las-dug{transition:none}}
+
+/* ================= v8 · Yetki ve belgeler ================= */
+.belgeler{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:14px;margin:20px 0 18px}
+.blg{border:1px solid var(--cizgi);border-radius:12px;padding:16px 17px;
+  background:rgba(239,237,232,.035)}
+.acik .blg{border-color:var(--cizgi-koyu);background:rgba(10,10,12,.03)}
+.blg b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:15.5px;
+  letter-spacing:-.02em;margin-bottom:6px}
+.blg p{font-size:14.5px;line-height:1.55;color:rgba(239,237,232,.72);margin:0}
+.acik .blg p{color:var(--gri-2)}
+.blg-no{display:block;margin-top:11px;padding-top:10px;border-top:1px solid var(--cizgi);
+  font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.05em;
+  color:var(--kirmizi)}
+.acik .blg-no{border-top-color:var(--cizgi-koyu)}
+.blg-bos{color:var(--gri);letter-spacing:.02em}
+
+/* ================= v9 · İşler vitrini — editoryal düzen =================
+   Amaç: 10 gerçek işi büyük ve künyeli göstermek. Öne çıkan iki iş iki
+   sütun kaplıyor, kalanlar standart. Boş yer tutucu iş gösterilmiyor. */
+.isler:not(.kure){
+  display:grid !important;
+  grid-template-columns:repeat(6,1fr) !important;
+  gap:34px 24px;align-items:start}
+.isler:not(.kure) .is{grid-column:span 2}
+.isler:not(.kure) .is.one-2{grid-column:span 4}
+.isler:not(.kure) .is.one-1{grid-column:span 2}
+
+@media(max-width:1080px){
+  .isler:not(.kure){grid-template-columns:repeat(4,1fr) !important}
+  .isler:not(.kure) .is{grid-column:span 2}
+  .isler:not(.kure) .is.one-2{grid-column:span 4}
+}
+@media(max-width:680px){
+  .isler:not(.kure){grid-template-columns:1fr !important;gap:26px}
+  .isler:not(.kure) .is,
+  .isler:not(.kure) .is.one-2,
+  .isler:not(.kure) .is.one-1{grid-column:span 1}
+}
+
+/* kapak */
+.isler:not(.kure) .kapak{position:relative;overflow:hidden;border-radius:4px;
+  background:var(--ink-2);aspect-ratio:16/9}
+.isler:not(.kure) .kapak img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(.32) contrast(1.02);
+  transition:transform .6s cubic-bezier(.2,.8,.3,1),filter .4s}
+.isler:not(.kure) .is:hover .kapak img,
+.isler:not(.kure) .is:focus-visible .kapak img{transform:scale(1.045);filter:none}
+.isler:not(.kure) .is:focus-visible{outline:2px solid var(--kirmizi);outline-offset:5px}
+
+/* künye rozeti — süre ve çözünürlük, yalnızca bildiğimizde */
+.isler:not(.kure) .is-kunye{position:absolute;right:10px;bottom:10px;z-index:5;
+  background:rgba(10,10,12,.78);backdrop-filter:blur(6px);color:var(--bone);
+  font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  padding:5px 9px;border-radius:3px}
+
+/* alt künye bloğu */
+.isler:not(.kure) .is-alt{padding:13px 2px 0}
+.isler:not(.kure) .is-alt .kat{position:static;background:none;padding:0;
+  color:var(--kirmizi);font-family:"Space Mono",monospace;font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;display:block}
+.isler:not(.kure) .is-alt h3{font-size:19px;line-height:1.15;margin:7px 0 0;
+  letter-spacing:-.03em}
+.isler:not(.kure) .is.one-2 .is-alt h3{font-size:25px}
+.isler:not(.kure) .is-alt .musteri{display:block;margin-top:6px;font-size:13.5px;
+  color:var(--bone);opacity:.82}
+.isler:not(.kure) .is-alt .teslim{display:block;margin-top:5px;font-size:13px;
+  line-height:1.5;color:var(--gri)}
+.acik .isler:not(.kure) .is-alt .musteri{color:var(--ink);opacity:.78}
+.acik .isler:not(.kure) .is-alt .teslim{color:var(--gri-2)}
+
+/* süzgeç şeridi — daha okunur */
+.is-filtre{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 26px}
+.is-filtre button{background:none;border:1px solid var(--cizgi);color:var(--bone);
+  border-radius:999px;padding:7px 15px;font:inherit;font-size:13px;cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s}
+.is-filtre button:hover{border-color:var(--kirmizi)}
+.is-filtre button[aria-pressed="true"]{background:var(--kirmizi);border-color:var(--kirmizi);
+  color:#fff}
+.acik .is-filtre button{border-color:var(--cizgi-koyu);color:var(--ink)}
+.acik .is-filtre button[aria-pressed="true"]{color:#fff}
+.is-sayac{margin-left:auto;font-family:"Space Mono",monospace;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gri)}
+
+/* üretim kapsamı listesi — "iş" değil, "yapabildiğimiz" */
+.kapsam{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:10px;margin-top:18px;list-style:none;padding:0}
+.kapsam li{border-left:2px solid var(--kirmizi);padding:3px 0 3px 13px;
+  font-size:14.5px;line-height:1.5}
+.kapsam li span{display:block;font-family:"Space Mono",monospace;font-size:9.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gri);margin-bottom:3px}

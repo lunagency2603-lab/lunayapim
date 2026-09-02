@@ -32,31 +32,35 @@ window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
   { yerel:"ornek-cm", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
-    musteri:"CM Vorarlberg · Avusturya", etiket:["isler","ornek","insaat-3d","emlak"] },
+    musteri:"CM Vorarlberg · Avusturya", sure:"0:15", olcu:"1600×900",
+    teslim:"Dış cephe render + kamera hareketi + marka kapanışı",
+    one:2, etiket:["isler","ornek","insaat-3d","emlak"] },
   { yerel:"ornek-galzura", baslik:"Galzura Tanıtım Animasyonu", kat:"Animasyon",
-    musteri:"Galzura · Avusturya", etiket:["isler","ornek","urun-animasyon"] },
+    musteri:"Galzura · Avusturya", sure:"1:00", olcu:"1280×720",
+    teslim:"Animasyon + seslendirme + TR/DE iki dil, yatay ve 9:16 dikey sürüm",
+    one:1, etiket:["isler","ornek","urun-animasyon"] },
 
   /* ---------- YAYINDA ---------- */
-  { id:"TjUTFk9LZSs", baslik:"Kısa Film",              kat:"Kısa Film",      etiket:["isler"] },
-  { id:"aV6_WSjJcnU", baslik:"Sinematografi",          kat:"Sinematografi",  etiket:["isler"] },
-  { id:"kRc1KAWI-_o", baslik:"Üretim Reklam Filmi",    kat:"Reklam",         etiket:["isler","isletme"] },
-  { id:"YGYCJZPC1cA", baslik:"Düğün Klibi",            kat:"Düğün",          etiket:["isler","dugun"] },
-  { id:"DuMsRUDUYc8", baslik:"Şiir Klibi",             kat:"Klip",           etiket:["isler","klip"] },
-  { id:"CV6kVVBuxxM", baslik:"Kısa Film / Klip",       kat:"Kısa Film",      etiket:["isler","klip"] },
-  { id:"itxSC873O_U", baslik:"Video Opener",           kat:"Opener",         etiket:["isler"] },
-  { id:"SAL0X164pbA", baslik:"Müzik Klibi",            kat:"Klip",           etiket:["isler","klip"] },
+  { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", baslik:"Kısa Film",              kat:"Kısa Film",      etiket:["isler"] },
+  { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", baslik:"Sinematografi",          kat:"Sinematografi",  etiket:["isler"] },
+  { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", baslik:"Üretim Reklam Filmi",    kat:"Reklam",         etiket:["isler","isletme"] },
+  { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", baslik:"Düğün Klibi",            kat:"Düğün",          etiket:["isler","dugun"] },
+  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Şiir Klibi",             kat:"Klip",           etiket:["isler","klip"] },
+  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"Kısa Film / Klip",       kat:"Kısa Film",      etiket:["isler","klip"] },
+  { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", baslik:"Video Opener",           kat:"Opener",         etiket:["isler"] },
+  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", baslik:"Müzik Klibi",            kat:"Klip",           etiket:["isler","klip"] },
 
   /* ---------- İNŞAAT & MİMARİ 3D MODELLEME (kimlik bekliyor) ---------- */
-  { id:"", baslik:"Villa Dış Cephe Render Animasyonu",   kat:"3D Mimari",   etiket:["isler","insaat-3d"] },
-  { id:"", baslik:"İç Mekân Sanal Tur",                  kat:"3D Mimari",   etiket:["isler","insaat-3d"] },
-  { id:"", baslik:"Site / Yerleşim Maket Videosu",       kat:"3D Mimari",   etiket:["isler","insaat-3d"] },
-  { id:"", baslik:"İnşaat Aşama Simülasyonu",            kat:"3D Mimari",   etiket:["isler","insaat-3d"] },
+  { id:"", baslik:"Villa Dış Cephe Render Animasyonu",   kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
+  { id:"", baslik:"İç Mekân Sanal Tur",                  kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
+  { id:"", baslik:"Site / Yerleşim Maket Videosu",       kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
+  { id:"", baslik:"İnşaat Aşama Simülasyonu",            kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
 
   /* ---------- ÜRÜN & HİZMET ANİMASYONU (kimlik bekliyor) ---------- */
-  { id:"", baslik:"3D Ürün Tanıtım Animasyonu",          kat:"Ürün 3D",     etiket:["isler","urun-animasyon"] },
-  { id:"", baslik:"Makine Çalışma Prensibi Animasyonu",  kat:"Ürün 3D",     etiket:["isler","urun-animasyon"] },
-  { id:"", baslik:"Üretim Hattı Fabrika Animasyonu",     kat:"Ürün 3D",     etiket:["isler","urun-animasyon"] },
-  { id:"", baslik:"Ürün Patlatılmış Görünüm (Exploded)", kat:"Ürün 3D",     etiket:["isler","urun-animasyon"] },
+  { id:"", baslik:"3D Ürün Tanıtım Animasyonu",          kat:"Ürün 3D",     etiket:["kapsam","urun-animasyon"] },
+  { id:"", baslik:"Makine Çalışma Prensibi Animasyonu",  kat:"Ürün 3D",     etiket:["kapsam","urun-animasyon"] },
+  { id:"", baslik:"Üretim Hattı Fabrika Animasyonu",     kat:"Ürün 3D",     etiket:["kapsam","urun-animasyon"] },
+  { id:"", baslik:"Ürün Patlatılmış Görünüm (Exploded)", kat:"Ürün 3D",     etiket:["kapsam","urun-animasyon"] },
 
   /* ---------- KLİP ÇEKİMİ (kimlik bekliyor) ---------- */
   { id:"", baslik:"Marka Klibi",                         kat:"Klip",        etiket:["isler","klip"] },
@@ -103,14 +107,23 @@ window.LUNA_VIDEOLAR = [
 
   function kart(v, i){
     var b = kacir(v.baslik), k = kacir(v.kat);
-    return '<article class="is" data-i="'+i+'" data-kat="'+k+'" tabindex="0" role="button" '+
-      'aria-label="'+b+' — videoyu aç">'+
+    /* künye: yalnızca gerçekten bildiğimiz alanlar — boş olan hiç yazılmıyor */
+    var kunye = [];
+    if(v.sure) kunye.push(kacir(v.sure));
+    if(v.olcu) kunye.push(kacir(v.olcu));
+    var one = v.one ? ' one one-'+v.one : '';
+    return '<article class="is'+one+'" data-i="'+i+'" data-kat="'+k+'" tabindex="0" '+
+      'role="button" aria-label="'+b+' — videoyu aç">'+
       '<div class="kapak">'+
         '<img loading="lazy" src="'+afis(v)+'" alt="'+b+'">'+
         '<span class="im"></span>'+
+        (kunye.length ? '<span class="is-kunye">'+kunye.join(' · ')+'</span>' : '')+
       '</div>'+
-      '<div class="is-alt"><span class="kat">'+k+'</span><h3>'+b+'</h3>'+
+      '<div class="is-alt">'+
+        '<span class="kat">'+k+'</span>'+
+        '<h3>'+b+'</h3>'+
         (v.musteri ? '<span class="musteri">'+kacir(v.musteri)+'</span>' : '')+
+        (v.teslim ? '<span class="teslim">'+kacir(v.teslim)+'</span>' : '')+
       '</div></article>';
   }
 
@@ -327,8 +340,8 @@ window.LUNA_VIDEOLAR = [
     if(kutu && !kutu.querySelector('[data-gor]')){
       var g = document.createElement('span');
       g.className = 'is-gorunum';
-      g.innerHTML = '<button type="button" data-gor="kure" aria-pressed="true" title="Küre görünüm">Küre</button>'+
-                    '<button type="button" data-gor="izgara" aria-pressed="false" title="Izgara görünüm">Izgara</button>';
+      g.innerHTML = '<button type="button" data-gor="izgara" aria-pressed="true" title="Vitrin görünüm">Vitrin</button>'+
+                    '<button type="button" data-gor="kure" aria-pressed="false" title="Küre görünüm">Küre</button>';
       var sy = kutu.querySelector('.is-sayac');
       if(sy) kutu.insertBefore(g, sy); else kutu.appendChild(g);
       g.addEventListener('click', function(e){
@@ -337,8 +350,8 @@ window.LUNA_VIDEOLAR = [
       });
     }
 
-    var tercih = 'kure';
-    try { tercih = localStorage.getItem('luna-isler-gorunum') || 'kure'; } catch(x){}
+    var tercih = 'izgara';
+    try { tercih = localStorage.getItem('luna-isler-gorunum') || 'izgara'; } catch(x){}
     if(tercih === 'spiral') tercih = 'kure';
     if(AZALT || !FARE) tercih = 'izgara';
     ac(tercih === 'kure');
@@ -380,6 +393,8 @@ window.LUNA_VIDEOLAR = [
       var sec = liste.filter(function(v){
         return (v.id || v.yerel) && v.etiket && v.etiket.indexOf(etiket) !== -1;
       });
+      /* öne çıkan işler başa: one değeri büyük olan önce */
+      sec = sec.slice().sort(function(a,b){ return (b.one||0) - (a.one||0); });
       if(limit > 0) sec = sec.slice(0, limit);
 
       if(!sec.length){
