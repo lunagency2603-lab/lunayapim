@@ -1253,7 +1253,11 @@ body::after{content:"";position:fixed;inset:-50%;width:200%;height:200%;pointer-
 #agac{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 body.agacli header{position:sticky}
 body.agacli > section,body.agacli > .hero,body.agacli > footer,body.agacli > .film{position:relative;z-index:1}
-body.agacli > section:not(.acik):not(.cta):not(#agac-tepe){background:rgba(10,10,12,.88)}
+body.agacli > section:not(.acik):not(.cta):not(#agac-tepe){background:linear-gradient(180deg,rgba(10,10,12,0) 0,rgba(10,10,12,.78) 110px,rgba(10,10,12,.78) calc(100% - 110px),rgba(10,10,12,0) 100%)}
+body.agacli > section.acik{background:linear-gradient(180deg,rgba(239,237,232,0) 0,rgba(239,237,232,.9) 96px,rgba(239,237,232,.9) calc(100% - 96px),rgba(239,237,232,0) 100%)}
+body.agacli > section.acik .uv,body.agacli > section.acik .urun,body.agacli > section.acik .hiz{background:rgba(255,255,255,.86);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+body.agacli > .film{background:linear-gradient(180deg,rgba(10,10,12,0) 0,rgba(10,10,12,.82) 90px,rgba(10,10,12,.82) calc(100% - 90px),rgba(10,10,12,0) 100%)}
+body.agacli > section.cta{background:linear-gradient(180deg,rgba(232,69,44,.94),rgba(232,69,44,.9))}
 body.agacli > .hero{background:var(--ink)}
 body.agacli > footer{background:var(--ink)}
 #agac-tepe{min-height:92vh;display:flex;align-items:center;padding:60px 0 40px;background:transparent}

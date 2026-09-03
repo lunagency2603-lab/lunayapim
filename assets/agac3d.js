@@ -26,7 +26,7 @@
   renderer.setClearColor(0x000000, 0);
 
   var scene = new T.Scene();
-  scene.fog = new T.FogExp2(0x0a0a0c, DAR ? 0.06 : 0.048);
+  scene.fog = new T.FogExp2(0x0c0d12, DAR ? 0.05 : 0.04);
   var cam = new T.PerspectiveCamera(DAR ? 46 : 38, 1, 0.1, 120);
 
   // ---- ışık: arkadan amber kenar ışığı (karga klibiyle aynı dil), önden soğuk dolgu, gökten loş
@@ -129,8 +129,7 @@
     g.setIndex(IDX);
     if (agacMesh) { scene.remove(agacMesh); agacMesh.geometry.dispose(); }
     agacMesh = new T.Mesh(g, malzeme); agacMesh.castShadow = !DAR; agacMesh.receiveShadow = !DAR; scene.add(agacMesh);
-    // uç tomurcukları: seyrek vermilyon yapraklar (kimlik rengi, az)
-    yaprakKur();
+    // (yaprak/tomurcuk düzlemleri kaldırıldı — kesitin yanında çöp gibi duruyordu)
     kurSure = performance.now() - t1;
   }
   function govdeNokta(wy) { var t = Math.max(0, Math.min(1, (wy + 3) / (TEPE + 3))); return govdeEgri.getPointAt(t); }
@@ -145,6 +144,25 @@
     for (var i = 0; i < n; i++) { var p = tepeNokta[Math.floor(r() * tepeNokta.length)]; o.position.copy(p); o.rotation.set(r() * 3, r() * 3, r() * 3); o.updateMatrix(); yaprak.setMatrixAt(i, o.matrix); }
     scene.add(yaprak);
   }
+
+  // ---- doğa fonu: uzaktaki sisli orman panoraması, ağacın çevresinde büyük silindir (iç yüz).
+  //      Kamera dönerken paralaks verir; inerken kameradan biraz yavaş iner (derinlik hissi).
+  var fon = null, fonTex = yukleyici.load(KOK + (DAR ? "agac/orman-k.jpg" : "agac/orman.jpg"), function (t) {
+    t.wrapS = T.RepeatWrapping; t.wrapT = T.ClampToEdgeWrapping; t.repeat.set(2, 1); t.encoding = T.sRGBEncoding; t.anisotropy = 4; t.needsUpdate = true; ihtiyac();
+  });
+  (function () {
+    var g = new T.CylinderGeometry(46, 46, 52, 48, 1, true);
+    var m = new T.MeshBasicMaterial({ map: fonTex, side: T.BackSide, fog: false, transparent: true, opacity: 0.92, color: 0x9aa3b4 });
+    fon = new T.Mesh(g, m); fon.renderOrder = -1; scene.add(fon);
+  })();
+  // yer sisi: alçak, geniş, yumuşak disk
+  var yerSis = (function () {
+    var cv = document.createElement("canvas"); cv.width = cv.height = 256; var x = cv.getContext("2d");
+    var gr = x.createRadialGradient(128, 128, 10, 128, 128, 128); gr.addColorStop(0, "rgba(120,128,146,.55)"); gr.addColorStop(1, "rgba(120,128,146,0)");
+    x.fillStyle = gr; x.fillRect(0, 0, 256, 256);
+    var t = new T.CanvasTexture(cv), m = new T.MeshBasicMaterial({ map: t, transparent: true, depthWrite: false, fog: false, opacity: 0.8 });
+    var p = new T.Mesh(new T.PlaneGeometry(60, 60), m); p.rotation.x = -Math.PI / 2; p.position.y = -2.4; scene.add(p); return p;
+  })();
 
   // ---- toz / sis parçacıkları
   var toz = (function () {
@@ -178,6 +196,8 @@
 
   // ---- kamera: gövde boyunca iner, etrafında döner
   var hedef = new T.Vector3(), bakis = new T.Vector3(), kamPos = new T.Vector3(), ilk = true;
+  var fare = { x: 0, y: 0 }, fareY = { x: 0, y: 0 };
+  window.addEventListener("pointermove", function (e) { if (e.pointerType === "touch") return; fare.x = e.clientX / window.innerWidth - 0.5; fare.y = e.clientY / window.innerHeight - 0.5; ihtiyac(); }, { passive: true });
   function kamera(sy, dt) {
     var wy = dunyaY(sy), th = kameraAci(sy), R = DAR ? 7.2 : 8.4;
     var g = govdeNokta(wy);
@@ -194,9 +214,16 @@
       bakis.lerp(hedefNokta, w * 0.85);
       kamPos.y += (enYakin.uc.y + 0.9 - kamPos.y) * w * 0.6;
     }
+    // fare paralaksı: kamera yanlara/yukarı çok hafif kayar (deltaTime ölçekli yumuşatma)
+    var kf = 1 - Math.pow(0.02, dt); fareY.x += (fare.x - fareY.x) * kf; fareY.y += (fare.y - fareY.y) * kf;
+    if (!DAR && !AZALT) { kamPos.addScaledVector(new T.Vector3(Math.cos(th), 0, -Math.sin(th)), fareY.x * 0.9); kamPos.y -= fareY.y * 0.5; }
+    // kaydırmayla senkron: ~120 ms içinde oturur, takılma yok
     if (ilk || AZALT) { cam.position.copy(kamPos); hedef.copy(bakis); ilk = false; }
-    else { var k = 1 - Math.pow(0.001, dt); cam.position.lerp(kamPos, k); hedef.lerp(bakis, k); }
+    else { var k = 1 - Math.pow(0.0002, dt); cam.position.lerp(kamPos, k); hedef.lerp(bakis, k); }
     cam.lookAt(hedef);
+    // doğa fonu kamerayla iner (%78 hızla → paralaks), çok yavaş döner
+    if (fon) { fon.position.set(g.x, cam.position.y * 0.78 + 4, g.z); fon.rotation.y = th * 0.35 + (AZALT ? 0 : performance.now() * 0.000004); }
+    yerSis.position.set(g.x, Math.min(-2.4, wy - 9), g.z);
     // gölge kamerası ve ışıklar kamerayla birlikte insin
     anahtar.position.set(g.x - 6, wy + 14, g.z - 9); anahtar.target.position.set(g.x, wy, g.z);
     dolgu.position.set(kamPos.x + 3, wy + 5, kamPos.z + 2);
