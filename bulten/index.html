@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/luna.css?v=14">
+<link rel="stylesheet" href="../assets/luna.css?v=15">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Matrix Bülteni — piyasayı okuyan sistemin karnesi | Luna Yapım", "headline": "Matrix Bülteni — piyasayı okuyan sistemin karnesi | Luna Yapım", "description": "KDA Matrix her gün binlerce fiyat hareketini tarar ve hatlarını puanlar. Haftalık karne: sınavı geçen hatlar, sistemin baktığı yerler. Yatırım tavsiyesi değildir.", "url": "https://lunayapim.com/bulten/", "inLanguage": "tr", "isPartOf": {"@type": "WebSite", "name": "Luna Yapım", "url": "https://lunayapim.com/"}, "publisher": {"@type": "Organization", "name": "Luna Yapım"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://lunayapim.com/"}, {"@type": "ListItem", "position": 2, "name": "Matrix Bülteni", "item": "https://lunayapim.com/bulten/"}]}]}</script>
 </head>
 <body>
@@ -53,23 +53,36 @@
   </div>
 </header>
 
-<div class="page-hero">
-  <img class="karga-buyuk" src="../assets/karga.png" alt="">
+<div class="dg-mast">
   <div class="wrap">
     <div class="crumbs"><a href="../">Ana Sayfa</a> · Matrix Bülteni</div>
-    <p class="etk" style="color:var(--kirmizi);margin-bottom:18px">Kripto · Hisse · Otonom araştırma</p>
-    <h1>Piyasayı okuyan bir sistemin <i>haftalık karnesi</i></h1>
-    <p class="lede">İnsan yorumu değil, ölçüm. KDA Matrix her gün binlerce fiyat hareketini tarıyor,
-      kendi okuma hatlarını puanlıyor ve sonucu — kazanan, kaybeden, hepsi — olduğu gibi yazıyor.
-      Bülten, o defterin haftalık özeti.</p>
-    <div class="btnlar">
-      <a class="btn btn-dolu" href="#abone">Ücretsiz abone ol</a>
-      <a class="btn btn-cizgi" href="00-sistem">Sistem nasıl çalışıyor</a>
+    <div class="dg-mast-satir">
+      <span class="dg-marka">Matrix Bülteni<small>Luna Yapım · piyasayı okuyan sistemin karnesi</small></span>
+      <div class="dg-tarih"><b>Haftalık</b><span>Pazartesi sabahı · ücretsiz · reklamsız</span></div>
+      <nav class="dg-sek"><a href="00-sistem">Sistem</a><a href="../matrix">Kanıt defteri</a><a href="../yazilim">Yazılım</a><a href="#abone">Abone ol</a></nav>
     </div>
   </div>
 </div>
 
-<section>
+<section class="bl-kapak wrap">
+  <div class="bl-kapak-kart gor">
+    <div class="ust"><span>Matrix Bülteni</span><span>Kripto · Hisse</span></div>
+    <div><div class="sayi">Sayı <i>00</i></div><h3 style="margin-top:18px">Sistem nasıl çalışıyor</h3></div>
+    <img class="karga" src="../assets/karga.png" alt="">
+    <div class="alt"><span>Ölçüm, yorum değil</span><a href="00-sistem" style="color:var(--kirmizi);text-decoration:none">Oku →</a></div>
+  </div>
+  <div class="bl-kapak-metin">
+    <p class="etk" style="color:var(--kirmizi);margin-bottom:14px">Otonom araştırma · haftalık karne</p>
+    <h1 class="gor">Piyasayı okuyan bir sistemin <i style="font-style:normal;color:var(--kirmizi)">karnesi</i>.</h1>
+    <p class="lede gor" data-gecik="1">İnsan yorumu değil, ölçüm. KDA Matrix her gün binlerce fiyat hareketini tarıyor, kendi okuma hatlarını puanlıyor ve sonucu — kazanan, kaybeden, hepsi — olduğu gibi yazıyor. Bülten, o defterin haftalık özeti.</p>
+    <div class="btnlar gor" data-gecik="2">
+      <a class="btn btn-dolu" href="#abone">Ücretsiz abone ol</a>
+      <a class="btn btn-cizgi" href="00-sistem">Sistem nasıl çalışıyor</a>
+    </div>
+  </div>
+</section>
+
+<section class="acik">
   <div class="wrap">
     <div class="bas"><span class="no">01</span><div><h2>Her hafta ne geliyor</h2>
       <p class="aciklama">Tek e-posta, dört bölüm. Hepsi sistemin kendi çıktısından.</p></div></div>
@@ -83,25 +96,6 @@
       <div class="hiz"><h3>Mutfaktan</h3><p>Sistemi nasıl kurduğumuz, hangi hatayı bulup düzelttiğimiz.
         Yazılımın kendisini merak edenler için.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="acik">
-  <div class="wrap prose">
-    <h2>Bu bülten kimin için</h2>
-    <p>Piyasayı takip eden ama "uzman yorumu" formatından yorulmuş herkes için. Sistem ne dediyse
-      o yazılıyor; beğenmediğimiz sonucu saklamıyoruz, çünkü saklarsak karne anlamını yitirir.
-      Yazılımla ilgilenenler için ayrıca bir katman var: bu sistemi iki kişilik bir ekip, kendi
-      araçlarıyla kurdu ve her hafta bir parçasını anlatıyor.</p>
-    <h2>Bu bülten ne değil</h2>
-    <p>Al-sat önerisi değil. Fiyat hedefi vermiyor. "Şu coin patlayacak" demiyor. Hangi hattın
-      hangi sinyali verdiğini sonuçlandıktan sonra yazıyor; açık pozisyon paylaşmıyor.
-      Kısacası: bir araştırma sisteminin şeffaf günlüğü.</p>
-    <h2>Sistemi merak edenler için</h2>
-    <p>KDA Matrix, Luna Yapım'ın otonom piyasa araştırma ürünü. Aynı mühendisliği müşterilerimiz
-      için de kuruyoruz: piyasayı tarayan sistemler, içerik üretim hatları, e-ticaret otomasyonu.
-      <a href="../yazilim">Yazılım tarafımıza</a> ve <a href="../matrix">Matrix'in canlı kanıt
-      defterine</a> bakabilirsiniz.</p>
   </div>
 </section>
 
@@ -140,6 +134,33 @@
   });
 })();
 </script></div>
+</section>
+
+<section class="acik">
+  <div class="wrap">
+    <div class="bas"><span class="no">02</span><div><h2>Sayılar</h2>
+      <p class="aciklama">Yayınlanan her sayı burada kalır; e-postayı kaçıran siteden okur.</p></div></div>
+    <div class="bl-sayilar"><a class="bl-sayi" href="00-sistem"><span class="etk">Sayı 00</span><b>Sistem nasıl çalışıyor</b><span>Hatlar, kuluçka, 40 sinyal kuralı, karne</span></a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap prose">
+    <h2>Bu bülten kimin için</h2>
+    <p>Piyasayı takip eden ama "uzman yorumu" formatından yorulmuş herkes için. Sistem ne dediyse
+      o yazılıyor; beğenmediğimiz sonucu saklamıyoruz, çünkü saklarsak karne anlamını yitirir.
+      Yazılımla ilgilenenler için ayrıca bir katman var: bu sistemi iki kişilik bir ekip, kendi
+      araçlarıyla kurdu ve her hafta bir parçasını anlatıyor.</p>
+    <h2>Bu bülten ne değil</h2>
+    <p>Al-sat önerisi değil. Fiyat hedefi vermiyor. "Şu coin patlayacak" demiyor. Hangi hattın
+      hangi sinyali verdiğini sonuçlandıktan sonra yazıyor; açık pozisyon paylaşmıyor.
+      Kısacası: bir araştırma sisteminin şeffaf günlüğü.</p>
+    <h2>Sistemi merak edenler için</h2>
+    <p>KDA Matrix, Luna Yapım'ın otonom piyasa araştırma ürünü. Aynı mühendisliği müşterilerimiz
+      için de kuruyoruz: piyasayı tarayan sistemler, içerik üretim hatları, e-ticaret otomasyonu.
+      <a href="../yazilim">Yazılım tarafımıza</a> ve <a href="../matrix">Matrix'in canlı kanıt
+      defterine</a> bakabilirsiniz.</p>
+  </div>
 </section>
 
 <section class="acik">
@@ -194,6 +215,7 @@
 <script src="../assets/sosyal.js"></script>
 <script src="../assets/olcum.js"></script>
 <script src="../assets/asistan.js?v=2" defer></script>
+<script src="../assets/sahne.js?v=1" defer></script>
 <script src="../assets/okuma.js" defer></script>
 </body>
 </html>

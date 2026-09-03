@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/luna.css?v=14">
+<link rel="stylesheet" href="../assets/luna.css?v=15">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://lunayapim.com/"},
@@ -128,7 +128,7 @@
     <span class="etk">Ne yapıyoruz</span>
     <h2>Proje bitmeden satılmaya başlar</h2>
     <p>Kat planı ve teknik çizimden sinematik render seti ve animasyon. Dış cephe, iç mekân ve gece aynı modelden çıkar — baskı çözünürlüğünde.</p>
-    <div class="taahhut"><div><b>6–10 görsel</b><span>artı 45 saniyelik animasyon, tek modelden</span></div><div><b>5–10 iş günü</b><span>model sizden geliyorsa tipik teslim süresi</span></div><div><b>60–150 bin ₺</b><span>sitede yayınlanmış fiyat bandımız</span></div></div>
+    <div class="taahhut"><div><b>6–10 görsel</b><span>artı 45 saniyelik animasyon, tek modelden</span></div><div><b>5–10 iş günü</b><span>model sizden geliyorsa tipik teslim süresi</span></div><div><b>45–150 bin ₺</b><span>sitede yayınlanmış fiyat bandımız</span></div></div>
   </div>
 </section>
 
@@ -278,6 +278,29 @@
   </div>
 </section>
 
+<section id="katmanlar">
+  <div class="wrap">
+    <div class="bas"><span class="no">◆</span><div><h2>Katman katman: proje görseli nasıl değişir, neyi siz kontrol edersiniz</h2>
+      <p class="aciklama">Aşağıdaki film bir modelin altı katmanını sırayla açar. Her katmanda hangi kararın sizde olduğu yazıyor; onaylamadığınız katmandan bir sonrakine geçilmez.</p></div></div>
+    <div class="st-gorsel gor" style="aspect-ratio:16/9;max-width:1100px">
+      <video data-luna muted loop playsinline controls preload="none" poster="../assets/video/3d-katmanlar.jpg"
+             aria-label="3D modelleme süreci: plan, tel kafes, yüzeyler, malzeme, ışık ve final kare — katman katman">
+        <source src="../assets/video/3d-katmanlar.webm" type="video/webm">
+        <source src="../assets/video/3d-katmanlar.mp4" type="video/mp4">
+      </video>
+      <span class="yz">Temsilî proje · kodla çizildi</span>
+    </div>
+    <div class="katman-liste">
+      <div><b>01 Plan ve ölçüler</b><span>Kat planı ve vaziyet sizden gelir ya da rölöveden çıkarılır. Kontrol: ölçüler, kat sayısı, yerleşim.</span></div>
+      <div><b>02 Tel kafes</b><span>Kütle ve cephe oranları; pencere, balkon ve açıklıklar burada taşınır. Kontrol: kütle, cephe oranı, açıklıklar.</span></div>
+      <div><b>03 Yüzeyler</b><span>Gizli çizgiler kalkar, kütle okunur; saçak, teras ve korkuluk kararları. Kontrol: saçak, teras, korkuluk.</span></div>
+      <div><b>04 Malzeme</b><span>Cephe kaplaması, cam tonu, ahşap ve taş; örnekler kütüphaneden ya da sizin tedarikçinizden. Kontrol: kaplama, cam, renk.</span></div>
+      <div><b>05 Işık ve gölge</b><span>Arsanın gerçek konumu ve güneş açısı; saat ve mevsim seçimi. Kontrol: saat, mevsim, çevre yapılar.</span></div>
+      <div><b>06 Final kare</b><span>Kamera açısı, alan derinliği ve renk; teslim 4K kare, animasyon ya da sanal tur. Kontrol: kamera, derinlik, teslim formatı.</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="acik" id="ornek-is">
   <div class="wrap">
     <div class="bas"><span class="no">01</span><div><h2>Örnek çalışma — CM Vorarlberg</h2>
@@ -410,5 +433,6 @@
 <script src="../assets/olcum.js"></script>
 <script src="../assets/asistan.js?v=2" defer></script>
 <script src="../assets/okuma.js" defer></script>
+<script src="../assets/sahne.js?v=1" defer></script>
 </body>
 </html>

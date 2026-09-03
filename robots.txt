@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /kda.db
+Disallow: /admin
+Disallow: /api/
 
 Sitemap: https://lunayapim.com/sitemap.xml

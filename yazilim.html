@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/luna.css?v=14">
+<link rel="stylesheet" href="assets/luna.css?v=15">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,29 +81,73 @@
   <div class="wrap">
     <div class="bas"><span class="no">01</span>
       <div><h2>Ürünlerimiz</h2>
-        <p class="aciklama">Her biri gerçek bir ihtiyaçtan doğdu ve sahada çalışıyor.</p></div></div>
-    <div class="urunler">
-      <a class="urun" href="matrix" id="matrix"><i class="cizgi"></i><span class="rom">i.</span>
+        <p class="aciklama">Her biri gerçek bir ihtiyaçtan doğdu; önce kendi işimizde kullandık. Görseller arayüz önizlemesidir, sayılar canlı sistemden gelir.</p></div></div>
+
+    <article class="urun-blok gor" id="kda">
+      <div class="urun-gorsel"><img src="assets/urun/kda.jpg" alt="KDA Matrix kanıt defteri arayüzü: hat listesi, sonuç sütunu ve haftalık karne" width="1600" height="1000" loading="lazy"><span class="yz">Arayüz önizlemesi</span></div>
+      <div class="urun-metin">
+        <p class="no">i · Otonom piyasa araştırma</p>
         <h3>KDA Matrix</h3>
-        <p>Piyasayı sürekli tarayan otonom araştırma sistemi. Kendi okuma hatlarını puanlar, her sonucu
-          açık bir kanıt defterine yazar — kazandığı kadar kaybettiğini de. İsabet oranları ham ölçümdür.
-          Canlı panel yayında.</p><span class="ok">Paneli aç →</span></a>
-      <div class="urun" id="stillfinder"><i class="cizgi"></i><span class="rom">ii.</span>
+        <p class="lede-k">Piyasayı sürekli tarayan, kendi okuma hatlarını puanlayan ve her sonucu açık bir kanıt defterine yazan sistem — kazandığını da, kaybettiğini de.</p>
+        <div class="urun-kolon">
+          <div><b>Ne yapar</b><ul><li>Binlerce fiyat hareketini tarar, hatları puanlar</li><li>Her okumanın sonucunu kapanışta doğrular</li><li>Haftalık karneyi bültene çevirir</li></ul></div>
+          <div><b>Nasıl çalışır</b><ol><li>Veri toplanır ve hatlara dağıtılır</li><li>Hat kararı kaydedilir, eşik altı beklemede kalır</li><li>Kapanışta sonuç yazılır; hat puanı güncellenir</li></ol></div>
+        </div>
+        <div class="urun-alt"><span class="durum">Canlı · kendi kullanımımızda</span><a class="btn btn-cizgi" href="matrix">Kanıt defterini aç</a></div>
+      </div>
+    </article>
+    <article class="urun-blok gor" id="stillfinder">
+      <div class="urun-gorsel"><img src="assets/urun/stillfinder.jpg" alt="StillFinder Pro telefon arayüzü: yüz analizi, üç model önerisi ve berbere not" width="1600" height="1000" loading="lazy"><span class="yz">Arayüz önizlemesi</span></div>
+      <div class="urun-metin">
+        <p class="no">ii · Berberler için yapay zekâ danışmanı</p>
         <h3>StillFinder Pro</h3>
-        <p>Berberler için yapay zekâ saç stili danışmanı. Müşterinin fotoğrafından yüz şeklini ölçer —
-          analiz cihazda çalışır, fotoğraf dışarı çıkmaz. Saç yapısı ve saç çizgisine göre model önerir,
-          berbere uygulama notu verir; istenirse kesimi müşterinin kendi fotoğrafı üzerinde önizler.
-          Türkçe ve Almanca arayüz, dükkân kodu ile kredili kullanım.</p></div>
-      <div class="urun" id="trendyol"><i class="cizgi"></i><span class="rom">iii.</span>
+        <p class="lede-k">Müşterinin fotoğrafından yüz şeklini ölçer, saç yapısına göre model önerir, berbere uygulama notu yazar. Analiz cihazda biter; fotoğraf dışarı çıkmaz.</p>
+        <div class="urun-kolon">
+          <div><b>Ne yapar</b><ul><li>Yüz şekli, saç yapısı ve saç çizgisi ölçümü</li><li>Üç model önerisi ve berbere kesim notu</li><li>İstenirse kesimi müşterinin fotoğrafında önizleme</li><li>Türkçe ve Almanca arayüz</li></ul></div>
+          <div><b>Nasıl çalışır</b><ol><li>Dükkân koduyla giriş, kredi yüklenir</li><li>Fotoğraf çekilir, analiz telefonda yapılır</li><li>Öneri ve not berbere gösterilir</li></ol></div>
+        </div>
+        <div class="urun-alt"><span class="durum">Ürün · dükkânlar için</span></div>
+      </div>
+    </article>
+    <article class="urun-blok gor" id="trendyol">
+      <div class="urun-gorsel"><img src="assets/urun/trendyol.jpg" alt="Trendyol otomasyonu arayüzü: fotoğraf, üretilen açıklama, dört görsel formatı ve Satıcı API adımları" width="1600" height="1000" loading="lazy"><span class="yz">Arayüz önizlemesi</span></div>
+      <div class="urun-metin">
+        <p class="no">iii · Fotoğraftan mağazaya</p>
         <h3>Trendyol Otomasyonu</h3>
-        <p>Ürün fotoğrafından mağazaya tek akış: fotoğraftan ürün açıklaması, Trendyol standartlarına
-          uygun çoklu görsel üretimi, benzersiz barkod ve stok kodu, ardından Satıcı API'si üzerinden
-          yükleme.</p></div>
-      <div class="urun" id="fabrika"><i class="cizgi"></i><span class="rom">iv.</span>
+        <p class="lede-k">Bir ürün fotoğrafı bırakılır; açıklama, Trendyol ölçülerinde görseller, barkod ve stok kodu üretilir, Satıcı API'siyle yüklenir.</p>
+        <div class="urun-kolon">
+          <div><b>Ne yapar</b><ul><li>Fotoğraftan ürün açıklaması ve özellik tablosu</li><li>1200×1800 ana, 1080×1080 kare, doku ve etiketli kapak görselleri</li><li>Benzersiz barkod ve stok kodu</li><li>Satıcı API ile yükleme, onay adımıyla</li></ul></div>
+          <div><b>Nasıl çalışır</b><ol><li>Klasöre fotoğraf bırakılır</li><li>Metin ve görseller üretilir, kontrol edilir</li><li>Fiyat ve stok girilir, mağazaya yüklenir</li></ol></div>
+        </div>
+        <div class="urun-alt"><span class="durum">Ürün · e-ticaret satıcıları için</span></div>
+      </div>
+    </article>
+    <article class="urun-blok gor" id="fabrika">
+      <div class="urun-gorsel"><img src="assets/urun/fabrika.jpg" alt="Luna Fabrika arayüzü: marka klasörleri, marka hafızası kartı ve üç çıktı formatı" width="1600" height="1000" loading="lazy"><span class="yz">Arayüz önizlemesi</span></div>
+      <div class="urun-metin">
+        <p class="no">iv · Çok markalı içerik hattı</p>
         <h3>Luna Fabrika</h3>
-        <p>Çok markalı içerik üretim hattı. Sürükle-bırak klasör arayüzü, marka hafızası, otomatik
-          altyazı ve YouTube / Reels / kare formatlarında çıktı.</p></div>
-    </div>
+        <p class="lede-k">Her marka bir klasör: ham görüntü bırakılır, marka hafızası devreye girer, altyazı ve formatlar otomatik çıkar.</p>
+        <div class="urun-kolon">
+          <div><b>Ne yapar</b><ul><li>Marka hafızası: ton, renk, yazı, kapanış, yasaklar</li><li>Otomatik altyazı</li><li>YouTube 16:9, Reels 9:16 ve kare 1:1 çıktı</li></ul></div>
+          <div><b>Nasıl çalışır</b><ol><li>Klasör sürüklenir</li><li>Marka kuralları uygulanır, kurgu ve altyazı üretilir</li><li>Üç format tek seferde dışa aktarılır</li></ol></div>
+        </div>
+        <div class="urun-alt"><span class="durum">Ürün · ajanslar ve çok markalı işletmeler için</span></div>
+      </div>
+    </article>
+    <article class="urun-blok gor" id="pusula">
+      <div class="urun-gorsel"><img src="assets/urun/pusula.jpg" alt="Luna Pusula karargâh arayüzü: sayaçlar, aday listesi ve günlük plan" width="1600" height="1000" loading="lazy"><span class="yz">Arayüz önizlemesi</span></div>
+      <div class="urun-metin">
+        <p class="no">v · İç araç · bu siteyi işleten sistem</p>
+        <h3>Luna Pusula</h3>
+        <p class="lede-k">Adayı tarar, eksiğini kanıtlar, teklifi hazırlar ve Telegram'a yollar; siteyi denetler, gündemi yazar, tıklanmayı okur. Yalnız yerel ağda çalışır.</p>
+        <div class="urun-kolon">
+          <div><b>Ne yapar</b><ul><li>Aday tarama ve doğruluk kapısı</li><li>Kanıtlı teklif paketi, Telegram bildirimi</li><li>Site denetimi, gündem yayını, okuma sayacı</li><li>Panel asistanı</li></ul></div>
+          <div><b>Nasıl çalışır</b><ol><li>Sabah turu: denetim, gündem, tıklanma</li><li>Aday seçilir, eksikler kanıtlanır</li><li>Teklif üretilir, onayla gönderilir</li></ol></div>
+        </div>
+        <div class="urun-alt"><span class="durum">İç araç · müşteriler için aynı mantıkla kurulur</span><a class="btn btn-cizgi" href="studyo">Nasıl çalıştığını gör</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -198,5 +242,6 @@
 <script src="assets/olcum.js"></script>
 <script src="assets/asistan.js?v=2" defer></script>
 <script src="assets/okuma.js" defer></script>
+<script src="assets/sahne.js?v=1" defer></script>
 </body>
 </html>

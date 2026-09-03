@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Karargâh · Luna Pusula (uzak)</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/luna.css?v=15">
+<style>
+  .ad-kabuk{max-width:1180px;margin:0 auto;padding:40px 32px 80px}
+  .ad-ust{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:1px solid var(--cizgi);padding-bottom:18px;margin-bottom:26px;flex-wrap:wrap}
+  .ad-ust h1{font-size:clamp(30px,4vw,46px)}
+  .ad-ust .etk{color:var(--kirmizi);margin-bottom:8px;display:block}
+  .ad-giris{max-width:520px;border:1px solid var(--cizgi);padding:26px;background:var(--ink-2)}
+  .ad-giris input{width:100%;padding:13px 14px;background:var(--ink);border:1px solid var(--cizgi);color:var(--bone);font:inherit;border-radius:2px;margin:12px 0}
+  .ad-giris button{background:var(--kirmizi);color:#fff;border:0;padding:13px 20px;font:inherit;font-weight:600;border-radius:2px;cursor:pointer}
+  .ad-izgara{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+  .ad-kutu{border:1px solid var(--cizgi);background:var(--ink-2);padding:18px}
+  .ad-kutu .etk{color:var(--gri);display:block;margin-bottom:8px}
+  .ad-kutu b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:38px;letter-spacing:-.03em;line-height:1}
+  .ad-cubuk{display:flex;gap:4px;align-items:flex-end;height:120px;margin-top:10px}
+  .ad-cubuk i{flex:1;background:rgba(239,237,232,.2);min-height:2px;position:relative}
+  .ad-cubuk i.bugun{background:var(--kirmizi)}
+  .ad-cubuk i:hover::after{content:attr(data-t);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--bone);color:var(--ink);font-family:"Space Mono",monospace;font-size:10px;padding:3px 6px;white-space:nowrap;border-radius:2px}
+  .ad-iki{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .ad-kutu table{width:100%;border-collapse:collapse;font-size:13.5px}
+  .ad-kutu td{padding:7px 0;border-top:1px solid var(--cizgi)}
+  .ad-kutu td:last-child{text-align:right;font-family:"Space Mono",monospace}
+  .ad-not{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gri);margin-top:26px;line-height:1.9}
+  .ad-hata{color:var(--kirmizi);font-size:14px;margin-top:8px}
+  @media(max-width:900px){.ad-izgara{grid-template-columns:1fr 1fr}.ad-iki{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ad-kabuk">
+  <div class="ad-ust">
+    <div><span class="etk">Luna Pusula · uzak karargâh</span><h1>Bugün ne oldu?</h1></div>
+    <div class="etk" style="color:var(--gri)">Salt okunur · anahtarla · dizine kapalı</div>
+  </div>
+
+  <div id="ad-giris" class="ad-giris">
+    <span class="etk" style="color:var(--kirmizi)">Anahtar</span>
+    <p style="font-size:14px;color:var(--gri);margin-top:8px">Panel anahtarı (Cloudflare'daki PANEL_ANAHTARI). Yalnız bu tarayıcıda, oturum boyunca saklanır; hiçbir yere gönderilmez, yalnız kendi API'mize sorulur.</p>
+    <input id="ad-anahtar" type="password" placeholder="anahtar" autocomplete="off">
+    <button id="ad-gir">Aç</button>
+    <div id="ad-hata" class="ad-hata" hidden>Anahtar kabul edilmedi.</div>
+  </div>
+
+  <div id="ad-pano" hidden>
+    <div class="ad-izgara">
+      <div class="ad-kutu"><span class="etk">Bugün okuma</span><b id="k-bugun">—</b></div>
+      <div class="ad-kutu"><span class="etk">Son 7 gün</span><b id="k-hafta">—</b></div>
+      <div class="ad-kutu"><span class="etk">Son 30 gün</span><b id="k-ay">—</b></div>
+      <div class="ad-kutu"><span class="etk">Bülten abonesi</span><b id="k-abone">—</b></div>
+    </div>
+    <div class="ad-kutu" style="margin-bottom:12px"><span class="etk">Günlük okuma · son 30 gün</span><div class="ad-cubuk" id="k-cubuk"></div></div>
+    <div class="ad-iki">
+      <div class="ad-kutu"><span class="etk">En çok okunan sayfa · 7 gün</span><table id="k-sayfa"></table></div>
+      <div class="ad-kutu"><span class="etk">Nereden geldiler · 7 gün</span><table id="k-kaynak"></table></div>
+    </div>
+    <p class="ad-not">Okuma: 15 sn + %25 kaydırma şartı, çerezsiz. · Tam Luna Pusula (adaylar, teklif, üretim) yalnız bu bilgisayarda çalışır: <a href="http://127.0.0.1:8765" style="color:var(--bone)">127.0.0.1:8765</a> · Bu sayfa Search Console'u okumaz; arama verisi Pusula'daki karargâhta.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var G=document.getElementById('ad-giris'),P=document.getElementById('ad-pano'),H=document.getElementById('ad-hata');
+  function kacir(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function tablo(id,liste){var t=document.getElementById(id);t.innerHTML=(liste||[]).slice(0,12).map(function(r){return '<tr><td>'+kacir(r.ad||'(doğrudan)')+'</td><td>'+r.n+'</td></tr>'}).join('')||'<tr><td style="color:var(--gri)">henüz veri yok</td><td></td></tr>'}
+  function yukle(anahtar){
+    fetch('/api/okuma?anahtar='+encodeURIComponent(anahtar)+'&gun=30',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+      try{sessionStorage.setItem('luna-anahtar',anahtar)}catch(e){}
+      G.hidden=true;P.hidden=false;
+      var g=d.gunler||[];var top=function(n){return g.slice(0,n).reduce(function(s,x){return s+(x.okuma||0)},0)};
+      document.getElementById('k-bugun').textContent=g[0]?g[0].okuma:0;
+      document.getElementById('k-hafta').textContent=top(7);document.getElementById('k-ay').textContent=top(30);
+      var en=Math.max.apply(null,g.map(function(x){return x.okuma||0}).concat([1]));
+      document.getElementById('k-cubuk').innerHTML=g.slice().reverse().map(function(x,i){return '<i data-t="'+x.gun+' · '+x.okuma+'" style="height:'+Math.max(2,Math.round(100*x.okuma/en))+'%"'+(i===g.length-1?' class="bugun"':'')+'></i>'}).join('');
+      tablo('k-sayfa',d.sayfa);tablo('k-kaynak',d.kaynak);
+      return fetch('/api/abone?anahtar='+encodeURIComponent(anahtar),{cache:'no-store'}).then(function(r){return r.ok?r.json():{sayi:'—'}}).then(function(a){document.getElementById('k-abone').textContent=a.sayi})
+    }).catch(function(){H.hidden=false;G.hidden=false;P.hidden=true;try{sessionStorage.removeItem('luna-anahtar')}catch(e){}});
+  }
+  document.getElementById('ad-gir').addEventListener('click',function(){H.hidden=true;yukle(document.getElementById('ad-anahtar').value.trim())});
+  document.getElementById('ad-anahtar').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('ad-gir').click()});
+  var k=null;try{k=sessionStorage.getItem('luna-anahtar')}catch(e){}
+  if(k)yukle(k);
+})();
+</script>
+</body>
+</html>
