@@ -1136,8 +1136,10 @@ body::after{content:"";position:fixed;inset:-50%;width:200%;height:200%;pointer-
 .ts-sistem{background:var(--kirmizi);border-color:var(--kirmizi);color:#fff}
 .ts-sistem .etk,.ts-sistem h3,.ts-sistem p{color:#fff}
 .ts-sistem .btn{color:#fff;border-color:rgba(255,255,255,.6)}
-.ts-reklam{min-height:90px;margin:22px 0;border:1px dashed var(--cizgi-koyu);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(87,86,82,.5)}
+.ts-reklam{margin:22px 0;min-height:0;overflow:hidden}
 .ts-reklam:empty{display:none}
+.ts-reklam ins[data-ad-status="unfilled"]{display:none!important}
+.ts-reklam ins.adsbygoogle{min-width:250px}
 /* yazı sayfası */
 .ts-yazi{padding:28px 0 60px}
 .ts-yazi-izgara{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px;align-items:start}
