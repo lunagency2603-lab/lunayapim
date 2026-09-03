@@ -61,7 +61,7 @@
 }
 </script>
 <link rel="preload" as="image" href="assets/video/karga-k1.jpg" fetchpriority="high">
-<link rel="stylesheet" href="assets/luna.css?v=19">
+<link rel="stylesheet" href="assets/luna.css?v=20">
 
 </head>
 <body>
@@ -86,6 +86,16 @@
     <a class="hbtn" href="https://wa.me/905411602603">Teklif Al</a>
   </div>
 </header>
+
+<canvas id="agac" aria-hidden="true"></canvas>
+<section id="agac-tepe" aria-label="Ağacın tepesi">
+  <div class="wrap">
+    <p class="tepe-etk">Luna Yapım · Bursa</p>
+    <p class="tepe-bas"><span class="satir">Ağacın tepesinden</span><span class="satir">aşağı, dal dal.</span></p>
+    <p class="tepe-p">Bir yazılım ve yapım stüdyosu: kendi ürünlerini yazar, kamerayı kendi kullanır, sitesini kendi sistemi işletir. Kaydır; karga seni her dalda bekliyor.</p>
+    <a class="tepe-ok" href="#bolumler" aria-label="Aşağı kaydır"><i></i><span>Kaydır</span></a>
+  </div>
+</section>
 
 <div class="hero sinema" data-karga="0">
   <video autoplay muted playsinline preload="metadata" poster="assets/video/karga-k1.jpg"
@@ -161,6 +171,8 @@
   </div>
 </section>
 
+<div class="dal" data-no="01" aria-hidden="true"><span class="dal-etk">Dal 01</span><b>Ürünler</b></div>
+
 <section class="acik" id="urunler">
   <div class="wrap">
     <div class="bas">
@@ -169,30 +181,24 @@
         <p class="aciklama">Müşteri işi beklerken oturmuyoruz; kendi ürünlerimizi geliştiriyoruz.
           Her biri gerçek bir ihtiyaçtan doğdu ve sahada çalışıyor.</p></div>
     </div>
-    <div class="urunler">
-      <a class="urun" href="matrix"><i class="cizgi"></i>
-        <span class="rom">i.</span><h3>KDA Matrix</h3>
-        <p>Piyasayı sürekli tarayan otonom araştırma sistemi. Kendi okuma hatlarını puanlar, her
-          sonucu açık bir kanıt defterine yazar — kazandığı kadar kaybettiğini de. Canlı panel yayında.</p>
-        <span class="ok">Paneli aç →</span></a>
-      <a class="urun" href="yazilim.html#stillfinder"><i class="cizgi"></i>
-        <span class="rom">ii.</span><h3>StillFinder Pro</h3>
-        <p>Berberler için yapay zekâ saç stili danışmanı. Müşterinin fotoğrafından yüz şeklini ölçer,
-          saç profiline göre model önerir ve kesimi fotoğraf üzerinde önizler. Türkçe ve Almanca.</p>
-        <span class="ok">İncele →</span></a>
-      <a class="urun" href="yazilim.html#trendyol"><i class="cizgi"></i>
-        <span class="rom">iii.</span><h3>Trendyol Otomasyonu</h3>
-        <p>Ürün fotoğrafından mağazaya tek akış: açıklama metni, Trendyol standartlarında çoklu görsel,
-          barkod ve stok kodu, satıcı API'si üzerinden yükleme.</p>
-        <span class="ok">İncele →</span></a>
-      <a class="urun" href="yazilim.html#fabrika"><i class="cizgi"></i>
-        <span class="rom">iv.</span><h3>Luna Fabrika</h3>
-        <p>Çok markalı içerik üretim hattı. Klasöre atılan materyal marka hafızasına göre kurgulanır;
-          altyazı ve çoklu format çıktısı otomatik.</p>
-        <span class="ok">İncele →</span></a>
+    <div class="uv-izgara">
+      <a class="uv gor" href="matrix"><span class="uv-gorsel"><img src="assets/urun/kda-k.jpg" srcset="assets/urun/kda-k.jpg 800w, assets/urun/kda.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="KDA Matrix canlı panel arayüzü"><i class="uv-yz">Arayüz önizlemesi</i></span>
+        <span class="uv-metin"><span class="rom">i · Yayında</span><h3>KDA Matrix</h3><p>Piyasayı sürekli tarayan otonom araştırma sistemi. Kendi okuma hatlarını puanlar, her sonucu açık bir kanıt defterine yazar — kazandığı kadar kaybettiğini de.</p><span class="ok">Paneli aç →</span></span></a>
+      <a class="uv gor" href="yazilim.html#stillfinder" data-gecik="1"><span class="uv-gorsel"><img src="assets/urun/stillfinder-k.jpg" srcset="assets/urun/stillfinder-k.jpg 800w, assets/urun/stillfinder.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="StillFinder Pro: yüz şekli analizi ve saç modeli önerisi ekranı"><i class="uv-yz">Arayüz önizlemesi</i></span>
+        <span class="uv-metin"><span class="rom">ii · Berberler için</span><h3>StillFinder Pro</h3><p>Yapay zekâ saç stili danışmanı. Fotoğraftan yüz şeklini ölçer, saç profiline göre model önerir, kesimi fotoğraf üzerinde önizler. Türkçe ve Almanca.</p><span class="ok">İncele →</span></span></a>
+      <a class="uv gor" href="yazilim.html#trendyol" data-gecik="2"><span class="uv-gorsel"><img src="assets/urun/trendyol-k.jpg" srcset="assets/urun/trendyol-k.jpg 800w, assets/urun/trendyol.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="Trendyol Otomasyonu: fotoğraftan ürün kartı üretim ekranı"><i class="uv-yz">Arayüz önizlemesi</i></span>
+        <span class="uv-metin"><span class="rom">iii · Satıcılar için</span><h3>Trendyol Otomasyonu</h3><p>Ürün fotoğrafından mağazaya tek akış: açıklama metni, Trendyol standartlarında çoklu görsel, barkod ve stok kodu, satıcı API'si üzerinden yükleme.</p><span class="ok">İncele →</span></span></a>
+      <a class="uv gor" href="yazilim.html#fabrika"><span class="uv-gorsel"><img src="assets/urun/fabrika-k.jpg" srcset="assets/urun/fabrika-k.jpg 800w, assets/urun/fabrika.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="Luna Fabrika: çok markalı içerik üretim hattı ekranı"><i class="uv-yz">Arayüz önizlemesi</i></span>
+        <span class="uv-metin"><span class="rom">iv · Markalar için</span><h3>Luna Fabrika</h3><p>Çok markalı içerik üretim hattı. Klasöre atılan materyal marka hafızasına göre kurgulanır; altyazı ve çoklu format çıktısı otomatik.</p><span class="ok">İncele →</span></span></a>
+      <a class="uv gor" href="studyo" data-gecik="1"><span class="uv-gorsel"><img src="assets/urun/pusula-k.jpg" srcset="assets/urun/pusula-k.jpg 800w, assets/urun/pusula.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="Luna Pusula karargâh arayüzü"><i class="uv-yz">Arayüz önizlemesi</i></span>
+        <span class="uv-metin"><span class="rom">v · Bu siteyi işleten</span><h3>Luna Pusula</h3><p>Adayı tarar, eksiğini kanıtlar, teklifi hazırlar; siteyi denetler, gündemi yazar, tıklanmayı okur. Yalnız yerel ağda çalışır; müşteri için aynı mantıkla kurulur.</p><span class="ok">Nasıl çalışıyor →</span></span></a>
+      <a class="uv gor" href="trend/" data-gecik="2"><span class="uv-gorsel"><img src="assets/urun/trendsaphiens-k.jpg" srcset="assets/urun/trendsaphiens-k.jpg 800w, assets/urun/trendsaphiens.jpg 1600w" sizes="(max-width:700px) 100vw, 33vw" width="800" height="500" loading="lazy" alt="LunaTrendSaphiens ana sayfası"><i class="uv-yz">Canlı yayın</i></span>
+        <span class="uv-metin"><span class="rom">vi · Yayın · her sabah</span><h3>LunaTrendSaphiens</h3><p>Türkiye bugün ne aradı, dolar ve altın kaç TL, maç hangi kanalda, vizyonda ne var — kaynaklı, tarihli, kısa. Yazan da yayınlayan da kendi sistemimiz.</p><span class="ok">Yayını aç →</span></span></a>
     </div>
   </div>
 </section>
+
+<div class="dal" data-no="02" aria-hidden="true"><span class="dal-etk">Dal 02</span><b>Yazılım</b></div>
 
 <section>
   <div class="wrap">
@@ -215,6 +221,8 @@
     <div class="btnlar"><a class="btn btn-cizgi" href="yazilim">Yazılım tarafını gör</a></div>
   </div>
 </section>
+
+<div class="dal" data-no="03" aria-hidden="true"><span class="dal-etk">Dal 03</span><b>Prodüksiyon ve 3D</b></div>
 
 <section class="acik" id="produksiyon">
   <div class="wrap">
@@ -257,6 +265,8 @@
   </div>
 </section>
 
+<div class="dal" data-no="04" aria-hidden="true"><span class="dal-etk">Dal 04</span><b>İşler</b></div>
+
 <section class="acik" id="ornek-isler">
   <div class="wrap">
     <div class="bas"><span class="no">01</span><div><h2>Örnek işler</h2>
@@ -275,6 +285,8 @@
     <div class="btnlar"><a class="btn btn-cizgi" href="isler">Tüm işleri gör</a></div>
   </div>
 </section>
+
+<div class="dal" data-no="05" aria-hidden="true"><span class="dal-etk">Dal 05</span><b>81 il</b></div>
 
 <section style="padding-top:0">
   <div class="wrap">
@@ -297,6 +309,8 @@
     </div>
   </div>
 </section>
+
+<div class="dal" data-no="06" aria-hidden="true"><span class="dal-etk">Dal 06</span><b>İletişim</b></div>
 
 <section class="cta">
   <img class="karga-buyuk" src="assets/karga.png" alt="">
@@ -371,7 +385,8 @@
 <script src="assets/video.js?v=5"></script>
 <script src="assets/karga.js?v=2" defer></script>
 <script src="assets/sahne.js?v=1" defer></script>
-<script src="assets/videolar.js?v=6"></script>
+<script src="assets/agac.js?v=2" defer></script>
+<script src="assets/videolar.js?v=7"></script>
 <script src="assets/sosyal.js"></script>
 <script src="assets/olcum.js"></script>
 <script src="assets/yorumlar.js"></script>
@@ -391,5 +406,6 @@
 })();
 </script>
 <script src="assets/okuma.js" defer></script>
+<script src="assets/ajan.js?v=1" defer></script>
 </body>
 </html>

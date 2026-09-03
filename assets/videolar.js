@@ -195,6 +195,15 @@ window.LUNA_VIDEOLAR = [
       if(f){ f.style.display = 'block';
         f.src = 'https://www.youtube.com/embed/'+v.id+'?autoplay=1&rel=0'; }
     }
+    if(!m.querySelector('.vtam')){
+      var t = document.createElement('button'); t.type = 'button'; t.className = 'vtam'; t.textContent = 'Tam ekran';
+      t.addEventListener('click', function(e){ e.stopPropagation();
+        var hedef = (document.getElementById('vlokal') && document.getElementById('vlokal').style.display !== 'none') ? document.getElementById('vlokal') : m;
+        var fs = hedef.requestFullscreen || hedef.webkitRequestFullscreen || hedef.webkitEnterFullscreen;
+        if(fs) fs.call(hedef);
+      });
+      m.appendChild(t);
+    }
     m.classList.add('on');
     document.body.style.overflow = 'hidden';
   }
