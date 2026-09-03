@@ -1269,7 +1269,7 @@ body.agacli > footer{background:var(--ink)}
 .dal span{font:500 10.5px/1 "Space Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--kirmizi);margin-right:16px}
 .dal b{font:600 13px/1 "Manrope",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:rgba(239,237,232,.55)}
 .dal::before{content:"";position:absolute;left:max(24px,calc((100vw - 1200px)/2));right:auto;top:50%;width:52px;height:1px;background:rgba(239,237,232,.18);transform:translateY(-32px)}
-@media(max-width:760px){#agac-tepe{min-height:88vh;align-items:flex-end;padding-top:46vh}.dal{min-height:30vh}.tepe-p{font-size:16px}.tepe-bas{font-size:clamp(40px,12vw,64px)}}
+@media(max-width:760px){#agac-tepe{min-height:88vh;align-items:flex-end;padding-top:46vh}.dal{min-height:40vh}.tepe-p{font-size:16px}.tepe-bas{font-size:clamp(40px,12vw,64px)}}
 @media(prefers-reduced-motion:reduce){.tepe-ok i{animation:none}}
 
 /* v17 — Luna Ajan sekmeleri ve formları */
