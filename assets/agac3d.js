@@ -49,9 +49,9 @@
 
   // ---- kabuk dokusu (yüklenemezse yordamsal)
   var yukleyici = new T.TextureLoader();
-  var kabuk = yukleyici.load(KOK + "agac/kabuk.jpg", function (t) { t.wrapS = t.wrapT = T.RepeatWrapping; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); t.encoding = T.sRGBEncoding; t.needsUpdate = true; ihtiyac(); });
+  var kabuk = yukleyici.load(KOK + "agac/kabuk.jpg?v=2", function (t) { t.wrapS = t.wrapT = T.RepeatWrapping; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); t.encoding = T.sRGBEncoding; t.needsUpdate = true; ihtiyac(); });
   kabuk.wrapS = kabuk.wrapT = T.RepeatWrapping;
-  var kabukN = yukleyici.load(KOK + "agac/kabuk-n.jpg", function (t) { t.wrapS = t.wrapT = T.RepeatWrapping; ihtiyac(); });
+  var kabukN = yukleyici.load(KOK + "agac/kabuk-n.jpg?v=2", function (t) { t.wrapS = t.wrapT = T.RepeatWrapping; ihtiyac(); });
   kabukN.wrapS = kabukN.wrapT = T.RepeatWrapping;
   var malzeme = new T.MeshStandardMaterial({ map: kabuk, normalMap: kabukN, normalScale: new T.Vector2(0.9, 0.9), color: 0x9a8f84, roughness: 0.96, metalness: 0.0 });
 
@@ -147,7 +147,7 @@
 
   // ---- doğa fonu: uzaktaki sisli orman panoraması, ağacın çevresinde büyük silindir (iç yüz).
   //      Kamera dönerken paralaks verir; inerken kameradan biraz yavaş iner (derinlik hissi).
-  var fon = null, fonTex = yukleyici.load(KOK + (DAR ? "agac/orman-k.jpg" : "agac/orman.jpg"), function (t) {
+  var fon = null, fonTex = yukleyici.load(KOK + (DAR ? "agac/orman-k.jpg?v=2" : "agac/orman.jpg?v=2"), function (t) {
     t.wrapS = T.RepeatWrapping; t.wrapT = T.ClampToEdgeWrapping; t.repeat.set(2, 1); t.encoding = T.sRGBEncoding; t.anisotropy = 4; t.needsUpdate = true; ihtiyac();
   });
   (function () {
@@ -174,24 +174,35 @@
   })();
 
   // ---- karga: fotogerçekçi kesit (sprite), kameraya bakar
-  var karga = null, kargaHazir = false, kargaTex = yukleyici.load(KOK + "agac/karga.png", function (t) { t.encoding = T.sRGBEncoding; kargaHazir = true; ihtiyac(); });
+  var karga = null, kargaHazir = false, kargaTex = yukleyici.load(KOK + "agac/karga.png?v=3", function (t) { t.encoding = T.sRGBEncoding; kargaHazir = true; ihtiyac(); });
   karga = new T.Sprite(new T.SpriteMaterial({ map: kargaTex, transparent: true, depthWrite: false, fog: true }));
   karga.scale.set(1.25, 1.25, 1); karga.center.set(0.5, 0.06); scene.add(karga);
 
   // ---- duraklar ve boyut
+  var sonW = 0;
+  function duraklariOku(H) {
+    var d = document.querySelectorAll("#agac-tepe, .dal"), yeni = [];
+    for (var i = 0; i < d.length; i++) {
+      var rc = d[i].getBoundingClientRect(), tepe = d[i].id === "agac-tepe";
+      var docY = rc.top + window.scrollY + rc.height * (tepe ? (DAR ? 0.2 : 0.45) : 0.5) - H * 0.5;
+      yeni.push({ docY: Math.max(0, docY), wy: dunyaY(Math.max(0, docY)), tepe: tepe });
+    }
+    return yeni;
+  }
   function boyut() {
     var W = window.innerWidth, H = window.innerHeight;
     DOC = Math.max(document.documentElement.scrollHeight - H, 1);
     renderer.setSize(W, H, false); c.style.width = W + "px"; c.style.height = H + "px";
     cam.aspect = W / H; cam.updateProjectionMatrix();
-    duraklar = [];
-    var d = document.querySelectorAll("#agac-tepe, .dal");
-    for (var i = 0; i < d.length; i++) {
-      var rc = d[i].getBoundingClientRect(), tepe = d[i].id === "agac-tepe";
-      var docY = rc.top + window.scrollY + rc.height * (tepe ? (DAR ? 0.2 : 0.45) : 0.5) - H * 0.5;
-      duraklar.push({ docY: Math.max(0, docY), wy: dunyaY(Math.max(0, docY)), tepe: tepe });
+    if (W !== sonW || !agacMesh) {
+      // genişlik değişti (ya da ilk kurulum): ağaç yeniden
+      sonW = W; duraklar = duraklariOku(H); agacKur();
+    } else {
+      // yalnız yükseklik değişti (mobilde adres çubuğu): geometriye dokunma, durak konumlarını güncelle — sıçrama yok
+      var y = duraklariOku(H);
+      for (var i = 0; i < duraklar.length && i < y.length; i++) duraklar[i].docY = y[i].docY;
     }
-    agacKur(); ihtiyac();
+    ihtiyac();
   }
 
   // ---- kamera: gövde boyunca iner, etrafında döner
@@ -219,7 +230,7 @@
     if (!DAR && !AZALT) { kamPos.addScaledVector(new T.Vector3(Math.cos(th), 0, -Math.sin(th)), fareY.x * 0.9); kamPos.y -= fareY.y * 0.5; }
     // kaydırmayla senkron: ~120 ms içinde oturur, takılma yok
     if (ilk || AZALT) { cam.position.copy(kamPos); hedef.copy(bakis); ilk = false; }
-    else { var k = 1 - Math.pow(0.0002, dt); cam.position.lerp(kamPos, k); hedef.lerp(bakis, k); }
+    else { var k = 1 - Math.pow(0.00005, dt); cam.position.lerp(kamPos, k); hedef.lerp(bakis, k); }
     cam.lookAt(hedef);
     // doğa fonu kamerayla iner (%78 hızla → paralaks), çok yavaş döner
     if (fon) { fon.position.set(g.x, cam.position.y * 0.78 + 4, g.z); fon.rotation.y = th * 0.35 + (AZALT ? 0 : performance.now() * 0.000004); }
@@ -239,7 +250,7 @@
     if (!k0) p = duraklar[0].uc;
     else if (!k1 || AZALT) p = k0.uc;
     else {
-      var u = (sy - k0.docY) / (k1.docY - k0.docY), f = u < 0.28 ? 0 : u > 0.72 ? 1 : (u - 0.28) / 0.44, e = f * f * (3 - 2 * f);
+      var u = (sy - k0.docY) / (k1.docY - k0.docY), f = u < 0.2 ? 0 : u > 0.8 ? 1 : (u - 0.2) / 0.6, e = f * f * (3 - 2 * f);
       ucus = Math.sin(e * Math.PI);
       tmp.copy(k0.uc).lerp(k1.uc, e); tmp.y += ucus * 2.2;
       // uçarken kameraya biraz yaklaş
@@ -254,13 +265,17 @@
   }
 
   // ---- çizim döngüsü: kaydırma bitince 2,5 sn sonra durur
-  var raf = 0, aktifKadar = 0, son = performance.now(), t0 = son;
+  var raf = 0, aktifKadar = 0, son = performance.now(), t0 = son, syY = 0, syIlk = true;
   function ihtiyac() { aktifKadar = performance.now() + 2500; if (!raf) raf = requestAnimationFrame(ciz); }
   function ciz(now) {
     raf = 0;
     if (!govdeEgri) return;
     var dt = Math.min(0.1, (now - son) / 1000); son = now;
-    var sy = window.scrollY, zaman = (now - t0) / 1000;
+    // yumuşatılmış kaydırma: tekerlek 100 px'lik adımlarla gelir, sahne bunu sürekli harekete çevirir
+    var hedefSy = window.scrollY;
+    if (syIlk || AZALT) { syY = hedefSy; syIlk = false; } else syY += (hedefSy - syY) * (1 - Math.pow(0.0003, dt));
+    if (Math.abs(hedefSy - syY) < 0.05) syY = hedefSy;
+    var sy = syY, zaman = (now - t0) / 1000;
     kamera(sy, dt);
     kargaYerlestir(sy, zaman);
     if (!AZALT) { toz.rotation.y = zaman * 0.012; agacMesh && (agacMesh.rotation.z = Math.sin(zaman * 0.5) * 0.0025); }
@@ -272,5 +287,5 @@
   document.addEventListener("visibilitychange", function () { if (!document.hidden) ihtiyac(); });
   function basla() { boyut(); document.body.classList.add("agacli"); }
   if (document.readyState === "complete") basla(); else window.addEventListener("load", basla);
-  window.__agac3d = true; window.__agacDbg = { karga: karga, cam: cam, duraklar: function () { return duraklar; }, snap: function () { ilk = true; ihtiyac(); }, sure: function () { return kurSure; }, ucgen: function () { return agacMesh ? agacMesh.geometry.index.count / 3 : 0; } };
+  window.__agac3d = true; window.__agacDbg = { karga: karga, cam: cam, duraklar: function () { return duraklar; }, snap: function () { ilk = true; ihtiyac(); }, hesapla: function (dt) { kamera(window.scrollY, dt); kargaYerlestir(window.scrollY, 0); }, ciz: function () { ciz(performance.now()); }, sure: function () { return kurSure; }, ucgen: function () { return agacMesh ? agacMesh.geometry.index.count / 3 : 0; } };
 })();
