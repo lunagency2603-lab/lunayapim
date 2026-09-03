@@ -61,7 +61,7 @@
 }
 </script>
 <link rel="preload" as="image" href="assets/video/karga-k1.jpg" fetchpriority="high">
-<link rel="stylesheet" href="assets/luna.css?v=23">
+<link rel="stylesheet" href="assets/luna.css?v=24">
 
 </head>
 <body>
@@ -87,7 +87,12 @@
   </div>
 </header>
 
-<canvas id="agac" aria-hidden="true"></canvas>
+<div id="fon" aria-hidden="true">
+  <img class="fon-arka" alt="" data-b="assets/agac/sahne-arka.jpg?v=1" data-k="assets/agac/sahne-arka-k.jpg?v=1" decoding="async" fetchpriority="high">
+  <div class="fon-sis"></div>
+  <img class="fon-on" alt="" data-b="assets/agac/sahne-on.png?v=1" data-k="assets/agac/sahne-on-k.png?v=1" decoding="async" fetchpriority="high">
+  <div class="fon-perde"></div>
+</div>
 <section id="agac-tepe" aria-label="Giriş">
   <div class="wrap">
     <p class="tepe-etk">Luna Yapım · Yazılım &amp; Yapım · Bursa</p>
@@ -172,7 +177,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="01" aria-hidden="true"><span class="dal-etk">Dal 01</span><b>Ürünler</b></div>
+<div class="dal" data-no="01" aria-hidden="true"><span class="dal-etk">01</span><b>Ürünler</b></div>
 
 <section class="acik" id="urunler">
   <div class="wrap">
@@ -199,7 +204,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="02" aria-hidden="true"><span class="dal-etk">Dal 02</span><b>Yazılım</b></div>
+<div class="dal" data-no="02" aria-hidden="true"><span class="dal-etk">02</span><b>Yazılım</b></div>
 
 <section>
   <div class="wrap">
@@ -223,7 +228,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="03" aria-hidden="true"><span class="dal-etk">Dal 03</span><b>Prodüksiyon ve 3D</b></div>
+<div class="dal" data-no="03" aria-hidden="true"><span class="dal-etk">03</span><b>Prodüksiyon ve 3D</b></div>
 
 <section class="acik" id="produksiyon">
   <div class="wrap">
@@ -266,7 +271,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="04" aria-hidden="true"><span class="dal-etk">Dal 04</span><b>İşler</b></div>
+<div class="dal" data-no="04" aria-hidden="true"><span class="dal-etk">04</span><b>İşler</b></div>
 
 <section class="acik" id="ornek-isler">
   <div class="wrap">
@@ -287,7 +292,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="05" aria-hidden="true"><span class="dal-etk">Dal 05</span><b>81 il</b></div>
+<div class="dal" data-no="05" aria-hidden="true"><span class="dal-etk">05</span><b>81 il</b></div>
 
 <section style="padding-top:0">
   <div class="wrap">
@@ -311,7 +316,7 @@
   </div>
 </section>
 
-<div class="dal" data-no="06" aria-hidden="true"><span class="dal-etk">Dal 06</span><b>İletişim</b></div>
+<div class="dal" data-no="06" aria-hidden="true"><span class="dal-etk">06</span><b>İletişim</b></div>
 
 <section class="cta">
   <img class="karga-buyuk" src="assets/karga.png" alt="">
@@ -386,8 +391,7 @@
 <script src="assets/video.js?v=5"></script>
 <script src="assets/karga.js?v=2" defer></script>
 <script src="assets/sahne.js?v=1" defer></script>
-<script src="assets/three.min.js" defer></script>
-<script src="assets/agac3d.js?v=5" defer></script>
+<script src="assets/fon.js?v=2" defer></script>
 <script src="assets/videolar.js?v=7"></script>
 <script src="assets/sosyal.js"></script>
 <script src="assets/olcum.js"></script>
