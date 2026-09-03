@@ -59,7 +59,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/luna.css?v=9">
+<link rel="stylesheet" href="assets/luna.css?v=14">
 
 </head>
 <body>
@@ -86,20 +86,23 @@
   </div>
 </header>
 
-<div class="hero">
-  <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
-    <source src="assets/hero-video.mp4" type="video/mp4">
+<div class="hero sinema" data-karga="0">
+  <video autoplay muted playsinline preload="auto" poster="assets/video/karga-k1.jpg"
+         aria-label="Luna Yapım sembolü karga — altı bölümlük kısa dizi">
+    <source src="assets/video/karga-k1.webm" type="video/webm">
+    <source src="assets/video/karga-k1.mp4" type="video/mp4">
   </video>
-  <img class="karga-buyuk" src="assets/karga.png" alt="">
+  <div class="hero-bolum" aria-live="polite"><b><i>01</i>/06</b><span>Dalda, arkadan ışık</span><small>Karga · sembolümüz</small></div>
+  <div class="hero-ilerleme" aria-hidden="true"><i></i></div>
   <div class="wrap hero-ic">
     <p class="etk" style="color:var(--kirmizi);margin-bottom:22px">Bursa · Yazılım · Otonom Sistemler · Prodüksiyon</p>
-    <h1>Çalışan <i>sistemler</i> kuruyoruz.</h1>
+    <h1><span class="satir"><span>Çalışan <i>sistemler</i></span></span><span class="satir"><span>kuruyoruz.</span></span></h1>
     <p>Kendi yazılımlarımızı kendimiz yazıyoruz: piyasayı tarayan otonom sistemler, e-ticaret
       otomasyonu, berber danışmanı, içerik üretim hatları. Aynı mühendisliği müşterilerimiz için de
       kuruyoruz — ve gerektiğinde kamerayı da biz alıyoruz.</p>
     <div class="btnlar">
       <a class="btn btn-dolu" href="matrix">Çalışan bir sistemi gör</a>
-      <a class="btn btn-cizgi" href="#urunler">Ürünlerimiz</a>
+      <a class="btn btn-cizgi" href="studyo">Nasıl çalışıyoruz</a>
     </div>
     <form class="hero-sor" id="hero-sor" autocomplete="off">
       <label for="hero-giris">Bir şey sor — bu sitedeki 336 sayfadan cevaplasın</label>
@@ -126,19 +129,26 @@
   </video>
 </div>
 
-<div class="marka-film karga-serit">
-  <video data-luna muted loop playsinline preload="none"
-         poster="assets/video/karga-k1.jpg"
-         aria-label="Luna Yapım sembolü — arkadan ışıklı karga silueti">
-    <source src="assets/video/karga-k1.webm" type="video/webm">
-    <source src="assets/video/karga-k1.mp4" type="video/mp4">
-  </video>
-  <div class="serit">
-    <span>Karga · Luna Yapım sembolü</span>
-    <span>Kendi üretimimiz · yapay zekâ ile üretildi · 6 klip</span>
-    <span>Renk ve kodlama bize ait</span>
+<section class="film fener" id="bolumler" aria-labelledby="film-bas">
+  <div class="wrap">
+    <div class="film-bas">
+      <div>
+        <p class="etk" style="color:var(--kirmizi);margin-bottom:14px">Bir işin altı bölümü</p>
+        <h2 id="film-bas" class="gor">Işıktan yayına, aynı iki elden.</h2>
+      </div>
+      <p class="gor" data-gecik="1">Kalabalık bir ekip değil, uçtan uca tek zincir: set, drone, render, renk, kurgu, yayın. Kareleri sürükle; her bölüm kendi sayfasına gider.</p>
+    </div>
+    <div class="film-serit" role="list">
+      <a class="kare gor" role="listitem" href="hizmetler/"><img src="assets/studyo/set-isik.jpg" alt="Boş bir set: kamera, tek sert ışık ve sisin içinde ışık huzmesi" loading="lazy" width="1600" height="893"><span class="no"><b>01</b> · Set ve ışık</span><span class="yz">Yapay zekâ ile üretilmiş görsel</span><div class="alt"><h3>Işığı biz kurarız.</h3><p>Tek sert ışık, sis ve siyah bayrak. Tanıtım filmi, klip, düğün — çekimin dili burada belirlenir.</p><em>Prodüksiyon →</em></div></a>
+      <a class="kare gor" role="listitem" data-gecik="1" href="hizmetler/drone-fpv"><img src="assets/studyo/drone-safak.jpg" alt="Şafakta çatı kenarında duran sinema dronu, arkada sisli şehir" loading="lazy" width="1600" height="893"><span class="no"><b>02</b> · Havadan</span><span class="yz">Yapay zekâ ile üretilmiş görsel</span><div class="alt"><h3>Şehri yukarıdan.</h3><p>SHGM belgeli pilot, 4K havadan görüntü, 81 il. Şafak ve mavi saat planlaması bizde.</p><em>Drone çekimi →</em></div></a>
+      <a class="kare gor" role="listitem" data-gecik="2" href="hizmetler/insaat-3d-modelleme"><img src="assets/studyo/render-istasyonu.jpg" alt="Render istasyonu: ekranda bir konutun tel kafes modeli ve yarım kalmış fotogerçekçi render" loading="lazy" width="1600" height="893"><span class="no"><b>03</b> · Render</span><span class="yz">Yapay zekâ ile üretilmiş görsel</span><div class="alt"><h3>Proje bitmeden satılır.</h3><p>Tel kafesten fotogerçekçi kareye: mimari render, proje animasyonu, sanal tur.</p><em>3D modelleme →</em></div></a>
+      <a class="kare gor" role="listitem" href="studyo#renk"><img src="assets/studyo/renk-masasi.jpg" alt="Renk masası: iki referans monitörde karga silueti, önde trackball paneli" loading="lazy" width="1600" height="893"><span class="no"><b>04</b> · Renk</span><span class="yz">Yapay zekâ ile üretilmiş görsel</span><div class="alt"><h3>Ham kare film olur.</h3><p>Renk düzenleme ve kodlama masada biter; sitede öncesi/sonrası ile gösteriyoruz.</p><em>Stüdyo →</em></div></a>
+      <a class="kare gor" role="listitem" data-gecik="1" href="sehir/"><video data-luna muted loop playsinline preload="none" poster="assets/video/karga-k4.jpg" aria-label="Karga, şantiye üstünde süzülüyor"><source src="assets/video/karga-k4.webm" type="video/webm"><source src="assets/video/karga-k4.mp4" type="video/mp4"></video><span class="no"><b>05</b> · Saha</span><span class="yz">Yapay zekâ ile üretilmiş video</span><div class="alt"><h3>81 ilde, sahada.</h3><p>Şantiye, fabrika, otel, düğün: kamera nereye gerekiyorsa oraya.</p><em>İl sayfaları →</em></div></a>
+      <a class="kare gor" role="listitem" data-gecik="2" href="yazilim"><video data-luna muted loop playsinline preload="none" poster="assets/video/karga-k5.jpg" aria-label="Karga gece çatı antenine konuyor"><source src="assets/video/karga-k5.webm" type="video/webm"><source src="assets/video/karga-k5.mp4" type="video/mp4"></video><span class="no"><b>06</b> · Yayın</span><span class="yz">Yapay zekâ ile üretilmiş video</span><div class="alt"><h3>Yayınlayan da yazılım.</h3><p>Bu siteyi, bültenini ve asistanını yazan sistem; müşteriler için de aynısını kuruyoruz.</p><em>Yazılım →</em></div></a>
+    </div>
+    <div class="film-ipucu"><i></i><span>Sürükle · her kare bir sayfa</span><span style="margin-left:auto">Görseller yapay zekâ ile üretildi, işaretli</span></div>
   </div>
-</div>
+</section>
 
 <section id="motor">
   <div class="wrap">
@@ -354,7 +364,8 @@
 </div>
 
 <script src="assets/video.js?v=5"></script>
-<script src="assets/karga.js?v=1" defer></script>
+<script src="assets/karga.js?v=2" defer></script>
+<script src="assets/sahne.js?v=1" defer></script>
 <script src="assets/videolar.js?v=6"></script>
 <script src="assets/sosyal.js"></script>
 <script src="assets/olcum.js"></script>
