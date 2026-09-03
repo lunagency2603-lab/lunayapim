@@ -1226,3 +1226,6 @@ body::after{content:"";position:fixed;inset:-50%;width:200%;height:200%;pointer-
 .ts-sss h3:first-of-type{margin-top:6px}
 .ts-sss p{margin:0 0 6px}
 .st-gorsel .yz.ust{bottom:auto;top:12px}
+.ts-rehber h2{font:700 24px/1.2 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:34px 0 10px;color:var(--ink)}
+.ts-rehber p{font-size:17px;line-height:1.7;margin:0 0 8px}
+.ts-kaynaklar{margin:8px 0 0;padding-left:18px}.ts-kaynaklar li{margin:4px 0}
