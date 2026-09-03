@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/luna.css?v=16">
+<link rel="stylesheet" href="../assets/luna.css?v=17">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://lunayapim.com/"},
@@ -75,7 +75,6 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "VideoObject", "name": "CM Vorarlberg konut projesi 3D tanıtım animasyonu — Luna Yapım", "description": "Avusturya'da bir konut projesi için Luna Yapım tarafından üretilen 8K mimari tanıtım animasyonu: havadan yörünge, çatı terası ve sokak seviyesi planları.", "thumbnailUrl": "https://lunayapim.com/assets/video/ornek-cm.jpg", "contentUrl": "https://lunayapim.com/assets/video/ornek-cm.mp4", "uploadDate": "2026-09-01", "duration": "PT15S", "publisher": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com"}}
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3059196718190568" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -289,7 +288,7 @@
         <source src="../assets/video/3d-katmanlar.webm" type="video/webm">
         <source src="../assets/video/3d-katmanlar.mp4" type="video/mp4">
       </video>
-      <span class="yz">Temsilî proje · kodla çizildi</span>
+      <span class="yz ust">Temsilî proje · örnek</span>
     </div>
     <div class="katman-liste">
       <div><b>01 Plan ve ölçüler</b><span>Kat planı ve vaziyet sizden gelir ya da rölöveden çıkarılır. Kontrol: ölçüler, kat sayısı, yerleşim.</span></div>
@@ -297,7 +296,18 @@
       <div><b>03 Yüzeyler</b><span>Gizli çizgiler kalkar, kütle okunur; saçak, teras ve korkuluk kararları. Kontrol: saçak, teras, korkuluk.</span></div>
       <div><b>04 Malzeme</b><span>Cephe kaplaması, cam tonu, ahşap ve taş; örnekler kütüphaneden ya da sizin tedarikçinizden. Kontrol: kaplama, cam, renk.</span></div>
       <div><b>05 Işık ve gölge</b><span>Arsanın gerçek konumu ve güneş açısı; saat ve mevsim seçimi. Kontrol: saat, mevsim, çevre yapılar.</span></div>
-      <div><b>06 Final kare</b><span>Kamera açısı, alan derinliği ve renk; teslim 4K kare, animasyon ya da sanal tur. Kontrol: kamera, derinlik, teslim formatı.</span></div>
+      <div><b>06 Final kare</b><span>Render motorunda gerçek ışık ve malzeme; kamera açısı ve alan derinliği. Teslim 4K kare, animasyon ya da sanal tur. Kontrol: kamera, ışık, malzeme, teslim formatı.</span></div>
+    </div>
+    <div class="bas" style="margin-top:56px"><span class="no">◆</span><div><h3>Blok modelden final kareye: kaydırıcıyı çekin</h3>
+      <p class="aciklama">Solda beşinci katman (kütle, malzeme, ışık yönü belli; doku yok). Sağda aynı projenin final karesi. Müşteriye giden her final karede bu iki görüntü yan yana teslim edilir; hangi ayrıntının modelden, hangisinin render motorundan geldiği yazılıdır.</p></div></div>
+    <div class="st-gorsel gor" style="aspect-ratio:16/9;max-width:1100px">
+      <div class="oncesonra">
+        <img src="../assets/studyo/blockout.jpg" srcset="../assets/studyo/blockout-k.jpg 800w, ../assets/studyo/blockout.jpg 1600w" sizes="(max-width:1100px) 100vw, 1100px" width="1600" height="900" loading="lazy" alt="Beşinci katman: blok model, malzeme ve ışık yönü belli, doku yok">
+        <img src="../assets/studyo/final-kare.jpg" srcset="../assets/studyo/final-kare-k.jpg 800w, ../assets/studyo/final-kare.jpg 1920w" sizes="(max-width:1100px) 100vw, 1100px" width="1920" height="1080" loading="lazy" alt="Final kare: aynı projenin akşam ışığında fotogerçekçi görünümü" aria-hidden="true">
+        <span class="cizgi"></span><span class="etk sol">05 · Blok model</span><span class="etk sag">06 · Final kare</span>
+        <input type="range" min="2" max="98" value="50" aria-label="Blok model / final kare kaydırıcısı">
+      </div>
+      <span class="yz ust">Temsilî proje · örnek kare</span>
     </div>
   </div>
 </section>
