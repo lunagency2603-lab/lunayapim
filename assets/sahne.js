@@ -139,6 +139,16 @@
     }
   });
 
+  /* 6b — bağlantı kopyala (paylaşım çubuğu) */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-kopyala]"), function (b) {
+    b.addEventListener("click", function () {
+      var u = b.getAttribute("data-kopyala"), eski = b.textContent;
+      function tamam() { b.textContent = "Kopyalandı"; setTimeout(function () { b.textContent = eski; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(tamam, tamam);
+      else { var t = document.createElement("textarea"); t.value = u; document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch (e) {} document.body.removeChild(t); tamam(); }
+    });
+  });
+
   /* 7 */
   var sayac = document.querySelector(".st-sayac b"), bolumler = document.querySelectorAll(".st-bolum");
   if (sayac && bolumler.length && "IntersectionObserver" in window) {
