@@ -57,7 +57,7 @@
       
     </div>
     <aside class="ts-yan">
-      <div class="ts-kutu ts-takvim"><h2 class="etk">Takvim · bu hafta aranacaklar</h2><ul><li><span class="ts-tk-gun">Bugün · 09:00</span><b>Gram altın fiyatı</b><small>gram altın kaç tl, çeyrek altın</small></li><li><span class="ts-tk-gun">Bugün · 10:00</span><b>TÜİK enflasyon verisi</b><small>enflasyon açıklandı mı, tüfe</small></li><li><span class="ts-tk-gun">Bugün · 15:30</span><b>TCMB gösterge kurları</b><small>dolar kaç tl, euro kaç tl</small></li><li><span class="ts-tk-gun">Cuma · 10:00</span><b>Vizyona giren filmler</b><small>bu hafta vizyona giren filmler</small></li><li><span class="ts-tk-gun">Cuma · 12:00</span><b>Haftanın dizileri ve platform yayınları</b><small>yeni dizi, netflix bu hafta</small></li><li><span class="ts-tk-gun">Cumartesi · 09:00</span><b>Hafta sonu maçları — hangi kanalda</b><small>maç hangi kanalda, saat kaçta</small></li><li><span class="ts-tk-gun">Pazar · 09:00</span><b>Pazar maçları — hangi kanalda</b><small>derbi hangi kanalda</small></li></ul><p class="ts-not">Her iş günü 15:30 TCMB kurları, her sabah altın fiyatı; tarihi belli konular ilgili sayfada kaynağıyla yenilenir.</p></div>
+      <div class="ts-kutu ts-takvim"><h2 class="etk">Takvim · bu hafta aranacaklar</h2><ul><li><span class="ts-tk-gun">Bugün · 09:00</span><b>Gram altın fiyatı</b><small>gram altın kaç tl, çeyrek altın</small></li><li><span class="ts-tk-gun">Bugün · 10:00</span><b>Vizyona giren filmler</b><small>bu hafta vizyona giren filmler</small></li><li><span class="ts-tk-gun">Bugün · 12:00</span><b>Haftanın dizileri ve platform yayınları</b><small>yeni dizi, netflix bu hafta</small></li><li><span class="ts-tk-gun">Bugün · 14:00</span><b>Sanat takvimi — sergi, konser, sahne</b><small>bu hafta sonu ne yapılır, sergi</small></li><li><span class="ts-tk-gun">Cumartesi · 09:00</span><b>Hafta sonu maçları — hangi kanalda</b><small>maç hangi kanalda, saat kaçta</small></li><li><span class="ts-tk-gun">Pazar · 09:00</span><b>Pazar maçları — hangi kanalda</b><small>derbi hangi kanalda</small></li></ul><p class="ts-not">Her iş günü 15:30 TCMB kurları, her sabah altın fiyatı; tarihi belli konular ilgili sayfada kaynağıyla yenilenir.</p></div>
       <div class="ts-abone" id="abone">
   <span class="etk">Ücretsiz bülten</span>
   <h3>Günün özeti ve haftalık karne, e-postana.</h3>
@@ -70,7 +70,14 @@
 <script>
 (function(){var f=document.getElementById("bl-form");if(!f)return;f.addEventListener("submit",async function(ev){ev.preventDefault();var e=document.getElementById("bl-eposta").value.trim(),s=document.getElementById("bl-sonuc");if(!document.getElementById("bl-onay").checked){s.textContent="Onay kutusunu işaretle.";return}s.textContent="Kaydediliyor…";try{var r=await fetch("/api/abone",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({eposta:e,onay:true,kaynak:"trend"})});s.textContent=r.ok?"Tamam — ilk sayı Pazartesi.":"Olmadı; daha sonra tekrar dene."}catch(x){s.textContent="Bağlantı yok; daha sonra tekrar dene."}});})();
 </script>
-      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="aranan/2026-09-03">
+      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="aranan/2026-09-04">
+      <div class="ts-kart-gorsel"><img src="../assets/video/karga-k6.jpg" alt="Türkiye bugün ne aradı? 4 Eylül 2026" loading="lazy" width="1280" height="720"><span class="ts-chip">Bugün Aranan</span></div>
+      <div class="ts-kart-metin">
+        <span class="ts-meta">4 Eylül 2026 · 1 dk</span>
+        <h3>Türkiye bugün ne aradı? 4 Eylül 2026</h3>
+        <p>Günün en çok aranan 10 başlığı: izmir elektrik kesintisi, elâzığ, high potential, melih kaygusuz, strahinja erakovic… Her biri Google&#x27;ın bağladığı</p>
+      </div>
+    </a><a class="ts-kart gor" href="aranan/2026-09-03">
       <div class="ts-kart-gorsel"><img src="../assets/video/karga-k6.jpg" alt="Türkiye bugün ne aradı? 3 Eylül 2026" loading="lazy" width="1280" height="720"><span class="ts-chip">Bugün Aranan</span></div>
       <div class="ts-kart-metin">
         <span class="ts-meta">3 Eylül 2026 · 1 dk</span>
