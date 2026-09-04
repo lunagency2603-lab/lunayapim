@@ -1327,3 +1327,13 @@ body.agacli > footer{background:var(--ink)}
 @media(max-width:760px){#fon img{object-position:70% 42%}.fon-sis{filter:blur(18px);opacity:.22}}
 @media(prefers-reduced-motion:reduce){.fon-sis{animation:none}}
 #agac{display:none}
+
+/* v25 — TrendSaphiens haber: kaynak alıntısı + okuma */
+blockquote.ts-olgu{margin:14px 0 22px;padding:16px 22px;border-left:4px solid var(--ink);background:rgba(0,0,0,.035);border-radius:0 14px 14px 0;max-width:70ch}
+blockquote.ts-olgu p{margin:0 0 10px;font-size:18px;line-height:1.62;color:var(--ink)}
+blockquote.ts-olgu p:last-of-type{margin-bottom:6px}
+blockquote.ts-olgu cite{display:block;font-style:normal;font-size:13.5px;color:var(--gri-2)}
+blockquote.ts-olgu cite a{color:var(--ink)}
+.ts-analiz h3{font-size:21px;line-height:1.3;margin:2px 0 10px;color:var(--ink)}
+.ts-hizmet-soz{font-size:15px!important;color:var(--gri-2)!important}
+footer.ts-baglam p{font-size:14px;line-height:1.6;color:var(--gri-2)}
