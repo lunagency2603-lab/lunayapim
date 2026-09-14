@@ -1,0 +1,113 @@
+name: TrendSaphiens günlük yayın
+
+# Bilgisayardan bağımsız çalışır: GitHub'ın sunucusunda, Mac kapalı olsa da.
+# 05:30 UTC = 08:30 TR (gündem + trend)  ·  13:00 UTC = 16:00 TR (TCMB 15:30 sonrası)
+on:
+  schedule:
+    - cron: "30 5 * * *"
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      kip:
+        description: "Hangi tur çalışsın"
+        required: false
+        default: "otomatik"
+        type: choice
+        options: [otomatik, sabah, aksam, yalniz-yayin]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trendsaphiens-gunluk
+  cancel-in-progress: false
+
+jobs:
+  yayin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Europe/Istanbul
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      LUNA_X_ANAHTAR: ${{ secrets.LUNA_X_ANAHTAR }}
+      LUNA_X_GIZLI: ${{ secrets.LUNA_X_GIZLI }}
+      LUNA_X_JETON: ${{ secrets.LUNA_X_JETON }}
+      LUNA_X_JETON_GIZLI: ${{ secrets.LUNA_X_JETON_GIZLI }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Yolları kur
+        run: |
+          mkdir -p "$HOME/Documents/GitHub"
+          ln -sfn "$GITHUB_WORKSPACE" "$HOME/Documents/GitHub/lunayapim"
+          ln -sfn "$GITHUB_WORKSPACE/.otomasyon" "$HOME/Documents/luna-pusula"
+          echo "PUSULA=$GITHUB_WORKSPACE/.otomasyon" >> $GITHUB_ENV
+
+      - name: Veri topla ve yayınla
+        working-directory: .otomasyon
+        run: |
+          KIP="${{ github.event.inputs.kip }}"
+          [ -z "$KIP" ] && KIP=otomatik
+          if [ "$KIP" = "otomatik" ]; then
+            if [ "$(date +%H)" -lt 12 ]; then KIP=sabah; else KIP=aksam; fi
+          fi
+          echo "Tur: $KIP · $(date '+%d.%m.%Y %H:%M') TR"
+          case "$KIP" in
+            sabah)        python3 -m pusula.cli gundem-gunluk ;;
+            aksam)        python3 -m pusula.cli trend --topla --paylas ;;
+            yalniz-yayin) python3 -m pusula.cli trend ;;
+          esac
+
+      - name: Üretim sonrası işlem
+        working-directory: .otomasyon
+        run: python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE"
+
+      - name: SEO kapısı
+        working-directory: .otomasyon
+        run: |
+          RAPOR=$(python3 -m seo.denetci | head -1)
+          echo "$RAPOR"
+          echo "### SEO kapısı" >> $GITHUB_STEP_SUMMARY
+          echo "\`$RAPOR\`" >> $GITHUB_STEP_SUMMARY
+          case "$RAPOR" in
+            *"HATA: 0"*) echo "Kapı açık — yayına gidiyor." ;;
+            *) echo "::error::SEO kapısı kapalı, yayın yapılmadı — $RAPOR"
+               python3 -m seo.denetci | head -40 >> $GITHUB_STEP_SUMMARY
+               exit 1 ;;
+          esac
+
+      - name: Yayınla (commit + push)
+        run: |
+          git config user.name "Luna Otomasyon"
+          git config user.email "lunagency2603@gmail.com"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Değişiklik yok — push atlanıyor."
+            echo "Değişiklik yok." >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+          git add -A
+          git commit -q -m "TrendSaphiens günlük yayın $(date '+%Y-%m-%d %H:%M')"
+          git pull --rebase --autostash origin ${{ github.ref_name }} || true
+          git push origin HEAD:${{ github.ref_name }}
+          echo "Yayınlandı: $(git log -1 --format='%h %s')" >> $GITHUB_STEP_SUMMARY
+
+      - name: Canlı kontrol
+        if: always()
+        working-directory: .otomasyon
+        run: |
+          sleep 45
+          python3 -m pusula.gunluk_kontrol || true
+          echo "### Canlı kontrol" >> $GITHUB_STEP_SUMMARY
+          python3 - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import json, os
+          try:
+              d = json.load(open("veri/gunluk-kontrol.json", encoding="utf-8"))
+              son = d[-1] if isinstance(d, list) else d
+              print("```"); print(json.dumps(son, ensure_ascii=False, indent=1)[:1500]); print("```")
+          except Exception as e:
+              print("kontrol dosyası okunamadı:", e)
+          PY

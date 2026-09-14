@@ -1,0 +1,292 @@
+[
+ {
+  "baslik": "Şantiyede sadece 3 kişi vardı: 3D yazıcıyla 36 dairelik konut projesi tamamlandı",
+  "kaynak_ad": "Sabah",
+  "kaynak_url": "https://www.sabah.com.tr/trend/galeri/yasam/santiyede-sadece-3-kisi-vardi-3d-yaziciyla-36-dairelik-dev-konut-projesi-tamamlandi",
+  "kaynak_tarih": "03.09.2026",
+  "olgu": "3D yazıcıyla inşaat teknolojisi hâlâ oldukça yenilikçi bir alan olsa da hızla yaygınlaşmaya devam ediyor. Bu alandaki son büyük adım Danimarka'dan geldi: 36 öğrenci dairesinden oluşan ve \"Avrupa'nın en büyük 3D yazıcıyla basılan konut projesi\" olarak tanımlanan çalışma tamamlandı.",
+  "aci": "Üç kişiyle yürüyen bir şantiye, satışın da farklı anlatılmasını gerektiriyor: yatırımcıya ve alıcıya gösterilecek şey kalabalık bir saha değil, katman katman yükselen yapının kendisi. Bu tür projelerde zaman atlamalı şantiye kaydı ve modelden üretilen görselleştirme, \"nasıl yapıldı\" sorusunu tek videoda cevaplıyor. Türkiye'de henüz istisna olan bu yöntem, ilk uygulayan müteahhit için tanıtımın kendisi hâline gelir; yöntemi anlatan kısa bir film, satış ofisindeki maketten daha çok soru cevaplar.",
+  "hizmet_ad": "İnşaat 3D modelleme",
+  "hizmet_yol": "../hizmetler/insaat-3d-modelleme",
+  "hizmet": "hizmetler/insaat-3d-modelleme.html",
+  "hizmet_soz": "Proje tanıtımı, şantiye ilerleme çekimi ve maketten önce 3D görselleştirme",
+  "ek": "Toplam 36 daire altı tek katlı bina arasında paylaştırıldı. Cihaz, çimento benzeri bir karışımı katmanlar hâlinde püskürterek dairelerin temel yapısını oluşturdu; tüm süreç boyunca şantiyede sadece üç kişinin kontrol amaçlı bulunması yetti.",
+  "aci_soru": "Üç kişilik şantiye satışı nasıl değiştirir?",
+  "yazi": {
+   "baslik": "36 daireyi üç kişi bitirdi: 3D baskılı şantiye satışı değiştirir mi?",
+   "meta": "Danimarka'da 36 dairelik konut projesi 3D inşaat yazıcısıyla bitti; şantiyede üç kişi vardı. Müteahhit için yöntem, tanıtımın kendisi oluyor.",
+   "giris": "Danimarka'da 36 öğrenci dairesinden oluşan bir konut projesi, klasik kalıp ve ekip yerine 3D inşaat yazıcısıyla tamamlandı. Haber Türkiye'deki müteahhit için henüz bir yöntem değişikliği değil; ama bitmemiş bir projeyi nasıl anlatacağı konusunda iyi bir ders.",
+   "bolumler": [
+    {
+     "h2": "Ne oldu",
+     "paragraflar": [
+      "Sabah'ın aktardığına göre proje Danimarka'nın Holstebro kentinde, bir üniversite kampüsü için yapıldı; haber onu Avrupa'da 3D yazıcıyla üretilmiş en büyük konut projesi diye tanıtıyor. Toplam 36 daire, altı tek katlı binaya dağıtılmış durumda; binalar ortak avlu, peyzajlı bahçe ve bisiklet park alanlarını paylaşıyor.",
+      "Yapım yöntemi şu: özel bir inşaat yazıcısı, çimento benzeri karışımı katman katman püskürterek dairelerin taşıyıcı yapısını oluşturuyor. Süreç boyunca sahada yalnızca üç kişi, o da kontrol amacıyla bulunmuş. Haberde ayrıca alandaki mevcut ağaçların yüzde 90'ının korunduğu belirtiliyor."
+     ]
+    },
+    {
+     "h2": "Kimi etkiler",
+     "paragraflar": [
+      "Doğrudan etkilenen taraf, konut üreten firma ve onun satış ofisi. Türkiye'de bu ölçekte 3D baskılı konut henüz istisna; ama yöntem ister katmanlı üretim ister prefabrik olsun, şantiyede insan sayısının azaldığı her projede aynı soru doğuyor: alıcı ve yatırımcı, ilerlemeyi neye bakarak anlayacak?",
+      "Kalabalık bir sahanın görüntüsü yıllardır \"iş yürüyor\" mesajının kendisiydi. Sahada üç kişi kaldığında bu mesaj kayboluyor. Yerine geçebilecek tek şey, yapının kendisinin katman katman yükselişini gösteren düzenli kayıt."
+     ]
+    },
+    {
+     "h2": "Rakamlar ne söylüyor",
+     "paragraflar": [
+      "Haberdeki sayılar üç tane: 36 daire, 6 bina, 3 kişi. Klasik bir konut şantiyesinde kalıp, demir, beton ve sıva ekipleri sırayla sahaya girer; burada katmanlı üretim bu sıranın büyük kısmını tek makineye devretmiş. Ağaçların yüzde 90'ının korunması da aynı şeyin sonucu: makine dar alanda çalışabildiği için sahanın tamamını açmak gerekmemiş.",
+      "Bu üç sayı bir tanıtım metninde yan yana durduğunda projeyi anlatmaya yetiyor. Bizim gözlemimiz şu: alıcı yöntemin teknik ayrıntısını değil, sonucunu ve süresini merak ediyor; bu yüzden şantiye kaydı ile bitmiş hâl görselleştirmesi aynı sunumda olmalı."
+     ]
+    },
+    {
+     "h2": "Bizim tarafımız",
+     "paragraflar": [
+      "Bu tür projelerde iki iş birbirini tamamlıyor. Birincisi, aynı açıdan her hafta ya da her ay çekilen şantiye ilerleme kaydı; teslimde elde, sıfırdan çatıya tek bir zaman atlamalı film kalıyor. İkincisi, mimari modelden üretilen görselleştirme: satış, bina bitmeden başladığı için alıcıya gösterilecek \"bitmiş hâl\" ancak modelden çıkıyor.",
+      "Fiyat tarafında bandımız açık: inşaat 3D modelleme ve mimari görselleştirme için tek blok render seti artı kısa animasyon 45.000 – 150.000 ₺ arasında; keşif ve teklif aynı gün, blok sayısı ve ışık senaryosu bandı belirliyor. İki kişilik bir stüdyoyuz; şantiye kaydını kendi kameramız ve dronumuzla, modeli kendi iş istasyonumuzda yapıyoruz. Teslimde hangi karenin gerçek çekim, hangisinin üretim olduğu yazılı."
+     ]
+    }
+   ],
+   "alinti": {
+    "metin": "Tüm süreç boyunca şantiyede sadece üç kişinin kontrol amaçlı bulunması yetti.",
+    "kaynak": "Sabah"
+   },
+   "ne_yapmali": [
+    "Şantiyeye ilk gün sabit bir çekim noktası belirleyin; aynı açı, aynı saat, düzenli aralıkla kayıt alın.",
+    "Satış ofisine maket yerine modelden üretilmiş içinde dolaşılan bir video koyun; alıcının sorduğu ilk şey \"nasıl görünecek\", ikincisi \"bitecek mi\".",
+    "Yeni bir yapım yöntemi kullanıyorsanız yöntemi anlatan kısa bir film çektirin; yöntem, o projenin en güçlü tanıtım malzemesidir."
+   ],
+   "sss": [
+    {
+     "soru": "3D baskılı konut Türkiye'de yaygın mı?",
+     "cevap": "Haberdeki proje Danimarka'da; Türkiye'de bu ölçekte tamamlanmış bir örnek kaynakta geçmiyor. Yöntemin ülkemizdeki yaygınlığına dair rakam vermiyoruz."
+    },
+    {
+     "soru": "Şantiye ilerleme videosu için her ay gelmeniz gerekiyor mu?",
+     "cevap": "Evet, aynı açıdan düzenli çekim gerekiyor; Bursa ve çevre illerde aylık plan yapıyoruz, uzak illerde çekim aralığını projeye göre belirliyoruz."
+    }
+   ],
+   "intihal": {
+    "kapsama": 0.0,
+    "en_uzun": 5,
+    "gecti": true
+   },
+   "kelime": 479
+  }
+ },
+ {
+  "baslik": "Yapay zekâ üretimi menü görselleri ters tepti: müşteriler restorandan kaçıyor",
+  "kaynak_ad": "trthaber.com",
+  "kaynak_url": "https://www.trthaber.com/haber/dunya/yapay-zeka-uretimi-menu-gorselleri-ters-tepti-musteriler-restorandan-kaciyor-955835.html",
+  "kaynak_tarih": "03.09.2026",
+  "olgu": "Restoranların maliyetleri düşürmek amacıyla menülerinde ve tanıtımlarında gerçek fotoğraflar yerine yapay zekâ tarafından üretilen yemek görsellerine yer vermesi tüketici tepkisine yol açtı. ABD Ulusal Restoran Birliği verileri, işletmecilerin yaklaşık yüzde 26'sının özellikle pazarlama süreçlerinde yapay zekâdan yararlandığını ortaya koyuyor.",
+  "aci": "Haberin dersi \"yapay zekâ kullanma\" değil; yiyecek gibi güven ürünlerinde gerçek çekimi yapay olanla değiştirme. Yapay zekâ görselinin işe yaradığı yer fikir ve varyasyon aşaması: menü düzeni, kampanya taslağı, sosyal medya için deneme. Menüye, vitrine ve Google profiline giren kare gerçek olmalı; bir öğleden sonra süren gerçek ürün çekimi bir yıl boyunca menüde kalıyor ve Ticaret Bakanlığı'nın 1 Ağustos'ta yürürlüğe giren etiket zorunluluğuyla da uyumlu.",
+  "hizmet_ad": "Ürün animasyonu",
+  "hizmet_yol": "../hizmetler/urun-animasyon",
+  "hizmet": "hizmetler/urun-animasyon.html",
+  "hizmet_soz": "Yapay zekâ ile üretilen görselin nerede işe yaradığı, nerede yaramadığı",
+  "ek": "Gerçek dışı renk doygunlukları, lastik hissi veren dokular ve biçimsel gariplikler, müşterilerin bu görselleri \"tüketilemez ve özensiz\" olarak algılamasına neden oluyor; internette alay konusu olan afişler ciddi ticari kayıp getiriyor.",
+  "aci_soru": "Yapay zekâ görseli menüye girer mi?",
+  "yazi": {
+   "baslik": "Yapay zekâ menü görseli müşteriyi kaçırıyor: gerçek çekim nerede şart?",
+   "meta": "TRT Haber: yapay zekâ üretimi yemek görselleri restoranlarda müşteri tepkisi yaratıyor. Yapay görselin işe yaradığı ve yaramadığı yerler, üç adım.",
+   "giris": "Maliyet düşürmek için menü ve tanıtımlarında gerçek fotoğraf yerine yapay zekâ görseli kullanan restoranlar, beklenenin tersini yaşıyor: müşteri o görsele güvenmiyor. Haber, yapay görselin hangi işte işe yaradığını, hangi işte yaramadığını ayırmak için iyi bir vesile.",
+   "bolumler": [
+    {
+     "h2": "Ne oldu",
+     "paragraflar": [
+      "TRT Haber'in aktardığına göre yiyecek-içecek işletmeleri artan maliyetlerle mücadele ederken profesyonel fotoğraf çekimi yerine üretken yapay zekâ araçlarına yöneliyor. ABD Ulusal Restoran Birliği verisi, işletmecilerin yaklaşık yüzde 26'sının özellikle pazarlama süreçlerinde yapay zekâdan yararlandığını gösteriyor.",
+      "Sonuç tüketici tarafında hayal kırıklığı ve güvensizlik. Haberde sayılan sorunlar somut: gerçek dışı renk doygunluğu, lastik hissi veren dokular ve biçimsel gariplikler. Müşteri bu görselleri \"tüketilemez ve özensiz\" olarak algılıyor; internette alay konusu olan afişler işletmeye ticari kayıp olarak dönüyor."
+     ]
+    },
+    {
+     "h2": "Kimi etkiler",
+     "paragraflar": [
+      "Kafe, restoran, pastane ve paket servis yapan her işletme. Yemek bir güven ürünü: müşteri tabaktan önce görseli yiyor. Görselde bir terslik sezdiğinde tepkisi rasyonel değil, içgüdüsel; haberde anılan araştırmacılar bunu bozuk yiyeceğe karşı gelişmiş biyolojik savunmayla açıklıyor.",
+      "Aynı mekanizma menü dışında da çalışıyor: Google işletme profilindeki fotoğraf, sipariş uygulamasındaki kapak görseli ve sosyal medya afişi. Bunların hepsi müşterinin \"burası gerçek mi\" sorusuna verdiği cevabın parçası.",
+      "Haberde geçen yüzde 26 oranı ABD'ye ait; Türkiye için benzer bir rakam kaynakta yok ve biz de vermiyoruz. Gözlemimiz, özellikle paket servis ve sosyal medya ağırlıklı çalışan işletmelerde yapay görselin hızla yayıldığı yönünde; ama bu bir ölçüm değil, saha izlenimi. Ölçülebilir olan şey, görseli değiştirdikten sonra gelen \"buradan gördüm\" diyen müşteri sayısı."
+     ]
+    },
+    {
+     "h2": "Bizim tarafımız",
+     "paragraflar": [
+      "Yapay zekâ görselini işimizde kullanıyoruz; ama yerini biliyoruz. Fikir aşamasında, kampanya taslağında, menü düzeninin denemesinde ve sosyal medya için varyasyon üretmede çok işe yarıyor. Menüye, vitrine, işletme profiline ve sipariş uygulamasına giren kare ise gerçek çekim oluyor. Teslimde hangi karenin gerçek çekim, hangisinin üretim olduğunu yazılı veriyoruz; Ticaret Bakanlığı'nın 1 Ağustos'ta yürürlüğe giren etiket zorunluluğu da bunu gerektiriyor.",
+      "Ölçek olarak bir işletme için tek öğleden sonra süren gerçek ürün çekimi, bir yıl boyunca menüde kalan görselleri çıkarıyor. İşletme ve sosyal medya aylık üretim bandımız 14.000 – 40.000 ₺; içine çekim günü, kurgu ve platforma göre boyutlanmış sürümler giriyor. İki kişilik bir stüdyoyuz, çekimi kendimiz yapıyoruz."
+     ]
+    }
+   ],
+   "alinti": {
+    "metin": "Doğallıktan uzak, plastik ve tekinsiz görünen yemek afişleri iştah kaçırdı.",
+    "kaynak": "TRT Haber"
+   },
+   "ne_yapmali": [
+    "Menü, vitrin ve işletme profilindeki yemek görsellerini bugün gözden geçirin; yapay üretim olanları gerçek çekimle değiştirin.",
+    "Yapay zekâyı taslak ve varyasyon için kullanın, müşteriye giden son karede kullanmayın.",
+    "Kullanmaya devam ettiğiniz yapay görselleri açıkça etiketleyin; 1 Ağustos 2026'dan beri bu bir tercih değil, yükümlülük."
+   ],
+   "sss": [
+    {
+     "soru": "Yapay zekâ görseli menüde tamamen yasak mı?",
+     "cevap": "Haberde bir yasaktan söz edilmiyor; sorun müşteri tepkisi. Türkiye'de reklamda yapay zekâ ile üretilen görselin ayırt edilebilir biçimde belirtilmesi zorunlu; kullanırsanız etiketleyin."
+    },
+    {
+     "soru": "Gerçek ürün çekimi kaç saat sürüyor?",
+     "cevap": "Orta boy bir menü için bir öğleden sonra yetiyor; tabak sayısı ve mekân ışığı süreyi belirliyor, planı keşifte çıkarıyoruz."
+    }
+   ],
+   "intihal": {
+    "kapsama": 0.0165,
+    "en_uzun": 9,
+    "gecti": true
+   },
+   "kelime": 426
+  }
+ },
+ {
+  "baslik": "İstanbul'da kentsel dönüşüm teknolojiyle nasıl değişiyor?",
+  "kaynak_ad": "CozumPark",
+  "kaynak_url": "https://www.cozumpark.com/istanbulda-kentsel-donusum-teknolojiyle-nasil-degisiyor/",
+  "kaynak_tarih": "25.08.2026",
+  "olgu": "İstanbul'da kentsel dönüşüm, yalnızca eski yapıların yenilenmesiyle sınırlı bir süreç olmaktan çıkıyor. Deprem riski, yoğun yapılaşma, dar çalışma alanları ve şehir içindeki lojistik kısıtlar, inşaat projelerinde teknoloji kullanımını giderek daha önemli hâle getiriyor.",
+  "aci": "Haber şantiyenin teknik tarafını anlatıyor: sensör, filo yönetimi, hassas kazı. Aynı ölçekte bir de anlaşma masası var ve orada belirleyici olan, hak sahibinin bitmemiş bir şeyi görebilmesi. Dönüşüm öncesi/sonrası görselleştirme ile aylık şantiye ilerleme videosu, anlaşma masasında ve satış ofisinde aynı işi görüyor. 300 bin bağımsız bölümün yapımı sürerken her projenin kendi ilerlemesini gösterebilmesi, belirsizlik dönemlerinde en somut güven aracı.",
+  "hizmet_ad": "İnşaat 3D modelleme",
+  "hizmet_yol": "../hizmetler/insaat-3d-modelleme",
+  "hizmet": "hizmetler/insaat-3d-modelleme.html",
+  "hizmet_soz": "Hak sahibine projeyi anlatmak: dönüşüm öncesi/sonrası görselleştirme",
+  "ek": "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'nın Şubat 2026'da paylaştığı bilgilere göre İstanbul'da bugüne kadar 927 bin konutun dönüşümü tamamlanırken yaklaşık 300 bin bağımsız bölümün yapım süreci devam ediyor.",
+  "aci_soru": "Hak sahibine sonucu kim gösteriyor?",
+  "yazi": {
+   "baslik": "İstanbul'da 927 bin konut dönüştü: hak sahibine ne gösterilecek?",
+   "meta": "ÇözümPark: İstanbul'da 927 bin konutun dönüşümü tamamlandı, 300 bin bağımsız bölüm yapımda. Teknoloji şantiyede, görselleştirme anlaşma masasında.",
+   "giris": "İstanbul'daki kentsel dönüşümün ölçeği artık tek tek binaların değil, şantiye yönetiminin konusu. Haber teknik tarafı anlatıyor; biz aynı ölçeğin anlaşma masasına ve satış ofisine ne yüklediğine bakıyoruz.",
+   "bolumler": [
+    {
+     "h2": "Ne oldu",
+     "paragraflar": [
+      "ÇözümPark'ın yazısına göre İstanbul'da dönüşüm artık eski binayı yıkıp yenisini dikmekten ibaret değil. Yazı dört gerekçe sayıyor: deprem riski, sıkışık yapı stoku, makineye yer kalmayan dar sahalar ve şehir içinde malzeme taşımanın zorluğu. Bunlar teknolojiyi tercih olmaktan çıkarıp zorunluluk yapıyor: makinelerden toplanan operasyon verisi, sensörler, uzaktan filo takibi ve hassas kazı.",
+      "Ölçek için yazının dayandığı resmî veri, Çevre, Şehircilik ve İklim Değişikliği Bakanlığı'nın Şubat 2026 açıklaması. İki sayı var: tamamlanan 927 bin konut ve yapımı süren yaklaşık 300 bin bağımsız bölüm."
+     ]
+    },
+    {
+     "h2": "Kimi etkiler",
+     "paragraflar": [
+      "Müteahhit ve yüklenici tarafında şantiye artık veriyle yönetiliyor; makinenin nerede olduğu, yakıtın nereye gittiği, bakımın ne zaman geleceği takip ediliyor. Bu tarafın araçları haberde sayılıyor.",
+      "Hak sahibi ve alıcı tarafında ise araçlar değişmedi: bir sözleşme, bir kat planı ve bitmemiş bir şeye duyulan güven. Dönüşümde en uzun süren aşama anlaşma; hak sahibi rakamı değil, sonucu göremediği için tereddüt ediyor. 300 bin bağımsız bölüm demek, aynı anda yüz binlerce kişinin bu tereddüdü yaşaması demek."
+     ]
+    },
+    {
+     "h2": "Rakamlar ne söylüyor",
+     "paragraflar": [
+      "927 bin tamamlanmış konut, 300 bin yapımı süren bağımsız bölüm: yazıdaki iki rakam, dönüşümün İstanbul'da bir istisna değil, kentin olağan inşaat düzeni hâline geldiğini söylüyor. Aynı anda çok sayıda noktada süren proje, yazıya göre makinelerin doğru sahaya yönlendirilmesini, yakıt ve bakımın takibini gerekli kılıyor.",
+      "Bizim okumamız: bu ölçekte her proje kendi hak sahibi grubuyla ayrı bir anlaşma süreci yürütüyor. Yüz binlerce kişiye aynı anda \"bitecek ve şöyle görünecek\" demenin ölçeklenebilir tek yolu, projeye özel görselleştirme ile düzenli ilerleme kaydı."
+     ]
+    },
+    {
+     "h2": "Bizim tarafımız",
+     "paragraflar": [
+      "Dönüşüm projelerinde iki üretim yapıyoruz. Anlaşma aşamasında öncesi/sonrası görselleştirme: mevcut binanın yerine gelecek yapının, hak sahibinin kendi dairesinin konumuyla gösterildiği render ve kısa animasyon. Yapım aşamasında ise aylık şantiye ilerleme videosu; aynı açıdan düzenli çekim, teslimde tek bir zaman atlamalı film.",
+      "Bandımız inşaat 3D modelleme için 45.000 – 150.000 ₺; blok sayısı ve ışık senaryosu belirliyor, keşif ve teklif aynı gün. Modelleme uzaktan yürüdüğü için İstanbul'daki projede sahaya yalnızca drone ve gerçek çekim için çıkıyoruz. İki kişilik stüdyo olarak aynı anda sınırlı sayıda proje alıyoruz; bunu teklifte açıkça yazıyoruz."
+     ]
+    }
+   ],
+   "alinti": {
+    "metin": "İstanbul'da bugüne kadar 927 bin konutun dönüşümü tamamlanırken yaklaşık 300 bin bağımsız bölümün yapım süreci devam ediyor.",
+    "kaynak": "ÇözümPark"
+   },
+   "ne_yapmali": [
+    "Hak sahibi toplantısına kat planıyla değil, dairesinin yerini gösteren görselleştirmeyle gidin.",
+    "Şantiyede sensörle takip ettiğiniz ilerlemeyi hak sahibine de aylık bir videoyla gösterin; güven, veriyi paylaşmakla kurulur.",
+    "Satış ofisi açılmadan önce bitmiş hâli gösteren içeriği hazır edin; dönüşümde satış, yıkımdan önce başlar."
+   ],
+   "sss": [
+    {
+     "soru": "Öncesi/sonrası görselleştirme için mimari proje şart mı?",
+     "cevap": "DWG olması süreci kısaltıyor ama PDF kat planı ve cephe görselleriyle de model kurabiliyoruz; arsa bilgisi ve fotoğraf yeterli."
+    },
+    {
+     "soru": "300 bin bağımsız bölüm rakamı güncel mi?",
+     "cevap": "Kaynak, Bakanlığın Şubat 2026'da paylaştığı bilgiye dayanıyor; daha yeni bir resmî rakam elimizde yok, olduğunda yazıyı güncelleriz."
+    }
+   ],
+   "intihal": {
+    "kapsama": 0.0046,
+    "en_uzun": 7,
+    "gecti": true
+   },
+   "kelime": 435
+  }
+ },
+ {
+  "baslik": "Sivas'a kalıcı fuar merkezi yapılıyor: 6.445 m² kapalı alan, 2028'de açılış",
+  "kaynak_ad": "Saray Medya",
+  "kaynak_url": "https://www.saraymedya.com/haber/sivas-a-kalici-fuar-merkezi-yapiliyor_299281/",
+  "kaynak_tarih": "02.09.2026",
+  "olgu": "Sivas Belediyesi, kentte çeşitli sektörlerde düzenlenecek etkinliklere ev sahipliği yapacak kalıcı bir fuar merkezi projesini hayata geçiriyor. Fizibilite çalışmaları tamamlanan merkez 6 bin 445 metrekare kapalı ve 2 bin 125 metrekare açık sergi alanına sahip olacak; ihalenin 2027 başında yapılması, açılışın 2028'de olması öngörülüyor.",
+  "aci": "Merkez 2028'de açılacak; aradaki iki fuar sezonunda firmalar mevcut takvimle devam edecek. Fuara giden firmanın standında katalog değil ekran duruyor: makinenin içini gösteren animasyon ve tesis videosu, merkez açılmadan da hazır olması gereken malzeme. Belediyenin çok sektörlü kullanım planı, yerel üretici için bir kez üretilip yıllarca kullanılacak tanıtım içeriğini anlamlı kılıyor — 2028'de açılacak salonda ilk sırada olmak için içerik bugünden birikmeli.",
+  "hizmet_ad": "Ürün animasyonu",
+  "hizmet_yol": "../hizmetler/urun-animasyon",
+  "hizmet": "hizmetler/urun-animasyon.html",
+  "hizmet_soz": "Makine ve süreç animasyonu, çok dilli tanıtım, fuar ekranı içeriği",
+  "ek": "Belediye Başkanı Adem Uzun, merkezin tarım ve hayvancılık fuarlarıyla sınırlı kalmayacağını; gıda, sanayi, yapı, otomotiv, mobilya ve teknoloji fuarlarına da ev sahipliği yapacağını belirtti.",
+  "aci_soru": "Fuar merkezi açılana kadar stand nasıl dolar?",
+  "yazi": {
+   "baslik": "Sivas'a 6.445 m² fuar merkezi 2028'de: stand ne zaman hazırlanmalı?",
+   "meta": "Sivas Belediyesi 6.445 m² kapalı alanlı kalıcı fuar merkezini 2028'de açacak; ihale 2027 başında. Merkez açılana kadar üreticinin içerik planı.",
+   "giris": "Sivas, 2028'de kendi kalıcı fuar merkezine kavuşacak. Bu, kentteki üretici için iki fuar sezonu daha mevcut düzende geçecek ve üçüncüsünde kendi şehrinde, çok sektörlü bir salonda stand açacak demek.",
+   "bolumler": [
+    {
+     "h2": "Ne oldu",
+     "paragraflar": [
+      "Saray Medya'nın haberine göre Sivas Belediyesi kalıcı bir fuar merkezi yapıyor; yer olarak Kızılırmak Projesi'nin yakını, Gürün Caddesi seçilmiş. Merkez tek bir sektöre değil, farklı sektörlerin etkinliklerine ayrılacak.",
+      "Fizibilite bitmiş durumda; kapalı sergi alanı 6 bin 445, açık alan 2 bin 125 metrekare. Takvimde ihale 2027 başı, açılış 2028. Belediye Başkanı Adem Uzun'a göre program tarım ve hayvancılıkla sınırlı kalmayacak; gıda, sanayi, yapı, otomotiv, mobilya ve teknoloji fuarları da listede."
+     ]
+    },
+    {
+     "h2": "Kimi etkiler",
+     "paragraflar": [
+      "Sivaslı üretici ve esnaf. Başkanın sözleriyle merkez, yerel firmaların ürünlerini daha geniş kitleye tanıtma fırsatı yaratacak ve sektör temsilcilerini bir araya getirecek. Çok sektörlü kullanım, tek bir firmanın yılda birden fazla fuara aynı şehirde katılabilmesi anlamına geliyor.",
+      "Fuar standının kuralı şehirden bağımsız: ziyaretçi katalog okumuyor, ekranda dönen anlatıma bakıyor. Makinenin içini gösteren animasyon, tesis videosu ve ürünün mekânda kullanımını gösteren görsel, standın önünde kimin duracağını belirliyor."
+     ]
+    },
+    {
+     "h2": "Takvim ne söylüyor",
+     "paragraflar": [
+      "Haberdeki tarihler net: fizibilite tamamlandı, ihale 2027 başı, açılış 2028. Bugünden açılışa iki tam fuar sezonu var. Kapalı alan 6 bin 445 metrekare, açık alan 2 bin 125 metrekare; başkanın saydığı yedi sektör bu alanı yıl boyunca dönüşümlü kullanacak.",
+      "Üretici için anlamı şu: 2028'deki ilk yerel fuara elinde bugün üretilmiş, iki sezon boyunca başka fuarlarda denenmiş bir içerikle girmek mümkün. İçeriği fuardan fuara yenilemek yerine bir kez doğru üretip sürümlemek hem bütçeyi hem hazırlık süresini düşürüyor."
+     ]
+    },
+    {
+     "h2": "Bizim tarafımız",
+     "paragraflar": [
+      "Fuar içeriğini bir kez üretip yıllarca kullanılacak biçimde kuruyoruz: 45–60 saniyelik ürün ya da makine animasyonu, kesit ve akış anlatımı, ihracat için çok dilli sürüm; yanına tesisin gerçek çekimi ve drone planı. Ekran boyutuna göre yatay ve dikey kesimler aynı işten çıkıyor.",
+      "3D ürün animasyonu bandımız 40.000 – 95.000 ₺; modelleme, animasyon ve ses tasarımı dahil, model karmaşıklığı ve dil sayısı belirliyor. Animasyon uzaktan yürüyor; tesise yalnızca gerçek çekim için geliyoruz. İki kişilik stüdyo olarak fuar takvimine göre sıraya alıyoruz, bu yüzden erken plan işin kalitesini doğrudan etkiliyor."
+     ]
+    }
+   ],
+   "alinti": {
+    "metin": "Bu merkezin tamamlanmasıyla birlikte, şehirdeki fuar organizasyonları için daimi bir alan oluşturulmuş olacak.",
+    "kaynak": "Saray Medya"
+   },
+   "ne_yapmali": [
+    "2027 fuar takviminizi şimdiden çıkarın; içerik üretimi fuardan en az iki ay önce başlamalı.",
+    "Katalog yerine bir kez üretilecek animasyon ve tesis videosuna bütçe ayırın; aynı içerik 2028'deki yerel salonda da kullanılır.",
+    "Fuar içeriğinizi ihracat düşünerek çok dilli hazırlatın; Türkçe dışı sürüm sonradan eklemek yeniden üretim demektir."
+   ],
+   "sss": [
+    {
+     "soru": "Fuar merkezi hangi sektörlere açık olacak?",
+     "cevap": "Başkanın saydığı sektörler: tarım-hayvancılık, gıda, sanayi, yapı, otomotiv, mobilya ve teknoloji."
+    },
+    {
+     "soru": "Fuar animasyonu için ürünün 3D dosyası şart mı?",
+     "cevap": "Değil; teknik çizim, fotoğraf ve ölçüyle modeli biz kuruyoruz. Hazır 3D dosya süreyi kısaltır ve bandın alt ucuna yaklaştırır."
+    }
+   ],
+   "intihal": {
+    "kapsama": 0.0049,
+    "en_uzun": 7,
+    "gecti": true
+   },
+   "kelime": 414
+  }
+ }
+]

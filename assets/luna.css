@@ -1344,3 +1344,9 @@ footer.ts-baglam p{font-size:14px;line-height:1.6;color:var(--gri-2)}
 .ts-yazi-ana>p{font-size:17px;line-height:1.68;max-width:68ch;margin:0 0 14px}
 .ts-analiz ol{margin:6px 0 12px 20px;padding:0}.ts-analiz ol li{margin:0 0 8px;font-size:16px;line-height:1.55}
 .ts-sss{margin:26px 0 8px;max-width:68ch}.ts-sss h2{font-size:22px;margin:0 0 8px}.ts-sss h3{font-size:17px;margin:14px 0 4px;color:var(--ink)}.ts-sss p{font-size:15.5px;line-height:1.6;color:var(--gri-2);margin:0}
+
+.ts-rehber-liste{list-style:none;margin:.4rem 0 0;padding:0}
+.ts-rehber-liste li{padding:.42rem 0;border-top:1px solid rgba(0,0,0,.08);font-size:.92rem;line-height:1.35}
+.ts-rehber-liste li:first-child{border-top:0}
+.ts-rehber-liste a{text-decoration:none}
+.ts-rehber-liste a:hover{text-decoration:underline}

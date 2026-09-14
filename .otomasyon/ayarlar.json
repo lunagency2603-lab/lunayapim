@@ -1,0 +1,26 @@
+{
+ "eposta": "lunagency2603@gmail.com",
+ "imza": "Luna Yapım",
+ "esik": {
+  "sicak_skor": 55,
+  "gorsel_az": 10,
+  "yorum_az": 25,
+  "puan_dusuk": 4
+ },
+ "model": {
+  "donusum_mevcut": 0.018000000000000002,
+  "donusum_iyilesmis": 0.032,
+  "kapanis_orani": 0.18,
+  "carpan_tavani": 3.2,
+  "ortalama_is": {
+   "insaat": 45000,
+   "emlak": 9000,
+   "mimarlik": 30000,
+   "sanayi": 38000,
+   "mobilya": 18000,
+   "otel": 25000,
+   "isletme": 7000
+  }
+ },
+ "uzak_epostalar": []
+}

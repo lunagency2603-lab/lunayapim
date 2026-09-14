@@ -1,0 +1,6 @@
+# Otomasyon çalışırken üretilen geçici dosyalar — yayına ve depoya girmez
+__pycache__/
+*.pyc
+.DS_Store
+.otomasyon/veri/ham/
+.otomasyon/veri/*.log
