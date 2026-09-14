@@ -299,13 +299,20 @@ def _gundem_maddeleri():
                     continue
             except Exception:
                 pass
+            # ÖZGÜNLÜK KAPISI (14.09.2026): kendi kalemimizden geçmemiş madde sayfa açmaz.
+            # Derleme/alıntı biçimi kaldırıldı — yazar.py yazmadıysa madde yalnız gündem
+            # sayısında kalır. Anahtar yoksa hiç haber sayfası üretilmez; bu bilinçli.
+            _yz = m.get("yazi")
+            if not (isinstance(_yz, dict) and not _yz.get("hata") and _yz.get("bolumler")):
+                continue
             kat, gor, sek = HIZMET_KAT.get(m.get("hizmet", ""), ("gundem", "set-isik", "Sektör"))
             ci.append({"tur": "haber", "tarih": tarih, "sira": i, "baslik": m["baslik"], "olgu": m.get("olgu", ""),
                        "ek": m.get("ek", ""), "aci_soru": m.get("aci_soru", ""), "hizmet_soz": m.get("hizmet_soz", ""), "yazi": m.get("yazi") if isinstance(m.get("yazi"), dict) and not m["yazi"].get("hata") else None,
                        "aci": m.get("aci", ""), "kaynak_ad": m.get("kaynak_ad", ""), "kaynak_url": m.get("kaynak_url", ""),
                        "kaynak_tarih": m.get("kaynak_tarih", ""), "hizmet": m.get("hizmet", ""),
                        "kat": kat, "gorsel": gor, "sektor": sek,
-                       "slug": _slug(m["baslik"]) or ("haber-%s-%d" % (tarih, i)),
+                       # Adres KENDİ başlığımızdan türer; kaynağın manşetini adrese taşımıyoruz (14.09.2026)
+                       "slug": _slug((_yz.get("baslik") or m["baslik"])) or ("haber-%s-%d" % (tarih, i)),
                        "gundem_url": "../gundem/%s#m%d" % (tarih, i)})
     return ci
 
@@ -379,15 +386,8 @@ def _gunluk_sayfalar():
                        "baslik": "Türkiye bugün ne aradı? %s" % _tr_tarih(t),
                        "olgu": "Günün en çok aranan %d başlığı: %s… Her biri Google'ın bağladığı haberle." % (len(ar), ilk),
                        "url": "aranan/%s" % t})
-        for b, liste in (v.get("bolumler") or {}).items():
-            kat = BOLUM_KAT.get(b)
-            if not kat or not liste:
-                continue
-            ad = KATEGORI[kat][0]
-            ci.append({"tur": "sayfa", "tarih": t, "kat": kat, "gorsel": BOLUM_GORSEL.get(kat, "set-isik"),
-                       "baslik": "%s · %s: %s" % (ad, _tr_tarih(t), liste[0]["baslik"][:70]),
-                       "olgu": " · ".join(x["baslik"][:60] for x in liste[1:4]) or liste[0].get("ozet", ""),
-                       "url": "%s/%s" % (kat, t)})
+        # 14.09.2026: bölüm günlükleri (başlık derlemesi) kaldırıldı — akışa girmez.
+        # Bölüm sayfaları artık yalnız kendi yazdığımız yazıları listeler.
     for v in PG.hepsi():
         t = v.get("tarih"); k = (v.get("tcmb") or {}).get("kurlar", {})
         usd = _tl(k.get("USD", {}).get("satis", "")); eur = _tl(k.get("EUR", {}).get("satis", ""))
@@ -421,7 +421,7 @@ def _diskteki_gun_sayfalari(kok, mevcut):
     import glob as _g
     ek = []
     var = set(m.get("url") for m in mevcut)
-    for kat in list(KATEGORI.keys()) + ["aranan", "piyasa"]:
+    for kat in ["aranan", "piyasa"]:   # bölüm günlükleri kaldırıldı (14.09.2026)
         d = os.path.join(kok, "trend", kat)
         if not os.path.isdir(d):
             continue
@@ -603,33 +603,33 @@ def akis_html(kok, kat=None):
 
 
 def _makale_govde(m, yz, hizmet_ad):
-    """Yazı (yazar.py) varsa tam makale; yoksa kaynak alıntısı + bizim okumamız."""
+    """Yazı gövdesi. Yalnız KENDİ yazdığımız metin basılır (yazar.py).
+
+    14.09.2026: "Kaynak ne diyor" alıntı-derleme biçimi tamamen kaldırıldı ve
+    okuyucuyu başka siteye gönderen bağlantılar söküldü. Kaynak adı düz metin
+    olarak durur — gazetecilik dürüstlüğü için gerekli, ama tıklanabilir değil;
+    trafiği dışarı akıtmıyoruz. Yazısı olmayan madde zaten sayfa açmaz.
+    """
     kt = _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"]))
-    if yz:
-        h = ['<p class="ts-giris">%s</p>' % _e(yz.get("giris", ""))]
-        for b in yz.get("bolumler", []):
-            h.append("<h2>%s</h2>" % _e(b.get("h2", "")))
-            h += ["<p>%s</p>" % _e(p) for p in b.get("paragraflar", []) if p]
-        a = yz.get("alinti") or {}
-        if a.get("metin"):
-            h.append('<blockquote class="ts-olgu"><p>“%s”</p><cite>— <a href="%s" rel="nofollow noopener" target="_blank">%s</a>, %s</cite></blockquote>'
-                     % (_e(a["metin"].strip("“”\"")), _e(m["kaynak_url"]), _e(a.get("kaynak") or m["kaynak_ad"]), kt))
-        if yz.get("ne_yapmali"):
-            h.append('<div class="ts-analiz"><h2 class="etk">Ne yapmalı</h2><ol>%s</ol><a href="%s">%s →</a></div>'
-                     % ("".join("<li>%s</li>" % _e(x) for x in yz["ne_yapmali"]), _e(hizmet_ad[1]), _e(hizmet_ad[0])))
-        if yz.get("sss"):
-            h.append('<section class="ts-sss"><h2>Sık sorulan sorular</h2>%s</section>'
-                     % "".join("<h3>%s</h3><p>%s</p>" % (_e(q.get("soru", "")), _e(q.get("cevap", ""))) for q in yz["sss"]))
-        h.append('<p class="ts-not">Kaynak: <a href="%s" rel="nofollow noopener" target="_blank">%s</a>, %s. Yazı bu kaynağın olgularından Luna Yapım tarafından yazılmıştır; intihal denetimi: kaynakla örtüşme %%%.1f.</p>'
-                 % (_e(m["kaynak_url"]), _e(m["kaynak_ad"]), kt, 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
-        return "\n      ".join(h)
-    return ("""<h2 class="etk">Kaynak ne diyor</h2>
-      <blockquote class="ts-olgu"><p>%s</p>%s<cite>— <a href="%s" rel="nofollow noopener" target="_blank">%s</a>, %s</cite></blockquote>
-      <div class="ts-analiz"><h2 class="etk">Bizim okumamız</h2>%s<p>%s</p>%s<a href="%s">%s →</a></div>"""
-      % (_e(m["olgu"]), ("<p>%s</p>" % _e(m["ek"])) if m.get("ek") else "", _e(m["kaynak_url"]), _e(m["kaynak_ad"]), kt,
-         ("<h3>%s</h3>" % _e(m["aci_soru"])) if m.get("aci_soru") else "", _e(m["aci"]),
-         ("<p class=\"ts-hizmet-soz\">Bizim tarafımız: %s.</p>" % _e(m["hizmet_soz"].rstrip("."))) if m.get("hizmet_soz") and m["hizmet_soz"].strip() not in m["aci"] else "",
-         _e(hizmet_ad[1]), _e(hizmet_ad[0])))
+    if not yz:
+        return ""
+    h = ['<p class="ts-giris">%s</p>' % _e(yz.get("giris", ""))]
+    for b in yz.get("bolumler", []):
+        h.append("<h2>%s</h2>" % _e(b.get("h2", "")))
+        h += ["<p>%s</p>" % _e(p) for p in b.get("paragraflar", []) if p]
+    a = yz.get("alinti") or {}
+    if a.get("metin"):
+        h.append('<blockquote class="ts-olgu"><p>\u201c%s\u201d</p><cite>\u2014 %s, %s</cite></blockquote>'
+                 % (_e(a["metin"].strip("\u201c\u201d\"")), _e(a.get("kaynak") or m["kaynak_ad"]), kt))
+    if yz.get("ne_yapmali"):
+        h.append('<div class="ts-analiz"><h2 class="etk">Ne yapmalı</h2><ol>%s</ol><a href="%s">%s \u2192</a></div>'
+                 % ("".join("<li>%s</li>" % _e(x) for x in yz["ne_yapmali"]), _e(hizmet_ad[1]), _e(hizmet_ad[0])))
+    if yz.get("sss"):
+        h.append('<section class="ts-sss"><h2>Sık sorulan sorular</h2>%s</section>'
+                 % "".join("<h3>%s</h3><p>%s</p>" % (_e(q.get("soru", "")), _e(q.get("cevap", ""))) for q in yz["sss"]))
+    h.append('<p class="ts-not">Olgular %s kaynağının %s tarihli haberinden alındı; metnin tamamı Luna Yapım tarafından yazıldı. Kaynakla kelime örtüşmesi %%%.1f (eşik %%5). Kaynağa bağlantı vermiyoruz; olguyu doğrulamak isteyen okur kaynağın adıyla arayabilir.</p>'
+             % (_e(m["kaynak_ad"]), kt, 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
+    return "\n      ".join(h)
 
 
 def haber_html(m, komsular):
@@ -675,13 +675,13 @@ def haber_html(m, komsular):
       <div class="crumbs"><a href="./">LunaTrendSaphiens</a> · <a href="%s/">%s</a> · %s</div>
       <span class="ts-chip">%s</span>
       <h1>%s</h1>
-      <p class="ts-yazi-meta">%s · %d dk okuma · Kaynak: <a href="%s" rel="nofollow noopener" target="_blank">%s</a>%s</p>
+      <p class="ts-yazi-meta">%s · %d dk okuma · Olgu kaynağı: %s%s</p>
       <div class="ts-yazi-gorsel">%s</div>
       %s
       %s
       %s
       <footer class="ts-baglam">
-        <p><strong>Olgu ve okuma ayrı.</strong> Alıntı kaynağın sözü; rakam yalnızca kaynakta geçiyorsa yazılır. "Bizim okumamız" bu gelişmenin tanıtım, görsel ve yatırım kararına etkisi üzerine yorumumuzdur. Kaynak: %s, %s. Bölüm: %s. Bu madde <a href="%s">Gündem</a> sayısından.</p>
+        <p><strong>Bu yazıyı biz yazdık.</strong> Olgular %s kaynağının %s tarihli haberinden; cümleler, sıralama ve yorum bize ait. Kaynak metni kopyalanmaz, yeniden sözcüklerle de yazılmaz; her yazı yayından önce kelime örtüşmesi denetiminden geçer. Rakam yalnızca kaynakta geçiyorsa yazılır. Bölüm: %s. Bu madde <a href="%s">Gündem</a> sayısından.</p>
       </footer>
     </div>
     <aside class="ts-yan">
@@ -691,7 +691,7 @@ def haber_html(m, komsular):
   </div>
 </article>
 """ % (m["kat"], _e(kat_ad), _e(_tr_tarih(m["tarih"])), _e(m["sektor"]), _e(baslik), _e(_tr_tarih(m["tarih"])), sure,
-       _e(m["kaynak_url"]), _e(m["kaynak_ad"]), (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else "",
+       _e(m["kaynak_ad"]), (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else "",
        _gorsel(m["gorsel"], baslik, "b"), _paylas(url, baslik),
        _makale_govde(m, yz, hizmet_ad),
        REKLAM, _e(m["kaynak_ad"]), _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"])), _e(kat_ad),
@@ -722,7 +722,7 @@ def rehber_html(m, komsular):
         parcalar.insert(2, REKLAM)
     bolumler = "".join(parcalar)
     sss = "".join("<h3>%s</h3><p>%s</p>" % (_e(q), _e(a)) for q, a in r.get("sss", []))
-    kaynaklar = "".join('<li><a href="%s" rel="nofollow noopener" target="_blank">%s</a></li>' % (_e(u), _e(a)) for a, u in r.get("kaynaklar", []))
+    kaynaklar = "".join('<li>%s</li>' % _e(a) for a, u in r.get("kaynaklar", []))
     risk = RISK if r["kat"] == "piyasa" else ""
     komsu_kart = "".join(_kart(k, False, "../", "") for k in komsular[:3])
     govde = """
@@ -799,6 +799,132 @@ def _gunluk_kabuk(baslik, aciklama, url, kat, gorsel, govde, sema_tur="Article",
     return _bas(baslik, aciklama, url, gorsel, sema, "article", on, tr) + govde + _alt(on, tr)
 
 
+def _trend_gecmis():
+    try:
+        from . import trend_izle as TI
+        return TI.hepsi()
+    except Exception:
+        return []
+
+
+def _piyasa_gecmis():
+    try:
+        from . import piyasa_gunluk as PG
+        return PG.hepsi()
+    except Exception:
+        return []
+
+
+def _yuzde(x):
+    """%1.47 -> %1,47 (Türkçe ondalık)."""
+    return ("%.2f" % abs(x)).replace(".", ",")
+
+
+def _say_tr(n, tekil, cogul=None):
+    return "%d %s" % (n, tekil if n == 1 else (cogul or tekil))
+
+
+def _sayi(x):
+    """'48.6218' ya da '6.685,30' -> float. Çözemezse None."""
+    x = (x or "").strip().replace("%", "")
+    if not x:
+        return None
+    try:
+        if "," in x:
+            return float(x.replace(".", "").replace(",", "."))
+        return float(x)
+    except Exception:
+        return None
+
+
+def _piyasa_okuma(v, gecmis):
+    """Kendi hesabımız: bir önceki yayına ve haftaya göre değişim + üretim tarafından okuma.
+
+    Dışarıdan alıntı değil; elimizdeki tablo dizisinden hesaplanır. Her gün farklı
+    çıkar, çünkü rakamlar farklı — sayfa şablonu tekrar etmez.
+    """
+    t = v["tarih"]
+    onceki = [x for x in gecmis if x.get("tarih", "") < t and (x.get("tcmb") or x.get("altin"))]
+    if not onceki:
+        return ""
+    o = onceki[-1]
+    hafta = [x for x in onceki if x["tarih"] >= (datetime.date.fromisoformat(t) - datetime.timedelta(days=8)).isoformat()]
+    hafta = hafta[0] if hafta else None
+    sat = []
+    hareket = []
+    for kod, ad in (("USD", "dolar"), ("EUR", "euro"), ("GBP", "sterlin")):
+        y = _sayi(((v.get("tcmb") or {}).get("kurlar", {}).get(kod) or {}).get("satis"))
+        e = _sayi(((o.get("tcmb") or {}).get("kurlar", {}).get(kod) or {}).get("satis"))
+        if y and e:
+            fark = (y - e) / e * 100
+            hareket.append((abs(fark), ad, fark, y, e, o["tarih"]))
+    ga_y = _sayi(((v.get("altin") or {}).get("gram-altin") or {}).get("satis"))
+    ga_e = _sayi(((o.get("altin") or {}).get("gram-altin") or {}).get("satis"))
+    if ga_y and ga_e:
+        hareket.append((abs((ga_y - ga_e) / ga_e * 100), "gram altın", (ga_y - ga_e) / ga_e * 100, ga_y, ga_e, o["tarih"]))
+    if not hareket:
+        return ""
+    hareket.sort(reverse=True)
+    buyuk = hareket[0]
+    yon = "yukarı" if buyuk[2] > 0 else ("aşağı" if buyuk[2] < 0 else "yatay")
+    sat.append("<p>Bir önceki yayına (%s) göre en çok hareket eden kalem <strong>%s</strong>: %%%s %s. "
+               "Aynı aralıkta %s." % (_e(_tr_tarih(buyuk[5])), _e(buyuk[1]), _yuzde(buyuk[2]), yon,
+               _e(", ".join("%s %%%s %s" % (h[1], _yuzde(h[2]), "arttı" if h[2] > 0 else ("azaldı" if h[2] < 0 else "değişmedi")) for h in hareket[1:]))))
+    if hafta:
+        hy = _sayi(((v.get("tcmb") or {}).get("kurlar", {}).get("USD") or {}).get("satis"))
+        he = _sayi(((hafta.get("tcmb") or {}).get("kurlar", {}).get("USD") or {}).get("satis"))
+        if hy and he and he:
+            sat.append("<p>Haftalık pencerede (%s → %s) dolar satış kuru %%%s %s." % (
+                _e(_tr_tarih(hafta["tarih"])), _e(_tr_tarih(t)), _yuzde((hy - he) / he * 100),
+                "yükseldi" if hy > he else ("geriledi" if hy < he else "yatay kaldı")))
+    # üretim tarafından okuma — kendi işimizden, tavsiye değil
+    if buyuk[1] in ("dolar", "euro", "sterlin"):
+        sat.append("<p>Bu satırın üretim tarafındaki karşılığı şu: kamera, lens, ışık ve render donanımı "
+                   "ithal kalemler; kur hareketi bu ekipmanın yenileme maliyetine doğrudan yansıyor. "
+                   "Fiyat listemizi kur her oynadığında değiştirmiyoruz — bandı üç ayda bir gözden geçirip "
+                   "değiştirdiğimizde neyin değiştiğini yazıyoruz.</p>")
+    else:
+        sat.append("<p>Altın tarafındaki hareket bizim için doğrudan bir maliyet kalemi değil; "
+                   "kuyumcu ve mücevher markalarının ürün çekimi talebinin arttığı dönemlerle "
+                   "örtüştüğü için takip ediyoruz.</p>")
+    return '<div class="ts-analiz"><h2 class="etk">Bugünün okuması</h2>%s<p class="ts-not">Bu bölüm bizim hesabımızdır: yukarıdaki tabloyla bir önceki yayının tablosu karşılaştırılarak üretilir. Yatırım tavsiyesi değildir, hedef fiyat içermez.</p></div>' % "".join(sat)
+
+
+def _aranan_okuma(v, gecmis):
+    """Günün arama listesinin kendi analizimiz: devreden başlık, bölüm dağılımı, yeni girenler."""
+    t = v["tarih"]; ar = v.get("aranan") or []
+    if not ar:
+        return ""
+    onceki = [x for x in gecmis if x.get("tarih", "") < t and x.get("aranan")]
+    dun = onceki[-1] if onceki else None
+    dun_bas = {(a.get("baslik") or "").lower() for a in (dun.get("aranan") if dun else [])}
+    devreden = [a for a in ar if (a.get("baslik") or "").lower() in dun_bas]
+    yeni = [a for a in ar if (a.get("baslik") or "").lower() not in dun_bas]
+    dag = {}
+    for a in ar:
+        kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "gundem")
+        dag[kat] = dag.get(kat, 0) + 1
+    sirali = sorted(dag.items(), key=lambda x: -x[1])
+    p = []
+    if dun:
+        if devreden:
+            p.append("<p>Listedeki %d başlık %s listesinde de vardı, %d başlık ilk kez giriyor. "
+                     "Devreden başlık çoksa gündem tek konuya kilitlenmiş demektir; hepsi yeniyse gün dağınık geçmiştir.</p>"
+                     % (len(devreden), _e(_tr_tarih(dun["tarih"])), len(yeni)))
+        else:
+            p.append("<p>Listenin tamamı yeni: %s listesinden devreden tek başlık yok. "
+                     "Bu, günün kendi gündemiyle geçtiğini ve önceki günün konularının aramada tutunmadığını gösterir.</p>"
+                     % _e(_tr_tarih(dun["tarih"])))
+    p.append("<p>Bölüm dağılımı: %s. Bu dağılım, o gün Türkiye'nin dikkatinin nerede olduğunu gösterir; "
+             "biz de içerik takvimimizi buna göre değil, kendi sektörümüzün takvimine göre kurarız — "
+             "ama hangi başlığın konuşulduğunu bilmek işletmenin paylaşım saatini seçmesine yarar.</p>"
+             % _e(", ".join("%s %d" % (KATEGORI.get(k, ("Gündem",))[0].lower(), n) for k, n in sirali)))
+    if yeni:
+        p.append("<p>Bugün ilk kez giren başlıkların en yükseği: <strong>%s</strong>%s.</p>"
+                 % (_e(yeni[0]["baslik"]), _e((" — yaklaşık %s arama" % yeni[0]["hacim"]) if yeni[0].get("hacim") else "")))
+    return '<div class="ts-analiz"><h2 class="etk">Listeden ne çıkıyor</h2>%s<p class="ts-not">Bu okuma bize ait; Google yalnız başlıkları ve yaklaşık hacmi verir. Karşılaştırma bir önceki günün kendi kaydımızla yapılır.</p></div>' % "".join(p)
+
+
 def aranan_html(v, kok):
     t = v["tarih"]; ar = v.get("aranan") or []
     baslik = "Türkiye bugün ne aradı? %s | TrendSaphiens" % _tr_tarih(t)
@@ -807,8 +933,8 @@ def aranan_html(v, kok):
     sat = []
     for i, a in enumerate(ar, 1):
         kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "gundem")
-        hab = ('<p class="ts-aranan-haber">%s — <a href="%s" rel="nofollow noopener" target="_blank">%s</a></p>'
-               % (_e(a.get("haber_baslik")), _e(a.get("haber_url")), _e(a.get("haber_kaynak") or "kaynak"))) if a.get("haber_url") else '<p class="ts-aranan-haber ts-not">Google bu başlığa haber bağlamadı; yalnız arama var.</p>'
+        hab = ('<p class="ts-aranan-haber ts-not">Google bu aramaya %s kaynaklı bir haberi bağlamış.</p>'
+               % _e(a.get("haber_kaynak") or "bir haber sitesi")) if a.get("haber_url") else '<p class="ts-aranan-haber ts-not">Google bu başlığa haber bağlamadı; yalnız arama var.</p>'
         sat.append('<li class="ts-aranan"><span class="ts-aranan-no">%02d</span><div><h2>%s</h2><p class="ts-meta">%s · <a href="../%s/">%s</a></p>%s</div></li>'
                    % (i, _e(a["baslik"]), _e(("yaklaşık " + a["hacim"] + " arama") if a.get("hacim") else "hacim belirtilmedi"), kat, _e(KATEGORI.get(kat, ("Gündem",))[0]), hab))
     govde = """
@@ -819,14 +945,15 @@ def aranan_html(v, kok):
     <h1>Türkiye bugün ne aradı?</h1>
     <p class="ts-yazi-meta">%s · Google Trends Türkiye · %d başlık</p>
     %s
-    <p class="ts-olgu">Liste ve sıralama Google'ındır; her başlığın yanında Google'ın bağladığı haber ve kaynağı durur. Bizim eklediğimiz, hangi bölümde okunacağı. Rakam yalnızca Google'ın verdiği yaklaşık hacimdir.</p>
+    <p class="ts-olgu">Liste ve sıralama Google'ındır; yaklaşık hacim de öyle. Bizim eklediğimiz, başlığın hangi bölümde okunacağı ve aşağıdaki karşılaştırma. Haber bağlantısı vermiyoruz: okuru başka siteye göndermek yerine, listenin kendisinden ne çıktığını yazıyoruz.</p>
     <ol class="ts-aranan-liste">%s</ol>
     %s
-    <div class="ts-baglam"><h2>Bu liste nasıl okunmalı</h2><p><strong>Hacim yaklaşık değerdir.</strong> Google "yaklaşık 20 bin+" gibi bir eşik verir; kesin sayı değildir. <strong>Haber bağlantısı Google'ındır.</strong> Biz seçmedik; Google o aramaya en çok tıklanan haberi bağlar. <strong>Bölüm bizimdir.</strong> Başlığı hangi bölümde okuyacağınızı biz eşleriz; yanılırsak düzeltiriz.</p></div>
+    %s
+    <div class="ts-baglam"><h2>Bu liste nasıl okunmalı</h2><p><strong>Hacim yaklaşık değerdir.</strong> Google "yaklaşık 20 bin+" gibi bir eşik verir; kesin sayı değildir. <strong>Başlık Google'ın, okuma bizim.</strong> Hangi başlığın hangi bölüme girdiğini biz eşleriz, günler arası karşılaştırmayı kendi kaydımızdan çıkarırız; yanılırsak düzeltir, düzelttiğimizi yazarız.</p></div>
   </div>
   <aside class="ts-yan">%s%s%s<div class="ts-kutu"><h2 class="etk">Önceki günler</h2><p><a href="./">Bugün Aranan arşivi →</a></p></div></aside>
 </div></article>
-""" % (_e(_tr_tarih(t)), _e(_tr_tarih(t)), len(ar), _paylas(url, "Türkiye bugün ne aradı? " + _tr_tarih(t)), "".join(sat), REKLAM, _rakam_kutu("../../", "../"), _takvim_kutu("../../", "../"), _abone("../../"))
+""" % (_e(_tr_tarih(t)), _e(_tr_tarih(t)), len(ar), _paylas(url, "Türkiye bugün ne aradı? " + _tr_tarih(t)), "".join(sat), _aranan_okuma(v, _trend_gecmis()), REKLAM, _rakam_kutu("../../", "../"), _takvim_kutu("../../", "../"), _abone("../../"))
     return _gunluk_kabuk(baslik, aciklama, url, "aranan", BOLUM_GORSEL["aranan"], govde, "ItemList", t)
 
 
@@ -835,7 +962,7 @@ def bolum_gunluk_html(kat, t, liste, cerceve):
     baslik = "%s · %s | TrendSaphiens" % (ad, _tr_tarih(t))
     aciklama = ("%s, %s: %s" % (ad, _tr_tarih(t), " · ".join(x["baslik"][:50] for x in liste[:3])))[:158]
     url = KOK_URL + kat + "/" + t
-    sat = "".join('<li class="ts-aranan"><span class="ts-aranan-no">%02d</span><div><h2>%s</h2>%s<p class="ts-aranan-haber">Kaynak: <a href="%s" rel="nofollow noopener" target="_blank">%s</a>%s</p></div></li>'
+    sat = "".join('<li class="ts-aranan"><span class="ts-aranan-no">%02d</span><div><h2>%s</h2>%s<p class="ts-aranan-haber">Kaynak: %s%s</p></div></li>'
                   % (i, _e(x["baslik"]), ('<p class="ts-olgu" style="font-size:15.5px">%s</p>' % _e(x["ozet"])) if x.get("ozet") else "",
                      _e(x["url"]), _e(x.get("kaynak") or "haber"), (" · " + _e(x["tarih"][:16])) if x.get("tarih") else "")
                   for i, x in enumerate(liste, 1))
@@ -899,26 +1026,98 @@ def piyasa_html(v):
     %s
     <h2>TCMB döviz kurları (TL)</h2>
     <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Para birimi</th><th>Döviz alış</th><th>Döviz satış</th><th>Efektif alış</th><th>Efektif satış</th></tr></thead><tbody>%s</tbody></table></div>
-    <p class="ts-not">Kaynak: <a href="https://www.tcmb.gov.tr/kurlar/today.xml" rel="nofollow noopener" target="_blank">TCMB günlük kur tablosu</a>, tarih %s. Bankaların uyguladığı kur farklıdır; bu tablo gösterge niteliğindedir.</p>
+    <p class="ts-not">Rakamlar TCMB'nin günlük kur tablosundan alındı, tarih %s. Bankaların uyguladığı kur farklıdır; bu tablo gösterge niteliğindedir.</p>
     <h2>Altın (TL)</h2>
     <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Ürün</th><th>Alış</th><th>Satış</th><th>Değişim</th></tr></thead><tbody>%s</tbody></table></div>
-    <p class="ts-not">Kaynak: <a href="https://finans.truncgil.com/" rel="nofollow noopener" target="_blank">truncgil finans</a>, güncelleme %s. Kuyumcu fiyatı işçilik ve makasa göre değişir.</p>
+    <p class="ts-not">Altın rakamları açık bir finans beslemesinden alındı, güncelleme %s. Kuyumcu fiyatı işçilik ve makasa göre değişir.</p>
     %s
     %s
-    <div class="ts-baglam"><h2>Bu sayfa nasıl okunmalı</h2><p><strong>Rakamlar kaynaktan, yorum yok.</strong> Döviz TCMB'nin resmî günlük tablosundan, altın açık bir finans beslemesinden alınır; sayfa her sabah yeniden üretilir ve alınma saati üstte yazar. <strong>Tavsiye değildir.</strong> Bu sayfa alım-satım önerisi, hedef ya da tahmin içermez; hangi rakamın neden değiştiğini merak ediyorsanız günün haberleri Gündem bölümündedir.</p></div>
+    %s
+    <div class="ts-baglam"><h2>Bu sayfa nasıl okunmalı</h2><p><strong>Rakamlar kaynaktan, okuma bizden.</strong> Döviz TCMB'nin resmî günlük tablosundan, altın açık bir finans beslemesinden alınır; "Bugünün okuması" bölümü bu tabloyla bir önceki yayının tablosunu karşılaştıran kendi hesabımızdır. Sayfa her gün yeniden üretilir, alınma saati üstte yazar. <strong>Tavsiye değildir.</strong> Bu sayfa alım-satım önerisi, hedef ya da tahmin içermez; hangi rakamın neden değiştiğini merak ediyorsanız günün haberleri Gündem bölümündedir.</p></div>
     %s
   </div>
   <aside class="ts-yan">%s<div class="ts-kutu"><h2 class="etk">Piyasayı okuyan sistem</h2><p>Haftalık karne ve kanıt defteri: sistem neye baktı, hangi hatlar sınavı geçti.</p><a class="btn btn-cizgi" href="../../bulten/">Matrix Bülteni →</a></div></aside>
 </div></article>
 """ % (_e(_tr_tarih(t)), _e(_tr_tarih(t)), _e(tc.get("bulten") or "—"), _e(v.get("alindi") or ""), _paylas(url, "Dolar, euro ve altın bugün · " + _tr_tarih(t)),
        kur_sat or "<tr><td colspan='5'>TCMB bugün tablo yayınlamadı (tatil ya da erişim yok).</td></tr>", _e(tc.get("tarih") or "—"),
-       altin_sat or "<tr><td colspan='4'>Altın beslemesi cevap vermedi; rakam uydurmuyoruz.</td></tr>", _e(al.get("guncelleme") or "—"), REKLAM, _piyasa_sorular(tc, al), RISK, _takvim_kutu("../../", "../") + _abone("../../"))
+       altin_sat or "<tr><td colspan='4'>Altın beslemesi cevap vermedi; rakam uydurmuyoruz.</td></tr>", _e(al.get("guncelleme") or "—"), _piyasa_okuma(v, _piyasa_gecmis()), REKLAM, _piyasa_sorular(tc, al), RISK, _takvim_kutu("../../", "../") + _abone("../../"))
     return _gunluk_kabuk(baslik, aciklama, url, "piyasa", BOLUM_GORSEL["piyasa"], govde, "Article", t)
 
 
 # ---------------------------------------------------------------- yayın
+def _yaz(yol, icerik, uretilen):
+    """Sayfayı yaz ve üretilenler kümesine ekle (artık sweeper bunu kullanıyor)."""
+    open(yol, "w", encoding="utf-8").write(icerik)
+    uretilen.add(os.path.abspath(yol))
+    return yol
+
+
+def _supur(kok, uretilen, log=None):
+    """trend/ altında artık ÜRETİLMEYEN sayfaları siler.
+
+    Neden (14.09.2026): bölüm derleme günlükleri ve kendi kalemimizden geçmemiş
+    haber sayfaları yayından kaldırıldı. Üretici kendi klasöründen sorumlu olmazsa
+    bu sayfalar diskte kalır, sitemap'e girer ve "düşük değerli içerik" olarak
+    değerlendirilir. Bu süpürge her koşuda çalışır; yalnız trend/ altına dokunur.
+    """
+    silinen = []
+    d = os.path.join(kok, "trend")
+    for r, _kl, dosyalar in os.walk(d):
+        for n in dosyalar:
+            if not n.endswith(".html"):
+                continue
+            yol = os.path.abspath(os.path.join(r, n))
+            if yol in uretilen:
+                continue
+            try:
+                os.remove(yol); silinen.append(os.path.relpath(yol, kok))
+            except Exception as ex:
+                if log: log("silinemedi %s: %s" % (yol, ex))
+    return silinen
+
+
+def _yonlendirme(kok, silinen, elle=None):
+    """Kaldırılan adresleri 301 ile doğru yere gönderir (_redirects, Cloudflare Pages).
+
+    Silinen sayfa 404 dönerse Google "soft 404 / kaldırıldı" diye işler ve bağlantı
+    değeri kaybolur. Defter veri/yonlendirme.json'da birikir; _redirects her koşuda
+    bu defterden yeniden yazılır. Yalnız /trend/ adresleri için.
+    """
+    defter_yol = os.path.join(KOK_DIZIN, "veri", "yonlendirme.json")
+    try:
+        defter = json.load(open(defter_yol, encoding="utf-8"))
+    except Exception:
+        defter = {}
+    for yol in silinen or []:
+        adres = "/" + yol[:-5] if yol.endswith(".html") else "/" + yol
+        parca = adres.strip("/").split("/")
+        if len(parca) == 3 and re.match(r"\d{4}-\d{2}-\d{2}$", parca[2]):
+            hedef = "/trend/%s/" % parca[1]          # gün sayfası -> bölüm akışı
+        else:
+            hedef = "/trend/"                        # yazı -> ana akış
+        defter[adres] = hedef
+    for a, h in (elle or {}).items():
+        defter[a] = h
+    # hedefi artık var olmayan satırları temizle, kendine yönlendirmeyi at
+    temiz = {}
+    for a, h in defter.items():
+        if a == h:
+            continue
+        if os.path.exists(os.path.join(kok, a.strip("/") + ".html")):
+            continue                                 # adres yeniden üretilmiş, yönlendirme gerekmez
+        temiz[a] = h
+    os.makedirs(os.path.dirname(defter_yol), exist_ok=True)
+    json.dump(temiz, open(defter_yol, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
+    satir = ["# Kaldırılan TrendSaphiens adresleri — otomatik üretilir (pusula/trend.py).",
+             "# Derleme sayfaları ve kendi kalemimizden geçmemiş yazılar 14.09.2026'da yayından kaldırıldı."]
+    satir += ["%s  %s  301" % (a, h) for a, h in sorted(temiz.items())]
+    open(os.path.join(kok, "_redirects"), "w", encoding="utf-8").write("\n".join(satir) + "\n")
+    return len(temiz)
+
+
 def yayinla(kok=None, paylas=False):
     kok = kok or SITE_KOK
+    uretilen = set()
     d = os.path.join(kok, "trend"); os.makedirs(d, exist_ok=True)
     for k in KATEGORI:
         os.makedirs(os.path.join(d, k), exist_ok=True)
@@ -930,7 +1129,7 @@ def yayinla(kok=None, paylas=False):
         if not os.path.exists(yol):
             yeni.append(m)
         komsu = [k for k in hepsi if k is not m][:3]
-        open(yol, "w", encoding="utf-8").write(haber_html(m, komsu))
+        _yaz(yol, haber_html(m, komsu), uretilen)
     # rehberler (kalıcı yazılar)
     rehberler = [m for m in hepsi if m["tur"] == "rehber"]
     for m in rehberler:
@@ -938,7 +1137,7 @@ def yayinla(kok=None, paylas=False):
         if not os.path.exists(yol):
             yeni.append(m)
         komsu = [k for k in hepsi if k is not m and k["kat"] == m["kat"]][:3] or [k for k in hepsi if k is not m][:3]
-        open(yol, "w", encoding="utf-8").write(rehber_html(m, komsu))
+        _yaz(yol, rehber_html(m, komsu), uretilen)
     # günlük sayfalar: aranan, bölüm günlükleri, piyasa
     gunluk_adres = []
     try:
@@ -946,23 +1145,28 @@ def yayinla(kok=None, paylas=False):
         for v in TI.hepsi():
             t = v["tarih"]
             if v.get("aranan"):
-                open(os.path.join(d, "aranan", t + ".html"), "w", encoding="utf-8").write(aranan_html(v, kok)); gunluk_adres.append(KOK_URL + "aranan/" + t)
-            cerceve = {b[0]: b[3] for b in TI.BOLUMLER}
-            for b, liste in (v.get("bolumler") or {}).items():
-                kat = BOLUM_KAT.get(b)
-                if kat and liste:
-                    open(os.path.join(d, kat, t + ".html"), "w", encoding="utf-8").write(bolum_gunluk_html(kat, t, liste, cerceve.get(b, ""))); gunluk_adres.append(KOK_URL + kat + "/" + t)
+                _yaz(os.path.join(d, "aranan", t + ".html"), aranan_html(v, kok), uretilen); gunluk_adres.append(KOK_URL + "aranan/" + t)
+            # Bölüm günlükleri (Google Haberler başlık derlemesi) 14.09.2026'da kaldırıldı:
+            # başkasının başlığını listelemek özgün yayıncılık değil, AdSense "düşük değerli
+            # içerik" değerlendirmesinin de çekirdeğiydi. Toplanan maddeler artık yalnız
+            # yazar.py'den geçip özgün yazıya dönüşürse sayfa oluyor.
         for v in PG.hepsi():
             if v.get("tcmb") or v.get("altin"):
-                open(os.path.join(d, "piyasa", v["tarih"] + ".html"), "w", encoding="utf-8").write(piyasa_html(v)); gunluk_adres.append(KOK_URL + "piyasa/" + v["tarih"])
+                _yaz(os.path.join(d, "piyasa", v["tarih"] + ".html"), piyasa_html(v), uretilen); gunluk_adres.append(KOK_URL + "piyasa/" + v["tarih"])
     except Exception as ex:
         gunluk_adres.append("HATA: %s" % ex)
-    open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(akis_html(kok))
+    _yaz(os.path.join(d, "index.html"), akis_html(kok), uretilen)
     for k in KATEGORI:
         if k == "sistem":
-            open(os.path.join(d, k, "index.html"), "w", encoding="utf-8").write(sistem_html())
+            _yaz(os.path.join(d, k, "index.html"), sistem_html(), uretilen)
         else:
-            open(os.path.join(d, k, "index.html"), "w", encoding="utf-8").write(akis_html(kok, k))
+            _yaz(os.path.join(d, k, "index.html"), akis_html(kok, k), uretilen)
+    # artık üretilmeyen trend sayfalarını sil (derleme günlükleri, yazısız haberler)
+    silinen = _supur(kok, uretilen)
+    try:
+        yonlendirme = _yonlendirme(kok, silinen)
+    except Exception as ex:
+        yonlendirme = "yazılamadı: %s" % ex
     # site haritası
     y = os.path.join(kok, "sitemap.xml")
     if os.path.exists(y):
@@ -995,7 +1199,7 @@ def yayinla(kok=None, paylas=False):
         indexnow_sonuc = {"gonderilen": indexnow_sonuc.get("gonderilen"), "sonuc": [(x.get("uc"), x.get("durum")) for x in indexnow_sonuc.get("sonuc", [])]} if isinstance(indexnow_sonuc, dict) else indexnow_sonuc
     except Exception as ex:
         indexnow_sonuc = "bildirilemedi: %s" % ex
-    sonuc = {"haber": len(haberler), "rehber": len(rehberler), "yeni": [m["slug"] for m in yeni], "indexnow": indexnow_sonuc, "kategori": len(KATEGORI), "gunluk": len(gunluk_adres), "hata": [a for a in gunluk_adres if a.startswith("HATA")]}
+    sonuc = {"silinen": silinen, "yonlendirme": yonlendirme, "haber": len(haberler), "rehber": len(rehberler), "yeni": [m["slug"] for m in yeni], "indexnow": indexnow_sonuc, "kategori": len(KATEGORI), "gunluk": len(gunluk_adres), "hata": [a for a in gunluk_adres if a.startswith("HATA")]}
     if paylas:
         try:
             from . import x_paylas

@@ -25,8 +25,16 @@ def uzantisizlastir(s):
     doğrudan hedefi göstermeli, yönlendirmeye düşmemeli."""
     s = re.sub(r'(https://lunayapim\.com/[A-Za-z0-9_\-/]+?)\.html\b', r'\1', s)
     s = s.replace("https://lunayapim.com/index", "https://lunayapim.com/")
-    s = re.sub(r'href="((?:\.\./)*[A-Za-z0-9_\-/]+?)\.html"', r'href="\1"', s)
-    s = s.replace('href="../index"', 'href="../"').replace('href="index"', 'href="./"')
+    # bağlantılar: .html + varsa #çapa / ?sorgu — çapa yüzünden atlanan 421 bağlantı
+    # (376 sayfada index.html#urunler) Google'a sürekli yönlendirme besliyordu (14.09.2026)
+    def _b(m):
+        yol, kuyruk = m.group(1), (m.group(2) or "")
+        return 'href="%s%s"' % (yol, kuyruk)
+    s = re.sub(r'href="((?:\.\./)*/?[A-Za-z0-9_\-/]+?)\.html([#?][^"]*)?"', _b, s)
+    for on in ("../", "/", ""):
+        s = s.replace('href="%sindex"' % on, 'href="%s"' % (on or "./"))
+        s = s.replace('href="%sindex#' % on, 'href="%s#' % (on or "./"))
+        s = s.replace('href="%sindex?' % on, 'href="%s?' % (on or "./"))
     return s
 
 
@@ -72,12 +80,27 @@ ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/ad
 ADSENSE_BOLUM = ("gundem/", "bulten/", "trend/")
 
 
+ADSENSE_ASGARI_KELIME = 500      # ince sayfada reklam gösterilmez (AdSense içerik ölçütü)
+
+
+def _govde_kelime(s):
+    t = re.sub(r"(?is)<(script|style|nav|header|footer|svg)[^>]*>.*?</\1>", " ", s)
+    return len(re.sub(r"(?s)<[^>]+>", " ", t).split())
+
+
 def adsense_ekle(s, p=""):
-    """AdSense betiği yalnız ADSENSE_BOLUM altındaki sayfaların <head>'ine; başka yerde varsa söker."""
+    """AdSense betiği yalnız ADSENSE_BOLUM altındaki YETERLİ İÇERİKLİ sayfaların <head>'ine.
+
+    14.09.2026: liste/kapak sayfaları (bölüm indeksleri, sistem sayfaları) 350-440
+    kelimeydi; reklam taşıyan ince sayfa AdSense'in "düşük değerli içerik"
+    değerlendirmesini besliyor. Reklam artık yalnız yazı ve veri sayfalarında.
+    """
     p = (p or "").replace(os.sep, "/")
-    izinli = p.startswith(ADSENSE_BOLUM)
+    izinli = p.startswith(ADSENSE_BOLUM) and _govde_kelime(s) >= ADSENSE_ASGARI_KELIME
     if not izinli:
-        return re.sub(r'[ \t]*<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js[^<]*</script>\n?', "", s)
+        s = re.sub(r'[ \t]*<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js[^<]*</script>\n?', "", s)
+        s = re.sub(r'\s*<div class="ts-reklam">.*?</div>\s*', "\n", s, flags=re.S)
+        return s
     if "adsbygoogle.js" in s or "</head>" not in s:
         return s
     return s.replace("</head>", ADSENSE + "\n</head>", 1)
@@ -183,6 +206,36 @@ def sitemap_uzantisizlastir(kok):
     return {"sitemap_duzelen": len(re.findall(r"<loc>[^<]+\.html</loc>", s))}
 
 
+def sitemap_olu_temizle(kok):
+    """Site haritasından, dosyası artık olmayan adresleri düşürür.
+
+    Neden (14.09.2026): yayından kaldırılan derleme sayfaları haritada kalınca
+    Google 404 tarıyor ve "kaldırıldı" kaydı açıyor. Üretici kendi haritasından
+    sorumlu. Etkisiz tekrarlanabilir.
+    """
+    yol = os.path.join(kok, "sitemap.xml")
+    if not os.path.exists(yol):
+        return {"sitemap": "yok"}
+    s = io.open(yol, encoding="utf-8").read()
+    dusen = []
+
+    def _kalsin(m):
+        u = m.group(1)
+        if not u.startswith("https://lunayapim.com/"):
+            return m.group(0)
+        p = u[len("https://lunayapim.com/"):]
+        aday = os.path.join(kok, (p + "index.html") if (p == "" or p.endswith("/")) else (p + ".html"))
+        if os.path.exists(aday):
+            return m.group(0)
+        dusen.append(u)
+        return ""
+
+    yeni = re.sub(r"[ \t]*<url><loc>([^<]+)</loc>.*?</url>\n?", _kalsin, s, flags=re.S)
+    if yeni != s:
+        io.open(yol, "w", encoding="utf-8").write(yeni)
+    return {"sitemap_dusen": len(dusen), "ornek": dusen[:3]}
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -230,6 +283,17 @@ def calistir(kok, desen="**/*.html"):
         print("sitemap:", sitemap_uzantisizlastir(kok))
     except Exception as ex:
         print("sitemap:", ex)
+    # il x hizmet sayfalari: ortak hizmet metnini incelt, ile ozel bolumleri ekle
+    try:
+        import yerelles
+        print("yerelles:", yerelles.calistir(kok))
+    except Exception as ex:
+        print("yerelles:", ex)
+    # sitemap: dosyasi kalmayan adresleri dusur (yayindan kaldirilan sayfalar)
+    try:
+        print("sitemap-olu:", sitemap_olu_temizle(kok))
+    except Exception as ex:
+        print("sitemap-olu:", ex)
     return {"degisen_sayfa": degisen}
 
 

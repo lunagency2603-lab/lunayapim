@@ -141,13 +141,37 @@ def taramadan_madde(h):
 
 
 # ---------------------------------------------------------------- yazım
+def ozgun_mu(m):
+    """Madde kendi kalemimizden geçti mi? (yazar.py yazısı var ve denetimden geçmiş)"""
+    y = m.get("yazi")
+    return isinstance(y, dict) and not y.get("hata") and y.get("bolumler")
+
+
+def _ozgun(m):
+    """Sayıda gösterilecek KENDİ başlığımız, KENDİ girişimiz ve kendi yazımızın adresi.
+
+    14.09.2026: gündem sayıları kaynağın manşetini ve kaynağın özetini basıyordu;
+    bu bir haber derlemesiydi. Artık yalnız kendi yazdığımız yazılar listelenir,
+    okur dışarı değil kendi yazımıza gider.
+    """
+    y = m.get("yazi") or {}
+    try:
+        from .trend import _slug
+        slug = _slug(y.get("baslik") or m["baslik"])
+    except Exception:
+        slug = ""
+    ozet = (y.get("giris") or y.get("meta") or "").strip()
+    return (y.get("baslik") or m["baslik"], ozet, "../trend/%s" % slug)
+
+
 def sayi_html(tarih, maddeler, aranan=None, komsu=None):
     """Günün sayısı — dergi düzeni: manşet + akış + yan sütun. komsu = (onceki, sonraki) tarih."""
+    maddeler = [m for m in (maddeler or []) if ozgun_mu(m)]   # yalnız kendi yazdıklarımız
     K = _kabuk()
     tr = _tr_tarih(tarih)
     baslik = "Gündem · %s — sektörlerimizde bugün ne oldu" % tr
-    aciklama = ("%s: inşaat, emlak, sanayi ve tanıtım sektörlerinden günün gelişmeleri ve "
-                "Luna Yapım için ne anlama geldiği. Kaynaklı, tarihli." % tr)[:160]
+    aciklama = ("%s: inşaat, emlak, sanayi ve tanıtım sektörlerinde günün gelişmelerini kendi "
+                "kalemimizden yazdık — ne olduğu, kimi etkilediği ve ne yapılması gerektiği." % tr)[:160]
     url = "https://lunayapim.com/gundem/%s" % tarih
     anahtar = "sektör gündemi, inşaat haberleri, emlak haberleri, sanayi haberleri, tanıtım filmi, drone, 3d modelleme"
 
@@ -173,13 +197,13 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
       <div class="dg-lead-gorsel">%s<span class="dg-chip">%s</span></div>
       <div class="dg-lead-metin">
         <p class="dg-kicker">%s</p>
-        <h2>%s</h2>
+        <h2><a href="%s">%s</a></h2>
         <p class="gm-olgu">%s</p>
         <div class="dg-nedemek"><b>Bizim için ne demek</b><p>%s</p><a href="%s">%s →</a></div>
-        <p class="gm-kaynak">Kaynak: <a href="%s" rel="nofollow noopener" target="_blank">%s</a>%s</p>
+        <p class="gm-kaynak">Yazının tamamı: <a href="%s">LunaTrendSaphiens</a> · olgu kaynağı %s%s</p>
       </div>
-    </article>""" % (_kart_gorsel(m, "b"), _e(sek), _e(kick), _e(m["baslik"]), _e(m["olgu"]), _e(m["aci"]),
-                     _e(m["hizmet_yol"]), _e(m["hizmet_ad"]), _e(m["kaynak_url"]), _e(m["kaynak_ad"]),
+    </article>""" % (_kart_gorsel(m, "b"), _e(sek), _e(kick), _e(_ozgun(m)[2]), _e(_ozgun(m)[0]), _e(_ozgun(m)[1]), _e(m["aci"]),
+                     _e(m["hizmet_yol"]), _e(m["hizmet_ad"]), _e(_ozgun(m)[2]), _e(m["kaynak_ad"]),
                      (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else "")
     # akış
     akis = []
@@ -191,17 +215,17 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
       <div class="dg-madde-govde">
         <div class="dg-madde-gorsel">%s</div>
         <div>
-          <h2>%s</h2>
+          <h2><a href="%s">%s</a></h2>
           <p class="gm-olgu">%s</p>
           <div class="dg-nedemek"><b>Bizim için ne demek</b><p>%s</p><a href="%s">%s →</a></div>
-          <p class="gm-kaynak">Kaynak: <a href="%s" rel="nofollow noopener" target="_blank">%s</a>%s</p>
+          <p class="gm-kaynak">Yazının tamamı: <a href="%s">LunaTrendSaphiens</a> · olgu kaynağı %s%s</p>
         </div>
       </div>
-    </article>""" % (i, i, _e(sek), _e(kick), _kart_gorsel(m), _e(m["baslik"]), _e(m["olgu"]), _e(m["aci"]),
-                     _e(m["hizmet_yol"]), _e(m["hizmet_ad"]), _e(m["kaynak_url"]), _e(m["kaynak_ad"]),
+    </article>""" % (i, i, _e(sek), _e(kick), _kart_gorsel(m), _e(_ozgun(m)[2]), _e(_ozgun(m)[0]), _e(_ozgun(m)[1]), _e(m["aci"]),
+                     _e(m["hizmet_yol"]), _e(m["hizmet_ad"]), _e(_ozgun(m)[2]), _e(m["kaynak_ad"]),
                      (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else ""))
     # yan sütun
-    toc = "".join('<li><a href="#m%d"><span>%02d</span>%s</a></li>' % (i, i, _e(m["baslik"])) for i, m in enumerate(maddeler, 1))
+    toc = "".join('<li><a href="#m%d"><span>%02d</span>%s</a></li>' % (i, i, _e(_ozgun(m)[0])) for i, m in enumerate(maddeler, 1))
     aranan_html = ""
     if aranan:
         aranan_html = ('<div class="dg-kutu"><span class="etk">Bugün en çok aranan</span>'
@@ -221,7 +245,7 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
     <div class="crumbs"><a href="../">Ana Sayfa</a> · <a href="./">Gündem</a> · %s</div>
     <div class="dg-mast-satir">
       <a class="dg-marka" href="./">Gündem<small>Luna Yapım · sektör günlüğü</small></a>
-      <div class="dg-tarih"><b>%s</b><span>%d madde · kaynaklı, tarihli</span></div>
+      <div class="dg-tarih"><b>%s</b><span>%d yazı · kendi kalemimizden</span></div>
       <nav class="dg-sek"><a href="../hizmetler/insaat-3d-modelleme">İnşaat</a><a href="../hizmetler/emlak-kurumsal">Emlak</a><a href="../hizmetler/isletme-tanitim">Reklam</a><a href="../yazilim">Yazılım</a><a href="../sehir/bursa">Bursa</a></nav>
     </div>
     %s
@@ -252,21 +276,25 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
 
 
 def _son_sayi_maddeleri(kok):
-    """En yeni sayının maddelerini veri/gundem/YYYY-MM-DD.json dosyasından okur."""
+    """Sayfası yayında olan en yeni sayının maddeleri (veri/gundem/YYYY-MM-DD.json)."""
+    kok = kok or SITE_KOK
     d = os.path.join(KOK_DIZIN, "veri", "gundem")
     if not os.path.isdir(d):
         return None, []
     ds = sorted(f for f in os.listdir(d) if re.match(r"\d{4}-\d{2}-\d{2}\.json$", f))
-    if not ds:
-        return None, []
-    tarih = ds[-1][:-5]
-    try:
-        ham = json.load(open(os.path.join(d, ds[-1]), encoding="utf-8"))
-    except Exception:
-        return tarih, []
-    return tarih, [madde_kur(m["baslik"], m.get("kaynak_ad", ""), m.get("kaynak_url", ""), m.get("kaynak_tarih", ""),
-                            m.get("olgu", ""), m.get("aci", ""), m.get("hizmet", ""))
-                   for m in ham]
+    # Sayfası yayında olan EN YENİ sayı (yazısız günlerin sayfası açılmıyor — 14.09.2026)
+    for f in reversed(ds):
+        tarih = f[:-5]
+        if not os.path.exists(os.path.join(kok, "gundem", tarih + ".html")):
+            continue
+        try:
+            ham = json.load(open(os.path.join(d, f), encoding="utf-8"))
+        except Exception:
+            return tarih, []
+        return tarih, [madde_kur(m["baslik"], m.get("kaynak_ad", ""), m.get("kaynak_url", ""), m.get("kaynak_tarih", ""),
+                                m.get("olgu", ""), m.get("aci", ""), m.get("hizmet", ""), yazi=m.get("yazi"))
+                       for m in ham if ozgun_mu(m)]
+    return None, []
 
 
 def hub_html(sayilar):
@@ -456,15 +484,42 @@ def hepsini_yeniden_yaz(kok=None):
     d = os.path.join(KOK_DIZIN, "veri", "gundem")
     tarihler = sorted(f[:-5] for f in os.listdir(d) if re.match(r"\d{4}-\d{2}-\d{2}\.json$", f)) if os.path.isdir(d) else []
     n = 0
-    for k, t in enumerate(tarihler):
+    silinen = []
+    # yalnız kendi yazımızın olduğu günler sayı olur; boş gün sayfası açılmaz
+    dolu = []
+    ham_kayit = {}
+    for t in tarihler:
         ham = json.load(open(os.path.join(d, t + ".json"), encoding="utf-8"))
+        ham_kayit[t] = ham
+        if any(ozgun_mu(m) for m in ham):
+            dolu.append(t)
+    for k, t in enumerate(dolu):
+        ham = ham_kayit[t]
         maddeler = [madde_kur(m["baslik"], m.get("kaynak_ad", ""), m.get("kaynak_url", ""), m.get("kaynak_tarih", ""),
                               m.get("olgu", ""), m.get("aci", ""), m.get("hizmet", ""),
                               ek=m.get("ek", ""), aci_soru=m.get("aci_soru", ""), hizmet_soz=m.get("hizmet_soz", ""), yazi=m.get("yazi")) for m in ham]
-        komsu = (tarihler[k - 1] if k > 0 else None, tarihler[k + 1] if k + 1 < len(tarihler) else None)
+        komsu = (dolu[k - 1] if k > 0 else None, dolu[k + 1] if k + 1 < len(dolu) else None)
         b, h = sayi_html(t, maddeler, None, komsu)
         open(os.path.join(kok, "gundem", t + ".html"), "w", encoding="utf-8").write(h); n += 1
+    # yazısız günlerin eski sayfalarını kaldır ve gündem ana sayfasına yönlendir
+    for t in tarihler:
+        if t in dolu:
+            continue
+        yol = os.path.join(kok, "gundem", t + ".html")
+        if os.path.exists(yol):
+            try:
+                os.remove(yol); silinen.append("gundem/%s.html" % t)
+            except Exception:
+                pass
+    if silinen:
+        try:
+            from .trend import _yonlendirme
+            _yonlendirme(kok, [], {("/gundem/" + x.split("/")[1][:-5]): "/gundem/" for x in silinen})
+        except Exception as ex:
+            print("yönlendirme:", ex)
     open(os.path.join(kok, "gundem", "index.html"), "w", encoding="utf-8").write(hub_html(_sayilar(kok)))
+    if silinen:
+        print("gündem: yazısız %d sayı kaldırıldı" % len(silinen))
     try:
         sys.path.insert(0, os.path.join(KOK_DIZIN, "site-uretici"))
         import sonislem

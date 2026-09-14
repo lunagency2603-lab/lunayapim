@@ -279,6 +279,17 @@ def komut_trend(a):
     print(TR.yayinla(paylas=a.paylas))
 
 
+def komut_indeks(a):
+    from . import indeks
+    o = indeks.yazdir()
+    if getattr(a, "kaydet", None):
+        parca = a.kaydet.split(",")
+        indeks.kayit_ekle(int(parca[0]), int(parca[1]) if len(parca) > 1 else None,
+                          not_=" ".join(parca[2:]))
+        print("Search Console okuması deftere yazıldı.")
+    return o
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="pusula", description="Luna Pusula — yerel müşteri avcısı")
     alt = p.add_subparsers(dest="komut", required=True)
@@ -307,6 +318,9 @@ def main(argv=None):
     s.add_argument("--hizli", action="store_true"); s.add_argument("--sadece-sicak", action="store_true", dest="sadece_sicak")
     s.add_argument("--ortalama-is", type=int, default=None, dest="ortalama_is")
     s.set_defaults(fn=komut_tumu)
+    si = alt.add_parser("indeks", help="indeks denetimi: Search Console defteri + repo kontrolleri")
+    si.add_argument("--kaydet", help="yeni SC okuması: 'dizinde,dizin_disi,not'")
+    si.set_defaults(fn=komut_indeks)
     s = alt.add_parser("gundem-gunluk", help="günün sektör gündemini siteye yayınla")
     s.add_argument("--asgari", type=int, default=45); s.add_argument("--adet", type=int, default=5)
     s.set_defaults(fn=komut_gundem_gunluk)

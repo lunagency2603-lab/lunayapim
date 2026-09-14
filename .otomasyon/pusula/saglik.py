@@ -187,6 +187,23 @@ GUNLUK_KAYIT = [
  ("Google site haritamızı 5 Temmuz'dan beri okumamıştı; 331 sayfanın sadece 24'ünü biliyordu",
   "Site haritası yeniden gönderildi, aynı gün okundu — keşfedilen sayfa 24'ten 331'e çıktı",
   "31.08.2026"),
+ ("Google'ın hangi sayfamızı neden dizine almadığına sadece elle bakılıyordu",
+  "İndeks denetimi günlük kontrole eklendi (pusula/indeks.py): canonical, .html'e giden "
+  "iç bağlantı, karşılığı olmayan /api/ adresi, site haritası ↔ dosya eşleşmesi ve "
+  "haritadaki noindex her turda taranıyor; Search Console okumaları tarihli deftere yazılıyor",
+  "14.09.2026"),
+ ("376 sayfadaki menü bağlantısı hâlâ eski uzantılı adrese gidiyordu "
+  "(index.html#urunler gibi, toplam 421 bağlantı); her tıklama ve her tarama "
+  "önce yönlendirmeye düşüyordu — Google bu adresleri 'yönlendirilmiş' diye dizin dışı tutuyor",
+  "Bağlantılar doğrudan hedefe çevrildi; üretici de çapa/sorgu ekli adresleri "
+  "artık uzantısız basıyor — site içinde .html'e giden tek bağlantı kalmadı", "14.09.2026"),
+ ("Menüdeki 'İller' bağlantısı 12 sayfada kendi klasörünü gösteriyordu "
+  "(blog sayfalarında /blog/, fiyat ve şeffaflık sayfasında ana sayfa)",
+  "12 sayfada /sehir/ adresine çevrildi, ortak kabuk da düzeltildi", "14.09.2026"),
+ ("Sitede karşılığı olmayan /api/ adresleri sayfa koduna gömülüydü; Google bunları "
+  "adres sanıp tarıyordu (36 hayalet adres dizin raporuna düştü)",
+  "robots.txt /api/ dizinini taramaya kapattı; denetim artık karşılıksız her /api/ "
+  "adresini robots kaydıyla birlikte kontrol ediyor", "14.09.2026"),
 ]
 
 
@@ -194,27 +211,34 @@ GUNLUK_KAYIT = [
 # otomatik çekilemiyor, o yüzden her satırın yanında okunduğu tarih yazıyor.
 # Rakamı güzelleştirmiyoruz; başlangıç neyse o yazıyor.
 ARAMA_KANIT = {
- "tarih": "31.08.2026",
+ "tarih": "14.09.2026",
  "kaynak": "Google Search Console (sc-domain:lunayapim.com)",
  "satir": [
-   ("Site haritasından keşfedilen sayfa", "24 → 331", "aynı gün okundu"),
-   ("Google'ın dizinine girmiş sayfa", "27", "63 sayfa henüz dizinde değil"),
-   ("Son 3 ayda arama tıklanması", "8", "başlangıç noktamız"),
+   ("Site haritasındaki sayfa", "460", "hepsinin dosyası yerinde"),
+   ("Google'ın dizinine girmiş sayfa", "266", "31.08'de 27'ydi"),
+   ("Dizine girmemiş adres", "398", "225'i eski/otomatik adres, 173'ü gerçek sayfa"),
+   ("Taranmayı bekleyen sayfa", "156", "keşfedildi ama henüz taranmadı"),
  ],
- "not": ("Bu rakamlar iyi değil ve iyiymiş gibi göstermiyoruz. 331 sayfalık bir site "
-         "kurduk ama Google'ın site haritamızı en son 5 Temmuz'da okuduğunu ve yalnızca "
-         "24 sayfamızı bildiğini 31 Ağustos'ta fark ettik. Bulduk, düzelttik, aynı gün "
-         "331 sayfanın tamamı keşfedildi. Bundan sonrasını da burada göreceksiniz — "
-         "rakam yükselirse de yükselmezse de."),
+ "not": ("Rakamları düzeltmiyoruz. İki haftada dizindeki sayfa 27'den 266'ya çıktı. "
+         "Dizine girmemiş 398 adresin 187'si sitenin eski uzantılı adresleri (yeni temiz "
+         "adrese yönleniyor, olması gereken bu), 38'i robots ile kapattığımız yönetim/servis "
+         "adresleri. Geriye kalan asıl darboğaz: 156 sayfayı Google biliyor ama henüz "
+         "taramadı. Bu bizim düzeltebileceğimiz bir hata değil; tarama sırası, sayfa yaşı "
+         "ve dışarıdan gelen bağlantı sayısıyla ilgili. Haftalık takip ediyoruz."),
 }
+
 
 ACIK_EKSIK = [
  "Müşteri sözleri henüz yayında değil — yazılı onay alınan görüşler eklenecek "
  "(uydurma yorum koymuyoruz, bu yüzden bölüm şu an gizli).",
  "Harita profilinde fotoğraf sayımız az; profesyonel çekim planlandı.",
  "Yol tarifi bağlantısı eklenmedi — Google Haritalar işletme kaydı sürüyor.",
- "63 sayfamız henüz Google'ın dizininde değil; site haritası 31.08'de yeniden "
- "okutuldu, taranmalarını bekliyoruz.",
+ "156 sayfamızı Google keşfetti ama henüz taramadı; 17 sayfa tarandı ve dizine "
+ "alınmadı. Teknik engel yok (14.09 denetimi: 0 hata) — sayfa yaşı ve dış bağlantı "
+ "azlığı. Haftalık ölçüp bu sayfada yazıyoruz.",
+ "Sitenin eski uzantılı adresleri (187 adet .html) hâlâ Google'ın dizin raporunda "
+ "'yönlendirilmiş' görünüyor. Yönlendirme doğru çalışıyor, zamanla listeden düşecek; "
+ "doğrulama istemiyoruz çünkü düzeltilecek bir hata değil.",
  "Sosyal medya hesaplarımız henüz açık değil — kullanıcı adları belirlenince "
  "site bağlantıları ve şema otomatik devreye giriyor.",
 ]

@@ -9,6 +9,9 @@ Kontroller (Mac'te, internetle):
   2. sitemap.xml canlıda okunuyor mu, bugünün adresleri içinde mi, kaç URL.
   3. Depo: yayınlanmamış değişiklik var mı (push başarısız olduysa burada görünür).
   4. Yerel SEO kapısı sonucu (log'dan) ve son yazar/kaynak özeti satırları.
+  5. İndeks denetimi (pusula/indeks.py): Google'ın indekslemesini engelleyebilecek
+     repo tarafı sebepler — canonical, .html bağlantı, hayalet /api/ adresi,
+     site haritası ↔ disk eşleşmesi, sitemap'te noindex — + son Search Console okuması.
 Çıktı: veri/gunluk-kontrol.json (son 60 gün) + otomasyon.log'a özet + Telegram (jeton varsa).
 """
 import datetime, io, json, os, re, subprocess, sys
@@ -69,16 +72,38 @@ def calistir(bildir=True):
         sorunlar.append("GitHub'a gitmemiş %d kayıt" % depo["push_bekleyen_kayit"])
     if "HATA: 0 | UYARI: 0" not in kapi:
         sorunlar.append("SEO kapısı: " + kapi)
+    # yazar anahtarı: yoksa TrendSaphiens hiç haber yayınlamaz (derleme biçimi kaldırıldı)
+    try:
+        from . import yazar as _yz
+        if not _yz.anahtar():
+            sorunlar.append("YAZAR ANAHTARI YOK — TrendSaphiens haber yayınlamıyor. "
+                            "GitHub → Settings → Secrets → ANTHROPIC_API_KEY girilmeli.")
+    except Exception:
+        pass
+    # indeks denetimi — indekslenmeyi engelleyen bizden kaynaklı sebepler
+    try:
+        from . import indeks as _indeks
+        ind = _indeks.ozet()
+        sorunlar += ind["sorunlar"]
+    except Exception as ex:
+        ind = {"hata": None, "sorunlar": [], "not": str(ex)[:120]}
+        sorunlar.append("indeks denetimi çalışmadı: %s" % str(ex)[:80])
     ozet = {"tarih": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"), "sayfalar": sayfalar, "sitemap_url": len(urls),
-            "sitemap_bugun": len(bugun_sitemap), "depo": depo, "kapi": kapi, "yazar": yazar, "push": push, "sorunlar": sorunlar}
+            "sitemap_bugun": len(bugun_sitemap), "depo": depo, "kapi": kapi, "yazar": yazar, "push": push,
+            "indeks": {"hata": ind.get("hata"), "uyari": ind.get("uyari"), "kapsam": ind.get("kapsam"),
+                       "sc": ind.get("sc", {}).get("tarih"), "dizinde": ind.get("sc", {}).get("indeksli")},
+            "sorunlar": sorunlar}
     y = os.path.join(KOK_DIZIN, "veri", "gunluk-kontrol.json")
     try:
         eski = json.load(open(y, encoding="utf-8")) if os.path.exists(y) else []
     except Exception:
         eski = []
     json.dump((eski + [ozet])[-120:], open(y, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    metin = ("Luna günlük kontrol %s\n%s\nSitemap %d URL, bugün %d · %s · %s\n%s" % (
-        ozet["tarih"], kapi, len(urls), len(bugun_sitemap), push,
+    ind_satir = ("İndeks: dizinde %s / %s adres (%s okuması) · repo kontrolü %d hata" % (
+        ozet["indeks"]["dizinde"], len(urls), ozet["indeks"]["sc"], ozet["indeks"]["hata"] or 0)
+        if ozet["indeks"]["dizinde"] else "İndeks: kayıt yok")
+    metin = ("Luna günlük kontrol %s\n%s\n%s\nSitemap %d URL, bugün %d · %s · %s\n%s" % (
+        ozet["tarih"], kapi, ind_satir, len(urls), len(bugun_sitemap), push,
         "; ".join(yazar) or "yazar: —",
         ("SORUN:\n- " + "\n- ".join(sorunlar)) if sorunlar else "Sorun yok — bugünün sayfaları canlıda."))
     print(metin)
