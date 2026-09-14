@@ -2,6 +2,24 @@
  "tarih": "2026-09-14",
  "aranan": [
   {
+   "baslik": "hamdi akın",
+   "hacim": "1000+",
+   "haber_baslik": "İş insanı Hamdi Akın'a ait jet Libya'da parçalandı",
+   "haber_url": "https://www.sozcu.com.tr/is-insani-hamdi-akin-a-ait-jet-libya-da-dustu-p358101",
+   "haber_kaynak": "Sözcü Gazetesi",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR69P5R9vrzinL9UqfsGA9f3uhNQyChNtn9v7AerUxID7Wd2ndmMl_6_1wKhNc",
+   "bolum": "gundem"
+  },
+  {
+   "baslik": "ek tercihler ne zaman",
+   "hacim": "200+",
+   "haber_baslik": "YKS EK TERCİH KILAVUZU YAYINLANDI MI? YKS ek tercihler başladı mı, ne zaman alınacak? YKS üniversite boş kontenjanlar ve taban puanları belli oldu mu?",
+   "haber_url": "https://www.milliyet.com.tr/galeri/yks-ek-tercih-kilavuzu-yayinlandi-mi-yks-ek-tercihler-basladi-mi-ne-zaman-alinacak-yks-universite-bos-kontenjanlar-ve-taban-7659849",
+   "haber_kaynak": "Milliyet",
+   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT6kVMgjPpg15Do8KWtcaJKm-lu7bF4YLODTg6UiahzPxyliqip7kJs6EV5c8A",
+   "bolum": "gundem"
+  },
+  {
    "baslik": "chp",
    "hacim": "2000+",
    "haber_baslik": "CHP’de ilk genel başkan adayı belli oldu",
@@ -29,8 +47,17 @@
    "bolum": "spor"
   },
   {
+   "baslik": "türk lirası",
+   "hacim": "2000+",
+   "haber_baslik": "Dolar/TL ne kadar oldu?",
+   "haber_url": "https://uzmanpara.milliyet.com.tr/uzmanpara/dolar-tl-ne-kadar-oldu-7659877",
+   "haber_kaynak": "Uzmanpara",
+   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQE90OoG00p-KevzFSqooWCGv5NOFaA1i-IW3J9jS1UcoMeyVGmZ4m3k32nGko",
+   "bolum": "piyasalar"
+  },
+  {
    "baslik": "mustafa çiftçi",
-   "hacim": "100+",
+   "hacim": "200+",
    "haber_baslik": "Son dakika... İçişleri Bakanlığı duyurdu: 1008 kişi hakkında gözaltı kararı!",
    "haber_url": "https://www.haber7.com/guncel/haber/3659438-son-dakika-icisleri-bakanligi-duyurdu-1008-kisi-hakkinda-gozalti-karari",
    "haber_kaynak": "Haber 7",
@@ -63,33 +90,6 @@
    "haber_kaynak": "Ekonomim",
    "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTfj7R05yHxswKHEhHTrJcw3LKxkHv20Mug-tfaFZTAzPouSATTQzoe3abf_v0",
    "bolum": "piyasalar"
-  },
-  {
-   "baslik": "derya cebecioğlu",
-   "hacim": "1000+",
-   "haber_baslik": "Filede aşk iddiası: Filenin Sultanları'na yabancı damat mı geliyor?",
-   "haber_url": "https://www.sozcu.com.tr/filenin-sultanlari-na-yabanci-damat-p357987",
-   "haber_kaynak": "Sözcü Gazetesi",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3kn0CfVVBBCacyZ9TARJngLB7CFu0oVO2Bv3ovGflhb7wMZbhkF-ejHWJX3k",
-   "bolum": "gundem"
-  },
-  {
-   "baslik": "ajet",
-   "hacim": "2000+",
-   "haber_baslik": "Uçak biletlerinde indirim başladı, koltuk seçimi de 99 lira",
-   "haber_url": "https://www.ntv.com.tr/ntvpara/ucuz-ucak-bileti-indirim-yapildi-1741762",
-   "haber_kaynak": "NTV Haber",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSs6WJR_E_aupDpaGDvuEQhRwxVod7EOqGRx_GyIeMVO5OfBwsLN-6r0TaWVZs",
-   "bolum": "gundem"
-  },
-  {
-   "baslik": "emek emre",
-   "hacim": "500+",
-   "haber_baslik": "Ünlüler düğününe akın etmişti: O avukat gözaltına alındı",
-   "haber_url": "https://www.sozcu.com.tr/unluler-dugunune-akin-etmisti-o-avukat-gozaltina-alindi-p357878",
-   "haber_kaynak": "Sözcü Gazetesi",
-   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSCJ6ad6YNtXk8mCPXkQZ0axBTVw2uFz_blKm6wWznp4RCcFfPYXRB2YPhMpyg",
-   "bolum": "piyasalar"
   }
  ],
  "bolumler": {
@@ -102,18 +102,18 @@
     "ozet": "Gram altın haftaya düşüşle başladı TRT Haber"
    },
    {
-    "baslik": "Altında faiz alarmı! Fed beklentisi fiyatları aşağı çekti - Uzmanpara",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQzZyeXBpM01ZUWdYNkQ1bTEtY2lYdm9ZLUxVLTNxcC1vVVVfZ1VRWVU0bnlEM1Q3MkNZU0lCLU5xOFdBWDlfaWxocmoxS29xckFpaDA5NEVzX0oxUzB5Z0JILTMwN3hhS282V2FHc3hsQXhUTS1FeVFQNEJOZ005NUllcW1kelVDam02d1VqX3V3Znp1enZ2ckdGdVZmVlREd3FsdXVQbm1HTTBV?oc=5",
-    "kaynak": "Uzmanpara",
-    "tarih": "Mon, 14 Sep 2026 04:48:00 GMT",
-    "ozet": "Altında faiz alarmı! Fed beklentisi fiyatları aşağı çekti Uzmanpara"
-   },
-   {
     "baslik": "Dolar/TL’de son durum ne? 14 Eylül 2026 Euro ve döviz fiyatları… - bloomberght.com",
     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPS1dxOWQ2SWljU0t6ZlFzM0ZSWWdWUWZ5NGJMS3Fvc3hRd0xPQzEzSXQwU3N3VnVPMV9OZm44OUMtejhBNDZHZW9SWnR0b0w2cEJBMVByR0xxa3dTZzlEMlNCdGNLUzZabWh6S0d6VUtoQlBtdlI1Q2d4ZmNoUElCbUs4UUIwSFJ3QkFQdldXSXN3MmlUZHFMWVRvS1gtc3FXb05N?oc=5",
     "kaynak": "bloomberght.com",
     "tarih": "Mon, 14 Sep 2026 06:30:01 GMT",
     "ozet": "Dolar/TL’de son durum ne? 14 Eylül 2026 Euro ve döviz fiyatları… bloomberght.com"
+   },
+   {
+    "baslik": "Altında faiz alarmı! Fed beklentisi fiyatları aşağı çekti - Uzmanpara",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQzZyeXBpM01ZUWdYNkQ1bTEtY2lYdm9ZLUxVLTNxcC1vVVVfZ1VRWVU0bnlEM1Q3MkNZU0lCLU5xOFdBWDlfaWxocmoxS29xckFpaDA5NEVzX0oxUzB5Z0JILTMwN3hhS282V2FHc3hsQXhUTS1FeVFQNEJOZ005NUllcW1kelVDam02d1VqX3V3Znp1enZ2ckdGdVZmVlREd3FsdXVQbm1HTTBV?oc=5",
+    "kaynak": "Uzmanpara",
+    "tarih": "Mon, 14 Sep 2026 04:48:00 GMT",
+    "ozet": "Altında faiz alarmı! Fed beklentisi fiyatları aşağı çekti Uzmanpara"
    },
    {
     "baslik": "Fed faiz kararı ne zaman? Faiz artışı olacak mı, beklentiler ne yönde? - Yeni Şafak",
@@ -128,6 +128,13 @@
     "kaynak": "Paratic Haber",
     "tarih": "Mon, 14 Sep 2026 07:08:26 GMT",
     "ozet": "Altında Fed baskısı: Petrol rallisi faiz artışı beklentisini güçlendirdi Paratic Haber"
+   },
+   {
+    "baslik": "Ekonomistlerin yüzde 85'i aynı görüşte; Fed'de faiz artışı kapıda - Foreks.com",
+    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQLURyZENQUzIwRG91QXhoVmVjN25USFAzS1otSk5MVHUzOXd2aXlDWVhBOTVjb29Xdi1vQ2hZclQtcHRUa3BvRHNzbEM0T3V4SzFEM3lBSE4xejRVSlFJYTBnMjlaQjRkR1Y2dnd0Qy1wYmVYQW92dE9iQjJFZldjV00tWXhQRjhtMHJYYjhycVRpWWtBVVJfd09faUZIWEhoVzJFekZ4ZG1MVFgxeUxoRW1QSEFZTmM5VnY3T1JuRlREdEZadkdIMnRfSG16MUVndkVQVTVOYUd2ZlAzNVE?oc=5",
+    "kaynak": "Foreks.com",
+    "tarih": "Mon, 14 Sep 2026 10:04:05 GMT",
+    "ozet": "Ekonomistlerin yüzde 85'i aynı görüşte; Fed'de faiz artışı kapıda Foreks.com"
    },
    {
     "baslik": "Fed'e ilişkin faiz artırım beklentisi emtia piyasasında satış baskısını yükseltti - Anadolu Ajansı",
@@ -156,13 +163,6 @@
     "kaynak": "Bigpara",
     "tarih": "Mon, 14 Sep 2026 08:21:01 GMT",
     "ozet": "Dolar ve Euro'da yeni haftanın ilk rakamları belli oldu Bigpara"
-   },
-   {
-    "baslik": "Fed faiz kararı ne zaman? Faiz artışı olacak mı? - platinonline.com",
-    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOOXhzQmZuZ2RBSS1JZXBEbDk5RXBiZE1Mak55YTNvYk5GT3UyYjNOUFp6cnM2VGsxeHFDcFkzNmRoeTFSTFh0MWhwNi1fTjVrVFVMZWFGNVpGYXcwRTB2bEwxSmFjRFFxV01hZGhuUzFWdGdNZmtDWG4zSU9rR0F1T0VuWmtyOUZFTlZEeHh3QnJqblktV2c?oc=5",
-    "kaynak": "platinonline.com",
-    "tarih": "Mon, 14 Sep 2026 08:15:20 GMT",
-    "ozet": "Fed faiz kararı ne zaman? Faiz artışı olacak mı? platinonline.com"
    }
   ],
   "ekran": [
@@ -195,18 +195,18 @@
     "ozet": "Sinema rehberi: 13 yeni film vizyonda 11 Eylül vizyona giren filmler gazeteoksijen.com"
    },
    {
+    "baslik": "Bu hafta vizyona giren 12 film - Konya Yeni Haber",
+    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1vTjlvdFQ1dkhXeXRydThsaWUwQ2NsOHEzMGJHa0xzc3J4c2RrSkxFb0xCU2dSZFBMckZkZER1OVREaVBlT0V5SEVfZWNpZTh0VzFzNTlZWWRHcjQ3V2RqSHdwNzFiRXdOeUpqTC1LbXk5TVZRNHpn?oc=5",
+    "kaynak": "Konya Yeni Haber",
+    "tarih": "Wed, 09 Sep 2026 13:31:11 GMT",
+    "ozet": "Bu hafta vizyona giren 12 film Konya Yeni Haber"
+   },
+   {
     "baslik": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu - Sözcü Gazetesi",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMnhHTWpBMlVkNXRTazZqc0ZOX05iS2dHUjI2VU5XWk9zTnBCc1IxUWJocF9VZ3FESnpDX2hrZTRMbmIzSFdCWHkzVWFZM1BrMzNxTGVFTFpPVkNHUXJoNHllemJJMWpfU2hGNXNGM1pFcTNOQ1NFakFWNnItM0hJd3FaQ0FHSElIeXZDWmNZZ1R4OHlhQ3o0anlybU4waldhdmo3ckcwZnBpM3RBUUE?oc=5",
     "kaynak": "Sözcü Gazetesi",
     "tarih": "Fri, 11 Sep 2026 08:59:54 GMT",
     "ozet": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu Sözcü Gazetesi"
-   },
-   {
-    "baslik": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu - afyonhaberturk.com",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPU3BrM1M2UmJfQ1dpQ3ZKV0o5VHBWQ0xJQ3lkUUo1SFY4blpGck4wc29mX3hGWHhDMTZiYldWdHYxR0xRbTR1Y2sta1gtWVVZcktKcWMzYmFRWFhqcEotUldiejlQc3VWYnlsajRGYkZ6T3g0MjFTUmFYcFpIVDhsNlJvQjVVQmdCa3U5SEViSU1TdHA3LWwzY3JZaw?oc=5",
-    "kaynak": "afyonhaberturk.com",
-    "tarih": "Wed, 09 Sep 2026 12:43:00 GMT",
-    "ozet": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu afyonhaberturk.com"
    },
    {
     "baslik": "Yeni dizi Anne Yarısı için yayın tarihi ve ilk fragman izleyicilerle buluştu - GZT",
@@ -325,13 +325,6 @@
     "ozet": "Eylül 2026 İstanbul Sergi Rehberi Vogue"
    },
    {
-    "baslik": "Kayseri'de festival heyecanı! Sırada Semicenk konseri var - Kayseri Olay Haber",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVnBFa2VmTkQwS2d0XzdHM0VlOUE0MlItUmlhLTFLbmZyYUNVQ3pkXzAyanpvWFpOYWh1aDgtZTM2MnBCYkhQN2MxdjA0MU9zN2dHcmVhRm9lbFU3MEJoWHFwVnUzYS1FSkc0ay1FTzRvS3VUNlVveVBlTnFhdl9Va19vVjcya0VDNHV1WC1BV3FfNmNpLU9F?oc=5",
-    "kaynak": "Kayseri Olay Haber",
-    "tarih": "Sun, 13 Sep 2026 08:28:35 GMT",
-    "ozet": "Kayseri'de festival heyecanı! Sırada Semicenk konseri var Kayseri Olay Haber"
-   },
-   {
     "baslik": "Şebnem Ferah'ın yeni konser tarihleri belli oldu - gazeteoksijen.com",
     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOWZKdHBKbXdZSV9wa0dCWVdqS2g1SUZ3ZzhqVENHaXU0UmtGeVFlUzNNV3VHMG9ILU4wRldEc1V3RHNyMEZUaFJmVW5za2lZcUg0WEZtbVlWZEZjbURBZEs4Ynhhd1NhcEtFNGtxWnN6TkdwV09PTlBaWTVickhKNFVvMzU2VW40UFVvQ2tjNA?oc=5",
     "kaynak": "gazeteoksijen.com",
@@ -344,6 +337,13 @@
     "kaynak": "سانا",
     "tarih": "Thu, 10 Sep 2026 14:05:26 GMT",
     "ozet": "Doğu Guta’da Anlamlı Sergi: 30 Çocuğun Eserleriyle Kayıpların Hikayesi Belgelendi سانا"
+   },
+   {
+    "baslik": "Kayseri'de festival heyecanı! Sırada Semicenk konseri var - Kayseri Olay Haber",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVnBFa2VmTkQwS2d0XzdHM0VlOUE0MlItUmlhLTFLbmZyYUNVQ3pkXzAyanpvWFpOYWh1aDgtZTM2MnBCYkhQN2MxdjA0MU9zN2dHcmVhRm9lbFU3MEJoWHFwVnUzYS1FSkc0ay1FTzRvS3VUNlVveVBlTnFhdl9Va19vVjcya0VDNHV1WC1BV3FfNmNpLU9F?oc=5",
+    "kaynak": "Kayseri Olay Haber",
+    "tarih": "Sun, 13 Sep 2026 08:28:35 GMT",
+    "ozet": "Kayseri'de festival heyecanı! Sırada Semicenk konseri var Kayseri Olay Haber"
    },
    {
     "baslik": "Kahramanmaraş’ta Bu Akşam İki Konser: Kıraç KAFUM’da, Sura İskenderli EXPO’da - Kahramanmaraş Manşet Gazetesi",
@@ -383,6 +383,13 @@
   ],
   "yapay-zeka": [
    {
+    "baslik": "Türkiye yapay zeka kullanımında üst sıralarda yer alıyor - Anadolu Ajansı",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMFVFWnN0VlJPWmZVM1hKOFBUQlVHU1BicTEydl85SEhnc2xEbWg4YVFaa3BpYmJtNW0tVjl1c3RtLW5BQ0F6cGVRMW90dnI5WjkwdXpTckRueWpUVXlnNUZmWTNCVUcyYVNJc2xlNXRlZzRXNXBOYzRuNWR3VFFWN0FwRm9SZmI0RUxyQmFWNXdBdnZrUnhwNTMtLTg?oc=5",
+    "kaynak": "Anadolu Ajansı",
+    "tarih": "Mon, 14 Sep 2026 08:14:12 GMT",
+    "ozet": "Türkiye yapay zeka kullanımında üst sıralarda yer alıyor Anadolu Ajansı"
+   },
+   {
     "baslik": "Yapay zeka liderlerinden yavaşlama kararı: Gelişmeler bizi geride bıraktı - TRT Haber",
     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaXM5bW1NWXRkdTFMdUNiWm5IUDNZYkE1MDZ5NUx3cU9KTFFieVlTUFdESGF3d0tLOHZsS2NjQWNwbWZ3WEdtOUJ6akkwSkY2ek5jSUJWd01kN1hOU2pwT1BZaDRLdldYeDdieXN0TjZNcTcyam82QUFCYVJFcl84NlFPMDlrQzJkRHg1T0NLSjRFblM0VG1GaFUzamVGTHBfZEpja3Y0eFZNYTA5YVlPcVdnak9oak1MYXBlMVZn?oc=5",
     "kaynak": "TRT Haber",
@@ -390,25 +397,18 @@
     "ozet": "Yapay zeka liderlerinden yavaşlama kararı: Gelişmeler bizi geride bıraktı TRT Haber"
    },
    {
-    "baslik": "Bir veriye kırk yıl köle olmak: Yapay zeka ve öğrenmenin geleceği - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNS3llZ013dHFLTldZZXpXTHY1WjhEckxuY3hrMWJUdVM5Y2JrbG1PeVJROHBlTWhOajhqLURYMTNLVU9uNVpvbko1THVZUmRyekNmamJMZnRLTjlVbmV2NEhNcXlPLUxwTU1GVEJoUmU5Q3JDZlY2aHBCT3pocU9kSTk1UFFUN1l5bENiRE5NdjJ5c0huMmlNelpWMHpJS0E1?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Mon, 14 Sep 2026 08:27:46 GMT",
-    "ozet": "Bir veriye kırk yıl köle olmak: Yapay zeka ve öğrenmenin geleceği Anadolu Ajansı"
-   },
-   {
-    "baslik": "Yapay zeka gerçekten insanlığın sonunu getirebilir mi? - dw.com",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOREgyZnVrYXBGM3BZNVMwOXQ0OU1UYU1POFdyNHRadmhhRUV5VVJtVU5BWDNYV0pRcjNvNTRJdVdqUTF4RnBuUWtOUkUwTndVd0p0Ymd2RmR3MF9kNzQ4RUFzRWZySmxjQzJ1elU2dnpLWnFYYlhmb2tNVi1KUEF2US1sWTM3cEQ0TjdTOGtvb2ZRMVl3UVNySVA4MDlTUlpNdHNwd1JMcmxfZ9IBqgFBVV95cUxOREgyZnVrYXBGM3BZNVMwOXQ0OU1UYU1POFdyNHRadmhhRUV5VVJtVU5BWDNYV0pRcjNvNTRJdVdqUTF4RnBuUWtOUkUwTndVd0p0Ymd2RmR3MF9kNzQ4RUFzRWZySmxjQzJ1elU2dnpLWnFYYlhmb2tNVi1KUEF2US1sWTM3cEQ0TjdTOGtvb2ZRMVl3UVNySVA4MDlTUlpNdHNwd1JMcmxfZw?oc=5",
-    "kaynak": "dw.com",
-    "tarih": "Mon, 14 Sep 2026 05:41:50 GMT",
-    "ozet": "Yapay zeka gerçekten insanlığın sonunu getirebilir mi? dw.com"
-   },
-   {
     "baslik": "Pentagon, OpenAI'dan talepleri mümkün olduğunca geri çevirmeyen bir yapay zeka modeli istedi - Webrazzi",
     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVEw5Nkw2THMtQnpPUEN2dXVKbTRydEJiSmI1cXZ4czhIN2Y0V2lVdXE5QUloMWdxblJkU2JydDQzck1tRkFuakh5R25wZ2Rxc2RXU3R5S3hZODNoLUpiX0RXSHFEWDFoT1FYZHdtM215VjhkOHFqRFRCWGM1QjBvOEh4bTFaZkZwT2ZYejFjWENyeUlpZ25mQmQtd3NTM0JHSVpWdnlOWDhtMWhINTFUVU1fY0dESkxIZ2gyNjBsRVF1Zw?oc=5",
     "kaynak": "Webrazzi",
-    "tarih": "Mon, 14 Sep 2026 10:03:30 GMT",
+    "tarih": "Mon, 14 Sep 2026 10:04:24 GMT",
     "ozet": "Pentagon, OpenAI'dan talepleri mümkün olduğunca geri çevirmeyen bir yapay zeka modeli istedi Webrazzi"
+   },
+   {
+    "baslik": "Yapay zeka gerçekten insanlığın sonunu getirebilir mi? - DW.com",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOREgyZnVrYXBGM3BZNVMwOXQ0OU1UYU1POFdyNHRadmhhRUV5VVJtVU5BWDNYV0pRcjNvNTRJdVdqUTF4RnBuUWtOUkUwTndVd0p0Ymd2RmR3MF9kNzQ4RUFzRWZySmxjQzJ1elU2dnpLWnFYYlhmb2tNVi1KUEF2US1sWTM3cEQ0TjdTOGtvb2ZRMVl3UVNySVA4MDlTUlpNdHNwd1JMcmxfZ9IBqgFBVV95cUxOREgyZnVrYXBGM3BZNVMwOXQ0OU1UYU1POFdyNHRadmhhRUV5VVJtVU5BWDNYV0pRcjNvNTRJdVdqUTF4RnBuUWtOUkUwTndVd0p0Ymd2RmR3MF9kNzQ4RUFzRWZySmxjQzJ1elU2dnpLWnFYYlhmb2tNVi1KUEF2US1sWTM3cEQ0TjdTOGtvb2ZRMVl3UVNySVA4MDlTUlpNdHNwd1JMcmxfZw?oc=5",
+    "kaynak": "DW.com",
+    "tarih": "Mon, 14 Sep 2026 05:41:50 GMT",
+    "ozet": "Yapay zeka gerçekten insanlığın sonunu getirebilir mi? DW.com"
    },
    {
     "baslik": "Yapay zeka uyarıları hisseleri nasıl etkileyecek? - bloomberght.com",
@@ -432,6 +432,13 @@
     "ozet": "Yeni Yapay Zeka Aracı, Küçük Moleküllerin Gizli Evreninin Haritasını Çıkarıyor! Evrim Ağacı"
    },
    {
+    "baslik": "Satış organizasyonlarında yapay zeka kullanım oranı arttı - Sözcü Gazetesi",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPTThuNEgySVlCN0l3RGdScjZvSGVJODBWcmt2WDUwTFlad0h3NzBQSTlBdTFoRFhhMDI3Z1dBTlUxYnliVWpULXBhNnhOd2JXN2lHZTRPSnlDbTBaNEhmM2xKSFVqZS1EZTltWGZrX251a0M1UWcyZkV2RzNaT0x3MGZSbDFqUmJpOVhqX1R3aV9UcnJ4ZDhkTVlB?oc=5",
+    "kaynak": "Sözcü Gazetesi",
+    "tarih": "Mon, 14 Sep 2026 09:34:46 GMT",
+    "ozet": "Satış organizasyonlarında yapay zeka kullanım oranı arttı Sözcü Gazetesi"
+   },
+   {
     "baslik": "Antalya'da sağlık bilimleri öğrencilerine yapay zeka okuryazarlığı eğitimi - Antalya Hürses",
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORGdaLXFMSVZoQjNWamg0N0lpNW02RS0yMmpQUXU5bmNUUm5RNnVqWUZkb2xyX1pLY0djYmtxRnZSNTdQSWVib0Jac1BFN0Rya21adWFtaGR1U3R0Z3dyTVpXOUwxRjVXbDlhM0s0cmlldmZvd1JXX1NaWTFqYjZVOU9oaHdXWVBGbHVockhiWkJDREVVbm43aG15MHNsbWdDVHFOQktvSDY3OTktNkZr?oc=5",
     "kaynak": "Antalya Hürses",
@@ -444,13 +451,6 @@
     "kaynak": "Aksu TV Haber",
     "tarih": "Mon, 14 Sep 2026 07:38:00 GMT",
     "ozet": "Ertuğrul Akben Yazdı: \"Devlet Memuruna Yapay Zeka Eğitimini Zorunlu Yapıyor, Peki Esnaf Ne Yapacak?\" Aksu TV Haber"
-   },
-   {
-    "baslik": "\"Yapay zeka interneti ele geçirebilir\" iddiası! Dev şirketlerin patronları 'frene basın' dedi - Halk TV",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQOU1mdkpaeVc1Nlotb2xhUWZIQUw5YjJuNzlYSFc4ZGlVeVFGdUZ5R2dINXBHam1WZGhDR0RiSVNIYUFJWHBXQVlTeG9BbTBJMkxmempsUnZWWTFFWGtjalpUT3JLUHZIdFZLN29qSkJ5SGdJcFNEX2ZvN1hMa0lzZGU0MUJqNDQ3Q0tyQlJOVTFOMXZkU3pOeDlzNXVzZjMwLUJxaG11d1BZOUhNUUdQdTBhY3pjOTR4Ul9mcWxnYWJ5djJZ?oc=5",
-    "kaynak": "Halk TV",
-    "tarih": "Mon, 14 Sep 2026 06:34:00 GMT",
-    "ozet": "\"Yapay zeka interneti ele geçirebilir\" iddiası! Dev şirketlerin patronları 'frene basın' dedi Halk TV"
    }
   ],
   "yazilim": [
@@ -490,6 +490,13 @@
     "ozet": "Güvenli ve sağlıklı bir siber alan oluşturmak. Vietnam.vn"
    },
    {
+    "baslik": "Çin’den siber uzayda “kader birliği” çağrısı - CGTN Türk",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9YYVo1U2pWbFdWOGJJLVVDTF9BTnhEZ05uNUFiUDl6bU1ZMXByMGFaX2F5b2diV25YU0VkQ2NfRmRIRVpXendNUXJpeG1PMy1Xd3lOQ2hMM2pHbjhDMGRJaTBaZEJucExCTTVzZXRwRmRqRWZZ?oc=5",
+    "kaynak": "CGTN Türk",
+    "tarih": "Mon, 14 Sep 2026 10:06:00 GMT",
+    "ozet": "Çin’den siber uzayda “kader birliği” çağrısı CGTN Türk"
+   },
+   {
     "baslik": "17 milyon öğrenci dersbaşı yaptı! Okul kapılarındaki yeni uygulama dikkat çekti - Son Dakika",
     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS1NLb2JlYzROQXZHQkd2a3ZUN3FVLVJvUDJpNHZic1h3YjhrejJlMWtYSElWNXl5RHY2QWFtR05qR1dVSmhHMlNzNmZHTjJ2QjhfeVk0TnVDNXA3S01mMmx1amRVZWduS0FkeEFrdXQyWEFJOVpaX04zRzctUmtNRTA4WDJQZThXN2RR0gGLAUFVX3lxTE5LU0tvYmVjNE5BdkdCR3ZrdlQ3cVUtUm9QMmk0dmJzWHdiOGt6MmUxa1hISVY1eXlEdjZBYW1HTmpHV1VKaEcyU3M2ZkdOMnZCOF95WTROdUM1cDdLTWYybHVqZFVlZ25LQWR4QWt1dDJYQUk5WlpfTjNHNy1Sa01FMDhYMlBlOFc3ZFE?oc=5",
     "kaynak": "Son Dakika",
@@ -511,18 +518,11 @@
     "ozet": "‘Uçacak, kaçacak’ diye kandırdılar: Yatırımcı hakları için siber operasyon Yeniçağ Gazetesi"
    },
    {
-    "baslik": "Yerli çözümler siber güvenlikte bağımsızlığı güçlendiriyor - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPM2xSTERlbVl4bVgydHNodURIYzJGcXd1S3dZMFg2RUdpZVdmaFNnTnRhc3g5NGctVllVMzFmQjdNLTE1NFdBZExyVVJPQzEtWFdLd1JXTEJPcW5UZEg2NlJjeXVMRXJOUXplN3JkcFZQdXViMk5hWV90eS02bU9ySmxScjlCR3lYVnhEdDJBdkFIWkN4TW1tenlGZFVPMFhmOXQwVGdoN2tLVENm?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Sun, 13 Sep 2026 09:15:53 GMT",
-    "ozet": "Yerli çözümler siber güvenlikte bağımsızlığı güçlendiriyor Anadolu Ajansı"
-   },
-   {
-    "baslik": "Konya dahil 8 ilde siber operasyon: 177 şüpheli hakkında işlem başlatıldı - Konya Yeni Haber",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNYU1uNmtFRXFzNWg2dF9kTU9jM25EbURXQXRXalB4bHRiMFJyeXcyU19FTUphRmw0ank4SnN5VzZQYWVfMHRJRFEyRm1uN1R5Rzk1NkxydF92cEFXN2k2ZUJic1JQc3NUcDdMRWpUYVNDaUJCTkU5X21fYVJ0cmxBZHhTY1N6Zk9TaXFVRkxRQ2NPTndjb0czWTdnOXBkRkRYWnVwX09HYm0yNFVialBJ?oc=5",
-    "kaynak": "Konya Yeni Haber",
-    "tarih": "Mon, 14 Sep 2026 07:05:31 GMT",
-    "ozet": "Konya dahil 8 ilde siber operasyon: 177 şüpheli hakkında işlem başlatıldı Konya Yeni Haber"
+    "baslik": "Çin’den yapay zeka uyarısı: Siyasi ve siber güvenlik riskleri gündemde - ekotürk",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPREFWU0lMMHR4YlZ5RmV6NE12amN5Wi1NSEdGX1ZleXFWNEFGQkxKaTIyZzBQRmgzRWMtY2x3TGEwU0E5ZEZ2YWNqOEFKWXliZHB5N3BaRERXQkpiUm16LVVQWlZTQnFEeVRMdzZXRDF6TjVZM0VGNFlXNkllWlFlMnl5TlYtcXNkQlJTSlJrbElQeWdzVGp1VG9YbGFMcW1GNFc1dw?oc=5",
+    "kaynak": "ekotürk",
+    "tarih": "Mon, 14 Sep 2026 04:15:47 GMT",
+    "ozet": "Çin’den yapay zeka uyarısı: Siyasi ve siber güvenlik riskleri gündemde ekotürk"
    }
   ],
   "muhendislik": [
@@ -641,6 +641,13 @@
     "ozet": "Son Dakika | Borsa spekülatörlerine soruşturma: Sosyal medya manipülatörleri için düğmeye basıldı Sabah"
    },
    {
+    "baslik": "YÖK’ün kararı sonrası Prof. Özkara’dan YouTube açıklaması: Ya kanalı kapatacağım ya da istifa edeceğim - T24",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPeU81bEszWkxBQWlnb3lDMF82M003TG1SSHVlanE1R2MxN1A4VGdGY0EtSGZTOEF6d1BDM0c3ZVJxNlJ3ZzduWU5LLU1JUExuSTh6TjA1WnZyYU1MZDBpaDh6YzZNY183V1NoSHVpZ1dwUXg4Y1FiYkJELXJGLXRqcUNZcGI1RHZydmZTNHpPZmRzUDJzc2xfakVXa3dEQUZqc011eEM3cF9EQ3l0RDNCamZkanZTNVBqRHJvOVBvcHdWQ19TeGZndnF0a0U?oc=5",
+    "kaynak": "T24",
+    "tarih": "Mon, 14 Sep 2026 07:34:00 GMT",
+    "ozet": "YÖK’ün kararı sonrası Prof. Özkara’dan YouTube açıklaması: Ya kanalı kapatacağım ya da istifa edeceğim T24"
+   },
+   {
     "baslik": "Instagram algoritması tartışması yeniden alevlendi - CHIP Online",
     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxONmZWdTZFakN2X3RZNGZzbi1ObGxtdXd2ZVhlUy11dnc1d2xTZTJEaGxGallfdV9ZQnhDTFdGZkZEeHpSV09WbUVmbjhKdl95c1pOaWpFbVc3c00zX21xWFVaYy1iREloQlY3ZGVZaDRuN3FEUkhsWmRxTkRYYVJ4S3hRaGRYODV2cjhidGw4NjA5TW1qQW9nNQ?oc=5",
     "kaynak": "CHIP Online",
@@ -648,25 +655,18 @@
     "ozet": "Instagram algoritması tartışması yeniden alevlendi CHIP Online"
    },
    {
+    "baslik": "Yeni nesil suç örgütlerine darbe! Sosyal medya hesapları mercek altında: 114 gözaltı - Haber 7",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTDloTzhpZC1DSkk4Wkx0eC1YcGxtd1RmUFpLT0o0bGthb196dUdWVHNValZBTEtENG5LVmRtLXNJVS1EdDZwOHJTeG5BNTRYenJXb3FNRnhpdXFsU0NkWWtwdjRMekpUbVNVc1c2SXNLLXhOTW1iLVhwWjA2SjBUTmYwR1hFV3VXUzFaUU1Hc3RLbGFXX094NjB3ZmlYQ2hSVXg0SjQ5THUwQlo4ak95NUcxbFVOU0RxNnBlTHZfWnBNdVlp0gHMAUFVX3lxTFBFVEh2YXVhQ1JSdnZ0N1hiWkFubVhMbW84cFJlbnVpc2tNYVR5N3hnemhCQzFDMW90ZXJabGV0SFRMVC1MWThkRWpNelBGcmFHdnJpQVM1cXlpZnNwS0ttcG5lbjRIM05kU0FQUzduQlhhVmRZWGJhLWpmT1lfZV84Qk9xWGM2ZTR5SWtzc1F5T19ZWVA5R2NNMTNUMzVSS2VqaThGUnRZNFNTZDdremFDdF9oU1E0TTlQbmI1amFQY2s5UG9KTUhZTjE2bw?oc=5",
+    "kaynak": "Haber 7",
+    "tarih": "Mon, 14 Sep 2026 07:04:00 GMT",
+    "ozet": "Yeni nesil suç örgütlerine darbe! Sosyal medya hesapları mercek altında: 114 gözaltı Haber 7"
+   },
+   {
     "baslik": "DEM Parti’den anadilinde eğitim çağrısı - Bianet",
     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBOZ1loYjd0dk5FdHhRR1ZkOE5WaFVrVTJreUFKV0U1N2kwM3dmRmZ0Q2ttLUR4bVVWaFlISi1DaXVnTFVpckZ3N0Y5RGpCLUR6NGJZMFRWeHk1VEEwd2kxdzBlc2ZrcUx3UXRBU3VKU21KN1V5UXlFdWxB?oc=5",
     "kaynak": "Bianet",
     "tarih": "Mon, 14 Sep 2026 08:22:00 GMT",
     "ozet": "DEM Parti’den anadilinde eğitim çağrısı Bianet"
-   },
-   {
-    "baslik": "Sermaye piyasalarına yönelik yanıltıcı sosyal medya paylaşımları yapan 6 şüpheliye gözaltı - Ekonomim",
-    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPOU5qOGp1ck5JWFlYODNEdWtRd1FORkx2N3I2cjEtTDF3TFVLaGVWcEpVRnJBS3ZhS0VFVXYtVmJBM2dOWEFYNkNETEl6YlpzcWtsdG1ZcFJEcTU2bFplZGZoZmpfRTVnSFpUeHZoXzFBZ3lBU2lvZjJXanpqLW84YTRsbmNSaEdGTkdDMlR0R2V4UDg3TEJhbEMwNkx6R2p2RzRqd2JHZzIwM0o2amM5RWZ1WS1lWnpyWHFfUDlRcW8tYk1NdnVuTGE3Y09mcFF2LUhlaTBiZ2N1dkXSAeABQVVfeXFMUEVWSGN4MU9Dd05kcjFtSzZRaEI2cUJuaTNMcE94YjFOV1ZnenpPWlpvMS1UaExRdkVqN24xMzVWZ0xnQWx3MV9Zcm1VNkt3ekdyT3BFYkhzbjRxeEJaMUxNWGl1M29CWng2QnE4bE05RkowcU9hQXJUTGRSbHFFOTVLUGNnbUJsRjFMemFZaWFjN29HZTl6aENPaTB1VTZTWmgyNmRsZ2pNcXhoOFQtSGJMQm9sMlhnZXNGenp1UUxIRjJ2LTRCS2R6RmJteTdvTEhfaWQyU3BnV2o2dEZQZTQ?oc=5",
-    "kaynak": "Ekonomim",
-    "tarih": "Mon, 14 Sep 2026 06:51:00 GMT",
-    "ozet": "Sermaye piyasalarına yönelik yanıltıcı sosyal medya paylaşımları yapan 6 şüpheliye gözaltı Ekonomim"
-   },
-   {
-    "baslik": "YÖK’ün kararı sonrası Prof. Özkara’dan YouTube açıklaması: Ya kanalı kapatacağım ya da istifa edeceğim - T24",
-    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPeU81bEszWkxBQWlnb3lDMF82M003TG1SSHVlanE1R2MxN1A4VGdGY0EtSGZTOEF6d1BDM0c3ZVJxNlJ3ZzduWU5LLU1JUExuSTh6TjA1WnZyYU1MZDBpaDh6YzZNY183V1NoSHVpZ1dwUXg4Y1FiYkJELXJGLXRqcUNZcGI1RHZydmZTNHpPZmRzUDJzc2xfakVXa3dEQUZqc011eEM3cF9EQ3l0RDNCamZkanZTNVBqRHJvOVBvcHdWQ19TeGZndnF0a0U?oc=5",
-    "kaynak": "T24",
-    "tarih": "Mon, 14 Sep 2026 07:34:00 GMT",
-    "ozet": "YÖK’ün kararı sonrası Prof. Özkara’dan YouTube açıklaması: Ya kanalı kapatacağım ya da istifa edeceğim T24"
    }
   ]
  }
