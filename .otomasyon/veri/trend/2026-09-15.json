@@ -3,7 +3,7 @@
  "aranan": [
   {
    "baslik": "istanbul sabiha gökçen uluslararası havalimanı",
-   "hacim": "100+",
+   "hacim": "200+",
    "haber_baslik": "Türkiye'nin sivil havacılık filosu \"yüksek irtifaya\" çıktı",
    "haber_url": "https://www.aa.com.tr/tr/ekonomi/turkiyenin-sivil-havacilik-filosu-yuksek-irtifaya-cikti/4056426/4056426",
    "haber_kaynak": "Anadolu Ajansı",
@@ -17,6 +17,15 @@
    "haber_url": "https://www.iha.com.tr/ankara-haberleri/cumhurbaskani-erdogan-bbp-genel-baskani-desticiyi-kabul-etti-485371976",
    "haber_kaynak": "İhlas Haber Ajansı",
    "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRWxLj0gDAHjh9fItlA7e5O9obaQAN_f1Gpzb8cFQVypdLytzgzE9ooAixllPk",
+   "bolum": "gundem"
+  },
+  {
+   "baslik": "braga - estoril",
+   "hacim": "100+",
+   "haber_baslik": "Valeu uma rajada de Wind para Pedreira não incendiar (crónica)",
+   "haber_url": "https://www.abola.pt/noticias/valeu-uma-rajada-de-wind-para-pedreira-nao-incendiar-cronica-2026091422430115398",
+   "haber_kaynak": "A Bola",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS-xRmYi57jbXnCVSSsiHl0KRY3gIukrEm4kNdlwj7QQ-65mrrc_A5d0Ok3yPc",
    "bolum": "gundem"
   },
   {
@@ -47,15 +56,6 @@
    "bolum": "gundem"
   },
   {
-   "baslik": "etna yanardağı",
-   "hacim": "500+",
-   "haber_baslik": "Etna Yanardağı harekete geçti: İtalya'daki havalimanı kapatıldı",
-   "haber_url": "https://www.hurriyet.com.tr/dunya/etna-yanardagi-harekete-gecti-italyadaki-havalimani-kapatildi-43306447",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7HcNuUKStRfWYOY8aZOQEe8vSyDIpxZ8HxEb63Ob5mR9Gav9x8qiHYW8beUo",
-   "bolum": "gundem"
-  },
-  {
    "baslik": "lozan",
    "hacim": "500+",
    "haber_baslik": "Dışişleri Bakanlığı'ndan Yunanistan'a sert tepki: Yunan yetkilileri aklıselime davet ediyoruz",
@@ -65,12 +65,12 @@
    "bolum": "gundem"
   },
   {
-   "baslik": "güneşin doğduğu yer",
-   "hacim": "200+",
-   "haber_baslik": "Güneşin Doğduğu Yer | Güneşin Doğduğu Yer’deki efsanevi aşk!",
-   "haber_url": "https://www.atv.com.tr/gunesin-dogdugu-yer/galeri/gunesin-dogdugu-yerdeki-efsanevi-ask",
-   "haber_kaynak": "ATV",
-   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQzwnH5gjUsOC_R6Pl2c6mNTssLW4r78B3ea3pOFwdKSYozNm1HdJSofGM-ngM",
+   "baslik": "etna yanardağı",
+   "hacim": "500+",
+   "haber_baslik": "Etna Yanardağı harekete geçti: İtalya'daki havalimanı kapatıldı",
+   "haber_url": "https://www.hurriyet.com.tr/dunya/etna-yanardagi-harekete-gecti-italyadaki-havalimani-kapatildi-43306447",
+   "haber_kaynak": "Hürriyet",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT7HcNuUKStRfWYOY8aZOQEe8vSyDIpxZ8HxEb63Ob5mR9Gav9x8qiHYW8beUo",
    "bolum": "gundem"
   },
   {
@@ -83,12 +83,12 @@
    "bolum": "gundem"
   },
   {
-   "baslik": "braga",
-   "hacim": "1000+",
-   "haber_baslik": "“‘Pilgrim in Braga’ dá a conhecer seis rotas de peregrinação que passam pela cidade”",
-   "haber_url": "https://www.diariodominho.pt/noticias/braga/2026-09-14-pilgrim-in-braga-da-a-conhecer-seis-rotas-de-peregrinacao-que-passam-pela-cidade-6aa7d57e2bf13",
-   "haber_kaynak": "Diário do Minho",
-   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5htgae1roI2K-SwuCNx5SdgCVwJ89m-eYI-89L-P_UMhegX7Pq8JLOr-67i8",
+   "baslik": "güneşin doğduğu yer",
+   "hacim": "200+",
+   "haber_baslik": "Güneşin Doğduğu Yer | Güneşin Doğduğu Yer’deki efsanevi aşk!",
+   "haber_url": "https://www.atv.com.tr/gunesin-dogdugu-yer/galeri/gunesin-dogdugu-yerdeki-efsanevi-ask",
+   "haber_kaynak": "ATV",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQzwnH5gjUsOC_R6Pl2c6mNTssLW4r78B3ea3pOFwdKSYozNm1HdJSofGM-ngM",
    "bolum": "gundem"
   }
  ],
@@ -137,11 +137,11 @@
     "ozet": "Fed'de faiz toplantısı öncesi büyük eşik: Trump indirim istiyor, Warsh direniyor Cumhuriyet"
    },
    {
-    "baslik": "Kuzeybatı Avrupa benzin marjları 3 dolar yükseldi - Investing.com Türkiye",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbnlaemo2b3VWVllVU193WVZIYnBpUGNwMHdpeG40ZWF5d0NmWkJydkpXSUtvdU5Wei1fU3loNDlTR3RzU3JtUTBhRWliSEFmYUZSMEZ1WXhtQ0lPU1pyUWc4blMxbnk0ck92WmV5VUg3OFh0b2pFcTFRUWJ5X0VaOWZzQkk4OFdMTWZIaTZQRGg4QUstdkRWVjcxbWM2YnZIZjNUT0pzVG5sZ3M?oc=5",
+    "baslik": "U S Physical Therapy yöneticisi Peter Minan 474 dolar hisse aldı - Investing.com Türkiye",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOLXFuT3I4RnVlZnN2bC1zMDVQSHRneGV1WUxULWxfMDVJUHc1UHBlOWg1Q0VSS2tDMU9OakF6SE0xanJ1Z3RUR3ktTFJJS21TX3Z5MUsybG1jY3dvOEJRUUpEZ2NtemgzRU16YkVlSTZpR282RmVqS29yWEFIdWhwQ0gzX1hMMHgtTmJCNl9pQ19IN3Q2aW1EcFh4SEMxM0llcG8wb19QQktiNktXQXpSMzVOZ09XOW1scGg5TFhiSWU5eWtzVWc?oc=5",
     "kaynak": "Investing.com Türkiye",
-    "tarih": "Mon, 14 Sep 2026 17:23:07 GMT",
-    "ozet": "Kuzeybatı Avrupa benzin marjları 3 dolar yükseldi Investing.com Türkiye"
+    "tarih": "Mon, 14 Sep 2026 22:01:10 GMT",
+    "ozet": "U S Physical Therapy yöneticisi Peter Minan 474 dolar hisse aldı Investing.com Türkiye"
    },
    {
     "baslik": "Küresel sigorta sektöründe rekor prim üretimi: 7,1 trilyon dolar - Para Dergi",
@@ -151,18 +151,18 @@
     "ozet": "Küresel sigorta sektöründe rekor prim üretimi: 7,1 trilyon dolar Para Dergi"
    },
    {
-    "baslik": "Borsa günü sert düşüşle tamamladı: BİST'te geri çekilme haberi - Borsanın Gündemi",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPYlMtbTZHVXVJX1l1QkpOUkxMOVl6UkNfT2hwcjNCZk9IQ1FKNGt6ZHROZW5RNHFtdWwwcXloRDNSYzh2U1UtRDFRS21oV1czNHRCUXVVdGlfdl9zTEEwZXhabGIxN3FCbkVmY0h2RUFhcktjTlVzd2YwdUdTc3ZNSF8zSzNnSDlRWDdiNjRTQzNXZmFEZ1M3ZjJHU3RmcXRo?oc=5",
-    "kaynak": "Borsanın Gündemi",
-    "tarih": "Mon, 14 Sep 2026 21:43:01 GMT",
-    "ozet": "Borsa günü sert düşüşle tamamladı: BİST'te geri çekilme haberi Borsanın Gündemi"
+    "baslik": "Dolar/TL’de son durum ne? 14 Eylül 2026 Euro ve döviz fiyatları… - Bloomberght",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPS1dxOWQ2SWljU0t6ZlFzM0ZSWWdWUWZ5NGJMS3Fvc3hRd0xPQzEzSXQwU3N3VnVPMV9OZm44OUMtejhBNDZHZW9SWnR0b0w2cEJBMVByR0xxa3dTZzlEMlNCdGNLUzZabWh6S0d6VUtoQlBtdlI1Q2d4ZmNoUElCbUs4UUIwSFJ3QkFQdldXSXN3MmlUZHFMWVRvS1gtc3FXb05N?oc=5",
+    "kaynak": "Bloomberght",
+    "tarih": "Mon, 14 Sep 2026 06:30:01 GMT",
+    "ozet": "Dolar/TL’de son durum ne? 14 Eylül 2026 Euro ve döviz fiyatları… Bloomberght"
    },
    {
-    "baslik": "Borsa İstanbul'da 11 şirket yeni iş ilişkisi duyurdu: İşte KAP'a bildirilen sözleşme detayları - CNBC-e",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0JiWXQ3TS00YWNkckpSMXVHRWV0anpPalBFUjlXSDZfT0JhNlJtSnVGRWxxa0ZqUHlWeVZILVZlSW9xRWRqbjVBRU4xellUbm8yZW9jdVVTaklIM2F6S20zZ0FYYlU0a3Q1UlJkWW1Oa3ZBWG9oWHR2MHJxVTF1bC0xSF8tR294dVZGV2k5WlNuRWl3VWFZY0FMaTdwUGY3b19tVGFlV3B0WHJRTVVhQnNYaXZlY1hySGZ0WkhmR2RZb01B?oc=5",
-    "kaynak": "CNBC-e",
-    "tarih": "Mon, 14 Sep 2026 19:37:00 GMT",
-    "ozet": "Borsa İstanbul'da 11 şirket yeni iş ilişkisi duyurdu: İşte KAP'a bildirilen sözleşme detayları CNBC-e"
+    "baslik": "Oxford Square yöneticisi Novak 6.775 dolar değerinde hisse sattı - Investing.com Türkiye",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZmNXV0JjcmRfMHlmUHJidl9kV2ZxblVmWldYR094RXRLcFJleWN6OGFLSG41dkVodGd5YU5Ud295MXJBcDUyWG9qOUNOYllyZ1lDVzRBaXhzcjFpeVE2NUh0OXNEQWhDeUJVRmlVd0l2WVpzOE83dVhTZTNtdHIwNXY0eURyUFQtcjYyLVk0LTZJZ1VkYldiNWtFanQ0RTU0U2hvTTl4RzhTaDc2eXo5eXFNUnBMTFh4b3NpN0VmWTh0QmJR?oc=5",
+    "kaynak": "Investing.com Türkiye",
+    "tarih": "Mon, 14 Sep 2026 22:01:09 GMT",
+    "ozet": "Oxford Square yöneticisi Novak 6.775 dolar değerinde hisse sattı Investing.com Türkiye"
    }
   ],
   "ekran": [
@@ -195,18 +195,18 @@
     "ozet": "Sinema rehberi: 13 yeni film vizyonda 11 Eylül vizyona giren filmler Gazete Oksijen"
    },
    {
-    "baslik": "Bu hafta vizyona giren 12 film - Konya Yeni Haber",
-    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1vTjlvdFQ1dkhXeXRydThsaWUwQ2NsOHEzMGJHa0xzc3J4c2RrSkxFb0xCU2dSZFBMckZkZER1OVREaVBlT0V5SEVfZWNpZTh0VzFzNTlZWWRHcjQ3V2RqSHdwNzFiRXdOeUpqTC1LbXk5TVZRNHpn?oc=5",
-    "kaynak": "Konya Yeni Haber",
-    "tarih": "Wed, 09 Sep 2026 13:31:11 GMT",
-    "ozet": "Bu hafta vizyona giren 12 film Konya Yeni Haber"
-   },
-   {
     "baslik": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu - Sözcü Gazetesi",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMnhHTWpBMlVkNXRTazZqc0ZOX05iS2dHUjI2VU5XWk9zTnBCc1IxUWJocF9VZ3FESnpDX2hrZTRMbmIzSFdCWHkzVWFZM1BrMzNxTGVFTFpPVkNHUXJoNHllemJJMWpfU2hGNXNGM1pFcTNOQ1NFakFWNnItM0hJd3FaQ0FHSElIeXZDWmNZZ1R4OHlhQ3o0anlybU4waldhdmo3ckcwZnBpM3RBUUE?oc=5",
     "kaynak": "Sözcü Gazetesi",
     "tarih": "Fri, 11 Sep 2026 08:59:54 GMT",
     "ozet": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu Sözcü Gazetesi"
+   },
+   {
+    "baslik": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu - afyonhaberturk.com",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPU3BrM1M2UmJfQ1dpQ3ZKV0o5VHBWQ0xJQ3lkUUo1SFY4blpGck4wc29mX3hGWHhDMTZiYldWdHYxR0xRbTR1Y2sta1gtWVVZcktKcWMzYmFRWFhqcEotUldiejlQc3VWYnlsajRGYkZ6T3g0MjFTUmFYcFpIVDhsNlJvQjVVQmdCa3U5SEViSU1TdHA3LWwzY3JZaw?oc=5",
+    "kaynak": "afyonhaberturk.com",
+    "tarih": "Wed, 09 Sep 2026 12:43:00 GMT",
+    "ozet": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu afyonhaberturk.com"
    },
    {
     "baslik": "EVLİLİLİK GÜZELDİR KONUSU, OYUNCU KADROSU VE KARAKTERLERİ || Yeni dizi Evlilik Güzeldir konusu nedir, oyuncuları kimler, hikayesi ne? - Hürriyet",
@@ -260,25 +260,11 @@
     "ozet": "GALATASARAY ŞAMPİYONLAR LİGİ MAÇI NE ZAMAN? Galatasaray Barcelona maçı hangi kanalda, saat kaçta? CNN Türk"
    },
    {
-    "baslik": "Ziraat Türkiye Kupası maç takvimi: Ziraat Türkiye Kupası maçları hangi kanalda, nereden izlenir? - GZT",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQc1E4X3BSOGYtRTZ2WXhha1ZpUkZ3bzEzaXFRYkpBWmNHOWthVDQxd2tQSDhmSEpWLVJtcndnN0kyMzhzaHNlX2k0Tk1FVkNub3ZuUE5PUW85WlJpMnN6ZWl2bXNQVUQ4cVk3TjlCVFpwWTE1OFpjdWlPQjRVRUlnZkhOTnFfS0ljRTQtVEdiSGV6Qm03cXdaMDV1by1PaFc1RFlEbVhGcDBtbkJ0dGdQYy1ROUx0VndnQm5mR1ZKM2oyVUJuclZxSzlDUVRDUVpxeXdnT1VmSzFVTnZnaVdrYkxHel9TUnN4OXhz?oc=5",
-    "kaynak": "GZT",
-    "tarih": "Mon, 14 Sep 2026 22:07:04 GMT",
-    "ozet": "Ziraat Türkiye Kupası maç takvimi: Ziraat Türkiye Kupası maçları hangi kanalda, nereden izlenir? GZT"
-   },
-   {
-    "baslik": "Galatasaray derbi hazırlıklarına başladı - Sözcü Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1LRHp4SEZYSWlVbXFiU2FUbENyZ0NIdmRIN2NEVFoxemRuWUoyRC1veFdmcWs3VDA3LUpSZFY2SFZ5aGtPbnY2TVNULUY2NVItR2laMXR4eHdRNFdVdnFvR2NITzloNTRZelFvU2pkRS1ibzNtUXpocU9Od0ZyQQ?oc=5",
-    "kaynak": "Sözcü Gazetesi",
-    "tarih": "Mon, 14 Sep 2026 12:30:12 GMT",
-    "ozet": "Galatasaray derbi hazırlıklarına başladı Sözcü Gazetesi"
-   },
-   {
-    "baslik": "Milli ara ne zaman başlıyor? 2026-2027 milli maç arası takvimi - NTV Haber",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUlFFRlRDNXRKcTEwZi1YVFJNQ1lsSDJqb004STJ6MDJSRDdCcDBNejVOQUM0VUw1ZGtfVFg1cHFaZWVHTGUyYk04TGNUUU4zWDY1c2RJWThyUEI1ZTlBRmxLLWtodHlKNzBPSXNQSGszWmcyUTAxdDZNTlE0S2N1bU9fQUN0dkxXMlRiUUZQdVZ3NGRDUUE0dk9EUFJiVHMwUEtndHBseFBMcFRY?oc=5",
-    "kaynak": "NTV Haber",
-    "tarih": "Mon, 14 Sep 2026 13:19:46 GMT",
-    "ozet": "Milli ara ne zaman başlıyor? 2026-2027 milli maç arası takvimi NTV Haber"
+    "baslik": "Galatasaray ara vermeden derbi hazırlıklarına başladı - beinsports.com.tr",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYVFMc01MblgwUk5YXzF5UmU5OGV1RHN5VWRXLXBtUVFTRnNaWndPbzV1bkxFZi1XbW10Y1hoQWdRd1pWWHVvQTJ6Z2t4SGFiaVRmN0ZjRTRGRWRCUExMSzdzcThBTmZfcVMxNVdVa3hOZTlWbGRqakVFc1VSTTlkQ2djYW5YNVNNTWh3SXhn?oc=5",
+    "kaynak": "beinsports.com.tr",
+    "tarih": "Mon, 14 Sep 2026 12:16:36 GMT",
+    "ozet": "Galatasaray ara vermeden derbi hazırlıklarına başladı beinsports.com.tr"
    },
    {
     "baslik": "Tedaviye yanıt verdi! Galatasaray'a derbi öncesi Victor Osimhen müjdesi - Fanatik",
@@ -286,6 +272,20 @@
     "kaynak": "Fanatik",
     "tarih": "Mon, 14 Sep 2026 15:37:01 GMT",
     "ozet": "Tedaviye yanıt verdi! Galatasaray'a derbi öncesi Victor Osimhen müjdesi Fanatik"
+   },
+   {
+    "baslik": "CANLI İZLE | Gaziantep FK-Fenerbahçe maçı ne zaman, saat kaçta, hangi kanalda? - NTVSpor",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZE5qTzJJLXpGOWdLUTBlOGVfalVQVGJKZkRfN092VUZqMGIzcko5NGtvSmEtQ3pIVFpKTF83U2hybHBIVXN3SXEwcWRNLUU3blItM1diUE51TjFpVjZuM0dfLTctX056NVdNZ0I1T1lZeFpTeVVxdldMSG1qQ3VCcUlyRkJUMWtCWGRIQ1RId3VFR1M3MkxTb2xWb1VldkdjUV9NUTBGcG1RWi1FTEU5cEZ2c0JFdVBLRS1ab25GT1RKQTBrcGRVWjdMbFlSMlnSAdQBQVVfeXFMUG1LRXdKTWpHemMyc3Rhb1Nnd29fTUtEZnhhZWhucWdzVDBmeVBKS0dCVGR3TjR4a1RfaVhTa0twNWtkODBlM2ZqSXNaRUxSX3R2WGZRYWRIZkdxN0V3ZzZyclV5b2luaXREREpOeEdFZDk0Q2lrRU5jWHRCeDI3VjJqVmVfbWlmM05hZGR2bW0tZ2dCNkF5ZEhJT3RqRFB5cmFtc3RtNW1vRTIzQi02SmlFcVBoekU4SWd6UUFDQThFOGswY3VCZ3VMUU5ramNNMi1kUU4?oc=5",
+    "kaynak": "NTVSpor",
+    "tarih": "Mon, 14 Sep 2026 13:53:40 GMT",
+    "ozet": "CANLI İZLE | Gaziantep FK-Fenerbahçe maçı ne zaman, saat kaçta, hangi kanalda? NTVSpor"
+   },
+   {
+    "baslik": "Milli ara ne zaman başlıyor? 2026-2027 milli maç arası takvimi - NTV Haber",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUlFFRlRDNXRKcTEwZi1YVFJNQ1lsSDJqb004STJ6MDJSRDdCcDBNejVOQUM0VUw1ZGtfVFg1cHFaZWVHTGUyYk04TGNUUU4zWDY1c2RJWThyUEI1ZTlBRmxLLWtodHlKNzBPSXNQSGszWmcyUTAxdDZNTlE0S2N1bU9fQUN0dkxXMlRiUUZQdVZ3NGRDUUE0dk9EUFJiVHMwUEtndHBseFBMcFRY?oc=5",
+    "kaynak": "NTV Haber",
+    "tarih": "Mon, 14 Sep 2026 13:19:46 GMT",
+    "ozet": "Milli ara ne zaman başlıyor? 2026-2027 milli maç arası takvimi NTV Haber"
    },
    {
     "baslik": "Beşiktaş Marsilya maçı ne zaman, saat kaçta, hangi kanalda, Beşiktaş UEFA Avrupa maçı ne zaman? - Haberler",
@@ -302,20 +302,20 @@
     "ozet": "Gaziantep FK-Fenerbahçe maçı saat kaçta hangi kanalda? Yeni Alanya"
    },
    {
-    "baslik": "Derbi maç öncesi Galatasaray'da Osimhen gelişmesi - dogruhaber.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBBcHhhd3J0NmdTTndmd1pySVM3UHZuUGN5VWFzTm45YUpCRlZETXlOLVRvejFFWm11NDVqbkhqQ0NBdVlQQXZCeEpiY2dWc2xCcEpMV1dacDVPMHpnOFJERGJrWWpKMnhkTjJLeUxPUlN2cy14aWRxQmlwLUlaTWs?oc=5",
-    "kaynak": "dogruhaber.com.tr",
-    "tarih": "Mon, 14 Sep 2026 18:37:00 GMT",
-    "ozet": "Derbi maç öncesi Galatasaray'da Osimhen gelişmesi dogruhaber.com.tr"
+    "baslik": "GAZİANTEP FB MAÇI MUHTEMEL İLK 11'LER | Gaziantep FK-Fenerbahçe maçı hangi kanalda, saat kaçta, nereden izlenir? FB maçı canlı izle kanalı - Milliyet",
+    "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOcFpzU2VzeFFTb3UyQzBKQ2xaVVRBdUl2MWs5OUtnSUdkaWFKT0xZV3hTcHJJQWxhZmUtMXNxUWxCU2FGMVBKN2sxRElFb2ZSU01XQV9EanZlZkxLQmh6LS1RQVdsTThCbmtEWWhxWktaVGtVbG5ZUjI2NmluajdKM25sdDBwTFMtQV9ZSE1ua2M2R1d0ZndqMldiRlhHZEpjSUhIOC1xTFptTjRrVlJ3NjNIN053Z1Z5THVDNlhVYlJJTGRmNFNZOGhtWm9TVGI0SHdlN1FKQTdZbHAxUVcxd09teEJrRjFMZ1o0WFR3XzBwME9HRVM5M0JRa3huYkk?oc=5",
+    "kaynak": "Milliyet",
+    "tarih": "Mon, 14 Sep 2026 11:34:11 GMT",
+    "ozet": "GAZİANTEP FB MAÇI MUHTEMEL İLK 11'LER | Gaziantep FK-Fenerbahçe maçı hangi kanalda, saat kaçta, nereden izlenir? FB maçı canlı izle kanalı Milliyet"
    }
   ],
   "sanat": [
    {
-    "baslik": "14 – 20 Eylül İstanbul Konser Takvimi: İstanbul'da Bu Haftanın En Eğlenceli Konserleri ve Müzik Etkinlikleri - onedio.com",
+    "baslik": "14 – 20 Eylül İstanbul Konser Takvimi: İstanbul'da Bu Haftanın En Eğlenceli Konserleri ve Müzik Etkinlikleri - Onedio",
     "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSC1tRlY2OFNmUHIyUzN4LXpoQVlsT0VIYVVUX3dUXzRkLWwzVDI3STd6SXVPOVN3LVB0VWtpSzQtaXdNOGcxd1N0N3dVbl8yMEd4VF9DTm1lQkZuVm5MY2V4R2Q1Y3hMRy1Lc3NMMXRPbDA4N2lkVkhSOEZuNU4za0JCZUdMb1c2amRhbkhycU1saV93TkNvUkJYR0dOVW1RVzhGV0xvejhPV05PWEUwclBZdnBxS251ZkpRUl9VWXU4QzB0bm9jWTVJSWctNHYyMk90Ug?oc=5",
-    "kaynak": "onedio.com",
+    "kaynak": "Onedio",
     "tarih": "Sat, 12 Sep 2026 06:05:09 GMT",
-    "ozet": "14 – 20 Eylül İstanbul Konser Takvimi: İstanbul'da Bu Haftanın En Eğlenceli Konserleri ve Müzik Etkinlikleri onedio.com"
+    "ozet": "14 – 20 Eylül İstanbul Konser Takvimi: İstanbul'da Bu Haftanın En Eğlenceli Konserleri ve Müzik Etkinlikleri Onedio"
    },
    {
     "baslik": "“Akış” Sergisi İstiklal Sanat Galerisi’nde Kapılarını Açtı - Beyoğlu Belediyesi",
@@ -383,11 +383,11 @@
   ],
   "yapay-zeka": [
    {
-    "baslik": "Microsoft, yapay zeka modellerine sınırlar getirecek kurallar taslağı hazırladı - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZjV6Q2g3bzNCN2Jna2JSLUt1QzZiMnFSeTVNRUMzNUk5VEVqM3hxWTlQZFJEMTJ1OTV0NDViMERCdVU3Yld0LTlTWkRYTXdnVlNNNUZOS19heUY0QlZvU01pMlZ4d2tYUnozRVgzRlkwYl9GUkFXSVRvX21ZWWJ0Xzg0RWw5WmpYRWFYYW1tU2lhNFZ4MTBBaUJ1TTUxaVFiQm9WemJsZVZucG5BZXJWSTRoaGNyMmpZZ0pQWFlNdkFEQXdpcWc?oc=5",
+    "baslik": "Yapay zeka uzmanından \"yavaşlamanın\" yetmeyeceği, ileri sistemlerin inşasının \"durdurulması\" gerektiği uyarısı - Anadolu Ajansı",
+    "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQZmxsMUNvdmNvdjczMDh3SV94Z0hIRzRDazBfU05XTGRsYy1PSUNlSTlQQUk2Nk5ic0Vsdk02Um9kUVpDYkotenRoN2N1d2p1eTZvbzVPa2llT0x2Xy0zckkzRndEOTFrZ1VNdng3UHBPVmlVVjdQb1ZpQ01kSEVJUlN6U1VYNmtudzM1aHI4Q2tja0VGU19kelN5UkQ2ZnhoWGtHUm5OYmxQSTZzRmdWZXI0S3FJVUtnZGNPUnRpUE5IaXBwNXREYnpDazZYS3BvcHRjQ3dqdUN1ZnV4bE40NnJrRkg?oc=5",
     "kaynak": "Anadolu Ajansı",
-    "tarih": "Mon, 14 Sep 2026 16:00:50 GMT",
-    "ozet": "Microsoft, yapay zeka modellerine sınırlar getirecek kurallar taslağı hazırladı Anadolu Ajansı"
+    "tarih": "Mon, 14 Sep 2026 15:49:21 GMT",
+    "ozet": "Yapay zeka uzmanından \"yavaşlamanın\" yetmeyeceği, ileri sistemlerin inşasının \"durdurulması\" gerektiği uyarısı Anadolu Ajansı"
    },
    {
     "baslik": "Microsoft'tan yapay zeka modellerine yeni sınırlar - Bloomberght",
@@ -439,18 +439,18 @@
     "ozet": "Petrol ve yapay zeka, piyasayı sıkıştırdı Ekonomim"
    },
    {
-    "baslik": "Trump yapay zeka karşıtı 'komplo'yu gördü - Diken",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBXQmQwaW9uOHFqUzI5VWVBZ2hPZEFsRGsyN3IySTFzZk9MRVZwdVJHckxkRUtlVVFmMXh2UU5qMmczSEt0a2tXb0N0TkRjRkFPZ3dIUFBIdG9zYXhaWV9qQkc3d3BHTEZQektnaUZlTUhsZmc?oc=5",
-    "kaynak": "Diken",
-    "tarih": "Mon, 14 Sep 2026 15:11:01 GMT",
-    "ozet": "Trump yapay zeka karşıtı 'komplo'yu gördü Diken"
-   },
-   {
     "baslik": "Yapay Zeka Destekli Dolandırıcılıkta Yeni Tehdit: Tatil Fotoğrafları - Turizm Gazetesi",
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZWdSTFQ3SVpJRHhVNWxRSUMwbDJGem5IUXZNWkFpbnNlTU8zaksxUkNveEZQYl94UmVBd3ZBYTJwZVB4UDhNYktDZFJISmhhdERGUlQxLVRuVHlFX2pmNjNqV3FtaTFiQ2ZDWnBXaWpSdTg2TU1RMklfa0dOaHIyNml2ZkttMlh2MXM1TmlZS2dveG0xZDZqT1VXLWhkTHJXcXc1Q3NFejJtS0J0ZGVv?oc=5",
     "kaynak": "Turizm Gazetesi",
     "tarih": "Mon, 14 Sep 2026 20:40:12 GMT",
     "ozet": "Yapay Zeka Destekli Dolandırıcılıkta Yeni Tehdit: Tatil Fotoğrafları Turizm Gazetesi"
+   },
+   {
+    "baslik": "Trump'tan yapay zeka tepkisi: “İnsanlığı yok edecek” söylemi yalan - Dünya Gazetesi",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOYm1uLVZIMjRrTm5CMTRBczN2aFYtX2dRTFp6ZmtNYTViYmtlOUhMeUZJSmhDeTYxOER0YVd1eEpBWDhkcVpJeWFKUUNmSVRzb3pxOHNLS3M1UldrbUZLMFNlZjJxd0ZYTTktVkNJT1hDNWZ1ekRqVUlTZjNqcEotUkVSdC1NR2k2eHZrdUZ5R0JETjNJemhzOGVIUWh1Nm90alhxT2ZlYw?oc=5",
+    "kaynak": "Dünya Gazetesi",
+    "tarih": "Mon, 14 Sep 2026 20:31:00 GMT",
+    "ozet": "Trump'tan yapay zeka tepkisi: “İnsanlığı yok edecek” söylemi yalan Dünya Gazetesi"
    }
   ],
   "yazilim": [
@@ -534,18 +534,25 @@
     "ozet": "Avrupa’da enerji krizi ve Türkiye için fırsatlar Sabah"
    },
    {
-    "baslik": "Gebze'de 37 otomotiv patronu ücretleri baskılamak için gizli anlaşma yapmış: 'Patronlar örgütlüyse, biz de geleceğimiz için örgütlenelim' - soL Haber",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMTJWbWVmczJRbV9IX3I1R214VzZKWUh0REphWlFkUGFQY1VuMFBoYkFfQmlVQ1A3Ujl6WDFiOTVLMTRwVXF3dUVDU3A1b0I1bS1YbjA4RmtMcnJoNE5hZW12RXE0SzRDSGl5MXkxQjZiUTdnRUgwMGYybnBCbm1kdUtzaGlwdWFyQXFzb01OV1Y5SW5EWWdyNmhJVHZCTkVqS2dWV01DSkhpNUhXNmJLeWpRSU01Zw?oc=5",
-    "kaynak": "soL Haber",
-    "tarih": "Tue, 08 Sep 2026 19:34:49 GMT",
-    "ozet": "Gebze'de 37 otomotiv patronu ücretleri baskılamak için gizli anlaşma yapmış: 'Patronlar örgütlüyse, biz de geleceğimiz için örgütlenelim' soL Haber"
-   },
-   {
     "baslik": "Otomotiv Sanayii Derneği 2026'nın 8 aylık verilerini açıkladı - Anadolu Ajansı",
     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVTg4RVMwVTV0T252OFJ6YkpnNjM5TTd4Q2VoN18wZW56TmhBLVljYVl4aFp0NjFqUnVfMUgzMUY1UlRWd3AzQm45dWVOTHZTN1o1RUxOWVZKTFg3eDVLMUNDXzBwVXZRSk5HTWNMSVlNY21WaURzajduclFtNG10cVBhdVZhREdtQUlnSnY2dktwQlNVZ28wWUpqTWwyTWlqRVMw?oc=5",
     "kaynak": "Anadolu Ajansı",
     "tarih": "Mon, 14 Sep 2026 04:33:22 GMT",
     "ozet": "Otomotiv Sanayii Derneği 2026'nın 8 aylık verilerini açıkladı Anadolu Ajansı"
+   },
+   {
+    "baslik": "Kayalarda enerji: Enerji dönüşümü için gereken batarya yeraltı mı - Euronews.com",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNM3RBMElUVFF3NV9WeWpNa0hPaEpqZEJzek9kUGdVaGYwUzJ6dzg2bHpkRTFTS3RJcVBuX1BDVmtZV1NuWFpfT0gxa0Y0eWdnRk9Ta0RSVlNjRTZ1QmFnajRNSWx5ZGF2ZmR6SC13MHFHSjdOdTdPTlRaZHFPdzBVbGtFSnVVZEpyaFY2ZWRrNWxXSTNYVWc1VERsaXBwbmVD?oc=5",
+    "kaynak": "Euronews.com",
+    "tarih": "Mon, 14 Sep 2026 06:27:25 GMT",
+    "ozet": "Kayalarda enerji: Enerji dönüşümü için gereken batarya yeraltı mı Euronews.com"
+   },
+   {
+    "baslik": "Gebze'de 37 otomotiv patronu ücretleri baskılamak için gizli anlaşma yapmış: 'Patronlar örgütlüyse, biz de geleceğimiz için örgütlenelim' - soL Haber",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMTJWbWVmczJRbV9IX3I1R214VzZKWUh0REphWlFkUGFQY1VuMFBoYkFfQmlVQ1A3Ujl6WDFiOTVLMTRwVXF3dUVDU3A1b0I1bS1YbjA4RmtMcnJoNE5hZW12RXE0SzRDSGl5MXkxQjZiUTdnRUgwMGYybnBCbm1kdUtzaGlwdWFyQXFzb01OV1Y5SW5EWWdyNmhJVHZCTkVqS2dWV01DSkhpNUhXNmJLeWpRSU01Zw?oc=5",
+    "kaynak": "soL Haber",
+    "tarih": "Tue, 08 Sep 2026 19:34:49 GMT",
+    "ozet": "Gebze'de 37 otomotiv patronu ücretleri baskılamak için gizli anlaşma yapmış: 'Patronlar örgütlüyse, biz de geleceğimiz için örgütlenelim' soL Haber"
    },
    {
     "baslik": "Rum Enerji Bakanı Damianos: GSI projesini desteklemeyi istiyoruz - Kıbrıs Postası",
@@ -555,27 +562,6 @@
     "ozet": "Rum Enerji Bakanı Damianos: GSI projesini desteklemeyi istiyoruz Kıbrıs Postası"
    },
    {
-    "baslik": "Keban HES 52 yılda yaklaşık 294 milyar kilovatsaat enerji üretti - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQN2xZOUlXNjNrSkZEM0FBQjNCSmhmRVRpQ01uU291dGI0eU9zMUgyb3AzLWNDclBoWF9oOEdvNWpCX0J4eU9MSi1USHlZYUNzVXZ1SkR5QUR5aG9FWThMZFo4ekhsb3Fnc1ZHazA4V3BERFk0QXJSbmtsSElqaWNFci1MU190QXBRbXpvZEM3RGdLQlJiRkEzenJlTTBoQ2ljODFwbE55bmt5TGJkMHJYNjJaMGlfdw?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Wed, 09 Sep 2026 13:57:00 GMT",
-    "ozet": "Keban HES 52 yılda yaklaşık 294 milyar kilovatsaat enerji üretti TRT Haber"
-   },
-   {
-    "baslik": "Trump enerji fiyatlarının artmasından Ukrayna'yı sorumlu tuttu - Euronews.com",
-    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZmVBR2lUREI0cDVKZEFpTXAxMVJ6Z1Jubmc5ZklKWDZpdW04enhEYmhRbjdEdmhETkxZMmZLVThHekpyQ2VXNEpWRjQ5YmYta3pwajRsWF9oai02R1Z0ZFhJYlBuR2cwY3VDQ01YMHJtbnNHY2U4a28wS3NYV25zQ1ZKQ0lCUGRheXpjMElSSWtmRlQ3azN1NGtMVkRoaGx6c3A1X0NLVkk3Q2hrXzlDdnE5V2ZKdGFOenJz?oc=5",
-    "kaynak": "Euronews.com",
-    "tarih": "Sun, 13 Sep 2026 16:05:41 GMT",
-    "ozet": "Trump enerji fiyatlarının artmasından Ukrayna'yı sorumlu tuttu Euronews.com"
-   },
-   {
-    "baslik": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici - Bloomberght",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSHZaMThweXNpSm1vTTlCVDlRWWxGQVAzZW1GZC11N1RpckJKSllReTI5alFNUmVfQ29jQWNnVFpDWTFIZkZyZUw2bzBwb2tjblltOVl1c2czem9JYmtPWUJHX3lmejk3Yktkemg1VWNkU3J6MzhsNkQteFFFQlFZQmJHeFNCSlkwOVZZdUJiZEhxeGNQdHBFZDNPbU8?oc=5",
-    "kaynak": "Bloomberght",
-    "tarih": "Mon, 14 Sep 2026 10:56:33 GMT",
-    "ozet": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici Bloomberght"
-   },
-   {
     "baslik": "Türkiye'de otomotiv üretimi 8 ayda yüzde 7 geriledi - indyturk.com",
     "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA0a05hQXVqdEdCTDNmaTlYVGhGNnJBT0ZZQVAwNm1wOUlCQ241b1l3LVdfTTVwZWR2Z1BQdDJqcGl2VTh6UGpDUFFWM04?oc=5",
     "kaynak": "indyturk.com",
@@ -583,18 +569,32 @@
     "ozet": "Türkiye'de otomotiv üretimi 8 ayda yüzde 7 geriledi indyturk.com"
    },
    {
-    "baslik": "Mezunumuz Dr. Fatih Birol’dan: Günümüzün ve Geleceğin Dünyasında Mühendislerin Önemine Dair - İTÜ Haberler",
-    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQX3htMGZLSzd0OGFNbHVqbmsycmZRb2NESTlEZXVXdnh4cDczYzhMNWRIcUpJd2xLM2JmWjRfMHcwS2pZeFVjWUFzVHBfV1c0NnBpV21HS1JuZEFOTDR0MF9xbVJjbWIwdG45SjFnZV9lR2o4clhnelA0bmlZSlYzaXVpb3dlel9wNnNXdlpWR3NOMG5sTnFYNlZpeVBHXzNfLVNKNWRueVJ3WHg2RDFYaUc0cXZDZWkyNUxrdHAtdVZubmZNcTVMRWxYcjZ0TFYzNUE5Yy1B?oc=5",
-    "kaynak": "İTÜ Haberler",
-    "tarih": "Mon, 14 Sep 2026 13:44:15 GMT",
-    "ozet": "Mezunumuz Dr. Fatih Birol’dan: Günümüzün ve Geleceğin Dünyasında Mühendislerin Önemine Dair İTÜ Haberler"
+    "baslik": "Keban HES 52 yılda yaklaşık 294 milyar kilovatsaat enerji üretti - TRT Haber",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQN2xZOUlXNjNrSkZEM0FBQjNCSmhmRVRpQ01uU291dGI0eU9zMUgyb3AzLWNDclBoWF9oOEdvNWpCX0J4eU9MSi1USHlZYUNzVXZ1SkR5QUR5aG9FWThMZFo4ekhsb3Fnc1ZHazA4V3BERFk0QXJSbmtsSElqaWNFci1MU190QXBRbXpvZEM3RGdLQlJiRkEzenJlTTBoQ2ljODFwbE55bmt5TGJkMHJYNjJaMGlfdw?oc=5",
+    "kaynak": "TRT Haber",
+    "tarih": "Wed, 09 Sep 2026 13:57:00 GMT",
+    "ozet": "Keban HES 52 yılda yaklaşık 294 milyar kilovatsaat enerji üretti TRT Haber"
    },
    {
-    "baslik": "Dört Boğaz, Tek Enerji Krizi: Dünya Petrolünün Damarları Daralıyor - yetkinreport.com",
+    "baslik": "Dört Boğaz, Tek Enerji Krizi: Dünya Petrolünün Damarları Daralıyor - Yetkin Report",
     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUjVMSHdBZ1ZGaTY1YkJtRVlhTExENEZRajZzT29KcWladXFLOTVrLWZkd1hVMWpLYjlhc3Y0bmZoVE5EN3JJVEt0NU1CUkxIUkM3MFBvUFM1MVEtOFdXVTdmMVlDRXZKbHd4TVZOZWdmMVlPaVdlUktjdXFPbDdtU29sVnZ4SGFzanNFREdkdTkzajROeDF0MGZCOC1Xb24wYWo00gGoAUFVX3lxTE44UVYtdjA5Z0N1ZGREb3g4NGZOYU9yVmlMLW40LVFJTEpNLWpYLUNodDg3T2dHX0VXUy1tWjF1OW81cG9nMlRVYW1KNTZSV3RpSk1ja2pWcU5YY3B2VkFnZ0JENUI3WEJsU2FLdWgxd2I2NTNTNVc0NU5IbWs5QnVQTXBWWGM0bjBrYUZzZEVXc0JkNzR4MnlQMjUwZmtFbC1lWVpweHNldQ?oc=5",
-    "kaynak": "yetkinreport.com",
+    "kaynak": "Yetkin Report",
     "tarih": "Sat, 12 Sep 2026 12:30:54 GMT",
-    "ozet": "Dört Boğaz, Tek Enerji Krizi: Dünya Petrolünün Damarları Daralıyor yetkinreport.com"
+    "ozet": "Dört Boğaz, Tek Enerji Krizi: Dünya Petrolünün Damarları Daralıyor Yetkin Report"
+   },
+   {
+    "baslik": "Petrol 107 Doları Buldu, Enerji Maliyetleri Avrupa'yı da Vuruyor - Stratejik Düşünce Enstitüsü",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdXlvU0lFTlROYVNHd193M1g4YnVwQkNlWjJxRnNkVWdhV2FvZmxlUXZmNjBZRGVrSERkZ2FVZ21VVHV2V0tfQmJqN3ktcmNkRll0RkQtX1Z1TFFLQmc2ZmhEcG9ETUVvQ25nb3lqaUtiZ3NpYXhGOUVMWDF2R3R6aTNyWUNHa2E4QmJaQ1dDS1ZONWtkMHh6anh3MHQxTVlLOF9xTVlRaUZFZw?oc=5",
+    "kaynak": "Stratejik Düşünce Enstitüsü",
+    "tarih": "Mon, 14 Sep 2026 13:49:07 GMT",
+    "ozet": "Petrol 107 Doları Buldu, Enerji Maliyetleri Avrupa'yı da Vuruyor Stratejik Düşünce Enstitüsü"
+   },
+   {
+    "baslik": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici - Bloomberght",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSHZaMThweXNpSm1vTTlCVDlRWWxGQVAzZW1GZC11N1RpckJKSllReTI5alFNUmVfQ29jQWNnVFpDWTFIZkZyZUw2bzBwb2tjblltOVl1c2czem9JYmtPWUJHX3lmejk3Yktkemg1VWNkU3J6MzhsNkQteFFFQlFZQmJHeFNCSlkwOVZZdUJiZEhxeGNQdHBFZDNPbU8?oc=5",
+    "kaynak": "Bloomberght",
+    "tarih": "Mon, 14 Sep 2026 10:56:33 GMT",
+    "ozet": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici Bloomberght"
    }
   ],
   "sosyal-medya": [
