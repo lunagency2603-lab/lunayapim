@@ -156,6 +156,33 @@ def belge_ekle(s, yol, on):
     return s
 
 
+def sitemap_uzantisizlastir(kok):
+    """Sitemap'teki .html adresleri canonical ile ayni bicime getirir.
+
+    Neden: Cloudflare Pages /x.html adresini /x'e 301 ile yonlendiriyor. Sitemap
+    .html'li adres verince Google bunlari "Page with redirect" diye isaretleyip
+    dizine almiyordu (14.09.2026: 187 sayfa). Canonical zaten uzantisiz.
+    Etkisiz tekrarlanabilir.
+    """
+    yol = os.path.join(kok, "sitemap.xml")
+    if not os.path.exists(yol):
+        return {"sitemap": "yok"}
+    s = io.open(yol, encoding="utf-8").read()
+
+    def _duzelt(m):
+        u = m.group(1)
+        if u.endswith("/index.html"):
+            u = u[:-len("index.html")]
+        elif u.endswith(".html"):
+            u = u[:-5]
+        return "<loc>%s</loc>" % u
+
+    yeni = re.sub(r"<loc>([^<]+)</loc>", _duzelt, s)
+    if yeni != s:
+        io.open(yol, "w", encoding="utf-8").write(yeni)
+    return {"sitemap_duzelen": len(re.findall(r"<loc>[^<]+\.html</loc>", s))}
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -198,6 +225,11 @@ def calistir(kok, desen="**/*.html"):
         print("arama_hizala:", arama_hizala.calistir(kok))
     except Exception as ex:
         print("arama_hizala:", ex)
+    # sitemap: .html'li adresleri canonical bicimine cek (yonlendirme -> dizin disi kalmasin)
+    try:
+        print("sitemap:", sitemap_uzantisizlastir(kok))
+    except Exception as ex:
+        print("sitemap:", ex)
     return {"degisen_sayfa": degisen}
 
 
