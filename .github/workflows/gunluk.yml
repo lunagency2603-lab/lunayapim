@@ -70,6 +70,12 @@ jobs:
         working-directory: .otomasyon
         run: python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE"
 
+      - name: Canlı künye ve site asistanı tazele
+        working-directory: .otomasyon
+        run: |
+          python3 -m pusula.asistan
+          python3 -m pusula.motor
+
       - name: SEO kapısı
         working-directory: .otomasyon
         run: |

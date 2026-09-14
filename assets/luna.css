@@ -1350,3 +1350,8 @@ footer.ts-baglam p{font-size:14px;line-height:1.6;color:var(--gri-2)}
 .ts-rehber-liste li:first-child{border-top:0}
 .ts-rehber-liste a{text-decoration:none}
 .ts-rehber-liste a:hover{text-decoration:underline}
+
+.ts-tumu-liste{list-style:none;margin:.6rem 0 0;padding:0;columns:2;column-gap:1.6rem}
+@media(max-width:720px){.ts-tumu-liste{columns:1}}
+.ts-tumu-liste li{break-inside:avoid;padding:.4rem 0;border-top:1px solid rgba(0,0,0,.08);font-size:.92rem;line-height:1.35;display:flex;gap:.6rem;justify-content:space-between;align-items:baseline}
+.ts-tumu-liste time{opacity:.55;font-size:.8rem;white-space:nowrap}

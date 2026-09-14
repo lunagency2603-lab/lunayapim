@@ -410,8 +410,46 @@ def _rehberler():
     return out
 
 
+def _diskteki_gun_sayfalari(kok, mevcut):
+    """Diskte duran ama veri listesinden dusmus gun sayfalarini da akisa kat.
+
+    Neden: bir gunun bolum verisi sonraki kosuda bosalirsa (kaynak o gun o bolumu
+    vermezse) sayfa diskte kalir ama hicbir yerden baglanmaz — yetim sayfa olur
+    (14.09.2026: 7 sayfa). Sayfa zaten sitemap'te; basligi kendi <title>'indan
+    okunur. Etkisiz tekrarlanabilir.
+    """
+    import glob as _g
+    ek = []
+    var = set(m.get("url") for m in mevcut)
+    for kat in list(KATEGORI.keys()) + ["aranan", "piyasa"]:
+        d = os.path.join(kok, "trend", kat)
+        if not os.path.isdir(d):
+            continue
+        for yol in sorted(_g.glob(os.path.join(d, "20??-??-??.html"))):
+            t = os.path.basename(yol)[:-5]
+            url = "%s/%s" % (kat, t)
+            if url in var:
+                continue
+            try:
+                ham = open(yol, encoding="utf-8").read(6000)
+            except Exception:
+                continue
+            m = re.search(r"<title>(.*?)</title>", ham, re.S)
+            baslik = re.sub(r"\s+", " ", m.group(1)).split("|")[0].strip() if m else url
+            m2 = re.search(r'name="description" content="([^"]*)"', ham)
+            ozet = (m2.group(1) if m2 else "").strip()
+            ek.append({"tur": "sayfa", "tarih": t, "kat": kat if kat in KATEGORI else "piyasa",
+                       "gorsel": BOLUM_GORSEL.get(kat, "set-isik"), "baslik": baslik,
+                       "olgu": ozet or "Bu gunun basliklari, kaynagiyla.", "url": url})
+    return ek
+
+
 def _hepsi(kok):
     h = _gundem_maddeleri() + _blog_yazilari(kok) + _bulten_sayilari(kok) + _gunluk_sayfalar() + _rehberler()
+    try:
+        h += _diskteki_gun_sayfalari(kok, h)
+    except Exception as ex:
+        print("diskteki gun sayfalari:", ex)
     h.sort(key=lambda x: (x["tarih"], -x.get("sira", 0)), reverse=True)
     return h
 
@@ -548,6 +586,17 @@ def akis_html(kok, kat=None):
         ek += '      <div class="ts-giris ts-sss"><h2>Sık sorulanlar</h2>%s</div>\n' % "".join("<h3>%s</h3><p>%s</p>" % (_e(q), _e(a)) for q, a in KAT_SSS[kat])
         sema += '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in KAT_SSS[kat]]}, ensure_ascii=False) + "</script>"
+    # Kart izgarasina sigmayan maddeler: tarihli tam liste. Kartlar yalniz 12 madde
+    # gosterdigi icin eski gun sayfalari hicbir yerden baglanmiyordu (yetim sayfa).
+    kalan = hepsi[13:]
+    if kalan:
+        sat = []
+        for m in kalan:
+            sat.append('<li><a href="%s">%s</a><time datetime="%s">%s</time></li>'
+                       % (_e(_u(m)), _e(m["baslik"]), _e(m["tarih"][:10]), _e(_tr_tarih(m["tarih"][:10]))))
+        ek += ('      <div class="ts-giris ts-tumu"><h2>Bu bölümün tüm arşivi</h2>'
+               '<p>Kartlara sigmayan %d madde, yeniden eskiye.</p><ul class="ts-tumu-liste">%s</ul></div>\n'
+               % (len(kalan), "".join(sat)))
     if ek:
         govde = govde.replace('    </div>\n    <aside class="ts-yan">', ek + '    </div>\n    <aside class="ts-yan">', 1)
     return _bas(baslik, aciklama, url, man["gorsel"] if man else None, sema, "website", on, tr) + govde + _alt(on, tr)
