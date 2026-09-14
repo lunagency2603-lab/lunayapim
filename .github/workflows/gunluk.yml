@@ -44,6 +44,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Anahtar sağlığı
+        run: |
+          # Anahtarın KENDİSİ yazılmaz; yalnız var/yok bilgisi. Koşu özetinde görünür.
+          {
+            echo "### Anahtar sağlığı"
+            if [ -n "$ANTHROPIC_API_KEY" ]; then
+              echo "- ANTHROPIC_API_KEY: **var** — TrendSaphiens özgün yazı üretebilir"
+            else
+              echo "- ANTHROPIC_API_KEY: **YOK** — TrendSaphiens haber yayınlamayacak (derleme biçimi kaldırıldı)"
+            fi
+            if [ -n "$LUNA_X_ANAHTAR" ]; then echo "- X paylaşımı: var"; else echo "- X paylaşımı: yok (isteğe bağlı)"; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          [ -n "$ANTHROPIC_API_KEY" ] && echo "ANTHROPIC_API_KEY: var" || echo "ANTHROPIC_API_KEY: YOK"
+
       - name: Yolları kur
         run: |
           mkdir -p "$HOME/Documents/GitHub"
