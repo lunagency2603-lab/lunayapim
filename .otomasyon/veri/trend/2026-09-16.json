@@ -21,7 +21,7 @@
   },
   {
    "baslik": "ateşkes",
-   "hacim": "100+",
+   "hacim": "200+",
    "haber_baslik": "Savaşta sıcak saatler! ABD'den son dakika ateşkes açıklaması!",
    "haber_url": "https://www.haber7.com/dunya/haber/3659917-savasta-sicak-saatler-abdden-son-dakika-ateskes-aciklamasi",
    "haber_kaynak": "Haber 7",
@@ -39,12 +39,12 @@
   },
   {
    "baslik": "ceuta",
-   "hacim": "200+",
-   "haber_baslik": "Vini, Mbappé y Konaté no lucieron la camiseta de apoyo a Ceuta",
-   "haber_url": "https://www.marca.com/futbol/real-madrid/2026/09/15/vini-mbappe-konate-lucieron-camiseta-apoyo-ceuta.html",
-   "haber_kaynak": "MARCA",
-   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPpjxjGiVUQ5FuCwgZbl08famhMAAgp8GwoIXhfb4YTpEm2hpntOP3Wc1keMM",
-   "bolum": "gundem"
+   "hacim": "500+",
+   "haber_baslik": "PSOE y sus socios tumban el plan de la ultraderecha Vox para convertir a los migrantes en un \"objetivo militar\"",
+   "haber_url": "https://www.elconstitucional.es/es/nacional/politica/psoe-sus-socios-tumban-plan-ultraderecha-vox-convertir-migrantes-en-objetivo-militar_7912_102.html",
+   "haber_kaynak": "El Constitucional",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRlrCZz3J1msqeHDJI079RnxuNlOGoatKGty84aurehG6HKQi1zdzfnNe5v-wo",
+   "bolum": "sosyal-medya"
   },
   {
    "baslik": "jayden oosterwolde",
@@ -76,11 +76,11 @@
   {
    "baslik": "elche - real madrid puan durumları",
    "hacim": "20000+",
-   "haber_baslik": "Elche 2-3 Real Madrid (LaLiga) Arda Güler...",
-   "haber_url": "https://www.hurriyet.com.tr/sporarena/elche-2-3-real-madrid-laliga-arda-guler-43306927",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQl67NB5aePbEZ8QT2toAhIs1qkA3GNpIB19j6JoQ2Yttz5Lhn3FxwOaZIWSs",
-   "bolum": "spor"
+   "haber_baslik": "Arda Güler yine frikikten avladı! Real Madrid müthiş golle öne geçti",
+   "haber_url": "https://www.sozcu.com.tr/arda-guler-yine-frikikten-avladi-milli-futbolcumuz-cikisini-surduruyor-p358582",
+   "haber_kaynak": "Sözcü Gazetesi",
+   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSES4mOctkSjPhlfRwZZyEiX0DVkm8VBENrlTigFUbIztCHceWxO8Asx4v1mPw",
+   "bolum": "gundem"
   },
   {
    "baslik": "yolsuzluk",
@@ -137,13 +137,6 @@
     "ozet": "ÖZEL HABER | Diyarbakır’da oda ve borsa seçimlerinde aday yok Medyascope"
    },
    {
-    "baslik": "Piyasa özeti: 15 Eylül 2026 Borsa, Döviz, Altın ve Kripto piyasalarındaki son durum - Bloomberght",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcG9WelZVREFIamtRSG5rNTRncUJTWDJjLV9POHFmWmlFUTVkbmlVZjVtLW9mTEFRb01aR2Q1ZmFmNXZPbXJYSnUtQXpkQTZIbVYzdGNLYXR1ZlBxMWlMSEphU3NJamtRdERYeDMwU2lFSlJ0aXFfbjlrbnkwNXpCcFdDRDM5dUNnYncxN0Zqb0FpS1dvc1Z6bkJTWnhSWHRpQjBNUDdvR29fT3dIN2dTdUN5TVFZSV8zR3NJRQ?oc=5",
-    "kaynak": "Bloomberght",
-    "tarih": "Tue, 15 Sep 2026 15:30:14 GMT",
-    "ozet": "Piyasa özeti: 15 Eylül 2026 Borsa, Döviz, Altın ve Kripto piyasalarındaki son durum Bloomberght"
-   },
-   {
     "baslik": "Fed'de gözler faiz kararında: 15 kurumun beklentisi belli oldu - Ekonomim",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZ1FndEZiWVFFVjZ0bWsyLWFOcWVEcHJkdmF0SGhVc0dxVjlYVGprVnR1cHJzQ1V4cGtibzN6d2J5V05jX0h3UkJzcFFyUno5dWF4NHp6Y0dkOVNCUEFfc2tPSXBneUN5V21nTW9XZFhYYkI0NEtuUjFaaGRRaDJnNVEyanpUMEp5Y1FoRWt4WEZzX3IyeGNPVzc1WDlQSkZmRlNmVTNuOHVPd2JBYzJ3ZFVMb3NxZ9IBuwFBVV95cUxQWTNRbVVNcE80TERRMUpUSkxuVHdsWnk5OTdiQWR6b1FLV2ZxUlJraWl1d0tQcnlNaTZpOXVfSXpxMldPOFcxYjJGNHB1NXQxajdTaHp2T2tyRHNsV05YaGIwb1J6S1BiVTRxZUl1TkFJaW94aXVHSjFGREh3MkVIQ0hiYklnZV9HTmNGOVRqRmh6eXZjejNYaEp1SEpnUUNTTWk2YllzV2h3WGhWVy1WdjFFem4xR2pMSFZv?oc=5",
     "kaynak": "Ekonomim",
@@ -151,11 +144,18 @@
     "ozet": "Fed'de gözler faiz kararında: 15 kurumun beklentisi belli oldu Ekonomim"
    },
    {
-    "baslik": "CSP Inc. yöneticisi Joseph Nerges 36.078 dolar değerinde hisse aldı - Investing.com Türkiye",
-    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLUtac0NuMkJQU09qa3cwcEdFd01iYm9rcnRUR2JiWVA5aEFMVGhoZDRodFItWlN6Z2dIeWFBYnhaWlA1cVRCNGxYN0dBQ3dSSmZaMXNvVXM5SURFSEg2c2dyZ0RZVTY0TDYxeUpmQ0FPcm9XSVRIMFh1X2tkMUNBOGVkZGU5UnBRdHMycy12ZTdNZ0w1aE1vbWU5Q1ZscllHa2ZjMW1nZjZXeG8yd3l4c3lLUERRdFN2eDVtNFFvaXdILWRBTnFr?oc=5",
-    "kaynak": "Investing.com Türkiye",
-    "tarih": "Tue, 15 Sep 2026 22:00:54 GMT",
-    "ozet": "CSP Inc. yöneticisi Joseph Nerges 36.078 dolar değerinde hisse aldı Investing.com Türkiye"
+    "baslik": "Piyasa özeti: 15 Eylül 2026 Borsa, Döviz, Altın ve Kripto piyasalarındaki son durum - Bloomberght",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcG9WelZVREFIamtRSG5rNTRncUJTWDJjLV9POHFmWmlFUTVkbmlVZjVtLW9mTEFRb01aR2Q1ZmFmNXZPbXJYSnUtQXpkQTZIbVYzdGNLYXR1ZlBxMWlMSEphU3NJamtRdERYeDMwU2lFSlJ0aXFfbjlrbnkwNXpCcFdDRDM5dUNnYncxN0Zqb0FpS1dvc1Z6bkJTWnhSWHRpQjBNUDdvR29fT3dIN2dTdUN5TVFZSV8zR3NJRQ?oc=5",
+    "kaynak": "Bloomberght",
+    "tarih": "Tue, 15 Sep 2026 15:30:14 GMT",
+    "ozet": "Piyasa özeti: 15 Eylül 2026 Borsa, Döviz, Altın ve Kripto piyasalarındaki son durum Bloomberght"
+   },
+   {
+    "baslik": "Horizon Kinetics, RENN Fund hisselerinde 2.305 dolar aldı - tr.investing.com",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ1RuVGx6eXpDVUVPSU15eTA5cjBjVzlSekI2M1pZZ1VQV2lmZ1pqVFhqMWpSeWFWNXpTTFotREZ5cnNmbmZaS0Y4REJsZlByWTRES09FZy0xUEdhZ0YyMkNWWEN0Z1BLN1hmdjlnMmJzZGVscktvRVplNHA3anhycVc2b3hYdG1TdkpJZW85RmpfOUdvUVNNY05DZndYV1RVZ1lPNnZmUU56eFExd0RKeENpUmRENVh6blE?oc=5",
+    "kaynak": "tr.investing.com",
+    "tarih": "Tue, 15 Sep 2026 21:35:03 GMT",
+    "ozet": "Horizon Kinetics, RENN Fund hisselerinde 2.305 dolar aldı tr.investing.com"
    },
    {
     "baslik": "Altın yatırımcısının gözü Fed'de: Faiz kararı altın fiyatını nasıl etkiler? - platinonline.com",
@@ -167,11 +167,11 @@
   ],
   "ekran": [
    {
-    "baslik": "Vizyondaki filmler 11-18 Eylül 2026: İşte bu hafta vizyona giren 12 film - haberton.com",
+    "baslik": "Vizyondaki filmler 11-18 Eylül 2026: İşte bu hafta vizyona giren 12 film - Haberton",
     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQSGtoTTYtSVV0aUEteGRtS3RnWFJ4cDRqQTU4akxZVXZmUjVoOXNXdHVvVXNaOW9qcGR3QUZKaC1ic0diRUpJN0twYlEtLXVSbDk2R2V6bG1GMDVKZENxMjVNWDVSZllfWjdrZUJVa2VTUFIyZjZsU2hsalE4TFRtS0hCMERsR3lQMTBxVXVQaGFZaVlFeDJybA?oc=5",
-    "kaynak": "haberton.com",
+    "kaynak": "Haberton",
     "tarih": "Thu, 10 Sep 2026 08:08:36 GMT",
-    "ozet": "Vizyondaki filmler 11-18 Eylül 2026: İşte bu hafta vizyona giren 12 film haberton.com"
+    "ozet": "Vizyondaki filmler 11-18 Eylül 2026: İşte bu hafta vizyona giren 12 film Haberton"
    },
    {
     "baslik": "Sinemalarda bu hafta: İşte bugün vizyona giren 11 yeni film - T24",
@@ -202,18 +202,18 @@
     "ozet": "YENİ DİZİ | Başkalarının Hayatı Dizisi Ne Zaman Başlıyor? Oyuncuları Kimler? Dizi Nerede Çekiliyor? birgun.net"
    },
    {
+    "baslik": "Bu hafta vizyona giren 12 film - yenihaberden.com",
+    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1vTjlvdFQ1dkhXeXRydThsaWUwQ2NsOHEzMGJHa0xzc3J4c2RrSkxFb0xCU2dSZFBMckZkZER1OVREaVBlT0V5SEVfZWNpZTh0VzFzNTlZWWRHcjQ3V2RqSHdwNzFiRXdOeUpqTC1LbXk5TVZRNHpn?oc=5",
+    "kaynak": "yenihaberden.com",
+    "tarih": "Wed, 09 Sep 2026 13:31:11 GMT",
+    "ozet": "Bu hafta vizyona giren 12 film yenihaberden.com"
+   },
+   {
     "baslik": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu - Sözcü Gazetesi",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMnhHTWpBMlVkNXRTazZqc0ZOX05iS2dHUjI2VU5XWk9zTnBCc1IxUWJocF9VZ3FESnpDX2hrZTRMbmIzSFdCWHkzVWFZM1BrMzNxTGVFTFpPVkNHUXJoNHllemJJMWpfU2hGNXNGM1pFcTNOQ1NFakFWNnItM0hJd3FaQ0FHSElIeXZDWmNZZ1R4OHlhQ3o0anlybU4waldhdmo3ckcwZnBpM3RBUUE?oc=5",
     "kaynak": "Sözcü Gazetesi",
     "tarih": "Fri, 11 Sep 2026 08:59:54 GMT",
     "ozet": "İki yeni dizi aynı gün ekrana geldi: Reyting savaşında galip gelen belli oldu Sözcü Gazetesi"
-   },
-   {
-    "baslik": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu - afyonhaberturk.com",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPU3BrM1M2UmJfQ1dpQ3ZKV0o5VHBWQ0xJQ3lkUUo1SFY4blpGck4wc29mX3hGWHhDMTZiYldWdHYxR0xRbTR1Y2sta1gtWVVZcktKcWMzYmFRWFhqcEotUldiejlQc3VWYnlsajRGYkZ6T3g0MjFTUmFYcFpIVDhsNlJvQjVVQmdCa3U5SEViSU1TdHA3LWwzY3JZaw?oc=5",
-    "kaynak": "afyonhaberturk.com",
-    "tarih": "Wed, 09 Sep 2026 12:43:00 GMT",
-    "ozet": "Bu Hafta Vizyonda Yer Alacak Filmler Belli Oldu afyonhaberturk.com"
    },
    {
     "baslik": "SEVDAN BİR ATEŞ OYUNCULARI, KARAKTERLERİ VE HİKAYESİ || Sevdan Bir Ateş dizisi konusu nedir, oyuncuları kimler? Yeni dizi Sevdan Bir Ateş nerede çekiliyor? - Hürriyet",
@@ -230,11 +230,11 @@
     "ozet": "İki yeni dizi aynı gün yayınlandı, reyting sonuçları açıklandı egealternatif.com"
    },
    {
-    "baslik": "Yeni dizi Anne Yarısı için yayın tarihi ve ilk fragman izleyicilerle buluştu - gzt.com",
+    "baslik": "Yeni dizi Anne Yarısı için yayın tarihi ve ilk fragman izleyicilerle buluştu - GZT",
     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbG9yX0EyVDJZd1R0WDJsdVdRS1AxeEh5VGFGakJHWFM3TjdkbktMa09EQ0YtY095S280dm13eDE4VVRSYjRCYXRJTElRX3ExaU1KbzlZVTJ3ODJxUkNVbFEzNmtQWmJrWW9fdnh3X05DNjdpWWR2Zm1zNGdrLXJSX29jM0d6ZlhzUkJMNzczQWE0VXFuUk1meTJXUDExMTJFMVdaU3MzQmh3czVkcXlNSA?oc=5",
-    "kaynak": "gzt.com",
+    "kaynak": "GZT",
     "tarih": "Fri, 11 Sep 2026 05:00:00 GMT",
-    "ozet": "Yeni dizi Anne Yarısı için yayın tarihi ve ilk fragman izleyicilerle buluştu gzt.com"
+    "ozet": "Yeni dizi Anne Yarısı için yayın tarihi ve ilk fragman izleyicilerle buluştu GZT"
    }
   ],
   "spor": [
@@ -281,6 +281,13 @@
     "ozet": "Derbi tarihleri belli oldu Diken"
    },
    {
+    "baslik": "Süper Lig'de derbi tarihleri belli oldu - Dünya Gazetesi",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSnowd1NrbG01c1EyWVlXTnZQaFJ1NW1KTzNOZDRIelhIR1dtUjNKbFJKRW13dEtBVG5GYl9jMjd1R0FlYTlJZlVUTEN5T2lBVlduZWsyalpYam5lWlBzbE1sdVBaVHNxT2RZcTZadm84STl3QldhVldEYWdkQkJmWXJMM2ZaZw?oc=5",
+    "kaynak": "Dünya Gazetesi",
+    "tarih": "Tue, 15 Sep 2026 11:13:00 GMT",
+    "ozet": "Süper Lig'de derbi tarihleri belli oldu Dünya Gazetesi"
+   },
+   {
     "baslik": "Derbi takvimi netleşti! - Antalya Hürses",
     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE44WTJhbkZwOG9qd2VLUzlyQjhVTDJtSmdIRW1rSmFVTXllN09UWFRNZzNSb2tGUVVHaDNXQW5ScGRuNHVJamQzMFpKclRTOVp4dUhOUnFuZjhJeDk1akQtdFZQbnRXNHJSamFV?oc=5",
     "kaynak": "Antalya Hürses",
@@ -300,13 +307,6 @@
     "kaynak": "A Spor",
     "tarih": "Tue, 15 Sep 2026 11:11:02 GMT",
     "ozet": "Trendyol Süper Lig'de derbi tarihleri belli oldu! Galatasaray-Fenerbahçe maçı neden pazartesi? A Spor"
-   },
-   {
-    "baslik": "Galatasaray-Fenerbahçe-Beşiktaş derbi tarihleri açıklandı - Ülke TV",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPR1BxR0hvc3JQMV9BUC1MZDlWVEs1d3dEYVR5elUzS1oxQndvRlVyTlAwd1ZqdGpDaWQ2Wml2WXlRUlY1bGNhQ3g2X0NEYWdaRGlMMHJVQVc2TGNBaGlySklyRVppc0FTWGxiNkg5R3ZWQk83akRFNmQ4aFR2UDRtMTVqakhEeG9Pb3N0RzI5U1dOOFVFSW1n?oc=5",
-    "kaynak": "Ülke TV",
-    "tarih": "Tue, 15 Sep 2026 11:18:00 GMT",
-    "ozet": "Galatasaray-Fenerbahçe-Beşiktaş derbi tarihleri açıklandı Ülke TV"
    }
   ],
   "sanat": [
@@ -318,11 +318,11 @@
     "ozet": "14 – 20 Eylül İstanbul Konser Takvimi: İstanbul'da Bu Haftanın En Eğlenceli Konserleri ve Müzik Etkinlikleri Onedio"
    },
    {
-    "baslik": "Ankara Eylül Ayı Sergileri: Güncel Sergi Rehberi (2026) - oggusto.com",
+    "baslik": "Ankara Eylül Ayı Sergileri: Güncel Sergi Rehberi (2026) - Oggusto",
     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBRTE9TREszMFRkdi1meGF1SkltSTRWR1c4UWtZVzg2QXgxa3lBNllvNXUtQXRJa3FMSi01dHFkdlpjNlFXR0FYYkVNM21CQTQ5a3NaZlZBbmVJN09HbWltSVpR?oc=5",
-    "kaynak": "oggusto.com",
+    "kaynak": "Oggusto",
     "tarih": "Tue, 15 Sep 2026 14:51:10 GMT",
-    "ozet": "Ankara Eylül Ayı Sergileri: Güncel Sergi Rehberi (2026) oggusto.com"
+    "ozet": "Ankara Eylül Ayı Sergileri: Güncel Sergi Rehberi (2026) Oggusto"
    },
    {
     "baslik": "Oğuzhan Koç, Edirnelilerle Buluşacak Edirne’de Gastronomi ve Müzik Buluşuyor: Oğuzhan Koç Sahne Alacak Edirne’de bu yıl üçüncüsü düzenlenecek olan Topraktan Sofraya Edirne 3. Gastronomi Festivali, gastronomi etkinliklerinin yanı sıra müzik programıy - instagram.com",
@@ -411,11 +411,11 @@
     "ozet": "Yapay zeka, öğrenmeyi sekteye uğratıyor Habertürk"
    },
    {
-    "baslik": "Yapay zeka, NRF Europe fuarında modanın iş süreçlerinin her aşamasında kendine yer buluyor - FashionNetwork France",
+    "baslik": "Yapay zeka, NRF Europe fuarında modanın iş süreçlerinin her aşamasında kendine yer buluyor - tr.fashionnetwork.com",
     "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQNW9sVlRmQXBnTnlGTG9MUXlDX0xBWDQ0OFk0MDk5ekRiVlRhTEhFUHJ2OG1YYl9hLTZsVkNxTTZlZUhiNXRzaVBWWVgySllUMW1GRVFaMmROcG9xNUxZeWIzUzJSa3dRQ0I5bkdVTnBQeXpKLTB1YTgxNmJsZU1PSzdTMGpZS0hnSEo5aTVKNlBSRi03UmdadjVXeEJ0M1l6WVVfWDFpeUN2a3JZWWVMOWUzbGtOa1pST3lRQWFGZDdjdUsxNlJSWmZ1S3dpaWdpTlE3NDZyOGVMdGVLaldYMnBZWGoxQ0lwMzhGbkZXZi1VWDJD?oc=5",
-    "kaynak": "FashionNetwork France",
+    "kaynak": "tr.fashionnetwork.com",
     "tarih": "Tue, 15 Sep 2026 15:59:01 GMT",
-    "ozet": "Yapay zeka, NRF Europe fuarında modanın iş süreçlerinin her aşamasında kendine yer buluyor FashionNetwork France"
+    "ozet": "Yapay zeka, NRF Europe fuarında modanın iş süreçlerinin her aşamasında kendine yer buluyor tr.fashionnetwork.com"
    },
    {
     "baslik": "Araştırmaya göre yapay zeka öğrencilerin öğrenme deneyimini baltalıyor - Cumhuriyet",
@@ -432,18 +432,18 @@
     "ozet": "Google Drive'a yapay zeka dopingi: Gemini önerileri geliyor DonanımHaber"
    },
    {
+    "baslik": "Yapay zeka altyapısına odaklanan Cornelis, 205 milyon dolar yatırım aldı - Webrazzi",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOekEza2dHWmxhYU0wRkplcDZMLWtqZlRzN004VVZJcDN5MnJTbXRTOUYwV3J3TkpIMkNWVmIydzVKTC1XdUExWURPem9CTVJxSW9OdXBrWmpWZDFsbWdmdlMtVHh4YjRZNmtpcWR0VW1LZl9nSmw1YmJlS0JzaHVrVDJ3b3VTRjN3dGZpZzlHYUVPNWZPU2hPRWRIUzBLWEt3a1BmZnExVQ?oc=5",
+    "kaynak": "Webrazzi",
+    "tarih": "Tue, 15 Sep 2026 13:34:03 GMT",
+    "ozet": "Yapay zeka altyapısına odaklanan Cornelis, 205 milyon dolar yatırım aldı Webrazzi"
+   },
+   {
     "baslik": "MIT'den çarpıcı rapor! Eğitimde yapay zeka alarmı https://buff.ly/2pf3oJA - instagram.com",
     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1qeENtYlc5U3cyX0xiY0VleHhPZlo3R1RsMlgzRFo3NnMwWjExN2tHaEZrQ251LUFnMlJMYkJiWWE2NmR2M2dnOVlRaG82cEtsMUE?oc=5",
     "kaynak": "instagram.com",
     "tarih": "Tue, 15 Sep 2026 19:04:43 GMT",
     "ozet": "MIT'den çarpıcı rapor! Eğitimde yapay zeka alarmı https://buff.ly/2pf3oJA instagram.com"
-   },
-   {
-    "baslik": "Yapay zeka altyapısına odaklanan Cornelis, 205 milyon dolar yatırım aldı - webrazzi.com",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOekEza2dHWmxhYU0wRkplcDZMLWtqZlRzN004VVZJcDN5MnJTbXRTOUYwV3J3TkpIMkNWVmIydzVKTC1XdUExWURPem9CTVJxSW9OdXBrWmpWZDFsbWdmdlMtVHh4YjRZNmtpcWR0VW1LZl9nSmw1YmJlS0JzaHVrVDJ3b3VTRjN3dGZpZzlHYUVPNWZPU2hPRWRIUzBLWEt3a1BmZnExVQ?oc=5",
-    "kaynak": "webrazzi.com",
-    "tarih": "Tue, 15 Sep 2026 13:34:03 GMT",
-    "ozet": "Yapay zeka altyapısına odaklanan Cornelis, 205 milyon dolar yatırım aldı webrazzi.com"
    },
    {
     "baslik": "Bill Gates'ten yapay zeka uyarısı. \"Hükümetler çok geç kaldı\" - NTV Haber",
@@ -569,6 +569,13 @@
     "ozet": "Ekonomi ve Enerji Bakanı Taçoy’dan akaryakıta zam sinyali: Brent petrol 95 dolardan 108 Dolar'a çıktı Kıbrıs Postası"
    },
    {
+    "baslik": "Türkiye'de otomotiv üretimi 8 ayda yüzde 7 geriledi - Independent Türkçe",
+    "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFA0a05hQXVqdEdCTDNmaTlYVGhGNnJBT0ZZQVAwNm1wOUlCQ241b1l3LVdfTTVwZWR2Z1BQdDJqcGl2VTh6UGpDUFFWM04?oc=5",
+    "kaynak": "Independent Türkçe",
+    "tarih": "Mon, 14 Sep 2026 09:49:20 GMT",
+    "ozet": "Türkiye'de otomotiv üretimi 8 ayda yüzde 7 geriledi Independent Türkçe"
+   },
+   {
     "baslik": "Petrol 107 Doları Buldu, Enerji Maliyetleri Avrupa'yı da Vuruyor - Stratejik Düşünce Enstitüsü",
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdXlvU0lFTlROYVNHd193M1g4YnVwQkNlWjJxRnNkVWdhV2FvZmxlUXZmNjBZRGVrSERkZ2FVZ21VVHV2V0tfQmJqN3ktcmNkRll0RkQtX1Z1TFFLQmc2ZmhEcG9ETUVvQ25nb3lqaUtiZ3NpYXhGOUVMWDF2R3R6aTNyWUNHa2E4QmJaQ1dDS1ZONWtkMHh6anh3MHQxTVlLOF9xTVlRaUZFZw?oc=5",
     "kaynak": "Stratejik Düşünce Enstitüsü",
@@ -588,13 +595,6 @@
     "kaynak": "İTÜ Haberler",
     "tarih": "Tue, 15 Sep 2026 07:06:31 GMT",
     "ozet": "Mezunumuz Dr. Fatih Birol’dan: Günümüzün ve Geleceğin Dünyasında Mühendislerin Önemine Dair İTÜ Haberler"
-   },
-   {
-    "baslik": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici - Bloomberght",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSHZaMThweXNpSm1vTTlCVDlRWWxGQVAzZW1GZC11N1RpckJKSllReTI5alFNUmVfQ29jQWNnVFpDWTFIZkZyZUw2bzBwb2tjblltOVl1c2czem9JYmtPWUJHX3lmejk3Yktkemg1VWNkU3J6MzhsNkQteFFFQlFZQmJHeFNCSlkwOVZZdUJiZEhxeGNQdHBFZDNPbU8?oc=5",
-    "kaynak": "Bloomberght",
-    "tarih": "Mon, 14 Sep 2026 10:56:33 GMT",
-    "ozet": "AMB yetkilisi: Enerji fiyatı eğilimleri oldukça endişe verici Bloomberght"
    }
   ],
   "sosyal-medya": [
@@ -613,11 +613,11 @@
     "ozet": "Meta One; Instagram, Facebook ve WhatsApp'a geldi Gazete Oksijen"
    },
    {
-    "baslik": "Meta One, Instagram, Facebook ve WhatsApp kullanıcılarının erişimine açıldı - webrazzi.com",
+    "baslik": "Meta One, Instagram, Facebook ve WhatsApp kullanıcılarının erişimine açıldı - Webrazzi",
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRzZQWDNucHFORnRraWpjODU0TWlfZnBTV3Z0OVhmemt0c1BuM3Z0REdDZlprd2RJMXlYcWI2YkIyOFdmWlU3eG82UTd2Q2hKSlVIRXdSNW80anNLTUx2eFZ1WkhSZU90SzZKb21UbkZOVXJsOVBYUlVhSi1zbUVlck93YlVkX2NQWm9zYTlULS1JLUhqLXhPWFduS1Y3ZmFqNWRXbXZPdi1ZZw?oc=5",
-    "kaynak": "webrazzi.com",
+    "kaynak": "Webrazzi",
     "tarih": "Tue, 15 Sep 2026 15:01:50 GMT",
-    "ozet": "Meta One, Instagram, Facebook ve WhatsApp kullanıcılarının erişimine açıldı webrazzi.com"
+    "ozet": "Meta One, Instagram, Facebook ve WhatsApp kullanıcılarının erişimine açıldı Webrazzi"
    },
    {
     "baslik": "Ankara'da LGBTİ+ soruşturması: Gözaltına alınanlara KAOS GL ve Shibari Turkey'in Instagram paylaşımları soruldu - Medyascope",
@@ -641,18 +641,18 @@
     "ozet": "'Ailem Güvende' operasyonu sonrası düğmeye basıldı: LGBT propagandası yapan onlarca sosyal medya hesabına e... Yeni Şafak"
    },
    {
+    "baslik": "'Şeytantepe' belgeseline erişim engeli; Youtube'dan kaldırıldı - Sözcü Gazetesi",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1NMmhHUW1fTFExcFBWYlFCekVMbHFINnczQWRubTlxX2FnbUNKWFZ6MmhOeGtiY3gzVVZfSHllak1PbGRiUkJjT3dtWi1SREkzeVBCZWt2UmlzRVZyVFU1WWtxRFZ3SmJlZG9hUHdoYjBldUtORWJJd2tMNmxHODA?oc=5",
+    "kaynak": "Sözcü Gazetesi",
+    "tarih": "Tue, 15 Sep 2026 20:55:00 GMT",
+    "ozet": "'Şeytantepe' belgeseline erişim engeli; Youtube'dan kaldırıldı Sözcü Gazetesi"
+   },
+   {
     "baslik": "TikTok Hesabına E-posta Nasıl Eklenir? - Webtekno",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQOXgxcjJTUmZCWi1mZjE0cHZqcW10Rk5FaDY2STNfVVBJblhONk01V19mN05CZXcxZUs5cjhtM2F3ckxneVVNVGc4Snc2cW50dW1fVVItMDNDb0tFWkpYTWwwSHV3anlVXzdGLWROVm1ONklrQjVLbVpvLVVlSTZlQg?oc=5",
     "kaynak": "Webtekno",
     "tarih": "Tue, 15 Sep 2026 14:51:31 GMT",
     "ozet": "TikTok Hesabına E-posta Nasıl Eklenir? Webtekno"
-   },
-   {
-    "baslik": "'Şeytantepe' belgeseline erişim engeli; Youtube'dan kaldırıldı - Sözcü Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPZnRRZnd5bmotS1lVSm4tS0VETW9BdVhQVTdlUkJpaW1UdF8tZE5nU3MwdDhscmNYanJTUUJpaVVWUjFjSTdYYTMyeUxSdmZDdWhraVUzSzRJRDRFUnA3Qk16NWNWeHJ0bVlSN01wMjRxSjJwVFpYUXlVNVhzWjZ3WVZIWmFpVmxZd1pDUGtwVVpZeUJqWjlncENfZHhLTDFGajM5c0pvZ0c3Rm05U19mY3phZjQ2Y29BOGhLSGlPbW5ZeURkd3NjNXhubTRva2M?oc=5",
-    "kaynak": "Sözcü Gazetesi",
-    "tarih": "Tue, 15 Sep 2026 20:55:00 GMT",
-    "ozet": "'Şeytantepe' belgeseline erişim engeli; Youtube'dan kaldırıldı Sözcü Gazetesi"
    },
    {
     "baslik": "2.9 milyon kez izlenmişti: 140journos’un ‘Şeytantepe’ belgeseli YouTube’dan kaldırıldı - Evrensel.net",
