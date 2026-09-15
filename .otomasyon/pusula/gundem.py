@@ -73,7 +73,31 @@ ELEME = ("cinayet", "kaza", "deprem can kaybı", "tutuklandı", "gözaltı", "ya
          "hükümlü", "terör", "silahlı",
          # doğrulama/teyit haberleri ve galeri-magazin kalıpları: sektör gündemi değil
          "doğruluk payı", "teyit", "mı gösteriyor", "mi gösteriyor", "mu gösteriyor", "mü gösteriyor",
-         "iddia edildi", "sahte mi", "gerçek mi", "burç", "magazin")
+         "iddia edildi", "sahte mi", "gerçek mi", "burç", "magazin",
+         # 15.09.2026: asayiş/skandal kalıpları eklendi — "Çanakkale'de skandal olay…"
+         # gibi bir haber gündem defterine düşmüştü. Bunlar sektör gündemi değil.
+         "skandal", "yakalandı", "fuhuş", "taciz", "istismar", "şüpheli", "gözaltına",
+         "cinsel", "kavga", "bıçak", "ölü bulundu", "intihar", "dolandırıcı", "kumar")
+
+
+def spam_baslik(baslik):
+    """SEO çöpü başlıkları eler: emoji yığını, büyük harf bağırması, tekrar eden kalıp.
+
+    15.09.2026: "TOKİ İSTANBUL KİRALIK KONUT 2026 📌 TOKİ İstanbul…" gibi başlıklar
+    içerik çiftlikleri tarafından üretiliyor; kaynak olarak alınmaya değmez.
+    """
+    b = (baslik or "").strip()
+    if not b:
+        return True
+    harf = [c for c in b if c.isalpha()]
+    if harf and sum(1 for c in harf if c.isupper()) / len(harf) > 0.6:
+        return True                                  # başlığın çoğu BÜYÜK HARF
+    if sum(1 for c in b if ord(c) > 0x2190) >= 1:
+        return True                                  # emoji / sembol var
+    kelime = [k for k in _kucuk(b).split() if len(k) > 3]
+    if kelime and len(set(kelime)) / len(kelime) < 0.6:
+        return True                                  # aynı kelimeler tekrarlanıyor
+    return False
 
 TR_KUCUK = str.maketrans({"İ": "i", "I": "ı", "Ğ": "ğ", "Ü": "ü", "Ş": "ş", "Ö": "ö", "Ç": "ç"})
 
@@ -137,6 +161,8 @@ def puanla(haber, iller=()):
     metin = _kucuk(haber["baslik"] + " " + haber.get("ozet", ""))
     if any(e in metin for e in ELEME):
         return 0, ["konu dışı (olay/asayiş haberi)"]
+    if spam_baslik(haber.get("baslik")):
+        return 0, ["başlık SEO çöpü kalıbında (büyük harf/emoji/tekrar)"]
 
     # Haber zaten bizim konu sorgumuzdan geldiyse ve o konunun tanımlı bir yazı
     # açısı varsa, sıfırdan başlamıyoruz — konu eşleşmesi tek başına bir sinyal.

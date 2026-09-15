@@ -38,6 +38,18 @@ ISTEMCI_IMZA = (
     ("data-svelte",                  "Svelte"),
 )
 
+# Sunucuda kabuk basıp içeriğin bir kısmını tarayıcıda dolduran çatılar
+# (Lovable/TanStack Start, Remix vb.). Ham HTML'de metin bol görünse de
+# iletişim/menü gibi bloklar sonradan gelir → en az "karma" sayılır.
+# 15.09.2026 mugellocafe.com: ham HTML'de adres/harita/menü yoktu, tarayıcıda vardı.
+KARMA_IMZA = (
+    ("$tsr-stream-barrier",          "TanStack Start"),
+    ("__tsr_router__",               "TanStack Router"),
+    ("window.__remixcontext",        "Remix"),
+    (".supabase.co/rest/v1",         "Supabase istemci sorgusu"),
+    ("/__l5e/",                      "Lovable"),
+)
+
 # Bu kodlar sayfanın nasıl çizildiğinden BAĞIMSIZ olarak doğrulanabilir:
 # HTTP katmanı, dosya varlığı, harita profili verisi, ölçülen performans.
 KESIN_KODLAR = {
@@ -90,6 +102,11 @@ def render_tipi(govde):
         d["tip"] = "istemci"
     elif d["imza"]:
         d["tip"] = "karma"
+    if d["tip"] == "sunucu":
+        karma = [ad for iz, ad in KARMA_IMZA if iz in alt]
+        if karma:
+            d["imza"] += karma
+            d["tip"] = "karma"
     return d
 
 

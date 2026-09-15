@@ -451,8 +451,24 @@ def yayinla(maddeler, tarih=None, aranan=None, kok=None, kapi=True):
     mevcut = sorted(set(x["tarih"] for x in _sayilar(kok)) | {tarih})
     k = mevcut.index(tarih)
     komsu = (mevcut[k - 1] if k > 0 else None, mevcut[k + 1] if k + 1 < len(mevcut) else None)
-    baslik, h = sayi_html(tarih, maddeler, aranan, komsu)
+    # BOŞ SAYI KAPISI (15.09.2026): kendi kalemimizden geçmiş tek madde yoksa sayfa
+    # açılmaz. Aksi hâlde maddesiz, ince bir sayı sayfası yayına giriyordu.
+    ozgun = [m for m in (maddeler or []) if ozgun_mu(m)]
     yol = os.path.join(d, "%s.html" % tarih)
+    if not ozgun:
+        if os.path.exists(yol):
+            try:
+                os.remove(yol)
+            except Exception:
+                pass
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(hub_html(_sayilar(kok)))
+        try:
+            from .trend import _yonlendirme
+            _yonlendirme(kok, [], {"/gundem/%s" % tarih: "/gundem/"})
+        except Exception:
+            pass
+        return {"sayfa": None, "madde": 0, "not": "yazısı olan madde yok — sayı açılmadı", "kapi": None}
+    baslik, h = sayi_html(tarih, maddeler, aranan, komsu)
     open(yol, "w", encoding="utf-8").write(h)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(hub_html(_sayilar(kok)))
     _sitemap_ekle(kok, ["https://lunayapim.com/gundem/", "https://lunayapim.com/gundem/%s" % tarih])
