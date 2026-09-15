@@ -391,3 +391,107 @@ def ai_kisa_film():
         "tutuyoruz. Fotoğraf slaytı değil — plan ölçekleri, kamera hareketi ve oyunculuk "
         "içeren gerçek bir kısa film.",
         "\n".join(g), "AI Kısa Film", sss=sss, fiyat=(120000, 400000))
+
+# ══════════════════════════════════════════════════════════════ E-TİCARET
+def e_ticaret():
+    """E-ticaret danışmanlığı ve pazaryeri entegrasyonu.
+
+    Dürüstlük notu: yalnız GERÇEKTEN yaptığımız iş yazılır. Trendyol Satıcı API'siyle
+    uçtan uca çalışan bir otomasyon yazdık (fotoğraf → açıklama → çoklu görsel → barkod →
+    yükleme); ürün çekimi ve 3D ürün animasyonu zaten ana işimiz. Stok/muhasebe/kargo
+    yazılımı satmıyoruz ve öyleymiş gibi yazmıyoruz — "Neyi yapmıyoruz" bölümü bunun için.
+    """
+    dosya = "e-ticaret.html"
+    ad = "E-ticaret Danışmanlığı ve Pazaryeri Entegrasyonu"
+    aciklama = ("E-ticaret danışmanlığı ve pazaryeri entegrasyonu: ürün görseli ve videosu, "
+                "listeleme kalitesi, Trendyol Satıcı API ile otomatik ürün yükleme. "
+                "Katalog büyüklüğüne göre fiyat, aynı gün net aralık.")
+    anahtar = ("e-ticaret danışmanlığı, pazaryeri entegrasyonu, trendyol entegrasyonu, "
+               "trendyol api ürün yükleme, e-ticaret ürün çekimi, ürün görseli hazırlama, "
+               "e-ticaret video, ürün animasyonu, listeleme optimizasyonu")
+    sss = [
+      ("Hangi pazaryerleriyle çalışıyorsunuz?",
+       "Trendyol'da Satıcı API'si üzerinden uçtan uca çalışan bir hattımız var: ürün fotoğrafından "
+       "açıklama, çoklu format görsel, barkod ve stok kodu üretilip ürün mağazaya yükleniyor. "
+       "Diğer pazaryerlerinde aynı hattı o platformun API belgesine göre kuruyoruz; "
+       "daha önce yapmadığımız bir platform için bunu önceden söylüyoruz."),
+      ("Ürün fotoğrafım var, yeniden çekim şart mı?",
+       "Şart değil. Elinizdeki fotoğraf pazaryeri ölçülerine uygunsa onu düzenleyip çoğaltıyoruz. "
+       "Ama ürün sayfanız dönüşmüyorsa sorunun büyük kısmı genellikle görselde oluyor; "
+       "önce mevcut görsellerinizi ölçüp size nerede kaybettiğinizi gösteriyoruz."),
+      ("Kaç üründen sonra otomasyon mantıklı oluyor?",
+       "Kabaca 50 ürünün üzerinde. Altında elle yapmak daha ucuza geliyor ve bunu söylüyoruz. "
+       "Katalog büyüdükçe fark açılıyor: aynı işi elle yapan ekip o saatleri size faturalıyor."),
+      ("Ürün videosu gerçekten satışa etki ediyor mu?",
+       "Ürüne göre değişiyor. Fiziksel detayın belirleyici olduğu kalemlerde (tekstil dokusu, "
+       "makine çalışma prensibi, mobilya modülü) etkisi belirgin; standart ambalajlı üründe "
+       "sınırlı. Hangi grupta olduğunuzu ilk görüşmede söylüyoruz."),
+      ("Mağazamı sıfırdan kurar mısınız?",
+       "Mağaza açılışı ve evrak süreci sizde; biz açılıştan sonraki tarafı yapıyoruz — "
+       "ürün görseli, video, listeleme metni ve yükleme otomasyonu."),
+    ]
+    g = ['<section><div class="wrap prose">']
+    g.append("<p>Ürün sayfası satmıyorsa sorun çoğu zaman üründe değil. Aynı ürün, aynı fiyatla, "
+             "başka bir mağazada satıyor. Aradaki fark genellikle üç yerde birikiyor: görselin "
+             "kalitesi, listelemenin eksiksizliği ve kataloğun güncel tutulup tutulmadığı.</p>")
+    g.append("<h2>Neyi çözüyoruz</h2>")
+    g.append("<ul>"
+             "<li><strong>Görsel</strong> — pazaryerinin istediği ölçülerde ana görsel, kare sürüm, "
+             "doku detayı ve etiketli kapak. Tek çekimden çoklu format çıkıyor.</li>"
+             "<li><strong>Listeleme</strong> — başlık, öznitelik ve açıklama; arayanın yazdığı "
+             "kelimelerle, kategori kurallarına uygun.</li>"
+             "<li><strong>Yükleme</strong> — 50'nin üzerinde ürünü elle girmek gün alıyor; "
+             "hattı kurduğumuzda fotoğraftan yüklemeye kadar tek komutla ilerliyor.</li>"
+             "</ul>")
+    g.append("<h2>Pazaryeri entegrasyonu — ne yaptık</h2>")
+    g.append("<p>Trendyol Satıcı API'si üzerinde çalışan bir hattımız var. Ürün fotoğrafından "
+             "açıklama yazılıyor, pazaryeri standartlarında çoklu görsel üretiliyor "
+             "(1200×1800 ana görsel, 1080×1080 kare, doku detayı, etiketli kapak), benzersiz "
+             "barkod ve stok kodu oluşturuluyor ve ürün mağazaya yükleniyor. Bu hat bizim "
+             "kendi yazdığımız yazılım; kiraladığımız bir araç değil.</p>")
+    g.append("<p>Başka bir pazaryeri için aynı hattı kurmak, o platformun API belgesine bağlı. "
+             "Daha önce çalışmadığımız bir platformsa bunu baştan söylüyoruz — "
+             "\u201cher yerde çalışır\u201d demiyoruz.</p>")
+    g.append("<h2>Ürün görseli ve videosu</h2>")
+    g.append("<p>Asıl işimiz burası. Stüdyoda ürün çekimi, 360° dönen ürün, doku makrosu; "
+             "fiziksel olarak çekilemeyen ya da henüz üretilmemiş ürün için "
+             "<a href=\"urun-animasyon\">3D ürün animasyonu</a>. Aynı çekimden pazaryeri "
+             "görselleri, reklam kesimleri ve sosyal medya sürümleri birlikte çıkıyor.</p>")
+    g.append("<h2>Süreç</h2></div><div class=\"wrap\">")
+    g.append(_surec([
+        ("Katalog bakışı", "Kaç ürün, hangi pazaryeri, mevcut görseller ne durumda — ölçüyoruz."),
+        ("Örnek ürün", "Tek üründe baştan sona yapıyoruz: görsel, listeleme, yükleme."),
+        ("Onay ve hat", "Örnek onaylanınca aynı kalıbı katalogun tamamına kuruyoruz."),
+        ("Teslim", "Görseller, listeleme metinleri ve çalışan yükleme hattı sizde kalır."),
+    ]))
+    g.append('</div><div class="wrap prose">')
+    g.append("<h2>Paketler</h2>")
+    g.append(_paketler([
+        ("Görsel paketi", "Ürün başına", ["Pazaryeri ölçülerinde ana görsel ve kare sürüm",
+                                          "Doku/detay karesi", "Etiketli kapak görseli"]),
+        ("Listeleme paketi", "Ürün grubu başına", ["Başlık ve öznitelik düzeni",
+                                                   "Arayan diliyle açıklama metni",
+                                                   "Kategori kuralı kontrolü"]),
+        ("Otomasyon hattı", "Katalog başına", ["Fotoğraftan açıklama ve görsel üretimi",
+                                               "Barkod ve stok kodu",
+                                               "Satıcı API ile yükleme"]),
+    ]))
+    g.append("<h2>Neyi yapmıyoruz</h2>")
+    g.append("<p>Stok, muhasebe, kargo ve fatura entegrasyonu yapmıyoruz; bunlar ayrı bir "
+             "uzmanlık ve piyasada iyi çözümleri var. Mağaza açılışı ve evrak süreci de sizde. "
+             "Reklam bütçesi yönetimi (pazaryeri içi reklam) da bu hizmetin kapsamı dışında. "
+             "Yapmadığımız işi yapıyormuş gibi yazmak, ilk toplantıda anlaşılıyor zaten.</p>")
+    g.append("<h2>Fiyat</h2>")
+    g.append("<p>Katalog büyüklüğüne göre değişiyor; tek fiyat vermek doğru olmuyor. "
+             "Ürün sayınızı ve hangi pazaryerinde olduğunuzu söyleyin, aynı gün net bir aralık "
+             "verelim. Diğer hizmetlerin bantları "
+             "<a href=\"../fiyatlar\">fiyat sayfamızda</a> açık yazılı.</p>")
+    g.append("</div></section>")
+    g.append('<section><div class="wrap prose"><h2>Sık sorulan sorular</h2>%s</div></section>' % sss_blok(sss))
+    g.append(cta({"slug": "e-ticaret"}, "Kataloğunuzu <i>satan</i> hâle getirelim.",
+                 "Ürün sayınızı ve pazaryerinizi yazın; ne yapılabileceğini aynı gün konuşalım."))
+    return dosya, _hizmet_kabugu(dosya, ad + " | Luna Yapım", aciklama, anahtar,
+                                 "E-ticaret danışmanlığı ve <i>pazaryeri entegrasyonu</i>",
+                                 "Ürün görseli, listeleme ve yükleme otomasyonu — Trendyol Satıcı "
+                                 "API'siyle uçtan uca çalışan kendi hattımızla.",
+                                 "\n".join(g), ad, sss)
