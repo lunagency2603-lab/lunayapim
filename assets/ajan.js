@@ -54,7 +54,7 @@
   else if (/dugun|drone/.test(yol)) BAGLAM.hizmet = "kurumsal";
   var mil = yol.match(/\/sehir\/([a-z0-9-]+)/);
   if (mil) { var h1 = document.querySelector("h1"); var m2 = h1 && h1.textContent.match(/([A-ZÇĞİÖŞÜ][a-zçğıöşü]+)/); BAGLAM.il = m2 ? m2[1] : mil[1]; if (!BAGLAM.hizmet) BAGLAM.hizmet = /3d/.test(yol) ? "3d" : /drone/.test(yol) ? "emlak" : /klip/.test(yol) ? "klip" : ""; }
-  if (/\/trend\//.test(yol) || /\/gundem\//.test(yol) || /\/bulten\//.test(yol)) BAGLAM.sekme = "takip";
+  if (/trendsaphiens\.com$/.test(location.hostname) || /\/trend\//.test(yol) || /\/gundem\//.test(yol) || /\/bulten\//.test(yol)) BAGLAM.sekme = "takip";
   else if (/\/hizmetler\/|\/sehir\/|fiyatlar/.test(yol)) BAGLAM.sekme = "teklif";
 
   function hizmetBul(k) { for (var i = 0; i < HIZMET.length; i++) if (HIZMET[i][0] === k) return HIZMET[i]; return HIZMET[0]; }

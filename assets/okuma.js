@@ -4,8 +4,10 @@
    Panel bu sayıları /api/okuma üzerinden okuyor. */
 (function () {
   "use strict";
-  if (location.hostname !== "lunayapim.com" && location.hostname !== "www.lunayapim.com") return;
+  var TS = /(^|\.)trendsaphiens\.com$/.test(location.hostname);
+  if (!TS && location.hostname !== "lunayapim.com" && location.hostname !== "www.lunayapim.com") return;
   var yol = location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "") || "/";
+  if (TS) yol = "/trend" + (yol === "/" ? "/" : yol);  // panel anahtarları trendsaphiens.com için de /trend/... kalır
   var anahtar = "luna-okuma:" + yol, simdi = Date.now();
   try {
     var son = parseInt(localStorage.getItem(anahtar) || "0", 10);
