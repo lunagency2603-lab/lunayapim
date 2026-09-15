@@ -105,6 +105,11 @@ def sec(haberler, en_az=3, en_cok=6):
     """Puanı yüksek, sektörü çeşitli maddeler. Aynı konudan en çok iki."""
     sayac, ci = {}, []
     for h in sorted(haberler, key=lambda x: -x.get("puan", 0)):
+        # 16.09.2026: puanı sıfır olan madde ELENMİŞ demektir (asayiş/spam başlık).
+        # Önceden "en az 3 madde" kaygısıyla bunlar da listeye giriyordu; artık girmiyor.
+        # Az madde, yanlış madde'den iyidir.
+        if h.get("puan", 0) <= 0:
+            continue
         k = h.get("konu")
         if sayac.get(k, 0) >= 2:
             continue

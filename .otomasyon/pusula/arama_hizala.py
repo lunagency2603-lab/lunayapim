@@ -58,29 +58,87 @@ def _ilceler(c, n=3):
     return ", ".join(c.get("ilceler", [])[:n])
 
 # ---- sayfa tipine göre başlık kurgusu ---------------------------------------
+# 16.09.2026 CTR REVİZYONU. Teşhis: ilk 10'da olduğumuz 22 sayfa SIFIR tık alıyordu
+# (ör. /sehir/tekirdag-emlak-video: 31 gösterim, 8,5. sıra, 0 tık). Sebepleri ölçtük:
+#   1. Açıklamada RAKAM yok. Oysa 28 sorgunun 6'sı (%21) doğrudan "fiyat"/"ne kadara"
+#      içeriyor — arayanın ilk sorusu bu ve sonuçta cevabı göremiyordu.
+#   2. Klip sayfalarının açıklaması 16 ilde BİREBİR aynıydı; sonuçlar ayırt edilemiyordu.
+#   3. Açıklamalar ilçe listesinin ortasında "…" ile kesiliyordu (yarım cümle).
+# Çözüm: fiyat bandı başlığa ve açıklamaya, her ile kendi ilçeleri/mekânı, kırpma yok —
+# açıklama parça parça kurulur ve sınırı aşacaksa parça EKLENMEZ (cümle bölünmez).
+
+# (arama terimi, başlık kancası, açıklamada geçen kapsam)
+ARAMA = {
+    "genel":               ("video çekimi ve prodüksiyon", None,
+                            "tanıtım filmi, drone çekimi, klip, emlak videosu ve 3D render"),
+    "drone-cekimi":        ("drone çekimi", "10.000 ₺'den",
+                            "şantiye, arsa, tesis ve etkinlik için havadan 4K görüntü"),
+    "klip-cekimi":         ("klip çekimi", "35.000 ₺'den",
+                            "senaryo, sinematografi ve FPV drone tek elden"),
+    "emlak-video":         ("emlak videosu", "2.500 ₺'den",
+                            "villa, daire ve konut projesi için drone destekli ilan videosu"),
+    "insaat-3d-modelleme": ("3D render", "45.000 ₺'den",
+                            "mimari render, proje animasyonu ve iç mekân görselleştirme"),
+    "urun-animasyon":      ("ürün animasyonu", "40.000 ₺'den",
+                            "çalışma prensibi, kesit anlatım ve üretim hattı videosu"),
+    "isletme-tanitim":     ("tanıtım filmi", "25.000 ₺'den",
+                            "kurumsal tanıtım filmi, aylık Reels paketi ve ürün çekimi"),
+    "dugun-cekimi":        ("düğün çekimi", "aynı gün teaser",
+                            "nişan, kına ve düğün için sinematik kısa film, dış çekim ve drone"),
+}
+
+BASLIK_AZAMI = 68        # denetçi sınırı 70
+ACIKLAMA_AZAMI = 158     # denetçi sınırı 165; kırpma yerine parça atlıyoruz
+
+
+def _mekan(c, n=2):
+    m = [x.strip() for x in (c.get("mekan") or "").split(",") if x.strip()]
+    return ", ".join(m[:n])
+
+
+def _ekle(parcalar, aday, sinir=ACIKLAMA_AZAMI):
+    """Cümleyi ancak sınıra sığıyorsa ekler — yarım cümle bırakmaz."""
+    deneme = " ".join(parcalar + [aday])
+    return parcalar + [aday] if len(deneme) <= sinir else parcalar
+
+
 def _kurgu(tur, c):
-    ad, ek, icin = c["ad"], c["ek"], c.get("icin", "'a")
+    ad, ek = c["ad"], c["ek"]
     il3 = _ilceler(c)
+    a = ARAMA.get(tur)
+    if not a:
+        return None
+    terim, kanca, kapsam = a
+
+    # --- başlık: arayanın yazdığı terim + fiyat kancası, marka sonda
     if tur == "genel":
-        return dict(
-            title=_kisa("%s Video Çekimi ve Prodüksiyon Şirketi | Luna Yapım" % ad),
-            h1="%s%s <i>video çekimi</i> ve prodüksiyon" % (ad, ek),
-            desc=_desc("%s%s video çekimi ve prodüksiyon: tanıtım filmi, drone çekimi, klip, emlak videosu, 3D render ve ürün animasyonu. %s ve tüm ilçeler. Aynı gün teklif." % (ad, ek, il3)))
-    if tur == "isletme-tanitim":
-        return dict(
-            title=_kisa("%s Tanıtım Filmi Çekimi ve Reklam Filmi | Luna Yapım" % ad),
-            h1="%s%s <i>tanıtım filmi</i> çekimi" % (ad, ek),
-            desc=_desc("%s%s tanıtım filmi çekimi: kurumsal tanıtım filmi, işletme reklam filmi, aylık Reels paketi ve ürün çekimi. %s ve tüm ilçeler. Fiyat bandı sayfada." % (ad, ek, il3)))
-    if tur == "urun-animasyon":
-        return dict(
-            title=_kisa("%s Ürün Çekimi ve 3D Ürün Animasyonu | Luna Yapım" % ad),
-            h1="%s%s <i>ürün çekimi</i> ve 3D ürün animasyonu" % (ad, ek),
-            desc=_desc("%s%s ürün çekimi ve 3D ürün animasyonu: makine çalışma prensibi, kesit anlatım, montaj ve üretim hattı videosu; fuar ve ihracat için çok dilli sürüm. %s." % (ad, ek, il3)))
-    if tur == "drone-cekimi":
-        return dict(
-            title=None, h1=None,
-            desc=_desc("%s%s drone çekimi ve drone çekim fiyatları: şantiye, arsa, tesis, otel ve etkinlik için havadan 4K görüntü, FPV tek plan mekân turu. %s ve tüm ilçeler." % (ad, ek, il3)))
-    return None
+        title = "%s Video Çekimi ve Prodüksiyon Şirketi | Luna Yapım" % ad
+    elif kanca and kanca.endswith("'den"):
+        title = "%s %s Fiyatları — %s | Luna Yapım" % (ad, terim.title(), kanca)
+    else:
+        title = "%s Düğün Çekimi — Aynı Gün Teaser | Luna Yapım" % ad
+    title = _kisa(title, BASLIK_AZAMI)
+
+    # --- H1: sayfanın kendi vaadi (başlıkla aynı olmasın)
+    h1 = "%s%s <i>%s</i>" % (ad, ek, terim) if tur != "genel" else \
+         "%s%s <i>video çekimi</i> ve prodüksiyon" % (ad, ek)
+
+    # --- açıklama: rakam + kapsam + ile özel unsur + aksiyon, kırpmasız
+    p = ["%s%s %s: %s." % (ad, ek, terim, kapsam)]
+    if kanca and kanca.endswith("'den"):
+        p = _ekle(p, "Fiyat %s başlıyor." % kanca)
+    elif tur == "dugun-cekimi":
+        p = _ekle(p, "Aynı gün teaser teslim.")
+    # ile özel unsur kapanıştan ÖNCE gelir: yer bilgisi jenerik çağrıdan değerli
+    if il3:
+        p = _ekle(p, "%s ve tüm ilçeler." % il3)
+    mek = _mekan(c)
+    if mek and tur in ("klip-cekimi", "dugun-cekimi"):
+        p = _ekle(p, "Çekim noktaları: %s." % mek)
+    kapanis = "Tarihi birlikte kuralım." if tur == "dugun-cekimi" else "Aynı gün net teklif."
+    p = _ekle(p, kapanis)
+    return dict(title=title, h1=h1, desc=" ".join(p))
+
 
 # ---- html alanları ------------------------------------------------------------
 R_TITLE = re.compile(r"<title>(.*?)</title>", re.S)
