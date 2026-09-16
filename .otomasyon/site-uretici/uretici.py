@@ -88,8 +88,24 @@ HIZMET_ADLARI = [
  ("isletme-tanitim",     "%s İşletme Tanıtım",     "Sosyal medya için düzenli içerik", 2),
 ]
 
+# 17.09.2026: klip/düğün/işletme sayfaları artık kademeye değil,
+# o ilin yerel verisinin dolu olmasına bakıyor. Veri yoksa sayfa açılmıyor —
+# şablon sayfa üretmemenin tek güvencesi bu.
+VERI_KOSULU = {
+    "klip-cekimi":     ("kultur", "mekan"),
+    "dugun-cekimi":    ("dugun_notu", "mekan"),
+    "isletme-tanitim": ("isletme_notu",),
+}
+
+def yerel_veri_tam(c, anahtar):
+    alanlar = VERI_KOSULU.get(anahtar)
+    if not alanlar: return False
+    return all(str(c.get(a) or "").strip() for a in alanlar)
+
 def sayfa_var(c, anahtar):
     """Bu il için o hizmetin ayrı sayfası üretiliyor mu?"""
+    if anahtar in VERI_KOSULU:
+        return yerel_veri_tam(c, anahtar)
     if c["kademe"] == 1: return True
     if c["kademe"] == 2: return anahtar in ("insaat-3d-modelleme","emlak-video","urun-animasyon")
     return False
@@ -566,9 +582,14 @@ def uret(sec=None):
         open(os.path.join(HEDEF, adi), "w", encoding="utf-8").write(icerik)
         yazilan.append(adi)
 
-        if c["kademe"] == 3:
-            continue
-        kume = genis if c["kademe"] == 1 else cekirdek
+        kume = list(cekirdek) if c["kademe"] in (1, 2) else []
+        if c["kademe"] in (1, 2):
+            kume.append(("drone-cekimi", uretici2.sayfa_drone))
+        for _a, _fn in (("klip-cekimi", uretici2.sayfa_klip),
+                        ("dugun-cekimi", uretici2.sayfa_dugun),
+                        ("isletme-tanitim", uretici2.sayfa_isletme)):
+            if sayfa_var(c, _a):
+                kume.append((_a, _fn))
         for anahtar, fn in kume:
             adi, icerik = fn(c)
             icerik = sonlandir(icerik, c, ODAK[anahtar])

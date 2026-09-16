@@ -206,6 +206,43 @@ def sitemap_uzantisizlastir(kok):
     return {"sitemap_duzelen": len(re.findall(r"<loc>[^<]+\.html</loc>", s))}
 
 
+def sitemap_yeni_ekle(kok):
+    """Diskte olup sitemap'te olmayan sayfaları ekler (noindex olanlar hariç).
+    17.09.2026: yeni il sayfaları sitemap'e elle giriyordu, artık otomatik."""
+    import datetime
+    yol = os.path.join(kok, "sitemap.xml")
+    if not os.path.exists(yol):
+        return {"sitemap": "yok"}
+    s = open(yol, encoding="utf-8").read()
+    mevcut = set(re.findall(r"<loc>https://lunayapim\.com/([^<]*)</loc>", s))
+    bugun = datetime.date.today().isoformat()
+    eklenen = []
+    for dizin, _, dosyalar in os.walk(kok):
+        if "/.git" in dizin or "/.otomasyon" in dizin:
+            continue
+        for d in sorted(dosyalar):
+            if not d.endswith(".html") or d in ("admin.html", "404.html"):
+                continue
+            tam = os.path.join(dizin, d)
+            govde = open(tam, encoding="utf-8").read()
+            if re.search(r'<meta[^>]+name="robots"[^>]+noindex', govde, re.I):
+                continue
+            bag = os.path.relpath(tam, kok).replace(os.sep, "/")
+            adres = "" if bag == "index.html" else (
+                bag[:-len("index.html")] if bag.endswith("/index.html") else bag[:-5])
+            if adres in mevcut:
+                continue
+            eklenen.append(adres)
+            kayit = ('<url><loc>https://lunayapim.com/%s</loc><lastmod>%s</lastmod>'
+                     '<changefreq>monthly</changefreq><priority>0.7</priority></url>\n' % (adres, bugun))
+            i = s.rindex("</urlset>")
+            s = s[:i] + kayit + s[i:]
+            mevcut.add(adres)
+    if eklenen:
+        open(yol, "w", encoding="utf-8").write(s)
+    return {"sitemap_eklenen": len(eklenen), "ornek": eklenen[:3]}
+
+
 def sitemap_olu_temizle(kok):
     """Site haritasından, dosyası artık olmayan adresleri düşürür.
 
@@ -281,6 +318,7 @@ def calistir(kok, desen="**/*.html"):
     # sitemap: .html'li adresleri canonical bicimine cek (yonlendirme -> dizin disi kalmasin)
     try:
         print("sitemap:", sitemap_uzantisizlastir(kok))
+        print("sitemap-yeni:", sitemap_yeni_ekle(kok))
     except Exception as ex:
         print("sitemap:", ex)
     # il x hizmet sayfalari: ortak hizmet metnini incelt, ile ozel bolumleri ekle
