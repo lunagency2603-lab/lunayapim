@@ -46,6 +46,7 @@ FOOTER = """<footer>
         <a href="../yazilim">Yazılım</a></div>
       <div><h4>Keşfet</h4>
         <a href="../isler">İşler</a>
+        <a href="../kariyer">Kariyer ve Staj</a>
         <a href="../blog/">Blog</a>
         <a href="../matrix">KDA Matrix</a>
         <a href="./">Tüm iller</a></div>

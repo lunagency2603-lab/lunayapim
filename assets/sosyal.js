@@ -16,7 +16,7 @@
    ============================================================ */
 
 window.LUNA_SOSYAL = [
-  { ag:"instagram", ad:"Instagram", kullanici:"", adres:"https://www.instagram.com/%s" },
+  { ag:"instagram", ad:"Instagram", kullanici:"lunayapim.mov", adres:"https://www.instagram.com/%s" },
   { ag:"youtube",   ad:"YouTube",   kullanici:"", adres:"https://www.youtube.com/@%s" },
   { ag:"linkedin",  ad:"LinkedIn",  kullanici:"", adres:"https://www.linkedin.com/company/%s" },
   { ag:"tiktok",    ad:"TikTok",    kullanici:"", adres:"https://www.tiktok.com/@%s" },
