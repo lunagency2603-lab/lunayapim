@@ -82,8 +82,13 @@ KURALLAR (ihlal edersen yazı çöpe gider):
 
 class YazarHatasi(Exception):
     def __init__(self, kod, govde):
-        super().__init__("HTTP %s: %s" % (kod, govde[:300]))
-        self.kod, self.govde = kod, govde
+        g = govde.lower()
+        # 16.09.2026 teşhisi: anahtar doğruydu, hesapta kredi yoktu → 5 gün tek yazı çıkmadı
+        self.neden = ("KREDİ YOK — console.anthropic.com → Plans & Billing" if "credit balance" in g else
+                      "ANAHTAR GEÇERSİZ" if kod == 401 else "HIZ SINIRI" if kod == 429 else
+                      "SUNUCU YOĞUN" if kod in (500, 529) else "")
+        super().__init__("HTTP %s %s: %s" % (kod, self.neden, govde[:300]))
+        self.kod, self.govde = kod, (self.neden + " | " if self.neden else "") + govde
 
 def _tek_istek(mdl, sistem, kullanici, azami):
     veri = json.dumps({"model": mdl, "max_tokens": azami, "system": sistem,
