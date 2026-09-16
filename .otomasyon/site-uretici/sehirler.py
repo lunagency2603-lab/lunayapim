@@ -257,10 +257,12 @@ for _m in (iller_ek1, iller_ek2, iller_ek3, iller_ek4):
 # 17.09.2026 — kademe 2-3 illerine yerel notlar (kademe DEĞİŞMİYOR;
 # klip/düğün/işletme sayfası artık veri varlığına bakıyor)
 from iller_ek5 import EK5 as _EK5
+from iller_ek6 import EK6 as _EK6
 for _s in SEHIRLER:
-    if _s["slug"] in _EK5:
-        for _k, _v in _EK5[_s["slug"]].items():
-            _s.setdefault(_k, _v)
+    for _kaynak in (_EK5, _EK6):
+        if _s["slug"] in _kaynak:
+            for _k, _v in _kaynak[_s["slug"]].items():
+                _s.setdefault(_k, _v)
 
 SEHIRLER.sort(key=lambda x: x["ad"])
 SEHIR_INDEKS = {s["slug"]: s for s in SEHIRLER}
