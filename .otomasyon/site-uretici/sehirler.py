@@ -258,8 +258,9 @@ for _m in (iller_ek1, iller_ek2, iller_ek3, iller_ek4):
 # klip/düğün/işletme sayfası artık veri varlığına bakıyor)
 from iller_ek5 import EK5 as _EK5
 from iller_ek6 import EK6 as _EK6
+from iller_ek7 import EK7 as _EK7
 for _s in SEHIRLER:
-    for _kaynak in (_EK5, _EK6):
+    for _kaynak in (_EK5, _EK6, _EK7):
         if _s["slug"] in _kaynak:
             for _k, _v in _kaynak[_s["slug"]].items():
                 _s.setdefault(_k, _v)
