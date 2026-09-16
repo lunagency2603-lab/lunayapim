@@ -279,6 +279,16 @@ def komut_trend(a):
     print(TR.yayinla(paylas=a.paylas))
 
 
+def komut_konu(a):
+    """Çok aranan konular için kendi yazımız (konu.py) + TrendSaphiens'i yeniden bas."""
+    from . import konu as KN, trend as TR
+    if a.topla:
+        topla_gunluk()
+    print("Konu:", KN.uret(azami=a.azami))
+    if not a.yayinsiz:
+        print("TrendSaphiens:", TR.yayinla(paylas=a.paylas))
+
+
 def komut_indeks(a):
     from . import indeks
     o = indeks.yazdir()
@@ -321,6 +331,10 @@ def main(argv=None):
     si = alt.add_parser("indeks", help="indeks denetimi: Search Console defteri + repo kontrolleri")
     si.add_argument("--kaydet", help="yeni SC okuması: 'dizinde,dizin_disi,not'")
     si.set_defaults(fn=komut_indeks)
+    sk = alt.add_parser("konu", help="çok aranan konulara özgün sayfa yaz + yayınla")
+    sk.add_argument("--azami", type=int, default=None); sk.add_argument("--topla", action="store_true")
+    sk.add_argument("--paylas", action="store_true"); sk.add_argument("--yayinsiz", action="store_true")
+    sk.set_defaults(fn=komut_konu)
     s = alt.add_parser("gundem-gunluk", help="günün sektör gündemini siteye yayınla")
     s.add_argument("--asgari", type=int, default=45); s.add_argument("--adet", type=int, default=5)
     s.set_defaults(fn=komut_gundem_gunluk)

@@ -24,11 +24,14 @@ KOK_URL = "https://lunayapim.com/trend/"
 ADSENSE = "ca-pub-3059196718190568"
 
 KATEGORI = {
+    "haber":       ("Haber",        "Türkiye'nin çok aradığı konular, kendi kalemimizden"),
     "gundem":      ("Gündem",       "Günün haberleri, kaynaklı ve tarihli"),
     "aranan":      ("Bugün Aranan", "Türkiye bugün ne aradı — günlük liste"),
     "piyasa":      ("Piyasalar",    "Dolar, euro, altın ve piyasayı okuyan sistemin defteri"),
     "ekran":       ("Dizi & Film",  "Vizyondakiler, yeni bölümler, platform yayınları"),
     "spor":        ("Spor Ekranı",  "Maç hangi kanalda, saat kaçta"),
+    "muzik":       ("Müzik",        "Yeni şarkılar, albümler, konserler"),
+    "edebiyat":    ("Edebiyat",     "Yeni kitaplar, yazarlar, ödüller"),
     "sanat":       ("Sanat",        "Sergi, sahne, konser"),
     "teknoloji":   ("Teknoloji",    "Yapay zekâ, yazılım, üretim araçları"),
     "muhendislik": ("Mühendislik",  "Üretim, enerji, otomotiv, altyapı"),
@@ -40,9 +43,11 @@ KATEGORI = {
 }
 # geniş bölüm anahtarı (trend_izle.BOLUMLER) → kategori
 BOLUM_KAT = {"piyasalar": "piyasa", "ekran": "ekran", "spor": "spor", "sanat": "sanat", "yapay-zeka": "teknoloji",
-             "yazilim": "teknoloji", "muhendislik": "muhendislik", "sosyal-medya": "sosyal-medya"}
+             "yazilim": "teknoloji", "muhendislik": "muhendislik", "sosyal-medya": "sosyal-medya",
+             "muzik": "muzik", "edebiyat": "edebiyat", "haber": "haber", "gundem": "haber"}
 BOLUM_GORSEL = {"piyasa": "../video/karga-k3", "ekran": "renk-masasi", "spor": "../video/karga-k5", "sanat": "set-isik",
-                "teknoloji": "render-istasyonu", "muhendislik": "render-istasyonu", "sosyal-medya": "../video/karga-k2", "aranan": "../video/karga-k6"}
+                "teknoloji": "render-istasyonu", "muhendislik": "render-istasyonu", "sosyal-medya": "../video/karga-k2", "aranan": "../video/karga-k6",
+                "haber": "drone-safak", "muzik": "set-isik", "edebiyat": "renk-masasi"}
 KAT_GIRIS = {
     "gundem": "Her sabah inşaat, konut, emlak, sanayi, turizm ve tanıtım sektörlerinden günün haberleri taranır; işimize dokunanlar seçilir. Her madde kaynağı ve tarihiyle durur, altında tek bir soru cevaplanır: bu bizim için ne demek? Haberi yeniden yazmıyoruz; olgu kaynaktan, analiz bizden. Rakam yalnızca kaynakta geçiyorsa yazılır; tahmin ve projeksiyon bu sayfada yok.",
     "analiz": "Analiz yazıları haberin bir adım ötesi: bir gelişmenin bir inşaat firmasının, bir emlak ofisinin ya da bir üreticinin tanıtım kararını nasıl değiştirdiğini anlatır. Fiyat bantları, teslim süreleri ve kontrol listeleri gerçek işlerden gelir. Uzun yazılar blogda, kısa okumalar burada.",
@@ -79,6 +84,7 @@ KAT_KISA = {
     "spor": "Maç hangi kanalda", "sanat": "Sergi, sahne, konser", "teknoloji": "Yapay zekâ ve yazılım",
     "muhendislik": "Üretim, enerji, altyapı", "sosyal-medya": "Platformlar ve akımlar", "gundem": "Günün haberleri",
     "analiz": "Sektörü okuyan yazılar", "rapor": "Haftalık karneler", "sehir": "Bursa ve 81 il", "sistem": "Sonuç veren organlar",
+    "haber": "Türkiye'nin aradığı konular", "muzik": "Şarkılar, albümler, konserler", "edebiyat": "Kitaplar, yazarlar, ödüller",
 }
 # Bölümün çalışma düzeni — sayfada "Ne zaman, nasıl güncellenir" bloğu (takvim.py ile uyumlu)
 KAT_DUZEN = {
@@ -88,6 +94,22 @@ KAT_DUZEN = {
     "sanat": ("Ne zaman, nasıl güncellenir", "Haftanın sergi, sahne ve konser takvimi cuma öğleden sonra çıkar; şehir bazlı ekler hafta içinde gelir. Her madde mekânın ya da organizatörün duyurusuna bağlanır; tarih, mekân ve bilet bilgisi yazılır, yorum yazılmaz. Bizim tarafımızdan gelen katman: sergi ve sahne ışığı, konser kaydı ve mekân çekimi bizim işimiz; bir etkinliği nasıl belgelediğimizi arada anlatırız. Bursa'daki galeriler, devlet tiyatrosu ve konser mekânları ile İstanbul'un büyük sergileri birlikte izlenir; ücretsiz etkinlikler ayrıca işaretlenir ki hafta sonu planı yapan okur tek bakışta görsün."),
     "muhendislik": ("Ne zaman, nasıl güncellenir", "Üretim, enerji, otomotiv ve altyapı haberleri her sabah taranır; seçilen maddeler kaynağıyla listelenir. Teknik rakam yalnızca haberde geçiyorsa yazılır; tahmin ve abartı yoktur. Fabrika ve tesis tanıtımı bizim iş alanımız olduğu için bu bölüm ayrıca 'bir tesis nasıl çekilir, bir üretim hattı nasıl anlatılır' yazılarıyla beslenir. Bursa'nın otomotiv, tekstil ve makine sanayisi bu bölümün doğal odağıdır; organize sanayi bölgelerinden gelen duyurular ve yerli üretim haberleri öne alınır, ihale ve teşvik haberlerinde resmî kaynak aranır."),
     "sosyal-medya": ("Ne zaman, nasıl güncellenir", "Platform değişiklikleri ve akımlar her sabah taranır; küçük işletmeyi ilgilendiren maddeler öne alınır. Her madde platformun kendi duyurusuna ya da haberin kaynağına bağlanır. Sosyal medya yönetimi bizim hizmetimiz olduğu için burada gerçekten söyleyecek sözümüz var: bir değişikliğin işletme hesabına ne yaptığını, ne yapılması gerektiğini kısa ve kaynaklı yazarız. Algoritma söylentileri ile platformun resmî duyurusu ayrı tutulur; söylenti, kaynağı yazılarak ve öyle olduğu belirtilerek girer. Reklamda yapay zekâ etiketi gibi mevzuat değişiklikleri de burada, resmî metnine bağlanarak duyurulur."),
+}
+KAT_DUZEN.update({
+    "haber": ("Ne zaman, nasıl güncellenir", "Google Trends'in Türkiye listesi gün içinde birkaç kez okunur; hacmi yüksek ve en az iki farklı yayıncının haber yaptığı konular sırayla yazılır. Aynı konu bir hafta içinde ikinci kez yazılmaz; gelişme varsa yeni yazı açılır ve eskisine bağlanır. Her yazının başında arayanın sorusunun kısa cevabı, sonunda takip edilecek resmî kanallar durur. Ölüm, suç, kaza ve sağlık haberleri otomatik yazılmaz; bu konular editör kararı ister. Görseller serbest lisanslı arşivlerden (Wikimedia Commons, Openverse) künyesiyle alınır; haber sitelerinin fotoğrafı kullanılmaz."),
+    "muzik": ("Ne zaman, nasıl güncellenir", "Yeni şarkı ve albüm haberleri, konser ve turne duyuruları, listeler ve ödüller her gün taranır; iki farklı kaynağın doğruladığı gelişme yazıya dönüşür. Şarkı sözü, albüm kapağı ve klip görüntüsü telif kapsamında olduğu için sayfaya alınmaz; sanatçının kendi duyurusu ve basın bültenlerindeki olgular kullanılır. Konser haberlerinde tarih, şehir ve mekân yazılır; bilet fiyatı yalnız resmî satış kanalında açıklanmışsa geçer. Klip çekimi bizim işimiz olduğu için bir prodüksiyonun nasıl kurulduğunu da arada anlatırız."),
+    "edebiyat": ("Ne zaman, nasıl güncellenir", "Yeni çıkan kitaplar, yayınevi duyuruları, edebiyat ödülleri ve kitap fuarları haftalık izlenir; iki kaynağın doğruladığı haber yazıya dönüşür. Kitaptan uzun alıntı yapılmaz, kapak görseli kullanılmaz; tanıtım yayınevinin ve basının açıkladığı olgulara dayanır. Ödül haberlerinde jüri ve gerekçe yalnız resmî açıklamada geçiyorsa yazılır. Fuar ve imza günlerinde tarih, şehir ve mekân bilgisi verilir; okurun kitaba ulaşacağı resmî kanallar sayfanın sonunda sıralanır."),
+})
+KAT_SSS_EK = {
+    "haber": [("Hangi konular yazılıyor?", "Google Trends Türkiye listesinde yüksek hacimle yer alan ve en az iki farklı yayıncının haber yaptığı konular."),
+              ("Yazıları kim yazıyor?", "TrendSaphiens; olgular kaynaklardan, cümleler ve açıklama bizden. Her yazı yayından önce kaynaklarla örtüşme denetiminden geçer."),
+              ("Neden bazı çok aranan konular yok?", "Ölüm, suç, kaza ve sağlık haberleri otomatik yazılmaz; tek kaynaklı konular da beklemeye alınır.")],
+    "muzik": [("Şarkı sözleri neden yok?", "Sözler telif kapsamındadır; yalnız sanatçının ve yayıncının açıkladığı bilgileri yazarız."),
+              ("Konser bilet bilgisi nereden?", "Resmî satış kanalının duyurusundan; açıklanmamış fiyat yazılmaz."),
+              ("Görseller nereden geliyor?", "Serbest lisanslı arşivlerden, künyesiyle; albüm kapağı ve basın fotoğrafı kullanılmaz.")],
+    "edebiyat": [("Kitap önerisi nasıl seçiliyor?", "Yeni çıkışlar, ödüller ve çok aranan yazarlar; iki kaynağın doğruladığı haberler."),
+                 ("Kitaptan alıntı var mı?", "Uzun alıntı yapılmaz; en fazla bir cümle, kaynağıyla."),
+                 ("Fuar ve imza günleri takip ediliyor mu?", "Evet; tarih, şehir ve mekân bilgisi resmî duyurudan verilir.")],
 }
 # Sık sorulanlar — bölüm sayfasında FAQ bloğu + FAQPage şeması (arayanın sorduğu biçimde)
 KAT_SSS = {
@@ -110,7 +132,11 @@ KAT_SSS = {
                      ("Akımları nasıl seçiyorsunuz?", "Kaynaklı ve tarihli olanları; yalnızca 'viral' diye yazılmış maddeyi almayız."),
                      ("Küçük işletme için ne anlama geldiğini kim yazıyor?", "Sosyal medya yönetimi hizmetimizin içinden, iki kişilik ekibimiz; kısa, kaynaklı ve deneyimden.")],
 }
+KAT_SSS.update(KAT_SSS_EK)
 KAT_GIRIS_EK = {
+    "haber": "Türkiye'nin gün içinde en çok aradığı konular, arayanın sorusuna cevap verecek biçimde yazılır: ne oldu, neden konuşuluyor, neyi henüz bilmiyoruz. Her yazı en az iki farklı yayıncının haberinden derlenen olgulara dayanır; cümleler bizimdir ve yayından önce örtüşme denetiminden geçer. Ölüm, suç ve kaza haberleri otomatik yazılmaz.",
+    "muzik": "Yeni şarkılar, albümler, listeler ve konser takvimi. Her yazı en az iki kaynağa dayanır; şarkı sözü ve kapak görseli alınmaz, görseller serbest lisanslı arşivlerden künyesiyle gelir.",
+    "edebiyat": "Yeni çıkan kitaplar, yazarlar, edebiyat ödülleri ve kitap fuarları. Kitaptan uzun alıntı yapılmaz; tanıtım yayınevi ve basın duyurularındaki olgulara dayanır, yorum bizimdir.",
     "aranan": "Her sabah Google Trends'in Türkiye listesini alır, her başlığın yanına Google'ın bağladığı haberi (kaynak ve adres) koyarız. Bizim eklediğimiz tek şey bir cümlelik çerçeve: neden arandı, nereye bakılır. Liste Google'ındır, sıralama Google'ındır; biz okunur hâle getiririz.",
     "ekran": "Vizyona girenler, yeni bölümler ve platform yayınları; her madde kaynağıyla. Öneri yazarken beğeniyi değil ölçütü söyleriz: tür, süre, nerede yayında. Fragman ve afiş yayıncıya aittir, buraya alınmaz.",
     "spor": "Maç hangi kanalda, saat kaçta: yayıncı bilgisi her zaman kaynağıyla verilir; yayın hakları değişebildiği için maddede tarih durur. Skor ve yorum yok; ekranı bulmanız için varız.",
@@ -163,7 +189,21 @@ def _okuma_sure(metin):
     return max(1, round(k / 180))
 
 
+def _gorsel_url(ad, mutlak=False):
+    """Görsel anahtarı → adres. 'ts:x.jpg' indirilen serbest lisanslı görseldir (assets/ts/)."""
+    kok = "https://lunayapim.com/" if mutlak else ""
+    if not ad:
+        return kok + "assets/og-image.png"
+    if ad.startswith("ts:"):
+        return kok + "assets/ts/" + ad[3:]
+    if ad.startswith("../video/"):
+        return kok + "assets/video/%s.jpg" % ad[9:]
+    return kok + "assets/studyo/%s.jpg" % ad
+
+
 def _gorsel(ad, alt, boy="k", on="../"):
+    if ad.startswith("ts:"):
+        return '<img src="%sassets/ts/%s" alt="%s" loading="lazy" width="960" height="540">' % (on, ad[3:], _e(alt))
     if ad.startswith("../video/"):
         return '<img src="%sassets/video/%s.jpg" alt="%s" loading="lazy" width="1280" height="720">' % (on, ad[9:], _e(alt))
     return '<img src="%sassets/studyo/%s%s.jpg" alt="%s" loading="lazy" width="800" height="447">' % (on, ad, "-k" if boy == "k" else "", _e(alt))
@@ -171,8 +211,7 @@ def _gorsel(ad, alt, boy="k", on="../"):
 
 # ---------------------------------------------------------------- kabuk (kendi tasarımı)
 def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../", tr=""):
-    og = ("https://lunayapim.com/assets/studyo/%s.jpg" % gorsel) if gorsel and not gorsel.startswith("../video/") else \
-         ("https://lunayapim.com/assets/video/%s.jpg" % gorsel[9:]) if gorsel else "https://lunayapim.com/assets/og-image.png"
+    og = _gorsel_url(gorsel, mutlak=True)
     return """<!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -317,6 +356,27 @@ def _gundem_maddeleri():
     return ci
 
 
+def _konu_yazilari():
+    """konu.py'nin yazdığı, çok aranan konu sayfaları (16.09.2026)."""
+    try:
+        from . import konu as KN
+    except Exception:
+        return []
+    ci = []
+    for k in KN.hepsi():
+        yz = k["yazi"]; kat = k.get("kat") if k.get("kat") in KATEGORI else "haber"
+        g = k.get("gorsel") or {}
+        kaynak_ad = ", ".join(x["ad"] for x in (k.get("kaynaklar") or [])[:4]) or "haber kaynakları"
+        ci.append({"tur": "haber", "konu": True, "tarih": k["tarih"], "sira": 0, "baslik": yz.get("baslik") or k["terim"],
+                   "olgu": yz.get("meta") or yz.get("giris", ""), "ek": "", "aci_soru": "", "hizmet_soz": "",
+                   "yazi": yz, "aci": " ".join(p for b in yz.get("bolumler", []) for p in b.get("paragraflar", [])),
+                   "kaynak_ad": kaynak_ad, "kaynak_url": "", "kaynak_tarih": "", "hizmet": "",
+                   "kat": kat, "gorsel": ("ts:" + g["dosya"]) if g.get("dosya") else BOLUM_GORSEL.get(kat, "set-isik"),
+                   "gorsel_kunye": g if g.get("dosya") else None, "terim": k["terim"], "hacim": k.get("hacim", ""),
+                   "sektor": KATEGORI[kat][0], "slug": k["slug"], "gundem_url": "%s/" % kat})
+    return ci
+
+
 def _blog_yazilari(kok):
     y = os.path.join(kok, "blog", "index.html")
     ci = []
@@ -445,7 +505,7 @@ def _diskteki_gun_sayfalari(kok, mevcut):
 
 
 def _hepsi(kok):
-    h = _gundem_maddeleri() + _blog_yazilari(kok) + _bulten_sayilari(kok) + _gunluk_sayfalar() + _rehberler()
+    h = _konu_yazilari() + _gundem_maddeleri() + _blog_yazilari(kok) + _bulten_sayilari(kok) + _gunluk_sayfalar() + _rehberler()
     try:
         h += _diskteki_gun_sayfalari(kok, h)
     except Exception as ex:
@@ -621,15 +681,37 @@ def _makale_govde(m, yz, hizmet_ad):
     if a.get("metin"):
         h.append('<blockquote class="ts-olgu"><p>\u201c%s\u201d</p><cite>\u2014 %s, %s</cite></blockquote>'
                  % (_e(a["metin"].strip("\u201c\u201d\"")), _e(a.get("kaynak") or m["kaynak_ad"]), kt))
+    if yz.get("izle"):
+        h.append('<div class="ts-analiz"><h2 class="etk">Takip etmek için</h2><ol>%s</ol></div>'
+                 % "".join("<li>%s</li>" % _e(x) for x in yz["izle"]))
     if yz.get("ne_yapmali"):
         h.append('<div class="ts-analiz"><h2 class="etk">Ne yapmalı</h2><ol>%s</ol><a href="%s">%s \u2192</a></div>'
                  % ("".join("<li>%s</li>" % _e(x) for x in yz["ne_yapmali"]), _e(hizmet_ad[1]), _e(hizmet_ad[0])))
     if yz.get("sss"):
         h.append('<section class="ts-sss"><h2>Sık sorulan sorular</h2>%s</section>'
                  % "".join("<h3>%s</h3><p>%s</p>" % (_e(q.get("soru", "")), _e(q.get("cevap", ""))) for q in yz["sss"]))
-    h.append('<p class="ts-not">Olgular %s kaynağının %s tarihli haberinden alındı; metnin tamamı Luna Yapım tarafından yazıldı. Kaynakla kelime örtüşmesi %%%.1f (eşik %%5). Kaynağa bağlantı vermiyoruz; olguyu doğrulamak isteyen okur kaynağın adıyla arayabilir.</p>'
-             % (_e(m["kaynak_ad"]), kt, 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
+    if m.get("konu"):
+        h.append('<p class="ts-not">Olgular şu yayıncıların haberlerinden derlendi: %s. Metnin tamamı TrendSaphiens tarafından yazıldı; kaynaklarla kelime örtüşmesi %%%.1f (eşik %%5). Kaynaklarda olmayan bilgi eklenmedi.</p>'
+                 % (_e(m["kaynak_ad"]), 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
+    else:
+        h.append('<p class="ts-not">Olgular %s kaynağının %s tarihli haberinden alındı; metnin tamamı Luna Yapım tarafından yazıldı. Kaynakla kelime örtüşmesi %%%.1f (eşik %%5). Kaynağa bağlantı vermiyoruz; olguyu doğrulamak isteyen okur kaynağın adıyla arayabilir.</p>'
+                 % (_e(m["kaynak_ad"]), kt, 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
     return "\n      ".join(h)
+
+
+def _kunye(g):
+    """Serbest lisanslı görselin künyesi — CC BY / BY-SA şartı (eser, yazar, lisans, kaynak)."""
+    if not g:
+        return ""
+    lis = _e(g.get("lisans", ""))
+    if g.get("lisans_url"):
+        lis = '<a href="%s" rel="license nofollow noopener" target="_blank">%s</a>' % (_e(g["lisans_url"]), lis)
+    eser = _e(g.get("baslik") or "Görsel")
+    if g.get("kaynak_url"):
+        eser = '<a href="%s" rel="nofollow noopener" target="_blank">%s</a>' % (_e(g["kaynak_url"]), eser)
+    return ('\n      <p class="ts-kunye ts-not">Görsel: %s · %s · %s · %s%s</p>'
+            % (eser, _e(g.get("yazar", "")), lis, _e(g.get("kaynak", "")),
+               " · konuyu temsilen" if g.get("genel") else ""))
 
 
 def haber_html(m, komsular):
@@ -649,7 +731,7 @@ def haber_html(m, komsular):
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": "NewsArticle", "headline": baslik, "description": aciklama, "url": url, "datePublished": m["tarih"], "dateModified": m["tarih"],
          "inLanguage": "tr", "articleSection": kat_ad,
-         "image": "https://lunayapim.com/assets/studyo/%s.jpg" % m["gorsel"] if not m["gorsel"].startswith("../video/") else "https://lunayapim.com/assets/video/%s.jpg" % m["gorsel"][9:],
+         "image": _gorsel_url(m["gorsel"], mutlak=True),
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
          "publisher": {"@type": "Organization", "name": "LunaTrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
          "citation": [{"@type": "CreativeWork", "name": m["kaynak_ad"], "url": m["kaynak_url"]}] if m.get("kaynak_url") else []},
@@ -668,6 +750,17 @@ def haber_html(m, komsular):
                  "sehir/bursa.html": ("Bursa", "../sehir/bursa")}.get(m.get("hizmet", ""), ("Hizmetlerimiz", "../hizmetler/"))
     sure = _okuma_sure(m.get("olgu", "") + m.get("ek", "") + m.get("aci", ""))
     komsu_kart = "".join(_kart(k, False, "../", "") for k in komsular[:3])
+    if m.get("konu"):
+        alt_not = ('<p><strong>Bu yazıyı biz yazdık.</strong> Konu, Türkiye\'de çok aranan başlıklar arasından seçildi%s. '
+                   'Olgular %s haberlerinden; cümleler, sıralama ve açıklama bize ait. Her yazı yayından önce bütün kaynaklarla '
+                   'kelime örtüşmesi denetiminden geçer; kaynakta olmayan rakam, isim ve iddia yazılmaz. Bölüm: <a href="%s/">%s</a> · '
+                   '<a href="aranan/">Bugün Aranan</a>.</p>'
+                   % ((" (yaklaşık %s arama)" % _e(m["hacim"])) if m.get("hacim") else "", _e(m["kaynak_ad"]), m["kat"], _e(kat_ad)))
+    else:
+        alt_not = ('<p><strong>Bu yazıyı biz yazdık.</strong> Olgular %s kaynağının %s tarihli haberinden; cümleler, sıralama ve yorum bize ait. '
+                   'Kaynak metni kopyalanmaz, yeniden sözcüklerle de yazılmaz; her yazı yayından önce kelime örtüşmesi denetiminden geçer. '
+                   'Rakam yalnızca kaynakta geçiyorsa yazılır. Bölüm: %s. Bu madde <a href="%s">Gündem</a> sayısından.</p>'
+                   % (_e(m["kaynak_ad"]), _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"])), _e(kat_ad), _e(m["gundem_url"])))
     govde = """
 <article class="ts-yazi">
   <div class="wrap ts-yazi-izgara">
@@ -676,12 +769,12 @@ def haber_html(m, komsular):
       <span class="ts-chip">%s</span>
       <h1>%s</h1>
       <p class="ts-yazi-meta">%s · %d dk okuma · Olgu kaynağı: %s%s</p>
-      <div class="ts-yazi-gorsel">%s</div>
+      <div class="ts-yazi-gorsel">%s</div>%s
       %s
       %s
       %s
       <footer class="ts-baglam">
-        <p><strong>Bu yazıyı biz yazdık.</strong> Olgular %s kaynağının %s tarihli haberinden; cümleler, sıralama ve yorum bize ait. Kaynak metni kopyalanmaz, yeniden sözcüklerle de yazılmaz; her yazı yayından önce kelime örtüşmesi denetiminden geçer. Rakam yalnızca kaynakta geçiyorsa yazılır. Bölüm: %s. Bu madde <a href="%s">Gündem</a> sayısından.</p>
+        %s
       </footer>
     </div>
     <aside class="ts-yan">
@@ -692,10 +785,9 @@ def haber_html(m, komsular):
 </article>
 """ % (m["kat"], _e(kat_ad), _e(_tr_tarih(m["tarih"])), _e(m["sektor"]), _e(baslik), _e(_tr_tarih(m["tarih"])), sure,
        _e(m["kaynak_ad"]), (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else "",
-       _gorsel(m["gorsel"], baslik, "b"), _paylas(url, baslik),
+       _gorsel(m["gorsel"], baslik, "b"), _kunye(m.get("gorsel_kunye")), _paylas(url, baslik),
        _makale_govde(m, yz, hizmet_ad),
-       REKLAM, _e(m["kaynak_ad"]), _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"])), _e(kat_ad),
-       _e(m["gundem_url"]), _abone("../"), komsu_kart)
+       REKLAM, alt_not, _abone("../"), komsu_kart)
     return _bas(kisa + " | TrendSaphiens", aciklama, url, m["gorsel"], sema, "article") + govde + _alt("../", "")
 
 
@@ -902,7 +994,7 @@ def _aranan_okuma(v, gecmis):
     yeni = [a for a in ar if (a.get("baslik") or "").lower() not in dun_bas]
     dag = {}
     for a in ar:
-        kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "gundem")
+        kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "haber")
         dag[kat] = dag.get(kat, 0) + 1
     sirali = sorted(dag.items(), key=lambda x: -x[1])
     p = []
@@ -930,13 +1022,24 @@ def aranan_html(v, kok):
     baslik = "Türkiye bugün ne aradı? %s | TrendSaphiens" % _tr_tarih(t)
     aciklama = ("Google Trends Türkiye listesi, %s: günün en çok aranan %d başlığı, her birinin yanında Google'ın bağladığı haber ve kaynağı. Neden arandı, nereye bakılır." % (_tr_tarih(t), len(ar)))[:158]
     url = KOK_URL + "aranan/" + t
+    _konu_sluglar = {x["slug"] for x in _konu_yazilari()}
     sat = []
     for i, a in enumerate(ar, 1):
-        kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "gundem")
+        kat = BOLUM_KAT.get(a.get("bolum"), a.get("bolum") if a.get("bolum") in KATEGORI else "haber")
         hab = ('<p class="ts-aranan-haber ts-not">Google bu aramaya %s kaynaklı bir haberi bağlamış.</p>'
                % _e(a.get("haber_kaynak") or "bir haber sitesi")) if a.get("haber_url") else '<p class="ts-aranan-haber ts-not">Google bu başlığa haber bağlamadı; yalnız arama var.</p>'
+        try:
+            from . import konu as KN
+            _sl = KN.terim_sayfasi(a["baslik"])
+        except Exception:
+            _sl = None
+        if _sl and _sl not in _konu_sluglar:
+            _sl = None
+        bas_html = ('<a href="../%s">%s</a>' % (_e(_sl), _e(a["baslik"]))) if _sl else _e(a["baslik"])
+        if _sl:
+            hab = '<p class="ts-aranan-haber ts-not">Bu konuyu yazdık: ne oldu, neden arandı — <a href="../%s">yazıyı oku</a>.</p>' % _e(_sl)
         sat.append('<li class="ts-aranan"><span class="ts-aranan-no">%02d</span><div><h2>%s</h2><p class="ts-meta">%s · <a href="../%s/">%s</a></p>%s</div></li>'
-                   % (i, _e(a["baslik"]), _e(("yaklaşık " + a["hacim"] + " arama") if a.get("hacim") else "hacim belirtilmedi"), kat, _e(KATEGORI.get(kat, ("Gündem",))[0]), hab))
+                   % (i, bas_html, _e(("yaklaşık " + a["hacim"] + " arama") if a.get("hacim") else "hacim belirtilmedi"), kat, _e(KATEGORI.get(kat, ("Gündem",))[0]), hab))
     govde = """
 <article class="ts-yazi"><div class="wrap ts-yazi-izgara">
   <div class="ts-yazi-ana">

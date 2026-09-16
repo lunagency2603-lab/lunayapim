@@ -9,18 +9,44 @@ model "yazar_model"). Anahtar yoksa hiçbir şey yazılmaz — sayfa "kaynak al�
 Her yazı intihal denetiminden (pusula/intihal.py) geçer; geçmeyen atılır, log'a düşer.
 Sadece standart kütüphane.
 """
-import json, os, re, urllib.request, urllib.error
+import datetime, json, os, re, urllib.request, urllib.error
 from .ayarlar import _OZEL, KOK_DIZIN
 from . import intihal
 
 API = "https://api.anthropic.com/v1/messages"
 VARSAYILAN_MODEL = "claude-sonnet-4-5"
+# 404/"model bulunamadı" gelirse sırayla denenir (model adı zamanla emekliye ayrılabilir)
+YEDEK_MODELLER = ["claude-sonnet-4-5", "claude-sonnet-4-0", "claude-opus-4-1", "claude-3-7-sonnet-latest"]
+AZAMI_TOKEN = 8000      # 16.09.2026: 2200 idi — Türkçe 450-700 kelimelik JSON yarıda kesiliyor, yazı "json hatası" ile atılıyordu
+KAYIT = os.path.join(KOK_DIZIN, "veri", "yazar-kayit.json")
 
 def anahtar():
-    return (_OZEL.get("yazar_anahtar") or os.environ.get("ANTHROPIC_API_KEY", "")).strip()
+    return (_OZEL.get("yazar_anahtar") or os.environ.get("ANTHROPIC_API_KEY", "")).strip().strip('"').strip("'")
 
 def model():
-    return (_OZEL.get("yazar_model") or VARSAYILAN_MODEL).strip()
+    return (os.environ.get("YAZAR_MODEL") or _OZEL.get("yazar_model") or VARSAYILAN_MODEL).strip()
+
+_CALISAN_MODEL = None
+
+def anahtar_durumu():
+    """Anahtarın KENDİSİ asla yazılmaz; yalnız var/yok ve biçim."""
+    a = anahtar()
+    return {"var": bool(a), "uzunluk": len(a), "bicim": a.startswith("sk-ant-") if a else False,
+            "kaynak": "ayarlar.json" if _OZEL.get("yazar_anahtar") else ("ortam" if a else "yok")}
+
+def kaydet(olay):
+    """Yazar defteri: her denemenin sonucu depoya yazılır (Actions logu okunamasa da görünür)."""
+    try:
+        os.makedirs(os.path.dirname(KAYIT), exist_ok=True)
+        try:
+            d = json.load(open(KAYIT, encoding="utf-8"))
+        except Exception:
+            d = []
+        olay = dict(olay); olay.setdefault("zaman", datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+        d.append(olay)
+        json.dump(d[-300:], open(KAYIT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
 
 # fiyat bantları: fiyatlar.html "Luna Yapım" sütunuyla aynı
 FIYAT = {
@@ -54,14 +80,44 @@ KURALLAR (ihlal edersen yazı çöpe gider):
  "ne_yapmali": [str, str, str],
  "sss": [{"soru": str, "cevap": str}, {"soru": str, "cevap": str}]}"""
 
-def _istek(sistem, kullanici, azami=2200):
-    veri = json.dumps({"model": model(), "max_tokens": azami, "system": sistem,
+class YazarHatasi(Exception):
+    def __init__(self, kod, govde):
+        super().__init__("HTTP %s: %s" % (kod, govde[:300]))
+        self.kod, self.govde = kod, govde
+
+def _tek_istek(mdl, sistem, kullanici, azami):
+    veri = json.dumps({"model": mdl, "max_tokens": azami, "system": sistem,
                        "messages": [{"role": "user", "content": kullanici}]}).encode("utf-8")
     istek = urllib.request.Request(API, data=veri, headers={
         "x-api-key": anahtar(), "anthropic-version": "2023-06-01", "content-type": "application/json"})
-    with urllib.request.urlopen(istek, timeout=90) as c:
-        y = json.loads(c.read().decode("utf-8"))
-    return "".join(p.get("text", "") for p in y.get("content", []) if p.get("type") == "text")
+    try:
+        with urllib.request.urlopen(istek, timeout=180) as c:
+            return json.loads(c.read().decode("utf-8"))
+    except urllib.error.HTTPError as ex:
+        raise YazarHatasi(ex.code, ex.read().decode("utf-8", "replace"))
+
+def _istek(sistem, kullanici, azami=AZAMI_TOKEN):
+    """Metni döndürür. Model adı geçersizse yedek modellere geçer; yarıda kesilirse hata verir."""
+    global _CALISAN_MODEL
+    adaylar = [_CALISAN_MODEL] if _CALISAN_MODEL else []
+    for m in [model()] + YEDEK_MODELLER:
+        if m and m not in adaylar:
+            adaylar.append(m)
+    son = None
+    for mdl in adaylar:
+        try:
+            y = _tek_istek(mdl, sistem, kullanici, azami)
+        except YazarHatasi as ex:
+            son = ex
+            if ex.kod == 404 or (ex.kod == 400 and "model" in ex.govde.lower()):
+                continue          # bu model yok → sıradaki
+            raise
+        _CALISAN_MODEL = mdl
+        metin = "".join(p.get("text", "") for p in y.get("content", []) if p.get("type") == "text")
+        if y.get("stop_reason") == "max_tokens":
+            raise ValueError("yanıt %d token sınırında kesildi" % azami)
+        return metin
+    raise son or ValueError("çalışan model bulunamadı")
 
 def _json_ayikla(t):
     t = t.strip()
@@ -83,15 +139,15 @@ def olgu_paketi(m):
         "surec": "keşif ve teklif aynı gün, çekim/modelleme, kurgu-renk, yatay/dikey/kare teslim; teslimde hangi karenin gerçek çekim hangisinin üretim olduğu yazılı",
     }
 
-def yaz(m):
+def yaz(m, sistem=None, paket=None, istem=None, asgari_kelime=380):
     """Maddeye 'yazi' ekler (intihal denetimi geçerse). Anahtar yoksa None."""
     if not anahtar():
         return None
-    paket = olgu_paketi(m)
+    paket = paket or olgu_paketi(m)
     if not paket["kaynak_olgulari"]:
         return None
-    metin = _istek(SISTEM, "OLGULAR VE BAĞLAM (JSON):\n" + json.dumps(paket, ensure_ascii=False, indent=1) +
-                   "\n\nBu olgulardan rehbere uygun haber-analiz yazısını JSON olarak yaz.")
+    metin = _istek(sistem or SISTEM, "OLGULAR VE BAĞLAM (JSON):\n" + json.dumps(paket, ensure_ascii=False, indent=1) +
+                   "\n\n" + (istem or "Bu olgulardan rehbere uygun haber-analiz yazısını JSON olarak yaz."))
     try:
         y = _json_ayikla(metin)
     except Exception as ex:
@@ -103,25 +159,35 @@ def yaz(m):
     y["intihal"] = {"kapsama": r["kapsama"], "en_uzun": r["en_uzun"], "gecti": r["gecti"]}
     kelime = len(re.findall(r"\w+", duz))
     y["kelime"] = kelime
-    if not r["gecti"] or kelime < 380:
+    if not r["gecti"] or kelime < asgari_kelime:
         y["hata"] = "intihal/uzunluk: %s, %d kelime" % (intihal.rapor(r), kelime)
         return y
     m["yazi"] = y
     return y
 
-def yaz_hepsi(maddeler, log=print):
+def yaz_hepsi(maddeler, log=print, tur="gundem"):
     n = 0
+    kaydet({"olay": "tur", "tur": tur, "madde": len(maddeler), "anahtar": anahtar_durumu(), "model": model()})
     for m in maddeler:
+        b = m.get("baslik", "")[:70]
         try:
             y = yaz(m)
-        except urllib.error.HTTPError as ex:
-            log("Yazar API hatası %s: %s" % (ex.code, ex.read()[:200])); break
+        except YazarHatasi as ex:
+            log("Yazar API hatası %s: %s" % (ex.kod, ex.govde[:200]))
+            kaydet({"olay": "api_hatasi", "tur": tur, "baslik": b, "kod": ex.kod, "ayrinti": ex.govde[:300]})
+            break
         except Exception as ex:
-            log("Yazar hatası: %s" % ex); continue
+            log("Yazar hatası: %s" % ex)
+            kaydet({"olay": "hata", "tur": tur, "baslik": b, "ayrinti": str(ex)[:300]})
+            continue
         if y is None:
+            kaydet({"olay": "atlandi", "tur": tur, "baslik": b, "ayrinti": "olgu yok"})
             continue
         if y.get("hata"):
-            log("Yazı atıldı (%s): %s" % (m.get("baslik", "")[:50], y["hata"]))
+            log("Yazı atıldı (%s): %s" % (b[:50], y["hata"]))
+            kaydet({"olay": "atildi", "tur": tur, "baslik": b, "ayrinti": y["hata"][:300], "kelime": y.get("kelime")})
         else:
             n += 1; log("Yazı hazır (%d kelime, örtüşme %%%.1f): %s" % (y["kelime"], y["intihal"]["kapsama"] * 100, y["baslik"]))
+            kaydet({"olay": "yazildi", "tur": tur, "baslik": y["baslik"][:70], "kelime": y["kelime"],
+                    "kapsama": y["intihal"]["kapsama"], "model": _CALISAN_MODEL})
     return n

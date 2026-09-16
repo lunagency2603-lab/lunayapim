@@ -1,11 +1,14 @@
 name: TrendSaphiens günlük yayın
 
 # Bilgisayardan bağımsız çalışır: GitHub'ın sunucusunda, Mac kapalı olsa da.
-# 05:30 UTC = 08:30 TR (gündem + trend)  ·  13:00 UTC = 16:00 TR (TCMB 15:30 sonrası)
+# 05:30 UTC = 08:30 TR (gündem + trend + konu)  ·  13:00 UTC = 16:00 TR (TCMB 15:30 sonrası)
+# 3 saatte bir (xx:15 UTC): çok aranan konulara yeni sayfa (konu.py)
+# main'e her push: yalnız sayfaları yeniden basar ve yayınlar (veri toplamaz, yazar çağırmaz)
 on:
   schedule:
     - cron: "30 5 * * *"
     - cron: "0 13 * * *"
+    - cron: "15 */3 * * *"
   push:
     branches: [main]
     paths-ignore:
@@ -17,7 +20,7 @@ on:
         required: false
         default: "otomatik"
         type: choice
-        options: [otomatik, sabah, aksam, yalniz-yayin]
+        options: [otomatik, sabah, aksam, konu, yalniz-yayin]
 
 permissions:
   contents: write
@@ -38,11 +41,14 @@ jobs:
       LUNA_X_JETON: ${{ secrets.LUNA_X_JETON }}
       LUNA_X_JETON_GIZLI: ${{ secrets.LUNA_X_JETON_GIZLI }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: Görsel küçültme aracı
+        run: pip install --quiet pillow || echo "pillow kurulamadı — görseller küçültülmeden kaydedilir"
 
       - name: Anahtar sağlığı
         run: |
@@ -69,16 +75,42 @@ jobs:
         working-directory: .otomasyon
         run: |
           KIP="${{ github.event.inputs.kip }}"
+          OLAY="${{ github.event_name }}"
+          PLAN="${{ github.event.schedule }}"
           [ -z "$KIP" ] && KIP=otomatik
           if [ "$KIP" = "otomatik" ]; then
-            if [ "$(date +%H)" -lt 12 ]; then KIP=sabah; else KIP=aksam; fi
+            if [ "$OLAY" = "push" ]; then KIP=yalniz-yayin
+            elif [ "$PLAN" = "15 */3 * * *" ]; then KIP=konu
+            elif [ "$PLAN" = "0 13 * * *" ]; then KIP=aksam
+            elif [ "$PLAN" = "30 5 * * *" ]; then KIP=sabah
+            elif [ "$(date +%H)" -lt 12 ]; then KIP=sabah; else KIP=aksam; fi
           fi
+          echo "### Tur: $KIP ($OLAY)" >> "$GITHUB_STEP_SUMMARY"
           echo "Tur: $KIP · $(date '+%d.%m.%Y %H:%M') TR"
           case "$KIP" in
-            sabah)        python3 -m pusula.cli gundem-gunluk ;;
-            aksam)        python3 -m pusula.cli trend --topla --paylas ;;
+            sabah)        python3 -m pusula.cli gundem-gunluk
+                          python3 -m pusula.cli konu --paylas ;;
+            aksam)        python3 -m pusula.cli konu --topla --paylas ;;
+            konu)         python3 -m pusula.cli konu --topla --paylas ;;
             yalniz-yayin) python3 -m pusula.cli trend ;;
           esac
+
+      - name: Yazar defteri
+        if: always()
+        working-directory: .otomasyon
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          try:
+              d = json.load(open("veri/yazar-kayit.json", encoding="utf-8"))
+          except Exception as e:
+              print("yazar defteri yok:", e); raise SystemExit
+          print("### Yazar defteri (son 15)")
+          print("| zaman | olay | tür | başlık | ayrıntı |"); print("|---|---|---|---|---|")
+          for o in d[-15:]:
+              ayr = o.get("ayrinti") or (("%s kelime" % o["kelime"]) if o.get("kelime") else "") or json.dumps(o.get("anahtar", ""), ensure_ascii=False)
+              print("| %s | %s | %s | %s | %s |" % (o.get("zaman",""), o.get("olay",""), o.get("tur",""), (o.get("baslik") or "")[:50].replace("|","/"), str(ayr)[:120].replace("|","/")))
+          PY
 
       - name: Üretim sonrası işlem
         working-directory: .otomasyon

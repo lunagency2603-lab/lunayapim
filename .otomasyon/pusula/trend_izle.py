@@ -41,13 +41,22 @@ BOLUMLER = [
      "Üretim, enerji, otomotiv ve altyapıda günün gelişmesi."),
     ("sosyal-medya", 'TikTok OR Instagram OR YouTube OR "sosyal medya" when:3d', "Sosyal Medya",
      "Platform değişiklikleri, akımlar ve içerik üreticisine etkisi."),
+    # 16.09.2026 — kapsam genişletme: insanların tıkladığı her alan
+    ("muzik", 'albüm OR "yeni şarkı" OR konser OR "müzik ödülleri" OR Spotify when:3d', "Müzik",
+     "Yeni şarkılar, albümler, konser takvimi ve listeler."),
+    ("edebiyat", 'roman OR "yeni kitap" OR yazar OR "edebiyat ödülü" OR "kitap fuarı" when:7d', "Edebiyat",
+     "Yeni kitaplar, ödüller, yazarlar ve kitap fuarları."),
+    ("haber", 'Türkiye gündem OR "son dakika" when:1d', "Haber",
+     "Türkiye'nin gündemi: günün en çok konuşulan gelişmeleri."),
 ]
 # Google Trends başlığını bölüme eşlemek için anahtar kelimeler
 BOLUM_ANAHTAR = {
+    "muzik": ("şarkı", "albüm", "konser", "şarkıcı", "rapçi", "spotify", "eurovision", "klip", "turne", "grammy", "müzik"),
+    "edebiyat": ("kitap", "roman", "yazar", "şair", "şiir", "edebiyat", "nobel edebiyat", "kitap fuarı", "yayınevi"),
     "piyasalar": ("dolar", "euro", "altın", "borsa", "faiz", "bist", "kur", "bitcoin", "kripto"),
     "spor": ("maç", "galatasaray", "fenerbahçe", "beşiktaş", "trabzonspor", "milli", "lig", "kupa", "transfer", "derbi", "nba", "euroleague", "voleybol"),
     "ekran": ("dizi", "film", "netflix", "disney", "vizyon", "bölüm", "fragman", "oyuncu", "survivor", "yarışma"),
-    "sanat": ("konser", "sergi", "tiyatro", "festival", "albüm", "şarkı"),
+    "sanat": ("sergi", "tiyatro", "festival", "müze", "bienal", "opera", "bale"),
     "yapay-zeka": ("yapay zeka", "chatgpt", "gemini", "claude", "openai", "runway"),
     "yazilim": ("uygulama", "güncelleme", "iphone", "android", "whatsapp", "siber", "hack"),
     "muhendislik": ("togg", "tesla", "uydu", "roket", "elektrik", "deprem", "köprü", "tünel"),
@@ -93,11 +102,12 @@ def trendler(azami=25):
 
 
 def bolum_bul(metin):
-    m = (metin or "").lower()
+    m = (metin or "").replace("İ", "i").replace("I", "ı").lower()
     for b, anahtarlar in BOLUM_ANAHTAR.items():
-        if any(a in m for a in anahtarlar):
+        # kelime başı eşleşmesi: "x " gibi kısa anahtarlar kelime içinde yakalanmasın ("fox news" ≠ X)
+        if any(re.search(r"(?<![\wçğıöşü])" + re.escape(a.strip()) + (r"(?![\wçğıöşü])" if len(a.strip()) <= 3 else ""), m) for a in anahtarlar):
             return b
-    return "gundem"
+    return "haber"
 
 
 def bolum_haberleri(azami=10):
