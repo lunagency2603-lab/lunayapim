@@ -105,7 +105,7 @@ EK = [
  "insaat":"Bingöl'de konut üretimi deprem yönetmeliğine uygun yenileme ekseninde ilerliyor; merkez çevresinde yeni siteler yükseliyor. Alıcının ilk sorusu yapı güvenliği olduğu için teknik anlatım satışın parçası.",
  "emlak":"Merkez konut portföyü ağırlıkta; kırsalda arazi ve yayla mülkü hareketli. Şehir dışı alıcı payı yüksek olduğu için videolu ilan ciddi avantaj sağlıyor.",
  "sanayi":"Bal üretimi Bingöl'ü ülke çapında tanıtan kalem; ayrıca hayvancılık ve gıda işleme var. Bal üreticileri için üretim ve hasat videosu, coğrafi işaretli ürünün taklitten ayrılmasını sağlıyor.",
- "cografya":"Yüzen Adalar, Kral Kızı Vadisi ve geniş yaylalar havadan çekimde az görülmüş kareler sunuyor.",
+ "cografya":"Yüzen Adalar, Özlüce Barajı çevresi ve geniş yaylalar havadan çekimde az görülmüş kareler sunuyor.",
  "sektorler":["Arıcılık ve bal","Hayvancılık","Gıda işleme","Doğa turizmi"],
  "komsu":["elazig","mus","diyarbakir","erzincan"]},
 
