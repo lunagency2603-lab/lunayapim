@@ -178,7 +178,15 @@ def denetle():
             else:
                 sm.add(loc + ".html" if os.path.exists(loc + ".html") else loc)
         for f in sayfa_listesi:
-            if f not in sm: genel.append(("HATA", "sitemap_eksik", "sitemap'te yok: %s" % f))
+            if f in sm: continue
+            # noindex işaretli sayfa sitemap'te olmamalı — eksik sayılmaz (17.09.2026)
+            try:
+                govde = open(f, encoding="utf-8").read()
+            except Exception:
+                govde = ""
+            if re.search(r'<meta[^>]+name="robots"[^>]+noindex', govde, re.I):
+                continue
+            genel.append(("HATA", "sitemap_eksik", "sitemap'te yok: %s" % f))
         for u in sm:
             if not _coz(u): genel.append(("HATA", "sitemap_fazla", "sitemap'te olmayan dosya: %s" % u))
     except Exception as ex:
