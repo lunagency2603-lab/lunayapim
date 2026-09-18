@@ -47,7 +47,7 @@ def kelime_sayisi(s):
 
 def sayfalar():
     eski = os.getcwd(); os.chdir(SITE)
-    l = [f for f in sorted(glob.glob("**/*.html", recursive=True)) if f not in ("admin.html", "404.html")]
+    l = [f for f in sorted(glob.glob("**/*.html", recursive=True)) if f not in ("admin.html", "404.html") and not f.startswith("onizleme/")]
     os.chdir(eski)
     return l
 
@@ -57,7 +57,7 @@ def denetle():
     basliklar, aciklamalar, kanonikler = {}, {}, {}
     sayfa_listesi = sorted(glob.glob("**/*.html", recursive=True))
     # dizine kapalı yönetim sayfaları (noindex) denetim dışı — herkese açık değil
-    sayfa_listesi = [f for f in sayfa_listesi if f not in ("admin.html", "404.html")]
+    sayfa_listesi = [f for f in sayfa_listesi if f not in ("admin.html", "404.html") and not f.startswith("onizleme/")]  # onizleme/: musteriye ozel gizli teklif sayfalari
     icerik = {f: open(f, encoding="utf-8").read() for f in sayfa_listesi}
 
     # gelen bağlantı sayımı

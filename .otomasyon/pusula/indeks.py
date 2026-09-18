@@ -70,7 +70,7 @@ def kayit_ekle(indeksli, indekssiz=None, sebep=None, not_=""):
 
 # ------------------------------------------------------------------ 2) repo tarafı kontroller
 YOKSAY = ("404.html", "admin.html")          # bilerek site haritası dışında
-ATLA_DIZIN = ("/assets", "/functions", "/.git", "/node_modules", "/veri")
+ATLA_DIZIN = ("/assets", "/functions", "/.git", "/node_modules", "/veri", "/onizleme")
 
 
 def _site_sayfalari():

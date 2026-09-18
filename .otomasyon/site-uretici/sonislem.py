@@ -218,7 +218,7 @@ def sitemap_yeni_ekle(kok):
     bugun = datetime.date.today().isoformat()
     eklenen = []
     for dizin, _, dosyalar in os.walk(kok):
-        if "/.git" in dizin or "/.otomasyon" in dizin:
+        if "/.git" in dizin or "/.otomasyon" in dizin or "/onizleme" in dizin:
             continue
         for d in sorted(dosyalar):
             if not d.endswith(".html") or d in ("admin.html", "404.html"):
@@ -277,7 +277,7 @@ def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
         p = os.path.relpath(yol, kok)
-        if p.startswith(("assets", ".git")) or p in ("matrix.html", "admin.html"):
+        if p.startswith(("assets", ".git", "onizleme")) or p in ("matrix.html", "admin.html"):
             continue
         s = io.open(yol, encoding="utf-8").read()
         o = s

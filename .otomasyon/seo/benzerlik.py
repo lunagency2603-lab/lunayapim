@@ -46,7 +46,7 @@ def grupla(f):
 
 def calistir():
     eski = os.getcwd(); os.chdir(SITE)
-    dosyalar = sorted(glob.glob("**/*.html", recursive=True))
+    dosyalar = [f for f in sorted(glob.glob("**/*.html", recursive=True)) if not f.startswith("onizleme/")]
     P = {}
     for f in dosyalar:
         P[f] = parcalar(govde(open(f, encoding="utf-8").read()))
