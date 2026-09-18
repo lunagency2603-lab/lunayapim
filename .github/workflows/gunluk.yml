@@ -151,11 +151,29 @@ jobs:
           git push origin HEAD:${{ github.ref_name }}
           echo "Yayınlandı: $(git log -1 --format='%h %s')" >> $GITHUB_STEP_SUMMARY
 
+      - name: Cloudflare yayınını tetikle
+        if: success()
+        env:
+          CF_HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          # Cloudflare Pages'in GitHub bağlantısı koparsa yayın durmasın diye
+          # dağıtımı buradan tetikliyoruz. Gizli tanımlı değilse adım sessizce geçer.
+          if [ -z "$CF_HOOK" ]; then
+            echo "CF_DEPLOY_HOOK tanımlı değil — dağıtım tetiklenmedi." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          kod=$(curl -sS -o /tmp/cf.json -w "%{http_code}" -X POST "$CF_HOOK" || echo 000)
+          echo "### Cloudflare dağıtımı" >> "$GITHUB_STEP_SUMMARY"
+          echo "Tetikleyici yanıtı: HTTP $kod" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$kod" != "200" ]; then
+            echo "::warning::Cloudflare dağıtımı tetiklenemedi (HTTP $kod)"
+          fi
+
       - name: Canlı kontrol
         if: always()
         working-directory: .otomasyon
         run: |
-          sleep 45
+          sleep 90
           python3 -m pusula.gunluk_kontrol || true
           echo "### Canlı kontrol" >> $GITHUB_STEP_SUMMARY
           python3 - <<'PY' >> $GITHUB_STEP_SUMMARY
