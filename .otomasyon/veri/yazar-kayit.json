@@ -131,5 +131,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfBG48yTqoksmzAXfnGZF\"}",
   "zaman": "2026-09-18 19:58"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-18 23:56"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "altın",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-09-18 23:56"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "mehmet şimşek",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfBa9rV3GPHL3Hk9MGoDE\"}",
+  "zaman": "2026-09-18 23:56"
  }
 ]
