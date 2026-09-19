@@ -1,5 +1,5 @@
 {
- "tarih": "2026-09-18",
+ "tarih": "2026-09-19",
  "tcmb": {
   "tarih": "18.09.2026",
   "bulten": "2026/176",
@@ -42,12 +42,12 @@
   }
  },
  "altin": {
-  "guncelleme": "2026-09-18 23:45:02",
+  "guncelleme": "2026-09-19 02:15:02",
   "gram-altin": {
    "ad": "Gram altın",
-   "alis": "6.870,65",
-   "satis": "6.871,97",
-   "degisim": "%1,03"
+   "alis": "6.865,06",
+   "satis": "6.865,89",
+   "degisim": "%0,94"
   },
   "ceyrek-altin": {
    "ad": "Çeyrek altın",
@@ -69,16 +69,16 @@
   },
   "ons": {
    "ad": "Ons altın (USD)",
-   "alis": "$4.380,53",
-   "satis": "$4.381,37",
-   "degisim": "%0,91"
+   "alis": "$4.378,13",
+   "satis": "$4.378,66",
+   "degisim": "%0,85"
   },
   "gumus": {
    "ad": "Gümüş",
-   "alis": "104,00",
-   "satis": "104,13",
-   "degisim": "%1,89"
+   "alis": "103,88",
+   "satis": "103,93",
+   "degisim": "%1,69"
   }
  },
- "alindi": "2026-09-18 23:56"
+ "alindi": "2026-09-19 02:19"
 }
