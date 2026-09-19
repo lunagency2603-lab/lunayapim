@@ -593,6 +593,9 @@ def _kat_seritleri(kok, hepsi, on="../", tr=""):
     gostermiyordu; okur hangi bolumlerin var oldugunu goremiyor, bolum
     sayfalari da ic baglanti almiyordu. Bos bolum atlanir.
     """
+    def _u(m):
+        return tr + m["slug"] if m["tur"] in ("haber", "rehber") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
+
     sira = ["haber", "aranan", "piyasa", "ekran", "spor", "muzik", "edebiyat", "sanat",
             "teknoloji", "muhendislik", "sosyal-medya", "analiz", "rapor", "sehir"]
     par = []
