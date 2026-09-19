@@ -586,6 +586,39 @@ def _rakam_kutu(on="../", tr=""):
             _e(_tr_tarih(v["tarih"])), "".join(hucre), tr, _e(v["tarih"]))
 
 
+def _kat_seritleri(kok, hepsi, on="../", tr=""):
+    """Ana sayfa: her bolumden en yeni 3 madde, kendi basligiyla serit serit.
+
+    Neden: tek kronolojik akis, 16 bolumu olan bir yayini haber sitesi gibi
+    gostermiyordu; okur hangi bolumlerin var oldugunu goremiyor, bolum
+    sayfalari da ic baglanti almiyordu. Bos bolum atlanir.
+    """
+    sira = ["haber", "aranan", "piyasa", "ekran", "spor", "muzik", "edebiyat", "sanat",
+            "teknoloji", "muhendislik", "sosyal-medya", "analiz", "rapor", "sehir"]
+    par = []
+    for kat in sira:
+        liste = [m for m in hepsi if m.get("kat") == kat][:3]
+        if not liste:
+            continue
+        ad, alt = KATEGORI.get(kat, (kat.title(), ""))
+        kart = []
+        for i, m in enumerate(liste):
+            kart.append('<li class="%s"><a href="%s"><span class="ts-serit-bas">%s</span>'
+                        '<time datetime="%s">%s</time></a></li>'
+                        % ("ilk" if i == 0 else "", _e(_u(m)), _e(m["baslik"]),
+                           _e(m["tarih"][:10]), _e(_tr_tarih(m["tarih"][:10]))))
+        par.append('<section class="ts-serit"><div class="ts-serit-bas-satir">'
+                   '<h2><a href="%s%s/">%s</a></h2><p>%s</p>'
+                   '<a class="ts-serit-tumu" href="%s%s/">Tümü &rarr;</a></div>'
+                   '<ul class="ts-serit-liste">%s</ul></section>'
+                   % (tr, kat, _e(ad), _e(alt), tr, kat, "".join(kart)))
+    if not par:
+        return ""
+    return ('      <div class="ts-bolumler"><div class="ts-bolumler-bas">'
+            '<h2 class="etk">Bölümler</h2><p>Her bölümün en yenisi; tamamı bölüm sayfasında.</p></div>'
+            '%s</div>\n' % "".join(par))
+
+
 def akis_html(kok, kat=None):
     hepsi = _hepsi(kok)
     if kat:
@@ -657,6 +690,11 @@ def akis_html(kok, kat=None):
         ek += ('      <div class="ts-giris ts-tumu"><h2>Bu bölümün tüm arşivi</h2>'
                '<p>Kartlara sigmayan %d madde, yeniden eskiye.</p><ul class="ts-tumu-liste">%s</ul></div>\n'
                % (len(kalan), "".join(sat)))
+    if not kat:
+        try:
+            ek += _kat_seritleri(kok, hepsi, on, tr)
+        except Exception as ex:
+            print("kategori seritleri:", ex)
     if ek:
         govde = govde.replace('    </div>\n    <aside class="ts-yan">', ek + '    </div>\n    <aside class="ts-yan">', 1)
     return _bas(baslik, aciklama, url, man["gorsel"] if man else None, sema, "website", on, tr) + govde + _alt(on, tr)

@@ -1,0 +1,89 @@
+{
+ "tur": "konu",
+ "tarih": "2026-09-19",
+ "terim": "osd otomotiv üretim ihracat verileri",
+ "hacim": "",
+ "kat": "muhendislik",
+ "kaynak_tur": "elle",
+ "slug": "osd-verileri-8-ayda-otomotiv-uretimi-yuzde-7-geriledi",
+ "yazi": {
+  "baslik": "OSD verileri: 8 ayda otomotiv üretimi yüzde 7 geriledi",
+  "meta": "OSD 2026'nın sekiz aylık verilerini açıkladı: üretim 841 bin 583 adet, ihracat adet bazında yüzde 12 düştü, kapasite kullanımı yüzde 59'da kaldı.",
+  "giris": "Otomotiv Sanayii Derneği, 2026'nın ocak-ağustos dönemine ait üretim, ihracat ve pazar verilerini 14 Eylül'de açıkladı. Tabloda otomobil tarafındaki sert daralma ile ticari araç üretimindeki artış yan yana duruyor.",
+  "bolumler": [
+   {
+    "h2": "OSD verilerinde ne oldu?",
+    "paragraflar": [
+     "CNN Türk ve Hibya Haber Ajansı'nın aktardığı OSD verilerine göre sekiz aylık toplam üretim 841 bin 583 adet oldu ve geçen yılın aynı dönemine göre yüzde 7 geriledi. Traktörle birlikte toplam üretim 854 bin 860 adede ulaştı.",
+     "Daralmanın kaynağı otomobil. Otomobil üretimi yüzde 19 düşüşle 458 bin 169 adette kaldı. Ticari araç tarafı ise tersine döndü: hafif ticari araç üretimi yüzde 12, ağır ticari araç üretimi yüzde 7 arttı.",
+     "İhracat adet bazında yüzde 12 azalarak 597 bin 594 adede indi. Otomobil ihracatındaki kayıp daha keskin; yüzde 28 düşüşle 279 bin 341 adet. Autobond'un aktardığına göre traktör ihracatı yüzde 14 artışla 8 bin 245 adet oldu."
+    ]
+   },
+   {
+    "h2": "OSD verilerinde ihracat rakamı neden farklı aktarıldı?",
+    "paragraflar": [
+     "Dolar bazlı ihracat rakamında kaynaklar ayrışıyor. CNN Türk ve Hibya Haber Ajansı sekiz aylık otomotiv ihracatını yüzde 2,5 artışla 27,2 milyar dolar olarak verdi. Autobond ise aynı kalemi yüzde 2 artışla 26,6 milyar dolar diye aktardı.",
+     "Türkiye Ajansı başlığında 26,6 milyar doları, haber metninde ise 27,2 milyar doları kullandı. Aynı ajans, otomotivin Türkiye'nin toplam ihracatındaki payını yüzde 17 olarak verdi ve sektörün ihracat liderliğini koruduğunu yazdı.",
+     "Adet bazındaki düşüşe karşın dolar bazında artış olması, araç başına ortalama ihracat değerinin yükseldiğine işaret ediyor. Autobond otomobil ihracatının değerini 6,8 milyar dolar ve yüzde 9 düşüş olarak aktardı; bu kalem diğer kaynaklarda yer almadı."
+    ]
+   },
+   {
+    "h2": "OSD verilerinde kapasite ve iç pazar nasıl görünüyor?",
+    "paragraflar": [
+     "Sektörün kapasite kullanım oranı yüzde 59 olarak açıklandı. Alt gruplarda tablo şöyle: hafif araçlarda yüzde 60, kamyonda yüzde 57, otobüs-minibüs grubunda yüzde 67, traktörde yüzde 27.",
+     "İç pazar sekiz ayda yüzde 12 daralarak 745 bin 597 adet oldu. Otomobil pazarı yüzde 14 düştü ve 564 bin 241 adette kapandı. Yurt içi üretimin pazardaki payı otomobilde yüzde 35, hafif ticari araçta yüzde 23 olarak açıklandı.",
+     "Ticari araç tarafında üretim ile talep ters yönde ilerledi. Hibya Haber Ajansı'nın aktardığına göre ticari araç pazarı yüzde 5 daraldı; hafif ticari araçta düşüş yüzde 4, ağır ticari araçta yüzde 7 oldu. Aynı dönemde bu grupların üretimi arttı.",
+     "Autobond, yalnız ağustos ayına ait rakamları da ayrıca verdi: aylık üretim 74 bin 368 adet, otomobil üretimi 33 bin 503 adet, iç pazar 84 bin 126 adet."
+    ]
+   },
+   {
+    "h2": "OSD verilerinde bilinenler ve henüz bilinmeyenler",
+    "paragraflar": [
+     "Üretim, ihracat, pazar ve kapasite kullanımı sekiz aylık toplamlarla açıklandı. Buna karşılık yılın tamamına ilişkin bir OSD tahmini incelediğimiz haberlerde yer almıyor; dernek adına yapılmış bir değerlendirme de bu haberlerde aktarılmadı.",
+     "Otomobil üretimindeki yüzde 19'luk düşüşün model değişimi, dış pazar talebi veya başka bir nedenden kaynaklanıp kaynaklanmadığı da açıklanan veriler arasında bulunmuyor."
+    ]
+   }
+  ],
+  "alinti": null,
+  "izle": [
+   "Otomotiv Sanayii Derneği'nin (OSD) aylık veri bültenleri",
+   "Uludağ Otomotiv Endüstrisi İhracatçıları Birliği'nin aylık ihracat açıklamaları",
+   "OSD'nin dokuz aylık (ocak-eylül) verileri, ekim ayında beklenen açıklama"
+  ],
+  "sss": [
+   {
+    "soru": "2026'nın ilk sekiz ayında kaç araç üretildi?",
+    "cevap": "OSD verilerine göre toplam üretim 841 bin 583 adet oldu ve yüzde 7 geriledi. Traktör dahil edildiğinde rakam 854 bin 860 adede çıkıyor."
+   },
+   {
+    "soru": "Otomotiv ihracatı arttı mı, azaldı mı?",
+    "cevap": "Adet bazında azaldı, dolar bazında arttı. İhracat 597 bin 594 adetle yüzde 12 düşerken, değer bazında CNN Türk ve Hibya'ya göre yüzde 2,5 artışla 27,2 milyar dolar oldu. Autobond aynı kalemi 26,6 milyar dolar olarak aktardı."
+   },
+   {
+    "soru": "Kapasite kullanım oranı ne düzeyde?",
+    "cevap": "Sektör genelinde yüzde 59. Hafif araç grubunda yüzde 60, kamyonda yüzde 57, otobüs-minibüste yüzde 67, traktörde yüzde 27 olarak açıklandı."
+   }
+  ],
+  "kelime": 514
+ },
+ "gorsel": null,
+ "kaynaklar": [
+  {
+   "ad": "CNN Türk",
+   "tarih": "2026-09-14"
+  },
+  {
+   "ad": "Autobond",
+   "tarih": "2026-09-14"
+  },
+  {
+   "ad": "Hibya Haber Ajansı",
+   "tarih": "2026-09-14"
+  },
+  {
+   "ad": "Türkiye Ajansı",
+   "tarih": "2026-09-14"
+  }
+ ],
+ "model": "claude-opus-5 (oturum)"
+}

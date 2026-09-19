@@ -1355,3 +1355,24 @@ footer.ts-baglam p{font-size:14px;line-height:1.6;color:var(--gri-2)}
 @media(max-width:720px){.ts-tumu-liste{columns:1}}
 .ts-tumu-liste li{break-inside:avoid;padding:.4rem 0;border-top:1px solid rgba(0,0,0,.08);font-size:.92rem;line-height:1.35;display:flex;gap:.6rem;justify-content:space-between;align-items:baseline}
 .ts-tumu-liste time{opacity:.55;font-size:.8rem;white-space:nowrap}
+
+/* TrendSaphiens ana sayfa bölüm şeritleri */
+.ts-bolumler{margin:2.2rem 0 0;border-top:2px solid currentColor;padding-top:1.1rem}
+.ts-bolumler-bas{margin-bottom:.9rem}
+.ts-bolumler-bas p{margin:.15rem 0 0;opacity:.62;font-size:.9rem}
+.ts-serit{padding:.95rem 0;border-top:1px solid rgba(0,0,0,.09)}
+.ts-serit:first-of-type{border-top:0}
+.ts-serit-bas-satir{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem}
+.ts-serit-bas-satir h2{margin:0;font-size:1.12rem;letter-spacing:-.01em}
+.ts-serit-bas-satir h2 a{text-decoration:none}
+.ts-serit-bas-satir p{margin:0;flex:1 1 12rem;opacity:.58;font-size:.84rem}
+.ts-serit-tumu{font-size:.84rem;text-decoration:none;white-space:nowrap;opacity:.8}
+.ts-serit-tumu:hover{opacity:1;text-decoration:underline}
+.ts-serit-liste{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+@media(max-width:760px){.ts-serit-liste{grid-template-columns:1fr;gap:.45rem}}
+.ts-serit-liste li{min-width:0}
+.ts-serit-liste a{display:block;text-decoration:none}
+.ts-serit-bas{display:block;font-weight:600;line-height:1.3;font-size:.95rem}
+.ts-serit-liste li.ilk .ts-serit-bas{font-size:1.02rem}
+.ts-serit-liste a:hover .ts-serit-bas{text-decoration:underline}
+.ts-serit-liste time{display:block;margin-top:.2rem;font-size:.76rem;opacity:.5}
