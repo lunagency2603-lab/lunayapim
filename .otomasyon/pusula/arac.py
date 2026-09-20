@@ -32,6 +32,8 @@ from .ayarlar import SITE_KOK
 from . import trend as T
 
 KOK_URL = "https://lunayapim.com/trend/"
+# Sayfa sürümü: Cloudflare dağıtımı bir dosyayı atlarsa bu damga değişince yeniden yüklenir.
+SURUM = "2026-09-20-2"
 
 # 81 il — merkez koordinatları (ondalık derece, doğu boylamı pozitif).
 # Yükselen için il merkezi yeterli: ilçe farkı ASC'yi tipik olarak 0,1°'den az oynatır.
@@ -119,9 +121,10 @@ def _sayfa(slug, baslik, meta, h1, ozet, govde, sema=None, sss=None):
     %s
     <p class="ts-not ts-gizlilik">Hesap tarayıcınızda yapılır: girdiğiniz bilgiler hiçbir sunucuya gönderilmez, kaydedilmez.</p>
     <p class="ts-arac-geri"><a href="araclar">← Tüm araçlar</a></p>
+    <!-- surum: {SURUM} -->
   </div>
 </main>
-""" % (_e(h1), _e(ozet), govde, sss_html)
+""".replace("{SURUM}", SURUM) % (_e(h1), _e(ozet), govde, sss_html)
     return T._bas(baslik, meta, url, None, sema_html, "website", "../", "") + govde_html + T._alt("../", "")
 
 
