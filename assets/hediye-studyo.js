@@ -87,7 +87,8 @@
     kutu.innerHTML =
       '<img class="hs-urun" src="' + K.gorselKok + v.g + '" alt="' + kacir(u.ad + " — " + v.ad) + '" loading="lazy" decoding="async">' +
       '<div class="hs-cerceve" style="left:' + r.x + '%;top:' + r.y + '%;width:' + r.w + '%;height:' + r.h + '%">' +
-      '<div class="hs-katman" style="transform:translate(-50%,-50%) scale(' + (k.olcek || .9) + ')">' + s.svg + "</div></div>";
+      '<div class="hs-katman" style="mix-blend-mode:' + K.karisimSec(v, m) +
+      ';transform:translate(-50%,-50%) scale(' + (k.olcek || .9) + ')">' + s.svg + "</div></div>";
   }
 
   /* ---------- stüdyo ---------- */
@@ -258,7 +259,8 @@
       sahne.innerHTML =
         '<img class="hs-urun" src="' + K.gorselKok + v.g + '" alt="' + kacir(u.ad + " — " + v.ad) + '" decoding="async">' +
         '<div class="hs-cerceve hs-secili" style="left:' + r.x + '%;top:' + r.y + '%;width:' + r.w + '%;height:' + r.h + '%">' +
-        '<div class="hs-katman" data-katman style="left:' + d.x + "%;top:" + d.y +
+        '<div class="hs-katman" data-katman style="mix-blend-mode:' +
+        (d.kendi ? "normal" : K.karisimSec(v, murekkep())) + ";left:" + d.x + "%;top:" + d.y +
         "%;transform:translate(-50%,-50%) scale(" + d.olcek + ") rotate(" + d.aci + 'deg)">' + ic + "</div></div>";
       notEl.textContent = u.ad + " · " + v.ad + (u.alanlar.length > 1 ? " · " + a.ad : "") +
         (d.kendi ? " · kendi tasarımınız" : " · " + K.tasarimlar[d.tasarim].ad);
@@ -309,6 +311,10 @@
           var iw = kat.naturalWidth || 1000, ih = kat.naturalHeight || 1000;
           var s = Math.min(R.w / iw, R.h / ih), w = iw * s, h = ih * s;
           ctx.save();
+          ctx.globalCompositeOperation = d.kendi ? "source-over" : (function () {
+            var m = K.karisimSec(v, murekkep());
+            return m === "normal" ? "source-over" : m;
+          })();
           ctx.translate(R.x + R.w * d.x / 100, R.y + R.h * d.y / 100);
           ctx.rotate(d.aci * Math.PI / 180);
           ctx.scale(d.olcek, d.olcek);

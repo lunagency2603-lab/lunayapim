@@ -22,12 +22,171 @@ window.LUNA_HEDIYE = (function () {
   var SANS = "Helvetica Neue, Helvetica, Arial, sans-serif";
   var KALIN = "Arial Black, Arial Bold, Arial, sans-serif";
   var SERIF = "Georgia, Times New Roman, serif";
+  var _say = 0;
+  function benzersiz() { return "lh" + (++_say); }
 
   /* ---------- hazır tasarımlar ----------
      oran : genişlik / yükseklik
      alanlar : kullanıcının dolduracağı metin kutuları
      ciz(o) : {renk, metin:{...}} → SVG içeriği (viewBox 0 0 100 100/oran)  */
   var TASARIM = {
+
+    /* ══════════ 2026 çizgisi — yeni tasarımlar ══════════ */
+
+    "tipografi-kilit": {
+      ad: "Tipografi kilidi", etiket: "Tipografi", oran: 1,
+      alanlar: [{ id: "ust", ad: "Üst satır", varsayilan: "KURULUŞ 2026", azami: 20 },
+                { id: "orta", ad: "Büyük yazı", varsayilan: "YEŞİL", azami: 9 },
+                { id: "alt", ad: "Alt satır", varsayilan: "BURSA · TÜRKİYE", azami: 24 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<text x="50" y="22" text-anchor="middle" font-family="' + SANS + '" font-size="6" letter-spacing="5" fill="' + c + '">' + kacir((o.metin.ust || "").toUpperCase()) + '</text>' +
+          '<path d="M12 28h76" stroke="' + c + '" stroke-width=".9"/>' +
+          '<text x="50" y="62" text-anchor="middle" font-family="' + KALIN + '" font-size="34" letter-spacing="-2" fill="' + c + '">' + kacir((o.metin.orta || "").toUpperCase()) + '</text>' +
+          '<path d="M12 70h76" stroke="' + v + '" stroke-width="2.4"/>' +
+          '<text x="50" y="82" text-anchor="middle" font-family="' + SANS + '" font-size="6" letter-spacing="5" fill="' + c + '">' + kacir((o.metin.alt || "").toUpperCase()) + '</text>';
+      }
+    },
+
+    "varsity": {
+      ad: "Kolej rozeti", etiket: "Retro", oran: 1,
+      alanlar: [{ id: "ust", ad: "Kavisli yazı", varsayilan: "LUNA", azami: 14 },
+                { id: "orta", ad: "Sayı ya da harf", varsayilan: "16", azami: 3 },
+                { id: "alt", ad: "Alt satır", varsayilan: "BURSA", azami: 18 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu, id = benzersiz();
+        return '<defs><path id="' + id + '" d="M14 58a36 36 0 0 1 72 0" fill="none"/></defs>' +
+          '<text font-family="' + KALIN + '" font-size="11" letter-spacing="2.4" fill="' + c + '">' +
+          '<textPath href="#' + id + '" xlink:href="#' + id + '" startOffset="50%" text-anchor="middle">' +
+          kacir((o.metin.ust || "").toUpperCase()) + '</textPath></text>' +
+          '<text x="50" y="66" text-anchor="middle" font-family="' + KALIN + '" font-size="34" fill="' + c + '" stroke="' + v + '" stroke-width="1.2" paint-order="stroke">' + kacir((o.metin.orta || "").toUpperCase()) + '</text>' +
+          '<path d="M24 74h52" stroke="' + v + '" stroke-width="2"/>' +
+          '<text x="50" y="85" text-anchor="middle" font-family="' + SANS + '" font-size="6.4" letter-spacing="4" fill="' + c + '">' + kacir((o.metin.alt || "").toUpperCase()) + '</text>';
+      }
+    },
+
+    "geometrik-kedi": {
+      ad: "Geometrik kedi", etiket: "Hayvan", oran: 1,
+      alanlar: [{ id: "isim", ad: "İsim (isteğe bağlı)", varsayilan: "", azami: 16 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu, ad = (o.metin.isim || "").toUpperCase();
+        return '<path d="M28 34l4-16 14 10z" fill="' + c + '"/>' +
+          '<path d="M72 34l-4-16-14 10z" fill="' + c + '"/>' +
+          '<path d="M50 20l22 14-6 30-16 12-16-12-6-30z" fill="none" stroke="' + c + '" stroke-width="1.8" stroke-linejoin="round"/>' +
+          '<path d="M38 42l8 5-8 5z" fill="' + c + '"/>' +
+          '<path d="M62 42l-8 5 8 5z" fill="' + c + '"/>' +
+          '<path d="M46 58h8l-4 5z" fill="' + v + '"/>' +
+          '<path d="M50 63v5M50 68l-7 4M50 68l7 4" stroke="' + c + '" stroke-width="1.2" stroke-linecap="round"/>' +
+          (ad ? '<text x="50" y="88" text-anchor="middle" font-family="' + SANS + '" font-size="6.4" letter-spacing="4" fill="' + c + '">' + kacir(ad) + '</text>' : "");
+      }
+    },
+
+    "goksel-faz": {
+      ad: "Ay evreleri", etiket: "Göksel", oran: 2.1,
+      alanlar: [{ id: "alt", ad: "Alt yazı", varsayilan: "AYNI GÖKYÜZÜ", azami: 24 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu, s = "", x0 = 14, ad = 18, r = 6;
+        for (var i = 0; i < 5; i++) {
+          var x = x0 + i * ad, y = 20;
+          s += '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="none" stroke="' + c + '" stroke-width="1"/>';
+          if (i === 1) s += '<path d="M' + x + ' ' + (y - r) + 'a' + r + ' ' + r + ' 0 0 1 0 ' + (2 * r) + 'a4 ' + r + ' 0 0 0 0 -' + (2 * r) + 'z" fill="' + c + '"/>';
+          if (i === 2) s += '<path d="M' + x + ' ' + (y - r) + 'a' + r + ' ' + r + ' 0 0 1 0 ' + (2 * r) + 'z" fill="' + c + '"/>';
+          if (i === 3) s += '<path d="M' + x + ' ' + (y - r) + 'a' + r + ' ' + r + ' 0 0 1 0 ' + (2 * r) + 'a8 ' + r + ' 0 0 1 0 -' + (2 * r) + 'z" fill="' + c + '"/>';
+          if (i === 4) s += '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + c + '"/>';
+        }
+        s += '<path d="M8 32h84" stroke="' + v + '" stroke-width="1"/>';
+        s += '<text x="50" y="42" text-anchor="middle" font-family="' + SANS + '" font-size="6.2" letter-spacing="4.5" fill="' + c + '">' + kacir((o.metin.alt || "").toUpperCase()) + '</text>';
+        return s;
+      }
+    },
+
+    "soyut-geometri": {
+      ad: "Soyut geometri", etiket: "Geometri", oran: 1, alanlar: [],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<circle cx="42" cy="38" r="22" fill="none" stroke="' + c + '" stroke-width="1.6"/>' +
+          '<path d="M64 38a22 22 0 0 1-22 22V38z" fill="' + v + '"/>' +
+          '<rect x="58" y="14" width="14" height="14" transform="rotate(45 65 21)" fill="none" stroke="' + c + '" stroke-width="1.4"/>' +
+          '<path d="M22 70h56M30 76h48M38 82h32" stroke="' + c + '" stroke-width="1.6" stroke-linecap="round"/>' +
+          '<circle cx="76" cy="58" r="3" fill="' + v + '"/>';
+      }
+    },
+
+    "el-cizimi": {
+      ad: "El çizimi", etiket: "Çizim", oran: 1,
+      alanlar: [{ id: "alt", ad: "El yazısı", varsayilan: "uzun yol", azami: 20 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<circle cx="62" cy="30" r="9" fill="none" stroke="' + v + '" stroke-width="1.6"/>' +
+          '<path d="M18 62c5-9 9-14 13-19 3-4 6-2 9 2 3 5 6 11 9 8 4-4 7-12 11-8 4 3 9 12 22 17" fill="none" stroke="' + c + '" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="M14 66c8 2 20 3 36 3s28-1 36-3" fill="none" stroke="' + c + '" stroke-width="1.5" stroke-linecap="round"/>' +
+          '<path d="M26 72c6 1 12 2 18 1" fill="none" stroke="' + c + '" stroke-width="1" opacity=".6" stroke-linecap="round"/>' +
+          '<text x="50" y="86" text-anchor="middle" font-family="' + SERIF + '" font-style="italic" font-size="13" fill="' + c + '">' + kacir(o.metin.alt) + '</text>';
+      }
+    },
+
+    "retro-dalga": {
+      ad: "Retro dalga", etiket: "Retro", oran: 1,
+      alanlar: [{ id: "ust", ad: "Kavisli yazı", varsayilan: "GÜNEŞ", azami: 16 },
+                { id: "alt", ad: "Alt satır", varsayilan: "1995", azami: 14 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu, id = benzersiz(), s = "";
+        s += '<defs><path id="' + id + '" d="M16 54a34 34 0 0 1 68 0" fill="none"/></defs>';
+        s += '<circle cx="50" cy="56" r="17" fill="' + v + '"/>';
+        for (var i = 0; i < 5; i++)
+          s += '<path d="M33 ' + (50 + i * 4.6) + 'h34" stroke="' + c + '" stroke-width="' + (2.6 - i * .35) + '"/>';
+        s += '<text font-family="' + KALIN + '" font-size="10" letter-spacing="3" fill="' + c + '">' +
+          '<textPath href="#' + id + '" xlink:href="#' + id + '" startOffset="50%" text-anchor="middle">' +
+          kacir((o.metin.ust || "").toUpperCase()) + '</textPath></text>';
+        s += '<path d="M22 78q7-5 14 0t14 0 14 0 14 0" fill="none" stroke="' + c + '" stroke-width="1.6"/>';
+        s += '<text x="50" y="90" text-anchor="middle" font-family="' + SANS + '" font-size="6.4" letter-spacing="5" fill="' + c + '">' + kacir((o.metin.alt || "").toUpperCase()) + '</text>';
+        return s;
+      }
+    },
+
+    "sozluk": {
+      ad: "Sözlük maddesi", etiket: "Tipografi", oran: 1.7,
+      alanlar: [{ id: "kelime", ad: "Kelime", varsayilan: "elif", azami: 16 },
+                { id: "tur", ad: "Tür", varsayilan: "isim", azami: 14 },
+                { id: "tanim", ad: "Tanım", varsayilan: "gün ağarırken gelen huzur.", azami: 42 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<text x="8" y="22" font-family="' + SERIF + '" font-size="19" fill="' + c + '">' + kacir(o.metin.kelime) + '</text>' +
+          '<text x="8" y="32" font-family="' + SERIF + '" font-style="italic" font-size="7" fill="' + c + '" opacity=".75">' + kacir(o.metin.tur) + '</text>' +
+          '<path d="M8 37h84" stroke="' + v + '" stroke-width="1.2"/>' +
+          '<text x="8" y="48" font-family="' + SANS + '" font-size="7" fill="' + c + '"><tspan font-family="' + KALIN + '">1.</tspan> ' + kacir(o.metin.tanim) + '</text>';
+      }
+    },
+
+    "koordinat": {
+      ad: "Koordinat", etiket: "Yer", oran: 1.5,
+      alanlar: [{ id: "yer", ad: "Yer", varsayilan: "BURSA", azami: 18 },
+                { id: "kod", ad: "Koordinat", varsayilan: "40.1885° K · 29.0610° D", azami: 30 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<circle cx="50" cy="26" r="11" fill="none" stroke="' + c + '" stroke-width="1.3"/>' +
+          '<circle cx="50" cy="26" r="3" fill="' + v + '"/>' +
+          '<path d="M50 9v8M50 35v8M33 26h8M59 26h8" stroke="' + c + '" stroke-width="1.3" stroke-linecap="round"/>' +
+          '<text x="50" y="54" text-anchor="middle" font-family="' + KALIN + '" font-size="15" letter-spacing="3" fill="' + c + '">' + kacir((o.metin.yer || "").toUpperCase()) + '</text>' +
+          '<text x="50" y="63" text-anchor="middle" font-family="' + SANS + '" font-size="5.4" letter-spacing="1.8" fill="' + c + '" opacity=".85">' + kacir(o.metin.kod) + '</text>';
+      }
+    },
+
+    "cerceve-rozet": {
+      ad: "Çerçeve rozeti", etiket: "Minimal", oran: 1.35,
+      alanlar: [{ id: "ust", ad: "Üst yazı", varsayilan: "EST. 2026", azami: 16 },
+                { id: "orta", ad: "Orta yazı", varsayilan: "LUNA", azami: 16 },
+                { id: "alt", ad: "Alt yazı", varsayilan: "BURSA", azami: 18 }],
+      ciz: function (o) {
+        var c = o.renk, v = o.vurgu;
+        return '<rect x="8" y="12" width="84" height="50" fill="none" stroke="' + c + '" stroke-width="1.6"/>' +
+          '<rect x="12" y="16" width="76" height="42" fill="none" stroke="' + c + '" stroke-width=".7" opacity=".55"/>' +
+          '<text x="50" y="28" text-anchor="middle" font-family="' + SANS + '" font-size="5.4" letter-spacing="4" fill="' + c + '">' + kacir((o.metin.ust || "").toUpperCase()) + '</text>' +
+          '<text x="50" y="44" text-anchor="middle" font-family="' + SERIF + '" font-size="17" letter-spacing="2" fill="' + c + '">' + kacir((o.metin.orta || "").toUpperCase()) + '</text>' +
+          '<path d="M44 50h12" stroke="' + v + '" stroke-width="1.4"/>' +
+          '<text x="50" y="56" text-anchor="middle" font-family="' + SANS + '" font-size="4.8" letter-spacing="3.4" fill="' + c + '">' + kacir((o.metin.alt || "").toUpperCase()) + '</text>';
+      }
+    },
 
     "kus-ay": {
       ad: "Kuş ve ay", etiket: "Çizgi", oran: 1, alanlar: [],
@@ -269,212 +428,252 @@ window.LUNA_HEDIYE = (function () {
 
   /* ---------- baskı mürekkebi seçenekleri ---------- */
   var MUREKKEP = [
-    { id: "siyah", ad: "Siyah", renk: "#14141A", vurgu: "#E8452C" },
-    { id: "beyaz", ad: "Beyaz", renk: "#F6F4EF", vurgu: "#E8452C" },
-    { id: "kirmizi", ad: "Vermilyon", renk: "#E8452C", vurgu: "#14141A" },
-    { id: "altin", ad: "Altın", renk: "#C79A3F", vurgu: "#14141A" },
-    { id: "lacivert", ad: "Lacivert", renk: "#1F2E4A", vurgu: "#C79A3F" }
+    { id: "siyah", ad: "Siyah", renk: "#14141A", vurgu: "#E8452C", acik: false },
+    { id: "beyaz", ad: "Beyaz", renk: "#F6F4EF", vurgu: "#E8452C", acik: true },
+    { id: "kirmizi", ad: "Vermilyon", renk: "#E8452C", vurgu: "#14141A", acik: false },
+    { id: "altin", ad: "Altın", renk: "#C79A3F", vurgu: "#14141A", acik: true },
+    { id: "lacivert", ad: "Lacivert", renk: "#1F2E4A", vurgu: "#C79A3F", acik: false },
+    { id: "krem", ad: "Krem", renk: "#EDE7DA", vurgu: "#E8452C", acik: true }
   ];
 
+  // Baskı kumaşın gölgesini alsın: açık üründe multiply, koyuda screen.
+  // Mürekkep yönüyle uyuşmuyorsa karışım uygulanmaz (yoksa baskı kaybolur).
+  function karisimSec(varyant, murekkep) {
+    var k = varyant.karisim;
+    if (k === "screen") return murekkep.acik ? "screen" : "normal";
+    if (k === "multiply") return murekkep.acik ? "normal" : "multiply";
+    return "normal";
+  }
+
   var BEDEN = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-  var TEKSTIL_TASARIM = ["kus-ay", "bursa-silueti", "sehir-tipografi", "cift-tarih", "yildiz-harita",
-                         "dogum-yili", "pati", "dag-gunes", "takim-rozeti", "monogram",
-                         "foto-cerceve", "kalp-cizgi", "el-yazisi"];
-  var PROMO_TASARIM = ["monogram", "isim-serit", "el-yazisi", "takim-rozeti", "kus-ay", "dag-gunes"];
+
+  var T_ALAN = [
+    { id: "gogus", ad: "Göğüs orta", r: { x: 33, y: 32, w: 34, h: 30 } },
+    { id: "gogus-sol", ad: "Göğüs (küçük)", r: { x: 37, y: 34, w: 12, h: 10 } },
+    { id: "sirt", ad: "Büyük baskı (sırt)", r: { x: 29, y: 30, w: 42, h: 36 } }
+  ];
+  var SWEAT_ALAN = { gogus: { x: 34, y: 24, w: 32, h: 27 },
+                     "gogus-sol": { x: 38, y: 26, w: 11, h: 9 },
+                     sirt: { x: 30, y: 22, w: 40, h: 33 } };
+  var HOODIE_ALAN = { gogus: { x: 34, y: 32, w: 32, h: 24 },
+                      "gogus-sol": { x: 38, y: 34, w: 11, h: 9 },
+                      sirt: { x: 30, y: 30, w: 40, h: 28 } };
+
+  var TEKSTIL_TASARIM = ["tipografi-kilit", "varsity", "retro-dalga", "geometrik-kedi",
+    "goksel-faz", "soyut-geometri", "el-cizimi", "kus-ay", "bursa-silueti", "sehir-tipografi",
+    "dag-gunes", "koordinat", "cift-tarih", "yildiz-harita", "dogum-yili", "pati",
+    "takim-rozeti", "monogram", "foto-cerceve", "kalp-cizgi"];
+
+  var TISORT_VARYANT = [
+    { id: "beyaz", ad: "Optik beyaz", g: "tisort-beyaz.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+    { id: "krem", ad: "Ekru krem", g: "tisort-krem.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+    { id: "siyah", ad: "Yıkamalı siyah", g: "tisort-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+    { id: "lacivert", ad: "Lacivert", g: "tisort-lacivert.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+    { id: "bordo", ad: "Bordo", g: "tisort-bordo.jpg", koyu: true, murekkep: "krem", karisim: "screen" }
+  ];
 
   /* ---------- ürünler ---------- */
   var URUN = {
     "baskili-tisort": {
-      ad: "Baskılı tişört", vurgu: "Tek parçadan ekip setine",
-      varyant_ad: "Renk",
+      ad: "Oversize baskılı tişört", vurgu: "Ağır kumaş, düşük omuz",
+      varyant_ad: "Renk", varyantlar: TISORT_VARYANT, alanlar: T_ALAN,
+      secimler: [{ id: "beden", ad: "Beden", secenekler: BEDEN, varsayilan: "L" }],
+      tasarimlar: TEKSTIL_TASARIM
+    },
+    "dtf-baski": {
+      ad: "DTF baskı · tekstil", vurgu: "Kumaşa tam renkli transfer",
+      varyant_ad: "Ürün ve renk",
       varyantlar: [
-        { id: "beyaz", ad: "Beyaz", g: "tisort-beyaz.jpg", koyu: false, murekkep: "siyah" },
-        { id: "siyah", ad: "Siyah", g: "tisort-siyah.jpg", koyu: true, murekkep: "beyaz" },
-        { id: "lacivert", ad: "Lacivert", g: "tisort-lacivert.jpg", koyu: true, murekkep: "beyaz" }
+        { id: "tisort-beyaz", ad: "Tişört · Beyaz", g: "tisort-beyaz.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+        { id: "tisort-siyah", ad: "Tişört · Siyah", g: "tisort-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+        { id: "tisort-bordo", ad: "Tişört · Bordo", g: "tisort-bordo.jpg", koyu: true, murekkep: "krem", karisim: "screen" },
+        { id: "hoodie-siyah", ad: "Hoodie · Siyah", g: "hoodie-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen", alan: HOODIE_ALAN },
+        { id: "sweat-gri", ad: "Sweatshirt · Gri", g: "sweatshirt-gri.jpg", koyu: false, murekkep: "siyah", karisim: "multiply", alan: SWEAT_ALAN }
       ],
-      alanlar: [
-        { id: "gogus", ad: "Göğüs orta", r: { x: 33, y: 26, w: 34, h: 30 } },
-        { id: "gogus-sol", ad: "Göğüs (küçük)", r: { x: 37, y: 28, w: 12, h: 10 } },
-        { id: "sirt", ad: "Büyük baskı (sırt)", r: { x: 28, y: 24, w: 44, h: 36 } }
-      ],
+      alanlar: T_ALAN,
       secimler: [{ id: "beden", ad: "Beden", secenekler: BEDEN, varsayilan: "L" }],
       tasarimlar: TEKSTIL_TASARIM
     },
     "baskili-sweatshirt-hoodie": {
-      ad: "Sweatshirt / hoodie", vurgu: "Kalın kumaş, geniş baskı alanı",
+      ad: "Oversize sweatshirt / hoodie", vurgu: "Kalın kumaş, geniş baskı alanı",
       varyant_ad: "Ürün ve renk",
       varyantlar: [
-        { id: "hoodie-siyah", ad: "Hoodie · Siyah", g: "hoodie-siyah.jpg", koyu: true, murekkep: "beyaz" },
-        { id: "hoodie-krem", ad: "Hoodie · Krem", g: "hoodie-krem.jpg", koyu: false, murekkep: "siyah" },
-        { id: "sweat-gri", ad: "Sweatshirt · Gri", g: "sweatshirt-gri.jpg", koyu: false, murekkep: "siyah", alan: { gogus: { x: 34, y: 29, w: 32, h: 28 }, "gogus-sol": { x: 38, y: 31, w: 11, h: 9 }, sirt: { x: 29, y: 26, w: 42, h: 34 } } }
+        { id: "hoodie-siyah", ad: "Hoodie · Siyah", g: "hoodie-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+        { id: "hoodie-krem", ad: "Hoodie · Krem", g: "hoodie-krem.jpg", koyu: false, murekkep: "siyah", karisim: "multiply",
+          alan: { gogus: { x: 34, y: 33, w: 32, h: 23 }, "gogus-sol": { x: 38, y: 35, w: 11, h: 9 }, sirt: { x: 30, y: 31, w: 40, h: 27 } } },
+        { id: "sweat-gri", ad: "Sweatshirt · Gri", g: "sweatshirt-gri.jpg", koyu: false, murekkep: "siyah", karisim: "multiply", alan: SWEAT_ALAN }
       ],
       alanlar: [
-        { id: "gogus", ad: "Göğüs orta", r: { x: 34, y: 34, w: 32, h: 24 } },
-        { id: "gogus-sol", ad: "Göğüs (küçük)", r: { x: 38, y: 36, w: 11, h: 9 } },
-        { id: "sirt", ad: "Büyük baskı (sırt)", r: { x: 29, y: 31, w: 42, h: 30 } }
+        { id: "gogus", ad: "Göğüs orta", r: HOODIE_ALAN.gogus },
+        { id: "gogus-sol", ad: "Göğüs (küçük)", r: HOODIE_ALAN["gogus-sol"] },
+        { id: "sirt", ad: "Büyük baskı (sırt)", r: HOODIE_ALAN.sirt }
       ],
       secimler: [{ id: "beden", ad: "Beden", secenekler: BEDEN, varsayilan: "L" }],
       tasarimlar: TEKSTIL_TASARIM
     },
     "baskili-yelek": {
       ad: "Baskılı yelek", vurgu: "Saha, kurye ve etkinlik ekibi",
-      varyant_ad: "Renk",
+      varyant_ad: "Model",
       varyantlar: [
-        { id: "lacivert", ad: "Lacivert", g: "yelek-lacivert.jpg", koyu: true, murekkep: "beyaz" }
+        { id: "lacivert", ad: "Softshell · Lacivert", g: "yelek-lacivert.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+        { id: "siyah", ad: "Şişme · Siyah", g: "yelek-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen",
+          alan: { "gogus-sol": { x: 33, y: 31, w: 12, h: 10 }, "gogus-sag": { x: 55, y: 31, w: 12, h: 10 } } }
       ],
       alanlar: [
-        { id: "gogus-sol", ad: "Göğüs (küçük)", r: { x: 36, y: 30, w: 11, h: 9 } },
-        { id: "sirt", ad: "Sırt üst (büyük)", r: { x: 34, y: 27, w: 32, h: 24 } }
+        { id: "gogus-sol", ad: "Göğüs sol", r: { x: 34, y: 33, w: 12, h: 10 } },
+        { id: "gogus-sag", ad: "Göğüs sağ", r: { x: 54, y: 33, w: 12, h: 10 } }
       ],
       secimler: [{ id: "beden", ad: "Beden", secenekler: ["S", "M", "L", "XL", "2XL", "3XL"], varsayilan: "L" }],
-      tasarimlar: ["monogram", "takim-rozeti", "isim-serit", "sehir-tipografi", "dag-gunes", "el-yazisi"]
+      tasarimlar: ["monogram", "takim-rozeti", "isim-serit", "cerceve-rozet", "el-yazisi",
+                   "kus-ay", "dag-gunes", "geometrik-kedi", "koordinat"]
     },
     "kisiye-ozel-kupa": {
       ad: "Kişiye özel kupa", vurgu: "Her sabah eline alınan hediye",
       varyant_ad: "Kupa",
       varyantlar: [
-        { id: "beyaz", ad: "Beyaz", g: "kupa-beyaz.jpg", koyu: false, murekkep: "siyah" },
-        { id: "kirmizi", ad: "Kırmızı kulp", g: "kupa-kirmizi.jpg", koyu: false, murekkep: "siyah" }
+        { id: "beyaz", ad: "Beyaz", g: "kupa-beyaz.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+        { id: "kirmizi", ad: "Kırmızı kulp", g: "kupa-kirmizi.jpg", koyu: false, murekkep: "siyah", karisim: "multiply",
+          alan: { govde: { x: 31, y: 37, w: 26, h: 29 } } },
+        { id: "siyah", ad: "Mat siyah", g: "kupa-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen",
+          alan: { govde: { x: 30, y: 30, w: 28, h: 34 } } }
       ],
-      alanlar: [{ id: "govde", ad: "Gövde", r: { x: 26, y: 30, w: 34, h: 38 } }],
+      alanlar: [{ id: "govde", ad: "Gövde", r: { x: 38, y: 38, w: 20, h: 27 } }],
       secimler: [],
       tasarimlar: ["foto-cerceve", "cicek-celengi", "once-kahve", "cift-tarih", "el-yazisi",
-                   "pati", "dogum-yili", "monogram", "yildiz-harita", "kalp-cizgi"]
+                   "sozluk", "koordinat", "pati", "dogum-yili", "monogram", "yildiz-harita",
+                   "kalp-cizgi", "goksel-faz", "cerceve-rozet"]
     },
     "uv-dtf-baski": {
-      ad: "UV DTF · cam bardak", vurgu: "Soğuk baskı, sert yüzey",
+      ad: "UV DTF · sert yüzey", vurgu: "Soğuk baskı: cam, metal, ahşap",
       varyant_ad: "Ürün",
       varyantlar: [
-        { id: "cam", ad: "Cam kutu bardak", g: "cambardak.jpg", koyu: false, murekkep: "siyah" }
+        { id: "cam", ad: "Cam kutu bardak", g: "cambardak.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+        { id: "termos", ad: "Termos", g: "termos-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen",
+          alan: { govde: { x: 40, y: 36, w: 22, h: 30 } } }
       ],
-      alanlar: [{ id: "govde", ad: "Gövde sargısı", r: { x: 36, y: 28, w: 28, h: 42 } }],
+      alanlar: [{ id: "govde", ad: "Gövde sargısı", r: { x: 37, y: 34, w: 26, h: 34 } }],
       secimler: [],
       tasarimlar: ["cicek-celengi", "el-yazisi", "isim-serit", "cift-tarih", "yildiz-harita",
-                   "dag-gunes", "monogram", "once-kahve"]
+                   "goksel-faz", "koordinat", "monogram", "once-kahve", "cerceve-rozet"]
     },
     "baskili-cakmak": {
       ad: "Baskılı çakmak", vurgu: "Elden ele dolaşan logo",
       varyant_ad: "Gövde",
       varyantlar: [
-        { id: "siyah", ad: "Siyah", g: "cakmak-siyah.jpg", koyu: true, murekkep: "beyaz" }
+        { id: "siyah", ad: "Siyah", g: "cakmak-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+        { id: "krem", ad: "Krem", g: "cakmak-krem.jpg", koyu: false, murekkep: "siyah", karisim: "multiply",
+          alan: { on: { x: 38, y: 42, w: 13, h: 34 } } }
       ],
-      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 38, y: 40, w: 20, h: 40 } }],
+      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 43, y: 45, w: 13, h: 34 } }],
       secimler: [],
-      tasarimlar: PROMO_TASARIM
+      tasarimlar: ["monogram", "isim-serit", "el-yazisi", "kus-ay", "cerceve-rozet", "koordinat"]
     },
     "baskili-kalem": {
       ad: "Baskılı kalem", vurgu: "Her imzada görünen isim",
       varyant_ad: "Gövde",
       varyantlar: [
-        { id: "siyah", ad: "Mat siyah", g: "kalem-siyah.jpg", koyu: true, murekkep: "beyaz" }
+        { id: "siyah", ad: "Mat siyah", g: "kalem-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen" },
+        { id: "gumus", ad: "Gümüş", g: "kalem-gumus.jpg", koyu: false, murekkep: "siyah", karisim: "multiply",
+          alan: { govde: { x: 24, y: 52, w: 38, h: 7 } } }
       ],
-      alanlar: [{ id: "govde", ad: "Gövde boyu", r: { x: 16, y: 45.5, w: 44, h: 6.5 } }],
+      alanlar: [{ id: "govde", ad: "Gövde boyu", r: { x: 28, y: 53, w: 34, h: 7 } }],
       secimler: [],
-      tasarimlar: ["isim-serit", "monogram", "el-yazisi", "takim-rozeti"]
+      tasarimlar: ["isim-serit", "el-yazisi", "monogram", "cerceve-rozet"]
     },
     "kisiye-ozel-anahtarlik": {
       ad: "Kişiye özel anahtarlık", vurgu: "Cebinde taşınan hatıra",
       varyant_ad: "Gövde",
       varyantlar: [
-        { id: "metal", ad: "Metal", g: "anahtarlik-metal.jpg", koyu: false, murekkep: "siyah" },
-        { id: "ahsap", ad: "Ahşap", g: "anahtarlik-ahsap.jpg", koyu: false, murekkep: "siyah", alan: { on: { x: 37, y: 40, w: 26, h: 48 } } }
+        { id: "metal", ad: "Metal", g: "anahtarlik-metal.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+        { id: "ahsap", ad: "Ahşap", g: "anahtarlik-ahsap.jpg", koyu: false, murekkep: "siyah", karisim: "multiply",
+          alan: { on: { x: 41, y: 28, w: 20, h: 34 } } }
       ],
-      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 32, y: 50, w: 32, h: 32 } }],
+      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 42, y: 48, w: 24, h: 24 } }],
       secimler: [],
-      tasarimlar: ["foto-cerceve", "monogram", "el-yazisi", "pati", "isim-serit", "kus-ay", "dag-gunes"]
+      tasarimlar: ["foto-cerceve", "monogram", "el-yazisi", "pati", "geometrik-kedi",
+                   "isim-serit", "kus-ay", "koordinat", "cerceve-rozet"]
     },
     "magnetli-kapak-acacagi": {
       ad: "Magnetli kapak açacağı", vurgu: "Buzdolabında kalıcı yer",
       varyant_ad: "Gövde",
       varyantlar: [
-        { id: "celik", ad: "Çelik", g: "acacak-celik.jpg", koyu: false, murekkep: "siyah" }
+        { id: "celik", ad: "Çelik", g: "acacak-celik.jpg", koyu: false, murekkep: "siyah", karisim: "multiply" },
+        { id: "siyah", ad: "Mat siyah", g: "acacak-siyah.jpg", koyu: true, murekkep: "beyaz", karisim: "screen",
+          alan: { on: { x: 37, y: 18, w: 26, h: 34 } } }
       ],
-      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 34, y: 16, w: 32, h: 42 } }],
+      alanlar: [{ id: "on", ad: "Ön yüz", r: { x: 43, y: 20, w: 18, h: 26 } }],
       secimler: [],
-      tasarimlar: ["isim-serit", "monogram", "el-yazisi", "sehir-tipografi", "takim-rozeti"]
-    },
-    "dtf-baski": {
-      ad: "DTF baskı · tekstil", vurgu: "Kumaşa tam renkli transfer",
-      varyant_ad: "Ürün ve renk",
-      varyantlar: [
-        { id: "tisort-beyaz", ad: "Tişört · Beyaz", g: "tisort-beyaz.jpg", koyu: false, murekkep: "siyah" },
-        { id: "tisort-siyah", ad: "Tişört · Siyah", g: "tisort-siyah.jpg", koyu: true, murekkep: "beyaz" },
-        { id: "hoodie-siyah", ad: "Hoodie · Siyah", g: "hoodie-siyah.jpg", koyu: true, murekkep: "beyaz", alan: { gogus: { x: 34, y: 34, w: 32, h: 24 }, "gogus-sol": { x: 38, y: 36, w: 11, h: 9 }, sirt: { x: 29, y: 31, w: 42, h: 30 } } },
-        { id: "sweat-gri", ad: "Sweatshirt · Gri", g: "sweatshirt-gri.jpg", koyu: false, murekkep: "siyah", alan: { gogus: { x: 34, y: 29, w: 32, h: 28 }, "gogus-sol": { x: 38, y: 31, w: 11, h: 9 }, sirt: { x: 29, y: 26, w: 42, h: 34 } } }
-      ],
-      alanlar: [
-        { id: "gogus", ad: "Göğüs orta", r: { x: 33, y: 26, w: 34, h: 30 } },
-        { id: "gogus-sol", ad: "Göğüs (küçük)", r: { x: 37, y: 28, w: 12, h: 10 } },
-        { id: "sirt", ad: "Büyük baskı (sırt)", r: { x: 28, y: 24, w: 44, h: 36 } }
-      ],
-      secimler: [{ id: "beden", ad: "Beden", secenekler: BEDEN, varsayilan: "L" }],
-      tasarimlar: TEKSTIL_TASARIM
+      tasarimlar: ["monogram", "isim-serit", "el-yazisi", "sehir-tipografi", "takim-rozeti",
+                   "cerceve-rozet", "koordinat"]
     }
   };
 
   /* ---------- vitrin: her ürün için hazır kurulumlar ---------- */
   var VITRIN = {
     "baskili-tisort": [
-      { ad: "Uludağ rozeti", varyant: "siyah", tasarim: "dag-gunes", murekkep: "beyaz", alan: "gogus", olcek: .98 },
-      { ad: "Çift tişörtü", varyant: "beyaz", tasarim: "cift-tarih", murekkep: "siyah", alan: "gogus", olcek: 1 },
-      { ad: "Bursa silüeti", varyant: "lacivert", tasarim: "bursa-silueti", murekkep: "beyaz", alan: "gogus", olcek: 1 },
-      { ad: "Doğum yılı", varyant: "siyah", tasarim: "dogum-yili", murekkep: "altin", alan: "gogus", olcek: 1 },
-      { ad: "Evcil dostunuz", varyant: "beyaz", tasarim: "pati", murekkep: "siyah", alan: "gogus", olcek: .9 },
-      { ad: "Ekip rozeti", varyant: "lacivert", tasarim: "takim-rozeti", murekkep: "beyaz", alan: "gogus-sol", olcek: 1 }
+      { ad: "Tipografi kilidi", varyant: "siyah", tasarim: "tipografi-kilit", murekkep: "beyaz", alan: "gogus", olcek: 1 },
+      { ad: "Kolej rozeti", varyant: "krem", tasarim: "varsity", murekkep: "siyah", alan: "gogus", olcek: .96 },
+      { ad: "Retro dalga", varyant: "bordo", tasarim: "retro-dalga", murekkep: "krem", alan: "gogus", olcek: .96 },
+      { ad: "Geometrik kedi", varyant: "beyaz", tasarim: "geometrik-kedi", murekkep: "siyah", alan: "gogus", olcek: .94 },
+      { ad: "Ay evreleri", varyant: "lacivert", tasarim: "goksel-faz", murekkep: "beyaz", alan: "gogus", olcek: 1 },
+      { ad: "Soyut geometri", varyant: "krem", tasarim: "soyut-geometri", murekkep: "siyah", alan: "gogus", olcek: .92 },
+      { ad: "El çizimi", varyant: "beyaz", tasarim: "el-cizimi", murekkep: "siyah", alan: "gogus", olcek: .94 },
+      { ad: "Koordinat", varyant: "siyah", tasarim: "koordinat", murekkep: "altin", alan: "gogus", olcek: .9 },
+      { ad: "Çift tişörtü", varyant: "beyaz", tasarim: "cift-tarih", murekkep: "siyah", alan: "gogus", olcek: .92 }
     ],
     "baskili-sweatshirt-hoodie": [
-      { ad: "Tipografik şehir", varyant: "hoodie-siyah", tasarim: "sehir-tipografi", murekkep: "beyaz", alan: "sirt", olcek: 1 },
-      { ad: "Kuş ve ay", varyant: "hoodie-krem", tasarim: "kus-ay", murekkep: "siyah", alan: "gogus", olcek: .96 },
-      { ad: "Yıldız haritası", varyant: "hoodie-siyah", tasarim: "yildiz-harita", murekkep: "altin", alan: "gogus", olcek: .96 },
-      { ad: "Monogram", varyant: "sweat-gri", tasarim: "monogram", murekkep: "siyah", alan: "gogus-sol", olcek: 1 },
-      { ad: "Çift hoodie", varyant: "hoodie-krem", tasarim: "kalp-cizgi", murekkep: "kirmizi", alan: "gogus", olcek: 1 },
-      { ad: "Takım", varyant: "hoodie-siyah", tasarim: "takim-rozeti", murekkep: "beyaz", alan: "sirt", olcek: 1 }
+      { ad: "Sırt tipografisi", varyant: "hoodie-siyah", tasarim: "tipografi-kilit", murekkep: "beyaz", alan: "sirt", olcek: 1 },
+      { ad: "Kolej", varyant: "hoodie-krem", tasarim: "varsity", murekkep: "siyah", alan: "gogus", olcek: .96 },
+      { ad: "Kuş ve ay", varyant: "sweat-gri", tasarim: "kus-ay", murekkep: "siyah", alan: "gogus", olcek: .94 },
+      { ad: "Ay evreleri", varyant: "hoodie-siyah", tasarim: "goksel-faz", murekkep: "altin", alan: "gogus", olcek: 1 },
+      { ad: "Küçük monogram", varyant: "hoodie-krem", tasarim: "monogram", murekkep: "siyah", alan: "gogus-sol", olcek: 1 },
+      { ad: "Takım", varyant: "sweat-gri", tasarim: "takim-rozeti", murekkep: "siyah", alan: "sirt", olcek: .85 }
     ],
     "baskili-yelek": [
       { ad: "Ekip monogramı", varyant: "lacivert", tasarim: "monogram", murekkep: "beyaz", alan: "gogus-sol", olcek: 1 },
-      { ad: "Görev şeridi", varyant: "lacivert", tasarim: "isim-serit", murekkep: "beyaz", alan: "sirt", olcek: 1 },
-      { ad: "Takım rozeti", varyant: "lacivert", tasarim: "takim-rozeti", murekkep: "altin", alan: "sirt", olcek: 1 },
-      { ad: "Kulüp", varyant: "lacivert", tasarim: "dag-gunes", murekkep: "beyaz", alan: "sirt", olcek: .94 }
+      { ad: "Takım rozeti", varyant: "siyah", tasarim: "takim-rozeti", murekkep: "beyaz", alan: "gogus-sol", olcek: 1 },
+      { ad: "İsim şeridi", varyant: "lacivert", tasarim: "isim-serit", murekkep: "beyaz", alan: "gogus-sag", olcek: 1 },
+      { ad: "Çerçeve", varyant: "siyah", tasarim: "cerceve-rozet", murekkep: "altin", alan: "gogus-sol", olcek: 1 }
     ],
     "kisiye-ozel-kupa": [
       { ad: "Fotoğraflı kupa", varyant: "beyaz", tasarim: "foto-cerceve", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "Çiçek çelengi", varyant: "beyaz", tasarim: "cicek-celengi", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "Önce kahve", varyant: "kirmizi", tasarim: "once-kahve", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "Çift kupası", varyant: "kirmizi", tasarim: "cift-tarih", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "El yazısı isim", varyant: "beyaz", tasarim: "el-yazisi", murekkep: "kirmizi", alan: "govde", olcek: 1 },
-      { ad: "Pati", varyant: "beyaz", tasarim: "pati", murekkep: "siyah", alan: "govde", olcek: .96 }
+      { ad: "Sözlük maddesi", varyant: "beyaz", tasarim: "sozluk", murekkep: "siyah", alan: "govde", olcek: 1 },
+      { ad: "Önce kahve", varyant: "kirmizi", tasarim: "once-kahve", murekkep: "siyah", alan: "govde", olcek: .95 },
+      { ad: "Ay evreleri", varyant: "siyah", tasarim: "goksel-faz", murekkep: "beyaz", alan: "govde", olcek: 1 },
+      { ad: "Çiçek çelengi", varyant: "beyaz", tasarim: "cicek-celengi", murekkep: "siyah", alan: "govde", olcek: .95 },
+      { ad: "Koordinat", varyant: "kirmizi", tasarim: "koordinat", murekkep: "siyah", alan: "govde", olcek: .95 }
     ],
     "uv-dtf-baski": [
       { ad: "Çiçek sargı", varyant: "cam", tasarim: "cicek-celengi", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "İsimli bardak", varyant: "cam", tasarim: "el-yazisi", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "Tarihli sargı", varyant: "cam", tasarim: "cift-tarih", murekkep: "siyah", alan: "govde", olcek: 1 },
-      { ad: "Yıldız haritası", varyant: "cam", tasarim: "yildiz-harita", murekkep: "siyah", alan: "govde", olcek: 1 }
+      { ad: "İsimli bardak", varyant: "cam", tasarim: "el-yazisi", murekkep: "siyah", alan: "govde", olcek: .95 },
+      { ad: "Ay evreleri", varyant: "termos", tasarim: "goksel-faz", murekkep: "beyaz", alan: "govde", olcek: 1 },
+      { ad: "Koordinat", varyant: "termos", tasarim: "koordinat", murekkep: "beyaz", alan: "govde", olcek: .95 }
     ],
     "baskili-cakmak": [
       { ad: "Monogram", varyant: "siyah", tasarim: "monogram", murekkep: "beyaz", alan: "on", olcek: 1 },
-      { ad: "İsim şeridi", varyant: "siyah", tasarim: "isim-serit", murekkep: "beyaz", alan: "on", olcek: 1 },
-      { ad: "Kuş ve ay", varyant: "siyah", tasarim: "kus-ay", murekkep: "altin", alan: "on", olcek: 1 }
+      { ad: "İsim şeridi", varyant: "krem", tasarim: "isim-serit", murekkep: "siyah", alan: "on", olcek: 1 },
+      { ad: "Kuş ve ay", varyant: "siyah", tasarim: "kus-ay", murekkep: "altin", alan: "on", olcek: .95 }
     ],
     "baskili-kalem": [
       { ad: "İsim şeridi", varyant: "siyah", tasarim: "isim-serit", murekkep: "beyaz", alan: "govde", olcek: 1 },
-      { ad: "Monogram", varyant: "siyah", tasarim: "monogram", murekkep: "beyaz", alan: "govde", olcek: 1 },
-      { ad: "El yazısı", varyant: "siyah", tasarim: "el-yazisi", murekkep: "altin", alan: "govde", olcek: 1 }
+      { ad: "El yazısı", varyant: "gumus", tasarim: "el-yazisi", murekkep: "siyah", alan: "govde", olcek: 1 },
+      { ad: "Monogram", varyant: "siyah", tasarim: "monogram", murekkep: "beyaz", alan: "govde", olcek: 1 }
     ],
     "kisiye-ozel-anahtarlik": [
       { ad: "Fotoğraflı", varyant: "metal", tasarim: "foto-cerceve", murekkep: "siyah", alan: "on", olcek: 1 },
-      { ad: "Monogram", varyant: "ahsap", tasarim: "monogram", murekkep: "siyah", alan: "on", olcek: 1 },
-      { ad: "Pati", varyant: "metal", tasarim: "pati", murekkep: "siyah", alan: "on", olcek: 1 },
-      { ad: "El yazısı", varyant: "ahsap", tasarim: "el-yazisi", murekkep: "siyah", alan: "on", olcek: 1 }
+      { ad: "Geometrik kedi", varyant: "ahsap", tasarim: "geometrik-kedi", murekkep: "siyah", alan: "on", olcek: .95 },
+      { ad: "Pati", varyant: "metal", tasarim: "pati", murekkep: "siyah", alan: "on", olcek: .9 },
+      { ad: "El yazısı", varyant: "ahsap", tasarim: "el-yazisi", murekkep: "siyah", alan: "on", olcek: .95 }
     ],
     "magnetli-kapak-acacagi": [
-      { ad: "Monogram", varyant: "celik", tasarim: "monogram", murekkep: "siyah", alan: "on", olcek: 1 },
-      { ad: "İsim şeridi", varyant: "celik", tasarim: "isim-serit", murekkep: "siyah", alan: "on", olcek: 1 },
-      { ad: "Şehir", varyant: "celik", tasarim: "sehir-tipografi", murekkep: "siyah", alan: "on", olcek: .96 }
+      { ad: "Monogram", varyant: "celik", tasarim: "monogram", murekkep: "siyah", alan: "on", olcek: .95 },
+      { ad: "İsim şeridi", varyant: "siyah", tasarim: "isim-serit", murekkep: "beyaz", alan: "on", olcek: 1 },
+      { ad: "Şehir", varyant: "siyah", tasarim: "sehir-tipografi", murekkep: "beyaz", alan: "on", olcek: .9 }
     ],
     "dtf-baski": [
-      { ad: "Tam renkli göğüs", varyant: "tisort-siyah", tasarim: "dag-gunes", murekkep: "beyaz", alan: "gogus", olcek: .98 },
-      { ad: "Açık kumaş", varyant: "tisort-beyaz", tasarim: "bursa-silueti", murekkep: "siyah", alan: "gogus", olcek: 1 },
-      { ad: "Sırt baskısı", varyant: "hoodie-siyah", tasarim: "sehir-tipografi", murekkep: "beyaz", alan: "sirt", olcek: 1 },
+      { ad: "Tipografi kilidi", varyant: "tisort-siyah", tasarim: "tipografi-kilit", murekkep: "beyaz", alan: "gogus", olcek: 1 },
+      { ad: "Açık kumaşta", varyant: "tisort-beyaz", tasarim: "geometrik-kedi", murekkep: "siyah", alan: "gogus", olcek: .94 },
+      { ad: "Sırt baskısı", varyant: "hoodie-siyah", tasarim: "retro-dalga", murekkep: "beyaz", alan: "sirt", olcek: 1 },
       { ad: "Küçük logo", varyant: "sweat-gri", tasarim: "monogram", murekkep: "siyah", alan: "gogus-sol", olcek: 1 }
     ]
   };
@@ -487,6 +686,7 @@ window.LUNA_HEDIYE = (function () {
     murekkepler: MUREKKEP,
     urunler: URUN,
     vitrinler: VITRIN,
-    kacir: kacir
+    kacir: kacir,
+    karisimSec: karisimSec
   };
 })();
