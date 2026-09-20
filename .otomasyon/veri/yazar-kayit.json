@@ -634,5 +634,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfFMQsUVCRQo9L9963a92\"}",
   "zaman": "2026-09-20 23:51"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-21 02:16"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "inanç keskin",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-09-21 02:16"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "betplay",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-21 02:16"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "beşiktaş puan durumları",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-09-21 02:16"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "teşkilat",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfFYTgHQJ7JsM1XLcViib\"}",
+  "zaman": "2026-09-21 02:16"
  }
 ]
