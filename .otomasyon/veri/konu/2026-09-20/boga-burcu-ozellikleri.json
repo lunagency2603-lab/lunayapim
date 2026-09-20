@@ -67,7 +67,19 @@
   ],
   "kelime": 477
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Emission nebulae behind molecular clouds in Perseus and Taurus",
+  "yazar": "TK833",
+  "lisans": "CC BY-SA 4.0",
+  "lisans_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Emission_nebulae_behind_molecular_clouds_in_Perseus_and_Taurus.jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "boga-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 960,
+  "sorgu": "Taurus constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Wikipedia – Taurus (constellation)",

@@ -72,7 +72,19 @@
   ],
   "kelime": 496
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Galatasaray Trabzonspor pankart",
+  "yazar": "Ultraslansi",
+  "lisans": "CC BY-SA 3.0",
+  "lisans_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Galatasaray_Trabzonspor_pankart.JPG",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "trabzonspor-galatasaray-maci-ne-zaman-saat-kacta-hangi-kanalda.jpg",
+  "genislik": 960,
+  "yukseklik": 540,
+  "sorgu": "trabzonspor galatasaray maçı",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Milliyet",

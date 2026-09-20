@@ -69,7 +69,19 @@
   ],
   "kelime": 504
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Reference books in Sanko Library 1",
+  "yazar": "Eugene Ormandy",
+  "lisans": "CC BY-SA 4.0",
+  "lisans_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Reference_books_in_Sanko_Library_1.jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "orhan-pamuk-un-utrillo-etkisi-resimden-istanbul-yazarligina.jpg",
+  "genislik": 960,
+  "yukseklik": 720,
+  "sorgu": "books library",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Sanatatak",

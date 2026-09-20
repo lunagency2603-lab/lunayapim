@@ -67,7 +67,19 @@
   ],
   "kelime": 465
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Cancer constellation map ru lite",
+  "yazar": "Wikimedia Commons katkıcısı",
+  "lisans": "CC BY-SA 3.0",
+  "lisans_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Cancer_constellation_map_ru_lite.png",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "yengec-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 960,
+  "sorgu": "Cancer constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Wikipedia – Cancer (constellation)",
