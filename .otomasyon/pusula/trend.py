@@ -32,6 +32,7 @@ KATEGORI = {
     "spor":        ("Spor Ekranı",  "Maç hangi kanalda, saat kaçta"),
     "muzik":       ("Müzik",        "Yeni şarkılar, albümler, konserler"),
     "edebiyat":    ("Edebiyat",     "Yeni kitaplar, yazarlar, ödüller"),
+    "burc":        ("Burç",         "Burç özellikleri, uyum ve yükselen hesaplama"),
     "sanat":       ("Sanat",        "Sergi, sahne, konser"),
     "teknoloji":   ("Teknoloji",    "Yapay zekâ, yazılım, üretim araçları"),
     "muhendislik": ("Mühendislik",  "Üretim, enerji, otomotiv, altyapı"),
@@ -45,9 +46,13 @@ KATEGORI = {
 BOLUM_KAT = {"piyasalar": "piyasa", "ekran": "ekran", "spor": "spor", "sanat": "sanat", "yapay-zeka": "teknoloji",
              "yazilim": "teknoloji", "muhendislik": "muhendislik", "sosyal-medya": "sosyal-medya",
              "muzik": "muzik", "edebiyat": "edebiyat", "haber": "haber", "gundem": "haber"}
+# Ust menude gorunen bolumler (arastirma 20.09: 6-8 baslik + "Tumu").
+# Tamami altbilgide ve ana sayfa bolum seritlerinde duruyor.
+MENU = ["haber", "aranan", "piyasa", "ekran", "spor", "burc", "teknoloji"]
+
 BOLUM_GORSEL = {"piyasa": "../video/karga-k3", "ekran": "renk-masasi", "spor": "../video/karga-k5", "sanat": "set-isik",
                 "teknoloji": "render-istasyonu", "muhendislik": "render-istasyonu", "sosyal-medya": "../video/karga-k2", "aranan": "../video/karga-k6",
-                "haber": "drone-safak", "muzik": "set-isik", "edebiyat": "renk-masasi"}
+                "haber": "drone-safak", "muzik": "set-isik", "edebiyat": "renk-masasi", "burc": "../video/karga-k1"}
 KAT_GIRIS = {
     "gundem": "Her sabah inşaat, konut, emlak, sanayi, turizm ve tanıtım sektörlerinden günün haberleri taranır; işimize dokunanlar seçilir. Her madde kaynağı ve tarihiyle durur, altında tek bir soru cevaplanır: bu bizim için ne demek? Haberi yeniden yazmıyoruz; olgu kaynaktan, analiz bizden. Rakam yalnızca kaynakta geçiyorsa yazılır; tahmin ve projeksiyon bu sayfada yok.",
     "analiz": "Analiz yazıları haberin bir adım ötesi: bir gelişmenin bir inşaat firmasının, bir emlak ofisinin ya da bir üreticinin tanıtım kararını nasıl değiştirdiğini anlatır. Fiyat bantları, teslim süreleri ve kontrol listeleri gerçek işlerden gelir. Uzun yazılar blogda, kısa okumalar burada.",
@@ -247,6 +252,7 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 %s
 </head>
 <body class="ts-tema">
+{serit}
 <header class="ts-ust">
   <div class="wrap ts-ust-ic">
     <a class="ts-marka" href="{trk}">Luna<b>Trend</b>Saphiens</a>
@@ -254,8 +260,40 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
     <div class="ts-ust-sag"><a href="{on}" class="ts-ana">Luna Yapım</a><a href="#abone" class="ts-abone-dug">Abone ol</a></div>
   </div>
 </header>
-""".replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr) % (ADSENSE, _e(baslik), _e(aciklama), url, _e(baslik), _e(aciklama), tur, url, og, og, sema or "",
-       "".join('<a href="%s%s/">%s</a>' % (tr, k, v[0]) for k, v in KATEGORI.items()))
+""".replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr).replace("{serit}", _ust_serit(tr)) % (ADSENSE, _e(baslik), _e(aciklama), url, _e(baslik), _e(aciklama), tur, url, og, og, sema or "",
+       "".join('<a href="%s%s/">%s</a>' % (tr, k, KATEGORI[k][0]) for k in MENU if k in KATEGORI)
+       + '<a class="ts-nav-tumu" href="%s#bolumler">Tümü</a>' % (tr or "./"))
+
+
+def _ust_serit(tr=""):
+    """Her sayfanin tepesinde ince veri seridi: gunun kurlari + tarih.
+
+    Arastirma (20.09.2026): buyuk portallarda tekrar ziyaretin motoru haber degil,
+    her gun bakilan kucuk veriler. Veri yoksa serit hic basilmaz — bos kutu olmaz.
+    """
+    try:
+        from . import piyasa_gunluk as PG
+        v = PG.son()
+    except Exception:
+        v = None
+    if not v:
+        return ""
+    k = (v.get("tcmb") or {}).get("kurlar", {})
+    al = v.get("altin") or {}
+    oge = []
+    for kod, ad in (("USD", "Dolar"), ("EUR", "Euro")):
+        x = k.get(kod, {}).get("satis")
+        if x:
+            oge.append('<a href="%spiyasa/%s"><b>%s</b> %s ₺</a>' % (tr, _e(v["tarih"]), ad, _e(_tl(x))))
+    ga = (al.get("gram-altin") or {}).get("satis")
+    if ga:
+        oge.append('<a href="%spiyasa/%s"><b>Gram altın</b> %s ₺</a>' % (tr, _e(v["tarih"]), _e(ga)))
+    if not oge:
+        return ""
+    return ('<div class="ts-serit-ust"><div class="wrap ts-serit-ust-ic">'
+            '<span class="ts-serit-tarih">%s</span><div class="ts-serit-veri">%s</div>'
+            '<a class="ts-serit-arac" href="%saraclar">Araçlar</a></div></div>'
+            % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr))
 
 
 def _alt(on="../", tr=""):
@@ -267,6 +305,7 @@ def _alt(on="../", tr=""):
         <p>Günün haberleri, analizler ve raporlar. Her madde kaynaklı; rakam yalnızca kaynakta varsa yazılır. Piyasa tarafı yatırım tavsiyesi değildir.</p></div>
       <div><h4>Bölümler</h4>%s</div>
       <div><h4>Luna Yapım</h4><a href="{on}">Ana site</a><a href="{on}yazilim">Yazılım</a><a href="{on}hizmetler/">Prodüksiyon</a><a href="{on}studyo">Stüdyo</a><a href="{on}matrix">KDA Matrix</a></div>
+      <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
       <div><h4>Kurumsal</h4><a href="{on}iletisim">İletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
     </div>
     <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>LunaTrendSaphiens bir Luna Yapım yayınıdır</span></div>
@@ -586,6 +625,22 @@ def _rakam_kutu(on="../", tr=""):
             _e(_tr_tarih(v["tarih"])), "".join(hucre), tr, _e(v["tarih"]))
 
 
+def _arac_blok(tr=""):
+    """Ana sayfada araclar serildi: hesaplayan/denenen sayfalar okuru tutar."""
+    ARAC = [("yukselen-burc-hesaplama", "Yükselen burç", "Doğum saatine göre", "Burç"),
+            ("burc-uyumu", "Burç uyumu", "12 burcun eşleşmesi", "Burç"),
+            ("oruntu-oyunu", "Örüntü oyunu", "10 soru, çözümlü", "Oyun"),
+            ("yas-hesaplama", "Yaş hesaplama", "Yıl, ay, gün", "Günlük"),
+            ("vucut-kitle-indeksi", "Vücut kitle indeksi", "Boy ve kilodan", "Sağlık"),
+            ("yuzde-hesaplama", "Yüzde hesaplama", "Oran ve değişim", "Günlük")]
+    kart = "".join('<li><a href="%s%s"><span class="ts-arac-rozet">%s</span><strong>%s</strong><em>%s</em></a></li>'
+                   % (tr, s, _e(r), _e(ad), _e(oz)) for s, ad, oz, r in ARAC)
+    return ('      <div class="ts-giris ts-arac-serit"><div class="ts-serit-bas-satir">'
+            '<h2>Araçlar</h2><p>Hesaplayan, deneyen sayfalar — hepsi tarayıcınızda çalışır.</p>'
+            '<a class="ts-serit-tumu" href="%saraclar">Tümü &rarr;</a></div>'
+            '<ul class="ts-arac-izgara">%s</ul></div>\n' % (tr, kart))
+
+
 def _kat_seritleri(kok, hepsi, on="../", tr=""):
     """Ana sayfa: her bolumden en yeni 3 madde, kendi basligiyla serit serit.
 
@@ -596,7 +651,7 @@ def _kat_seritleri(kok, hepsi, on="../", tr=""):
     def _u(m):
         return tr + m["slug"] if m["tur"] in ("haber", "rehber") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
 
-    sira = ["haber", "aranan", "piyasa", "ekran", "spor", "muzik", "edebiyat", "sanat",
+    sira = ["haber", "aranan", "piyasa", "ekran", "spor", "burc", "muzik", "edebiyat", "sanat",
             "teknoloji", "muhendislik", "sosyal-medya", "analiz", "rapor", "sehir"]
     par = []
     for kat in sira:
@@ -617,7 +672,7 @@ def _kat_seritleri(kok, hepsi, on="../", tr=""):
                    % (tr, kat, _e(ad), _e(alt), tr, kat, "".join(kart)))
     if not par:
         return ""
-    return ('      <div class="ts-bolumler"><div class="ts-bolumler-bas">'
+    return ('      <div class="ts-bolumler" id="bolumler"><div class="ts-bolumler-bas">'
             '<h2 class="etk">Bölümler</h2><p>Her bölümün en yenisi; tamamı bölüm sayfasında.</p></div>'
             '%s</div>\n' % "".join(par))
 
@@ -694,6 +749,10 @@ def akis_html(kok, kat=None):
                '<p>Kartlara sigmayan %d madde, yeniden eskiye.</p><ul class="ts-tumu-liste">%s</ul></div>\n'
                % (len(kalan), "".join(sat)))
     if not kat:
+        try:
+            ek += _arac_blok(tr)
+        except Exception as ex:
+            print("arac blok:", ex)
         try:
             ek += _kat_seritleri(kok, hepsi, on, tr)
         except Exception as ex:

@@ -1376,3 +1376,71 @@ footer.ts-baglam p{font-size:14px;line-height:1.6;color:var(--gri-2)}
 .ts-serit-liste li.ilk .ts-serit-bas{font-size:1.02rem}
 .ts-serit-liste a:hover .ts-serit-bas{text-decoration:underline}
 .ts-serit-liste time{display:block;margin-top:.2rem;font-size:.76rem;opacity:.5}
+
+/* TrendSaphiens araç sayfaları */
+.ts-arac-sayfa{padding:1.6rem 0 2.4rem}
+.ts-arac-sayfa h1{margin:.3rem 0 .4rem;font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.02em}
+.ts-arac-ozet{margin:0 0 1.2rem;opacity:.72;max-width:52ch}
+.ts-crumbs{font-size:.82rem;opacity:.6;margin-bottom:.5rem}
+.ts-crumbs a{text-decoration:none}
+.ts-arac-kutu{border:1px solid rgba(0,0,0,.14);border-radius:14px;padding:1.1rem;background:rgba(255,255,255,.55);max-width:46rem}
+.ts-alanlar{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.8rem;margin-bottom:.9rem}
+.ts-alanlar label{display:flex;flex-direction:column;gap:.3rem;font-size:.86rem;font-weight:600}
+.ts-alanlar input,.ts-alanlar select{font:inherit;font-weight:400;padding:.55rem .6rem;border:1px solid rgba(0,0,0,.22);border-radius:9px;background:#fff;min-width:0}
+.ts-alanlar input:focus,.ts-alanlar select:focus{outline:2px solid currentColor;outline-offset:1px}
+.ts-sonuc-kart{margin-top:1rem;border:1px solid rgba(0,0,0,.16);border-left-width:4px;border-radius:12px;padding:1rem 1.1rem;background:rgba(255,255,255,.75);max-width:46rem}
+.ts-sonuc-buyuk{display:block;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;margin:.25rem 0 .5rem}
+.ts-sonuc-orta{font-size:1.1rem;margin:.2rem 0}
+.ts-uyari{color:#a3282a;font-weight:600;margin:.8rem 0 0}
+.ts-durust{border-top:1px solid rgba(0,0,0,.12);padding-top:.7rem;margin-top:1.4rem;max-width:60ch}
+.ts-gizlilik{opacity:.65;margin-top:1.2rem}
+.ts-arac-geri{margin-top:1.6rem}
+.ts-arac-geri a{text-decoration:none;font-weight:600}
+/* araç dizini / şeridi */
+.ts-arac-izgara{list-style:none;margin:.7rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.75rem}
+.ts-arac-izgara a{display:block;height:100%;border:1px solid rgba(0,0,0,.14);border-radius:12px;padding:.8rem .9rem;text-decoration:none;background:rgba(255,255,255,.5);transition:transform .12s ease,box-shadow .12s ease}
+.ts-arac-izgara a:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.09)}
+.ts-arac-izgara strong{display:block;margin:.25rem 0 .15rem;font-size:1rem}
+.ts-arac-izgara em{font-style:normal;font-size:.84rem;opacity:.62}
+.ts-arac-rozet{display:inline-block;font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;opacity:.55}
+.ts-arac-serit{margin-top:1.6rem}
+/* burç uyumu tablosu */
+.ts-tablo-sar{overflow-x:auto;margin:.8rem 0 1.2rem}
+.ts-uyum{border-collapse:collapse;font-size:.84rem;min-width:34rem}
+.ts-uyum caption{text-align:left;padding-bottom:.5rem;opacity:.65;font-size:.84rem}
+.ts-uyum th,.ts-uyum td{border:1px solid rgba(0,0,0,.1);padding:.32rem .4rem;text-align:center}
+.ts-uyum th[scope=row]{text-align:left;white-space:nowrap;font-weight:600}
+.ts-uyum th[scope=row] a{text-decoration:none}
+.ts-uyum td span{display:block;font-weight:700}
+.ts-uyum td.p5{background:rgba(31,122,72,.20)}
+.ts-uyum td.p4{background:rgba(31,122,72,.10)}
+.ts-uyum td.p2{background:rgba(163,40,42,.09)}
+/* örüntü oyunu */
+.ts-oyun{max-width:40rem}
+.ts-oyun-sayac{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin:0}
+.ts-oyun-soru{font-size:1.12rem;line-height:1.35;margin:.4rem 0 .9rem}
+.ts-oyun-secenek{display:grid;gap:.5rem}
+.ts-oyun-secenek button{font:inherit;text-align:left;padding:.62rem .8rem;border:1px solid rgba(0,0,0,.2);border-radius:10px;background:#fff;cursor:pointer}
+.ts-oyun-secenek button:hover{border-color:currentColor;transform:translateX(2px)}
+.ts-oyun-dokum{margin-top:1.3rem;display:grid;gap:.7rem}
+.ts-oyun-dokum>div{border-left:3px solid rgba(0,0,0,.2);padding:.5rem .8rem;background:rgba(255,255,255,.45)}
+.ts-oyun-dokum>div.ok{border-left-color:#1f7a48}
+.ts-oyun-dokum>div.yanlis{border-left-color:#a3282a}
+.ts-oyun-dokum .s{font-weight:600;margin:0 0 .25rem}
+.ts-oyun-dokum .v{font-size:.86rem;margin:0 0 .2rem;opacity:.8}
+.ts-oyun-dokum .a{font-size:.86rem;margin:0;opacity:.68}
+/* menü "Tümü" */
+.ts-nav-tumu{font-weight:700}
+@media(max-width:900px){.ts-nav{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;display:block!important}.ts-nav a{display:inline-block}}
+
+/* TrendSaphiens üst veri şeridi */
+.ts-serit-ust{border-bottom:1px solid rgba(0,0,0,.1);font-size:.8rem;background:rgba(0,0,0,.03)}
+.ts-serit-ust-ic{display:flex;align-items:center;gap:.9rem;padding:.4rem 0;flex-wrap:wrap}
+.ts-serit-tarih{letter-spacing:.06em;text-transform:uppercase;opacity:.55;font-size:.72rem;white-space:nowrap}
+.ts-serit-veri{display:flex;gap:.9rem;flex-wrap:wrap;flex:1 1 auto}
+.ts-serit-veri a{text-decoration:none;white-space:nowrap;opacity:.85}
+.ts-serit-veri a:hover{opacity:1;text-decoration:underline}
+.ts-serit-veri b{font-weight:600;opacity:.6;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-right:.25rem}
+.ts-serit-arac{text-decoration:none;font-weight:600;white-space:nowrap}
+.ts-serit-arac:hover{text-decoration:underline}
+@media(max-width:640px){.ts-serit-tarih{display:none}}
