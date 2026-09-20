@@ -124,9 +124,12 @@ jobs:
           python3 -m pusula.cli trend || true
           python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE" || true
 
-      - name: Araç sayfalarını bas
+      - name: Araç sayfalarını ve günün bültenini bas
         working-directory: .otomasyon
-        run: python3 -m pusula.arac || true
+        run: |
+          python3 -m pusula.arac || true
+          python3 -m pusula.bulten_sayfa || true
+          python3 -m pusula.kurumsal || true
 
       - name: Canlı künye ve site asistanı tazele
         working-directory: .otomasyon

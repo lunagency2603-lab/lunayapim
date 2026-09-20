@@ -292,8 +292,8 @@ def _ust_serit(tr=""):
         return ""
     return ('<div class="ts-serit-ust"><div class="wrap ts-serit-ust-ic">'
             '<span class="ts-serit-tarih">%s</span><div class="ts-serit-veri">%s</div>'
-            '<a class="ts-serit-arac" href="%saraclar">Araçlar</a></div></div>'
-            % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr))
+            '<a class="ts-serit-arac" href="%sbulten">Bülten</a><a class="ts-serit-arac" href="%saraclar">Araçlar</a></div></div>'
+            % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr, tr))
 
 
 def _alt(on="../", tr=""):
@@ -305,8 +305,8 @@ def _alt(on="../", tr=""):
         <p>Günün haberleri, analizler ve raporlar. Her madde kaynaklı; rakam yalnızca kaynakta varsa yazılır. Piyasa tarafı yatırım tavsiyesi değildir.</p></div>
       <div><h4>Bölümler</h4>%s</div>
       <div><h4>Luna Yapım</h4><a href="{on}">Ana site</a><a href="{on}yazilim">Yazılım</a><a href="{on}hizmetler/">Prodüksiyon</a><a href="{on}studyo">Stüdyo</a><a href="{on}matrix">KDA Matrix</a></div>
-      <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
-      <div><h4>Kurumsal</h4><a href="{on}iletisim">İletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
+      <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}bulten">Günün bülteni</a><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
+      <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{on}iletisim">Luna Yapım iletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
     </div>
     <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>LunaTrendSaphiens bir Luna Yapım yayınıdır</span></div>
   </div>
@@ -625,6 +625,21 @@ def _rakam_kutu(on="../", tr=""):
             _e(_tr_tarih(v["tarih"])), "".join(hucre), tr, _e(v["tarih"]))
 
 
+def _bulten_bant(kok, tr=""):
+    """Ana sayfada gunun bultenine gonderen bant — 30 madde tek sayfada."""
+    try:
+        from . import bulten_sayfa as B
+        adet = len(B._maddeler(kok))
+    except Exception:
+        adet = 0
+    if not adet:
+        return ""
+    return ('      <a class="ts-giris bl-bant" href="%sbulten">'
+            '<span class="bl-bant-etk">Günün bülteni</span>'
+            '<strong>%d başlık, tek sayfada sırayla</strong>'
+            '<span class="bl-bant-ok">Bülteni aç &rarr;</span></a>\n' % (tr, adet))
+
+
 def _arac_blok(tr=""):
     """Ana sayfada araclar serildi: hesaplayan/denenen sayfalar okuru tutar."""
     ARAC = [("yukselen-burc-hesaplama", "Yükselen burç", "Doğum saatine göre", "Burç"),
@@ -749,6 +764,10 @@ def akis_html(kok, kat=None):
                '<p>Kartlara sigmayan %d madde, yeniden eskiye.</p><ul class="ts-tumu-liste">%s</ul></div>\n'
                % (len(kalan), "".join(sat)))
     if not kat:
+        try:
+            ek += _bulten_bant(kok, tr)
+        except Exception as ex:
+            print("bulten bant:", ex)
         try:
             ek += _arac_blok(tr)
         except Exception as ex:
@@ -1255,6 +1274,32 @@ def _yaz(yol, icerik, uretilen):
     return yol
 
 
+def _baska_modul_sayfalari(kok):
+    """trend/ altinda BASKA modullerin urettigi sayfalar — supurge bunlara dokunmaz.
+
+    20.09.2026: arac.py'nin bastigi 7 sayfa (hesaplayicilar, oyun, arac dizini)
+    bu listede olmadigi icin supurge onlari "kaldirilmis sayfa" sayip sildi ve
+    _redirects'e /trend/ 301'i yazdi. Dosya sonraki adimda yeniden basiliyordu
+    ama yonlendirme kalici olunca sayfa canlida ANA SAYFAYA dusuyordu.
+    """
+    slug = set()
+    try:
+        from . import arac as A
+        slug |= {s for s, _ad, _oz, _r in A.ARACLAR}
+        slug.add("araclar")
+    except Exception:
+        pass
+    try:
+        from . import bulten_sayfa as B
+        slug.add(B.SLUG)
+    except Exception:
+        pass
+    # modul yuklenemezse bilinen adlar yine korunur
+    slug |= {"araclar", "yukselen-burc-hesaplama", "burc-uyumu", "yas-hesaplama",
+             "vucut-kitle-indeksi", "yuzde-hesaplama", "oruntu-oyunu", "bulten"}
+    return {os.path.abspath(os.path.join(kok, "trend", x + ".html")) for x in slug}
+
+
 def _supur(kok, uretilen, log=None):
     """trend/ altında artık ÜRETİLMEYEN sayfaları siler.
 
@@ -1264,6 +1309,7 @@ def _supur(kok, uretilen, log=None):
     değerlendirilir. Bu süpürge her koşuda çalışır; yalnız trend/ altına dokunur.
     """
     silinen = []
+    uretilen = set(uretilen) | _baska_modul_sayfalari(kok)
     d = os.path.join(kok, "trend")
     for r, _kl, dosyalar in os.walk(d):
         for n in dosyalar:
