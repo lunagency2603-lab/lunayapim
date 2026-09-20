@@ -116,6 +116,18 @@ jobs:
         working-directory: .otomasyon
         run: python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE"
 
+      - name: Görseli olmayan yazılara kapak bul
+        working-directory: .otomasyon
+        run: |
+          python3 -m pusula.gorsel_tamamla || true
+          # yeni kapak bulunduysa sayfalar o görselle yeniden bassın
+          python3 -m pusula.cli trend || true
+          python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE" || true
+
+      - name: Araç sayfalarını bas
+        working-directory: .otomasyon
+        run: python3 -m pusula.arac || true
+
       - name: Canlı künye ve site asistanı tazele
         working-directory: .otomasyon
         run: |

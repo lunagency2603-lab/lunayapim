@@ -1,0 +1,6 @@
+# Otomatik üretilen durum dosyaları: merge çakışması çıkarsa birleştirmeye çalışma,
+# yerel sürümü koru — bir sonraki koşu zaten yeniden üretiyor. (20.09.2026)
+assets/motor.json -merge
+assets/asistan-veri.json -merge
+.otomasyon/veri/denetim.json -merge
+sitemap.xml -merge
