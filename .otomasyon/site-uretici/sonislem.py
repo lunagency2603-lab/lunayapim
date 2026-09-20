@@ -273,6 +273,21 @@ def sitemap_olu_temizle(kok):
     return {"sitemap_dusen": len(dusen), "ornek": dusen[:3]}
 
 
+def ilk_gorsel_oncelik(s):
+    """Sayfadaki ILK gorseli erken yukle — LCP dogrudan bu karede olculuyor.
+
+    20.09.2026 bagimsiz olcum (PageSpeed Insights, mobil): LCP 9,7 sn. Uretici
+    her gorseli loading="lazy" basiyordu; ekranin ustundeki kapak da gec
+    basliyordu. Ilk gorsel eager + fetchpriority=high, gerisi lazy kalir.
+    """
+    if 'fetchpriority="high"' in s:
+        return s                      # daha once isaretlenmis — her kosuda bir tane daha eager olmasin
+    i = s.find('loading="lazy"')
+    if i < 0:
+        return s
+    return s[:i] + 'loading="eager" fetchpriority="high"' + s[i + len('loading="lazy"'):]
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -292,6 +307,7 @@ def calistir(kok, desen="**/*.html"):
         s = gizlilik_ekle(s, on)
         s = surumle(s)
         s = tablo_sar(s)
+        s = ilk_gorsel_oncelik(s)
         s = belge_ekle(s, yol, on)
         if s != o:
             io.open(yol, "w", encoding="utf-8").write(s)

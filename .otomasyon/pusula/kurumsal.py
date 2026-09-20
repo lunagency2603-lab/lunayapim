@@ -64,7 +64,7 @@ def _sayfa(slug, baslik, meta, h1, ozet, govde, sss=None, tur="WebPage"):
   </div>
 </main>
 """ % (_e(h1), _e(ozet), govde, sss_html, _e(T._tr_tarih(datetime.date.today().isoformat())))
-    return T._bas(baslik, meta, url, None, sema_html, "website", "../", "") + ic + T._alt("../", "")
+    return T._bas(baslik, meta, url, None, sema_html, "website", "../", "", ana=False) + ic + T._alt("../", "", ana=False)
 
 
 def hakkimizda_html():
@@ -103,10 +103,17 @@ def hakkimizda_html():
   Openverse. Haber sitelerinin fotoğrafları, afişler ve maç görüntüleri kullanılmaz; bunlar
   yayıncının telifindedir. Her görselin eser adı, üreteni ve lisansı sayfada durur.</p>
 
-  <h2>Yapay zekâ kullanımı</h2>
-  <p>Yazıların hazırlanmasında yapay zekâ kullanılır: kaynak taraması, olgu çıkarımı ve
-  taslak yazım bu sistemle yapılır. Kaynak seçimi, doğrulama ve yayın kararı insandadır.
-  Üretilen görsel kullanıldığında sayfada açıkça belirtilir.</p>
+  <h2>Doğruluk ve sorumluluk</h2>
+  <p>Yayının sorumluluğu Luna Yapım'a aittir. Bir yazı yayına çıkmadan önce kaynağıyla
+  karşılaştırılır: rakam, tarih ve isimler kaynakta yazdığı gibi geçer; kaynakta olmayan
+  hiçbir sayı sayfaya girmez.</p>
+  <p>Özgünlük şartımız değişmez. Metin başka bir yayından kopyalanmaz, cümleleri
+  değiştirilerek yeniden yazılmış hâli de yayımlanmaz. Her yazı yayından önce benzerlik
+  kontrolünden geçer; eşik aşılırsa sayfa yayımlanmaz.</p>
+  <p>Üretilmiş görsel kullanıldığında sayfada açıkça belirtilir. Kapaklarda serbest lisanslı
+  fotoğraflar kullanılır ve her birinin eseri, üreteni ve lisansı aynı sayfada durur.</p>
+  <p>Yayının teknik durumu bizden bağımsız araçlarla da ölçülür; sonuçlar
+  <a href="denetim">denetim sayfasında</a> açık durur.</p>
 
   <h2>Neden bir yapım şirketi yayın tutuyor?</h2>
   <p>Luna Yapım'ın işi sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin
@@ -273,11 +280,111 @@ def kosullar_html():
                   "Kullanım koşulları", "Alıntı kuralları, lisanslar ve sorumluluk sınırları.", govde)
 
 
+def _denetim_veri():
+    try:
+        yol = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                           "veri", "denetim-dis.json")
+        return json.load(io.open(yol, encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def denetim_html():
+    """Bagimsiz olcum sonuclari — kendi denetimimizin disindan."""
+    r = _denetim_veri()
+    if not r:
+        tablo = ("<p>Bu sayfadaki sayilar her hafta disaridan olculur. Ilk olcum hazirlaniyor; "
+                 "sonuc ciktiginda burada tarihiyle birlikte gorunecek.</p>")
+    else:
+        o = r.get("ozet", {})
+        psi = o.get("psi_ortalama", {})
+        ad = {"performance": "Performans", "accessibility": "Erisilebilirlik",
+              "best-practices": "En iyi uygulamalar", "seo": "SEO"}
+        satir = "".join("<tr><td>%s</td><td>%s</td></tr>" % (ad.get(k, k), v) for k, v in psi.items())
+        sorun = r.get("canli", {}).get("sorun", [])
+        sorun_html = ("<p><b>Canli taramada sorun bulunmadi.</b> Site haritasindaki "
+                      "%d adresin tamami dogrudan aciliyor.</p>" % o.get("adres", 0)) if not sorun else (
+            "<p><b>%d adreste sorun var.</b> Ilk on tanesi:</p><ul>%s</ul>"
+            % (len(sorun), "".join("<li><code>%s</code> — %s</li>" % (_e(x.get("adres", "")), _e(x.get("durum", "")))
+                                   for x in sorun[:10])))
+        w3 = "".join("<tr><td>%s</td><td>%s</td><td>%s</td></tr>"
+                     % (_e(x.get("yol", "")), x.get("hata", "-"), x.get("uyari", "-"))
+                     for x in r.get("w3c", []))
+        tablo = """
+  <p class="ts-not">Son olcum: %s</p>
+  <h3>Google PageSpeed Insights (mobil, ortalama)</h3>
+  <table class="ts-uyum"><thead><tr><th>Basvurulan olcu</th><th>Puan (100 uzerinden)</th></tr></thead><tbody>%s</tbody></table>
+  <h3>Canli adres taramasi</h3>
+  %s
+  <h3>W3C HTML dogrulayicisi</h3>
+  <table class="ts-uyum"><thead><tr><th>Sayfa</th><th>Hata</th><th>Uyari</th></tr></thead><tbody>%s</tbody></table>
+""" % (_e(r.get("tarih", "")[:16].replace("T", " ")), satir, sorun_html, w3)
+
+    govde = """
+<section class="ts-giris">
+  <h2>Neden bu sayfa var?</h2>
+  <p>Bir yayinin kendi kendini denetlemesi yeterli degil. Bizim denetimimiz depodaki
+  dosyalara bakar; dosya dogru oldugu halde canli sayfa yanlis olabilir. Nitekim 20 Eylul
+  2026'da tam bu oldu: kurumsal sayfalar depoda duruyordu, canlida ana sayfaya dusuyordu.
+  Kendi olcumumuz bunu goremedi.</p>
+  <p>Bu yuzden yayin haftada bir, bizden bagimsiz uc kaynakla olculur ve sonuc — iyi ya da
+  kotu — bu sayfada aynen yayimlanir.</p>
+
+  <h2>Kim olcuyor?</h2>
+  <p><b>Google PageSpeed Insights.</b> Sayfanin acilma hizi, erisilebilirligi ve teknik SEO
+  uygunlugu Google'in kendi Lighthouse olcumuyle puanlanir.</p>
+  <p><b>Canli adres taramasi.</b> Site haritasindaki her adres ve sayfalardaki her ic baglanti
+  tek tek acilir: 404 donen, ana sayfaya dusen ya da yonlendirilen adres varsa burada yazar.</p>
+  <p><b>W3C dogrulayicisi.</b> HTML standardina gore hata ve uyari sayisi.</p>
+
+  <h2>Son olcum</h2>
+  %s
+
+  <h2>Puanlar nasil okunur?</h2>
+  <p><b>Performans.</b> Sayfanin yavas bir mobil baglantida ne kadar cabuk okunur hale
+  geldigini olcer. 90 ve ustu iyi, 50-89 orta, 50 alti kotu sayilir. En agir iki kalem
+  genellikle yazi tipleri ve kapak gorselidir: ikisi de ilk ekranda gorunen seyler oldugu
+  icin gecikmeleri dogrudan okura yansir.</p>
+  <p><b>Erisilebilirlik.</b> Ekran okuyucuyla gezen, klavyeyle ilerleyen ya da dusuk
+  gorme keskinligiyle okuyan birinin sayfayi kullanabilmesi. Renk karsitligi, baslik
+  sirasi ve baglanti adlari buraya girer. Otomatik olcum her seyi yakalamaz; yakaladigi
+  da yeterince onemlidir.</p>
+  <p><b>En iyi uygulamalar.</b> Guvenli baglanti, dogru en-boy oraninda gorsel, tarayici
+  konsoluna dusen hata gibi teknik hijyen maddeleri.</p>
+  <p><b>SEO.</b> Arama motorunun sayfayi okuyup siniflandirabilmesi icin gereken temel
+  sartlar: baslik, aciklama, gezinebilir baglantilar, okunabilir yazi boyu. Bu puan
+  sirada ust siraya cikaracagimizi degil, teknik bir engel kalmadigini gosterir.</p>
+
+  <h2>Canli tarama tam olarak ne yapiyor?</h2>
+  <p>Site haritasindaki her adres tek tek acilir ve donen HTTP kodu ile <em>varis adresi</em>
+  karsilastirilir. Bir sayfa 200 donse bile okuru baska bir adrese birakiyorsa bu sorundur:
+  arama motoru boyle bir adresi "soft 404" diye isaretler ve zamanla dizinden dusurur.
+  Ayindan sonra sayfalardaki ic baglantilarin hedefleri de ayni sekilde denenir; site
+  haritasinda olmayan ama sayfadan bagli her adres bu ikinci turda yakalanir.</p>
+
+  <h2>Bulunan sorun ne oluyor?</h2>
+  <p>Canli taramada sorun cikarsa haftalik kosu kirmizi doner ve duzeltilene kadar
+  kapanmaz. Sorunu sayfadan silmiyoruz; duzeltip tarihini yaziyoruz.</p>
+</section>
+""" % tablo
+
+    sss = [("Bu sayilari siz mi hesapliyorsunuz?",
+            "Hayir. PageSpeed puanlarini Google'in olcum servisi, HTML hatalarini W3C dogrulayicisi uretir. Biz yalnizca sonucu oldugu gibi basiyoruz."),
+           ("Olcum ne siklikla yenileniyor?",
+            "Haftada bir otomatik olarak; ayrica elle de calistirilabilir. Sayfanin ustundeki tarih son olcumun tarihidir."),
+           ("Kotu sonuc cikarsa yine yayinlar misiniz?",
+            "Evet. Sayfanin amaci iyi gorunmek degil, durumu gostermek. Duzeltme yapildiginda yeni olcum eskisinin yerine gecer.")]
+    return _sayfa("denetim", "Bagimsiz denetim — TrendSaphiens",
+                  "TrendSaphiens'in hizi, erisilebilirligi ve canli adres saglligi bizden bagimsiz araclarla haftada bir olculur; sonuclar bu sayfada acik durur.",
+                  "Bagimsiz denetim", "Yayinin teknik durumu, disaridan olculmus haliyle.", govde, sss, "WebPage")
+
+
 SAYFALAR = [
     ("hakkimizda", "Hakkımızda", hakkimizda_html),
     ("iletisim", "İletişim", iletisim_html),
     ("gizlilik", "Gizlilik ve çerezler", gizlilik_html),
     ("kosullar", "Kullanım koşulları", kosullar_html),
+    ("denetim", "Bağımsız denetim", denetim_html),
 ]
 
 

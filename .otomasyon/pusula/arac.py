@@ -125,7 +125,7 @@ def _sayfa(slug, baslik, meta, h1, ozet, govde, sema=None, sss=None):
   </div>
 </main>
 """.replace("{SURUM}", SURUM) % (_e(h1), _e(ozet), govde, sss_html)
-    return T._bas(baslik, meta, url, None, sema_html, "website", "../", "") + govde_html + T._alt("../", "")
+    return T._bas(baslik, meta, url, None, sema_html, "website", "../", "", ana=False) + govde_html + T._alt("../", "", ana=False)
 
 
 # ───────────────────────────────────────────────────────── yükselen burç

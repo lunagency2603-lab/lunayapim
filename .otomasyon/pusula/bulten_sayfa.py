@@ -191,8 +191,8 @@ def bulten_html(kok, tr=""):
 """ % (sayi, _e(T._tr_tarih(bugun.isoformat())), _e(aciklama), len(mad),
        "".join(slayt), "".join(numara), len(mad))
 
-    return T._bas(baslik, aciklama, KOK_URL + SLUG, mad[0].get("gorsel"), sema_html, "website", "../", tr) \
-        + govde + js + T._alt("../", tr)
+    return T._bas(baslik, aciklama, KOK_URL + SLUG, mad[0].get("gorsel"), sema_html, "website", "../", tr, ana=False) \
+        + govde + js + T._alt("../", tr, ana=False)
 
 
 def yayinla(kok=None):

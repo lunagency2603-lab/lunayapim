@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 .otomasyon/veri/ham/
 .otomasyon/veri/*.log
+# luna.css'e katılan geçici stil bloğu — yayına girmez
+assets/hediye-studyo-ek.css

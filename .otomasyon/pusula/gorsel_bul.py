@@ -117,9 +117,20 @@ def _kaydet(veri, yol):
     try:
         from PIL import Image
         im = Image.open(io.BytesIO(veri)).convert("RGB")
-        if im.width > GENISLIK:
-            im = im.resize((GENISLIK, round(im.height * GENISLIK / im.width)))
-        im.save(yol, "JPEG", quality=78, optimize=True, progressive=True)
+        # Kapaklar sayfada 960x540 basiliyor; dosya da tam o olcude olsun.
+        # 20.09.2026 bagimsiz olcum: farkli en-boy oranlari hem bayt israfiydi
+        # hem de "yanlis en boy oranina sahip resim" uyarisi uretiyordu.
+        yuk = GENISLIK, round(GENISLIK * 9 / 16)
+        hedef = yuk[0] / float(yuk[1])
+        oran = im.width / float(im.height)
+        if oran > hedef:
+            g = int(im.height * hedef); x = (im.width - g) // 2
+            im = im.crop((x, 0, x + g, im.height))
+        elif oran < hedef:
+            y = int(im.width / hedef); ust = int((im.height - y) * 0.35)
+            im = im.crop((0, ust, im.width, ust + y))
+        im = im.resize(yuk)
+        im.save(yol, "JPEG", quality=76, optimize=True, progressive=True)
         return im.width, im.height
     except ImportError:
         open(yol, "wb").write(veri)

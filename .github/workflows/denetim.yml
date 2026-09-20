@@ -1,0 +1,81 @@
+name: Bağımsız denetim
+
+# Kendi denetimimizin (seo/denetci.py) dışında, dışarıdan ölçüm.
+# Pazartesi 06:00 UTC = 09:00 TR. Elle de çalıştırılabilir.
+# Canlı taramada tek bir sorun bile çıkarsa koşu KIRMIZI döner ve e-posta gelir.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trendsaphiens-denetim
+  cancel-in-progress: false
+
+jobs:
+  denetim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      TZ: Europe/Istanbul
+      PSI_ANAHTAR: ${{ secrets.PSI_ANAHTAR }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Yolları kur
+        run: |
+          mkdir -p "$HOME/Documents/GitHub"
+          ln -sfn "$GITHUB_WORKSPACE" "$HOME/Documents/GitHub/lunayapim"
+          ln -sfn "$GITHUB_WORKSPACE/.otomasyon" "$HOME/Documents/luna-pusula"
+
+      - name: Dışarıdan ölç
+        id: olc
+        working-directory: .otomasyon
+        continue-on-error: true
+        run: |
+          set +e
+          python3 -m pusula.dis_denetim | tee /tmp/denetim.txt
+          echo "kod=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
+
+      - name: Özeti koşu sayfasına yaz
+        if: always()
+        run: |
+          {
+            echo "### Bağımsız denetim"
+            echo '```'
+            cat /tmp/denetim.txt 2>/dev/null || echo "ölçüm çıktısı yok"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Denetim sayfasını bas
+        if: always()
+        working-directory: .otomasyon
+        run: |
+          python3 -m pusula.kurumsal || true
+          python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE" || true
+
+      - name: Yayınla
+        if: always()
+        run: |
+          git config user.name "Luna Otomasyon"
+          git config user.email "lunagency2603@gmail.com"
+          [ -z "$(git status --porcelain)" ] && { echo "Değişiklik yok."; exit 0; }
+          git add -A
+          git commit -q -m "Bağımsız denetim $(date '+%Y-%m-%d')"
+          git pull --rebase --autostash origin ${{ github.ref_name }} || true
+          git push origin HEAD:${{ github.ref_name }}
+
+      - name: Canlıda sorun varsa koşuyu kırmızıya çevir
+        if: always()
+        run: |
+          if [ "${{ steps.olc.outputs.kod }}" != "0" ]; then
+            echo "::error::Canlı taramada sorun bulundu — /denetim sayfasına bak."
+            exit 1
+          fi

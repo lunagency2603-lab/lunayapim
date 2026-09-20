@@ -215,7 +215,7 @@ def _gorsel(ad, alt, boy="k", on="../"):
 
 
 # ---------------------------------------------------------------- kabuk (kendi tasarımı)
-def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../", tr=""):
+def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../", tr="", ana=True):
     og = _gorsel_url(gorsel, mutlak=True)
     return """<!DOCTYPE html>
 <html lang="tr">
@@ -247,11 +247,13 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 <link rel="apple-touch-icon" sizes="180x180" href="{on}assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="{on}assets/luna.css">
 %s
 </head>
 <body class="ts-tema">
+<a class="ts-atla" href="#icerik">İçeriğe atla</a>
 {serit}
 <header class="ts-ust">
   <div class="wrap ts-ust-ic">
@@ -260,7 +262,8 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
     <div class="ts-ust-sag"><a href="{on}" class="ts-ana">Luna Yapım</a><a href="#abone" class="ts-abone-dug">Abone ol</a></div>
   </div>
 </header>
-""".replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr).replace("{serit}", _ust_serit(tr)) % (ADSENSE, _e(baslik), _e(aciklama), url, _e(baslik), _e(aciklama), tur, url, og, og, sema or "",
+{ana}
+""".replace("{ana}", '<main id="icerik">' if ana else '<a id="icerik" tabindex="-1"></a>').replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr).replace("{serit}", _ust_serit(tr)) % (ADSENSE, _e(baslik), _e(aciklama), url, _e(baslik), _e(aciklama), tur, url, og, og, sema or "",
        "".join('<a href="%s%s/">%s</a>' % (tr, k, KATEGORI[k][0]) for k in MENU if k in KATEGORI)
        + '<a class="ts-nav-tumu" href="%s#bolumler">Tümü</a>' % (tr or "./"))
 
@@ -296,8 +299,8 @@ def _ust_serit(tr=""):
             % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr, tr))
 
 
-def _alt(on="../", tr=""):
-    return ("""
+def _alt(on="../", tr="", ana=True):
+    return (("</main>\n" if ana else "") + """
 <footer class="ts-alt">
   <div class="wrap">
     <div class="ts-alt-izgara">
@@ -306,7 +309,7 @@ def _alt(on="../", tr=""):
       <div><h4>Bölümler</h4>%s</div>
       <div><h4>Luna Yapım</h4><a href="{on}">Ana site</a><a href="{on}yazilim">Yazılım</a><a href="{on}hizmetler/">Prodüksiyon</a><a href="{on}studyo">Stüdyo</a><a href="{on}matrix">KDA Matrix</a></div>
       <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}bulten">Günün bülteni</a><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
-      <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{on}iletisim">Luna Yapım iletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
+      <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{tr}denetim">Bağımsız denetim</a><a href="{on}iletisim">Luna Yapım iletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
     </div>
     <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>LunaTrendSaphiens bir Luna Yapım yayınıdır</span></div>
   </div>
@@ -1294,9 +1297,18 @@ def _baska_modul_sayfalari(kok):
         slug.add(B.SLUG)
     except Exception:
         pass
+    try:
+        from . import kurumsal as K
+        slug |= {x for x, _ad, _fn in K.SAYFALAR}
+    except Exception:
+        pass
     # modul yuklenemezse bilinen adlar yine korunur
+    # 20.09.2026 (ikinci kez): kurumsal dortlusu bu listede olmadigi icin supurge
+    # onlari sildi, _redirects'e "/trend/ 301" yazdi ve AdSense'in sart kostugu
+    # hakkimizda/iletisim/gizlilik/kosullar sayfalari canlida ANA SAYFAYA dustu.
     slug |= {"araclar", "yukselen-burc-hesaplama", "burc-uyumu", "yas-hesaplama",
-             "vucut-kitle-indeksi", "yuzde-hesaplama", "oruntu-oyunu", "bulten"}
+             "vucut-kitle-indeksi", "yuzde-hesaplama", "oruntu-oyunu", "bulten",
+             "hakkimizda", "iletisim", "gizlilik", "kosullar", "denetim"}
     return {os.path.abspath(os.path.join(kok, "trend", x + ".html")) for x in slug}
 
 
@@ -1347,6 +1359,13 @@ def _yonlendirme(kok, silinen, elle=None):
         defter[adres] = hedef
     for a, h in (elle or {}).items():
         defter[a] = h
+    # baska modullerin bastigi sayfalar defterde ASLA yer almaz — bir kosuda
+    # yanlislikla yazilmis olsalar bile burada silinir (kendini onaran defter).
+    korunan = {os.path.relpath(y, kok).replace(os.sep, "/")[:-5]
+               for y in _baska_modul_sayfalari(kok)}
+    for a in list(defter):
+        if a.strip("/") in korunan:
+            del defter[a]
     # hedefi artık var olmayan satırları temizle, kendine yönlendirmeyi at
     temiz = {}
     for a, h in defter.items():
