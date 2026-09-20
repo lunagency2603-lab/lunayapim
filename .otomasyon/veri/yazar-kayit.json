@@ -459,5 +459,103 @@
   "baslik": "Gençlere siber güvenlik eğitimi (Erzincan)",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-09-20 02:10"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-20 07:56"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "sözcü",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-09-20 07:56"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "ufc",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfE6cwviRMRJjpKHCFKaT\"}",
+  "zaman": "2026-09-20 07:56"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-20 12:56"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Ankara’nın Ağustos ayı ilçe düzeyinde konut satış verileri - Ekonomi A",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfEVTdFV19L8wJdu7sdb7\"}",
+  "zaman": "2026-09-20 12:56"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-20 12:56"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "tjk",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfEVUp7cxrn667JV8BzjD\"}",
+  "zaman": "2026-09-20 12:56"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-20 14:27"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "haber7",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-09-20 14:27"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "tjk",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfEcTFPA3vjU2vPNFvb5m\"}",
+  "zaman": "2026-09-20 14:28"
  }
 ]
