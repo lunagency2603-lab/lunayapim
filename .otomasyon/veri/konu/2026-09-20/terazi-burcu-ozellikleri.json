@@ -65,7 +65,19 @@
   ],
   "kelime": 507
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Libra constellation map ru lite",
+  "yazar": "Wikimedia Commons katkıcısı",
+  "lisans": "Public domain",
+  "lisans_url": "",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Libra_constellation_map_ru_lite.png",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "terazi-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 960,
+  "sorgu": "Libra constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Ian Ridpath, Star Tales – Libra",

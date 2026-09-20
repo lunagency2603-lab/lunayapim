@@ -72,7 +72,7 @@
 (function(){var f=document.getElementById("bl-form");if(!f)return;f.addEventListener("submit",async function(ev){ev.preventDefault();var e=document.getElementById("bl-eposta").value.trim(),s=document.getElementById("bl-sonuc");if(!document.getElementById("bl-onay").checked){s.textContent="Onay kutusunu işaretle.";return}s.textContent="Kaydediliyor…";try{var r=await fetch("/api/abone",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({eposta:e,onay:true,kaynak:"trend"})});s.textContent=r.ok?"Tamam — ilk sayı Pazartesi.":"Olmadı; daha sonra tekrar dene."}catch(x){s.textContent="Bağlantı yok; daha sonra tekrar dene."}});})();
 </script>
       <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="kayseri-de-siber-guvenlik-egitimi-90-kisi-basvurabilecek">
-      <div class="ts-kart-gorsel"><img src="../assets/studyo/render-istasyonu-k.jpg" alt="Kayseri&#x27;de siber güvenlik eğitimi: 90 kişi başvurabilecek" loading="lazy" width="800" height="447"><span class="ts-chip">Teknoloji</span></div>
+      <div class="ts-kart-gorsel"><img src="../assets/ts/kayseri-de-siber-guvenlik-egitimi-90-kisi-basvurabilecek.jpg" alt="Kayseri&#x27;de siber güvenlik eğitimi: 90 kişi başvurabilecek" loading="lazy" width="960" height="540"><span class="ts-chip">Teknoloji</span></div>
       <div class="ts-kart-metin">
         <span class="ts-meta">19 Eylül 2026 · 2 dk</span>
         <h3>Kayseri&#x27;de siber güvenlik eğitimi: 90 kişi başvurabilecek</h3>

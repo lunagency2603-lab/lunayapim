@@ -65,7 +65,19 @@
   ],
   "kelime": 496
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Pisces constellation map ru lite",
+  "yazar": "Anton Gutsunaev",
+  "lisans": "Public domain",
+  "lisans_url": "",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Pisces_constellation_map_ru_lite.png",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "balik-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 960,
+  "sorgu": "Pisces constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Wikipedia – Pisces (constellation)",

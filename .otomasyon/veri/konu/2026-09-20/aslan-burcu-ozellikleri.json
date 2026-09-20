@@ -67,7 +67,19 @@
   ],
   "kelime": 472
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Leo constellation map negative",
+  "yazar": "User:Bronger",
+  "lisans": "CC BY-SA 3.0",
+  "lisans_url": "https://creativecommons.org/licenses/by-sa/3.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Leo_constellation_map_negative.png",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "aslan-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 746,
+  "sorgu": "Leo constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Wikipedia – Leo (constellation)",

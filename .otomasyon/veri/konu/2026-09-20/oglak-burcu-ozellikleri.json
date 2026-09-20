@@ -65,7 +65,19 @@
   ],
   "kelime": 499
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Capricornus constellation map ru lite",
+  "yazar": "Wikimedia Commons katkıcısı",
+  "lisans": "CC BY-SA 3.0",
+  "lisans_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Capricornus_constellation_map_ru_lite.png",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "oglak-burcu-ozellikleri.jpg",
+  "genislik": 960,
+  "yukseklik": 960,
+  "sorgu": "Capricornus constellation map",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Wikipedia – Capricornus",
