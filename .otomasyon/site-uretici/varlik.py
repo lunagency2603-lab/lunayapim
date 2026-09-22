@@ -28,6 +28,7 @@ iki kez basılmaz (yer tutucu doluysa modül dokunmaz).
 import json
 import os
 import re
+import unicodedata
 
 KURULUS_ID = "https://lunayapim.com/#kurulus"
 EPOSTA = "lunagency2603@gmail.com"
@@ -193,13 +194,29 @@ def isler(kok):
     return out
 
 
+def _il_norm(x):
+    """Türkçe il adı karşılaştırması.
+
+    22.09.2026: "İstanbul".lower() Python'da birleşik noktalı bir harf üretiyor
+    ("i̇stanbul"); dosya adındaki "istanbul" ile eşleşmiyordu ve rozet basılmadı.
+    Harfleri tek tek eşliyoruz, sonra birleşik işaretleri atıyoruz.
+    """
+    x = (x or "")
+    for a, b in (("İ", "i"), ("I", "i"), ("ı", "i"), ("Ş", "s"), ("ş", "s"),
+                 ("Ğ", "g"), ("ğ", "g"), ("Ü", "u"), ("ü", "u"),
+                 ("Ö", "o"), ("ö", "o"), ("Ç", "c"), ("ç", "c")):
+        x = x.replace(a, b)
+    x = unicodedata.normalize("NFKD", x.lower())
+    return "".join(c for c in x if not unicodedata.combining(c))
+
+
 def _is_karti(d, on, il=None):
     # ŞEHİR künyeye YAZILMAZ. 22.09.2026, sahibinin sözü: "konum belirtmek
     # zorunda değiliz, her yerde yapıyoruz." Şehir alanı yalnız O İLİN
     # sayfasında rozete dönüşür; başka hiçbir sayfada konum iddiası olmaz.
     kunye = " · ".join(x for x in (d.get("musteri"), d.get("kat"), d.get("sure")) if x)
     rozet = ""
-    if il and (d.get("sehir") or "").lower().replace("ı", "i") == il.lower().replace("ı", "i"):
+    if il and _il_norm(d.get("sehir")) == _il_norm(il):
         rozet = '<span class="is-rozet">Bu ildeki işimiz</span>'
     d = dict(d, _rozet=rozet)
     if d.get("id"):
@@ -277,7 +294,7 @@ def isler_bas(s, yol, kok):
         if il:
             # o ilde çekilmiş iş varsa EN ÜSTE — yerel aramada en ağır kanıt bu
             def _il_mi(x):
-                return (x.get("sehir") or "").lower().replace("ı", "i") == il.lower().replace("ı", "i")
+                return _il_norm(x.get("sehir")) == _il_norm(il)
             liste = sorted(liste, key=lambda x: (0 if _il_mi(x) else 1))
         liste = liste[:8]
         if not liste:

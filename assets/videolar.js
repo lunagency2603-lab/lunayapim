@@ -65,8 +65,8 @@ window.LUNA_VIDEOLAR = [
   { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", baslik:"İstanbul artık bana iyi gelmiyor",          kat:"Sinematografi",  etiket:["isler"], yil:"2023-06-18" },
   { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", baslik:"2 Dakikada Ayakkabı İmalatı",    kat:"Reklam",         etiket:["isler","isletme"], yil:"2022-12-29" },
   { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", baslik:"Another Love — Düğün Kurgusu",            kat:"Düğün",          etiket:["isler","dugun"], yil:"2022-12-22" },
-  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14" },
-  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18" },
+  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14", sehir:"İstanbul" },
+  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18", sehir:"Hatay" },
   { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", baslik:"Yalan — Opener",           kat:"Opener",         etiket:["isler"], yil:"2023-09-25" },
   { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
 
