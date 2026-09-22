@@ -4,3 +4,13 @@ assets/motor.json -merge
 assets/asistan-veri.json -merge
 .otomasyon/veri/denetim.json -merge
 sitemap.xml -merge
+
+# 22.09.2026 — gün sayfaları ve bülten de her koşuda yeniden basılıyor. İki taraf
+# (Actions ve yerel) aynı gün üretince git bunların İÇİNE çakışma işareti yazıyordu;
+# sonuç bozuk HTML oluyordu. Artık birleştirmeye çalışmıyor: çakışma çıkarsa dosya
+# bütün kalır, bir sonraki üretim zaten üzerine yazar.
+trend/aranan/*.html -merge
+trend/piyasa/*.html -merge
+trend/bulten.html -merge
+trend/index.html -merge
+assets/ts/*.jpg -merge
