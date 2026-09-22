@@ -14,7 +14,7 @@ künyesi olmayan site "düşük değerli içerik" sayılır.
 Metinler TrendSaphiens'e özeldir: ne topladığımız, neyi toplamadığımız,
 hangi üçüncü tarafların çerez kullandığı ve yayın ilkeleri açıkça yazılır.
 """
-import datetime, io, json, os
+import datetime, io, json, os, re
 
 from .ayarlar import SITE_KOK
 from . import trend as T
@@ -379,6 +379,35 @@ def denetim_html():
                   "Bagimsiz denetim", "Yayinin teknik durumu, disaridan olculmus haliyle.", govde, sss, "WebPage")
 
 
+
+def bulunamadi_html():
+    """trendsaphiens.com/404 — TrendSaphiens kendi kunyesiyle.
+
+    22.09.2026: 404 sayfasi lunayapim.com'un sayfasiydi; trendsaphiens.com'da
+    bulunamayan bir adres "LUNA YAPIM" yazan bir sayfa gosteriyordu. Okur icin
+    kafa karistirici, arama motoru icin de iki yayinin ayni sey oldugu sinyali.
+    """
+    from . import trend as T
+    bolum = [(k, ad) for k, (ad, _o) in T.KATEGORI.items() if k != "sistem"]
+    liste = "".join('<li><a href="./%s/">%s</a></li>' % (k, _e(ad)) for k, ad in bolum[:12])
+    govde = """
+<section class="ts-giris">
+  <h2>Aradiginiz sayfa burada degil</h2>
+  <p>Adres degismis, yazi kaldirilmis ya da bagalanti yanlis yazilmis olabilir.
+  Gunun akisina donebilir ya da asagidaki bolumlerden birine girebilirsiniz.</p>
+  <ul class="ts-liste">%s</ul>
+  <p><a href="./bulten">Gunun bulteni</a> gunun butun basliklarini tek sayfada toplar.</p>
+</section>
+""" % liste
+    h = _sayfa("404", "Sayfa bulunamadi — TrendSaphiens",
+               "Aradiginiz sayfa bulunamadi. Gunun akisina donun ya da bolumlerden birini secin.",
+               "Sayfa bulunamadi", "Bu adreste bir sayfa yok.", govde, None, "WebPage")
+    # 404 sayfasi dizine girmez; canonical de olmaz (her adres icin ayni sayfa basilir)
+    h = h.replace("<head>", '<head>\n<meta name="robots" content="noindex, follow">', 1)
+    h = re.sub(r'<link rel="canonical"[^>]*>', "", h)
+    return h
+
+
 SAYFALAR = [
     ("hakkimizda", "Hakkımızda", hakkimizda_html),
     ("iletisim", "İletişim", iletisim_html),
@@ -440,6 +469,11 @@ def yayinla(kok=None):
     for slug, _ad, fn in SAYFALAR:
         io.open(os.path.join(d, slug + ".html"), "w", encoding="utf-8").write(fn())
         yazilan.append(slug)
+    try:
+        io.open(os.path.join(d, "404.html"), "w", encoding="utf-8").write(bulunamadi_html())
+        yazilan.append("404")
+    except Exception as ex:
+        print("404:", ex)
     y = os.path.join(kok, "sitemap.xml")
     try:
         s = io.open(y, encoding="utf-8").read()

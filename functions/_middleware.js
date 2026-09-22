@@ -160,9 +160,17 @@ async function trendsaphiens(ctx, url, host) {
     return yonlendir(yeni || konum, res.status);
   }
   if (res.status === 404) {
-    const s = await env.ASSETS.fetch(new URL("/404.html", url));
+    // 22.09.2026 — önce TrendSaphiens'in kendi 404'ü; yoksa Luna Yapım'ınki.
+    // Eskiden yalnız /404.html vardı ve trendsaphiens.com'da bulunamayan adres
+    // "LUNA YAPIM" yazan bir sayfa gösteriyordu.
+    let s = await env.ASSETS.fetch(new URL("/trend/404.html", url));
+    let taban404 = LY + "/trend/404";
+    if (!s.ok) {
+      s = await env.ASSETS.fetch(new URL("/404.html", url));
+      taban404 = LY + "/404";
+    }
     const r404 = new Response(s.body, { status: 404, headers: s.headers });
-    return htmlMi(r404) ? tsYaz(r404, LY + "/404") : r404;
+    return htmlMi(r404) ? tsYaz(r404, taban404) : r404;
   }
   if (!htmlMi(res)) return res;
   res = new Response(res.body, res);
@@ -180,12 +188,40 @@ class LyAttr {
   }
 }
 
+/* 22.09.2026 — Cloudflare Pages her dalı ve her çekme isteğini ayrı bir
+   <özet>.lunayapim.pages.dev adresinde yayınlıyor; üretim kopyası da
+   lunayapim.pages.dev'de duruyor. Bunların hiçbirinde noindex yoktu:
+   lunayapim.com'un ve trendsaphiens.com'un TAM kopyası ikinci bir alan adında
+   taranabilir haldeydi. Arama motoru için bu ikiz içerik; hangi adresin asıl
+   olduğunu kendisi seçiyor. Canonical etiketi lunayapim.com'u gösterse de
+   öneridir, kural değildir — başlık daha kesin konuşur. */
+function onizlemeMi(host) {
+  return host === "lunayapim.pages.dev" || host.endsWith(".lunayapim.pages.dev");
+}
+
+function dizinDisi(res) {
+  const r = new Response(res.body, res);
+  r.headers.set("x-robots-tag", "noindex, nofollow");
+  return r;
+}
+
 export async function onRequest(ctx) {
   const { request, env, next } = ctx;
   const url = new URL(request.url);
   const host = url.hostname.toLowerCase();
 
+  // önizleme/pages.dev kopyaları: taranabilir ama dizine girmez
+  if (onizlemeMi(host)) return dizinDisi(await asilAkis(ctx, url, host));
+  return asilAkis(ctx, url, host);
+}
+
+async function asilAkis(ctx, url, host) {
+  const { request, env, next } = ctx;
+
   if (tsHost(host, env)) return trendsaphiens(ctx, url, host);
+
+  // www → köke 301: iki adreste aynı sayfa durmasın (trendsaphiens'te zaten var)
+  if (host === "www.lunayapim.com") return yonlendir(LY + url.pathname + url.search);
 
   if (canli(env) && LY_HOSTS.has(host)) {
     const p = url.pathname;

@@ -1359,7 +1359,8 @@ def _baska_modul_sayfalari(kok):
     # hakkimizda/iletisim/gizlilik/kosullar sayfalari canlida ANA SAYFAYA dustu.
     slug |= {"araclar", "yukselen-burc-hesaplama", "burc-uyumu", "yas-hesaplama",
              "vucut-kitle-indeksi", "yuzde-hesaplama", "oruntu-oyunu", "bulten",
-             "hakkimizda", "iletisim", "gizlilik", "kosullar", "denetim"}
+             "hakkimizda", "iletisim", "gizlilik", "kosullar", "denetim",
+             "404"}   # 22.09: TrendSaphiens'in kendi 404 sayfasi (kurumsal.py basar)
     return {os.path.abspath(os.path.join(kok, "trend", x + ".html")) for x in slug}
 
 
@@ -1411,6 +1412,24 @@ MIRAS_YONLENDIRME = {
     "/trend/home-three/": "/trend/",
     # eski WordPress bolum adresleri: /category/<bolum>/ -> /<bolum>/
     "/trend/category/*": "/trend/:splat",
+    # 22.09.2026 — Search Console'da 51 "bulunamadi (404)" ve 21 "soft 404" cikti;
+    # hepsi WordPress kalintisi. Gercekten silinmis demo yazilar 404 kalmali (dogrusu
+    # bu), ama karsiligi OLAN sayfalar yonlendirilmeli — asagidakiler onlar.
+    "/trend/gizlilik-politikasi":  "/trend/gizlilik",
+    "/trend/gizlilik-politikasi/": "/trend/gizlilik",
+    "/trend/privacy-policy":       "/trend/gizlilik",
+    "/trend/privacy-policy/":      "/trend/gizlilik",
+    "/trend/kullanim-sartlari":    "/trend/kosullar",
+    "/trend/kullanim-sartlari/":   "/trend/kosullar",
+    "/trend/terms-of-use":         "/trend/kosullar",
+    "/trend/terms-of-use/":        "/trend/kosullar",
+    "/trend/hakkimizda-2":         "/trend/hakkimizda",
+    "/trend/iletisim-2":           "/trend/iletisim",
+    # etiket ve yazar arsivleri WordPress'te vardi, burada yok: bolum listesine dusur
+    "/trend/tag/*":     "/trend/",
+    "/trend/etiket/*":  "/trend/",
+    "/trend/author/*":  "/trend/hakkimizda",
+    "/trend/yazar/*":   "/trend/hakkimizda",
 }
 
 def _yonlendirme(kok, silinen, elle=None):

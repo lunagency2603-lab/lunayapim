@@ -20,3 +20,10 @@
   X-Frame-Options: SAMEORIGIN
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Permissions-Policy: geolocation=(), microphone=(), camera=(), browsing-topics=()
+
+# Pages önizleme ve .pages.dev kopyaları dizine girmesin — ikiz içerik olurlar.
+# (Ara katman da aynı başlığı basar; bu satırlar ikinci emniyet.)
+https://:proje.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+https://:dal.:proje.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

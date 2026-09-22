@@ -32,3 +32,13 @@ trend/yuzde-hesaplama.html -merge
 trend/oruntu-oyunu.html -merge
 trend/llms.txt -merge
 assets/videolar.js -merge
+
+# 22.09.2026 (3) — BÜTÜN üretilen HTML sayfaları. Bugün 324 sayfaya çakışma
+# işareti yazıldı: Actions'ın koşusu ile yerel üretim aynı sayfaları bastı, git
+# ikisini satır satır birleştirmeye çalıştı ve <<<<<<< işaretlerini HTML'in
+# İÇİNE koydu — yani canlıya bozuk sayfa gidebilirdi. Bu dosyalar elle
+# yazılmıyor; çakışmada yerel sürüm bütün kalır, bir sonraki üretim üzerine yazar.
+*.html -merge
+llms.txt -merge
+_redirects -merge
+_headers -merge
