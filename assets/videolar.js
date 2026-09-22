@@ -28,6 +28,26 @@
      isletme        → hizmetler/isletme-tanitim.html
    ============================================================ */
 
+/* ============================================================
+   ŞEHİR VE TARİH — iki alan, iki ayrı kazanç   (22.09.2026)
+   ------------------------------------------------------------
+   sehir:"Bursa"     → o ilin sayfasında iş "Bu ildeki işimiz"
+                       rozetiyle EN ÜSTTE çıkar. Şehir sayfasında
+                       gerçekten orada çekilmiş bir iş göstermek,
+                       yerel aramada en ağır kanıttır.
+   yil:"2026-03-14"  → VideoObject şemasına uploadDate olarak girer.
+                       Google'ın video zengin sonucu bu alanı ZORUNLU
+                       tutuyor; tarih yoksa video sonuçta çıkmıyor.
+
+   İkisi de UYDURULMAZ. Boş bırakılan alan hiç yazılmaz; sayfada da
+   şemada da görünmez. Bildiğin işin bildiğin ilini ve tarihini yaz,
+   gerisini üretim yapar.
+
+   Örnek:
+     { id:"SAL0X164pbA", baslik:"Müzik Klibi", kat:"Klip",
+       sehir:"Bursa", yil:"2025-11-02", etiket:["isler","klip"] }
+   ============================================================ */
+
 window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
