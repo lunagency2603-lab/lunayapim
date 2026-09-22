@@ -323,6 +323,24 @@ def ilk_gorsel_oncelik(s):
     return s[:i] + 'loading="eager" fetchpriority="high"' + s[i + len('loading="lazy"'):]
 
 
+
+
+def varlik_kat(s, p, kok):
+    """Sosyal hesap + sameAs + taban fiyat: JS'te kalmasın, HTML'e yazılsın.
+
+    22.09.2026: sameAs yalnız tarayıcıda ekleniyordu; JavaScript çalıştırmayan
+    tarayıcılar (Bing, yapay zekâ tarayıcıları) firma ile hesabı hiç
+    eşleştiremiyordu. Ayrıntılı gerekçe site-uretici/varlik.py başında.
+    """
+    try:
+        import varlik
+        return varlik.calistir(s, p, kok)
+    except Exception as ex:
+        print("varlik:", ex)
+        return s
+
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -343,6 +361,7 @@ def calistir(kok, desen="**/*.html"):
         s = surumle(s)
         s = tablo_sar(s)
         s = ilk_gorsel_oncelik(s)
+        s = varlik_kat(s, p, kok)
         s = belge_ekle(s, yol, on)
         if s != o:
             io.open(yol, "w", encoding="utf-8").write(s)
