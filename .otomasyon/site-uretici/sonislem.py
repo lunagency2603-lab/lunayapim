@@ -398,6 +398,12 @@ def calistir(kok, desen="**/*.html"):
         print("yerelles:", yerelles.calistir(kok))
     except Exception as ex:
         print("yerelles:", ex)
+    # llms.txt — yapay zeka asistanlarina sitenin duz metin haritasi
+    try:
+        import llms_luna
+        print("llms.txt:", llms_luna.calistir(kok))
+    except Exception as ex:
+        print("llms.txt:", ex)
     # sitemap: dosyasi kalmayan adresleri dusur (yayindan kaldirilan sayfalar)
     try:
         print("sitemap-olu:", sitemap_olu_temizle(kok))

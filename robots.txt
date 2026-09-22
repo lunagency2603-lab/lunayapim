@@ -6,3 +6,5 @@ Disallow: /api/
 Disallow: /onizleme/
 
 Sitemap: https://lunayapim.com/sitemap.xml
+
+# Yapay zeka asistanlari icin duz metin ozet: https://lunayapim.com/llms.txt

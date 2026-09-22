@@ -41,6 +41,36 @@ _LD = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S
 _TABAN_FIYAT = re.compile(r"([\d][\d.]{2,})\s*₺['’]?d[ae]n", re.I)
 
 
+# --------------------------------------------------------------- güvenli ekleme
+_KAFA_SON = re.compile(r"</head\s*>", re.I)
+_GOVDE_BAS = re.compile(r"<body\b", re.I)
+
+
+def basa_ekle(s, etiket):
+    """Etiketi </head> öncesine koyar.
+
+    22.09.2026 — pahalı bir ders: burada önce `s.lower().rfind("</head>")`
+    yazılmıştı. Türkçede "İ".lower() iki karakterlik bir dizi üretir
+    (i + birleşik nokta), yani küçük harfe çevrilmiş metin ASLINDA DAHA UZUN.
+    Sayfada kaç tane İ varsa indis o kadar kayıyor ve `s[:i]` ile `s[i:]`
+    birleştiğinde aradan tam o kadar karakter siliniyordu. Sonuç: 324 sayfanın
+    </head> etiketi kırpılmıştı (</head> → ead> → d> → hiç), sekizinde <body>
+    de gitmişti. Kırpılma sessizdi; sayfa tarayıcıda açılıyordu ama sonraki
+    koşular </head> bulamadığı için hiçbir şema eklenemiyordu.
+
+    Kural: konum aranan metinle EKLEME YAPILAN metin aynı olmalı. Küçük harfe
+    çevrilmiş kopyadan alınan indis asıl metinde kullanılmaz.
+    """
+    m = _KAFA_SON.search(s)
+    if m:
+        return s[:m.start()] + etiket + "\n" + s[m.start():]
+    m = _GOVDE_BAS.search(s)              # </head> yoksa <body> öncesi
+    if m:
+        return s[:m.start()] + etiket + "\n" + s[m.start():]
+    return s
+
+
+
 def hesaplar(kok):
     """assets/sosyal.js tek kaynak: kullanıcı adı doluysa hesap vardır."""
     yol = os.path.join(kok, "assets", "sosyal.js")
@@ -154,8 +184,7 @@ def sss_sema(s):
             "mainEntity": [{"@type": "Question", "name": q,
                             "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in cift[:10]]}
     etiket = '<script type="application/ld+json">%s</script>' % json.dumps(sema, ensure_ascii=False)
-    i = s.lower().rfind("</head>")
-    return (s[:i] + etiket + "\n" + s[i:]) if i > 0 else s
+    return basa_ekle(s, etiket)
 
 
 # ------------------------------------------------------------------ iş vitrini
@@ -315,9 +344,7 @@ def isler_bas(s, yol, kok):
                       "<section class=\"acik\" data-video-bolum hidden>", 1)
     sema = _video_sema({x.get("id") or x.get("yerel"): x for x in kullanilan}.values())
     if sema:
-        i = s.lower().rfind("</head>")
-        if i > 0:
-            s = s[:i] + sema + "\n" + s[i:]
+        s = basa_ekle(s, sema)
     return s
 
 
@@ -359,8 +386,7 @@ def kurulus_dugumu(s, hsp):
         k["sameAs"] = [h["url"] for h in hsp]
     etiket = ('<script type="application/ld+json">%s</script>'
               % json.dumps(dict({"@context": "https://schema.org"}, **k), ensure_ascii=False))
-    i = s.lower().rfind("</head>")
-    return (s[:i] + etiket + "\n" + s[i:]) if i > 0 else s
+    return basa_ekle(s, etiket)
 
 
 def calistir(s, yol, kok):
