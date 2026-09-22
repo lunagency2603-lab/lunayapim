@@ -67,7 +67,19 @@
   ],
   "kelime": 466
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Reference books in Sanko Library 1",
+  "yazar": "Eugene Ormandy",
+  "lisans": "CC BY-SA 4.0",
+  "lisans_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Reference_books_in_Sanko_Library_1.jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "nobel-edebiyat-odulu-2026-ne-zaman-aciklanacak.jpg",
+  "genislik": 960,
+  "yukseklik": 540,
+  "sorgu": "books library",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "NobelPrize.org",
