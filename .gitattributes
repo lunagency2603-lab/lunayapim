@@ -14,3 +14,21 @@ trend/piyasa/*.html -merge
 trend/bulten.html -merge
 trend/index.html -merge
 assets/ts/*.jpg -merge
+
+# 22.09.2026 (2) — araç ve kurumsal sayfaları da her koşuda yeniden basılıyor
+# (arac.py, kurumsal.py). Aynı gün iki taraf üretince git içlerine çakışma
+# işareti yazıyordu. Bunlar da birleştirilmez; üretim üzerine yazar.
+trend/araclar.html -merge
+trend/denetim.html -merge
+trend/hakkimizda.html -merge
+trend/iletisim.html -merge
+trend/gizlilik.html -merge
+trend/kosullar.html -merge
+trend/burc-uyumu.html -merge
+trend/yukselen-burc-hesaplama.html -merge
+trend/yas-hesaplama.html -merge
+trend/vucut-kitle-indeksi.html -merge
+trend/yuzde-hesaplama.html -merge
+trend/oruntu-oyunu.html -merge
+trend/llms.txt -merge
+assets/videolar.js -merge

@@ -194,7 +194,10 @@ def isler(kok):
 
 
 def _is_karti(d, on, il=None):
-    kunye = " · ".join(x for x in (d.get("musteri"), d.get("sehir"), d.get("kat"), d.get("sure")) if x)
+    # ŞEHİR künyeye YAZILMAZ. 22.09.2026, sahibinin sözü: "konum belirtmek
+    # zorunda değiliz, her yerde yapıyoruz." Şehir alanı yalnız O İLİN
+    # sayfasında rozete dönüşür; başka hiçbir sayfada konum iddiası olmaz.
+    kunye = " · ".join(x for x in (d.get("musteri"), d.get("kat"), d.get("sure")) if x)
     rozet = ""
     if il and (d.get("sehir") or "").lower().replace("ı", "i") == il.lower().replace("ı", "i"):
         rozet = '<span class="is-rozet">Bu ildeki işimiz</span>'

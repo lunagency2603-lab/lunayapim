@@ -44,8 +44,8 @@
    gerisini üretim yapar.
 
    Örnek:
-     { id:"SAL0X164pbA", baslik:"Müzik Klibi", kat:"Klip",
-       sehir:"Bursa", yil:"2025-11-02", etiket:["isler","klip"] }
+     id:"VIDEO_KIMLIGI", baslik:"...", kat:"Klip",
+     sehir:"Bursa", yil:"2025-11-02", etiket:["isler","klip"]
    ============================================================ */
 
 window.LUNA_VIDEOLAR = [
@@ -61,14 +61,14 @@ window.LUNA_VIDEOLAR = [
     one:1, etiket:["isler","ornek","urun-animasyon"] },
 
   /* ---------- YAYINDA ---------- */
-  { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", baslik:"Kısa Film",              kat:"Kısa Film",      etiket:["isler"] },
-  { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", baslik:"Sinematografi",          kat:"Sinematografi",  etiket:["isler"] },
-  { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", baslik:"Üretim Reklam Filmi",    kat:"Reklam",         etiket:["isler","isletme"] },
-  { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", baslik:"Düğün Klibi",            kat:"Düğün",          etiket:["isler","dugun"] },
-  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Şiir Klibi",             kat:"Klip",           etiket:["isler","klip"] },
-  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"Kısa Film / Klip",       kat:"Kısa Film",      etiket:["isler","klip"] },
-  { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", baslik:"Video Opener",           kat:"Opener",         etiket:["isler"] },
-  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", baslik:"Müzik Klibi",            kat:"Klip",           etiket:["isler","klip"] },
+  { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", baslik:"Sanat bazen de aşk içindir",              kat:"Kısa Film",      etiket:["isler"], yil:"2025-08-13" },
+  { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", baslik:"İstanbul artık bana iyi gelmiyor",          kat:"Sinematografi",  etiket:["isler"], yil:"2023-06-18" },
+  { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", baslik:"2 Dakikada Ayakkabı İmalatı",    kat:"Reklam",         etiket:["isler","isletme"], yil:"2022-12-29" },
+  { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", baslik:"Another Love — Düğün Kurgusu",            kat:"Düğün",          etiket:["isler","dugun"], yil:"2022-12-22" },
+  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14" },
+  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18" },
+  { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", baslik:"Yalan — Opener",           kat:"Opener",         etiket:["isler"], yil:"2023-09-25" },
+  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
 
   /* ---------- İNŞAAT & MİMARİ 3D MODELLEME (kimlik bekliyor) ---------- */
   { id:"", baslik:"Villa Dış Cephe Render Animasyonu",   kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
