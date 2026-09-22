@@ -44,9 +44,20 @@ def grupla(f):
         return "sehir:genel"
     return d or "kok"
 
-def calistir():
+def calistir(atla_noindex=True):
+    """atla_noindex: dizine kapalı sayfalar ölçüm dışı.
+
+    22.09.2026 — neden: benzerlik denetiminin işi, arama sonucunda BİRBİRİYLE
+    yarışan sayfaları yakalamaktır. noindex'li arşiv sayfası o yarışta yok;
+    onu saymak gerçek sorunu (indekslenen sayfalar arası kopya) gizler.
+    Dosya silinmiyor, okur için duruyor — yalnız ölçümün konusu değil.
+    """
     eski = os.getcwd(); os.chdir(SITE)
     dosyalar = [f for f in sorted(glob.glob("**/*.html", recursive=True)) if not f.startswith("onizleme/")]
+    if atla_noindex:
+        kapali = re.compile(r'<meta[^>]+name="robots"[^>]+noindex', re.I)
+        dosyalar = [f for f in dosyalar
+                    if not kapali.search(open(f, encoding="utf-8", errors="replace").read(4000))]
     P = {}
     for f in dosyalar:
         P[f] = parcalar(govde(open(f, encoding="utf-8").read()))

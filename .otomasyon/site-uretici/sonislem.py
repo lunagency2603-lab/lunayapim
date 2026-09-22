@@ -206,6 +206,41 @@ def sitemap_uzantisizlastir(kok):
     return {"sitemap_duzelen": len(re.findall(r"<loc>[^<]+\.html</loc>", s))}
 
 
+def sitemap_noindex_cikar(kok):
+    """noindex'li sayfayı site haritasından çıkar.
+
+    22.09.2026: eski gün sayfaları (piyasa/aranan arşivi) noindex'e alındı ama
+    site haritasında kaldıkları için çelişkili sinyal veriyorlardı — "bu adresi
+    tara" deyip sayfada "dizine ekleme" demek. Google bunu "sitemapte noindex"
+    hatası olarak raporlar. Ekleyen taraf zaten noindex'i atlıyordu; eksik olan
+    ÇIKARAN taraftı.
+    """
+    yol = os.path.join(kok, "sitemap.xml")
+    if not os.path.exists(yol):
+        return {"sitemap": "yok"}
+    s = open(yol, encoding="utf-8").read()
+    bloklar = re.findall(r"[ \t]*<url>.*?</url>\s*", s, re.S)
+    cikan = []
+    for b in bloklar:
+        m = re.search(r"<loc>https://lunayapim\.com/([^<]*)</loc>", b)
+        if not m:
+            continue
+        adres = m.group(1)
+        adaylar = [adres, adres + ".html", os.path.join(adres, "index.html"),
+                   (adres.rstrip("/") + "/index.html") if adres else "index.html"]
+        for a in adaylar:
+            tam = os.path.join(kok, a)
+            if os.path.isfile(tam):
+                govde = open(tam, encoding="utf-8", errors="replace").read(4000)
+                if re.search(r'<meta[^>]+name="robots"[^>]+noindex', govde, re.I):
+                    s = s.replace(b, "")
+                    cikan.append(adres)
+                break
+    if cikan:
+        open(yol, "w", encoding="utf-8").write(s)
+    return {"sitemap_noindex_cikan": len(cikan), "ornek": cikan[:3]}
+
+
 def sitemap_yeni_ekle(kok):
     """Diskte olup sitemap'te olmayan sayfaları ekler (noindex olanlar hariç).
     17.09.2026: yeni il sayfaları sitemap'e elle giriyordu, artık otomatik."""
@@ -335,6 +370,7 @@ def calistir(kok, desen="**/*.html"):
     try:
         print("sitemap:", sitemap_uzantisizlastir(kok))
         print("sitemap-yeni:", sitemap_yeni_ekle(kok))
+        print("sitemap-noindex:", sitemap_noindex_cikar(kok))
     except Exception as ex:
         print("sitemap:", ex)
     # il x hizmet sayfalari: ortak hizmet metnini incelt, ile ozel bolumleri ekle

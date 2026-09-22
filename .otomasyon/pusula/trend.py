@@ -377,6 +377,13 @@ def _abone(on="../"):
 RISK = """<div class="bl-risk"><span class="etk">Risk bildirimi</span>
   <p>Piyasa içeriği bir <strong>bilgi ürünüdür</strong>; yatırım danışmanlığı, tavsiyesi ya da alım-satım önerisi değildir. Kripto varlık ve hisse piyasaları yüksek risk taşır; geçmiş performans gelecek için gösterge değildir, hiçbir kazanç vaat edilmez.</p></div>"""
 
+# Gün sayfalarında kısa risk satırı: uzun metin bölüm sayfasında durur.
+# 22.09.2026 — gün sayfaları arasındaki benzerlik %76'ya çıkmıştı; şablon payını
+# düşürmek için tekrar eden uzun bloklar bölüm sayfasına taşındı. Bildirim
+# kayboluyor değil, tek cümleye iniyor ve tam metne bağlanıyor.
+GUN_RISK = ('<p class="ts-not">Piyasa içeriği bilgi ürünüdür; yatırım danışmanlığı ya da '
+            'alım-satım önerisi değildir. <a href="./">Tam risk bildirimi</a>.</p>')
+
 # AdSense birimleri (hesap: ca-pub-3059196718190568). Onay gelene kadar boş kalır; onaydan sonra kendiliğinden dolar.
 REKLAM_YAZI_ICI = "1717189115"   # "TrendSaphiens yazı içi" — in-article, fluid
 REKLAM_AKIS = "1154811288"       # "TrendSaphiens akış" — display, responsive
@@ -1028,8 +1035,20 @@ def sistem_html():
     return _bas(baslik, aciklama, url, "../video/karga-k6", sema, "website", on, tr) + govde + _alt(on, tr)
 
 
-def _gunluk_kabuk(baslik, aciklama, url, kat, gorsel, govde, sema_tur="Article", tarih=None):
-    """Bölüm günlükleri için ortak kabuk — /trend/<kat>/<tarih>.html (on=../../, tr=../)."""
+def _gunluk_kabuk(baslik, aciklama, url, kat, gorsel, govde, sema_tur="Article", tarih=None, guncel=True):
+    """Bölüm günlükleri için ortak kabuk — /trend/<kat>/<tarih>.html (on=../../, tr=../).
+
+    22.09.2026 — gün sayfalarının kaderi:
+    Bir gün sayfasının özgün olan yanı o günün rakamları; geri kalanı tablo
+    başlıkları ve aynı açıklamalardır. Ölçtük: iki ardışık piyasa günü arasında
+    %76 parça benzerliği vardı. Uzun blokları bölüm sayfasına taşıyınca %73'e
+    indi — tablolar kaldığı sürece daha aşağı inmiyor.
+
+    Doğru çözüm metni daha fazla bükmek değil, arama motoruna dürüst sinyal
+    vermek: BUGÜNÜN sayfası dizine girer ("dolar kaç TL" onu arar), ESKİ günler
+    okur için durur ama noindex olur ve site haritasından çıkar. Sayfa silinmez,
+    bağlantı değeri de akmaya devam eder (follow).
+    """
     on, tr = "../../", "../"
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": sema_tur, "headline": baslik, "description": aciklama, "url": url, "inLanguage": "tr",
@@ -1040,6 +1059,8 @@ def _gunluk_kabuk(baslik, aciklama, url, kat, gorsel, govde, sema_tur="Article",
             {"@type": "ListItem", "position": 1, "name": "LunaTrendSaphiens", "item": KOK_URL},
             {"@type": "ListItem", "position": 2, "name": KATEGORI[kat][0], "item": KOK_URL + kat + "/"},
             {"@type": "ListItem", "position": 3, "name": baslik, "item": url}]}]}, ensure_ascii=False) + "</script>"
+    if not guncel:
+        sema = '<meta name="robots" content="noindex, follow">' + sema
     return _bas(baslik, aciklama, url, gorsel, sema, "article", on, tr) + govde + _alt(on, tr)
 
 
@@ -1169,7 +1190,7 @@ def _aranan_okuma(v, gecmis):
     return '<div class="ts-analiz"><h2 class="etk">Listeden ne çıkıyor</h2>%s<p class="ts-not">Bu okuma bize ait; Google yalnız başlıkları ve yaklaşık hacmi verir. Karşılaştırma bir önceki günün kendi kaydımızla yapılır.</p></div>' % "".join(p)
 
 
-def aranan_html(v, kok):
+def aranan_html(v, kok, guncel=True):
     t = v["tarih"]; ar = v.get("aranan") or []
     baslik = "Türkiye bugün ne aradı? %s | TrendSaphiens" % _tr_tarih(t)
     aciklama = ("Google Trends Türkiye listesi, %s: günün en çok aranan %d başlığı, her birinin yanında Google'ın bağladığı haber ve kaynağı. Neden arandı, nereye bakılır." % (_tr_tarih(t), len(ar)))[:158]
@@ -1200,16 +1221,16 @@ def aranan_html(v, kok):
     <h1>Türkiye bugün ne aradı?</h1>
     <p class="ts-yazi-meta">%s · Google Trends Türkiye · %d başlık</p>
     %s
-    <p class="ts-olgu">Liste ve sıralama Google'ındır; yaklaşık hacim de öyle. Bizim eklediğimiz, başlığın hangi bölümde okunacağı ve aşağıdaki karşılaştırma. Haber bağlantısı vermiyoruz: okuru başka siteye göndermek yerine, listenin kendisinden ne çıktığını yazıyoruz.</p>
+    <p class="ts-not">Liste ve yaklaşık hacim Google'ın; bölüm eşlemesi ve karşılaştırma bizim. <a href="./">Yöntem</a>.</p>
     <ol class="ts-aranan-liste">%s</ol>
     %s
     %s
-    <div class="ts-baglam"><h2>Bu liste nasıl okunmalı</h2><p><strong>Hacim yaklaşık değerdir.</strong> Google "yaklaşık 20 bin+" gibi bir eşik verir; kesin sayı değildir. <strong>Başlık Google'ın, okuma bizim.</strong> Hangi başlığın hangi bölüme girdiğini biz eşleriz, günler arası karşılaştırmayı kendi kaydımızdan çıkarırız; yanılırsak düzeltir, düzelttiğimizi yazarız.</p></div>
+
   </div>
   <aside class="ts-yan">%s%s%s<div class="ts-kutu"><h2 class="etk">Önceki günler</h2><p><a href="./">Bugün Aranan arşivi →</a></p></div></aside>
 </div></article>
 """ % (_e(_tr_tarih(t)), _e(_tr_tarih(t)), len(ar), _paylas(url, "Türkiye bugün ne aradı? " + _tr_tarih(t)), "".join(sat), _aranan_okuma(v, _trend_gecmis()), REKLAM, _rakam_kutu("../../", "../"), _takvim_kutu("../../", "../"), _abone("../../"))
-    return _gunluk_kabuk(baslik, aciklama, url, "aranan", BOLUM_GORSEL["aranan"], govde, "ItemList", t)
+    return _gunluk_kabuk(baslik, aciklama, url, "aranan", BOLUM_GORSEL["aranan"], govde, "ItemList", t, guncel)
 
 
 def bolum_gunluk_html(kat, t, liste, cerceve):
@@ -1258,7 +1279,7 @@ def _piyasa_sorular(tc, al):
     return '<div class="ts-baglam ts-sss"><h2>Kısa cevaplar</h2>%s</div>' % "".join(sat)
 
 
-def piyasa_html(v):
+def piyasa_html(v, guncel=True):
     t = v["tarih"]; tc = v.get("tcmb") or {}; al = v.get("altin") or {}
     baslik = "Dolar, euro ve altın bugün · %s | TrendSaphiens" % _tr_tarih(t)
     k = tc.get("kurlar", {})
@@ -1288,15 +1309,15 @@ def piyasa_html(v):
     %s
     %s
     %s
-    <div class="ts-baglam"><h2>Bu sayfa nasıl okunmalı</h2><p><strong>Rakamlar kaynaktan, okuma bizden.</strong> Döviz TCMB'nin resmî günlük tablosundan, altın açık bir finans beslemesinden alınır; "Bugünün okuması" bölümü bu tabloyla bir önceki yayının tablosunu karşılaştıran kendi hesabımızdır. Sayfa her gün yeniden üretilir, alınma saati üstte yazar. <strong>Tavsiye değildir.</strong> Bu sayfa alım-satım önerisi, hedef ya da tahmin içermez; hangi rakamın neden değiştiğini merak ediyorsanız günün haberleri Gündem bölümündedir.</p></div>
+    <p class="ts-not">Rakamlar kaynaktan, okuma bizden; alım-satım önerisi değildir. <a href="./">Bu sayfanın nasıl üretildiği ve kaynakları</a>.</p>
     %s
   </div>
   <aside class="ts-yan">%s<div class="ts-kutu"><h2 class="etk">Piyasayı okuyan sistem</h2><p>Haftalık karne ve kanıt defteri: sistem neye baktı, hangi hatlar sınavı geçti.</p><a class="btn btn-cizgi" href="../../bulten/">Matrix Bülteni →</a></div></aside>
 </div></article>
 """ % (_e(_tr_tarih(t)), _e(_tr_tarih(t)), _e(tc.get("bulten") or "—"), _e(v.get("alindi") or ""), _paylas(url, "Dolar, euro ve altın bugün · " + _tr_tarih(t)),
        kur_sat or "<tr><td colspan='5'>TCMB bugün tablo yayınlamadı (tatil ya da erişim yok).</td></tr>", _e(tc.get("tarih") or "—"),
-       altin_sat or "<tr><td colspan='4'>Altın beslemesi cevap vermedi; rakam uydurmuyoruz.</td></tr>", _e(al.get("guncelleme") or "—"), _piyasa_okuma(v, _piyasa_gecmis()), REKLAM, _piyasa_sorular(tc, al), RISK, _takvim_kutu("../../", "../") + _abone("../../"))
-    return _gunluk_kabuk(baslik, aciklama, url, "piyasa", BOLUM_GORSEL["piyasa"], govde, "Article", t)
+       altin_sat or "<tr><td colspan='4'>Altın beslemesi cevap vermedi; rakam uydurmuyoruz.</td></tr>", _e(al.get("guncelleme") or "—"), _piyasa_okuma(v, _piyasa_gecmis()), REKLAM, _piyasa_sorular(tc, al), GUN_RISK, _takvim_kutu("../../", "../") + _abone("../../"))
+    return _gunluk_kabuk(baslik, aciklama, url, "piyasa", BOLUM_GORSEL["piyasa"], govde, "Article", t, guncel)
 
 
 # ---------------------------------------------------------------- yayın
@@ -1465,17 +1486,27 @@ def yayinla(kok=None, paylas=False):
     gunluk_adres = []
     try:
         from . import trend_izle as TI, piyasa_gunluk as PG
+        _ar_gunler = sorted(x["tarih"] for x in TI.hepsi() if x.get("aranan"))
+        _ar_son = _ar_gunler[-1] if _ar_gunler else None
         for v in TI.hepsi():
             t = v["tarih"]
             if v.get("aranan"):
-                _yaz(os.path.join(d, "aranan", t + ".html"), aranan_html(v, kok), uretilen); gunluk_adres.append(KOK_URL + "aranan/" + t)
+                _guncel = (t == _ar_son)
+                _yaz(os.path.join(d, "aranan", t + ".html"), aranan_html(v, kok, _guncel), uretilen)
+                if _guncel:
+                    gunluk_adres.append(KOK_URL + "aranan/" + t)
             # Bölüm günlükleri (Google Haberler başlık derlemesi) 14.09.2026'da kaldırıldı:
             # başkasının başlığını listelemek özgün yayıncılık değil, AdSense "düşük değerli
             # içerik" değerlendirmesinin de çekirdeğiydi. Toplanan maddeler artık yalnız
             # yazar.py'den geçip özgün yazıya dönüşürse sayfa oluyor.
+        _pi_gunler = sorted(x["tarih"] for x in PG.hepsi() if x.get("tcmb") or x.get("altin"))
+        _pi_son = _pi_gunler[-1] if _pi_gunler else None
         for v in PG.hepsi():
             if v.get("tcmb") or v.get("altin"):
-                _yaz(os.path.join(d, "piyasa", v["tarih"] + ".html"), piyasa_html(v), uretilen); gunluk_adres.append(KOK_URL + "piyasa/" + v["tarih"])
+                _guncel = (v["tarih"] == _pi_son)
+                _yaz(os.path.join(d, "piyasa", v["tarih"] + ".html"), piyasa_html(v, _guncel), uretilen)
+                if _guncel:
+                    gunluk_adres.append(KOK_URL + "piyasa/" + v["tarih"])
     except Exception as ex:
         gunluk_adres.append("HATA: %s" % ex)
     _yaz(os.path.join(d, "index.html"), akis_html(kok), uretilen)

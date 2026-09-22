@@ -57,7 +57,7 @@ def denetle():
     basliklar, aciklamalar, kanonikler = {}, {}, {}
     sayfa_listesi = sorted(glob.glob("**/*.html", recursive=True))
     # dizine kapalı yönetim sayfaları (noindex) denetim dışı — herkese açık değil
-    sayfa_listesi = [f for f in sayfa_listesi if f not in ("admin.html", "404.html") and not f.startswith("onizleme/")]  # onizleme/: musteriye ozel gizli teklif sayfalari
+    sayfa_listesi = [f for f in sayfa_listesi if f not in ("admin.html", "404.html") and not f.startswith("onizleme/")]  # onizleme/: müşteriye özel gizli teklif sayfaları
     icerik = {f: open(f, encoding="utf-8").read() for f in sayfa_listesi}
 
     # gelen bağlantı sayımı
@@ -198,8 +198,65 @@ def denetle():
         if gelen.get(f, 0) == 0:
             genel.append(("UYARI", "yetim", "hiçbir sayfadan bağlantı almıyor: %s" % f))
 
+    yasak_kalip(sayfa_listesi, bulgu)   # SITE dizinindeyken: yollar göreli
     os.chdir(eski)
+    kardes_benzerligi(genel)            # benzerlik kendi dizin değişimini yapar
     return sayfa_listesi, bulgu, genel
+
+
+def kardes_benzerligi(genel):
+    """Aynı kalıptan basılan sayfalar birbirinin kopyası mı?
+
+    22.09.2026: eşikler seo/kural.py'de, iki ayrı profil olarak duruyor —
+    hizmet sitesinde kardeş sayfa benzemesi doğaldır, günlük yayında şablon
+    payının şişmesi ise sayfayı "soft 404" yapar. Bu yüzden trend tarafı daha
+    sıkı ölçülür.
+    """
+    try:
+        from . import benzerlik as BZ, kural as K
+    except Exception as ex:
+        genel.append(("UYARI", "benzerlik_yok", "benzerlik ölçülemedi: %s" % ex))
+        return
+    try:
+        _dosyalar, rapor, _en, _ozgun = BZ.calistir()
+    except Exception as ex:
+        genel.append(("UYARI", "benzerlik_yok", "benzerlik ölçülemedi: %s" % ex))
+        return
+    for g, n, ort, enb, cift in rapor:
+        if not enb or n < 2:
+            continue
+        ornek = ("%s / %s" % cift) if cift else g
+        prof = "trend" if str(g).startswith("trend") else "luna"
+        k = K.PROFIL[prof]
+        if enb >= k["benzerlik_hata"]:
+            genel.append(("HATA", "kardes_kopya",
+                          "%s grubunda iki sayfa %%%.0f benzer (sınır %%%.0f): %s"
+                          % (g, enb * 100, k["benzerlik_hata"] * 100, ornek)))
+        elif enb >= k["benzerlik_uyari"]:
+            genel.append(("UYARI", "kardes_sablon",
+                          "%s grubunda şablon payı yüksek: en yüksek %%%.0f, ortalama %%%.0f (sınır %%%.0f)"
+                          % (g, enb * 100, (ort or 0) * 100, k["benzerlik_uyari"] * 100)))
+
+
+def yasak_kalip(sayfa_listesi, bulgu):
+    """Başlıkta tık tuzağı kalıbı."""
+    try:
+        from . import kural as K
+    except Exception:
+        return
+    for f in sayfa_listesi:
+        try:
+            s = open(f, encoding="utf-8", errors="replace").read(4000)
+        except Exception:
+            continue
+        m = re.search(r"<title>(.*?)</title>", s, re.S | re.I)
+        if not m:
+            continue
+        t = html.unescape(m.group(1)).lower()
+        for kotu in K.YASAK_KALIP:
+            if kotu in t:
+                bulgu[f].append(("UYARI", "tik_tuzagi", "başlıkta %r" % kotu))
+                break
 
 
 def ozet(sayfa_listesi, bulgu, genel):
