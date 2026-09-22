@@ -893,5 +893,61 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfHtUAxQgSs5Ar7dg9wet\"}",
   "zaman": "2026-09-22 07:59"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-22 13:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Trabzon'da kentsel dönüşüm projesinde süreç hızlandı! 100 konut ve 48 ",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfJJBFaYQFD7JBMEnUver\"}",
+  "zaman": "2026-09-22 13:10"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-22 13:10"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "türkiye millî futbol takımı",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-09-22 13:10"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "gözaltı",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-09-22 13:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "masterchef türkiye",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfJJCRUdK1rWpMiraTy2o\"}",
+  "zaman": "2026-09-22 13:11"
  }
 ]
