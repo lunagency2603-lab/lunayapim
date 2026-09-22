@@ -215,7 +215,10 @@ def calistir(kok):
     y = os.path.join(kok, "hizmetler", "isletme-tanitim.html")
     if os.path.exists(y):
         s = io.open(y, encoding="utf-8").read()
-        t = "Tanıtım Filmi Çekimi — Kurumsal ve İşletme Tanıtım Filmi | Luna Yapım"
+        # 22.09.2026: eski başlık gövdesi 56 karakterdi ve arama sonucunda
+        # "…Tanıtım Fil…" diye kesiliyordu. Taban fiyat şehir sayfalarında zaten
+        # yayımlı (81 sayfada 25.000 ₺'den); başlığa taşındı.
+        t = "Tanıtım Filmi Çekimi — 25.000 ₺'den | Luna Yapım"
         if R_TITLE.search(s) and R_TITLE.search(s).group(1) != t:
             s = R_TITLE.sub("<title>%s</title>" % t, s, count=1)
             s = R_OGT.sub(lambda m: m.group(1) + H.escape(t) + m.group(3), s, count=1)

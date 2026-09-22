@@ -117,6 +117,46 @@ def _sema_zenginlestir(blok, hsp, taban, url):
     return json.dumps(d, ensure_ascii=False), True
 
 
+# --------------------------------------------------------------- sayfadaki SSS
+_SSS_BLOK = re.compile(r'<div class="sss">(.*?)</div>\s*(?=<h2|<section|</div>)', re.S | re.I)
+_SSS_CIFT = re.compile(
+    r"<details[^>]*>\s*<summary[^>]*>(.*?)</summary>\s*<div class=\"cvp\">(.*?)</div>\s*</details>",
+    re.S | re.I)
+
+
+def _duz(x):
+    x = re.sub(r"<[^>]+>", " ", x)
+    x = x.replace("&nbsp;", " ").replace("&amp;", "&").replace("&#x27;", "'")
+    x = x.replace("&quot;", '"').replace("&lt;", "<").replace("&gt;", ">")
+    return re.sub(r"\s+", " ", x).strip()
+
+
+def sss_sema(s):
+    """Sayfada zaten duran soru-cevapları FAQPage şemasına çevirir.
+
+    22.09.2026: hizmet sayfalarının neredeyse hepsinde "Sık sorulan sorular"
+    bolumu vardi ama uc sayfada sema yoktu — yani soru-cevap okura gorunuyor,
+    arama motoruna gorunmuyordu. Icerik uretilmiyor; var olan metin
+    isaretleniyor. Soru uydurulmuyor.
+    """
+    if "FAQPage" in s:
+        return s
+    cift = []
+    for blok in _SSS_BLOK.findall(s):
+        for soru, cevap in _SSS_CIFT.findall(blok):
+            q, a = _duz(soru), _duz(cevap)
+            if q and a and len(a) > 20:
+                cift.append((q, a))
+    if len(cift) < 2:
+        return s
+    sema = {"@context": "https://schema.org", "@type": "FAQPage",
+            "mainEntity": [{"@type": "Question", "name": q,
+                            "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in cift[:10]]}
+    etiket = '<script type="application/ld+json">%s</script>' % json.dumps(sema, ensure_ascii=False)
+    i = s.lower().rfind("</head>")
+    return (s[:i] + etiket + "\n" + s[i:]) if i > 0 else s
+
+
 def calistir(s, yol, kok):
     """Bir sayfanın HTML'ini alır, varlık alanları eklenmiş hâlini döndürür."""
     hsp = hesaplar(kok)
@@ -143,4 +183,5 @@ def calistir(s, yol, kok):
         yeni, degisti = _sema_zenginlestir(mm.group(2), hsp, taban, url)
         return mm.group(1) + (yeni if degisti else mm.group(2)) + mm.group(3)
 
-    return _LD.sub(_yer, s)
+    s = _LD.sub(_yer, s)
+    return sss_sema(s)
