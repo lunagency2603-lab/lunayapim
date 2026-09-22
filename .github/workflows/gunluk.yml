@@ -21,6 +21,11 @@ on:
         default: "otomatik"
         type: choice
         options: [otomatik, sabah, aksam, konu, yalniz-yayin]
+      hizmet_bildir:
+        description: "Luna Yapım hizmet sayfalarının TAMAMINI arama motorlarına bildir"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -165,6 +170,19 @@ jobs:
           git pull --rebase --autostash origin ${{ github.ref_name }} || true
           git push origin HEAD:${{ github.ref_name }}
           echo "Yayınlandı: $(git log -1 --format='%h %s')" >> $GITHUB_STEP_SUMMARY
+
+      - name: Luna Yapım sayfalarını arama motorlarına bildir
+        if: always()
+        working-directory: .otomasyon
+        run: |
+          # 22.09.2026: IndexNow yalnız trend.py'den çağrılıyordu; Luna Yapım'ın
+          # hizmet sayfaları (baskı/hediye kolu dahil) hiç bildirilmiyordu.
+          if [ "${{ github.event.inputs.hizmet_bildir }}" = "true" ]; then
+            python3 -m pusula.bildirim --hepsi | tee /tmp/bildirim.txt
+          else
+            python3 -m pusula.bildirim | tee /tmp/bildirim.txt
+          fi
+          { echo "### Hizmet sayfası bildirimi"; echo '```'; cat /tmp/bildirim.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Cloudflare yayınını tetikle
         if: success()
