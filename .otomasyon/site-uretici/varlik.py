@@ -321,6 +321,48 @@ def isler_bas(s, yol, kok):
     return s
 
 
+KURULUS = {
+    "@type": ["Organization", "LocalBusiness"],
+    "@id": KURULUS_ID,
+    "name": "Luna Yapım",
+    "url": "https://lunayapim.com/",
+    "image": "https://lunayapim.com/assets/og-image.png",
+    "telephone": "+905411602603",
+    "email": EPOSTA,
+    "priceRange": "$$",
+    "address": {"@type": "PostalAddress", "addressLocality": "Bursa",
+                "addressRegion": "Bursa", "addressCountry": "TR"},
+    "areaServed": {"@type": "Country", "name": "Türkiye"},
+}
+
+
+def kurulus_dugumu(s, hsp):
+    """Hiç firma düğümü olmayan sayfaya kurulus kaydını ekler.
+
+    22.09.2026 — ölçüm: /hizmetler/, /sehir/, /isler, /fiyatlar sayfalarında
+    Organization ya da LocalBusiness şeması HİÇ yoktu; dolayısıyla sameAs de
+    @id de giremiyordu. Üstelik Bing'in dizininde tuttuğu üç lunayapim
+    sayfasından ikisi tam olarak bunlar. Firma kaydı olmayan sayfa, arama
+    motoru için "kime ait olduğu belirsiz" bir sayfadır.
+    """
+    if not _LD.search(s):
+        return s
+    for blok in _LD.findall(s):
+        try:
+            d = json.loads(blok[1])
+        except Exception:
+            continue
+        if any(_tur(n) in ISLETME for n in _dugumler(d)):
+            return s                      # zaten var
+    k = dict(KURULUS)
+    if hsp:
+        k["sameAs"] = [h["url"] for h in hsp]
+    etiket = ('<script type="application/ld+json">%s</script>'
+              % json.dumps(dict({"@context": "https://schema.org"}, **k), ensure_ascii=False))
+    i = s.lower().rfind("</head>")
+    return (s[:i] + etiket + "\n" + s[i:]) if i > 0 else s
+
+
 def calistir(s, yol, kok):
     """Bir sayfanın HTML'ini alır, varlık alanları eklenmiş hâlini döndürür."""
     hsp = hesaplar(kok)
@@ -348,5 +390,6 @@ def calistir(s, yol, kok):
         return mm.group(1) + (yeni if degisti else mm.group(2)) + mm.group(3)
 
     s = _LD.sub(_yer, s)
+    s = kurulus_dugumu(s, hsp)
     s = isler_bas(s, yol, kok)
     return sss_sema(s)
