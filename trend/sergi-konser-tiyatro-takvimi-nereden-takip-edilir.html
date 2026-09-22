@@ -74,7 +74,14 @@
 <script>
 (function(){var f=document.getElementById("bl-form");if(!f)return;f.addEventListener("submit",async function(ev){ev.preventDefault();var e=document.getElementById("bl-eposta").value.trim(),s=document.getElementById("bl-sonuc");if(!document.getElementById("bl-onay").checked){s.textContent="Onay kutusunu işaretle.";return}s.textContent="Kaydediliyor…";try{var r=await fetch("/api/abone",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({eposta:e,onay:true,kaynak:"trend"})});s.textContent=r.ok?"Tamam — ilk sayı Pazartesi.":"Olmadı; daha sonra tekrar dene."}catch(x){s.textContent="Bağlantı yok; daha sonra tekrar dene."}});})();
 </script>
-      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="21-27-eylul-istanbul-konser-takvimi-hafta-boyunca-sahnedekiler">
+      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="contemporary-istanbul-2026-ya-ilk-kez-gidenler-icin-rehber">
+      <div class="ts-kart-gorsel"><img src="../assets/studyo/set-isik-k.jpg" alt="Contemporary Istanbul 2026: ilk kez gidenlere" loading="lazy" width="800" height="447"><span class="ts-chip">Sanat</span></div>
+      <div class="ts-kart-metin">
+        <span class="ts-meta">22 Eylül 2026 · 2 dk</span>
+        <h3>Contemporary Istanbul 2026: ilk kez gidenlere</h3>
+        <p>Contemporary Istanbul 2026, 23-27 Eylül&#x27;de Tersane İstanbul&#x27;da açılıyor. 16 ülkeden 70 galeri, 736 sanatçı ve fuarı ilk kez gezecekler için yol</p>
+      </div>
+    </a><a class="ts-kart gor" href="21-27-eylul-istanbul-konser-takvimi-hafta-boyunca-sahnedekiler">
       <div class="ts-kart-gorsel"><img src="../assets/ts/21-27-eylul-istanbul-konser-takvimi-hafta-boyunca-sahnedekiler.jpg" alt="21-27 Eylül İstanbul konser takvimi: hafta boyunca sahnedekiler" loading="lazy" width="960" height="540"><span class="ts-chip">Sanat</span></div>
       <div class="ts-kart-metin">
         <span class="ts-meta">19 Eylül 2026 · 2 dk</span>

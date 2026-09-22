@@ -1,0 +1,101 @@
+{
+ "tur": "konu",
+ "tarih": "2026-09-22",
+ "terim": "enflasyon ne zaman açıklanacak",
+ "hacim": "",
+ "kat": "piyasa",
+ "kaynak_tur": "elle",
+ "slug": "enflasyon-ne-zaman-aciklanacak-kira-artisi-nasil-bulunur",
+ "yazi": {
+  "baslik": "Eylül enflasyonu ve kira artışı: takvim 5 Ekim",
+  "meta": "TÜİK eylül enflasyonunu 5 Ekim Pazartesi saat 10.00'da açıklayacak. Kira artış oranı ise on iki aylık TÜFE ortalamasına göre bulunuyor; ikisi ayrı rakam.",
+  "giris": "TÜİK, eylül ayı Tüketici Fiyat Endeksi'ni 5 Ekim Pazartesi günü saat 10.00'da açıklayacak. Veri normalde ayın üçünde geliyor; bu kez 3 Ekim cumartesiye denk geldiği için yayın ilk iş gününe kaydı. Aynı veri, ekimde yenilenen kira sözleşmelerinin tavan artış oranını da belirleyecek.",
+  "bolumler": [
+   {
+    "h2": "Eylül enflasyonu ne zaman açıklanacak?",
+    "paragraflar": [
+     "Akşam'ın haberine göre eylül TÜFE'si 5 Ekim 2026 Pazartesi günü saat 10.00'da yayımlanacak. Oyak Yatırım'ın paylaştığı TÜİK yıllık veri takvimi de aynı tarihi gösteriyor. Bir sonraki adım ekim ayı enflasyonu; o veri 3 Kasım Salı günü açıklanacak.",
+     "TÜİK, bültenlerini kurumun sitesinde ve Veri Portalı'nda aynı anda yayımlıyor. Açıklama saatinden önce dolaşan rakamlar resmî veri değil. Ekonomistlerin anket tahminleri ile TÜİK'in açıkladığı sonuç birbirinden ayrı iki şey; ikisini aynı başlıkta okumak yanıltıyor. Takvimde saat de sabit: TÜİK bültenlerini sabah 10.00'da yayımlıyor."
+    ]
+   },
+   {
+    "h2": "Yıllık enflasyon ile kira artış oranı neden aynı şey değil?",
+    "paragraflar": [
+     "Bu iki oran sürekli karıştırılıyor. TÜİK açıklamasının manşetindeki yıllık enflasyon, bir ayın endeksinin bir önceki yılın aynı ayına göre değişimini gösterir. Kira artışında bu rakam kullanılmaz.",
+     "Türk Borçlar Kanunu'nun 344. maddesi, yenilenen sözleşmedeki kira artışının bir önceki kira yılındaki on iki aylık TÜFE ortalamasını aşamayacağını söylüyor. Hesaba giren şey son on iki ayın ortalaması. Tek bir ayın yıllık değişimi değil.",
+     "Ortalama, ani hareketleri yumuşattığı için iki oran aynı sayıya denk gelmez. Örnek olarak eylülde uygulanan tavan kira artışı yüzde 31,79 oldu; bu, ağustos verisindeki on iki aylık ortalamaya dayanıyor. CNN Türk ve Uzmanpara oranı aynı şekilde aktardı.",
+     "Sözleşmenin yıl dönümü de belirleyici. Ekimde yenilenen bir sözleşme için 5 Ekim'de açıklanacak oran geçerli olacak; kasımda yenilenen sözleşme 3 Kasım'daki veriyi bekleyecek. Uzmanpara'nın aktardığına göre konutta bir dönem uygulanan yüzde 25'lik geçici tavan artık yürürlükte değil; oran hem konutta hem işyerinde işliyor.",
+     "Hesabın kendisi basit. Eski kira, açıklanan oranla çarpılıp üstüne ekleniyor. Uzmanpara'nın örneğinde 20.000 liralık bir kira, yüzde 31,79'luk artışla 26.358 liraya çıkıyor. Ekim ayında da yöntem aynı kalacak; değişen tek şey 5 Ekim'de açıklanacak ortalama olacak."
+    ]
+   },
+   {
+    "h2": "Enflasyon öncesinde takvimde başka hangi veriler var?",
+    "paragraflar": [
+     "Capital'in derlediği takvime göre ekonomik güven endeksi 29 Eylül'de açıklanacak. CNBC-e'nin listesinde 30 Eylül'de işsizlik oranı, dış ticaret dengesi ve dış borç stoku verileriyle birlikte Hazine'nin ekim-aralık dönemi iç borçlanma programı yer alıyor.",
+     "Merkez Bankası'nın bu aralıkta faiz toplantısı yok. TCMB'nin resmî 2026 takviminde Para Politikası Kurulu'nun eylül toplantısı 10 Eylül'de yapıldı; yılın kalan iki toplantısı 22 Ekim ve 10 Aralık. CNN Türk Finans da aynı tarihleri aktardı.",
+     "Kirasını yenileyecek okur için kısa bir kontrol listesi: sözleşmenin başlangıç ayını bulun, o aya denk gelen on iki aylık TÜFE ortalamasına bakın, geçen yılki kirayı bu oranla artırın. Manşetteki yıllık enflasyonu ya da TEFE gibi eski adlandırmaları kullanan hesaplamalar farklı sonuç verir."
+    ]
+   }
+  ],
+  "alinti": {
+   "metin": "Eylül ayı enflasyon verileri 5 Ekim 2026 Pazartesi günü saat 10.00'da açıklanacak.",
+   "kaynak": "Akşam"
+  },
+  "izle": [
+   "TÜİK Ulusal Veri Yayımlama Takvimi: tuik.gov.tr/Kurumsal/Veri_Takvimi",
+   "TÜFE haber bülteni ve on iki aylık ortalama serisi: veriportali.tuik.gov.tr",
+   "TCMB Para Politikası Kurulu toplantı takvimi: tcmb.gov.tr"
+  ],
+  "sss": [
+   {
+    "soru": "Eylül enflasyonu neden 3 Ekim'de açıklanmıyor?",
+    "cevap": "3 Ekim cumartesiye denk geliyor. TÜİK yayını ilk iş günü olan 5 Ekim Pazartesiye aldı."
+   },
+   {
+    "soru": "Kira artışı hangi rakama göre hesaplanır?",
+    "cevap": "Son on iki ayın TÜFE ortalamasına göre. Türk Borçlar Kanunu'nun 344. maddesi bu ortalamayı tavan olarak belirliyor, manşetteki yıllık enflasyonu değil."
+   },
+   {
+    "soru": "Ekim başında faiz kararı var mı?",
+    "cevap": "Yok. TCMB'nin resmî takvimine göre Para Politikası Kurulu'nun bir sonraki toplantısı 22 Ekim'de. Eylül toplantısı 10 Eylül'de yapılmıştı, yılın son toplantısı ise 10 Aralık'ta."
+   }
+  ],
+  "kelime": 468
+ },
+ "gorsel": null,
+ "kaynaklar": [
+  {
+   "ad": "TÜİK",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "Akşam",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "Uzmanpara (Milliyet)",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "Oyak Yatırım",
+   "tarih": "2026-01-01"
+  },
+  {
+   "ad": "CNN Türk",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "Capital",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "CNBC-e",
+   "tarih": "2026-09-22"
+  },
+  {
+   "ad": "TCMB",
+   "tarih": "2026-09-22"
+  }
+ ],
+ "model": "elle"
+}

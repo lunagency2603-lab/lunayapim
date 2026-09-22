@@ -194,6 +194,35 @@ def _okuma_sure(metin):
     return max(1, round(k / 180))
 
 
+def _atif(m):
+    """Yazinin dayandigi kaynaklar -> schema.org citation.
+
+    22.09.2026: alan bosti ("citation": []) cunku yalniz tek "kaynak_url" alanina
+    bakiyordu; konu yazilarinin kaynaklari ise "kaynaklar" listesinde duruyor.
+    Bos dizi hem dogrulayicida gurultu hem de yapay zeka aramalarinda kacirilan
+    bir guven sinyali: alintilanan yazi, kaynagini gosteren yazidir.
+    """
+    out = []
+    if m.get("kaynak_url"):
+        out.append({"@type": "CreativeWork", "name": m.get("kaynak_ad") or m["kaynak_url"],
+                    "url": m["kaynak_url"]})
+    for k in (m.get("kaynaklar") or []):
+        if isinstance(k, dict):
+            ad, url = k.get("ad") or k.get("baslik"), k.get("url") or k.get("adres")
+        elif isinstance(k, (list, tuple)) and len(k) >= 2:
+            ad, url = k[0], k[1]
+        else:
+            ad, url = (k if isinstance(k, str) else None), None
+        if not ad:
+            continue
+        kayit = {"@type": "CreativeWork", "name": ad}
+        if url:
+            kayit["url"] = url
+        if kayit not in out:
+            out.append(kayit)
+    return out
+
+
 def _gorsel_url(ad, mutlak=False):
     """Görsel anahtarı → adres. 'ts:x.jpg' indirilen serbest lisanslı görseldir (assets/ts/)."""
     kok = "https://lunayapim.com/" if mutlak else ""
@@ -413,6 +442,7 @@ def _konu_yazilari():
                    "olgu": yz.get("meta") or yz.get("giris", ""), "ek": "", "aci_soru": "", "hizmet_soz": "",
                    "yazi": yz, "aci": " ".join(p for b in yz.get("bolumler", []) for p in b.get("paragraflar", [])),
                    "kaynak_ad": kaynak_ad, "kaynak_url": "", "kaynak_tarih": "", "hizmet": "",
+                   "kaynaklar": k.get("kaynaklar") or [],
                    "kat": kat, "gorsel": ("ts:" + g["dosya"]) if g.get("dosya") else BOLUM_GORSEL.get(kat, "set-isik"),
                    "gorsel_kunye": g if g.get("dosya") else None, "terim": k["terim"], "hacim": k.get("hacim", ""),
                    "sektor": KATEGORI[kat][0], "slug": k["slug"], "gundem_url": "%s/" % kat})
@@ -856,7 +886,7 @@ def haber_html(m, komsular):
          "image": _gorsel_url(m["gorsel"], mutlak=True),
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
          "publisher": {"@type": "Organization", "name": "LunaTrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
-         "citation": [{"@type": "CreativeWork", "name": m["kaynak_ad"], "url": m["kaynak_url"]}] if m.get("kaynak_url") else []},
+         "citation": _atif(m)},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "LunaTrendSaphiens", "item": KOK_URL},
             {"@type": "ListItem", "position": 2, "name": kat_ad, "item": KOK_URL + m["kat"] + "/"},
@@ -1337,6 +1367,31 @@ def _supur(kok, uretilen, log=None):
     return silinen
 
 
+# --------------------------------------------------------------- miras adresler
+# 22.09.2026 — Bing/ChatGPT aramasinda trendsaphiens.com'un ESKI WordPress sitesi
+# cikiyor: "TrendSaphiens - Sanat Bilim Teknoloji", /about-us/, /hakkinda/,
+# /category/gundem/ ... Hepsi artik 404. Google Search Console'da da 51 adres
+# "Bulunamadi (404)" olarak duruyor ve ilk tespit tarihi 15.09.2026 — yani alan
+# adi bize gectiginde Google'in elinde duran eski adresler.
+# Karsiligi olan adresleri 301 ile dogru sayfaya gonderiyoruz; 2022 tarihli
+# ingilizce sablon icerigi (/2022/..) karsiligi olmadigi icin 404 kaliyor —
+# kaldirilmis icerigin dogru cevabi 404'tur, ana sayfaya atmak soft 404 uretir.
+MIRAS_YONLENDIRME = {
+    "/trend/hakkinda":   "/trend/hakkimizda",
+    "/trend/hakkinda/":  "/trend/hakkimizda",
+    "/trend/about-us":   "/trend/hakkimizda",
+    "/trend/about-us/":  "/trend/hakkimizda",
+    "/trend/contact":    "/trend/iletisim",
+    "/trend/contact-us": "/trend/iletisim",
+    "/trend/contact-us/": "/trend/iletisim",
+    "/trend/home-two":   "/trend/",
+    "/trend/home-two/":  "/trend/",
+    "/trend/home-three": "/trend/",
+    "/trend/home-three/": "/trend/",
+    # eski WordPress bolum adresleri: /category/<bolum>/ -> /<bolum>/
+    "/trend/category/*": "/trend/:splat",
+}
+
 def _yonlendirme(kok, silinen, elle=None):
     """Kaldırılan adresleri 301 ile doğru yere gönderir (_redirects, Cloudflare Pages).
 
@@ -1432,7 +1487,7 @@ def yayinla(kok=None, paylas=False):
     # artık üretilmeyen trend sayfalarını sil (derleme günlükleri, yazısız haberler)
     silinen = _supur(kok, uretilen)
     try:
-        yonlendirme = _yonlendirme(kok, silinen)
+        yonlendirme = _yonlendirme(kok, silinen, elle=MIRAS_YONLENDIRME)
     except Exception as ex:
         yonlendirme = "yazılamadı: %s" % ex
     # site haritası

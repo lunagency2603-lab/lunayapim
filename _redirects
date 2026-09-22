@@ -9,7 +9,13 @@
 /gundem/2026-09-19  /gundem/  301
 /gundem/2026-09-20  /gundem/  301
 /gundem/2026-09-21  /gundem/  301
+/trend/about-us  /trend/hakkimizda  301
+/trend/about-us/  /trend/hakkimizda  301
 /trend/canakkale-de-skandal-olay-is-insani-otel-odasinda-iki-cocukla-yakaland  /trend/  301
+/trend/category/*  /trend/:splat  301
+/trend/contact  /trend/iletisim  301
+/trend/contact-us  /trend/iletisim  301
+/trend/contact-us/  /trend/iletisim  301
 /trend/ekran/2026-09-03  /trend/ekran/  301
 /trend/ekran/2026-09-04  /trend/ekran/  301
 /trend/ekran/2026-09-07  /trend/ekran/  301
@@ -17,6 +23,12 @@
 /trend/ekran/2026-09-11  /trend/ekran/  301
 /trend/ekran/2026-09-12  /trend/ekran/  301
 /trend/ekran/2026-09-14  /trend/ekran/  301
+/trend/hakkinda  /trend/hakkimizda  301
+/trend/hakkinda/  /trend/hakkimizda  301
+/trend/home-three  /trend/  301
+/trend/home-three/  /trend/  301
+/trend/home-two  /trend/  301
+/trend/home-two/  /trend/  301
 /trend/istanbul-da-kentsel-donusum-teknolojiyle-nasil-degisiyor  /trend/istanbul-da-927-bin-konut-donustu-hak-sahibine-ne-gosterilecek  301
 /trend/izmir-de-insaat-firmasinin-arsasi-satista-daha-once-alici-bulamamisti  /trend/  301
 /trend/kiralik-konutta-talep-yillik-10-6-artti-reel-kiralar-6-5-geriledi  /trend/  301

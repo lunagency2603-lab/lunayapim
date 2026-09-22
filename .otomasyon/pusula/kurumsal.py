@@ -388,11 +388,55 @@ SAYFALAR = [
 ]
 
 
+def llms_txt(kok):
+    """llms.txt — yapay zeka asistanlari icin sitenin duz metin haritasi.
+
+    22.09.2026 gerekcesi: Bing aramasinda (ChatGPT Search ve Copilot bu dizini
+    kullanir) trendsaphiens.com'un ESKI WordPress sitesi cikiyordu. Bir asistan
+    siteyi tarif etmeye calistiginda ne oldugumuzu tek dosyadan okuyabilsin;
+    bolumler, araclar ve kurumsal sayfalar tek yerde dursun.
+
+    Bicim: llmstxt.org onerisi — H1, kisa ozet, sonra bolum basliklariyla
+    baglanti listeleri.
+    """
+    from . import trend as T
+    kok_url = "https://trendsaphiens.com/"
+    satir = ["# TrendSaphiens", "",
+             "> Turkiye gundeminin gunluk yayini: haber, piyasa, spor, dizi-film, burc, "
+             "teknoloji ve kultur. Her madde kaynagiyla ve tarihiyle yayimlanir; rakam "
+             "yalnizca kaynakta varsa yazilir. Yayinci: Luna Yapim (Bursa).", "",
+             "Dil: Turkce. Gunluk guncellenir. Iceriklerin alintilanmasinda kaynak olarak "
+             "sayfa adresi gosterilmelidir.", "", "## Bolumler", ""]
+    for k, (ad, ozet) in T.KATEGORI.items():
+        if k == "sistem":
+            continue
+        satir.append("- [%s](%s%s/): %s" % (ad, kok_url, k, ozet))
+    satir += ["", "## Gunluk derleme", "",
+              "- [Gunun bulteni](%sbulten): gunun 30 basligi tek sayfada" % kok_url,
+              "- [Site haritasi](%ssitemap.xml)" % kok_url, "", "## Araclar", ""]
+    try:
+        from . import arac as A
+        for slug, ad, ozet, _r in A.ARACLAR:
+            satir.append("- [%s](%s%s): %s" % (ad, kok_url, slug, ozet))
+    except Exception:
+        pass
+    satir += ["", "## Kurumsal", ""]
+    for slug, ad, _fn in SAYFALAR:
+        satir.append("- [%s](%s%s)" % (ad, kok_url, slug))
+    metin = "\n".join(satir) + "\n"
+    io.open(os.path.join(kok, "trend", "llms.txt"), "w", encoding="utf-8").write(metin)
+    return {"llms.txt": len(satir)}
+
+
 def yayinla(kok=None):
     kok = kok or SITE_KOK
     d = os.path.join(kok, "trend")
     os.makedirs(d, exist_ok=True)
     yazilan = []
+    try:
+        llms_txt(kok)
+    except Exception as ex:
+        print("llms.txt:", ex)
     for slug, _ad, fn in SAYFALAR:
         io.open(os.path.join(d, slug + ".html"), "w", encoding="utf-8").write(fn())
         yazilan.append(slug)

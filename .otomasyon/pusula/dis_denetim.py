@@ -25,6 +25,8 @@ from .ayarlar import SITE_KOK, KOK_DIZIN
 SITE = "https://trendsaphiens.com"
 AJAN = "LunaTrendSaphiensDenetim/1.0 (+https://trendsaphiens.com/denetim)"
 OLCULEN = ["/", "/bulten", "/hakkimizda", "/yukselen-burc-hesaplama"]
+LUNA = "https://lunayapim.com"
+LUNA_OLCULEN = ["/", "/hizmetler/", "/yazilim"]
 ZAMAN_ASIMI = 45
 CIKTI = os.path.join(KOK_DIZIN, "veri", "denetim-dis.json")
 
@@ -88,13 +90,14 @@ def canli_tarama():
 
 
 # ------------------------------------------------------------------ 2) PageSpeed
-def pagespeed(adresler=None, kip="mobile"):
+def pagespeed(adresler=None, kip="mobile", kok=None):
     anahtar = os.environ.get("PSI_ANAHTAR", "")
+    kok = kok or SITE
     out = []
     for yol in (adresler or OLCULEN):
         u = ("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=%s&strategy=%s"
              "&category=performance&category=accessibility&category=best-practices&category=seo"
-             % (urllib.parse.quote(SITE + yol, safe=""), kip))
+             % (urllib.parse.quote(kok + yol, safe=""), kip))
         if anahtar:
             u += "&key=" + anahtar
         try:
@@ -116,11 +119,12 @@ def pagespeed(adresler=None, kip="mobile"):
 
 
 # ------------------------------------------------------------------ 3) W3C doğrulayıcı
-def w3c(adresler=None):
+def w3c(adresler=None, kok=None):
+    kok = kok or SITE
     out = []
     for yol in (adresler or OLCULEN[:3]):
         u = ("https://validator.w3.org/nu/?out=json&doc=%s"
-             % urllib.parse.quote(SITE + yol, safe=""))
+             % urllib.parse.quote(kok + yol, safe=""))
         try:
             d = json.loads(_iste(u, zaman=90).read().decode("utf-8"))
             ileti = d.get("messages", [])
@@ -139,6 +143,10 @@ def calistir(yaz=True):
              "site": SITE, "canli": canli_tarama()}
     rapor["pagespeed"] = pagespeed(kip="mobile")
     rapor["w3c"] = w3c()
+    # ikinci site: lunayapim.com — ayni olculer, tarama olmadan (kendi site
+    # haritasi cok buyuk; haftalik kosuyu uzatmamak icin yalniz puan + HTML)
+    rapor["lunayapim"] = {"pagespeed": pagespeed(LUNA_OLCULEN, "mobile", LUNA),
+                          "w3c": w3c(LUNA_OLCULEN, LUNA)}
     rapor["ozet"] = ozet(rapor)
     if yaz:
         os.makedirs(os.path.dirname(CIKTI), exist_ok=True)
@@ -157,8 +165,15 @@ def ozet(r):
             if d:
                 ort[k] = int(round(sum(d) / len(d)))
     w = sum(x.get("hata", 0) for x in r.get("w3c", []) if isinstance(x.get("hata"), int))
+    lp = [p for p in r.get("lunayapim", {}).get("pagespeed", []) if "puan" in p]
+    lort = {}
+    if lp:
+        for k in ("performance", "accessibility", "best-practices", "seo"):
+            d = [p["puan"].get(k) for p in lp if p["puan"].get(k) is not None]
+            if d:
+                lort[k] = int(round(sum(d) / len(d)))
     return {"adres": c.get("adres", 0), "canli_sorun": len(c.get("sorun", [])),
-            "psi_ortalama": ort, "w3c_hata": w}
+            "psi_ortalama": ort, "w3c_hata": w, "lunayapim_psi": lort}
 
 
 if __name__ == "__main__":

@@ -75,7 +75,14 @@
 <script>
 (function(){var f=document.getElementById("bl-form");if(!f)return;f.addEventListener("submit",async function(ev){ev.preventDefault();var e=document.getElementById("bl-eposta").value.trim(),s=document.getElementById("bl-sonuc");if(!document.getElementById("bl-onay").checked){s.textContent="Onay kutusunu işaretle.";return}s.textContent="Kaydediliyor…";try{var r=await fetch("/api/abone",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({eposta:e,onay:true,kaynak:"trend"})});s.textContent=r.ok?"Tamam — ilk sayı Pazartesi.":"Olmadı; daha sonra tekrar dene."}catch(x){s.textContent="Bağlantı yok; daha sonra tekrar dene."}});})();
 </script>
-      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="piyasa/2026-09-22">
+      <div class="ts-kutu"><h2 class="etk">Devamı</h2><div class="ts-kartlar ts-kartlar-dar"><a class="ts-kart gor" href="enflasyon-ne-zaman-aciklanacak-kira-artisi-nasil-bulunur">
+      <div class="ts-kart-gorsel"><img src="../assets/video/karga-k3.jpg" alt="Eylül enflasyonu ve kira artışı: takvim 5 Ekim" loading="lazy" width="1280" height="720"><span class="ts-chip">Piyasalar</span></div>
+      <div class="ts-kart-metin">
+        <span class="ts-meta">22 Eylül 2026 · 2 dk</span>
+        <h3>Eylül enflasyonu ve kira artışı: takvim 5 Ekim</h3>
+        <p>TÜİK eylül enflasyonunu 5 Ekim Pazartesi saat 10.00&#x27;da açıklayacak. Kira artış oranı ise on iki aylık TÜFE ortalamasına göre bulunuyor; ikisi ayrı</p>
+      </div>
+    </a><a class="ts-kart gor" href="piyasa/2026-09-22">
       <div class="ts-kart-gorsel"><img src="../assets/video/karga-k3.jpg" alt="Dolar, euro ve altın bugün · 22 Eylül 2026" loading="lazy" width="1280" height="720"><span class="ts-chip">Piyasalar</span></div>
       <div class="ts-kart-metin">
         <span class="ts-meta">22 Eylül 2026 · 1 dk</span>
@@ -88,13 +95,6 @@
         <span class="ts-meta">21 Eylül 2026 · 1 dk</span>
         <h3>Dolar, euro ve altın bugün · 21 Eylül 2026</h3>
         <p>TCMB satış: dolar 48,80, euro 56,02, gram altın 6.822,54. Kaynaklı, yatırım tavsiyesi</p>
-      </div>
-    </a><a class="ts-kart gor" href="piyasa/2026-09-20">
-      <div class="ts-kart-gorsel"><img src="../assets/video/karga-k3.jpg" alt="Dolar, euro ve altın bugün · 20 Eylül 2026" loading="lazy" width="1280" height="720"><span class="ts-chip">Piyasalar</span></div>
-      <div class="ts-kart-metin">
-        <span class="ts-meta">20 Eylül 2026 · 1 dk</span>
-        <h3>Dolar, euro ve altın bugün · 20 Eylül 2026</h3>
-        <p>TCMB satış: dolar 48,70, euro 55,90, gram altın 6.865,89. Kaynaklı, yatırım tavsiyesi</p>
       </div>
     </a></div></div>
     </aside>
