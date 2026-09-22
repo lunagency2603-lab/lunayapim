@@ -379,6 +379,12 @@ def calistir(kok, desen="**/*.html"):
         il_baglari.calistir(kok)
     except Exception as ex:
         print("il_baglari:", ex)
+    # ana hizmet sayfaları → sektör/alt tür sayfaları bağlantı bloğu
+    try:
+        import sektor_baglari
+        print("sektor_baglari:", sektor_baglari.calistir(kok))
+    except Exception as ex:
+        print("sektor_baglari:", ex)
     # sayfa tipine göre başlık/H1/meta + fiyat bölümü: arayanın kalıbı (arama_hizala)
     try:
         from pusula import arama_hizala

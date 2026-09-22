@@ -295,8 +295,12 @@ def uret_urun():
     slugs = list(URUN)
     for slug, v in URUN.items():
         dosya = "urun-animasyon-%s.html" % slug
+        # 22.09.2026 — burada [:5] vardi: sozlukteki son iki sektor (gida,
+        # insaat-malzemesi) HICBIR kardesinden baglanti almiyordu, tek gelen
+        # baglantilari hizmetler/index'ti. Google onlari "kesfedildi, taranmadi"
+        # diye bekletti. Kardeslerin tamami listelenir; sekiz ad kisa bir satir.
         kardes = ['<a href="urun-animasyon-%s">%s</a>' % (k, e(URUN[k]["ad"].split(" Ürün")[0]))
-                  for k in slugs if k != slug][:5]
+                  for k in slugs if k != slug]
         govde = _govde(v, "urun-animasyon", v["anahtar_il"],
                        "3D ürün animasyonu 40.000 ₺'den başlıyor; süre ve hareketli parça sayısı belirleyici.",
                        kardes, "Ürün Animasyonu", "urun-animasyon")
@@ -318,7 +322,7 @@ def uret_yapi():
     for slug, v in YAPI.items():
         dosya = "insaat-3d-%s.html" % slug
         kardes = ['<a href="insaat-3d-%s">%s</a>' % (k, e(YAPI[k]["ad"].split(" 3D")[0]))
-                  for k in slugs if k != slug][:5]
+                  for k in slugs if k != slug]
         govde = _govde(v, "insaat-3d-modelleme", ("insaat", "inşaat", "konut", "yapı"),
                        "İnşaat 3D modelleme ve mimari render 45.000 ₺'den başlıyor; blok sayısı ve istenen kare adedi belirleyici.",
                        kardes, "İnşaat 3D Modelleme", "insaat-3d-modelleme")
