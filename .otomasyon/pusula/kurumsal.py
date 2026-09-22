@@ -478,8 +478,11 @@ def yayinla(kok=None):
     try:
         s = io.open(y, encoding="utf-8").read()
         bugun = datetime.date.today().isoformat()
+        # 404 site haritasina GIRMEZ: noindex isaretli bir adresi haritada gostermek
+        # Search Console'da "gonderilen adres noindex" hatasi uretir (22.09.2026).
+        haritalik = [x for x in yazilan if x != "404"]
         ek = ['  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>'
-              % (KOK_URL, slug, bugun) for slug in yazilan if (KOK_URL + slug) not in s]
+              % (KOK_URL, slug, bugun) for slug in haritalik if (KOK_URL + slug) not in s]
         if ek:
             s = s.replace("</urlset>", "\n".join(ek) + "\n</urlset>")
             io.open(y, "w", encoding="utf-8").write(s)

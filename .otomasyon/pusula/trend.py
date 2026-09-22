@@ -1410,8 +1410,44 @@ MIRAS_YONLENDIRME = {
     "/trend/home-two/":  "/trend/",
     "/trend/home-three": "/trend/",
     "/trend/home-three/": "/trend/",
-    # eski WordPress bolum adresleri: /category/<bolum>/ -> /<bolum>/
-    "/trend/category/*": "/trend/:splat",
+    # eski WordPress bolum adresleri. Sablon ingilizce slug kullaniyordu, bizim
+    # bolumlerimiz turkce: /category/music/ -> /muzik. 22.09.2026'da olculdu —
+    # duz ":splat" kurali /category/music/ adresini var olmayan /music/ adresine
+    # gonderiyordu, yani 301 -> 404 zinciri. Karsiligi olani esle, olmayani
+    # ana akisa dusur.
+    "/trend/category/music": "/trend/muzik",
+    "/trend/category/music/": "/trend/muzik",
+    "/trend/category/tech": "/trend/teknoloji",
+    "/trend/category/tech/": "/trend/teknoloji",
+    "/trend/category/technology": "/trend/teknoloji",
+    "/trend/category/technology/": "/trend/teknoloji",
+    "/trend/category/art": "/trend/sanat",
+    "/trend/category/art/": "/trend/sanat",
+    "/trend/category/sport": "/trend/spor",
+    "/trend/category/sport/": "/trend/spor",
+    "/trend/category/sports": "/trend/spor",
+    "/trend/category/sports/": "/trend/spor",
+    "/trend/category/movie": "/trend/ekran",
+    "/trend/category/movie/": "/trend/ekran",
+    "/trend/category/news": "/trend/haber",
+    "/trend/category/news/": "/trend/haber",
+    "/trend/category/books": "/trend/edebiyat",
+    "/trend/category/books/": "/trend/edebiyat",
+    # bizde zaten ayni adi tasiyan bolumler
+    "/trend/category/sanat": "/trend/sanat",
+    "/trend/category/sanat/": "/trend/sanat",
+    "/trend/category/gundem": "/trend/gundem",
+    "/trend/category/gundem/": "/trend/gundem",
+    "/trend/category/spor": "/trend/spor",
+    "/trend/category/spor/": "/trend/spor",
+    "/trend/category/muzik": "/trend/muzik",
+    "/trend/category/muzik/": "/trend/muzik",
+    "/trend/category/teknoloji": "/trend/teknoloji",
+    "/trend/category/teknoloji/": "/trend/teknoloji",
+    "/trend/category/haber": "/trend/haber",
+    "/trend/category/haber/": "/trend/haber",
+    # karsiligi olmayan sablon bolumleri (food, fashion, gaming, health ...)
+    "/trend/category/*": "/trend/",
     # 22.09.2026 — Search Console'da 51 "bulunamadi (404)" ve 21 "soft 404" cikti;
     # hepsi WordPress kalintisi. Gercekten silinmis demo yazilar 404 kalmali (dogrusu
     # bu), ama karsiligi OLAN sayfalar yonlendirilmeli — asagidakiler onlar.
@@ -1473,7 +1509,14 @@ def _yonlendirme(kok, silinen, elle=None):
     json.dump(temiz, open(defter_yol, "w", encoding="utf-8"), ensure_ascii=False, indent=1, sort_keys=True)
     satir = ["# Kaldırılan TrendSaphiens adresleri — otomatik üretilir (pusula/trend.py).",
              "# Derleme sayfaları ve kendi kalemimizden geçmemiş yazılar 14.09.2026'da yayından kaldırıldı."]
-    satir += ["%s  %s  301" % (a, h) for a, h in sorted(temiz.items())]
+    # 22.09.2026 — Cloudflare _redirects'te İLK EŞLEŞEN kural kazanır. Alfabetik
+    # sıralamada "*" harflerden önce geldiği için joker kural özgün kuralların
+    # ÜSTÜNE çıkıyor ve onları gölgeliyordu. Sıra: önce tam adresler, sonra
+    # jokerler — jokerler arasında da önek uzunluğuna göre özgünden genele.
+    def _sira(x):
+        a = x[0]
+        return (1 if "*" in a else 0, -len(a.split("*")[0]), a)
+    satir += ["%s  %s  301" % (a, h) for a, h in sorted(temiz.items(), key=_sira)]
     open(os.path.join(kok, "_redirects"), "w", encoding="utf-8").write("\n".join(satir) + "\n")
     return len(temiz)
 

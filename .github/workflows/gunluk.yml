@@ -135,6 +135,11 @@ jobs:
           python3 -m pusula.arac || true
           python3 -m pusula.bulten_sayfa || true
           python3 -m pusula.kurumsal || true
+          # 22.09.2026 — bu üç modül SON sonislem'den sonra sayfa basıyordu; yani
+          # bastıkları sayfalara varlık şeması, ilk görsel önceliği ve site
+          # haritası temizliği uygulanmıyordu. Canlıda /404 site haritasına
+          # girmişti (noindex bir adres haritada durunca Search Console hata verir).
+          python3 site-uretici/sonislem.py "$GITHUB_WORKSPACE" || true
 
       - name: Canlı künye ve site asistanı tazele
         working-directory: .otomasyon
