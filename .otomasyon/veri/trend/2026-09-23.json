@@ -2,888 +2,107 @@
  "tarih": "2026-09-23",
  "aranan": [
   {
-   "baslik": "başkan",
-   "hacim": "5000+",
-   "haber_baslik": "BM kürsüsünden Gazze çıkışı: Bu insani bir mesele",
-   "haber_url": "https://www.hurriyet.com.tr/gundem/bm-kursusunden-gazze-cikisi-bu-insani-bir-mesele-43316119",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR-nUuIz-l2UQDSa4V5UsoRWopccA-p1rhvyi0MpS6xX1G-JMTxQVXyHQKXQSo",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "eskişehir hava durumu",
-   "hacim": "500+",
-   "haber_baslik": "Eskişehir’de sağanak yağış bekleniyor İhlas Haber Ajansı",
-   "haber_url": "https://www.iha.com.tr/eskisehir-haberleri/eskisehirde-saganak-yagis-bekleniyor-489127056",
-   "haber_kaynak": "İhlas Haber Ajansı",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRQo_-vnyi4vmkd4sD0oLFG9CXl2_lMBBa7ok1ttE5ltKo5kXntpaBRKLP6rFs",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "manisa hava durumu",
-   "hacim": "500+",
-   "haber_baslik": "Meteoroloji'den Manisa'ya sağanak yağış uyarısı",
-   "haber_url": "https://www.manisahaberleri.com/meteorolojiden-manisaya-saganak-yagis-uyarisi-2",
-   "haber_kaynak": "Manisa Haberleri",
-   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBPol0S6P9_KwjImFO1lXq58S64Ety-8Lw7k9793FrB3jLGe9om06ueMJnqM4",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "konya hava durumu",
-   "hacim": "500+",
-   "haber_baslik": "Konya’nın o ilçesinde dolu yağışı etkili oldu",
-   "haber_url": "https://www.konhaber.com/guncel/konya_nin_o_ilcesinde_dolu_yagisi_etkili_oldu-2009748h",
-   "haber_kaynak": "Konhaber",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT5Hk2XtXXn6SX0pcIT9pFPD6JjQxIEePSKYfLD3R8Op05iNOcDu3xl8X46uoI",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "wetter",
+   "baslik": "vincenzo italiano",
    "hacim": "1000+",
-   "haber_baslik": "Wetter: Sturmböen und Regen: Wann wird es wieder ruhiger?",
-   "haber_url": "https://www.zeit.de/news/2026-09/23/sturmboeen-und-regen-wann-wird-es-wieder-ruhiger",
-   "haber_kaynak": "DIE ZEIT",
-   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT8P_kMu8oel8BC5IRx2yjrWuDf66Dw8Xu5f52iLxYLVVzbigyK0enANOkx7Ms",
+   "haber_baslik": "Beşiktaş beş kritik maça çıkacak",
+   "haber_url": "https://www.fanatik.com.tr/besiktas/besiktas-bes-kritik-maca-cikacak-2638683",
+   "haber_kaynak": "Fanatik",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQm8IL9F0_SodpjbPBe7hic_7rNyl165nKqCO-NcdZsJ81j0spxRjwZNjoMKvY",
+   "bolum": "spor"
+  },
+  {
+   "baslik": "kademeli emeklilik",
+   "hacim": "1000+",
+   "haber_baslik": "KADEMELİ EMEKLİLİK SON DURUM 2026: Kademeli erken emeklilik çıkacak mı, Meclis'e geldi mi? 2000-2008 girişliler ne zaman emekli olacak?",
+   "haber_url": "https://uzmanpara.milliyet.com.tr/uzmanpara/kademeli-emeklilik-son-durum-2026-kademeli-erken-emeklilik-cikacak-mi-meclise-geldi-mi-2000-2008-girisliler-ne-zaman-emekli-olacak-7665529",
+   "haber_kaynak": "Uzmanpara",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRI__3ApmQ4P1qKneQG5aEuciSmKxRgdKjr1Q_bfifN_8hrdyzL2mzvUCTWwso",
    "bolum": "haber"
   },
   {
-   "baslik": "antalya",
-   "hacim": "200+",
-   "haber_baslik": "Antalya'da sağanak taşkına neden oldu",
-   "haber_url": "https://www.milliyet.com.tr/yerel-haberler/antalya/elmali/antalyada-saganak-taskina-neden-oldu-7664982",
-   "haber_kaynak": "Milliyet",
-   "resim": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpfnEeB-U_JRRLK7m8d4-WbDyzivMUlx09bih-qNub74YDemRpPjCrFgZycBU",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "adana hava durumu",
-   "hacim": "500+",
-   "haber_baslik": "Adana’da sıcak hava etkisini sürdürecek İhlas Haber Ajansı",
-   "haber_url": "https://www.iha.com.tr/adana-haberleri/adanada-sicak-hava-etkisini-surdurecek-488149673",
-   "haber_kaynak": "İhlas Haber Ajansı",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRQo_-vnyi4vmkd4sD0oLFG9CXl2_lMBBa7ok1ttE5ltKo5kXntpaBRKLP6rFs",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "tera portföy yönetimi a.ş.",
-   "hacim": "500+",
-   "haber_baslik": "Çiğdem Toker | SPK, Tera’yı denetledi mi, denetlemedi mi?",
-   "haber_url": "https://t24.com.tr/yazarlar/cigdem-toker/spk-terayi-denetledi-mi-denetlemedi-mi,59168",
-   "haber_kaynak": "T24",
-   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQdjMgvC7x8yIrI6Si3-l3usQ6npT-JQZOB3CqbXNyhebl-nNHBt0b5b3tKMcg",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "hava durumu",
-   "hacim": "200000+",
-   "haber_baslik": "Sıcaklık düşüyor: Kuvvetli sağanak ve fırtına geliyor! Meteoroloji'den İstanbul dahil 14 ilde alarm | Yağış, sel, su baskını, yıldırım ve kuvvetli rüzgar uyarısı",
-   "haber_url": "https://www.hurriyet.com.tr/gundem/sicaklik-dusuyor-kuvvetli-saganak-ve-firtina-geliyor-meteorolojiden-istanbul-dahil-14-ilde-alarm-yagis-sel-su-baskini-yildirim-ve-43316125",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQFQDIa0bSYO0rOHUNufPDEjgS0dvGPhdppmuScoVvRLQ8z5zdrDoXBiAyWkTw",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "weather",
+   "baslik": "güvenlik",
    "hacim": "2000+",
-   "haber_baslik": "2 Huge Feature Updates Added To Apple Weather In iOS 27",
-   "haber_url": "https://www.bgr.com/2264646/ios-27-weather-app-new-feature-updates/",
-   "haber_kaynak": "BGR",
-   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQwffwVrUtyGFoJhcD9lMj2r_K2qg7kzW6jF50GOc9bx3UrhVeCm9Dvl9KHrs0",
+   "haber_baslik": "Manisa'daki okul saldırganı hakkında korkunç detaylar: Odasında sembol ve notlar bulundu! Bir ay önce atış talimi yapmış",
+   "haber_url": "https://www.hurriyet.com.tr/gundem/manisadaki-okul-saldirgani-hakkinda-korkunc-detaylar-odasinda-sembol-ve-notlar-bulundu-bir-ay-once-atis-talimi-yapmis-43316247",
+   "haber_kaynak": "Hürriyet",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2pnrfLaQTGInlaSoxE-RfFvIh1P0KliuniHar7_2PzNddnTD57-6ojrx3kp4",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "indirim",
+   "hacim": "10000+",
+   "haber_baslik": "Motorine indirim geliyor, işte yeni tarife",
+   "haber_url": "https://www.ntv.com.tr/ntvpara/motorine-indirim-geliyor-iste-yeni-tarife-1743080",
+   "haber_kaynak": "NTV Haber",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT-4giVGyOpuxWJ1S5RQXAMzBDis_jt0iNLnKYqKUDef_Q0ZrK4ruT1LMle1eg",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "arnaud denis",
+   "hacim": "2000+",
+   "haber_baslik": "Arnaud Denis, comédien et metteur en scène au bout de la douleur, mort par euthanasie",
+   "haber_url": "https://www.lemonde.fr/disparitions/article/2026/09/22/mort-d-arnaud-denis-comedien-et-metteur-en-scene-au-bout-de-la-douleur-mort-par-euthanasie_6780259_3382.html",
+   "haber_kaynak": "Le Monde.fr",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWIEiMyRDUETfg4v2WBGWR0DKcpzzW-WGTxpQEA4aST04bdOcgJsyO4eJA_iE",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "zehra güneş",
+   "hacim": "5000+",
+   "haber_baslik": "Ebrar Karakurt muhteşem döndü: Zehra Güneş nefes kesti!",
+   "haber_url": "https://halktv.com.tr/spor/ebrar-karakurt-muhtesem-dondu-zehra-gunes-nefes-kesti-1056842h",
+   "haber_kaynak": "Halk TV",
+   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSrpgCxXYxaGpAG7g4F96Iz0pon1FKRvB6uwzfzCU6wf4ScO2D3jw1qh1dY0Us",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "mebbis",
+   "hacim": "10000+",
+   "haber_baslik": "ÖĞRETMEN-VELİ GÖRÜŞMELERİ İÇİN MEBİM ÜZERİNDEN TELEFONLA RANDEVU ALINABİLECEK",
+   "haber_url": "https://www.meb.gov.tr/ogretmen-veli-gorusmeleri-icin-mebim-uzerinden-telefonla-randevu-alinabilecek/haber/41975/tr",
+   "haber_kaynak": "MEB",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPQ-gT-Ta8cWb_pbQ6BYyWELv2RcNREKDNe6Z5VK1Ox0zfTjLhquzsa-pPzF4",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "tolga kalender",
+   "hacim": "20000+",
+   "haber_baslik": "25 yaşındaki futbolcu Tolga Kalender hayatını kaybetti! Futbol camiası yasta...",
+   "haber_url": "https://www.fanatik.com.tr/adana-demirspor/25-yasindaki-futbolcu-tolga-kalender-hayatini-kaybetti-futbol-camiasi-yasta-2638692",
+   "haber_kaynak": "Fanatik",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTGU5KBIjz7DOBAasHa7WLYeJBTsFVr1B-Tb0q1XScal7apLEMinDI7H36Wjy8",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "orkun kökçü",
+   "hacim": "500+",
+   "haber_baslik": "TFF açıkladı: A Milli Futbol Takımı'nda Orkun Kökçü gelişmesi!",
+   "haber_url": "https://www.cumhuriyet.com.tr/spor/tff-acikladi-a-milli-futbol-takimi-nda-orkun-kokcu-gelismesi-2540066",
+   "haber_kaynak": "Cumhuriyet",
+   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSEpkk3lNvuxXbGVEz5VgAJBGuT_-BBSG_mK-L0ZYgyJL2FcCyV32rBzJY-Dbs",
+   "bolum": "spor"
+  },
+  {
+   "baslik": "afyon hava durumu",
+   "hacim": "200+",
+   "haber_baslik": "",
+   "haber_url": "",
+   "haber_kaynak": "",
+   "resim": "",
    "bolum": "haber"
   }
  ],
  "bolumler": {
-  "piyasalar": [
-   {
-    "baslik": "Borsa günü düşüşle tamamladı - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1jdlZJanY0eF84MzBYR1MtOFJEM3ZzZU83dFJMRm9tTWk5aG13TGhCR05uMEhaMUFJYzE3TjVjdFJxeGR6MUlxem1nci16Q2RPRG9MOUFDUHdCR2txcjVIWXdXTU9hMnZLQ0JkOE9EenZ5Qy0zVVBDWA?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Tue, 22 Sep 2026 15:46:06 GMT",
-    "ozet": "Borsa günü düşüşle tamamladı Anadolu Ajansı"
-   },
-   {
-    "baslik": "Dolar kaç TL oldu, Euro ne kadar? (23 Eylül Çarşamba Döviz Kurları) - Dünya Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPOTlQZXJJZW9iRk1UWFBvTVp0cWgxbGlYa0NyeG9ZeWhtLVNQbElkWkE0b2Mtdlh6bnVYUldmOF9yM1d6R0FkdWVJLVl3X2lTdldjS01wbzlpcFdUZUxaQzdHUnRma1U1SGZSQWkyZGhhSTVnSXhkeDJ0dU1pNHFNQjhHN0tSUTRibVBmZ2JpM3FVTm9uMDZac3BPSGQ3bHRTVlNxY3owb040MnVhQ29BUnFB?oc=5",
-    "kaynak": "Dünya Gazetesi",
-    "tarih": "Wed, 23 Sep 2026 04:24:00 GMT",
-    "ozet": "Dolar kaç TL oldu, Euro ne kadar? (23 Eylül Çarşamba Döviz Kurları) Dünya Gazetesi"
-   },
-   {
-    "baslik": "Petrol düşüşü Fed faiz artışı endişelerini azaltırken altın yükseldi, İran görüşmeleri odakta - tr.investing.com",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONTZObDlNTUFEQW9Yc1lJWUJJYUg0VkZuTWc4WHhQajFEYkZ2THFHczJPT2hkdW5Md0NvQ3dUMVVLQ0dXdTFHQUlLYjZIWkhpR0Z5X09TbDV4aFUtVlVUOEExZnJTUnltVFBaWjNIbWZEMUg4Z184WmFmcmNKNkVDd1lTQWR0TUJHNkctTnMtSnBTaU80QUprbDdtRGF0d0pXTFJ4YnBNSXczOEkyZ2RZ?oc=5",
-    "kaynak": "tr.investing.com",
-    "tarih": "Wed, 23 Sep 2026 03:05:53 GMT",
-    "ozet": "Petrol düşüşü Fed faiz artışı endişelerini azaltırken altın yükseldi, İran görüşmeleri odakta tr.investing.com"
-   },
-   {
-    "baslik": "Dolar/TL bugün ne kadar? (23 Eylül 2026 dolar - Euro fiyatları) - Ekonomim",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQczJIVnkxNEgxUThiaTVDMXA4cGp6cEhFa0JZNXl1TnM4Rnp0VW5GMGtoZ0tNcGR4NFJRb2NEb19pY25FeEtpSThPQk5PZS1zM2NfWDdTcm8yUndzNEIxV0phNUxWYVB1MDdrbzFCUlZiQXFUbEloNU9VbjBQeFpIeVpCWXJTTjVILW9JVjFuZWMzSDJDWlE0c2lLdjVXMldoTkpKcGdURTNnU2JrN1pYTWh30gG3AUFVX3lxTE43dWpOOENsV2VnMFFTUG1HbUJYTGR2clpLdzduWU1lY0RlRk9uMENSb0JVX0hxQVVCTlJTS194UUlGaWJ3ZExQcjZYLWpEZGxmMzNWejlYQXRhOG4wY3gyMFhmQVAzLUVLblNLeDZuX1JMdlZEOVhYRlBBNTFjWERTZVg2NEZrSEpwXzVPTV9IYW1PcVRIUjI5Zk5wVzNmRGNKUFFkMGdvMDFTQnVzY1R5WVBkdE0tbw?oc=5",
-    "kaynak": "Ekonomim",
-    "tarih": "Wed, 23 Sep 2026 04:15:00 GMT",
-    "ozet": "Dolar/TL bugün ne kadar? (23 Eylül 2026 dolar - Euro fiyatları) Ekonomim"
-   },
-   {
-    "baslik": "Emlak Konut GYO KAP'a duyurdu: Borsa İstanbul'da 1 milyar TL'lik geri alım - CNBC-e",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNN1pGU1ZSN05TNTdTVmkwT2pfblBCWTNFbmNqR3pFamE2ZnloMklEc0pfc1VDRGdTV0tqeThIUmVCdk15dk9qNmxQUnQ2TVNhTDUyUzc3SFE0VFZ1WlRtS2dmcmg1OTNzclR2OUlJS0pWMldLb3pYN3h5cXdrcnVqbXZJdVhNRjdDRWNad25vR3dSNTlSTE9uM01ZUEV3MU1NQ1FUaHVSSEI?oc=5",
-    "kaynak": "CNBC-e",
-    "tarih": "Wed, 23 Sep 2026 04:41:40 GMT",
-    "ozet": "Emlak Konut GYO KAP'a duyurdu: Borsa İstanbul'da 1 milyar TL'lik geri alım CNBC-e"
-   },
-   {
-    "baslik": "Borsa İstanbul 1 hisse hakkında tedbir kararı aldı haberi - Borsanın Gündemi",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOenlqT05WX3hUbm5NVURwaWNKRkZvUWFTd1ZiaXcxQTVmZVJJT00zejlmMm5GejJGcDloNlROQk9NZlpYZDF1bF9LTTRFelAtSFZiNlI3WmxES0VqSDhKWUVhWlpPYUZPWjhBbkc0X1ByenpRWlY0eVpDRVoyamtZWEJ4WWlneDJ2V2FvekdNUWlYNXZlbTZlLWcwM1o?oc=5",
-    "kaynak": "Borsanın Gündemi",
-    "tarih": "Tue, 22 Sep 2026 15:45:02 GMT",
-    "ozet": "Borsa İstanbul 1 hisse hakkında tedbir kararı aldı haberi Borsanın Gündemi"
-   },
-   {
-    "baslik": "Eski Borsa İstanbul Başkanı ve Boğaziçi'nin paraşüt akademisyeni, fon krizinin odağındaki Özata yönetiminde - Kısa Dalga",
-    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPcVVPSDdzSDA5M0dOb2ZRdjhORFRPNHpmNWM1R3hmT2dRNHNLM0kxX2picUJJVXYwWEZTN0U2eWN0UkY5bklPUHZrckdTT3RXd0xvaTRIUlBUSWNaZXpWTG5xSnVWdTAweTlxMGFYaWJhU1pvbGkxeUF0REl4aG1DeC1Za0dGQTBfM29MdUc2YXFEWXdnM2daQmZBYTA2WVBwSW1rdVQ2eDRmQktDMDNsY1c0YldBZHlnQXMtQ3lUU2MzTGlIUVZJTEp4YU0xN2I5ME95NTZyMGZNa1VVMWllbWx1NmFGQdIB6wFBVV95cUxNS0ZmMjgwa05CNlBiSTFMUklod1V4anVtZlJ5RFhyWkViSEdQTjgyTGNwYWNsMjB6aDFSTDc2TFV6clFZZU1zeEVIaTd3dzBLRV80NjBlcHZSUHg3MlAwQUUzYk5WXzFPNHdiaVhWRmhGWjkxcVNfZXhYNGxiNUN1UG5yU0ktYjA5b1g3QVYxVXN0Y1hBcldhcFoySXVTUG9aeFNGd1Vib0o5RHVxd3h0TFRCekZDaEF0MUhzd0NxRUg3Qlo0c3pDSDBXR0dXLVJlOXZDamM0eEhiUmFKV2FrS3l1Vmx1RFk4bVhz?oc=5",
-    "kaynak": "Kısa Dalga",
-    "tarih": "Wed, 23 Sep 2026 00:59:00 GMT",
-    "ozet": "Eski Borsa İstanbul Başkanı ve Boğaziçi'nin paraşüt akademisyeni, fon krizinin odağındaki Özata yönetiminde Kısa Dalga"
-   },
-   {
-    "baslik": "Dolar ve Euro bugün ne kadar? - Ekonomi Manşet",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBvSFUtWEtNbWFGb2RWUnJ4N1N0dXNQd0o4MnB3MlZkRVVid3ZEZE5kYldxaHJGVnpuSVJqbUVacndTQlBHcG5oTXBUY3lDdGxTNWtXQU5xSndidXNsN2o0cWRRVzBkd0It?oc=5",
-    "kaynak": "Ekonomi Manşet",
-    "tarih": "Wed, 23 Sep 2026 04:37:22 GMT",
-    "ozet": "Dolar ve Euro bugün ne kadar? Ekonomi Manşet"
-   },
-   {
-    "baslik": "23 Eylül 2026 tarihi itibarıyla banka faiz oranları: Bac A Bankası, 50 milyar VND veya üzeri mevduatlar için yıllık %7,3 faiz oranı sunmaktadır. - Vietnam.vn",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPb2psaGdDWHhhOXZnVTNKUjZqcGM1YU43dVJxLU9EWlBoaWt6dzRnZXBiRU1FNkVnQ0JnLS1mVXFNM3BhLWFVRmFFNEZKMlFJS0hwdzRFczUwNVRmQXJZeWdRc2t2U3JLQ3FaeDFCNlhqbHN6ckJHNS1aVWNKaElaQ3NfOFZ4OVh6TTlPY2w0bUtweUN3bWFNcTYtS1NWQ3IwWFhMOGdUX080VHlQRDhtaHd6RWRIdw?oc=5",
-    "kaynak": "Vietnam.vn",
-    "tarih": "Wed, 23 Sep 2026 03:18:29 GMT",
-    "ozet": "23 Eylül 2026 tarihi itibarıyla banka faiz oranları: Bac A Bankası, 50 milyar VND veya üzeri mevduatlar için yıllık %7,3 faiz oranı sunmaktadır. Vietnam.vn"
-   },
-   {
-    "baslik": "Dolar zirveye oturdu: Euro ve sterlin sert geri çekildi - Halk TV",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTjRIbzlqTnpmclVNWnNqTVB4dGIzUzc4VUFRNWJSQUJ0bEZuMS1KVUVoeW95NjhlQi1DREttdFFmRXFFc3hzS3lGQ2ZOcy1keFRUOFJONzJEMExZWGRaRWtmOGRyQWFRTjAtNlh2YW92R0ZDQ1JadDcwNG01eXZ3ZTlNUTJRbG42bDZNamlzRXRpaWpiamg2Nm9DdzdIeWFEYUxURTk5UlN6UQ?oc=5",
-    "kaynak": "Halk TV",
-    "tarih": "Wed, 23 Sep 2026 04:36:05 GMT",
-    "ozet": "Dolar zirveye oturdu: Euro ve sterlin sert geri çekildi Halk TV"
-   }
-  ],
-  "ekran": [
-   {
-    "baslik": "Yeni Dizi Başlamadan Ertelendi: Senaryoda Değişiklik Yapıldı! - Onedio",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZWVINjQ2cUxvVWhaeVBXbFhYRDFmd3ZCUmFwTTdqSnNBS205TzhueUpXSDc3UlhBaGFfblRPbkhMeXJIbU5BaDVyNE1wN2hnbV8xeC1BcnFnQ3hNei1CRmVLSmxZNWxqSEpfcXpqQ3hSZHZXNjJSSXVjN18zaUJlV0dONERSejNXVzF5WnZRU2dUS2lITER3?oc=5",
-    "kaynak": "Onedio",
-    "tarih": "Fri, 18 Sep 2026 07:03:29 GMT",
-    "ozet": "Yeni Dizi Başlamadan Ertelendi: Senaryoda Değişiklik Yapıldı! Onedio"
-   },
-   {
-    "baslik": "\"Her şeyi mahvettin Simay!\" - Haysiyet - Özel Klipler - Kanal D",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB6SGNfa2NsZ1NXX1Vvb25RYVJPXzA0NUpGYldfUzNQMVVEYlB1MHJaNWRXNzNIWkk0cmJXcWtqa0pGQ2hSNUpCUTNCUkVJREFLZHNabThyRF9PWlJlYVMyb3N5TkZKSjNwbzlrekhGaFhXajE5cHk5YUZJdVU?oc=5",
-    "kaynak": "Kanal D",
-    "tarih": "Tue, 22 Sep 2026 20:16:20 GMT",
-    "ozet": "\"Her şeyi mahvettin Simay!\" - Haysiyet - Özel Klipler Kanal D"
-   },
-   {
-    "baslik": "Vizyondaki filmler 18-24 Eylül 2026: İşte bu hafta vizyona giren 10 film - Haberton",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWElfRHVwVVFwX210WThQMERfLTBEMk9CT1JZbGVjRU1INWtfZjVlQm5VOFJsSUhPQUhxNERaWnVhek9ZVUdBdlE0QlYxX0hsZTZKV3k3cFZpWWl3bGZjcHVwV21XcGY2SWJqN1U1SXVuU3pGRVZhcVc2bUZYcDF1MkpsNUVfLWx1VE0tM1FwQXVSbHZLMXVCWQ?oc=5",
-    "kaynak": "Haberton",
-    "tarih": "Thu, 17 Sep 2026 06:08:02 GMT",
-    "ozet": "Vizyondaki filmler 18-24 Eylül 2026: İşte bu hafta vizyona giren 10 film Haberton"
-   },
-   {
-    "baslik": "17 Eylül reyting sonuçları belli oldu: Yeni dizi ilk bölümüyle beğeni topladı - İz Gazete",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTGZrTDFTMU4xRmQ5UmVYY1RoZERMUzhsZWZHQmxlQ3h3LWNoUTI5QWpmd05SSUszY1drb3A3TzhyOU8wWFA4WEsyYjMxZ1JkQmpzaDNrY19PSG1wZjA5VWc2eEhoazIxMW1xUThGdTB6VENuaDZLS2c1ZmdhX2hXZlQ3M05rV2Y3YWtULTlHcmJMRW51cHVwV0wxME9TenBvSndV?oc=5",
-    "kaynak": "İz Gazete",
-    "tarih": "Fri, 18 Sep 2026 10:51:00 GMT",
-    "ozet": "17 Eylül reyting sonuçları belli oldu: Yeni dizi ilk bölümüyle beğeni topladı İz Gazete"
-   },
-   {
-    "baslik": "Yeni Dizi Anne Yarısı Ne Zaman Başlıyor? Oyuncuları ve Konusu Belli Oldu - Kırşehir Çiğdem",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNFFjek9ibmRqVUhRLXYxLXdWNW9YNG51RTlUSXhfbEtkbGNtQVFaMnRWdEpROVVhN2ZSa3hhb3FBemdiVUp0WGVCXzZKaTkxdUVxTUpRVElNZl83b3RZUjJTdzRxdVVOMUV5VUtFanNSbVlQRms5X0V2NkJDTFNVWS1jcnQ4TVBqTFRKTF83N21VNU1EZ1dZc1NjUFVHV2tTbTJwdA?oc=5",
-    "kaynak": "Kırşehir Çiğdem",
-    "tarih": "Mon, 21 Sep 2026 12:20:00 GMT",
-    "ozet": "Yeni Dizi Anne Yarısı Ne Zaman Başlıyor? Oyuncuları ve Konusu Belli Oldu Kırşehir Çiğdem"
-   },
-   {
-    "baslik": "» ‘Resident Evil’ bu hafta vizyonda - 10haber.net",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE52UWFIMUhQUEdtOW1OT0F3ejBBcE9CYm9Gc2ZjOTNONWhqbW5uak1qOW5abWs4a0h0Z05wSng3N0J6WlZkaXJVUmlsZ20zQm11MjlOcmRka0llRjhzOHYyZ0puQ1ZpeERhcERLRk1GdGNqUVFvd09idU5HbEc?oc=5",
-    "kaynak": "10haber.net",
-    "tarih": "Thu, 17 Sep 2026 13:00:43 GMT",
-    "ozet": "» ‘Resident Evil’ bu hafta vizyonda 10haber.net"
-   },
-   {
-    "baslik": "Harry Potter HBO Max'te: yeni dizinin çıkış tarihi, kadrosu ve konusu - Sortir à Paris",
-    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQN1ZubDJtQXlzNnlUVFpEd21iOUEyanl5WWM5WDF4ZVhTeVZBWTI4bHdIRURaUU93ZDJNc3F3Q294T3p2T2U2RThUSjktOTFyTW9ybHhNbFRVOVpScFBSMzFWMkJ3MmRnbFFjWjR1Y25jTU51VmtIbjQtcFlKNUcxMWl1RnhsZFVHUTJZQU1zMHZfNk5DOTJNbXJLVVNmNDRMLTZjZG5oaF9kUGpRLTI0T3dILVFHbmhtQkVwY21NQzRkU0Y0TGRwUy0waU9RTDRF?oc=5",
-    "kaynak": "Sortir à Paris",
-    "tarih": "Fri, 18 Sep 2026 12:09:36 GMT",
-    "ozet": "Harry Potter HBO Max'te: yeni dizinin çıkış tarihi, kadrosu ve konusu Sortir à Paris"
-   },
-   {
-    "baslik": "YENİ DİZİ! Anne Yarısı oyuncuları isimleri: Now TV'nin yeni dizisi Anne Yarısı konusu ve oyuncu kadrosu - Milliyet",
-    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNbTFvb2ZQNGVIMklNZ2IzdVNJdXNQSk5oZ0ZTVTlCZGJBd0Rucl9HNG1aQ1RvRmpTQ3VLQ3BKN3hWNzN3QTV3aEdIbi1TeGxEMkNyLVJhclVtZW5CV1FpSlI0VTAzemRZWEZFTUlONEJiTkpqNmwwUTNNNzhNN2tEZlRBa0Z2SUVMakpuVUQzM1U2YjdMNzBoZFlZRDVCMVR1ZGRraG01d2k3cFdjbmhHTXFGOGNRcDBPN2xwOWtXSEVnZUZEUmpxVEExNnZRUQ?oc=5",
-    "kaynak": "Milliyet",
-    "tarih": "Tue, 22 Sep 2026 14:41:12 GMT",
-    "ozet": "YENİ DİZİ! Anne Yarısı oyuncuları isimleri: Now TV'nin yeni dizisi Anne Yarısı konusu ve oyuncu kadrosu Milliyet"
-   },
-   {
-    "baslik": "KİRLİ SEPETİ OYUNCULARI: Yeni dizi Kirli Sepeti'nin konusu nedir, oyuncu kadrosu içinde kimler var? - hurriyet.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPaVpnRUl0QWJ1LXQtZWxHbzIxaC1NUmtyd2FvSm9BNXNHSWdjc1ltZXpVbFNqYW9NTkJ4Z2pxeGZqcTdvQnNRV0JrZFdwYldfeVJXQng3bnlrVVBsY3lPZnR3bTl1UllHQndYM1ZTeFRRMkx3R1VneVBVcFhpT2VTcDljSEVQMF81Wk1YU0IwUG9FVlVBZ3VHWkFvQVRFeU5yenFzZDRsSmYtQUlxaV90ZjNtcjZvZEJRYlZOUTJ5Y1EwOUF2ZlhhbG1JdXhHTEgzZ2pLcHhQMUhyVi05LVc5THdJYWNIQUxYLWtoeHlHNDVnYVY1cGh4YWlUcXlpWW5VU1Fldl90MktwZlllSTZkSXcwNDEwNHd0?oc=5",
-    "kaynak": "hurriyet.com.tr",
-    "tarih": "Sat, 19 Sep 2026 23:35:33 GMT",
-    "ozet": "KİRLİ SEPETİ OYUNCULARI: Yeni dizi Kirli Sepeti'nin konusu nedir, oyuncu kadrosu içinde kimler var? hurriyet.com.tr"
-   },
-   {
-    "baslik": "Anne Yarısı nerede çekiliyor? Yeni dizi Anne Yarısı oyuncuları kimler, hangi şehirde çekiliyor, 1. bölümde neler olacak? - Habertürk",
-    "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNQzRDeGxydGdvTHVCdDZCaTJkT0NOWEVaSkdNUmI1R1lHZ2g2U3hvcUNJejkySGZlRE1zSmszblFlUFU5YzFvdERjX09ETVpCS2NhREZKek4zdDFTS2ZhcXp0YjlJZUJoaWRLUXRYU0ZnUFJ4RGdSdFV5NTNRcmx5Y1pxQ2o3SzRRaEszeE5rRVMyUC11T0t0WmJwbUpNbGJxcEVWdzVpeXc0bDNNMDBWaEJfaDlyZ245ZnhueXB5LUg3V0xuZjBJUFhfRTZrRE1ZQTdjdFEyQlNXTWZ6d1hJd09hR25nTlFYV0ZZSW9qdkUxZw?oc=5",
-    "kaynak": "Habertürk",
-    "tarih": "Tue, 22 Sep 2026 21:09:35 GMT",
-    "ozet": "Anne Yarısı nerede çekiliyor? Yeni dizi Anne Yarısı oyuncuları kimler, hangi şehirde çekiliyor, 1. bölümde neler olacak? Habertürk"
-   }
-  ],
-  "spor": [
-   {
-    "baslik": "Milli maç öncesi Fransa da Kylian Mbappe gelişmesi - beinsports.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQaExGTGFzV3lFNVd6amVvRDRGRllvZENFWm96empWaE1FRnl4cUdyeWZjX1FCUVJ1Q0djSUNXVEZuWTYtS1o4Z2VMcFdWR0FVOHl2VzlzTjVuTWRfUUEwckExUS1BblBWN2wxd21pam1QZ3FETmJoUjZMbGFHcktJT1dGam9kVElZ?oc=5",
-    "kaynak": "beinsports.com.tr",
-    "tarih": "Tue, 22 Sep 2026 17:06:31 GMT",
-    "ozet": "Milli maç öncesi Fransa da Kylian Mbappe gelişmesi beinsports.com.tr"
-   },
-   {
-    "baslik": "Türkiye-Fransa maçı ne zaman, saat kaçta ve hangi kanalda canlı yayınlanacak? 2026 UEFA Uluslar Ligi Milli maç takvimi - Yeni Şafak",
-    "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOOFYtTG9oY0p2LVFmaU5teklna2wzV04yVERfWXE0LUcwSk9Kaks5QlBWR3hoWGdwMUU0bFNOeGNka09SLWdRX2R6VXZDdWZ0cmYteWxqYVlDel9pTVF6VzNhSXBycUR5b2IyaW8taXZBU2xXaFB2V2p6QUYxbmRfUms4V3FrVnFVSnZQOGdSaHExNkh5UjVRNXVZdHljOWtmYUpLRlIzMGpJSmFQYlVwcmRKYWFvS1NsMF9LMURLZXdoQmcyRnNtNEhTNGZVVkZmMUZJak5acnRrU05tMVhabTV1U2RLX0dGMnk2QkE2dTZLaHdwSVE?oc=5",
-    "kaynak": "Yeni Şafak",
-    "tarih": "Tue, 22 Sep 2026 19:36:27 GMT",
-    "ozet": "Türkiye-Fransa maçı ne zaman, saat kaçta ve hangi kanalda canlı yayınlanacak? 2026 UEFA Uluslar Ligi Milli maç takvimi Yeni Şafak"
-   },
-   {
-    "baslik": "Bugünkü maçlar | 23 Eylül 2026 bugün maç var mı, hangi kanalda? - Fotomaç",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPVFRUNUhNUTZGMVJRSmRhdFRWb2pGam1BZ0hSSl9mTDBFNmRWbUFzLXhNNl84QUR2ejB1V1VzZzZDakFsemxfam9wbmNSdTJVS2lfOHd1V2s4Uk16RmgtOUQtLWdEM3loZmVjb29LZWJsUEtpQWEtdUtkX0tQZGlQRUNsOFM4ZkdDNlNEcl9meWhKc21GU1ptVWVrVUV1TTdPLUk4SUE4blphWXRCMEQw?oc=5",
-    "kaynak": "Fotomaç",
-    "tarih": "Wed, 23 Sep 2026 03:58:24 GMT",
-    "ozet": "Bugünkü maçlar | 23 Eylül 2026 bugün maç var mı, hangi kanalda? Fotomaç"
-   },
-   {
-    "baslik": "Milli maç öncesi Fransa'da Kylian Mbappe gelişmesi! - Habertürk",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORU1hQXNSUTNYQXhuVUJfeWY4ZGN0NUwtOVJxRXpHZHZLMU1TUnV0MUt0Vml3SV9FS0gtcU54WENMcVZXLTRadG9RSllwTnh5Znc2TEs5dGhUeVlGYTZfbUNaaVBMM3RzWjFtZU9EWS1TSnd5VFZmVWpkQm5abkhJTVB4MFNsUWljY1lHLVZ5clJQNUU?oc=5",
-    "kaynak": "Habertürk",
-    "tarih": "Tue, 22 Sep 2026 18:14:41 GMT",
-    "ozet": "Milli maç öncesi Fransa'da Kylian Mbappe gelişmesi! Habertürk"
-   },
-   {
-    "baslik": "MİLLİ MAÇ TAKVİMİ 2026 | Milli Maç Ne Zaman Başlıyor, Hangi Gün? A Milli Futbol Takımı UEFA Uluslar Ligi Maç Tarihleri - cnnturk.com",
-    "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOMHlUSEhEX28yX3RISkV0Z19pMFZWaF9LTFJLN1M4TERmY04zTjhnTklSTWJXbmQzTko1SllyTGVSSzB1N2xLNnFtYVhNbWVQU2gteTZLTEtzbG1tdHJuT2E0VHl1VmlqSzJYSldVcGdhLWtYcmZlRDRyalhWaUVjdVg2eEdtbGZoZFVJeWkzOUhkdmZuMzVZVU4zTi1uMF9SdTNnTjVVN050YVA3UUVpUHZYY0tGeVBEU2NDc0pSNEstcWpNNEUyNElzUDVkczR0YUo3eTkySDVGZExXTUNDdFZKN0FxYjRnczBPQmN1bHktR1U?oc=5",
-    "kaynak": "cnnturk.com",
-    "tarih": "Tue, 22 Sep 2026 10:33:00 GMT",
-    "ozet": "MİLLİ MAÇ TAKVİMİ 2026 | Milli Maç Ne Zaman Başlıyor, Hangi Gün? A Milli Futbol Takımı UEFA Uluslar Ligi Maç Tarihleri cnnturk.com"
-   },
-   {
-    "baslik": "Fenerbahçe Tarfin - Beşiktaş maçı ne zaman, saat kaçta, hangi kanalda? (Basketbol Cumhurbaşkanlığı Kupası) - Fanatik",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQLS1IRTV5WkpmLWNyRXFMU3VYUUwyM095TjlLa1J1LS1jUlNnMmhneDF3aDVDVGlXZEhIakdTZlZqVjhEYklFdjZkSXlvbjRTTnBBemtNSjVXNVJCeGEweG9rbGhkV1M0ZzdaOVMyOUVuc0Zmd2VDODlxQnhNRGlQd1NtNWFqcExldjEySW1ySnVTNmQzblFpamYxNm1YYzJhNE9MZHNsaU9XRG41OW5fM1V5UmFOa0NGdC15eFFLNHh2dkpFSTZlU29BWFJFM092Y2sydFlCNm5ILVRLaldqN0ZVS2JUbDRSSkF3?oc=5",
-    "kaynak": "Fanatik",
-    "tarih": "Tue, 22 Sep 2026 15:12:00 GMT",
-    "ozet": "Fenerbahçe Tarfin - Beşiktaş maçı ne zaman, saat kaçta, hangi kanalda? (Basketbol Cumhurbaşkanlığı Kupası) Fanatik"
-   },
-   {
-    "baslik": "Zamalek veznedarından derbi hakemleri tartışmasına: İleride cevap vereceğim - Goal.com",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZVlTdjFLQWhFazl2cHROd2UtOVk1U2l4dy1abEt0bzdObmRmcVQ5eFREQW9vN0ZGN2RsVjZpNU1mTnAzSVhFMll2bFhJYVlQRHBLMmdxWTdwc3h5OXlxOGNBSklkV0s2QlpGS1diWDRIbXdxaDVXbWxLQ2lDdjNMclpLblNVVWFTRUdQeFRwUHBRR0k5eDFWa095MDJkdjhaWVNiVFFqNUZRSk5mQnRpbHBWUmRhOUtlaW5QNTlrMTEzZw?oc=5",
-    "kaynak": "Goal.com",
-    "tarih": "Tue, 22 Sep 2026 22:15:19 GMT",
-    "ozet": "Zamalek veznedarından derbi hakemleri tartışmasına: İleride cevap vereceğim Goal.com"
-   },
-   {
-    "baslik": "2026 Azerbaycan GP ne zaman, saat kaçta, hangi kanalda? - Motorsport.com - Türkiye",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV3VNQWpuRGV0VGswX1RfcGNjZnBOLUZpbWkxdUc0Tl80MUVKZ1BhUzZRdmhTTG5DUlFGWXNkcFcyLVN1RGJTY19GQ2FmclhTUDZEd1V2Snk5VlpOU3F0ZzZ6N0R3dTR3VGFBYjBLdGZVX1FaOFFJb3I4T1NELXBHc3ByTDV1NlRoaXZMTzR1ekE4NXNoY2ZBNlotQ3k?oc=5",
-    "kaynak": "Motorsport.com - Türkiye",
-    "tarih": "Tue, 22 Sep 2026 19:09:57 GMT",
-    "ozet": "2026 Azerbaycan GP ne zaman, saat kaçta, hangi kanalda? Motorsport.com - Türkiye"
-   },
-   {
-    "baslik": "HAYDİ BİZİM ÇOCUKLAR! Türkiye - Fransa milli maçı ne zaman, saat kaçta, nerede oynanacak? Milli maç hangi kanalda yayınlanacak? - Milliyet",
-    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOVZCR3Btby1VbHNaOG9JWS1uYUo1LXQyM21XLXJaRDlua2dNZ1A0OVVDZ1dVaUg5dzRkdnpqZUNVbmpqMTlQdmVyeHN3VFViNTJ5WFZudHgzTDdVSFY3WFhRMEFNWnZ2NG1VLTg1RGpsQWY3TF93TlVYNVNvVjRXaldJVnIwTVVqOXQ3MFpUMnNiZzl1YUhFYVRkak1NaU5WZjlXckhwUzdPQTlSRnQ5OFlDc1hYQXpHaXdkVEloVFJRSEg2UEVDekFlbHZ0QVBWZ1lWS2RLY2dlVzNmLTdKMU9BZHlDQQ?oc=5",
-    "kaynak": "Milliyet",
-    "tarih": "Tue, 22 Sep 2026 14:40:26 GMT",
-    "ozet": "HAYDİ BİZİM ÇOCUKLAR! Türkiye - Fransa milli maçı ne zaman, saat kaçta, nerede oynanacak? Milli maç hangi kanalda yayınlanacak? Milliyet"
-   },
-   {
-    "baslik": "MİLLİ MAÇ NE ZAMAN? Türkiye – Fransa maçı ne zaman, hangi kanalda, saat kaçta? Milli ara başladı mı, ne zaman bitiyor? A Milli Futbol Takım Uluslar Ligi maç takvimi 2026 - hurriyet.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNOW1WSWZBM0pIT0NvZEJGQTBvLTM2RVpnTzYxS0pwTGFXRE1xRkVsb3dYTldMVlRRdEhOM2xxcnhjdndJRHBsb0tueG9hNlR2RkNLV1VIeHNBNVVweU9GWUVPUFlvVHdaV0w5cEM5V1hNT0dVVGYzQmJPejlEX0VQQkpsQ2tOZHhoZHdRNm9TQm9tT0p5bGNXbkNscGJHRURWYjNuNEtaY2M2LVl5RDIwZmNkZS1Kdmc5N2xMVzBXTmFWaVkyd0U0bnIzQ0NVQjNHSUk2ZU9kV2tmT3l4dW02UndwbE96TWx2SHRhNTdXTV9IQVlnRno4UFFRTHVycFBoMHBYekdDN09YYTd0NnJoSQ?oc=5",
-    "kaynak": "hurriyet.com.tr",
-    "tarih": "Tue, 22 Sep 2026 05:45:00 GMT",
-    "ozet": "MİLLİ MAÇ NE ZAMAN? Türkiye – Fransa maçı ne zaman, hangi kanalda, saat kaçta? Milli ara başladı mı, ne zaman bitiyor? A Milli Futbol Takım Uluslar Ligi maç takvimi 2026 hurriyet.com.tr"
-   }
-  ],
-  "sanat": [
-   {
-    "baslik": "Metro Boomin İstanbul Konseri 2026 | KüçükÇiftlik Park - Passo",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSVpqUC1ISkFnX0hfb3FHV3hac0pGVHB4VU1acFJER1hpWEFyX0lxU0JkTzRlbV9wWkdMc1JSRUFoSUJCNng2cTdpNVJqNk56MWN5dXF3NlR3bVc2dXhQQzlXRl9FLXdrekdXT1R0TjdERUxMdUItNWI1WDJ4R2ptQ1JoZFpIREhEdEFMcVk5NEJmTHFkVDZLSWt0V1dReVU?oc=5",
-    "kaynak": "Passo",
-    "tarih": "Wed, 23 Sep 2026 00:26:40 GMT",
-    "ozet": "Metro Boomin İstanbul Konseri 2026 | KüçükÇiftlik Park Passo"
-   },
-   {
-    "baslik": "Bir Sanat Galerisi Nasıl Uzun Ömürlü Olur? - - ArtDog Istanbul",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1qbF9oemY0NG40cXlNYzN3Rk5VcV9LRWxiZnlFbzFjVlNGZ0RYMU0wdmJoVGRzeXZZT2VlT3Q5WUdRM1VoTG9iWXl3c0JtcHlYWF9ldG9KMVRieXpNMW5iWHI1TUlocUFkUXVTNlByWVktaVB2UW1yRA?oc=5",
-    "kaynak": "ArtDog Istanbul",
-    "tarih": "Sun, 20 Sep 2026 15:41:00 GMT",
-    "ozet": "Bir Sanat Galerisi Nasıl Uzun Ömürlü Olur? - ArtDog Istanbul"
-   },
-   {
-    "baslik": "Robotlu çocuk tiyatro oyunu \"Neci'nin Diji Maceraları\" 29 Eylül'de İstanbul'da sahnelenecek - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPU081V0dEQ3M4SzdRd1cxZjk5OTZPdVl3QXd0S3Y5aXVFVDNmUHRZZUpIQ3dmSHVmNGVBV0ZXV1pqLUFyQzlPVWtGaUdqczNrX2wyNEdwZzUzRGdzbnN6NHNuMGJjSXJSSWJPY2trWlNVWFA2WDFSS2lNSGFQQXJ1RkhhbGx1NG9jYTFiY191ZElQTGlrcjBaMkVaOWxrUUIwRmFkWDNjTUY4WDRwOEgwMlZKWFJObkZBbnd6bk9aZmZldzBx?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Tue, 22 Sep 2026 10:41:25 GMT",
-    "ozet": "Robotlu çocuk tiyatro oyunu \"Neci'nin Diji Maceraları\" 29 Eylül'de İstanbul'da sahnelenecek Anadolu Ajansı"
-   },
-   {
-    "baslik": "KONSER: Donna Mobile by Elif Çağlar - Bant Mag.",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAzVDFmV3gyYklSTnp0RjNNUF92czNFRnZZMHpfRGhBN1lFTV9hYW1DeVlpRU1KcXJNQm5ZRFFqZHhoZzlZODBkd21lRUMtbWgwRkRXdWVDN2RqejVEaXZKNFV1bW1LWmtf?oc=5",
-    "kaynak": "Bant Mag.",
-    "tarih": "Tue, 22 Sep 2026 10:44:04 GMT",
-    "ozet": "KONSER: Donna Mobile by Elif Çağlar Bant Mag."
-   },
-   {
-    "baslik": "Kayseri'de stadyum konseri heyecanı! Son 1 gün - Kayseri Olay Haber",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPemZ1aHNZa2JqZ1AtcnZFWmN2cmdQZ1dUZW9KN21sNW5QTC1oTUp6NkpYSE5HMjIwd0N2WTVkOUxzUFQ3SGc2dTFNZHJDdkVKOUpOemFUUVZyaG1sYXc4SGxBeG1SejQ2UHlWNEF4OXk1SVVjNTdvU2JHTmJNVlVWUzBZcGt3XzdW?oc=5",
-    "kaynak": "Kayseri Olay Haber",
-    "tarih": "Sun, 20 Sep 2026 10:57:35 GMT",
-    "ozet": "Kayseri'de stadyum konseri heyecanı! Son 1 gün Kayseri Olay Haber"
-   },
-   {
-    "baslik": "Oğuzhan Koç’un Edirne Konserinde Gergin Anlar Edirne’de düzenlenen 3. Topraktan Sofraya Gastronomi Festivali kapsamında sahne alan Oğuzhan Koç, konser sırasında yaşanan bir olay nedeniyle şarkısını yarıda kesti. Sahneye yakın noktadan sigara içere - instagram.com",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1XMjR6QjUwb2hZc19YX3lvaE9XcHFlRDBRQ2YwSDBhYjJGX0lRMnRuWFRoSVpWWUw1NW9neVBEajE2Uy1PdDJSYzY1REgtcjg5QXBvRmJR?oc=5",
-    "kaynak": "instagram.com",
-    "tarih": "Sun, 20 Sep 2026 10:51:38 GMT",
-    "ozet": "Oğuzhan Koç’un Edirne Konserinde Gergin Anlar Edirne’de düzenlenen 3. Topraktan Sofraya Gastronomi Festivali kapsamında sahne alan Oğuzhan Koç, konser sırasında yaşanan bir olay nedeniyle şarkısını yarıda kesti. Sahneye yakın noktadan sigar"
-   },
-   {
-    "baslik": "Motive Antalya'da konser verecek! - Antalya Hürses",
-    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBpa1JyYUxpdVhELTk1eTF1Z0VybEFlMXFLVUluZUVPM2xsZTVTUWd6cVE2cnV5aDl5Y3pCRk5kc01nTHNCYTNCdFlJc2hvM3lRdzZhMmlBMDI0eDJpV0hhRF9aWUdRVXg1TXMxc1NoTXB3UGRuUnpR?oc=5",
-    "kaynak": "Antalya Hürses",
-    "tarih": "Sun, 20 Sep 2026 11:12:25 GMT",
-    "ozet": "Motive Antalya'da konser verecek! Antalya Hürses"
-   },
-   {
-    "baslik": "Piyanist Tuna Tüney, Almanya’da üç şehirde solo konser verecek - T24",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUTdyWVpDQzVNMTNiaF9nbnU3N2t0SFBMbXpPSEt5R0s5TjFlbUJwallFdUZvQ1ltVlFDT1V6V1BtdjdTMks2NmR6YU1DMTlPRjJVbTZrM3UzbG5iZXR3aEFwUHFFVHBKcXpSWDhtWFg0N2hnVU9mRFJ1TUtMVFNnZmZpYTEwOXRzcjhWVUZqZlFRb29hcTRXajFua3JibFpIQ3c?oc=5",
-    "kaynak": "T24",
-    "tarih": "Tue, 22 Sep 2026 17:38:00 GMT",
-    "ozet": "Piyanist Tuna Tüney, Almanya’da üç şehirde solo konser verecek T24"
-   },
-   {
-    "baslik": "Contemporary Istanbul 2026: CI21’i Birlikte Keşfedin - Oggusto",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8xNWZVZkVza0EzS2tXMC1JY1cyQVVUR0lEb2JtUWRKS0lvY0JCa3A1QzIyTHNSVWZVLUg4aGlQbWY3aU1Qb29KT3ZaaDlxYVEwb3V6S3k0akNEZmg0cklESzg4OWl4bGxWMFZfRWFwYU1wWnE0d24zRDNhQQ?oc=5",
-    "kaynak": "Oggusto",
-    "tarih": "Tue, 22 Sep 2026 12:34:29 GMT",
-    "ozet": "Contemporary Istanbul 2026: CI21’i Birlikte Keşfedin Oggusto"
-   },
-   {
-    "baslik": "Şam’da bir konser - Yeni Şafak",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4xSktnQ3RzUmJ2cEpaUVZoOVBma3lKbzlFT3dpeG9GMWpranVwbmlIRnBpUWtEbXRFTGdDS1dnSjVwM3FHbnpFbksyNmRjX293eW1aQ055Ym5FSXVEdjJyOUYwekhtTjBxNkZxM2VGQXg0Z2VsV08zSHZRUQ?oc=5",
-    "kaynak": "Yeni Şafak",
-    "tarih": "Wed, 23 Sep 2026 01:00:00 GMT",
-    "ozet": "Şam’da bir konser Yeni Şafak"
-   }
-  ],
-  "yapay-zeka": [
-   {
-    "baslik": "Anthropic daha ucuz ve hızlı Claude Opus 5.5 modelini tanıttı - tr.investing.com",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc0lhdEFZUGxsc3BtQ0VpZVhodXdCNGRpSExaUXpXRlFuQXUxR2hLYUxhdVVhbHRDSlZuUlk2Ry1Jb0xfeWVzd1NnWUMzamtNWUJGYmlvck5KQUxWUlJtOFFzN2tibUJjdE12bHcza0k2NkFPOWh0X2NsdWNnbThJT29BQzF2TkVacXZ1RDMyMFdOMjJCQUJOZ3BocHYxZTRKdU8zcVFESXlZM3NrZlhBOGhB?oc=5",
-    "kaynak": "tr.investing.com",
-    "tarih": "Tue, 22 Sep 2026 21:14:10 GMT",
-    "ozet": "Anthropic daha ucuz ve hızlı Claude Opus 5.5 modelini tanıttı tr.investing.com"
-   },
-   {
-    "baslik": "Trump-Şi zirvesinde ticaret ateşkesi, yapay zeka ve İran yaptırımları gündemde - Bloomberght",
-    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbG5PS2hjdDNJR1BCZzVFckFhd0Y2eDF1a2c5MEdtREsxVUxDTmNNYVM0c21BNTNJN3BiRlluVE0zMXdzZkIzOFNVNndkUFR2Y3RVS0pfN1RhVnZ1eEl2UHNpZUc3cDdxVzA4bE1NNlZ5RWZhVDZuQTBPU1FBb3NsdnVDSVhOcF9BRE5BY183YXd4RXNVTzFFcGwwQWgxZktLUGRWMEszdzZraFNIcW1DZTB6NA?oc=5",
-    "kaynak": "Bloomberght",
-    "tarih": "Wed, 23 Sep 2026 03:41:44 GMT",
-    "ozet": "Trump-Şi zirvesinde ticaret ateşkesi, yapay zeka ve İran yaptırımları gündemde Bloomberght"
-   },
-   {
-    "baslik": "Meta’nın yapay zeka asistanında kritik açık: Saldırganlar bilgisayarın kontrolü ele geçirdi - ntv.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQTS04ajNRUVdPQU02c1IwNU1ra1RnNkhORU5pSFB3NFNyQXhsNDZZZWNWVlM5MmlsWDQ4bnZiSkFFTGJtd0J2bmMzR21YX3FGbVU5cHh6T3FSYlN0d1o2aGRzZjctSEpnWkFIRnd6LVJadURmcUJvRmRMaTBJRll1VWZVWVNBTjZOaThUSTVDUF9QVUNfYjAxQVhnRzZRMVE1SXdYNjZ6d0Y2U1NBWVBIbXdrVEotdWlUdGRoZG5xUXA3UmZWajFrTkln0gHPAUFVX3lxTE9DZ2ZrbEhjMWlNQWlWMktYS2dZNEJVUjdobnJWcmx3Y2szcnQ3ZjFRTjZlZEZQWTR0NURDX2t0ZkhDckxiNFhzaWFIMHVNTXJsSkNoZjR5ZnFvcjd2SW5GVnZnaktUbEdWSzhQMkFsRHRRT3JKVGs2ajZrbkc3cVA3VVI1blA4cmtNd1BDR1l4LVh4TjJiWU5YS3ZwZnE5Mm90emU4NUdUUEFqWGhUSXJibmU2V19zdGlhVElWYzI2aDVZWEl2SzF3OEFVSGVfZw?oc=5",
-    "kaynak": "ntv.com.tr",
-    "tarih": "Wed, 23 Sep 2026 03:22:13 GMT",
-    "ozet": "Meta’nın yapay zeka asistanında kritik açık: Saldırganlar bilgisayarın kontrolü ele geçirdi ntv.com.tr"
-   },
-   {
-    "baslik": "Wall Street'ta yapay zeka ayrışması: Nasdaq rekor kırdı, bankalar sert düştü - Foreks.com",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOd0F6Z2JrTDhCekc5WUZqZUNfZW16M0RaY2NSdFdkQ25SalZQOWRibTlqZlZVeWhCdHBUdHNhZWRIUV9lSVJXVFdQQUdWUkZHUzRnRDBpRkF6UDhvUW9KLXhmVUFicXQzcEI1aHg3bDB1VjcwRm9wbWhlaEZEVlNJQXhGTWNGTDIzV0VXXy1SQWVBSEctbVZQYU01QU1nMi1RTlMxUlNQdXV2VHV6bGt5X1U4T0dRajhvN0lMTW4yWk9mNHNkdGFNejhycXgxUmlNSFlaSUJYQ19UZ3UyeDZEVkVQVHZUV3lnN0dJ?oc=5",
-    "kaynak": "Foreks.com",
-    "tarih": "Wed, 23 Sep 2026 03:48:46 GMT",
-    "ozet": "Wall Street'ta yapay zeka ayrışması: Nasdaq rekor kırdı, bankalar sert düştü Foreks.com"
-   },
-   {
-    "baslik": "Gelişmiş Yapay Zeka Toplumu Nasıl Tehdit Edebilir? - Bölüm 3: Yapay Zeka Hayatımıza Girdiğinde - Vietnam.vn",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUzlQSDBIZEF6SWdwOWY4RVE1TU1lYmtBWTdidngyUF8zc1NJLWNnS3V0alhYdEtjeC1DSlpueU1vRzNfSklnWGhfbGpsVGxKU3NXdzNvSnZQbW1oUHlRQ3pVZHlTRE1oZE1DSzRfR2hTV210SWF3UVJnVElhaDlsa0hibHJTbEZUUFVnanQwNDY2VkpBSHN1WEFNUkp5UmxFNVZnZw?oc=5",
-    "kaynak": "Vietnam.vn",
-    "tarih": "Wed, 23 Sep 2026 03:24:36 GMT",
-    "ozet": "Gelişmiş Yapay Zeka Toplumu Nasıl Tehdit Edebilir? - Bölüm 3: Yapay Zeka Hayatımıza Girdiğinde Vietnam.vn"
-   },
-   {
-    "baslik": "Yapay zeka uygulamaları için bulut altyapısı geliştiren Verda, 189 milyon dolar yatırım aldı - Webrazzi",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOajRBV2dFUFhZc1I5MXJZdERiSzFnVWRuMEZOZFZEZWhfci1YdFp4N05WM2lsQXZuTERXU2JTdmZzMDRuczBDOEV3Vi02ek5jVHdLcXZwUEU4MWJhaXV5enBRQnF5NVVvSGs5VGRWaTVaN3VWOG4wUHZiVzZGVXl1N3J1REF6Zl9TOFFINUdZUkdsZVdza1BYZ2sybHFJSmFlNVozdFdUNF84bVcxRWNneENzdWF3UzJMVGZhTThKSDEtdw?oc=5",
-    "kaynak": "Webrazzi",
-    "tarih": "Tue, 22 Sep 2026 14:47:06 GMT",
-    "ozet": "Yapay zeka uygulamaları için bulut altyapısı geliştiren Verda, 189 milyon dolar yatırım aldı Webrazzi"
-   },
-   {
-    "baslik": "Bill Gates'ten yapay zeka uyarısı: Bu evrimsel bir olay, eski teknolojilerle karıştırmayın - Gazete Oksijen",
-    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPYi1jdTQzdlJtYlgta3V5Y3pQMUNrTHhhLVRMUl9OdjcydGxNQ0hwb2FRdGNXQjR1NmtjU05zWGc4SjJBSkRXNld4Zk5PWE0yYTUtR0pUVVE5WFYyVWVEdmVNbkFGUi1tdS1EVGh0aFRDSXgwQnNWSTBzRy02Um1oTDJ3UWRuOXdwSlRLUEFwdzdqNjF1YUtnLXV1WlJVNmhEQThoNGt0TWJLbUtNd2RJdGMtbTlPQjBUS0F4eXVRdDNIVnpSOTR1QndtUGc2WG93engzWlRR?oc=5",
-    "kaynak": "Gazete Oksijen",
-    "tarih": "Tue, 22 Sep 2026 22:33:21 GMT",
-    "ozet": "Bill Gates'ten yapay zeka uyarısı: Bu evrimsel bir olay, eski teknolojilerle karıştırmayın Gazete Oksijen"
-   },
-   {
-    "baslik": "ChatGPT artık diğer sitelerde ne yaptığınızı biliyor - Şarkul Avsat Türkçe",
-    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNTE10NlJpMDctRm1kcnZkX0xIN3UtaEZiYjZGb3hXWlJ1U1N5eml2NzlmUWdtMjhCNTFZLUVMODJpNm5yMnUzWEJoWV9IQlVod0pOSW1hcGV6Znl0ZjViWlhXcHBVOW96VHpFSDk2alpxaGtNQ0tGVmZvNWFrSTB5cG1wU0JEMGpaZ3BPSWE2ZzgyaGJnOUVrOVVKY2ozVTRfcUNmN2t5eHdzUFBBeVF0NkczWm9lbnRkb093SFlLTTNkVG1ONkk1ckhJMklNRXpSSzBIaQ?oc=5",
-    "kaynak": "Şarkul Avsat Türkçe",
-    "tarih": "Tue, 22 Sep 2026 20:46:55 GMT",
-    "ozet": "ChatGPT artık diğer sitelerde ne yaptığınızı biliyor Şarkul Avsat Türkçe"
-   },
-   {
-    "baslik": "InnoTrans 2026, “yapay zeka ve otomasyon” temasıyla kapılarını ziyaretçilere açtı - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNam1aMEJobGJzaER2dVFtSzNGNXlSbjNjWkY5QUxWZV93SnB5S0NXRDltYTlDMFllRXZuWVlDRUFJVG1fZWx6TlB1bzg0VlBHQmJKYm50eVB6T05PQ1dHcTBfQ21TUHJvVlVuOTlGUWZoUmhrdGM2UEhIbDRWVWVacDNmdzkxRXNGZ2pXSGVXS3dTWEJkaG9iYzU2TXNPLVBSX1hnc0l0THhlTnNfNEFCYXBKMmR0Y0F1X3RmaUJfMlN0cWZ1S0E?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Tue, 22 Sep 2026 14:47:15 GMT",
-    "ozet": "InnoTrans 2026, “yapay zeka ve otomasyon” temasıyla kapılarını ziyaretçilere açtı Anadolu Ajansı"
-   },
-   {
-    "baslik": "YAPAY ZEKA ÇAĞINDA İNSAN NEYE DÖNÜŞECEK - Analiz Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQdmlfR00zM3U3aDVsX3JkYmx2SWVLRWctRUVYSUh2M3pxZTU2TjJIcGtkVVBhSmJDSjVfS2RwaUlBNnRmSzlaWE9KejBkVlVMVTE3T1ozN3BGZTdObjk2bmRCUW10aXRRbzdWa0xXTW52YzhoSGlPdWxGVGFGa0V2SXp0WVNEeTMteHRwOVlR?oc=5",
-    "kaynak": "Analiz Gazetesi",
-    "tarih": "Tue, 22 Sep 2026 23:22:03 GMT",
-    "ozet": "YAPAY ZEKA ÇAĞINDA İNSAN NEYE DÖNÜŞECEK Analiz Gazetesi"
-   }
-  ],
-  "yazilim": [
-   {
-    "baslik": "FBI’a büyük siber saldırı iddiası. Binlerce çalışanın verileri ele geçirilmiş olabilir - ntv.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPOGlWNkhNSXZoTzRVT29WbEhLSnREemwzZkF3NU5XWVdIMmdvS2RJWHRDdmUwMW82UDZrTTNPTzhtYi1SZTQ5N1dzVnR4UXdxaHNkeXdkZUUxV1V3TGZnOW5iU1lwS1NCWDVQSWxuUEtVWjJnMGo2b1prYzlJTUt1T0FTX1JJMElZeXdpNGt5TnpUWjdJVkZ0bWxtQ2htZUYzMTNRNHZJUDFVc3k1eGRtTlZCdVVoNVdsc0FwNEpR0gHDAUFVX3lxTFB0c01BaUUzVTZVVENwTjlQc2dSOVRSTEt1WlFSNjJKcHhWN1V5MWRUWDVwUndrWmZneU1kYTBjZTByTW5uVTRDcllWMEY3LWF4SHBHOHE1UkNLcW9pMUk3X1RZVEhpOE50RzR2MDR5Y1dVU2hiWGxtWS00UTBzMUhobjNySng2RFBzNHlFOGl3dGVjd0VWUVR6VUdaeXZLZnhFaUVxMno4V2tmR3Uxb1BpdEN2OXc1TVFLSWFQRU5KZDRNQQ?oc=5",
-    "kaynak": "ntv.com.tr",
-    "tarih": "Tue, 22 Sep 2026 17:46:41 GMT",
-    "ozet": "FBI’a büyük siber saldırı iddiası. Binlerce çalışanın verileri ele geçirilmiş olabilir ntv.com.tr"
-   },
-   {
-    "baslik": "Yapay zeka güvenlik endişeleri siber güvenlik hisselerine talep getirdi - tr.investing.com",
-    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQdUxYU1ozLVh5N0tpOUlCNjNqcDNYZG5wZ1FMTWVCRFZ4ckN2ZUR2UjgtUGtfSW1VZjM2TlFrb3N1ZDBnU05qdGRud2JvVHlaeHVZMGVoTmUyMnQ4OW94MEVRaENxYUhFbXVyaks4QzhMeWk4M0pON0xfemxQM1lXeU9idkdaVTBIanBrRElmQlNrNUh1cFBacjlSNVNieWFFRTNHYVZObmo4MGJtZXgyV0k0VnMyRTBNdXV3UkJEb0RHZVVrYUJESm5jNVI?oc=5",
-    "kaynak": "tr.investing.com",
-    "tarih": "Tue, 22 Sep 2026 17:08:16 GMT",
-    "ozet": "Yapay zeka güvenlik endişeleri siber güvenlik hisselerine talep getirdi tr.investing.com"
-   },
-   {
-    "baslik": "AB'nin milyarlarca euroluk siber savunmasında denetim açığı - Euronews",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONWpGNFF1UFd3M2lZaUdqM0FnNXluVkRPc3B6Rng1YVk2bTZSWlZjc0ZJNVdJbi1VT1phR251OGZsdTBOU2ZWbVV6OVZjQjJIME10bGx0SVRuY3JGY19kbVRaT2JqWWxQd05hMkdBYlJ1TjBpT18wTS0wdlVyY3RRM1hySTE3V3JjcWZINlQ3TVI0MlNNRy1GdHYxYjNFUzRReDE3Z3UzaE9qalZJRm11M0lLNGNVQjUtbkZGUHluSQ?oc=5",
-    "kaynak": "Euronews",
-    "tarih": "Tue, 22 Sep 2026 11:15:20 GMT",
-    "ozet": "AB'nin milyarlarca euroluk siber savunmasında denetim açığı Euronews"
-   },
-   {
-    "baslik": "Siber saldırı grubu, FBI'ın sistemine sızarak veri çaldıklarını iddia ediyor. - Vietnam.vn",
-    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOVkdtTjZQODF4bnpCRXpiRWZSN2pTWlJ4Q1JqMVVkT1VPZWN5LW5rLTF3cTVMVDV2VjI3UUV2ak40NUtyX2hNeXI4WmlEdEhmLTZ1UkcyMmlnOGRPMUtEMUZqSnRCbTlBZmF2ampwWG9BRWxSRGNpckdBdjZUVUF6aDE2QQ?oc=5",
-    "kaynak": "Vietnam.vn",
-    "tarih": "Wed, 23 Sep 2026 03:58:59 GMT",
-    "ozet": "Siber saldırı grubu, FBI'ın sistemine sızarak veri çaldıklarını iddia ediyor. Vietnam.vn"
-   },
-   {
-    "baslik": "Suç aynı uygulama farklı - sozcu.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAzSXNVa3VIeFpiRGhKb1VFMHRwX2hISUpDMDZ6SjQwRWdSeVE3Rjd3Rm9qek1oNGEyNVpSTHd2TEhacndnZ3JweDJqaVIwNERXZlhaLXpsTTV2eVllSUtsNXNtYjVSd2Ew?oc=5",
-    "kaynak": "sozcu.com.tr",
-    "tarih": "Wed, 23 Sep 2026 02:30:00 GMT",
-    "ozet": "Suç aynı uygulama farklı sozcu.com.tr"
-   },
-   {
-    "baslik": "FBI'a büyük siber saldırı şoku - Baran Dergisi",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1GV2FENE9iVXdmeEFQaFIzVEdEc3h0OVM3SXppUGJvbDVCTkRULVJ0Vzk5ZjlpUWtyRXJaME9IX2FPWU1zeV9JVWZiTnVYajBHZG96QzVrUkJXdkFfRENQUWFjWFFpT3dhMmfSAW9BVV95cUxORGxyZVlHNFhmYzVGd1ZqRFdOeE52SUhfNE9BNGF3Mk1xZGVBenN1eGp4M2ZPN29KSVFpWkphRE1FR0lGT2hKUnRRNGZ4THg3WF9jdGowcVNnTmtoYi1hdEk4TVVFX0RWZVkwcm52dGM?oc=5",
-    "kaynak": "Baran Dergisi",
-    "tarih": "Tue, 22 Sep 2026 19:59:00 GMT",
-    "ozet": "FBI'a büyük siber saldırı şoku Baran Dergisi"
-   },
-   {
-    "baslik": "ABD'nin Kalbine Siber Darbe ! - afyonturkeligazetesi.com",
-    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0yTk44MjRuTjkxQWxwaUhKSi13N2xiVGpRb3lCT2xlZ3Q2LWZsdURVRFFRcmxrbUJVZXctblpJdnBPQ3gwa0I3Q2xCLVpvMUZkb0hXdzZNamRvV2ZQMEh1aUFIM05vLTFHTmhWc3ExcmZFd21vWTFEdl9n?oc=5",
-    "kaynak": "afyonturkeligazetesi.com",
-    "tarih": "Wed, 23 Sep 2026 00:44:42 GMT",
-    "ozet": "ABD'nin Kalbine Siber Darbe ! afyonturkeligazetesi.com"
-   },
-   {
-    "baslik": "Kafkas Üniversitesi Küresel Isınma ve İklim Değişikliği Uygulama ve Araştırma Merkezi Yönetmeliği - Hukuki Haber",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPWDltblNJRVBPU1E0SHNWTWloRWo5eVg3bzlDc0IxcGRjUkQtY1FfZU9jWFZKNHRkYy1Rd29UVElnMkwwR1NlLUZJNHdxT215UFBPVU9MUDk3bFFLX3VyQ1lmdE1ZZ0huTUVJckpZMDA5QzYzRlFPcmNtOFIzeElrWldyejRWMG4zanotX3hmaWt4c0Z6TEtpYmJ1bzFBeUJtTmljRUR2NVBrTnlLd2JLMXFPNmRCNVZFdTMzVzlIVXJZZTg?oc=5",
-    "kaynak": "Hukuki Haber",
-    "tarih": "Tue, 22 Sep 2026 21:00:00 GMT",
-    "ozet": "Kafkas Üniversitesi Küresel Isınma ve İklim Değişikliği Uygulama ve Araştırma Merkezi Yönetmeliği Hukuki Haber"
-   },
-   {
-    "baslik": "İlçemiz Emek Mahallesi’nde, tapuda 593 ada 86 parsel numarası ile kayıtlı taşınmaza ilişkin 1/1000 ölçekli Uygulama İmar Planı Değişikliği - Safranbolu Belediyesi",
-    "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPcDZYc29fOVhsa09xVkZibklHbUhXdHVfZ0NzXzNGSnpzekZkTUJoWDJ1czBUSVM3QW90VEdqcmE3Zkl0WW1TTzMyZmlyVzRJYW5tcFNXUGNoOFlOT1BlSGVHbzlxQWJDZWVxS0FnWlBQQ0FMR21ycEhWUVZzRk56ZUVfRzJ4MkFRRWc2MHl3OGlwUmFWeWRSUjZ6ZnhzbEF5aTdSM1gxQVlLYTRUaWNZSEJjRnJBZGc5VFg5YW90NFZHbjMyTE43bkJIbUs4b2tHSXM1SGl6UGV1MnM5aTJ3UE1JS2NtMExQdlBOb0c4U1g4ZFAyVThBTGxkS0IzQ21kRlE?oc=5",
-    "kaynak": "Safranbolu Belediyesi",
-    "tarih": "Tue, 22 Sep 2026 13:11:14 GMT",
-    "ozet": "İlçemiz Emek Mahallesi’nde, tapuda 593 ada 86 parsel numarası ile kayıtlı taşınmaza ilişkin 1/1000 ölçekli Uygulama İmar Planı Değişikliği Safranbolu Belediyesi"
-   },
-   {
-    "baslik": "FBI Sistemlerinden Veri İhlali İddiası - Haber Aktüel",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9qRkZ0RHg0Sl9rSEtBU1kzSGJGajRhX1J4X3ZmV29xeE9pckJ2WW9xN2RKb3RGcDJmNm1DSi1fOTB3NWROaGQ1YVotS1JoRmswYTlGSXJjX2xkbVJ4T1FlRWxuSUNSbjVGUlFKUFJwYW9PUkEyV3R2aXVQOUdZb2s?oc=5",
-    "kaynak": "Haber Aktüel",
-    "tarih": "Tue, 22 Sep 2026 17:53:19 GMT",
-    "ozet": "FBI Sistemlerinden Veri İhlali İddiası Haber Aktüel"
-   }
-  ],
-  "muhendislik": [
-   {
-    "baslik": "Türkiye ile ABD arasında nükleer enerji anlaşması - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOR0VWNkhYUVB1MWl0dXBvd2NuLS13c25mUkZuc0FSNkFPVWhNTlhfamI3bWdrRjFzSEhDRmRIaGJXLU5aZU5wTE5PWS1oRW16NjM3UjNDVE9OM0dpazBjUHNVaXc1Vks2VkF1T3M2ZEhGcTl1VEdNU3FPUGU5VHluSmFNX2RQODhwWWpsMWxNOFpySnVTRFRrUUdYcmFRalI2S2c?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Tue, 22 Sep 2026 07:41:00 GMT",
-    "ozet": "Türkiye ile ABD arasında nükleer enerji anlaşması TRT Haber"
-   },
-   {
-    "baslik": "ECB’den enerji şoku mesajı: Baskı artabilir - Paratic Haber",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1Kc1dnQVdneUpzWTFzdU9vVUNzaGNzZFlkZ2hrbFBZYXBFbmxqNTZyamJRTTVuZ01ORkl2WUdSajhDU2FzQ1NvNW9qejQ1eEphQmVxaFlVOTZ1LV9KSk9zaFFFRjN1aXJBR3dNTVBWcw?oc=5",
-    "kaynak": "Paratic Haber",
-    "tarih": "Tue, 22 Sep 2026 09:37:16 GMT",
-    "ozet": "ECB’den enerji şoku mesajı: Baskı artabilir Paratic Haber"
-   },
-   {
-    "baslik": "Bakan Bayraktar: Türkiye'nin 2040 enerji vizyonunun temelinde elektrifikasyon olacak - Anadolu Ajansı",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOREN5WHZIekFkemxYZ3pjRDRoRXhvamlHVUU3WmRFVDdOaHpuZWF5eW03WUhGdzhFYm04Vk80VzJIanhDbXh2Y1psOVJIUDh6b0plelhEWWxTNmpOUnR4ZnZxMFRhZnRwd1dRRl8zbFJDOE5MUlJvVDFaNlNPanNvSVdqWXdiQXpDY3gycUpHOVpxN1BFVWM0UDgyLU5KSnVpaHhYWV8yMUplT0IxWFNPbi1hQ1hWRHVWZVJYNFVVSQ?oc=5",
-    "kaynak": "Anadolu Ajansı",
-    "tarih": "Tue, 22 Sep 2026 17:36:28 GMT",
-    "ozet": "Bakan Bayraktar: Türkiye'nin 2040 enerji vizyonunun temelinde elektrifikasyon olacak Anadolu Ajansı"
-   },
-   {
-    "baslik": "Türkiye-Azerbaycan'ın görüştüğü enerji projelerinin bölgeye etkileri - BBC",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9tNm1tVlBxN1dqZEVybXFSV011YmdDUnZhUmZKbTNSSHpsTC13OWFrb2ZDU0NaUXJkM2RJQ0I1ZWZPN0JpY3c5dnJXYXN3N1BlLUZORE1NdkhERDB1VVHSAWNBVV95cUxObkYwWDh0TDhtbHN0Z3dMRXNOazdiSWlmTWUwaHpERkozY3hHeDUtNzRxZTJ5MVNsSXBGRW5SMUxabnRvRUhFc0Ziekg2QnY4S19tTEd1QVYtbkxkSzhGTEppaWM?oc=5",
-    "kaynak": "BBC",
-    "tarih": "Fri, 18 Sep 2026 05:17:16 GMT",
-    "ozet": "Türkiye-Azerbaycan'ın görüştüğü enerji projelerinin bölgeye etkileri BBC"
-   },
-   {
-    "baslik": "Geçen yıl 7 bin insansı robot satıldı - Cumhuriyet",
-    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQ2dMNm5GUFhYcVFnX2ZObXNrQ1lDSGJmRkhfRExPbDE4SkJDeUVWZ2ZEbjlUTkRYR21aa0trYVFTQWNQakxkQmgxYkNhSzhZdkJkSzRxc0s2cnVIQkdxVDVRbGRaaHVXdy1IVldSQnFqb2tVVmVoRVNXOGo5VS0wajFpNW9XZF9wRVNzSkVMaGVtdjd6RUE?oc=5",
-    "kaynak": "Cumhuriyet",
-    "tarih": "Tue, 22 Sep 2026 17:41:00 GMT",
-    "ozet": "Geçen yıl 7 bin insansı robot satıldı Cumhuriyet"
-   },
-   {
-    "baslik": "Dünyanın en büyük kullanılmamış enerji kaynağı: Atık ısı Avrupa'nın gaz bağımlılığını bitirebilir - Euronews",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNDdUMWdlUDZTajBwbmJ0QmhzNVdvZWJvSVdreDFqMVR5MGhqSGNPcFIzQ3VoQkNZd05Db1Y2N1BMOGQ4SXVHclFQYzhoVVg3aVllbzkxWDYtV1NZb3IzTVBNR3JHSTBDakdLSUVLaHFzNWwzXzJRdGVxSEh1NzJCQXB4bVBDY3BwbkRxbk1NRnhaUUxieVF5dUxZcEt6VkpYMHFSMjdFak1mZFBPc3ZzVm9oMC1HX241SG1wRFBVYnNtV28?oc=5",
-    "kaynak": "Euronews",
-    "tarih": "Tue, 22 Sep 2026 05:02:07 GMT",
-    "ozet": "Dünyanın en büyük kullanılmamış enerji kaynağı: Atık ısı Avrupa'nın gaz bağımlılığını bitirebilir Euronews"
-   },
-   {
-    "baslik": "\"Otomotiv pazarı yılı 1 milyon 150 bin adetlik satışla kapatabilir\" - Bloomberght",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWVRpTGQ4MTJfSHFXem8xZ0Z5TEswMFdMVnpBdWlvbUthcldvelk5cEl0S0pxVXpGalFtaWtNSF9TVndZUEpUV3NCcFo0c1BueDVQeUk1NmQ2eTVnWXRnWGRTbmZnUUhSbklramtzalVYN2lFTW5OOUlmdDZBajI2dUtuNHpvMElaWFdSWTJBb1dHc3I5UUJlS3hJcFNZVTBpRms4?oc=5",
-    "kaynak": "Bloomberght",
-    "tarih": "Mon, 21 Sep 2026 11:32:39 GMT",
-    "ozet": "\"Otomotiv pazarı yılı 1 milyon 150 bin adetlik satışla kapatabilir\" Bloomberght"
-   },
-   {
-    "baslik": "AB veri merkezlerine enerji ve su karnesi getiriyor - Dünya Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOclREMm1CZUtRWXRDSUFSTWs2MXBpR3VJTkNpbWxpQ0VBQkw1SkZYLTNxRU40aDMxRFVRRlBWektnQTFRVjFtc1FRMWlNRkRiM09DT0VSOXZkQXFMcnJJengzMktabXdFVkNnZy04Y21fbHllLTNsSmpINkpNdFp2d3VkdzJmajZtTktaMkV4VlBhRHM4ZHMxSGFrMA?oc=5",
-    "kaynak": "Dünya Gazetesi",
-    "tarih": "Tue, 22 Sep 2026 06:57:00 GMT",
-    "ozet": "AB veri merkezlerine enerji ve su karnesi getiriyor Dünya Gazetesi"
-   },
-   {
-    "baslik": "Tarihteki ilk insan-robot dövüşü gerçekleşti: Duvara yumruk atmak gibi - Gazete Oksijen",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQU04xTS1wSFFDZVByUEM1MmpKNjVFVFc3aVV6dzhyaUJ0VEc1SkNHWk8xWkF1bDlHN3kyY1pXQXUxSGhta0h2NUF0djZSbjZTU3RhaHhmbmMtRURadkJVbHB4R2dIb29NZEFpV0F4R1UzajF0RWxOSkQxRlhwQVlCZ05IMUptbk5EaEdTcHNDUW1Oeks4c2dUSS1oQkhWaFg2a3laUHFaSjBPdEZzYzFOdE5PeEZObERYNk5GbC13?oc=5",
-    "kaynak": "Gazete Oksijen",
-    "tarih": "Tue, 22 Sep 2026 11:19:00 GMT",
-    "ozet": "Tarihteki ilk insan-robot dövüşü gerçekleşti: Duvara yumruk atmak gibi Gazete Oksijen"
-   },
-   {
-    "baslik": "Geçen yıl dünya genelinde 7 bin insansı robot satıldı - donanimhaber.com",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNLTc3YjE1Ulp3R3kyc2JCZ3JWdEY5aDk3WTlHQzJBb2JwZEpIVGcxWS1QWXBIRmYxYmxuM3RjNlFRRUppczloTm5FWHBsWTh4QkpnWjNMM3JYQzNBOUJCcGp6ekMwTGdUUGhZcmVGdjg5Y016RTBjZFoxc1V5cUZpMFBsQmo1bXR1eFhjX3p4MmI2ZXFn?oc=5",
-    "kaynak": "donanimhaber.com",
-    "tarih": "Tue, 22 Sep 2026 12:00:52 GMT",
-    "ozet": "Geçen yıl dünya genelinde 7 bin insansı robot satıldı donanimhaber.com"
-   }
-  ],
-  "sosyal-medya": [
-   {
-    "baslik": "Mezunlar Eve Hoş Geldiniz etkinliğinde öğrencimiz @atatanriverdii mezunlarımızdan tek kelimeyle Bilkent’i tanıtmalarını istedi. #mezunlar #mezunlarevehoşgeldiniz2026 #alumnihomecoming #alumni - instagram.com",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKSkdiQUdINjNZdWNNY29sV3NfSGJzdWVIT2hmWnVGWDhoYXg3cUl6aG4wWHlnUTNuOEdSQ0FHSDNTQXhjOHAxWk82RllMb3Rrd3BkN2NB?oc=5",
-    "kaynak": "instagram.com",
-    "tarih": "Tue, 22 Sep 2026 14:13:03 GMT",
-    "ozet": "Mezunlar Eve Hoş Geldiniz etkinliğinde öğrencimiz @atatanriverdii mezunlarımızdan tek kelimeyle Bilkent’i tanıtmalarını istedi. #mezunlar #mezunlarevehoşgeldiniz2026 #alumnihomecoming #alumni instagram.com"
-   },
-   {
-    "baslik": "Netflix Faces Growing YouTube Threat As Viewer Share Hits Multi-Year Low, HSBC Says — Wells Fargo Flags Engagement Risk - TradingView",
-    "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNUDljcTg4cDFMTFY3ZXRyU3pVZUctU3JtaUJRZFFITVR2aEVvQXppeFNOc21YS2tJYi1hSnQ4cE1IaHlrMWdkc0FsQl92M3Z3VmNia3UzVFhtcE9xdXI0YjlWWWYyNTctZnY1U1JxVXdHUDZwMlhCNzU4SmZrZThEVDdwYm9MZzV3Q2dRMVJpYUlBaFZ5U3VYTmk5TVVIeUczenE2S1VXVVhvblY5Z1hzeElmek9pMnZnNlc1TjhaRUdVV0U1WVBNSkJTeDhXa0lBeFhsdFlpMjA0YzQ1MnJaSTZzbkpQck56VUxRODFYYWZUWlBIZEkySFNTZ2xFUVhDNnlMam9iUQ?oc=5",
-    "kaynak": "TradingView",
-    "tarih": "Tue, 22 Sep 2026 13:50:41 GMT",
-    "ozet": "Netflix Faces Growing YouTube Threat As Viewer Share Hits Multi-Year Low, HSBC Says — Wells Fargo Flags Engagement Risk TradingView"
-   },
-   {
-    "baslik": "Instagram çöktü mü? Instagram anlık paylaşım ve hikaye akışında sorun var mı? İşte 21 Eylül 2026 çökme ve hata raporları... - hurriyet.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSXozS3N3VzF6RWxTZnlfZHN6ckE5M29lbmhYMHFJNTgyWmhYLXp2RHNTV0hzOUNGajVEelBxSmFNOUhjN2hWX3NXS0lFdGdPY1BHQzRoUFJaVjVKYnEyeFhwNV9idW1WVVdNVV9YbURpaklRVFpYeV9KcUtlSHExWjRvTEhrbU1Wd0ROam5TdkhnR0h2bkZBaGNsejhCb08wOWJHNklteXo0X2NWalV3SVpQNXFwcEFMQllDVTh3Qzd3OEU?oc=5",
-    "kaynak": "hurriyet.com.tr",
-    "tarih": "Mon, 21 Sep 2026 05:38:17 GMT",
-    "ozet": "Instagram çöktü mü? Instagram anlık paylaşım ve hikaye akışında sorun var mı? İşte 21 Eylül 2026 çökme ve hata raporları... hurriyet.com.tr"
-   },
-   {
-    "baslik": "Erling Haaland Lvbel C5 paylaştı. Sosyal medya yıkıldı - Nefes Gazetesi",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVVJ5OHhYUjJwajBUemJVaTQ2VWE3RDhnVlN5dkR2WVJvMndzM2ZrcXJVY3k5ZDBvRnVVQUdERGtqeGtzbWxhUUJMOXdTN1RISFNHOEdESjlKQm5adVRwejhNWHVXeFlTM0FmX2stcTZPeUxWWVRKd3FkNnBWbzZOaFRpOHhwb3E2aTdVVmZ3?oc=5",
-    "kaynak": "Nefes Gazetesi",
-    "tarih": "Tue, 22 Sep 2026 21:13:00 GMT",
-    "ozet": "Erling Haaland Lvbel C5 paylaştı. Sosyal medya yıkıldı Nefes Gazetesi"
-   },
-   {
-    "baslik": "Manisa’daki okul saldırısına ilişkin 92 sosyal medya hesabına erişim engeli - manisahaberleri.com",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOODMxajFEbzlPbjNNUUYtbzY3NmxpQmJ0MUNMX2NldnY2RVl0b0dGZ1ZRb1pWc0ZtWWRRd01BS3dCX2o0emI3Z1dkLUphanQ1ZUw3SGlGVzBESGVJLVZYTU5pWmRIMElOMktES2VIdHdxcENmeVB6WjVQdnB5UmlxcEJPaVJZWVJ1UE01dTVINjBmVzVoNGxPM1hOTThyWWo2SlhnMzU2YkY0UdIBrwFBVV95cUxNT0hoRjBPbHVSVTNxYml1Y3ljbWlIUDF1NERZNzJrdkpIdFlrRDB5VS13bXdQR01ZNXQ4OC1pbk1YYXp2UjRVUlRKajl6R0FKNEtRVl9kTF8xSlNCelRvZTdmcGJOby1TNzlsaEphOWJkbFZpS3czRTczcnRlaWFVbXdoNWE0Q1BpVGdNMm5jcjF4STVaRVZiM1pscnNnVE5sODFZTnptODNObmVpUXlJ?oc=5",
-    "kaynak": "manisahaberleri.com",
-    "tarih": "Tue, 22 Sep 2026 16:50:00 GMT",
-    "ozet": "Manisa’daki okul saldırısına ilişkin 92 sosyal medya hesabına erişim engeli manisahaberleri.com"
-   },
-   {
-    "baslik": "İBRAHİM TATLISES'TEN \"SÖZÜM YOK ARTIK\" KRAL MÜZİK YOUTUBE KANALINDA! - kralmuzik.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObHQ5b2I2Y0FnbTZxVEJockV3YlZ0RDY3dmhlZG1lQkQ0ZG52QTB5Qzh6VUQtZUNxSXFiUFZ2TWVnNW5WOUtPMHk2WnN6OWIyRElhSnFoTGdha3hibUxpbGJCaTR4azR5MmVqNVBLTEFpM3BIaktpdEgyc1FQNnBpNlpNcU1YZkl3WWhVU1hlRjlrejRKcUZSNGVaMk5LdFotVGVocQ?oc=5",
-    "kaynak": "kralmuzik.com.tr",
-    "tarih": "Tue, 22 Sep 2026 20:14:36 GMT",
-    "ozet": "İBRAHİM TATLISES'TEN \"SÖZÜM YOK ARTIK\" KRAL MÜZİK YOUTUBE KANALINDA! kralmuzik.com.tr"
-   },
-   {
-    "baslik": "Son Dakika... Manisa'daki okul saldırısına ilişkin 92 sosyal medya hesabına erişim engeli - Cumhuriyet",
-    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQdTZKdDdIeS1qdE1taDNjMXhfaHVUUUtDTnV5WnFBZ2ZmMXhWTnpWU3B4WV92Tnl1Y1J2MFpUdWhhRU5aWVJpSFJfN1g3aXJYWXkxVHR5Tk4ySkZyUi1jVEZTSk1nX0hmUkEzQWxOM2NiWUMtc0RQRVFCNlZ4OTBpNVpGMTEtYlY1ZklhRmlZZ0RZUkZvckVsMXhFXy1oMFVUcWxMZDI4Q2FoYkk2elNMOURldUpsVmhmaTZqUzgtdVlSMENabVQzejJJMnM?oc=5",
-    "kaynak": "Cumhuriyet",
-    "tarih": "Tue, 22 Sep 2026 14:18:00 GMT",
-    "ozet": "Son Dakika... Manisa'daki okul saldırısına ilişkin 92 sosyal medya hesabına erişim engeli Cumhuriyet"
-   },
-   {
-    "baslik": "Amedspor’un sosyal medya hesabı hızla büyüyor - Rudaw",
-    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5QcGp1Tkt5S1Nva3VzZjlUUTNyVS1lcHZ0RGZ2WVBaNTBfVkZpV1pZTkdPbzEwcHNudjh4V013eHV3MWVKemlyZEZzWmlBdDdZZU1BMkRwUXZaRl9lNHY3YWFRcw?oc=5",
-    "kaynak": "Rudaw",
-    "tarih": "Tue, 22 Sep 2026 10:34:26 GMT",
-    "ozet": "Amedspor’un sosyal medya hesabı hızla büyüyor Rudaw"
-   },
-   {
-    "baslik": "TikTok çöktü mü? Son 24 saat kesinti raporu (21 Eylül 2026) - chip.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPajNmbEtHdUlHTVdEdVptNFRWNGV5LU5VVGktbF9MZUJybkJVV3AyTlk1WWNhVy00emRBMjVsVWJ4TnJ5ZGVhc1VYQWNZbG5rVVlxUHRUQmpLOWJ1a0x1YjQ2OWhRMmtvYV9fWURVT1ZnR0p3Y2ZydzlvTjBuUmRZV0dXVmtsRUNxallsYy1yRE9RdDhuMlQyb3JaOTA3RkUy?oc=5",
-    "kaynak": "chip.com.tr",
-    "tarih": "Mon, 21 Sep 2026 10:58:00 GMT",
-    "ozet": "TikTok çöktü mü? Son 24 saat kesinti raporu (21 Eylül 2026) chip.com.tr"
-   },
-   {
-    "baslik": "Instagram Hesapları Neden Askıya Alınıyor?Türk Kullanıcılardan Şikâyet - Tıbbiye Bülteni",
-    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcEU5NXgtOWtyOXBDRW4zZ05uU3h6NEhmNjM0dXZhb0pnSG1jQ2dRaXpmcVBySUpOdDBkTUI4T0lnS0I3NWNLM2s1amptek51eDV3QWc3bXFWWGE4ZHpsSEVlUmVSZ01oZW1BS2N6dmhaUncwdzY3X08tVmtxaU82UDdkQmJYRVZxYmQtMHJ0UFY1YksxZnZnNVNvdlRndDNYeFVoNk1fWTM3RVo1M0JfZWEwdlpVQWwwX3F1YVFmUzI?oc=5",
-    "kaynak": "Tıbbiye Bülteni",
-    "tarih": "Tue, 22 Sep 2026 13:59:00 GMT",
-    "ozet": "Instagram Hesapları Neden Askıya Alınıyor?Türk Kullanıcılardan Şikâyet Tıbbiye Bülteni"
-   }
-  ],
-  "muzik": [
-   {
-    "baslik": "Metro Boomin İstanbul Konseri 2026 | KüçükÇiftlik Park - Passo",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSVpqUC1ISkFnX0hfb3FHV3hac0pGVHB4VU1acFJER1hpWEFyX0lxU0JkTzRlbV9wWkdMc1JSRUFoSUJCNng2cTdpNVJqNk56MWN5dXF3NlR3bVc2dXhQQzlXRl9FLXdrekdXT1R0TjdERUxMdUItNWI1WDJ4R2ptQ1JoZFpIREhEdEFMcVk5NEJmTHFkVDZLSWt0V1dReVU?oc=5",
-    "kaynak": "Passo",
-    "tarih": "Wed, 23 Sep 2026 00:26:40 GMT",
-    "ozet": "Metro Boomin İstanbul Konseri 2026 | KüçükÇiftlik Park Passo"
-   },
-   {
-    "baslik": "Şam’da bir konser - Yeni Şafak",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE4xSktnQ3RzUmJ2cEpaUVZoOVBma3lKbzlFT3dpeG9GMWpranVwbmlIRnBpUWtEbXRFTGdDS1dnSjVwM3FHbnpFbksyNmRjX293eW1aQ055Ym5FSXVEdjJyOUYwekhtTjBxNkZxM2VGQXg0Z2VsV08zSHZRUQ?oc=5",
-    "kaynak": "Yeni Şafak",
-    "tarih": "Wed, 23 Sep 2026 01:00:00 GMT",
-    "ozet": "Şam’da bir konser Yeni Şafak"
-   },
-   {
-    "baslik": "Her gün 150.000 yeni şarkı yayınlanırken, dinleyiciler bu hıza ayak uydurabilecek mi? - Vietnam.vn",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQaXM0U2pXNy1CRFFsRVlNMGx1bEpna1dNYW9Wc2k2WmNnTzFGbHBYVjR3cnpsMHYtTFExS3pNS2RJbS1Bb0w2VGw3RXhLQUFPUzkyOVFJNkhkcHpVQ3RKU2NjOTc3d1lSM011cmtCbjdtUEtFWVpoQzc0RkpOaGpaTmVjTWdQcnM?oc=5",
-    "kaynak": "Vietnam.vn",
-    "tarih": "Wed, 23 Sep 2026 00:51:08 GMT",
-    "ozet": "Her gün 150.000 yeni şarkı yayınlanırken, dinleyiciler bu hıza ayak uydurabilecek mi? Vietnam.vn"
-   },
-   {
-    "baslik": "Piyanist Tuna Tüney, Almanya’da üç şehirde solo konser verecek - T24",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPUTdyWVpDQzVNMTNiaF9nbnU3N2t0SFBMbXpPSEt5R0s5TjFlbUJwallFdUZvQ1ltVlFDT1V6V1BtdjdTMks2NmR6YU1DMTlPRjJVbTZrM3UzbG5iZXR3aEFwUHFFVHBKcXpSWDhtWFg0N2hnVU9mRFJ1TUtMVFNnZmZpYTEwOXRzcjhWVUZqZlFRb29hcTRXajFua3JibFpIQ3c?oc=5",
-    "kaynak": "T24",
-    "tarih": "Tue, 22 Sep 2026 17:38:00 GMT",
-    "ozet": "Piyanist Tuna Tüney, Almanya’da üç şehirde solo konser verecek T24"
-   },
-   {
-    "baslik": "KONSER: Donna Mobile by Elif Çağlar - Bant Mag.",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAzVDFmV3gyYklSTnp0RjNNUF92czNFRnZZMHpfRGhBN1lFTV9hYW1DeVlpRU1KcXJNQm5ZRFFqZHhoZzlZODBkd21lRUMtbWgwRkRXdWVDN2RqejVEaXZKNFV1bW1LWmtf?oc=5",
-    "kaynak": "Bant Mag.",
-    "tarih": "Tue, 22 Sep 2026 10:44:04 GMT",
-    "ozet": "KONSER: Donna Mobile by Elif Çağlar Bant Mag."
-   },
-   {
-    "baslik": "Ekim Ayı Gelmeden Konser Biletini Almak İsteyenlere Özel 9 Öneri - Onedio",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeEx4WktIY0JSS1dvMFlpV21UcWlqbnZyaDFHQjM4dUlWSmx3X3BBOGpxbFJZN2lqVUJpRVhQb1BqMUdXZ0ZjQkdPQ2dhTFgzZTlSRmkyM3ZnTWhHSmhMa2djbTB1SHFGTW01VUNxUWZnMTB1VVNIMTV4WTVRWXBZMFBvSlloSUlqV19iUVlFVjNuRlNjLWFTdlVyckNnQQ?oc=5",
-    "kaynak": "Onedio",
-    "tarih": "Tue, 22 Sep 2026 15:01:34 GMT",
-    "ozet": "Ekim Ayı Gelmeden Konser Biletini Almak İsteyenlere Özel 9 Öneri Onedio"
-   },
-   {
-    "baslik": "Oğuzhan Koç konser sonrası sessizliğini bozdu! - Radyo D",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUjVrU1RkMUxSQmR1VHdzRThfYzY1UDhzS3UyRUtzSkwyd00xTFZhaFBPd294dnZGb2JPdnFVejlYS1paZk1BYndCVXdVdlljNWtVUXZ5dWNITW94OGlKMVk2Z1VDb2p3Z29YUXFhMUVWU0RmZ0xha3ZtZW5Xd0l4ejd2d0pwc1k0OWtZSzNTZVZrM2FqTmREeVJB?oc=5",
-    "kaynak": "Radyo D",
-    "tarih": "Tue, 22 Sep 2026 16:03:19 GMT",
-    "ozet": "Oğuzhan Koç konser sonrası sessizliğini bozdu! Radyo D"
-   },
-   {
-    "baslik": "Spotify Premium'a Özel: Albümlere 3 Günlük Erken Erişim Geliyor - pchocasi.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdko0UkEwQzY4QTFlcnJ6MXdwUFFQaTNuV1hxbGhpQl9fek5pYXBXbUFSSFJIc0U0MDk4ejQ4OGlDYTJObkJjbU1mUHcwdWdiQkdERTBLWHRKc0YwRExnUkxoTS1Dd1VCM0FvczB1S3hna2cwZUkyZXE0VHVhQkZuZjlLa3VKbFF0QjczUjV6SQ?oc=5",
-    "kaynak": "pchocasi.com.tr",
-    "tarih": "Tue, 22 Sep 2026 08:19:16 GMT",
-    "ozet": "Spotify Premium'a Özel: Albümlere 3 Günlük Erken Erişim Geliyor pchocasi.com.tr"
-   },
-   {
-    "baslik": "Spotify hissesi bugün neden %3,4 düştü? - Traders Union",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRm53dWpsVVB2Njg3UFNVdU5na25JNUFMMmVHYzZEaXJlWHY4dElJN216dERKdTJZRVAtODk4MTlsSWJSTGYxSDZqOUxIR1VLNmxPZzFBc1A1U3NuS2FWRWR3YjNSR1VBQU94S2x0QjlKbGxvQmtobExsQnluWGVQandEZm00N01wR0s3VUFWU1FKS3c?oc=5",
-    "kaynak": "Traders Union",
-    "tarih": "Tue, 22 Sep 2026 19:13:48 GMT",
-    "ozet": "Spotify hissesi bugün neden %3,4 düştü? Traders Union"
-   },
-   {
-    "baslik": "Sanatçı Ekin Uzunlar Keçiören'de konser verecek - gazeteilksayfa.com",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdzkzTHRyRW9jYVh1R3N5LVFiVGJmb19QbTV0Q2FBbWcydHpUUTgxRS1QQnRsd05VZzN3cXM4T2c2U3VyeEc1eENhRmxydnk4WHRfUmZsWXR2dnRMQkZhVk5Mei0tNmVOYjBfNE03YkdHUTN6TWlZdFByZGx5LU04UjBEeDhkY29DNTd1QzNpV1lrTWs?oc=5",
-    "kaynak": "gazeteilksayfa.com",
-    "tarih": "Tue, 22 Sep 2026 15:53:05 GMT",
-    "ozet": "Sanatçı Ekin Uzunlar Keçiören'de konser verecek gazeteilksayfa.com"
-   }
-  ],
-  "edebiyat": [
-   {
-    "baslik": "Bir Yazar Adayına Mektuplar: 29 Yazının, Yaşamın Sırlarına Yolculuk | Feridun Andaç - Edebiyat Haber",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLUR5M2JSZ01USGtBRWJpc1dpSzFzZV9DZnJfZEJGOFFrSmplS2wwTTJKNTlUcDF4Tzc2Umc0QVA4a1lOckFHdi1vaEN0Q1BGLWJFSkNvS1dpbUJHTklRTnJ2b2p4Q2VfOVBFNjI1djBUd1NxOFlpSWFqazlLSUktVlZnVXk1X3RRcTVoWE5ndDdHampyVngyS3BJdDRzYkZLTFZDTVEtcTQ0VmsxY2xn?oc=5",
-    "kaynak": "Edebiyat Haber",
-    "tarih": "Tue, 22 Sep 2026 00:55:00 GMT",
-    "ozet": "Bir Yazar Adayına Mektuplar: 29 Yazının, Yaşamın Sırlarına Yolculuk | Feridun Andaç Edebiyat Haber"
-   },
-   {
-    "baslik": "İZKİTAP - 8. İzmir Kitap Fuarı açıldı - Anka Haber",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5MMkpxMElERFZQQWhyRmJ5STdpa1YwWXZjZ0ZDTWVGVzZra2N4RWdtSFFCZl9FbXhtdHFEdWtoNGFHUDdBQUFsU2pEcngxVXF4VzZxdGFDLXBNb3RWQ3dTaHNlekpzYkNVWUNrZHRkcWJrSmU4anBUN3lfRQ?oc=5",
-    "kaynak": "Anka Haber",
-    "tarih": "Sat, 19 Sep 2026 14:26:54 GMT",
-    "ozet": "İZKİTAP - 8. İzmir Kitap Fuarı açıldı Anka Haber"
-   },
-   {
-    "baslik": "Diyarbakır 10. Kitap Fuarı kitapseverlerle buluşuyor - www.milliyetsanat.com",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPa0lfNHFkakZCbjV2MUszbk9jWnBMb3hobE52VnBzNDljd1BkNlRleE5pNTBpRmtDTExTV2RRZ2V5SUtWdm1XOHFyazVqMHlQR1RsOXB0YTBjb0ZBOXJscl9tblJqQ3VBMEZvWllpSmxicWFwajFNaEFYVy1rX0RkSDFHZlc2Y1drMnAzMENUSDZlYktmWkRkZEM3MWFXb2RURXJZQQ?oc=5",
-    "kaynak": "www.milliyetsanat.com",
-    "tarih": "Sat, 19 Sep 2026 15:58:33 GMT",
-    "ozet": "Diyarbakır 10. Kitap Fuarı kitapseverlerle buluşuyor www.milliyetsanat.com"
-   },
-   {
-    "baslik": "Muğla’da Roman vatandaşlarımızın kültürel değerlerinin yaşatılması, sosyal dayanışmanın güçlendirilmesi ve toplumsal birlikteliğin pekiştirilmesi amacıyla Romanlar Gecesi düzenlendi. - aile.gov.tr",
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9wdm9QUEV3SnVYenVYZFhSMXRzSzZBblhfMlNHYlFYSzM5WW9fYzdvUmVCTVJxWndrci13UnA5aTNwUmdMX1BhdlFtakRWdTVMN2FhTlBOTU1KUmotancxZw?oc=5",
-    "kaynak": "aile.gov.tr",
-    "tarih": "Mon, 21 Sep 2026 14:51:01 GMT",
-    "ozet": "Muğla’da Roman vatandaşlarımızın kültürel değerlerinin yaşatılması, sosyal dayanışmanın güçlendirilmesi ve toplumsal birlikteliğin pekiştirilmesi amacıyla Romanlar Gecesi düzenlendi. aile.gov.tr"
-   },
-   {
-    "baslik": "İzmir Kitap Fuarı başladı: 27 Eylül’e kadar sürecek - Evrensel",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZkdDakVzaVZZSDV0S0d6d2RuWU1qSnVIdTJ6d00wU3JHVGZLQjRtbEpTZ01EcjN6dHZMV29uN2dla3pNME4wbmJuVEVqTVVCTVA0YlNnU21tbGtPeU5PM1k1WXFQZHJ4aXN3X3NLYWtVRG90b0JyU1pYWUJzajRNUnZWb1JRblFDZkRFUG1JMllwckU?oc=5",
-    "kaynak": "Evrensel",
-    "tarih": "Sun, 20 Sep 2026 13:46:00 GMT",
-    "ozet": "İzmir Kitap Fuarı başladı: 27 Eylül’e kadar sürecek Evrensel"
-   },
-   {
-    "baslik": "Denizli’de tarihi kültür hamlesi:TÜYAP Kitap Fuarı ilk kez Denizli’de - Egeyön Haber",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRlhGTWJwN1RGU3NxeU5rUzRmVlJOcTAwQk9hX0tzNDFQSWg5Nkl0SEdmQnhWUTNTSjlveHVPVERudnhzbVhidWlVSjVoV2N2QnJLdS14azVCa1oxNkJGSnBwY2hiTW5KLXBfLTdwcUdlMTZfTm15aTJGSFJITlZ5bjYxdEhFbTViazRqdF9SMnhXdXRKME12a2FCN01SNFVyTXc5Y3VR?oc=5",
-    "kaynak": "Egeyön Haber",
-    "tarih": "Thu, 17 Sep 2026 07:35:06 GMT",
-    "ozet": "Denizli’de tarihi kültür hamlesi:TÜYAP Kitap Fuarı ilk kez Denizli’de Egeyön Haber"
-   },
-   {
-    "baslik": "İzmir Kitap Fuarı başladı - Habertürk",
-    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOM0VoR2FwWE93N1pQMlFlRWVkbGpNMFlwX21FTF9KTUVFLW9sM25uUUI0RHVpTVRPbFloV3BvMDh3amg4RWF0Slk4VFNWRkU2TWlhb2p0VDNzQUxLNW5RRXZkS2gyWGhqa2M4a2kyckZCellVOEFSNzFWOUV1Ui1FUXNMMHp2dmk5UVQ5eXZ3aTg?oc=5",
-    "kaynak": "Habertürk",
-    "tarih": "Sat, 19 Sep 2026 13:03:16 GMT",
-    "ozet": "İzmir Kitap Fuarı başladı Habertürk"
-   },
-   {
-    "baslik": "İletişim Yayınları'ndan 12 yeni kitap - bianet.org",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9ST0lzb0JRODJqRmtfenhzeGV3UVRfWmo3c2tyY0dhd2dEY2hZV3JMZ0lwT1R4blNpOGZMcXM2S1pZV1NIcnVubWQ2VDZGUXJ1UjZCS2w1ZWt0MkI1SU5OYXZkbUNBVnM3Q3UxVWdIRnVwNVFCV2NXTw?oc=5",
-    "kaynak": "bianet.org",
-    "tarih": "Mon, 21 Sep 2026 09:00:00 GMT",
-    "ozet": "İletişim Yayınları'ndan 12 yeni kitap bianet.org"
-   },
-   {
-    "baslik": "“CKM Yazar Buluşmaları” başlıyor| Haberler - Gazete Kadıköy",
-    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNODgySTVIYnFxVFUtbTNCWnV0ZGU2Z1o0MDN5Zmp4NHFjM0JsTlNfNUljRTNuY2VTWHJRMFFsUWF2TWp0d3NCSmtzMTBoeE1KTC1NbXBLT0lQa1NvbWtHeHRyZms0OTY2X0tIal9iYmJJcmNweUJYaDZVQVNOY29MQ1lB?oc=5",
-    "kaynak": "Gazete Kadıköy",
-    "tarih": "Tue, 22 Sep 2026 13:20:02 GMT",
-    "ozet": "“CKM Yazar Buluşmaları” başlıyor| Haberler Gazete Kadıköy"
-   },
-   {
-    "baslik": "Mevlid-i Nebi haftasında düzenlenen Çumra kitap fuarı - Konhaber",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPLUJLdzVzTEF0QUtyWElvQzJsNXZuS1FROHFJRTAzT2FJbEF4YVpnRDJna0s2MVc5WlZuZHhUZ1R3d1Jvd1V2dnJsN1Y0M2ZxYTdpNFFLNkZjVkxXbHY2N1NvMmV0c0V3aHZyTHhPUFpLM0FXZHV1MGhQMXhDd2RkNUREYzdIOUlHSUM4TS1fNS1iMldqN1RJUk52TQ?oc=5",
-    "kaynak": "Konhaber",
-    "tarih": "Mon, 21 Sep 2026 09:16:05 GMT",
-    "ozet": "Mevlid-i Nebi haftasında düzenlenen Çumra kitap fuarı Konhaber"
-   }
-  ],
-  "haber": [
-   {
-    "baslik": "Son dakika deprem mi oldu? Az önce deprem nerede oldu? İstanbul, Ankara, İzmir ve il il AFAD son depremler 23 Eylül 2026 - ntv.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQOUV3bGlraEIxSFNVWWJKYktwT3FMaURsQ2tqOHFBekJnd081ZnV1MGFkRnBReHUtdmtUUS11U0NNM3FBMXdPcFdGb1dSNndNNDh1YnR0SzZ5RW5XTVFuMkZIazZSVFZVaHJEbDRxd2VuVVhCdGRaNEdxNFpOYUVCVzdOVWZQNGIyTkNaMjBfYnpGZ056dHA0MTJmbEgxczBpSXVPVzQ5Z0JUNXltZlpqZUFxMjlRYXFPX1VuMGFFZzRhRWptVXBDR0w0Qjl2am5jRG5DcF8tSmdIbkFzZUt3SnhBVnNvdUQ4STE00gHwAUFVX3lxTE1uU0FLNEJwSXZUZHFweExobGI0UHAxQTJYUFJiSVVTZDNGZEFHMnJObXBSa2ZZQUV5X3F0TGtqU2ktemdGVUdWUktFRDZraVlwWG8zZERja2c1ZmpycWp2MEdxSkM2QlEyXzBOUnlZUFdLMXhIQkgta1ZBcDZDX1htQVc0NC1UTVh2MFRJWHhYQlM2aGNzUVRjdzJyVXNDTVdSQU1WOGpVQ2xHcTNkb1RZVkh1N0xzaUlfcmowNmVyQUJpZy15MkxPbTBoc0ZrdzU2ZkRoUEtBU1JrempEU0lENEViOE5IY3M3eGFKSE1XUw?oc=5",
-    "kaynak": "ntv.com.tr",
-    "tarih": "Wed, 23 Sep 2026 03:30:00 GMT",
-    "ozet": "Son dakika deprem mi oldu? Az önce deprem nerede oldu? İstanbul, Ankara, İzmir ve il il AFAD son depremler 23 Eylül 2026 ntv.com.tr"
-   },
-   {
-    "baslik": "Kremlin’den tahıl açıklaması Türkiye’nin planı masada - Hürriyet",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUm5DT1N0YjQzbGRHREliZnhDcUhWbjJ4cUUzcXljam5tbklrRnVOMExYeUE5Y3FSMDRELURMel9xd2ppZHZKN2MzcUtyeG9nQkF3VlNiQldHU0VTRWtNSy1hbURGOU4yT2Z4UEFnanBOdi13d0dibDU1a0l3czRIWUh6RDZWT3N2WF8zeFFGYktDSzFFX1hpcmlJbw?oc=5",
-    "kaynak": "Hürriyet",
-    "tarih": "Tue, 22 Sep 2026 23:08:33 GMT",
-    "ozet": "Kremlin’den tahıl açıklaması Türkiye’nin planı masada Hürriyet"
-   },
-   {
-    "baslik": "Duran: Türkiye hakkı ve hakikati savunmaya devam edecek - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRXFKejBUWWNvb25oUmJZSHU1SFZUbjZpdTk1dmlqQTJYRFBrcGphN2FFdHhtdUNLbzRPN1pySkJDSGhFSVl6WVh3bWtPQjRmVzI2Tm5KcGdKUmVHMFFkUHBxYkNzVDFMQ2gyaEhGVnoxdGltWGZ4OExDWE1uZk5jTVVUeXRiMkJIeGVVZmV3NVNua1dQcjEyTk1KM19fbENpOERwRUo5Zw?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Tue, 22 Sep 2026 17:52:00 GMT",
-    "ozet": "Duran: Türkiye hakkı ve hakikati savunmaya devam edecek TRT Haber"
-   },
-   {
-    "baslik": "Cumhurbaşkanı Erdoğan CNN Türk'e konuştu: Bölgedeki yangını söndürmek için çalışıyoruz - cnnturk.com",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM0hLclNLYjRVUkZfT1pGakF5QWdXaFd6NlE5UEN4bWluSFExSTdNMUlZS2FfenR5cW9Yd3lzYU1taFFHNG05MmZ5QlR1aEZUSG9jVlZyXzNyN3hXQnUwV3MwYXFnRjhNd2VZZHpCX18wcFBRcENiN1l1ZXg1NVl3STEtOHpxSTNMbWJZWGhmVTktZVhoZERYdnktZ0V5ek81ZWJjUmRXSXVFaFVIanBmOFZZTl9PYkliaDlEeHllM2VZQQ?oc=5",
-    "kaynak": "cnnturk.com",
-    "tarih": "Tue, 22 Sep 2026 20:30:00 GMT",
-    "ozet": "Cumhurbaşkanı Erdoğan CNN Türk'e konuştu: Bölgedeki yangını söndürmek için çalışıyoruz cnnturk.com"
-   },
-   {
-    "baslik": "Bodrum’da kırmızı bültenle aranan şüpheli sahte kimlikle yakalandı - Cumhuriyet",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYzl1Y0VNZVlRblhwU2dLS3ZHX2dRWWhwdDRTWHZ6YnVEMTRUNDFoM3JvWXJSU2k2YkhDZHVkMEQ2Q0tUWWdOOFhCTERUMXFYTWtuQW1hN2VGaGh2ejJFSGdPSWFxa1p5WEh3eEVKSktUbkJsOElTVE9nRnpRVnlNaF9FbFB1bHZFcnplakk5dWlPS2ZSZC1RemRHdWVuSVdwS25OYTdYWXdJTXZPVW9MRGF3?oc=5",
-    "kaynak": "Cumhuriyet",
-    "tarih": "Tue, 22 Sep 2026 20:29:00 GMT",
-    "ozet": "Bodrum’da kırmızı bültenle aranan şüpheli sahte kimlikle yakalandı Cumhuriyet"
-   },
-   {
-    "baslik": "Türkiye maçı öncesi Fransa'da Mbappe şoku - Son Dakika",
-    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQVnF4bUpyQzFQdmxjd0JRODd2UkVBb2RPdGtNMzF5TWdId3lmMXBDbjFObDR6N0hOUm9xZ3JnYzFLRXVSSkVLcEp1WXJZcnNaTkdsTkJjVWpuRUVBMXY4YTMyclB0a3Z2UTMzYTBuM0FKV1d5UmdVemRBa1RrZHNJWWhhb2RMSzMzdTBrTE9PRmXSAY8BQVVfeXFMTlNKSmcxQjhzMDRxdjZlWGt2LVJjbnYxY2dSVkx6OXpEMmk1UUtobmRsTnl6WTE5RURkN2gwMHhqblV6TUJMbk5aTkxwZGJOYk1SU3VHUTY4MTNXRnhhVFd0ZkNQZkc0cFNMcGVEZ3d2enU5Mks4cnFoM2l5V3dBQzhSaVQwMUV6ZTlZVUVvLUE?oc=5",
-    "kaynak": "Son Dakika",
-    "tarih": "Tue, 22 Sep 2026 18:42:40 GMT",
-    "ozet": "Türkiye maçı öncesi Fransa'da Mbappe şoku Son Dakika"
-   },
-   {
-    "baslik": "Türkiye, ICAO denetiminde yüzde 95,45 başarıya ulaştı - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNDB5cTJ4QUEyV2g1eEpRemdPbFBEN3dmbTJ2dkRrMHBtNVFEWGtVYTFrZUIwenhPWGZjeExfbVZYZEV4V1p4d3hQbjg4NEdOTk9EeldfeHpRenVDbnlIbVp3OWNGR0lrSjhSWXU0UTZwRmd2TEgya1V6OWZqOHEyNkQ0OWVKNUFDdW5MQ2phYVpxN2R0RktLV0FXVW1RRXJfVDlTQQ?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Tue, 22 Sep 2026 20:27:00 GMT",
-    "ozet": "Türkiye, ICAO denetiminde yüzde 95,45 başarıya ulaştı TRT Haber"
-   },
-   {
-    "baslik": "Bugün (23 Eylül) okullar tatil mi son dakika? Bugün okullar tatil edildi mi, okullarda ders var mı, tatil kararı geldi mi? İşte son durum - hurriyet.com.tr",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxORVl3cWljbHk5TmhYVFVOdk5vQzVHNVVrdG9qNUR5Z3JsbkVnZGt1bmU4OVJhWWNOcXc0ODE2ODFnbUdicnVYeTRQeU53LU01T0J4ejRSbWRyZ0c3RUh5UDNvRG5QdkJvMXAzMXZHVmd6MXZ0X0s3ZmotMzQ0Rlk2ZjdmQ0lsdFRjLXVsekhSZ1U5aUZ3THkxY3p1S1diaFRRRWtPZzBVYXd3STF6TGQ1YVpaVDR0LUNnUjM1RHZqWjh3empONjJtaHd0NA?oc=5",
-    "kaynak": "hurriyet.com.tr",
-    "tarih": "Wed, 23 Sep 2026 04:28:31 GMT",
-    "ozet": "Bugün (23 Eylül) okullar tatil mi son dakika? Bugün okullar tatil edildi mi, okullarda ders var mı, tatil kararı geldi mi? İşte son durum hurriyet.com.tr"
-   },
-   {
-    "baslik": "Türkiye maçı öncesi Fransa'da Kylian Mbappe gelişmesi! - Cumhuriyet",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWkNvNlc3NmxCeFRlSzU4dlJNZ1lCdVVDMUp3ZDdTTHhVRk11MnNQWGhSWnBhNGUtbjR2QjFIUnV1VExFYXJmR25RNWFDMjV1bDh3dDU4N1p1NkJhTlNrZ0w4TFpqOG11dUJYVTZVZHNTYUhtZlFwNWYxR1VoaThWamQxQ0N0aDdDT1hhcmZfWVVCWmlUZUVwS0hLNFA?oc=5",
-    "kaynak": "Cumhuriyet",
-    "tarih": "Tue, 22 Sep 2026 16:34:00 GMT",
-    "ozet": "Türkiye maçı öncesi Fransa'da Kylian Mbappe gelişmesi! Cumhuriyet"
-   },
-   {
-    "baslik": "SON DAKİKA HABERİ: Bakan Çiftçi'den Manisa'da ailelere çağrı - cnnturk.com",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSnBZcHZyZWFIYTNsLTZuNmxNYnhna0NsalRFeTIwdWltTXRraWRDdXNPSS1na2R3U3d6RW9LRjBDTFlVdDFYdzE4cU9ISUtHdHBIRkM4ZjJYRklUTmZwd1VIMnFEM2d2MUhuTDh0NDJZU0tFS240OUMyZmM4TXR1bG1uYVhiNmNueEtDREFaeHNOWUhJZTBwUERGNA?oc=5",
-    "kaynak": "cnnturk.com",
-    "tarih": "Tue, 22 Sep 2026 16:39:00 GMT",
-    "ozet": "SON DAKİKA HABERİ: Bakan Çiftçi'den Manisa'da ailelere çağrı cnnturk.com"
-   }
-  ]
+  "piyasalar": [],
+  "ekran": [],
+  "spor": [],
+  "sanat": [],
+  "yapay-zeka": [],
+  "yazilim": [],
+  "muhendislik": [],
+  "sosyal-medya": [],
+  "muzik": [],
+  "edebiyat": [],
+  "haber": []
  }
 }
