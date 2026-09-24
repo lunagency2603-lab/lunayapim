@@ -8,7 +8,7 @@ BLOG = os.path.join(os.path.dirname(HEDEF), "blog")
 
 YAZILAR = [
  {"dosya":"insaat-3d-modelleme-fiyatlari.html",
-  "baslik":"İnşaat 3D Modelleme Fiyatları Neye Göre Belirlenir?",
+  "baslik":"3D Render ve Mimari Görselleştirme Fiyatları: Neye Göre Değişiyor?",
   "tarih":"2026-08-25",
   "ozet":"Mimari render ve proje tanıtım animasyonunda maliyeti belirleyen altı kalem, tipik süreler ve bütçeyi doğru yere harcamanın yolu.",
   "anahtar":"inşaat 3d modelleme fiyatları, mimari render fiyat, proje tanıtım animasyonu maliyeti, 3d görselleştirme ücreti, sanal tur fiyatı",

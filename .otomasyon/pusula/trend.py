@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-TRENDSAPHIENS — LunaTrendSaphiens: günün haberleri, analizler, raporlar, sistem.
+TRENDSAPHIENS — TrendSaphiens: günün haberleri, analizler, raporlar, sistem.
 Ana siteden ayrı tasarım (açık tema, kart akışı), aynı depo: /trend/
 
 Kaynaklar (hepsi zaten üretilmiş, kopya değil):
@@ -263,7 +263,7 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 <meta name="description" content="%s">
 <meta name="keywords" content="trendsaphiens, günün haberleri, sektör analizi, piyasa raporu, bursa, yapay zekâ, inşaat, emlak">
 <link rel="canonical" href="%s">
-<meta property="og:site_name" content="LunaTrendSaphiens">
+<meta property="og:site_name" content="TrendSaphiens">
 <meta property="og:title" content="%s">
 <meta property="og:description" content="%s">
 <meta property="og:type" content="%s">
@@ -340,7 +340,7 @@ def _alt(on="../", tr="", ana=True):
       <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}bulten">Günün bülteni</a><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
       <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{tr}denetim">Bağımsız denetim</a><a href="{on}iletisim">Luna Yapım iletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
     </div>
-    <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>LunaTrendSaphiens bir Luna Yapım yayınıdır</span></div>
+    <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>TrendSaphiens bir Luna Yapım yayınıdır</span></div>
   </div>
 </footer>
 <script>document.getElementById("yil").textContent=new Date().getFullYear();</script>
@@ -537,6 +537,21 @@ def _gunluk_sayfalar():
     return ci
 
 
+def _rehber_gorsel(r):
+    """23.09.2026: rehberler stüdyo fotoğrafıyla (renk-masasi vb.) yayındaydı; dolar/altın
+    yazısında konuyla ilgisiz görsel Discover ve görsel aramada zayıf. gorsel_tamamla.py
+    rehberler için de serbest lisanslı kapak arar ve veri/trend/rehber-gorsel.json'a yazar."""
+    try:
+        from .ayarlar import KOK_DIZIN as _KD
+        d = json.load(io.open(os.path.join(_KD, "veri", "trend", "rehber-gorsel.json"), encoding="utf-8"))
+        g = d.get(r.get("slug") or "")
+        if g and g.get("dosya") and os.path.isfile(os.path.join(SITE_KOK, "assets", "ts", g["dosya"])):
+            return "ts:" + g["dosya"]
+    except Exception:
+        pass
+    return r["gorsel"]
+
+
 def _rehberler():
     try:
         from . import trend_rehber as TRH
@@ -544,6 +559,7 @@ def _rehberler():
         return []
     out = []
     for r in TRH.hepsi():
+        r = dict(r); r["gorsel"] = _rehber_gorsel(r)
         out.append({"tur": "rehber", "tarih": r["tarih"], "sira": 0, "kat": r["kat"], "gorsel": r["gorsel"], "baslik": r["baslik"],
                     "olgu": r["ozet"], "slug": r["slug"], "rehber": r})
     return out
@@ -738,13 +754,13 @@ def akis_html(kok, kat=None):
         hepsi = [m for m in hepsi if m["kat"] == kat]
     on, tr = ("../../", "../") if kat else ("../", "")
     ad, alt_baslik = KATEGORI.get(kat, ("Akış", "Günün haberleri, analizler, raporlar"))
-    baslik = ("%s — %s | TrendSaphiens" % (ad, KAT_KISA.get(kat, alt_baslik))) if kat else "LunaTrendSaphiens — günün haberleri, analizler, raporlar"
+    baslik = ("%s — %s | TrendSaphiens" % (ad, KAT_KISA.get(kat, alt_baslik))) if kat else "TrendSaphiens — günün haberleri, analizler, raporlar"
     if len(baslik) > 68:
-        baslik = "%s | LunaTrendSaphiens" % ad
+        baslik = "%s | TrendSaphiens" % ad
     aciklama = (alt_baslik + ". Her madde kaynaklı ve tarihli; rakam yalnızca kaynakta varsa yazılır. Luna Yapım'ın günlük yayını: haber, analiz, rapor.")[:158]
     url = KOK_URL + ((kat + "/") if kat else "")
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": baslik, "url": url,
-            "description": aciklama, "isPartOf": {"@type": "WebSite", "name": "LunaTrendSaphiens", "url": KOK_URL},
+            "description": aciklama, "isPartOf": {"@type": "WebSite", "name": "TrendSaphiens", "url": KOK_URL},
             "publisher": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"}}, ensure_ascii=False) + "</script>"
     man = hepsi[0] if hepsi else None
     kartlar = "".join(_kart(m, False, on, tr) for m in hepsi[1:13])
@@ -783,7 +799,7 @@ def akis_html(kok, kat=None):
        _e(KAT_GIRIS.get(kat) or KAT_GIRIS_EK.get(kat) or (KAT_GIRIS["gundem"] + " " + KAT_GIRIS["rapor"])),
        ('<div class="ts-giris"><h2>%s</h2><p>%s</p><p class="ts-baglar">%s</p></div>' % (_e(KAT_IZLEME[kat][0]), _e(KAT_IZLEME[kat][1]),
         " · ".join('<a href="%s%s">%s</a>' % (on, h[3:], _e(t)) for h, t in KAT_IZLEME[kat][2])) +
-        '<div class="ts-giris"><h2>Neden bir yapım şirketi yayın tutuyor</h2><p>Çünkü işimiz sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin görsele ihtiyacı artıyor; kira talebi yükseldiğinde ilan videosu fark yaratıyor; reklamda yapay zekâ etiketi zorunlu olunca gerçek çekimin değeri değişiyor. Bunları izlemeyen bir yapım şirketi müşterisine yalnızca kamera satar; biz neyin neden işe yaradığını da anlatmak istiyoruz. LunaTrendSaphiens bu yüzden var: her sabah günün haberleri seçilir, haftada bir piyasa defterinin karnesi çıkar, öne çıkan konu blogda derinleşir. Bütün yayını iki kişilik bir stüdyonun kendi yazdığı sistem işletir; sayfaların SEO kapısından geçtiğini de o denetler. Okuduğunuz bir maddeyle ilgili işiniz varsa altındaki hizmet bağlantısından o sayfaya geçebilir ya da bize yazabilirsiniz.</p></div>') if kat in KAT_IZLEME else "",
+        '<div class="ts-giris"><h2>Neden bir yapım şirketi yayın tutuyor</h2><p>Çünkü işimiz sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin görsele ihtiyacı artıyor; kira talebi yükseldiğinde ilan videosu fark yaratıyor; reklamda yapay zekâ etiketi zorunlu olunca gerçek çekimin değeri değişiyor. Bunları izlemeyen bir yapım şirketi müşterisine yalnızca kamera satar; biz neyin neden işe yaradığını da anlatmak istiyoruz. TrendSaphiens bu yüzden var: her sabah günün haberleri seçilir, haftada bir piyasa defterinin karnesi çıkar, öne çıkan konu blogda derinleşir. Bütün yayını iki kişilik bir stüdyonun kendi yazdığı sistem işletir; sayfaların SEO kapısından geçtiğini de o denetler. Okuduğunuz bir maddeyle ilgili işiniz varsa altındaki hizmet bağlantısından o sayfaya geçebilir ya da bize yazabilirsiniz.</p></div>') if kat in KAT_IZLEME else "",
        trend, _rakam_kutu(on, tr), _takvim_kutu(on, tr), _abone(on), _rehber_kutu(tr), tr, REKLAM_YAN)
     ek = ""
     if kat in KAT_DUZEN:
@@ -843,6 +859,18 @@ def _makale_govde(m, yz, hizmet_ad):
     if yz.get("izle"):
         h.append('<div class="ts-analiz"><h2 class="etk">Takip etmek için</h2><ol>%s</ol></div>'
                  % "".join("<li>%s</li>" % _e(x) for x in yz["izle"]))
+    # 23.09.2026: burç özellik sayfası → aynı burcun yükselen saatleri (arac.py basar)
+    _sl = str(m.get("slug") or "")
+    if _sl.endswith("-burcu-ozellikleri"):
+        _z = _sl[:-len("-burcu-ozellikleri")]
+        _ad = {"koc": "Koç", "boga": "Boğa", "ikizler": "İkizler", "yengec": "Yengeç", "aslan": "Aslan",
+               "basak": "Başak", "terazi": "Terazi", "akrep": "Akrep", "yay": "Yay", "oglak": "Oğlak",
+               "kova": "Kova", "balik": "Balık"}.get(_z)
+        if _ad:
+            h.append('<div class="ts-analiz"><h2 class="etk">Yükselen %s</h2><p>Yükselen %s hangi saatlerde doğar? '
+                     'İstanbul, Ankara ve İzmir için 12 ayın saat aralıkları: <a href="yukselen-%s">Yükselen %s saat kaç</a>. '
+                     'Kendi yükseleninizi doğum saatinizle <a href="yukselen-burc-hesaplama">yükselen burç hesaplama</a> '
+                     'aracında bulabilirsiniz.</p></div>' % (_ad, _ad, _z, _ad))
     if yz.get("ne_yapmali"):
         h.append('<div class="ts-analiz"><h2 class="etk">Ne yapmalı</h2><ol>%s</ol><a href="%s">%s \u2192</a></div>'
                  % ("".join("<li>%s</li>" % _e(x) for x in yz["ne_yapmali"]), _e(hizmet_ad[1]), _e(hizmet_ad[0])))
@@ -873,6 +901,19 @@ def _kunye(g):
                " · konuyu temsilen" if g.get("genel") else ""))
 
 
+
+def _sayfa_basligi(baslik, marka="TrendSaphiens"):
+    """23.09.2026: başlık 52 karakterde "…" ile kesiliyordu; Google'da üç noktalı başlık
+    tıklanmayı düşürür. Sığıyorsa marka eklenir, sığmıyorsa tam başlık tek başına kalır;
+    çok uzunsa kelime sınırında, üç nokta OLMADAN kısaltılır (Google gerekirse kendisi keser)."""
+    baslik = (baslik or "").strip()
+    if len(baslik) + len(marka) + 3 <= 65:
+        return "%s | %s" % (baslik, marka)
+    if len(baslik) <= 68:
+        return baslik
+    return baslik[:66].rsplit(" ", 1)[0].rstrip(",;:—-– ")
+
+
 def haber_html(m, komsular):
     yz = m.get("yazi") if isinstance(m.get("yazi"), dict) else None
     baslik = (yz or {}).get("baslik") or m["baslik"]
@@ -881,7 +922,7 @@ def haber_html(m, komsular):
     kat_ad = KATEGORI[m["kat"]][0]
     aciklama = ((yz or {}).get("meta") or m.get("olgu") or "").strip()
     if len(aciklama) < 110:   # SEO kapısı: description ≥110; olgu kısa kalınca kaynak ve bölüm bağlamı eklenir
-        ek = " Kaynak: %s. %s bölümü, LunaTrendSaphiens — Luna Yapım'ın üretim tarafından okuması ve bağlam." % (m.get("kaynak_ad") or "haber", kat_ad)
+        ek = " Kaynak: %s. %s bölümü, TrendSaphiens — Luna Yapım'ın üretim tarafından okuması ve bağlam." % (m.get("kaynak_ad") or "haber", kat_ad)
         if aciklama and aciklama[-1] not in ".!?…": aciklama += "."
         aciklama = (aciklama + ek).strip()
         if len(aciklama) < 110: aciklama = baslik + ". " + aciklama
@@ -892,10 +933,10 @@ def haber_html(m, komsular):
          "inLanguage": "tr", "articleSection": kat_ad,
          "image": _gorsel_url(m["gorsel"], mutlak=True),
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
-         "publisher": {"@type": "Organization", "name": "LunaTrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
+         "publisher": {"@type": "Organization", "name": "TrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
          "citation": _atif(m)},
         {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "LunaTrendSaphiens", "item": KOK_URL},
+            {"@type": "ListItem", "position": 1, "name": "TrendSaphiens", "item": KOK_URL},
             {"@type": "ListItem", "position": 2, "name": kat_ad, "item": KOK_URL + m["kat"] + "/"},
             {"@type": "ListItem", "position": 3, "name": baslik, "item": url}]}] + ([
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q.get("soru", ""), "acceptedAnswer": {"@type": "Answer", "text": q.get("cevap", "")}}
@@ -924,7 +965,7 @@ def haber_html(m, komsular):
 <article class="ts-yazi">
   <div class="wrap ts-yazi-izgara">
     <div class="ts-yazi-ana">
-      <div class="crumbs"><a href="./">LunaTrendSaphiens</a> · <a href="%s/">%s</a> · %s</div>
+      <div class="crumbs"><a href="./">TrendSaphiens</a> · <a href="%s/">%s</a> · %s</div>
       <span class="ts-chip">%s</span>
       <h1>%s</h1>
       <p class="ts-yazi-meta">%s · %d dk okuma · Olgu kaynağı: %s%s</p>
@@ -947,23 +988,63 @@ def haber_html(m, komsular):
        _gorsel(m["gorsel"], baslik, "b"), _kunye(m.get("gorsel_kunye")), _paylas(url, baslik),
        _makale_govde(m, yz, hizmet_ad),
        REKLAM, alt_not, _abone("../"), komsu_kart)
-    return _bas(kisa + " | TrendSaphiens", aciklama, url, m["gorsel"], sema, "article") + govde + _alt("../", "")
+    return _bas(_sayfa_basligi(baslik), aciklama, url, m["gorsel"], sema, "article") + govde + _alt("../", "")
+
+
+
+# 23.09.2026 — "dolar kaç TL" ve "gram altın" her gün aranır; rehber 03.09'da yazılıp
+# öyle kalmıştı. Artık sayfanın başında günün rakamı durur ve dateModified veri tarihidir.
+REHBER_PIYASA = {"dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli": "dolar",
+                 "gram-altin-nasil-hesaplanir-ons-dolar": "altin"}
+
+
+def _rehber_bugun(r):
+    tur = REHBER_PIYASA.get(r.get("slug"))
+    if not tur:
+        return "", None
+    try:
+        from . import piyasa_gunluk as PG
+        v = PG.son()
+    except Exception:
+        v = None
+    if not v:
+        return "", None
+    t = v["tarih"]
+    if tur == "dolar":
+        x = ((v.get("tcmb") or {}).get("kurlar") or {}).get("USD") or {}
+        if not x.get("satis"):
+            return "", None
+        ic = ("TCMB döviz satış kuru: <b>1 dolar = %s TL</b> (döviz alış %s TL, efektif satış %s TL). "
+              "Bankanın gişe kuru ve döviz bürosunun kuru bundan farklıdır; nedeni aşağıda."
+              % (_e(_tl(x["satis"])), _e(_tl(x.get("alis")) or "—"), _e(_tl(x.get("efektif_satis")) or "—")))
+    else:
+        g = (v.get("altin") or {}).get("gram-altin") or {}
+        if not g.get("satis"):
+            return "", None
+        ic = ("Gram altın satış: <b>%s TL</b> (alış %s TL). Güncelleme: %s. Kuyumcu fiyatı işçilik ve makasa göre farklıdır; "
+              "hesabın nasıl yapıldığı aşağıda." % (_e(g["satis"]), _e(g.get("alis") or "—"), _e((v.get("altin") or {}).get("guncelleme") or t)))
+    kutu = ('<div class="ts-analiz ts-bugun"><h2 class="etk">Bugünkü rakam · %s</h2><p>%s</p>'
+            '<p><a href="piyasa/%s">Dolar, euro ve altın — günün tam tablosu →</a></p>'
+            '<p class="ts-not">Resmî kaynaktan otomatik alınır; yatırım tavsiyesi değildir.</p></div>'
+            % (_e(_tr_tarih(t)), ic, _e(t)))
+    return kutu, t
 
 
 def rehber_html(m, komsular):
     r = m["rehber"]; baslik = r["baslik"]; url = KOK_URL + r["slug"]; kat_ad = KATEGORI[r["kat"]][0]
-    kisa = baslik if len(baslik) <= 52 else baslik[:52].rsplit(" ", 1)[0].rstrip(",;:—-") + "…"
+    bugun_kutu, veri_t = _rehber_bugun(r)
+    guncel_t = max(r["tarih"], veri_t) if veri_t else r["tarih"]
     aciklama = r["ozet"][:158]
     govde_metin = " ".join(p for _, p in r["bolumler"])
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
-        {"@type": "Article", "headline": baslik, "description": aciklama, "url": url, "datePublished": r["tarih"], "dateModified": r["tarih"],
-         "inLanguage": "tr", "articleSection": kat_ad, "image": "https://lunayapim.com/assets/studyo/%s.jpg" % r["gorsel"],
+        {"@type": "Article", "headline": baslik, "description": aciklama, "url": url, "datePublished": r["tarih"], "dateModified": guncel_t,
+         "inLanguage": "tr", "articleSection": kat_ad, "image": _gorsel_url(r["gorsel"], mutlak=True),
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
-         "publisher": {"@type": "Organization", "name": "LunaTrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
+         "publisher": {"@type": "Organization", "name": "TrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
          "citation": [{"@type": "CreativeWork", "name": a, "url": u} for a, u in r.get("kaynaklar", [])]},
         {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in r.get("sss", [])]},
         {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "LunaTrendSaphiens", "item": KOK_URL},
+            {"@type": "ListItem", "position": 1, "name": "TrendSaphiens", "item": KOK_URL},
             {"@type": "ListItem", "position": 2, "name": kat_ad, "item": KOK_URL + r["kat"] + "/"},
             {"@type": "ListItem", "position": 3, "name": baslik, "item": url}]}]}, ensure_ascii=False) + "</script>"
     bolumler = "".join("<h2>%s</h2><p>%s</p>" % (_e(h), _e(p)) for h, p in r["bolumler"])
@@ -980,13 +1061,14 @@ def rehber_html(m, komsular):
 <article class="ts-yazi">
   <div class="wrap ts-yazi-izgara">
     <div class="ts-yazi-ana">
-      <div class="crumbs"><a href="./">LunaTrendSaphiens</a> · <a href="%s/">%s</a> · Rehber</div>
+      <div class="crumbs"><a href="./">TrendSaphiens</a> · <a href="%s/">%s</a> · Rehber</div>
       <span class="ts-chip">Rehber</span>
       <h1>%s</h1>
       <p class="ts-yazi-meta">%s · %d dk okuma · kalıcı yazı, gerektikçe güncellenir</p>
       <div class="ts-yazi-gorsel">%s</div>
       %s
       <p class="ts-olgu">%s</p>
+      %s
       <div class="ts-rehber">%s</div>
       <div class="ts-baglam ts-sss"><h2>Sık sorulanlar</h2>%s</div>
       <div class="ts-baglam"><h2>Kaynaklar</h2><ul class="ts-kaynaklar">%s</ul><p class="ts-not">Tarih ve kural bilgisi yalnızca kurumun kendi yayınına dayanır; bir kural değiştiğinde yazı güncellenir ve güncelleme tarihi değişir.</p></div>
@@ -999,14 +1081,14 @@ def rehber_html(m, komsular):
     </aside>
   </div>
 </article>
-""" % (r["kat"], _e(kat_ad), _e(baslik), _e(_tr_tarih(r["tarih"])), _okuma_sure(govde_metin), _gorsel(r["gorsel"], baslik, "b"), _paylas(url, baslik),
-       _e(r["ozet"]), bolumler, sss, kaynaklar, risk, _takvim_kutu("../", ""), _abone("../"), komsu_kart)
-    return _bas(kisa + " | TrendSaphiens", aciklama, url, r["gorsel"], sema, "article") + govde + _alt("../", "")
+""" % (r["kat"], _e(kat_ad), _e(baslik), _e(("Güncellendi " + _tr_tarih(guncel_t)) if guncel_t != r["tarih"] else _tr_tarih(r["tarih"])), _okuma_sure(govde_metin), _gorsel(r["gorsel"], baslik, "b"), _paylas(url, baslik),
+       _e(r["ozet"]), bugun_kutu, bolumler, sss, kaynaklar, risk, _takvim_kutu("../", ""), _abone("../"), komsu_kart)
+    return _bas(_sayfa_basligi(baslik), aciklama, url, r["gorsel"], sema, "article") + govde + _alt("../", "")
 
 
 def sistem_html():
     on, tr = "../../", "../"
-    baslik = "Sonuç veren organlarımız — LunaTrendSaphiens"
+    baslik = "Sonuç veren organlarımız — TrendSaphiens"
     aciklama = "Bu yayını ve piyasa defterini işleten organlar: Gözcü, Aday, Rejim, Beyin, İcra, Bekçi, Ekspertiz, Teyit, Pusula, Asistan. Ne yaptıkları; nasıl yaptıkları değil."
     url = KOK_URL + "sistem/"
     organ = "".join('<div class="ts-organ gor"><b>%s</b><p>%s</p></div>' % (_e(a), _e(b)) for a, b in ORGANLAR)
@@ -1014,7 +1096,7 @@ def sistem_html():
     govde = """
 <section class="ts-manset ts-manset-sistem">
   <div class="wrap">
-    <div class="crumbs"><a href="../">LunaTrendSaphiens</a> · Sistem</div>
+    <div class="crumbs"><a href="../">TrendSaphiens</a> · Sistem</div>
     <div class="ts-mast"><h1>Sonuç veren organlarımız</h1><p>Bu yayın bir kişinin sabah rutini değil; birbirini denetleyen organların işi. Ne yaptıklarını yazıyoruz, nasıl yaptıklarını değil.</p></div>
     <div class="ts-organlar">%s</div>
   </div>
@@ -1031,7 +1113,7 @@ def sistem_html():
 </div></section>
 """ % (organ, ilke, on, RISK, _abone(on), on)
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "AboutPage", "name": baslik, "url": url, "description": aciklama,
-            "isPartOf": {"@type": "WebSite", "name": "LunaTrendSaphiens", "url": KOK_URL}, "publisher": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"}}, ensure_ascii=False) + "</script>"
+            "isPartOf": {"@type": "WebSite", "name": "TrendSaphiens", "url": KOK_URL}, "publisher": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"}}, ensure_ascii=False) + "</script>"
     return _bas(baslik, aciklama, url, "../video/karga-k6", sema, "website", on, tr) + govde + _alt(on, tr)
 
 
@@ -1054,9 +1136,9 @@ def _gunluk_kabuk(baslik, aciklama, url, kat, gorsel, govde, sema_tur="Article",
         {"@type": sema_tur, "headline": baslik, "description": aciklama, "url": url, "inLanguage": "tr",
          "datePublished": tarih or datetime.date.today().isoformat(), "dateModified": tarih or datetime.date.today().isoformat(),
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
-         "publisher": {"@type": "Organization", "name": "LunaTrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}}},
+         "publisher": {"@type": "Organization", "name": "TrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}}},
         {"@type": "BreadcrumbList", "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "LunaTrendSaphiens", "item": KOK_URL},
+            {"@type": "ListItem", "position": 1, "name": "TrendSaphiens", "item": KOK_URL},
             {"@type": "ListItem", "position": 2, "name": KATEGORI[kat][0], "item": KOK_URL + kat + "/"},
             {"@type": "ListItem", "position": 3, "name": baslik, "item": url}]}]}, ensure_ascii=False) + "</script>"
     if not guncel:
@@ -1216,7 +1298,7 @@ def aranan_html(v, kok, guncel=True):
     govde = """
 <article class="ts-yazi"><div class="wrap ts-yazi-izgara">
   <div class="ts-yazi-ana">
-    <div class="crumbs"><a href="../">LunaTrendSaphiens</a> · <a href="./">Bugün Aranan</a> · %s</div>
+    <div class="crumbs"><a href="../">TrendSaphiens</a> · <a href="./">Bugün Aranan</a> · %s</div>
     <span class="ts-chip">Günün listesi</span>
     <h1>Türkiye bugün ne aradı?</h1>
     <p class="ts-yazi-meta">%s · Google Trends Türkiye · %d başlık</p>
@@ -1245,7 +1327,7 @@ def bolum_gunluk_html(kat, t, liste, cerceve):
     govde = """
 <article class="ts-yazi"><div class="wrap ts-yazi-izgara">
   <div class="ts-yazi-ana">
-    <div class="crumbs"><a href="../">LunaTrendSaphiens</a> · <a href="./">%s</a> · %s</div>
+    <div class="crumbs"><a href="../">TrendSaphiens</a> · <a href="./">%s</a> · %s</div>
     <span class="ts-chip">%s</span>
     <h1>%s: bugün ne var?</h1>
     <p class="ts-yazi-meta">%s · %d madde · kaynaklı</p>
@@ -1295,17 +1377,17 @@ def piyasa_html(v, guncel=True):
     govde = """
 <article class="ts-yazi"><div class="wrap ts-yazi-izgara">
   <div class="ts-yazi-ana">
-    <div class="crumbs"><a href="../">LunaTrendSaphiens</a> · <a href="./">Piyasalar</a> · %s</div>
+    <div class="crumbs"><a href="../">TrendSaphiens</a> · <a href="./">Piyasalar</a> · %s</div>
     <span class="ts-chip">Günün rakamı</span>
     <h1>Dolar, euro ve altın bugün</h1>
     <p class="ts-yazi-meta">%s · TCMB bülten %s · alındı %s</p>
     %s
     <h2>TCMB döviz kurları (TL)</h2>
     <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Para birimi</th><th>Döviz alış</th><th>Döviz satış</th><th>Efektif alış</th><th>Efektif satış</th></tr></thead><tbody>%s</tbody></table></div>
-    <p class="ts-not">Rakamlar TCMB'nin günlük kur tablosundan alındı, tarih %s. Bankaların uyguladığı kur farklıdır; bu tablo gösterge niteliğindedir.</p>
+    <p class="ts-not">Rakamlar TCMB'nin günlük kur tablosundan alındı, tarih %s. Bankaların uyguladığı kur farklıdır; bu tablo gösterge niteliğindedir. <a href="../dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli">Dolar kaç TL, bankadaki kur neden farklı?</a></p>
     <h2>Altın (TL)</h2>
     <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Ürün</th><th>Alış</th><th>Satış</th><th>Değişim</th></tr></thead><tbody>%s</tbody></table></div>
-    <p class="ts-not">Altın rakamları açık bir finans beslemesinden alındı, güncelleme %s. Kuyumcu fiyatı işçilik ve makasa göre değişir.</p>
+    <p class="ts-not">Altın rakamları açık bir finans beslemesinden alındı, güncelleme %s. Kuyumcu fiyatı işçilik ve makasa göre değişir. <a href="../gram-altin-nasil-hesaplanir-ons-dolar">Gram altın nasıl hesaplanır?</a></p>
     %s
     %s
     %s
@@ -1341,6 +1423,7 @@ def _baska_modul_sayfalari(kok):
         from . import arac as A
         slug |= {s for s, _ad, _oz, _r in A.ARACLAR}
         slug.add("araclar")
+        slug |= {s for s, _i in getattr(A, "YUKSELEN_SAYFA", [])}
     except Exception:
         pass
     try:
@@ -1360,7 +1443,8 @@ def _baska_modul_sayfalari(kok):
     slug |= {"araclar", "yukselen-burc-hesaplama", "burc-uyumu", "yas-hesaplama",
              "vucut-kitle-indeksi", "yuzde-hesaplama", "oruntu-oyunu", "bulten",
              "hakkimizda", "iletisim", "gizlilik", "kosullar", "denetim",
-             "404"}   # 22.09: TrendSaphiens'in kendi 404 sayfasi (kurumsal.py basar)
+             "404"} | {"yukselen-" + z for z in ("koc", "boga", "ikizler", "yengec", "aslan", "basak",
+                                                 "terazi", "akrep", "yay", "oglak", "kova", "balik")}   # 22.09: TrendSaphiens'in kendi 404 sayfasi (kurumsal.py basar)
     return {os.path.abspath(os.path.join(kok, "trend", x + ".html")) for x in slug}
 
 
@@ -1620,9 +1704,9 @@ def yayinla(kok=None, paylas=False):
         try:
             from . import x_paylas
             bugun = datetime.date.today().isoformat()
-            gonderiler = [("%s — LunaTrendSaphiens" % m["baslik"], KOK_URL + m["slug"]) for m in yeni[:3]]
+            gonderiler = [("%s — TrendSaphiens" % m["baslik"], KOK_URL + m["slug"]) for m in yeni[:3]]
             if any(a.endswith("aranan/" + bugun) for a in gunluk_adres):
-                gonderiler.append(("Türkiye bugün ne aradı? Günün listesi, kaynaklarıyla — LunaTrendSaphiens", KOK_URL + "aranan/" + bugun))
+                gonderiler.append(("Türkiye bugün ne aradı? Günün listesi, kaynaklarıyla — TrendSaphiens", KOK_URL + "aranan/" + bugun))
             if any(a.endswith("piyasa/" + bugun) for a in gunluk_adres):
                 gonderiler.append(("Dolar, euro ve altın bugün — TCMB tablosu ve altın, kaynaklı. Yatırım tavsiyesi değildir.", KOK_URL + "piyasa/" + bugun))
             # takvim sırası: bugün aranacak konuların sayfası üretildiyse, saat sırasıyla
@@ -1631,7 +1715,7 @@ def yayinla(kok=None, paylas=False):
                 for k in TK.paylasim_sirasi(bugun):
                     adres = KOK_URL + k["sayfa"]
                     if adres in gunluk_adres and not any(u == adres for _, u in gonderiler):
-                        gonderiler.append(("%s — kaynaklı günlük sayfa, LunaTrendSaphiens" % k["metin"], adres))
+                        gonderiler.append(("%s — kaynaklı günlük sayfa, TrendSaphiens" % k["metin"], adres))
             except Exception:
                 pass
             sonuc["x"] = [x_paylas.paylas(m, u) for m, u in gonderiler]

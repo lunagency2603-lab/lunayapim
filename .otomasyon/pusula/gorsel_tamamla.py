@@ -93,7 +93,45 @@ def calistir(log=print):
             json.dump(k, io.open(yol, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
             bulunan += 1
             log("  %-44s %s · %s" % (k.get("slug", "")[:44], g.get("lisans", "?"), (g.get("yazar") or "")[:30]))
-    return {"bakilan": bakilan, "bulunan": bulunan}
+    r = rehber_kapaklari(GB, log)
+    return {"bakilan": bakilan, "bulunan": bulunan, "rehber": r}
+
+
+# 23.09.2026 — rehber yazıları (trend_rehber.py) stüdyo fotoğrafıyla yayındaydı.
+REHBER_SORGU = {
+    "dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli": ["Turkish lira US dollar banknotes", "Turkish lira banknotes", "currency exchange office"],
+    "gram-altin-nasil-hesaplanir-ons-dolar": ["gold bullion bars", "gold coins", "gold bar"],
+    "mac-hangi-kanalda-yayinci-nasil-bulunur": ["football match television broadcast", "football stadium crowd"],
+    "vizyona-giren-filmler-ne-zaman-aciklanir-nereden-bakilir": ["cinema auditorium", "movie theater"],
+    "google-trends-bugun-en-cok-aranan-listesi-nasil-okunur": ["search engine laptop screen", "laptop keyboard"],
+    "enflasyon-verisi-ne-zaman-aciklanir-tuik-takvimi": ["supermarket prices shelf", "Turkish Statistical Institute"],
+    "yapay-zeka-ile-uretilmis-gorsel-nasil-anlasilir-etiket": ["artificial intelligence art", "neural network visualization"],
+    "isletme-sosyal-medya-haftalik-paylasim-takvimi": ["smartphone social media", "planner calendar desk"],
+    "sergi-konser-tiyatro-takvimi-nereden-takip-edilir": ["theatre stage audience", "concert hall audience"],
+}
+
+
+def rehber_kapaklari(GB, log=print):
+    yol = os.path.join(KOK_DIZIN, "veri", "trend", "rehber-gorsel.json")
+    try:
+        d = json.load(io.open(yol, encoding="utf-8"))
+    except Exception:
+        d = {}
+    bulunan = 0
+    for slug, sorgu in REHBER_SORGU.items():
+        if (d.get(slug) or {}).get("dosya"):
+            continue
+        try:
+            g = GB.bul(sorgu, "rehber-" + slug[:60])
+        except Exception as ex:
+            log("  rehber %s: %s" % (slug, ex)); continue
+        if g and g.get("dosya"):
+            d[slug] = g; bulunan += 1
+            log("  rehber %-40s %s" % (slug[:40], g.get("lisans", "?")))
+    if bulunan:
+        os.makedirs(os.path.dirname(yol), exist_ok=True)
+        json.dump(d, io.open(yol, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return bulunan
 
 
 if __name__ == "__main__":

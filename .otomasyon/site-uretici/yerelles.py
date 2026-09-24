@@ -236,7 +236,9 @@ def _lede_yerel(s, c, hizmet):
         mek = [x.strip() for x in (c.get("mekan") or "").split(",") if x.strip()]
         sek = [x for x in (c.get("sektorler") or [])][:3]
         if mek:
-            olgu = "%s%s çalışırken sık döndüğümüz yerler: %s." % (_e(c["ad"]), _e(c["ek"]), _e(_liste(mek[:3])))
+            # 23.09.2026: "çalışırken sık döndüğümüz yerler" her ilde tekrarlanan bir deneyim
+            # iddiasıydı; yerine iddiasız, yine yerel bir tanım.
+            olgu = "%s%s çekim planında öne çıkan yerler: %s." % (_e(c["ad"]), _e(c["ek"]), _e(_liste(mek[:3])))
         elif sek:
             olgu = "%s%s üretim %s üzerinde yoğunlaşıyor." % (_e(c["ad"]), _e(c["ek"]), _e(_liste([x.lower() for x in sek])))
     if not olgu:
@@ -416,6 +418,88 @@ def ortak_kes_otomatik(kok, esik=0.9):
     return rapor
 
 # ------------------------------------------------------------------ çalıştır
+
+# ------------------------------------------------------------------ 5) sayfa içi tekrar temizliği (23.09.2026)
+# Ölçüm: 509 il sayfasının 504'ünde aynı cümle/paragraf aynı sayfada iki kez geçiyordu
+# (toplam 1.265 tekrar) — ör. drone sayfalarında "Tesis ve sanayi: ..." paragrafı hem
+# analiz hem "talebi ne besliyor" bölümünde. Search Console'da 162 "keşfedildi" ve 25
+# "tarandı - dizine eklenmedi" sayfanın bir nedeni bu şablon kokusu. Burada yalnız
+# SİLİNİR, yeni metin üretilmez: aynı sayfada ikinci kez geçen blok/cümle çıkar.
+def _cumleler(t):
+    return [x.strip() for x in re.split(r"(?<=[.!?])\s+", t) if x.strip()]
+
+
+def _nrm(x):
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip().lower()
+
+
+def ic_tekrar_temizle(s):
+    a = s.find("</header>"); b = s.rfind("<footer")
+    if a < 0 or b <= a:
+        return s, 0
+    govde = s[a:b]
+    gorulen, silinen = set(), [0]
+
+    def degis(m):
+        tag, attr, ic = m.group(1), m.group(2) or "", m.group(3)
+        tam = _nrm(ic)
+        if len(tam.split()) < 6:
+            return m.group(0)
+        if tam in gorulen:
+            silinen[0] += 1
+            return ""
+        if "<" not in ic:
+            parca = _cumleler(ic)
+            kalan = [c for c in parca if not (len(_nrm(c).split()) >= 8 and _nrm(c) in gorulen)]
+            for c in kalan:
+                if len(_nrm(c).split()) >= 8:
+                    gorulen.add(_nrm(c))
+            gorulen.add(tam)
+            if not kalan:
+                silinen[0] += 1
+                return ""
+            if len(kalan) != len(parca):
+                silinen[0] += len(parca) - len(kalan)
+                return "<%s%s>%s</%s>" % (tag, attr, " ".join(kalan), tag)
+            return m.group(0)
+        gorulen.add(tam)
+        for c in _cumleler(tam):
+            if len(c.split()) >= 8:
+                gorulen.add(c)
+        return m.group(0)
+
+    yeni = ELEME_ETIKET.sub(degis, govde)
+    if not silinen[0]:
+        return s, 0
+    yeni = _bos_baslik_temizle(yeni)
+    t = s[:a] + yeni + s[b:]
+    if _sayfa_kelime(t) < ASGARI_KELIME:      # SEO kapısını düşürmesin
+        return s, 0
+    return t, silinen[0]
+
+
+GIRIS_HATA = re.compile(r"Aynı işi her ilde aynı şekilde yapmıyoruz — ([^<]{2,30}?)(?:'|&#x27;)ın kendi dinamiği var\.")
+
+
+def ic_tekrar_hepsi(kok):
+    d = os.path.join(kok, "sehir")
+    rap = {"sayfa": 0, "silinen_blok": 0, "ek_duzeltme": 0}
+    for n in sorted(os.listdir(d)):
+        if not n.endswith(".html"):
+            continue
+        yol = os.path.join(d, n)
+        s = open(yol, encoding="utf-8").read()
+        o = s
+        # "Çorum'ın", "Antalya'ın" gibi yanlış ekli giriş cümlesi (cesit.py GIRIS)
+        s, k = GIRIS_HATA.subn(r"Aynı işi her ilde aynı şekilde yapmıyoruz; aşağıdaki notlar \1 için.", s)
+        rap["ek_duzeltme"] += k
+        s, n_sil = ic_tekrar_temizle(s)
+        rap["silinen_blok"] += n_sil
+        if s != o:
+            open(yol, "w", encoding="utf-8").write(s); rap["sayfa"] += 1
+    return rap
+
+
 def calistir(kok):
     d = os.path.join(kok, "sehir")
     if not os.path.isdir(d):
@@ -453,6 +537,15 @@ def calistir(kok):
             s = y
         s = s.replace("<h2 id=\"surec\">Süreç</h2>", "<h2 id=\"surec\">%s%s işleyiş</h2>" % (_e(c["ad"]), _e(c["ek"])))
         s = s.replace("<h2>Süreç</h2>", "<h2>%s%s işleyiş</h2>" % (_e(c["ad"]), _e(c["ek"])))
+        # 23.09.2026: "render fiyatları" / "3d mimari görselleştirme fiyatları" aramalarında
+        # fiyat rehberi 60-72. sırada; 81 il sayfasının hiçbiri ona bağlanmıyordu.
+        if hizmet == "insaat-3d-modelleme" and "data-fiyat-rehber" not in s:
+            k = s.find('<section class="cta">')
+            if k > 0:
+                s = s[:k] + ('<section data-fiyat-rehber><div class="wrap prose"><p>%s%s 3D render bütçesi '
+                             'hazırlıyorsanız <a href="../blog/insaat-3d-modelleme-fiyatlari">3D render ve mimari '
+                             'görselleştirme fiyatları</a> rehberinde maliyeti belirleyen altı kalem ve gerçek '
+                             'fiyat bandı yazılı.</p></div></section>\n' % (_e(c["ad"]), _e(c["ek"]))) + s[k:]
         if 'data-yerel="%s"' % hizmet not in s:
             blok = _yerel_bolum(c, hizmet)
             if blok:
@@ -465,6 +558,7 @@ def calistir(kok):
         if s != o:
             open(yol, "w", encoding="utf-8").write(s); sayac["islenen"] += 1
     sayac["ortak_kesim"] = ortak_kes_otomatik(kok)
+    sayac["ic_tekrar"] = ic_tekrar_hepsi(kok)
     return sayac
 
 

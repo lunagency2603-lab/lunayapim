@@ -31,7 +31,7 @@ ALTERNATIF = {
 # --- açılış geçiş cümleleri (her ilde farklı bir giriş tonu) ---
 GIRIS = [
  "Şehri tanımadan iş yapmıyoruz; aşağıdaki her satır {ad} için yazıldı.",
- "Aynı işi her ilde aynı şekilde yapmıyoruz — {ad}'ın kendi dinamiği var.",
+ "Aynı işi her ilde aynı şekilde yapmıyoruz; aşağıdaki notlar {ad} için.",   # 23.09: '{ad}'ın' her ilde yanlış ek veriyordu
  "Bu sayfadaki her şey {ad} için ayrı düşünüldü, başka ilden kopyalanmadı.",
  "{ad} özelinde ne yaptığımızı ve neden böyle yaptığımızı aşağıda anlattık.",
  "Bir şehirde işe yarayan anlatım diğerinde yaramıyor; {ad} için olan bu.",

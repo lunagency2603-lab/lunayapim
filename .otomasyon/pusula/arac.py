@@ -33,7 +33,7 @@ from . import trend as T
 
 KOK_URL = "https://lunayapim.com/trend/"
 # Sayfa sürümü: Cloudflare dağıtımı bir dosyayı atlarsa bu damga değişince yeniden yüklenir.
-SURUM = "2026-09-20-2"
+SURUM = "2026-09-23-1"
 
 # 81 il — merkez koordinatları (ondalık derece, doğu boylamı pozitif).
 # Yükselen için il merkezi yeterli: ilçe farkı ASC'yi tipik olarak 0,1°'den az oynatır.
@@ -221,6 +221,185 @@ YUKSELEN_JS = """
 """
 
 
+
+# ───────────────────────────────────── yükselen saat aralıkları (23.09.2026)
+# Search Console: TrendSaphiens'e gelen aramaların neredeyse tamamı "yükselen terazi
+# saat kaç", "yükselen aslan saat kaç", "yükselen saat aralıkları" türünden. Sayfa
+# hesaplayıcıyı veriyordu ama bu soruya doğrudan cevap vermiyordu (sıra 84).
+# Aşağıdaki tablolar TAHMİN değil: hesaplayıcıdaki formülün aynısıyla, her ayın
+# 15'i için dakika dakika hesaplanır. Türkiye 2016'dan beri sabit UTC+3.
+import math as _m
+
+YUKSELEN_SEHIR = [("İstanbul", 41.01, 28.98), ("Ankara", 39.93, 32.86), ("İzmir", 38.42, 27.14)]
+AYLAR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos",
+         "Eylül", "Ekim", "Kasım", "Aralık"]
+# /yukselen-<burc> — 12 sayfa; trend.py süpürgesi bu listeyi de muaf tutar
+YUKSELEN_SAYFA = [("yukselen-" + zs, i) for i, (_ad, zs) in enumerate(BURCLAR)]
+
+
+def _jd(y, ay, g, saat):
+    if ay <= 2:
+        y -= 1; ay += 12
+    a = y // 100; b = 2 - a + a // 4
+    return _m.floor(365.25 * (y + 4716)) + _m.floor(30.6001 * (ay + 1)) + g + saat / 24.0 + b - 1524.5
+
+
+def _asc(y, ay, g, utc_saat, enlem, boylam):
+    """YUKSELEN_JS'teki hesabın Python karşılığı (Meeus JD+GMST, standart ASC)."""
+    jd = _jd(y, ay, g, utc_saat); t = (jd - 2451545.0) / 36525
+    gmst = (280.46061837 + 360.98564736629 * (jd - 2451545.0) + 0.000387933 * t * t - t ** 3 / 38710000) % 360
+    ramc = _m.radians((gmst + boylam) % 360)
+    eps = _m.radians(23.4392911 - 0.0130042 * t - 0.00000016 * t * t + 0.000000504 * t ** 3)
+    fi = _m.radians(enlem)
+    mc = _m.degrees(_m.atan2(_m.sin(ramc), _m.cos(ramc) * _m.cos(eps))) % 360
+    a = _m.degrees(_m.atan2(_m.cos(ramc), -(_m.sin(eps) * _m.tan(fi) + _m.cos(eps) * _m.sin(ramc)))) % 360
+    if (a - mc) % 360 > 180:
+        a = (a + 180) % 360
+    return a
+
+
+def _yuvarla5(dk):
+    return int(round(dk / 5.0)) * 5 % 1440
+
+
+def _saat(dk):
+    return "%02d:%02d" % (dk // 60, dk % 60)
+
+
+def yukselen_araliklari(y, ay, g, enlem, boylam):
+    """Yerel saatle (UTC+3) o gün her burcun yükselen olduğu dakika aralığı.
+    Dönüş: {burç_indeksi: (başlangıç_dk, bitiş_dk, süre_dk)} — gece yarısını aşabilir."""
+    burc = [int(_asc(y, ay, g, (dk - 180) / 60.0, enlem, boylam) // 30) for dk in range(1440)]
+    # gece yarısını bölmemek için döngüyü bir burç değişiminden başlat
+    bas = next(i for i in range(1, 1440) if burc[i] != burc[i - 1])
+    sira = [(bas + k) % 1440 for k in range(1440)]
+    sonuc, i0 = {}, sira[0]
+    for k in range(1, 1441):
+        dk = sira[k % 1440]
+        if k == 1440 or burc[dk] != burc[i0]:
+            son = sira[k - 1]
+            yeni = (i0, (son + 1) % 1440, ((son + 1) - i0) % 1440 or 1440)
+            # Güneş günü yıldız gününden ~4 dk uzun: bir burç gün sonunda birkaç
+            # dakikalığına ikinci kez başlar. Gerçek yükseliş en uzun parçadır.
+            if burc[i0] not in sonuc or yeni[2] > sonuc[burc[i0]][2]:
+                sonuc[burc[i0]] = yeni
+            i0 = dk
+    return sonuc
+
+
+def yukselen_tablosu(yil=None):
+    """{burç: [(ay_adı, {şehir: 'HH:MM – HH:MM'}), ...12]}"""
+    import datetime
+    yil = yil or datetime.date.today().year
+    tablo = {i: [] for i in range(12)}
+    for ay in range(1, 13):
+        sehir_ar = {ad: yukselen_araliklari(yil, ay, 15, en, bo) for ad, en, bo in YUKSELEN_SEHIR}
+        for i in range(12):
+            satir = {}
+            for ad, _en, _bo in YUKSELEN_SEHIR:
+                a, z, sure = sehir_ar[ad][i]
+                satir[ad] = (_saat(_yuvarla5(a)), _saat(_yuvarla5(z)), sure)
+            tablo[i].append((AYLAR[ay - 1], satir))
+    return tablo
+
+
+def _aralik_metni(t):
+    return "%s – %s" % (t[0], t[1])
+
+
+def yukselen_burc_html(i, tablo=None):
+    import datetime
+    ad, zs = BURCLAR[i]
+    tablo = tablo or yukselen_tablosu()
+    yil = datetime.date.today().year
+    satirlar = tablo[i]
+    sureler = [s[1]["Ankara"][2] for s in satirlar]
+    en_kisa, en_uzun = min(sureler), max(sureler)
+    bu_ay = satirlar[datetime.date.today().month - 1]
+    tbl = ('<div class="ts-tablo-sar"><table class="ts-tablo"><thead><tr><th>Ay (15\'i)</th>%s</tr></thead><tbody>%s</tbody></table></div>'
+           % ("".join("<th>%s</th>" % _e(s) for s, _a, _b in YUKSELEN_SEHIR),
+              "".join("<tr><td>%s</td>%s</tr>" % (_e(ay_ad), "".join("<td>%s</td>" % _aralik_metni(v[s]) for s, _a, _b in YUKSELEN_SEHIR))
+                      for ay_ad, v in satirlar)))
+    kisa_mi = en_uzun < 100
+    govde = """
+<section class="ts-giris">
+  <h2>Yükselen %(ad)s saat kaçta?</h2>
+  <p>Bu ay (%(ay)s) yükselen %(ad)s İstanbul'da yaklaşık <strong>%(ist)s</strong>, Ankara'da
+  <strong>%(ank)s</strong>, İzmir'de <strong>%(izm)s</strong> saatleri arasında doğuyor. Saatler Türkiye
+  saatidir ve ayın 15'i için hesaplanmıştır.</p>
+  <p>Aynı burcun yükselme saati her gün yaklaşık 4 dakika erkene kayar; bu yüzden aşağıdaki tablo
+  her ay için ayrı saat aralığı verir. Yükselen %(ad)s Ankara'da günde en kısa %(kisa)d, en uzun
+  %(uzun)d dakika sürer.%(sure_notu)s</p>
+</section>
+<h2>Ay ay yükselen %(ad)s saatleri (%(yil)d)</h2>
+%(tablo)s
+<p class="ts-not">Tablo, hesaplayıcının kullandığı astronomi formülüyle her ayın 15'i için dakika
+dakika hesaplandı ve 5 dakikaya yuvarlandı. Ayın başında saatler yaklaşık bir saat daha geç, ayın
+sonunda bir saat daha erkendir. Aralığın sınırına yakın bir saatte doğduysanız tam sonucu
+<a href="yukselen-burc-hesaplama">yükselen burç hesaplama</a> aracından alın.</p>
+<section class="ts-giris">
+  <h2>Şehre göre neden farklı?</h2>
+  <p>Türkiye tek saat dilimini kullanır ama güneş ve yıldızlar doğuda daha erken doğar. İstanbul ile
+  Ankara arasında yaklaşık 15 dakika fark vardır; Van ya da Hakkâri gibi doğu illerinde yükselen
+  İstanbul'a göre bir saate yakın erken gelir. Enlem de sürenin uzunluğunu biraz değiştirir.</p>
+  <h2>Doğum saatim yoksa yükselen %(ad)s olup olmadığımı bilebilir miyim?</h2>
+  <p>Kesin olarak hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati olmadan
+  hesaplanamaz. Doğum saati nüfus kayıt örneğinde yer alır ve e-Devlet üzerinden alınabilir.</p>
+  <h2>Yükselen %(ad)s ne anlama gelir?</h2>
+  <p>Astroloji geleneğinde yükselen, kişinin dışarıya dönük yüzü ve ilk izlenimi olarak yorumlanır.
+  %(ad)s burcunun gelenekte atfedilen özellikleri <a href="%(zs)s-burcu-ozellikleri">%(ad)s burcu
+  sayfasında</a>. Bu yorumlar astrolojinin kendi anlatısıdır; kişiliği ölçen bilimsel bir yöntem
+  değildir.</p>
+</section>
+<p class="ts-arac-geri"><a class="btn" href="yukselen-burc-hesaplama">Kendi yükselenimi hesapla →</a></p>
+<nav class="ts-giris"><h2>Diğer yükselenler</h2><p>%(diger)s</p></nav>
+""" % {
+        "ad": _e(ad), "zs": zs, "ay": AYLAR[datetime.date.today().month - 1], "yil": yil,
+        "ist": _aralik_metni(bu_ay[1]["İstanbul"]), "ank": _aralik_metni(bu_ay[1]["Ankara"]),
+        "izm": _aralik_metni(bu_ay[1]["İzmir"]), "kisa": en_kisa, "uzun": en_uzun,
+        "sure_notu": (" Kısa yükselen burçlardan biridir: gökyüzünde ufka eğik geldiği için hızlı geçer."
+                      if kisa_mi else ""),
+        "tablo": tbl,
+        "diger": " · ".join('<a href="yukselen-%s">Yükselen %s</a>' % (z2, _e(a2))
+                           for a2, z2 in BURCLAR if z2 != zs),
+    }
+    sss = [
+        ("Yükselen %s saat kaç?" % ad,
+         "Bu ay İstanbul'da yaklaşık %s, Ankara'da %s arası (Türkiye saati, ayın 15'i). Saat her gün yaklaşık 4 dakika erkene kayar; diğer aylar sayfadaki tabloda."
+         % (_aralik_metni(bu_ay[1]["İstanbul"]), _aralik_metni(bu_ay[1]["Ankara"]))),
+        ("Yükselen %s ne kadar sürer?" % ad,
+         "Ankara'da günde %d ile %d dakika arasında; burç ufka hangi açıyla geldiğine göre değişir." % (en_kisa, en_uzun)),
+        ("Doğum saati olmadan yükselen hesaplanır mı?",
+         "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati gerekir; saat nüfus kayıt örneğinde yazar."),
+    ]
+    return _sayfa(
+        "yukselen-" + zs,
+        "Yükselen %s Saat Kaç? Ay ay saat aralıkları | TrendSaphiens" % ad,
+        "Yükselen %s hangi saatlerde doğar? İstanbul, Ankara ve İzmir için 12 ayın saat aralıkları, astronomik hesapla. Kendi yükselenini de hesapla." % ad,
+        "Yükselen %s saat kaçta?" % ad,
+        "Yükselen %s burcunun gün içindeki saat aralıkları, ay ay ve şehir şehir." % ad,
+        govde, sss=sss)
+
+
+def yukselen_bu_ay_html(tablo=None):
+    """Hesaplayıcı sayfasına: bu ayın 12 burçluk saat tablosu + 12 sayfaya bağlantı."""
+    import datetime
+    tablo = tablo or yukselen_tablosu()
+    ay = datetime.date.today().month
+    satir = "".join(
+        '<tr><td><a href="yukselen-%s">Yükselen %s</a></td>%s</tr>'
+        % (zs, _e(ad), "".join("<td>%s</td>" % _aralik_metni(tablo[i][ay - 1][1][s]) for s, _a, _b in YUKSELEN_SEHIR))
+        for i, (ad, zs) in enumerate(BURCLAR))
+    return ("<section class=\"ts-giris\"><h2>Yükselen saat aralıkları — %s %d</h2>"
+            "<p>Doğum saatinizi biliyor ama hesaplayıcıyı kullanmak istemiyorsanız aşağıdaki tablo yaklaşık "
+            "sonucu verir. Saatler Türkiye saatidir, ayın 15'i için hesaplandı; sınıra yakın saatlerde "
+            "yukarıdaki aracı kullanın. Burcun adına tıklayınca 12 ayın tamamı açılır.</p>"
+            "<div class=\"ts-tablo-sar\"><table class=\"ts-tablo\"><thead><tr><th>Burç</th>%s</tr></thead>"
+            "<tbody>%s</tbody></table></div></section>"
+            % (AYLAR[ay - 1], datetime.date.today().year,
+               "".join("<th>%s</th>" % _e(s) for s, _a, _b in YUKSELEN_SEHIR), satir))
+
+
 def yukselen_html():
     form = """
 <form id="yuk-form" class="ts-arac-kutu" autocomplete="off">
@@ -271,7 +450,10 @@ def yukselen_html():
 bildiren bilimsel bir yöntem değildir. Buradaki hesap gökyüzünün o andaki konumunu doğru şekilde
 bulur — bu konumun insan karakteriyle ilişkisi astrolojinin kendi yorumudur.</p>
 """
+    anlatim = yukselen_bu_ay_html() + anlatim
     sss = [
+        ("Yükselen burç saat aralıkları nelerdir?", "Her burç günde bir kez yükselir; sırası Koç, Boğa, İkizler diye devam eder. Hangi saatte hangi burcun yükseldiği aya ve şehre göre değişir; bu ayın tablosu sayfada, her burcun 12 aylık saatleri kendi sayfasında."),
+        ("Doğum saati olmadan yükselen burç hesaplanır mı?", "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati olmadan bulunamaz. Doğum saati nüfus kayıt örneğinde yazar; e-Devlet'ten alınabilir."),
         ("Yükselen burç nasıl hesaplanır?", "Doğum tarihi, saati ve yerinin koordinatları kullanılarak, doğum anında doğu ufkunda yükselen zodyak derecesi bulunur. Hesap yıldız zamanı, ekliptik eğikliği ve enlem üzerinden yapılır."),
         ("Yükselen kaç saatte bir değişir?", "Ortalama iki saatte bir. Yıl içinde ve enleme göre bu süre bir miktar değişir."),
         ("Doğum saatim yanlışsa ne olur?", "Dört dakikalık hata yaklaşık bir derecelik kayma yaratır. Burç sınırına yakın doğumlarda yükselen komşu burca kayabilir."),
@@ -760,6 +942,8 @@ def yayinla(kok=None):
         ("oruntu-oyunu", oyun_html()),
         ("araclar", dizin_html()),
     ]
+    _tablo = yukselen_tablosu()
+    uretilen += [(slug, yukselen_burc_html(i, _tablo)) for slug, i in YUKSELEN_SAYFA]
     for slug, html in uretilen:
         io.open(os.path.join(d, slug + ".html"), "w", encoding="utf-8").write(html)
     # sitemap

@@ -133,6 +133,30 @@ function tsRobots() {
   return new Response(g, { headers: { "content-type": "text/plain; charset=utf-8" } });
 }
 
+/* 23.09.2026 — alan adının WordPress döneminden kalan adresler.
+   Search Console: 21 "soft 404" (/tag/*, /home-two/, /category/<eşlenmemiş>) ve
+   51 "404" (/2022/07/..., /wp-content/...). Bunları ana sayfaya yönlendirmek
+   Google'a "sahte sayfa" sinyali veriyordu. Artık 410 Gone dönüyor: "kalıcı
+   olarak kaldırıldı" — Google bu adresleri 404'ten daha hızlı listeden düşürür.
+   Eşlemesi olan eski kategoriler (/category/music/ → /muzik/) 301 olarak kalır. */
+const ESKI_WP = /^\/(?:tag|category|author|page|product|shop|portfolio)\/|^\/(?:home-two|home-three|blog-2|blog|shop|cart|checkout|my-account|sample-page)\/?$|^\/(?:wp-|xmlrpc\.php|feed\/?$|comments\/)|^\/\d{4}\/\d{2}\//;
+const eskiWpMi = (p) => ESKI_WP.test(p);
+const anaSayfaMi = (konum) => {
+  try { return ["/", "/trend", "/trend/"].includes(new URL(konum, TSU).pathname); } catch (e) { return false; }
+};
+
+async function hataSayfasi(env, url, kod) {
+  // 22.09.2026 — önce TrendSaphiens'in kendi 404'ü; yoksa Luna Yapım'ınki.
+  let s = await env.ASSETS.fetch(new URL("/trend/404.html", url));
+  let taban404 = LY + "/trend/404";
+  if (!s.ok) {
+    s = await env.ASSETS.fetch(new URL("/404.html", url));
+    taban404 = LY + "/404";
+  }
+  const r = new Response(s.body, { status: kod, headers: s.headers });
+  return htmlMi(r) ? tsYaz(r, taban404) : r;
+}
+
 function yonlendir(konum, kod = 301) {
   return new Response(null, { status: kod, headers: { location: konum } });
 }
@@ -157,20 +181,14 @@ async function trendsaphiens(ctx, url, host) {
     const konum = res.headers.get("location");
     if (!konum) return res;
     const yeni = tsBaglanti(konum, hedef.toString(), false);
+    // eski WP adresi ana sayfaya düşüyorsa yönlendirme değil 410 (soft 404 olmasın)
+    if (eskiWpMi(p) && anaSayfaMi(yeni || konum)) return hataSayfasi(env, url, 410);
     return yonlendir(yeni || konum, res.status);
   }
   if (res.status === 404) {
-    // 22.09.2026 — önce TrendSaphiens'in kendi 404'ü; yoksa Luna Yapım'ınki.
     // Eskiden yalnız /404.html vardı ve trendsaphiens.com'da bulunamayan adres
     // "LUNA YAPIM" yazan bir sayfa gösteriyordu.
-    let s = await env.ASSETS.fetch(new URL("/trend/404.html", url));
-    let taban404 = LY + "/trend/404";
-    if (!s.ok) {
-      s = await env.ASSETS.fetch(new URL("/404.html", url));
-      taban404 = LY + "/404";
-    }
-    const r404 = new Response(s.body, { status: 404, headers: s.headers });
-    return htmlMi(r404) ? tsYaz(r404, taban404) : r404;
+    return hataSayfasi(env, url, eskiWpMi(p) ? 410 : 404);
   }
   if (!htmlMi(res)) return res;
   res = new Response(res.body, res);
