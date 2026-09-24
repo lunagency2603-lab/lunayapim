@@ -1,0 +1,84 @@
+{
+ "tarih": "2026-09-25",
+ "tcmb": {
+  "tarih": "24.09.2026",
+  "bulten": "2026/180",
+  "kurlar": {
+   "USD": {
+    "alis": "48.7671",
+    "satis": "48.8549",
+    "efektif_alis": "48.7329",
+    "efektif_satis": "48.9282",
+    "ad": "ABD DOLARI"
+   },
+   "EUR": {
+    "alis": "55.4945",
+    "satis": "55.5945",
+    "efektif_alis": "55.4556",
+    "efektif_satis": "55.6779",
+    "ad": "EURO"
+   },
+   "GBP": {
+    "alis": "64.4338",
+    "satis": "64.7697",
+    "efektif_alis": "64.3887",
+    "efektif_satis": "64.8669",
+    "ad": "İNGİLİZ STERLİNİ"
+   },
+   "CHF": {
+    "alis": "58.8365",
+    "satis": "59.2142",
+    "efektif_alis": "58.7482",
+    "efektif_satis": "59.3030",
+    "ad": "İSVİÇRE FRANGI"
+   },
+   "JPY": {
+    "alis": "30.6790",
+    "satis": "30.8821",
+    "efektif_alis": "30.5654",
+    "efektif_satis": "30.9995",
+    "ad": "JAPON YENİ"
+   }
+  }
+ },
+ "altin": {
+  "guncelleme": "2026-09-25 00:30:02",
+  "gram-altin": {
+   "ad": "Gram altın",
+   "alis": "6.724,02",
+   "satis": "6.724,84",
+   "degisim": "%0,09"
+  },
+  "ceyrek-altin": {
+   "ad": "Çeyrek altın",
+   "alis": "10.696,70",
+   "satis": "10.940,95",
+   "degisim": "%0,00"
+  },
+  "yarim-altin": {
+   "ad": "Yarım altın",
+   "alis": "21.326,54",
+   "satis": "21.881,90",
+   "degisim": "%0,00"
+  },
+  "tam-altin": {
+   "ad": "Tam altın",
+   "alis": "42.786,78",
+   "satis": "43.629,98",
+   "degisim": "%0,00"
+  },
+  "ons": {
+   "ad": "Ons altın (USD)",
+   "alis": "$4.274,72",
+   "satis": "$4.275,24",
+   "degisim": "%-0,01"
+  },
+  "gumus": {
+   "ad": "Gümüş",
+   "alis": "100,35",
+   "satis": "100,45",
+   "degisim": "%0,11"
+  }
+ },
+ "alindi": "2026-09-25 00:32"
+}
