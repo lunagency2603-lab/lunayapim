@@ -2,8 +2,44 @@
  "tarih": "2026-09-26",
  "aranan": [
   {
+   "baslik": "orhan okulu",
+   "hacim": "100+",
+   "haber_baslik": "Yağlı Güreş Cumhurbaşkanlığı Kupası'nda başpehlivan Orhan Okulu",
+   "haber_url": "https://spor.haber7.com/diger-branslar/haber/3662883-yagli-gures-cumhurbaskanligi-kupasinda-baspehlivan-orhan-okulu",
+   "haber_kaynak": "Haber 7",
+   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRu-eceU-s5e3JsWPifIeSHGbuchnkTiUt3xd2e6M5q1Ah4PAALK9a3Au5_fRo",
+   "bolum": "spor"
+  },
+  {
+   "baslik": "amed sportif faaliyetler",
+   "hacim": "5000+",
+   "haber_baslik": "Maça Doğru | Galatasaray - Amed Sportif Faaliyetler",
+   "haber_url": "https://www.galatasaray.org/haber/futbol/kadin-futbol/maca-dogru-galatasaray-amed-sportif-faaliyetler/61015",
+   "haber_kaynak": "GALATASARAY.ORG",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSt5IS66_kHOwoZTF3U70i1e_c7molY3OkWI365fABrlEM98M8x-6yJAJSCjMk",
+   "bolum": "spor"
+  },
+  {
+   "baslik": "الكويت ضد العراق",
+   "hacim": "100+",
+   "haber_baslik": "صراع الـ14 لقبا.. العراق والكويت في ديربي مثير لترتيب أوراق \"خليجي 27\"",
+   "haber_url": "https://www.aljazeera.net/sport/2026/9/25/%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D8%AE%D9%84%D9%8A%D8%AC%D9%8A-27",
+   "haber_kaynak": "الجزيرة نت",
+   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT8gMaFbazsGlnFP2yI16s-1QdqjLcmbwUnFFhdwAt341pQP8TDg1NIz0Ck2HM",
+   "bolum": "haber"
+  },
+  {
+   "baslik": "uçak",
+   "hacim": "1000+",
+   "haber_baslik": "Kongo'da facia: Küçük uçak yerleşim alanına düştü",
+   "haber_url": "https://www.hurriyet.com.tr/dunya/kongoda-facia-kucuk-ucak-yerlesim-alanina-dustu-43320470",
+   "haber_kaynak": "Hürriyet",
+   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQYueJtQNTEIcz5vlVF0uu8iF5rGBql-IwLqSgkH-0es1JddnJH7PkZvm_dYck",
+   "bolum": "haber"
+  },
+  {
    "baslik": "ingiltere ispanya maçı hangi kanalda",
-   "hacim": "200+",
+   "hacim": "500+",
    "haber_baslik": "De La Fuente: 'Tarih yazmaya devam etmek istiyoruz!'",
    "haber_url": "https://www.hurriyet.com.tr/sporarena/de-la-fuente-tarih-yazmaya-devam-etmek-istiyoruz-43319919",
    "haber_kaynak": "Hürriyet",
@@ -54,52 +90,16 @@
    "haber_kaynak": "Sözcü",
    "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTFUTkHLULhRvEX8AbyxFgJsYEVgJXm2_bwE0z_EAsk1XgUNIYFvYkcEBNi00Y",
    "bolum": "spor"
-  },
-  {
-   "baslik": "f1",
-   "hacim": "1000+",
-   "haber_baslik": "Azerbaijan Grand Prix result: George Russell holds off Max Verstappen for Baku win",
-   "haber_url": "https://www.bbc.com/sport/formula1/articles/ck8d33760j63o",
-   "haber_kaynak": "BBC",
-   "resim": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR1JjiV0-OMxcTj-3snlXk53t6NGPZPXZ4D7FkO-6z5xVEP_ChCxbqRbL5ecsY",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "pastırma sıcakları",
-   "hacim": "5000+",
-   "haber_baslik": "Serin havalara kısa bir ara: Pastırma yazı ne zaman başlayacak?",
-   "haber_url": "https://www.cumhuriyet.com.tr/turkiye/serin-havalara-kisa-bir-ara-pastirma-yazi-ne-zaman-baslayacak-2541217",
-   "haber_kaynak": "Cumhuriyet",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTtKHZS5nTciJEI8eIVd9dNPbKMkMQLH9_6doODI2RFHHwwuXwLa55l_a0VFIo",
-   "bolum": "haber"
-  },
-  {
-   "baslik": "nicolas raskin",
-   "hacim": "2000+",
-   "haber_baslik": "Ocak'ta Beşiktaş'a! Serdal Adalı konuşmuştu",
-   "haber_url": "https://www.hurriyet.com.tr/sporarena/ocakta-besiktasa-serdal-adali-konusmustu-43320069",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRgS8jCi_rTLTzDg2PyMY9rfLl0pImOOXZxBGlot-9iSXAux1gZhmkoM-lECzk",
-   "bolum": "spor"
-  },
-  {
-   "baslik": "burcu biricik",
-   "hacim": "2000+",
-   "haber_baslik": "Burcu Biricik'in gözyaşları",
-   "haber_url": "https://www.hurriyet.com.tr/kelebek/hayat/burcu-biricikin-gozyaslari-43320261",
-   "haber_kaynak": "Hürriyet",
-   "resim": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTfpRI3iGor0AQdbjSKfjWfBpqHtMQ5a-7zZJXihA68nWxKmN16Sprh51leyCs",
-   "bolum": "haber"
   }
  ],
  "bolumler": {
   "piyasalar": [
    {
-    "baslik": "Zeynel Emre’den Fatma Betül Sayan Kaya hakkında borsa iddiası: “63 milyon yatırdı, 1,3 milyar çekti” - medyascope.tv",
+    "baslik": "Zeynel Emre’den Fatma Betül Sayan Kaya hakkında borsa iddiası: “63 milyon yatırdı, 1,3 milyar çekti” - Medyascope",
     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOaG5ucVloLW05cXRUU0pNbVYtLVAxNkJDOFh4VkpFS1RSdHJiS1J1R0c1c2Q4RmtROF96VU81UU5LRkU0eWtrYUVfU1ItX1lsdkl3TS04M3VWSEtsVWEyd2kxbi1ja0o2bTZwUlFYbkEzZVpGQ3k0a0VDcEZGSDFYcTR4cU9WczhtRkdjSnVEYkhObVNBUEpyalM5VDR0MC1kRi1HNXRFZDJSb2JYSnN3VDJKSUFyWWMwV1JaUDNlbjRTWWV3NTQ0?oc=5",
-    "kaynak": "medyascope.tv",
+    "kaynak": "Medyascope",
     "tarih": "Sat, 26 Sep 2026 11:21:48 GMT",
-    "ozet": "Zeynel Emre’den Fatma Betül Sayan Kaya hakkında borsa iddiası: “63 milyon yatırdı, 1,3 milyar çekti” medyascope.tv"
+    "ozet": "Zeynel Emre’den Fatma Betül Sayan Kaya hakkında borsa iddiası: “63 milyon yatırdı, 1,3 milyar çekti” Medyascope"
    },
    {
     "baslik": "Fon krizi: Borsa manipülasyonu nasıl işledi, yatırımcı parasını nasıl ve ne zaman geri alacak? - DW.com",
@@ -116,18 +116,18 @@
     "ozet": "Bakan Bolat açıkladı: Yıl sonu için hedef 410 milyar dolar ihracat Bigpara"
    },
    {
+    "baslik": "Borsa İstanbul'da 32 hissede tedbir kararı devam ediyor - CNBC-e",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPUGVuMWs3Z1EzLWxQcDJoY1k4M3kwSEVJZklMZW5QR1ZULTZQQzBOS09rbG1CTy05d3J2a1lxWFdkN3BYOHA0bHl5amlMUWdzS3JBRHV3RTNpUEdHOVE0MmVDb1dqZGdVTHZYUzRXaFJlT3FYNzVURWtId1UxLWs1eTlEZGswdFBCSGxVSFVWTWVwVGM?oc=5",
+    "kaynak": "CNBC-e",
+    "tarih": "Sat, 26 Sep 2026 14:22:18 GMT",
+    "ozet": "Borsa İstanbul'da 32 hissede tedbir kararı devam ediyor CNBC-e"
+   },
+   {
     "baslik": "BNY Mellon High Yield Strategies Fonu yöneticisi 44.400 dolar değerinde hisse aldı - Investing.com Türkiye",
     "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPUVRMM0JCNGU0NmJtMVR6d18zaVNRMUdET2F3VXpaSWF5VHZPb1NrZUFPZmZ5MEpUejZSOThub2tfclFDeDZ6bWpHOGhBTXI4SjF6NWJBWDR5MVhIOExDbTdNUkxHNEk1UXROcVpLY21LMmNoejRhTFZ5ZXZGcVFCQXhrcHUzSDNfbkZkOXZ6dFlab1QyLWtwS0c4MGlxWEZFdm9oLU9XbTFhU0w4ZXlVOGlDeXdwSHhkWUxWRF9RN3g4UHJ2NjZpeWtsZkl0NHducW1sNTloOWlpTFhD?oc=5",
     "kaynak": "Investing.com Türkiye",
     "tarih": "Sat, 26 Sep 2026 09:29:02 GMT",
     "ozet": "BNY Mellon High Yield Strategies Fonu yöneticisi 44.400 dolar değerinde hisse aldı Investing.com Türkiye"
-   },
-   {
-    "baslik": "Borsa İstanbul'da 11 yeni iş ilişkisi: 1,2 milyar euroluk anlaşma dikkat çekti - CNBC-e",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQ2o4MnpzWFgxdzRxLUtmcEdBZkR3WWdMTW11UElMaG8zNmhvVHRZVTIxQjM0RjBsTnJGcFVkcEdfWlpUVGZaVjV6bVBwa0dfSU1DVTREV3NSMFRqZHVfTzBIbHlhcVBsd3BFRWtlSVZDTWRwUW93SVAxSjBZSkdSbnpfdkVNS1M3MjlzRzVHSFVtQXFuZE5DbW5OeG1KNm1MSVZ5NmJpY1gzTzd1ZmZJ?oc=5",
-    "kaynak": "CNBC-e",
-    "tarih": "Sat, 26 Sep 2026 13:45:57 GMT",
-    "ozet": "Borsa İstanbul'da 11 yeni iş ilişkisi: 1,2 milyar euroluk anlaşma dikkat çekti CNBC-e"
    },
    {
     "baslik": "TikTok uzlaşmaya gitti: 100 milyon dolar ödeyip, çocuklara günlük 2 saat sınırı getirecek - CNN Türk",
@@ -174,11 +174,11 @@
     "ozet": "Anne Yarısı nerede çekiliyor? Yeni dizi Anne Yarısı oyuncuları kimler, 1. bölümde neler oldu? İz Gazete"
    },
    {
-    "baslik": "Black Mirror'un yaratıcısından yeni dizi: Blackmere'nin ilk görselleri ve detayları paylaşıldı - donanimhaber.com",
+    "baslik": "Black Mirror'un yaratıcısından yeni dizi: Blackmere'nin ilk görselleri ve detayları paylaşıldı - DonanımHaber",
     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc3JtdnJ2QWJScVRkNWdPaFRsTlVDMEYxWmgweHJwUEU4M0VpdFRmMGxLZkdaOTR0MVhDRXk1TVc4ZVpHeXQyU2p1YzFEblBuZnhKcEp3VFN2RTBSYzFsczBGX1d3MzhLdFFfaDhPZ1hyUUF2TVJQdkI2RHNNTWVrWURGSGxDa0lVTzV3dy1UNHE?oc=5",
-    "kaynak": "donanimhaber.com",
+    "kaynak": "DonanımHaber",
     "tarih": "Fri, 25 Sep 2026 12:55:00 GMT",
-    "ozet": "Black Mirror'un yaratıcısından yeni dizi: Blackmere'nin ilk görselleri ve detayları paylaşıldı donanimhaber.com"
+    "ozet": "Black Mirror'un yaratıcısından yeni dizi: Blackmere'nin ilk görselleri ve detayları paylaşıldı DonanımHaber"
    },
    {
     "baslik": "Vizyondaki filmler 25 Eylül-2 Ekim 2026: İşte bu hafta vizyona giren 10 film - haberton.com",
@@ -260,18 +260,11 @@
     "ozet": "Mağlubiyet sonrası dev değişim! Roberto Mancini'den Milli maç öncesi karar Fanatik"
    },
    {
-    "baslik": "ULUSLAR LİGİ MİLLİ MAÇ TARİHİ: Türkiye İtalya maçı ne zaman, saat kaçta, hangi kanalda yayınlanacak? - Habertürk",
+    "baslik": "ULUSLAR LİGİ MİLLİ MAÇ TARİHİ: Türkiye İtalya maçı ne zaman, saat kaçta, hangi kanalda yayınlanacak? - haberturk.com",
     "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNbWpXVWZSWThfeWZSU2tsMkZvbVE3d0Zhdk9odG9RdnQ1bTcyR0pndEN2M3pKUTdKSWk1SV9vbWdHdk1URDBGeGlkaTVyTS1kaG1DbUZRX1lpajdIMkdLWXZ6VDRzZU5QR1BtRFlhLVJWOUEyNDlVcmk0X1JMV0pJRng0dDBXWE1lVG9OM2hNeUtteXJhbW1qdHAxMldJcjNWaEN5blF5bk9GcDVpeVB4cTU0SEQ1NWxBc19hQ0c1NTAzWUFVeHlES3hQM2t2QV9BWGJsUWlER20?oc=5",
-    "kaynak": "Habertürk",
+    "kaynak": "haberturk.com",
     "tarih": "Sat, 26 Sep 2026 14:41:32 GMT",
-    "ozet": "ULUSLAR LİGİ MİLLİ MAÇ TARİHİ: Türkiye İtalya maçı ne zaman, saat kaçta, hangi kanalda yayınlanacak? Habertürk"
-   },
-   {
-    "baslik": "Çekya-Hırvatistan maçı ne zaman, saat kaçta ve hangi kanalda? UEFA Uluslar Ligi heyecanı - Sabah",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPX1FWWU9iQWVPYUFZcW5JOGktQVpGX2FCSHRRbWlPN0xNU0lFdDV4QXVhUHNTTlpjMVJOcEViQnBzeGJ2TlNnbWg4UWEzTjR4R1FNRDd6bXFtVERmQ2Z5ZWFSRGlRRE9aOE1QZzVHMDk0c0UxV3RvZC1QSG1DLTh2QldKUHNUSlJlSDh2a0dfWTNzZllOUlFfWUNWN3hFRVFqeDJvQzdyTjZubENCZTJ0Sm9iUmNtb082ZWZBQTh6RElGM1lJdklPWFUwVdIBywFBVV95cUxPX1FWWU9iQWVPYUFZcW5JOGktQVpGX2FCSHRRbWlPN0xNU0lFdDV4QXVhUHNTTlpjMVJOcEViQnBzeGJ2TlNnbWg4UWEzTjR4R1FNRDd6bXFtVERmQ2Z5ZWFSRGlRRE9aOE1QZzVHMDk0c0UxV3RvZC1QSG1DLTh2QldKUHNUSlJlSDh2a0dfWTNzZllOUlFfWUNWN3hFRVFqeDJvQzdyTjZubENCZTJ0Sm9iUmNtb082ZWZBQTh6RElGM1lJdklPWFUwVQ?oc=5",
-    "kaynak": "Sabah",
-    "tarih": "Sat, 26 Sep 2026 14:39:07 GMT",
-    "ozet": "Çekya-Hırvatistan maçı ne zaman, saat kaçta ve hangi kanalda? UEFA Uluslar Ligi heyecanı Sabah"
+    "ozet": "ULUSLAR LİGİ MİLLİ MAÇ TARİHİ: Türkiye İtalya maçı ne zaman, saat kaçta, hangi kanalda yayınlanacak? haberturk.com"
    },
    {
     "baslik": "Türkiye İtalya maçı ne zaman, saat kaçta, nerede oynanacak? 28 Eylül 2026 milli maç hangi kanalda? - Güneydoğu Ekspres",
@@ -281,18 +274,32 @@
     "ozet": "Türkiye İtalya maçı ne zaman, saat kaçta, nerede oynanacak? 28 Eylül 2026 milli maç hangi kanalda? Güneydoğu Ekspres"
    },
    {
-    "baslik": "CANLI İZLE | Karşıyaka - Gaziemir maçı ne zaman, saat kaçta, hangi kanalda? - NTVSpor",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUDFRVkFYaWt1d1pPWUo0N1lIc0ZBV2NfZks4elhKTEhVamN6YURmTDFkeW55cE5MdUFoLXdZUTVNUllmMXA1bEFRQmJCR3FOS3NNTjNSdGVvSS1KZlpURFVucHUzdi1hRGVNcktNTzdhUjhXTmk5c1pYNXJLRGxldks5MkxKWWJfMTZOeVZ0ZnEzcEtuX213bmRYWW9ISzdlOXZ2SF9FQ2RzVVFsRVFfOXdwQ3RvUVdO0gG4AUFVX3lxTFBQMVFWQVhpa3V3Wk9ZSjQ3WUhzRkFXY19mSzh6WEpMSFVqY3phRGZMMWR5bnlwTkx1QWgtd1lRNU1SWWYxcDVsQVFCYkJHcU5Lc01OM1J0ZW9JLUpmWlREVW5wdTN2LWFEZU1yS01PN2FSOFdOaTlzWlg1cktEbGV2SzkyTEpZYl8xNk55VnRmcTNwS25fbXduZFhZb0hLN2U5dnZIX0VDZHNVUWxFUV85d3BDdG9RV04?oc=5",
-    "kaynak": "NTVSpor",
-    "tarih": "Sat, 26 Sep 2026 13:48:56 GMT",
-    "ozet": "CANLI İZLE | Karşıyaka - Gaziemir maçı ne zaman, saat kaçta, hangi kanalda? NTVSpor"
+    "baslik": "İngiltere - İspanya maçı canlı şifresiz yayın bilgisi! İngiltere - İspanya maçı hangi kanalda veriyor, canlı nereden izlenir? - GZT",
+    "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNS2dQaDNDRGVMdnRJTDl0bHdSSndjYkZEVS1LTkc5ZDBiY0xVZlRVcDI5SURZOGdQelhWRnVPX2cwbEhzUFNLeTNaU2IyME1aMlQyUzg0NnFkdUswWGcwNnRxRzg5VllnaE5xeHFYbE9ZZXl4VHc3bmxMYkdMcVp2VE82SENYSHJoT1hNODZKYnptRlpUdmlKZFhVaWJuTS1lTmo1ZHBTTkdtdzFnMWlZSVZ5RXhwQUpuSVluSG1mQnBxREhBTmpRMUEtd0pRTm5NZXI0Q2dhNU1hUQ?oc=5",
+    "kaynak": "GZT",
+    "tarih": "Sat, 26 Sep 2026 16:32:02 GMT",
+    "ozet": "İngiltere - İspanya maçı canlı şifresiz yayın bilgisi! İngiltere - İspanya maçı hangi kanalda veriyor, canlı nereden izlenir? GZT"
    },
    {
-    "baslik": "26 EYLÜL GÜNÜN MAÇLARI: Bugün kimin maçı var, hangi kanalda? İşte bugünkü maç programı - CNN Türk",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWHpYci1OM0IwZDF2M2xQRVBFUmc5MmVCVTVuV0NtTnRtUmpKM3N2em1OX3VsTDB5aFNqWmVqUUpDMHJjRnIxc0N1Q1RBZFFsMXNLdkhJaXhMdEhmNmpPLTVIdDROVVBSb1ZDcnYxbnVCdDgtdjRBRUs1MzdHb2wybndtTV9DbkFtNmRqbWl5ZWVFb2FwNnM5ODhwbE1TVkZ6WjY0WENvcEEzeEo4U3dDMmFuT2N6UlFtaHUtVg?oc=5",
-    "kaynak": "CNN Türk",
-    "tarih": "Sat, 26 Sep 2026 11:57:00 GMT",
-    "ozet": "26 EYLÜL GÜNÜN MAÇLARI: Bugün kimin maçı var, hangi kanalda? İşte bugünkü maç programı CNN Türk"
+    "baslik": "CANLI İZLE | İngiltere - İspanya maçı ne zaman, saat kaçta, hangi kanalda? - NTVSpor",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdmQ1SmtXUjhjU3ZoQzZjWWFRQklSVDJHR3hZRXlGbmYwTnVIaTg4N05lNXpmNEQ0R3hlbnpyYndTcWpaMDNFaE5KUUliUkZVZ3NXdGVxaUZsdnNOTlJ3R3oyOWZPRllSVnNYNXdBeEc1MEoxZmtDanJlbk8zSTh0Smg5bUFzc0NXNHdQd0M4SFo4V0Nubk4yR3dsR1hsOWFTcXRfUWJHZTJUY2x0V3RjSmZjZjlsZlXSAbcBQVVfeXFMUHZkNUprV1I4Y1N2aEM2Y1lhUUJJUlQyR0d4WUV5Rm5mME51SGk4ODdOZTV6ZjRENEd4ZW56cmJ3U3FqWjAzRWhOSlFJYlJGVWdzV3RlcWlGbHZzTk5Sd0d6MjlmT0ZZUlZzWDV3QXhHNTBKMWZrQ2pyZW5PM0k4dEpoOW1Bc3NDVzR3UHdDOEhaOFdDbm5OMkd3bEdYbDlhU3F0X1FiR2UyVGNsdFd0Y0pmY2Y5bGZV?oc=5",
+    "kaynak": "NTVSpor",
+    "tarih": "Sat, 26 Sep 2026 14:00:50 GMT",
+    "ozet": "CANLI İZLE | İngiltere - İspanya maçı ne zaman, saat kaçta, hangi kanalda? NTVSpor"
+   },
+   {
+    "baslik": "Çekya-Hırvatistan maçı ne zaman, saat kaçta ve hangi kanalda? UEFA Uluslar Ligi heyecanı - Sabah",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNV2dnTEhKd1MxR0p0TTBKekl0Z3QyRVFLaTRnZ0VxU01VNm5LQWJkWWM5RmhZN3huUXd5MndxYUtjOW13OUs5eEVVaE1pcmY2dTE0bGJWTGRsX05qdzJNeTNRWVp4Mko1MkxLSEU2ZWlSZXI5R2tKZXFNMGJiWkVJY0J0Z2Y3U3ZaUTlJeVpHS3VYb0VvX3NVaWRCSlRKU2I2NjZ6RUx5RXlRdFg5Q3FaQmp6ai1VZkpZblVnb0pkaFhzSGNQbjVnSdIBywFBVV95cUxPX1FWWU9iQWVPYUFZcW5JOGktQVpGX2FCSHRRbWlPN0xNU0lFdDV4QXVhUHNTTlpjMVJOcEViQnBzeGJ2TlNnbWg4UWEzTjR4R1FNRDd6bXFtVERmQ2Z5ZWFSRGlRRE9aOE1QZzVHMDk0c0UxV3RvZC1QSG1DLTh2QldKUHNUSlJlSDh2a0dfWTNzZllOUlFfWUNWN3hFRVFqeDJvQzdyTjZubENCZTJ0Sm9iUmNtb082ZWZBQTh6RElGM1lJdklPWFUwVQ?oc=5",
+    "kaynak": "Sabah",
+    "tarih": "Sat, 26 Sep 2026 14:39:07 GMT",
+    "ozet": "Çekya-Hırvatistan maçı ne zaman, saat kaçta ve hangi kanalda? UEFA Uluslar Ligi heyecanı Sabah"
+   },
+   {
+    "baslik": "Türkiye Sigorta Basketbol Süper Ligi'nin ilk haftasında derbi heyecanı - Fethiye Haber",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYUtXeC1WWHR6V2UwVVowSTFueTdvNXlfX0FkZzQzUHM2eVhzVlRfejVtN3FOSlQycktyRkxtMmVIamEtcmVwbjg5bFZqOUNXVWZvVVh5V3BqUVRrNldPVkE5UkttNm4ydTBEdnF3M3NPTGM1U3g2ZDEySUhMRlZSSmpadXRHYUEtclZFa0JOYW1lVGdwWm5USmZrYkF5Y0ZwUmlyZGtidGRTdDlPRm5CcmZn0gGyAUFVX3lxTE1hS1d4LVZYdHpXZTBVWjBJMW55N281eV9fQWRnNDNQczZ5WHNWVF96NW03cU5KVDJyS3JGTG0yZUhqYS1yZXBuODlsVmo5Q1dVZm9VWHlXcGpRVGs2V09WQTlSS202bjJ1MER2cXczc09MYzVTeDZkMTJJSExGVlJKalp1dEdhQS1yVkVrQk5hbWVUZ3BablRKZmtiQXljRnBSaXJka2J0ZFN0OU9GbkJyZmc?oc=5",
+    "kaynak": "Fethiye Haber",
+    "tarih": "Sat, 26 Sep 2026 13:46:21 GMT",
+    "ozet": "Türkiye Sigorta Basketbol Süper Ligi'nin ilk haftasında derbi heyecanı Fethiye Haber"
    },
    {
     "baslik": "MİLLİ MAÇ TAKVİMİ: TÜRKİYE MAÇI KAÇ KAÇ BİTTİ? | Türkiye - İtalya maçı ne zaman, saat kaçta? Hangi kanalda? - Yeni Asır",
@@ -300,13 +307,6 @@
     "kaynak": "Yeni Asır",
     "tarih": "Sat, 26 Sep 2026 05:43:32 GMT",
     "ozet": "MİLLİ MAÇ TAKVİMİ: TÜRKİYE MAÇI KAÇ KAÇ BİTTİ? | Türkiye - İtalya maçı ne zaman, saat kaçta? Hangi kanalda? Yeni Asır"
-   },
-   {
-    "baslik": "İzmir'de derbi vakti! - Ege'de Sonsöz",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ZVV9HUmlFWDVjc0N0aHNpeEpIS2kxdnFWRUE4bDZ2dUdHLW9EcVBtOG1ocmhZN3doS3RmbWx0WU9DM3oyOXVYOGRUbC1RbWN6RlBpV1NDTFczM25yY2c?oc=5",
-    "kaynak": "Ege'de Sonsöz",
-    "tarih": "Sat, 26 Sep 2026 08:54:00 GMT",
-    "ozet": "İzmir'de derbi vakti! Ege'de Sonsöz"
    }
   ],
   "sanat": [
@@ -360,11 +360,11 @@
     "ozet": "Konser lüks değil, yaşam tarzı platinonline.com"
    },
    {
-    "baslik": "Erol Evgin Antalya'da konser verecek! - antalyahurses.com",
+    "baslik": "Erol Evgin Antalya'da konser verecek! - Antalya Hürses",
     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1CWV9DU0IzX3o2eGY0Z1cxUnlPdl8xbm1yOWFNbmhzMUZ1enhaNDJwYlF1MW80d0dkXzlpSTF5azVFbFFoLTA5b1Zjd3JoLVNLNXU1dWk1NUdrQjRBQWlXdnV1YzZOcGlsV0t2OEpuMXh6NUdWNWpPcWYyUGE?oc=5",
-    "kaynak": "antalyahurses.com",
+    "kaynak": "Antalya Hürses",
     "tarih": "Wed, 23 Sep 2026 08:18:20 GMT",
-    "ozet": "Erol Evgin Antalya'da konser verecek! antalyahurses.com"
+    "ozet": "Erol Evgin Antalya'da konser verecek! Antalya Hürses"
    },
    {
     "baslik": "28 Eylül – 4 Ekim İstanbul Konser Takvimi: Bu Haftanın En Eğlenceli Konserleri ve Festivalleri - Onedio",
@@ -397,11 +397,11 @@
     "ozet": "Yapay zeka, robotik ve uzay teknolojisi yatırımlarının 2026'da iki kattan fazla artması bekleniyor Anadolu Ajansı"
    },
    {
-    "baslik": "OpenAI, yapay zeka modellerinin güvenlik sınırlarını aşmasının ardından kurumları ve hükümeti bilgilendirdi - TRT Haber",
+    "baslik": "OpenAI, yapay zeka modellerinin güvenlik sınırlarını aşmasının ardından kurumları ve hükümeti bilgilendirdi - trthaber.com",
     "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNOW9nLU0zcklLNTlOQkduVFBIT3Q4a1ZFUy1mcE9oeTJuYmw2aV9vZEczX3VwMXZXTlgtOGRkTnktVGNXSlVVTmE0MGhreW5pVWRmaS1hVjdPQklnOTJHQ0Ntdy1RUVYtVm82dmQtMDlpRkk4QklJNk5qTWFlRlBjRk45dWJ6UGZtLWdjZHRXRmc5d09DX2pqZlBSZGFhQVhqeUxuXzJvUnE3WjUyWUMtU2tqbEQ2UnlHajlnV1V2dEV6WDJiR3pRcTlzcjZKNmllWGtJUGxuTlNFVjUyOHFiZC1WX3llUFBqWTJr?oc=5",
-    "kaynak": "TRT Haber",
+    "kaynak": "trthaber.com",
     "tarih": "Sat, 26 Sep 2026 07:57:00 GMT",
-    "ozet": "OpenAI, yapay zeka modellerinin güvenlik sınırlarını aşmasının ardından kurumları ve hükümeti bilgilendirdi TRT Haber"
+    "ozet": "OpenAI, yapay zeka modellerinin güvenlik sınırlarını aşmasının ardından kurumları ve hükümeti bilgilendirdi trthaber.com"
    },
    {
     "baslik": "OpenAI'ın Yapay Zeka Ajanları Kontrolden Çıktı: ChatGPT Kullanıcılarına Ait 53 Görsel İnternete Sızdı - Onedio",
@@ -432,11 +432,11 @@
     "ozet": "OpenAI, ChatGPT için ayrı bir “Haritalar” bölümü devreye aldı Teknoloji haberleri - LOG"
    },
    {
-    "baslik": "Call for Me Pixel 11'e geliyor, Gemini mağazaları senin yerine arıyor - pasqualepillitteri.it",
+    "baslik": "Call for Me Pixel 11'e geliyor, Gemini mağazaları senin yerine arıyor - Pasquale Pillitteri",
     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeVhoX0hZNmxQcGhzQmlNelBOM20wSjV0cFhIdm0ydmhMM01FblppWV9FM2MtN1pWQUZpMWo5QjgyQjlUSnZva0lUYU1vLWY5VW5NM3UyVEw5TW5Qd1djY1h5bzRnOHZtQ2VSU296OVg2ZzJWbEl2NlVaaFg3cHdCY1N1dzhlUFFBZHN5M2J2clB5RWc?oc=5",
-    "kaynak": "pasqualepillitteri.it",
+    "kaynak": "Pasquale Pillitteri",
     "tarih": "Sat, 26 Sep 2026 15:42:08 GMT",
-    "ozet": "Call for Me Pixel 11'e geliyor, Gemini mağazaları senin yerine arıyor pasqualepillitteri.it"
+    "ozet": "Call for Me Pixel 11'e geliyor, Gemini mağazaları senin yerine arıyor Pasquale Pillitteri"
    },
    {
     "baslik": "OpenAI'ın yapay zeka botları, ABD hükümet sitelerine erişti - Gazete Oksijen",
@@ -483,18 +483,18 @@
     "ozet": "Evini emlakçıya verecek olanlar dikkat: İlan sisteminde uygulama değişiyor Uzmanpara"
    },
    {
+    "baslik": "Vatandaşın kişisel verilerini çalan siber şebekeye operasyon - trthaber.com",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUVNlYTZUUy1OckFBcWZmSTNrdDJJUjVkRkxjbUh6d0RuUzVLUHVBYWR0VDZscm56MXo5T1lDbWsySElQSWo4U0VCVmItakdGNVJ1RFM2MTJNQnZ1a3lXR1FhOXd6N3RQTzhWcFhaVExxVTN0SDBwRmhlenhqYXQ3cDlpd1M1dEkyQXdsQ3hUM1JXYUU2aEphTXRPZTUzWTl0T054VEFYYlkwNFFrYzRR?oc=5",
+    "kaynak": "trthaber.com",
+    "tarih": "Fri, 25 Sep 2026 11:19:00 GMT",
+    "ozet": "Vatandaşın kişisel verilerini çalan siber şebekeye operasyon trthaber.com"
+   },
+   {
     "baslik": "FBI'a siber saldırıda ajanların sağlık bilgileri ele geçirildi - BBC",
     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9tMHpOVzZFSG0wTW9oM1VvOFUtLUcyZzR6cG5rT1BsLXRSaWtYdGxFdDl6c3R5SmE3eXRoX3FXVlFHNjdxSnljY0w2a3FnZmY4MkxhME1PWDRmcWNGb2fSAWNBVV95cUxOVlJucDNFak9SV0ZYeUpwamJha3JoWTJhajI3X3k0QzRSSVVlM3NsUnI2RUFjUllteVRZYXlocXRCUnpWeVcxREdfZ1NhYWRvTzh4R1dJa1RCcHNkMFY1bTRKYUE?oc=5",
     "kaynak": "BBC",
     "tarih": "Fri, 25 Sep 2026 17:23:48 GMT",
     "ozet": "FBI'a siber saldırıda ajanların sağlık bilgileri ele geçirildi BBC"
-   },
-   {
-    "baslik": "Vatandaşın kişisel verilerini çalan siber şebekeye operasyon - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUVNlYTZUUy1OckFBcWZmSTNrdDJJUjVkRkxjbUh6d0RuUzVLUHVBYWR0VDZscm56MXo5T1lDbWsySElQSWo4U0VCVmItakdGNVJ1RFM2MTJNQnZ1a3lXR1FhOXd6N3RQTzhWcFhaVExxVTN0SDBwRmhlenhqYXQ3cDlpd1M1dEkyQXdsQ3hUM1JXYUU2aEphTXRPZTUzWTl0T054VEFYYlkwNFFrYzRR?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Fri, 25 Sep 2026 11:19:00 GMT",
-    "ozet": "Vatandaşın kişisel verilerini çalan siber şebekeye operasyon TRT Haber"
    },
    {
     "baslik": "Türkiye - İtalya - Passo",
@@ -555,11 +555,11 @@
     "ozet": "Bir zamanlar rekor kırıyordu: Türk otomotivi neden düşüşte? DW.com"
    },
    {
-    "baslik": "Elektrifikasyon enerji ithalat faturasını 500 milyar dolar azaltabilir - TRT Haber",
+    "baslik": "Elektrifikasyon enerji ithalat faturasını 500 milyar dolar azaltabilir - trthaber.com",
     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRWdtUUZWV25tcEtxRjVVZ25kYXVoVVFpb0NXWFVHa0MtcEN3bUF4bW5rZjk1bmdNSTdic1dtWEF6QnVkb1lwZk83UW9rNmVLaDVyU3VMUUVQNE5IRmJBMXVUY3RSRnlMR1V1Vm1GUVM4bWU4a2lZZmRYRmItUG43bFBybHhCWjFLcVJvYjUtSUlGTWQtVE9XUlhaYS05XzNSc1JDUkl3Z3ExWTJGN3l6TVh0dGNvT05Kb291cnd3?oc=5",
-    "kaynak": "TRT Haber",
+    "kaynak": "trthaber.com",
     "tarih": "Thu, 24 Sep 2026 10:51:00 GMT",
-    "ozet": "Elektrifikasyon enerji ithalat faturasını 500 milyar dolar azaltabilir TRT Haber"
+    "ozet": "Elektrifikasyon enerji ithalat faturasını 500 milyar dolar azaltabilir trthaber.com"
    },
    {
     "baslik": "InvestingPro Türk yenilenebilir enerji hissesinde %44 kazanç tespit etti - Investing.com Türkiye",
@@ -620,18 +620,25 @@
     "ozet": "TikTok uzlaşmayı kabul etti: Çocuk davasında 100 milyon dolarlık ceza Hürriyet"
    },
    {
-    "baslik": "Ali Tarakcı'nın sosyal medya hesabına erişim engellendi - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUVFwelRlc294VEtaeUd3SHpnWDhITnctSF9VUVZ5RERheWdEcGdfRTE1M0kwVkNPcksxb3dBSk1mTU8yWWFYbXE1elM0RU1ITDhaWm5WR0JwZHhIWDhxbVZ6LXR5TjJ5bHJoaF96cUctdjN0dUMtYWt4TE53UlplNXVGd0VwdTVSTEFKTExwVWUzclFzSFFHWFJsT21WaXp3NjlWVWZJQk0?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Sat, 26 Sep 2026 07:54:00 GMT",
-    "ozet": "Ali Tarakcı'nın sosyal medya hesabına erişim engellendi TRT Haber"
+    "baslik": "TikTok ABD'de uzlaşmaya vardı: Çocuklara ekran sınırı gelecek - Bloomberght",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNV0RHNWtOQWVTajg1MFJpNjAwOWx1TWhIalhWMWNzb3prT3AtcC03V01wQ0Faak54b3E1akpSY0Q5WXhmcEMxblNPODJoWDVxcVlEYTBKSFgtRGR3WllZVlFqdzI5WDNibUZoR0lEejRKWnRmT1lUUXU0ME94US1mQ0FwQXFEZk8wampNTFYxRWw5WTdQRXVPX2h6QWs?oc=5",
+    "kaynak": "Bloomberght",
+    "tarih": "Sat, 26 Sep 2026 16:27:22 GMT",
+    "ozet": "TikTok ABD'de uzlaşmaya vardı: Çocuklara ekran sınırı gelecek Bloomberght"
    },
    {
-    "baslik": "TikTok, gençler üzerindeki olumsuz etkisi nedeniyle ABD'de davalık oldu - donanimhaber.com",
+    "baslik": "Ali Tarakcı'nın sosyal medya hesabına erişim engellendi - trthaber.com",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUVFwelRlc294VEtaeUd3SHpnWDhITnctSF9VUVZ5RERheWdEcGdfRTE1M0kwVkNPcksxb3dBSk1mTU8yWWFYbXE1elM0RU1ITDhaWm5WR0JwZHhIWDhxbVZ6LXR5TjJ5bHJoaF96cUctdjN0dUMtYWt4TE53UlplNXVGd0VwdTVSTEFKTExwVWUzclFzSFFHWFJsT21WaXp3NjlWVWZJQk0?oc=5",
+    "kaynak": "trthaber.com",
+    "tarih": "Sat, 26 Sep 2026 07:54:00 GMT",
+    "ozet": "Ali Tarakcı'nın sosyal medya hesabına erişim engellendi trthaber.com"
+   },
+   {
+    "baslik": "TikTok, gençler üzerindeki olumsuz etkisi nedeniyle ABD'de davalık oldu - DonanımHaber",
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQN3pwVGppa2doaUpWU3M2NFpZQ2VyNEVQSFpxenJTQTJFZDFxamJGSkVqazJwVWN5MmZvTDVSV0hnR2ZBVTFIcDBGb20tWGgwalpzTzdtYUdYZzBIdWdCU3lmS2ZOcUJWVnF1ZG5oUlFLMldqZW9VRzNrUFY5UlZreXJhSjRHekxlRFN3N1ZMMmlmV3hNVlJpUlZrbWFiX2Z3OVE?oc=5",
-    "kaynak": "donanimhaber.com",
+    "kaynak": "DonanımHaber",
     "tarih": "Sat, 26 Sep 2026 10:00:00 GMT",
-    "ozet": "TikTok, gençler üzerindeki olumsuz etkisi nedeniyle ABD'de davalık oldu donanimhaber.com"
+    "ozet": "TikTok, gençler üzerindeki olumsuz etkisi nedeniyle ABD'de davalık oldu DonanımHaber"
    },
    {
     "baslik": "TikTok çocuk kısıtlamaları için 100 milyon dolar ödeyecek - Yeni Alanya",
@@ -648,11 +655,11 @@
     "ozet": "Özgür Özel, X ve Instagram'ı uyardı Diken"
    },
    {
-    "baslik": "133 sosyal medya hesabına erişim engeli getirildi - Cumhuriyet",
+    "baslik": "133 sosyal medya hesabına erişim engeli getirildi - cumhuriyet.com.tr",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOd1N2NGRvSXlRQTgxWXVnblBSSGZpY1RpWGtFdW9XS0VMdWpWdXM5MXRKXzZQZEZMM1NNakVuZlhZZWhWY3hibEhoX0V5WU1CNkNFdTZ1UER6aTBudEpOZmNnazV5SXkzSm1OVUo1QmtLbEVvWmlvVEpFZUhlcGVXODA1NkJKTU1BMUdYTXMxaS1KbDdDSVB0Z0FBOA?oc=5",
-    "kaynak": "Cumhuriyet",
+    "kaynak": "cumhuriyet.com.tr",
     "tarih": "Sat, 26 Sep 2026 14:54:00 GMT",
-    "ozet": "133 sosyal medya hesabına erişim engeli getirildi Cumhuriyet"
+    "ozet": "133 sosyal medya hesabına erişim engeli getirildi cumhuriyet.com.tr"
    },
    {
     "baslik": "Silinmeden Yetişin: 19-26 Eylül'de Ünlülerin Paylaştığı \"Kaçarsa Yazık Olur\" Temalı Instagram Hikayeleri - Onedio",
@@ -660,13 +667,6 @@
     "kaynak": "Onedio",
     "tarih": "Sat, 26 Sep 2026 12:43:58 GMT",
     "ozet": "Silinmeden Yetişin: 19-26 Eylül'de Ünlülerin Paylaştığı \"Kaçarsa Yazık Olur\" Temalı Instagram Hikayeleri Onedio"
-   },
-   {
-    "baslik": "Özgür Özel'den sosyal medya şirketlerine tepki: 'Haksız sansür uygulamalarının parçası olmayın - Evrensel.net",
-    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNS1lpUWczeWVRV0R0dHFfZTViY0hJakFYak1KcE9reUxVTk5jNGdfTzVkMTlSS2tOM1Frakdna3l5eU5iRm5RQ09XZFZ4Zks2TTBQeHJIdlE0UlhZT3ZnOERqY1M5SnowZmpTR2NhU1ppNkVlckQzZGpwWVJaLV9KeEpNRG81OFl4TUEydHdPbWRQQW1lMlYwekl3c25Hckh3X2xlNEpMRmpzODV6WW1iYUJmd1ZEb09IUmxrMjItZndPTTFFam1PSi1R?oc=5",
-    "kaynak": "Evrensel.net",
-    "tarih": "Sat, 26 Sep 2026 12:53:00 GMT",
-    "ozet": "Özgür Özel'den sosyal medya şirketlerine tepki: 'Haksız sansür uygulamalarının parçası olmayın Evrensel.net"
    }
   ],
   "muzik": [
@@ -685,11 +685,11 @@
     "ozet": "28 Eylül – 4 Ekim İstanbul Konser Takvimi: Bu Haftanın En Eğlenceli Konserleri ve Festivalleri Onedio"
    },
    {
-    "baslik": "Zeki Müren’in 30. Yılı Anısına Konser Düzenlendi - Elazığ Son Haber",
+    "baslik": "Zeki Müren’in 30. Yılı Anısına Konser Düzenlendi - elazigsonhaber.com",
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWXJzanU2aExBa0NVR1VkcWplNEZQVDZTZldRejZxVmFHREZkS3F0Y1FoLUhxNTdPSEdGN3RjSkt0Q0NWZnZTNlZLT2lWLWJNa05sWjhMeEEwOXpqeFhuZlpYdXB6VUZTN2NVeDFJaDlMR1JndU5BSzVkc2toQ2dIbDRjRQ?oc=5",
-    "kaynak": "Elazığ Son Haber",
+    "kaynak": "elazigsonhaber.com",
     "tarih": "Sat, 26 Sep 2026 15:43:40 GMT",
-    "ozet": "Zeki Müren’in 30. Yılı Anısına Konser Düzenlendi Elazığ Son Haber"
+    "ozet": "Zeki Müren’in 30. Yılı Anısına Konser Düzenlendi elazigsonhaber.com"
    },
    {
     "baslik": "Taylor Swift, Spotify'da iki yeni rekora imza attı - Gazete Oksijen",
@@ -771,18 +771,18 @@
     "ozet": "\"16. Antalya Kitap Fuarı\" için geri sayım başladı Anka Haber"
    },
    {
-    "baslik": "Roman Vatandaşlara Yönelik Çalışmalar Değerlendirildi - Aile ve Sosyal Hizmetler Bakanlığı",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOak9BZzlKUGg4MlJMaWt1MkxVR3NJOXVYRWJDd1YzS2djVF95LWRuWWxHckctUkt4MlpqZjlWcFFWX2RZcV8yUmtCRU9nbmFQUU5IWm4zZzMycEdxamNUZFNzYm5kdTlEelAtXzVLRDJBQ2F5YUdrUDRLaDJWbUt2eS1TQkVCRVd5dUg2ZnRVUTRPRHJKMzBSY3Fn?oc=5",
-    "kaynak": "Aile ve Sosyal Hizmetler Bakanlığı",
-    "tarih": "Tue, 22 Sep 2026 16:25:52 GMT",
-    "ozet": "Roman Vatandaşlara Yönelik Çalışmalar Değerlendirildi Aile ve Sosyal Hizmetler Bakanlığı"
-   },
-   {
     "baslik": "Kelar’da yüzde 70’e varan indirimli kitap fuarı kapılarını açtı - کوردستان 24",
     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMHNqdEc5ZjBURmRDbjI1SGVyT1VJWUM0N3VRUzdwNzFfeFBDNkpnLUJneE1zZzJVVTJ2TEQxZDU1WEtiYmdvWDczMTdCNXRyakx1TGE5V1NoOXNqbGxmXzhOdmNqNVZ3NzdGVjZwYXhuaVg2WGkzeU1sZWFMWklyYkhVbTRFRWladi1HWlVCTnE0Zmk1UVpKeUN5YXY5T1NHNHZIQVhKaG1kY3I4Qk0zSDhTVERoWHhmR0NoRDRIaEdCcF8yalhNYVk3NGNOTmlJTmhJUFFOUQ?oc=5",
     "kaynak": "کوردستان 24",
     "tarih": "Fri, 25 Sep 2026 15:15:00 GMT",
     "ozet": "Kelar’da yüzde 70’e varan indirimli kitap fuarı kapılarını açtı کوردستان 24"
+   },
+   {
+    "baslik": "Roman Vatandaşlara Yönelik Çalışmalar Değerlendirildi - Aile ve Sosyal Hizmetler Bakanlığı",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOak9BZzlKUGg4MlJMaWt1MkxVR3NJOXVYRWJDd1YzS2djVF95LWRuWWxHckctUkt4MlpqZjlWcFFWX2RZcV8yUmtCRU9nbmFQUU5IWm4zZzMycEdxamNUZFNzYm5kdTlEelAtXzVLRDJBQ2F5YUdrUDRLaDJWbUt2eS1TQkVCRVd5dUg2ZnRVUTRPRHJKMzBSY3Fn?oc=5",
+    "kaynak": "Aile ve Sosyal Hizmetler Bakanlığı",
+    "tarih": "Tue, 22 Sep 2026 16:25:52 GMT",
+    "ozet": "Roman Vatandaşlara Yönelik Çalışmalar Değerlendirildi Aile ve Sosyal Hizmetler Bakanlığı"
    },
    {
     "baslik": "Fransa edebiyat dünyası karıştı: Ödüllü yazar yapay zeka kullanmakla suçlanıyor - Diken",
@@ -799,11 +799,11 @@
     "ozet": "İsviçre’den Türkiye’ye dönen yazar Suzan Samancı’ya yurt dışına çıkış yasağı Bianet"
    },
    {
-    "baslik": "16. Antalya Kitap Fuarı 2 Ekim'de başlıyor - antalyahurses.com",
+    "baslik": "16. Antalya Kitap Fuarı 2 Ekim'de başlıyor - Antalya Hürses",
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbWNRRFVmZDBWMEhxTjd0U2owZjJUNDM0OXMzQ25xWGNIQjVWRDZGVlBaX0ZfTnRzLXVBNmJ0M0JQUHpfQW12cDNoR0tFX3B3SzdaUUxYNTRMQ255dl9iRDh1ajduZUZsQmFMc09yT25mQ25qcENwQ3cwRzdkaU1tM1F3dw?oc=5",
-    "kaynak": "antalyahurses.com",
+    "kaynak": "Antalya Hürses",
     "tarih": "Wed, 23 Sep 2026 10:06:52 GMT",
-    "ozet": "16. Antalya Kitap Fuarı 2 Ekim'de başlıyor antalyahurses.com"
+    "ozet": "16. Antalya Kitap Fuarı 2 Ekim'de başlıyor Antalya Hürses"
    },
    {
     "baslik": "Antalya Haberleri - Antalya'da 16. Kitap Fuarı düzenlenecek - Yerel Haberler - Hürriyet",
@@ -815,18 +815,18 @@
   ],
   "haber": [
    {
+    "baslik": "İklim değişikliği Türkiye'de etkilerini derinleştiriyor - trthaber.com",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRy1jRVJ4b2FIN3VrYWtoSUs0WWlaZVJNdEFHSDEteG9ueHBjdWVLSURubjc0Sm1zQlRacW8zY0g2R0hFT2gwVVluSVlBSmM1T0NraW1XaERCT01ZVk1qcEIwQjZ5M1B2VF9DRXZ5aG1Mb01lNEU5TG54TWF5MjZtZUVxN0R0b2wzalh2eGpvMEQzQ0xfS3Q2Qk5fME0wT2IyVm9zMkhkbw?oc=5",
+    "kaynak": "trthaber.com",
+    "tarih": "Sat, 26 Sep 2026 10:13:00 GMT",
+    "ozet": "İklim değişikliği Türkiye'de etkilerini derinleştiriyor trthaber.com"
+   },
+   {
     "baslik": "SON DAKİKA! Cumhurbaşkanı Erdoğan: \"İşgalci Siyonistlerin maskesi inecek\" - CNN Türk",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWncxN1RCTHRXSlhYenpWSFUzb1RMRkNxcFNNM3AyNHI5cUR5ZlNWZ25GdENDTkg0RUQ1VGtDWlBUbFBaTUFVUlN0UC1Rek9KVWVVX0taNENTcTB5aVlGTWRpWThhOFM4OGRTM3FQWTV0OXg1U1lfRloyNVdwYlV0QWlRbEZmRFUzbXFhUE5VeUZ5OF8xMXNZRGNOYzk?oc=5",
     "kaynak": "CNN Türk",
-    "tarih": "Sat, 26 Sep 2026 15:28:54 GMT",
+    "tarih": "Sat, 26 Sep 2026 12:04:00 GMT",
     "ozet": "SON DAKİKA! Cumhurbaşkanı Erdoğan: \"İşgalci Siyonistlerin maskesi inecek\" CNN Türk"
-   },
-   {
-    "baslik": "İklim değişikliği Türkiye'de etkilerini derinleştiriyor - TRT Haber",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRy1jRVJ4b2FIN3VrYWtoSUs0WWlaZVJNdEFHSDEteG9ueHBjdWVLSURubjc0Sm1zQlRacW8zY0g2R0hFT2gwVVluSVlBSmM1T0NraW1XaERCT01ZVk1qcEIwQjZ5M1B2VF9DRXZ5aG1Mb01lNEU5TG54TWF5MjZtZUVxN0R0b2wzalh2eGpvMEQzQ0xfS3Q2Qk5fME0wT2IyVm9zMkhkbw?oc=5",
-    "kaynak": "TRT Haber",
-    "tarih": "Sat, 26 Sep 2026 10:13:00 GMT",
-    "ozet": "İklim değişikliği Türkiye'de etkilerini derinleştiriyor TRT Haber"
    },
    {
     "baslik": "Hüseyin Yayman: Artık Türkiye'de paradigma değişmiştir - Hürriyet",
@@ -836,11 +836,11 @@
     "ozet": "Hüseyin Yayman: Artık Türkiye'de paradigma değişmiştir Hürriyet"
    },
    {
-    "baslik": "Kırıkkale'de ehliyet sınavında kaza: Yaralılar var - Cumhuriyet",
+    "baslik": "Kırıkkale'de ehliyet sınavında kaza: Yaralılar var - cumhuriyet.com.tr",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORElna0Nvd2ZRd2J0UUh3SUh2WWs4THpsbERRMWZidVNTSzlBZkhzbEoyZ2VVb1lKcWt0Z1hFNUZvQ0oycGlOcGFnYzJBaEgwS0ZHeEFSZlprVFFiNkZRM3M0OXk1LThIVVV2RnB1V0J5dWl1MjRoclNJaVVNaFVROE5ZRVlvQTNMeTZhLXZpZG1adERGdmFwSW1yYw?oc=5",
-    "kaynak": "Cumhuriyet",
+    "kaynak": "cumhuriyet.com.tr",
     "tarih": "Sat, 26 Sep 2026 14:46:00 GMT",
-    "ozet": "Kırıkkale'de ehliyet sınavında kaza: Yaralılar var Cumhuriyet"
+    "ozet": "Kırıkkale'de ehliyet sınavında kaza: Yaralılar var cumhuriyet.com.tr"
    },
    {
     "baslik": "Siirt'te 'Türkiye Sohbetleri' programı düzenledi - Son Dakika",
@@ -850,32 +850,25 @@
     "ozet": "Siirt'te 'Türkiye Sohbetleri' programı düzenledi Son Dakika"
    },
    {
-    "baslik": "Başkan Erdoğan: Kendini seçilmiş zanneden işgalci Siyonist zihniyetin maskesini indirmekte kararlıyız - Sabah",
-    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPeTdRV1BzSENNWlU3ZkQ3WE9QcE9DTmd2UU93eGVxeXpJYlRFeGJDbDJOU25tZWl4aHp5ZWtSeXkwbzlUTkNxbndtdWdKejlmQmtObkdiTDM3Q1d2UDlyVHl1RkRWMm9MR3VWekJxR1ViYmM2di1PLTQ5MUF1NzZsVnhRTjk0OGdFUlBPVl9uLXBtZUpyNVRrNmtZMFdzQUhlTC1tVmExMXJYbl9OVHdLcDd5Vm94SEZ1WGZIMWk5b2xic2stcUlyT1hsMGlQX1ZLd0ZTU9IB1wFBVV95cUxOa3dpVnY0Tnk3MHBEY2pOZjI0eEhnWWk0ZzhScmJKNk4xTWp2UUppdTlFQkZwWjJqM09zZjBNMWtUSEEydmM2YzVqejliUXFQRUF6T2FoSGc2NU1yUG5pdnN1RzNha0tab3Izb19qaGtxbnZpTFRlY0t4WXZJckZwbm5yWUdtYzh5d2ctX3REMDR1Y3k1NFMyVExNV2RqYXNDVkd3TThHVE56RkJKRXJRRWdSREtlZ3gzYnJhWEZxVTU0R2R4Z1NZZ1pKdkJsbDdPTzVoN1JDWQ?oc=5",
-    "kaynak": "Sabah",
-    "tarih": "Sat, 26 Sep 2026 13:18:39 GMT",
-    "ozet": "Başkan Erdoğan: Kendini seçilmiş zanneden işgalci Siyonist zihniyetin maskesini indirmekte kararlıyız Sabah"
-   },
-   {
-    "baslik": "Türkiye yeni haftada yağışlı sistemin etkisi altına girecek - TRT Haber",
+    "baslik": "Türkiye yeni haftada yağışlı sistemin etkisi altına girecek - trthaber.com",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTko5eUNCOWVvcFpNc3VUa0R3U2JBTzRwU013ZlBkNW94S3B0T0RzdW9ZRHZqUTdSWmhsNzFNVjRjZHk5OElPNWg5dmhYdDBYV2VfMlNqYUhMSjdKZ3I2SVl2NVlGOE5LVFBtRjlVQ3ZjX3hReTA3VUVLX19haVBOazVsLWZJLXhCblJqd1d2MXAxOTEwNFhUaG1IY0U3dFI2a0lRM2F5eGpkRGR6T0E?oc=5",
-    "kaynak": "TRT Haber",
+    "kaynak": "trthaber.com",
     "tarih": "Sat, 26 Sep 2026 09:51:00 GMT",
-    "ozet": "Türkiye yeni haftada yağışlı sistemin etkisi altına girecek TRT Haber"
+    "ozet": "Türkiye yeni haftada yağışlı sistemin etkisi altına girecek trthaber.com"
    },
    {
     "baslik": "SON DAKİKA | Bakan Gürlek'ten fon soruşturmasıyla ilgili yeni açıklama: 45 tüzel kişinin mal varlığı donduruldu - CNN Türk",
     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPQXRxclI0MHpfbjdmNXVLRWs1X0pobVRqNEhPUFJBcUI4STNPS0g3U3FHZnlxNkRQTnRJbE5iQU8zSjUyNE5Vazg3T0RXaGtTejlRazhZcFduVXVQbEdOVVpsblU3Q3FJaGpXa0VhZThna01ScGgxdndUZm9XVFg3aXdyZHUtaFVKX2ZYNUJzWm1JV1d4QmhGVjhzNmdmbEE2cG1lNE1tSldBaGRzeVJVbEdnajZmb3FDZGtiMVV0MFBBaTJ2Qkg2NC1YcElzbE5ZbVRHQWtyUXNKR0dJWDhVbA?oc=5",
     "kaynak": "CNN Türk",
-    "tarih": "Sat, 26 Sep 2026 14:55:05 GMT",
+    "tarih": "Sat, 26 Sep 2026 14:55:00 GMT",
     "ozet": "SON DAKİKA | Bakan Gürlek'ten fon soruşturmasıyla ilgili yeni açıklama: 45 tüzel kişinin mal varlığı donduruldu CNN Türk"
    },
    {
-    "baslik": "Edirne'de uyuşturucu operasyonu: 4 gözaltı - Cumhuriyet",
+    "baslik": "Edirne'de uyuşturucu operasyonu: 4 gözaltı - cumhuriyet.com.tr",
     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNbnBIdHo4eEtqSXh5LUd4YTQ3SXhOclZFM2hXanVQUUxWWjRVbWduWHpucmFLYmFYbkpZV0RXRFhEbjJ6YjRLMjNaSW96ZVRXQU9yZGhBVHRlR2M0YVg1TXRNM1ZtdmxOS3VxbmRIcXk2LW9UdGYtd2hnd2ppNWU5VGZBSjRBWlJEM0VsQy13LW4?oc=5",
-    "kaynak": "Cumhuriyet",
+    "kaynak": "cumhuriyet.com.tr",
     "tarih": "Sat, 26 Sep 2026 11:47:00 GMT",
-    "ozet": "Edirne'de uyuşturucu operasyonu: 4 gözaltı Cumhuriyet"
+    "ozet": "Edirne'de uyuşturucu operasyonu: 4 gözaltı cumhuriyet.com.tr"
    },
    {
     "baslik": "SON DAKİKA DEPREMLER LİSTESİ 26 EYLÜL 2026 AFAD, KANDİLLİ | En Son Deprem Nerede Oldu? Türkiye Geneli AFAD ve Kandilli Son Depremler Listesi - Hürriyet",
@@ -883,6 +876,13 @@
     "kaynak": "Hürriyet",
     "tarih": "Sat, 26 Sep 2026 15:05:24 GMT",
     "ozet": "SON DAKİKA DEPREMLER LİSTESİ 26 EYLÜL 2026 AFAD, KANDİLLİ | En Son Deprem Nerede Oldu? Türkiye Geneli AFAD ve Kandilli Son Depremler Listesi Hürriyet"
+   },
+   {
+    "baslik": "Gürlek bilançoyu açıkladı… Fon soruşturmalarında son durum ne? - cumhuriyet.com.tr",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQVHZEeXBVWlRDdUV5bHhHWVcxTEptM21zd0hJaGppYUhRMjB6aEIzMXA3N29Wa1RabUZmVXZUc3B6WTFzVW05Y2IxTkVWdGRBSW5SSnFlemJkcHZBaDRiYXFLcFNkdHJKenJyTDBLNFdpcTZqYTR1VW1zd0pXdi1mVGtlUVEtc0xIbE0wVDFUc09tLW91eGxveGtkOWNvZ1FXS2JoUmlZdkdaZw?oc=5",
+    "kaynak": "cumhuriyet.com.tr",
+    "tarih": "Sat, 26 Sep 2026 15:10:00 GMT",
+    "ozet": "Gürlek bilançoyu açıkladı… Fon soruşturmalarında son durum ne? cumhuriyet.com.tr"
    }
   ]
  }
