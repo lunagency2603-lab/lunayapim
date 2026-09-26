@@ -1564,5 +1564,88 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfRTquWhdBnaQWhxBEybC\"}",
   "zaman": "2026-09-26 08:01"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 10,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-26 13:05"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fon",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:05"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "binyamin netanyahu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "dorgeles nene",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yargıtay",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "masterchef ödül oyununu kim kazandı",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "pastırma yazı",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "diyarbakır hava durumu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "şef",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "neslihan acar",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "sivas hava durumu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:08"
  }
 ]
