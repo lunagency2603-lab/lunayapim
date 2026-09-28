@@ -114,6 +114,12 @@ def metin(kok):
     a("Fiyatlar sayfalarda yazan taban fiyatlardır; işin ölçeğine göre teklif verilir. "
       "Bu dosyadaki başlık, açıklama ve fiyatlar sayfaların kendisinden üretilir.")
     a("")
+    # 28.09.2026: kimlik doğrulama için iletişim ve Google İşletme Profili (yapay zekâ
+    # asistanları işletmeyi bu kayıtla eşleştiriyor)
+    a("İletişim: +90 541 160 26 03 · lunagency2603@gmail.com · Çalışma saatleri Pzt–Cmt 09:00–18:00. "
+      "81 ilde yerel çözüm ortaklarıyla çekim yapılır; kurgu, renk ve 3D Bursa'daki ekipte.")
+    a("Google İşletme Profili: https://maps.google.com/?cid=17888603735370903993")
+    a("")
 
     for ad, yollar in BOLUM:
         a("## " + ad)

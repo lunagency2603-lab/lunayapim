@@ -441,6 +441,52 @@ def il_hizmet_bagla(s, p, kok):
     return s
 
 
+# Google İşletme Profili (Maps kaydı). 28.09.2026'da Maps'ten okundu: place_id ChIJkzRhVngRyhQRuTGCxlEWQfg.
+GBP_HARITA = "https://maps.google.com/?cid=17888603735370903993"
+_GBP_TIP = {"Organization", "LocalBusiness", "ProfessionalService"}
+
+
+def _gbp_isle(d):
+    """JSON-LD ağacında Luna Yapım kuruluş düğümlerine hasMap + sameAs ekler. Değişti mi döner."""
+    import json as _j
+    degisti = False
+    if isinstance(d, list):
+        for x in d:
+            degisti = _gbp_isle(x) or degisti
+        return degisti
+    if not isinstance(d, dict):
+        return False
+    t = d.get("@type")
+    tipler = set(t if isinstance(t, list) else [t])
+    if tipler & _GBP_TIP and (d.get("name") == "Luna Yapım"):
+        if d.get("hasMap") != GBP_HARITA:
+            d["hasMap"] = GBP_HARITA; degisti = True
+        sa = d.get("sameAs")
+        sa = [sa] if isinstance(sa, str) else list(sa or [])
+        if GBP_HARITA not in sa:
+            sa.append(GBP_HARITA); d["sameAs"] = sa; degisti = True
+    for k, v in list(d.items()):
+        if isinstance(v, (dict, list)):
+            degisti = _gbp_isle(v) or degisti
+    return degisti
+
+
+def gbp_ekle(s, p=""):
+    """Luna Yapım sayfalarının şemasına İşletme Profili bağlantısı (TrendSaphiens hariç)."""
+    import json as _j
+    if (p or "").replace(os.sep, "/").startswith("trend/"):
+        return s
+    def _blok(m):
+        try:
+            d = _j.loads(m.group(2))
+        except Exception:
+            return m.group(0)
+        if not _gbp_isle(d):
+            return m.group(0)
+        return m.group(1) + _j.dumps(d, ensure_ascii=False) + m.group(3)
+    return re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)', _blok, s, flags=re.S)
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -456,6 +502,12 @@ def calistir(kok, desen="**/*.html"):
         s = okuma_ekle(s, on)
         s = adsense_ekle(s, p)
         s = il_hizmet_bagla(s, p, kok)
+        s = gbp_ekle(s, p)
+        try:
+            import sayfa_duzeni as _SD
+            s = _SD.uygula(s, p)
+        except Exception as _ex:
+            print("sayfa_duzeni:", p, _ex)
         s = menu_trend(s, on, p)
         s = altbilgi_yayin(s, on)
         s = gizlilik_ekle(s, on)

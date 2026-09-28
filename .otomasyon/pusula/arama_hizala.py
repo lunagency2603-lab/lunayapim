@@ -87,6 +87,16 @@ ARAMA = {
                             "nişan, kına ve düğün için sinematik kısa film, dış çekim ve drone"),
 }
 
+H1_IFADE = {
+    "drone-cekimi": "drone çekimi ve havadan görüntü",
+    "emlak-video": "emlak video çekimi",
+    "insaat-3d-modelleme": "mimari render ve 3D modelleme",
+    "urun-animasyon": "3D ürün animasyonu",
+    "klip-cekimi": "klip çekimi ve müzik videosu",
+    "dugun-cekimi": "düğün çekimi ve düğün filmi",
+    "isletme-tanitim": "tanıtım filmi ve sosyal medya çekimi",
+}
+
 BASLIK_AZAMI = 68        # denetçi sınırı 70
 ACIKLAMA_AZAMI = 158     # denetçi sınırı 165; kırpma yerine parça atlıyoruz
 
@@ -120,7 +130,10 @@ def _kurgu(tur, c):
     title = _kisa(title, BASLIK_AZAMI)
 
     # --- H1: sayfanın kendi vaadi (başlıkla aynı olmasın)
-    h1 = "%s%s <i>%s</i>" % (ad, ek, terim) if tur != "genel" else \
+    # 28.09.2026: H1'in italik kısmı arayanın kullandığı ifadeyle (Search Console sorguları:
+    # "havadan görüntüsü", "mimari render", "3d modelleme", "müzik videosu" …). Başlıktaki kısa
+    # terim değişmedi; H1 sayfanın tamamını anlatır, doldurma yapmaz.
+    h1 = "%s%s <i>%s</i>" % (ad, ek, H1_IFADE.get(tur, terim)) if tur != "genel" else \
          "%s%s <i>video çekimi</i> ve prodüksiyon" % (ad, ek)
 
     # --- açıklama: rakam + kapsam + ile özel unsur + aksiyon, kırpmasız

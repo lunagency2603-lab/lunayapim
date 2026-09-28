@@ -199,9 +199,19 @@ def gizlilik_html():
   ya da oyun cevaplarınız hiçbir sunucuya gönderilmez, kaydedilmez.</p>
 
   <h2>Çerezler ve üçüncü taraflar</h2>
-  <p><b>Google AdSense.</b> Sayfalarda reklam gösterilir. Google ve iş ortakları, ilgi alanına
-  dayalı reklam sunmak için çerez kullanabilir. Reklam kişiselleştirmesini Google'ın reklam
-  ayarları sayfasından kapatabilirsiniz.</p>
+  <p><b>Google AdSense.</b> Yazı sayfalarında Google AdSense reklamları gösterilir. Google dahil
+  üçüncü taraf sağlayıcılar, bu siteye ya da başka sitelere önceki ziyaretlerinize dayanarak reklam
+  sunmak için çerez kullanır. Google'ın reklam çerezlerini kullanması, Google'ın ve iş ortaklarının
+  size bu siteye ve/veya internetteki diğer sitelere yaptığınız ziyaretlere göre reklam göstermesini
+  sağlar.</p>
+  <p>Kişiselleştirilmiş reklamı <a href="https://adssettings.google.com" rel="nofollow noopener" target="_blank">Google Reklam Ayarları</a>
+  sayfasından kapatabilirsiniz. Üçüncü taraf sağlayıcıların kişiselleştirilmiş reklam çerezlerini
+  <a href="https://www.aboutads.info/choices/" rel="nofollow noopener" target="_blank">aboutads.info</a> üzerinden devre dışı
+  bırakabilirsiniz. Google'ın, hizmetlerini kullanan sitelerden gelen verileri nasıl işlediğini
+  <a href="https://policies.google.com/technologies/partner-sites?hl=tr" rel="nofollow noopener" target="_blank">bu sayfada</a> okuyabilirsiniz.</p>
+  <p><b>Çerez onayı.</b> Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'den gelen ziyaretçilere,
+  reklam ve ölçüm çerezleri çalışmadan önce Google'ın onaylı onay yönetim aracıyla izin sorulur.
+  Seçiminizi sonradan aynı pencereden değiştirebilirsiniz.</p>
   <p><b>Google Analytics.</b> Ziyaret istatistiği için kullanılır. IP adresi Google tarafından
   işlenir; ölçüm kimliğe bağlanmaz.</p>
   <p>Çerezleri tarayıcı ayarlarınızdan engelleyebilir ya da silebilirsiniz. Engellediğinizde
@@ -250,8 +260,8 @@ def kosullar_html():
   Astroloji bölümü kültürel ve eğlence amaçlıdır; kişiliği ya da geleceği ölçmez.</p>
 
   <h2>Dış bağlantılar</h2>
-  <p>Yazılarda kaynak yayıncılara bağlantı verilir. Bu sitelerin içeriğinden ve gizlilik
-  uygulamalarından sorumlu değiliz.</p>
+  <p>Yazılarda kaynak yayıncının adı ve tarihi belirtilir. Bağlantı verilen dış sitelerin
+  içeriğinden ve gizlilik uygulamalarından sorumlu değiliz.</p>
 
   <h2>Sorumluluk</h2>
   <p>Yayındaki bilgilerin kullanımından doğan sonuçlardan Luna Yapım sorumlu tutulamaz.

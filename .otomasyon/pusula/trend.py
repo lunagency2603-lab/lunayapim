@@ -521,7 +521,8 @@ def _gunluk_sayfalar():
         from . import trend_izle as TI, piyasa_gunluk as PG
     except Exception:
         return ci
-    for v in TI.hepsi():
+    _tv = [x for x in TI.hepsi() if x.get("aranan")]
+    for v in _tv[-1:]:   # 28.09.2026: akışta yalnız son günün listesi (gün sayfaları noindex arşiv)
         t = v.get("tarih"); ar = v.get("aranan") or []
         if ar:
             ilk = ", ".join(a["baslik"] for a in ar[:5])
@@ -1038,7 +1039,7 @@ def _rehber_bugun(r):
 def rehber_html(m, komsular):
     r = m["rehber"]; baslik = r["baslik"]; url = KOK_URL + r["slug"]; kat_ad = KATEGORI[r["kat"]][0]
     bugun_kutu, veri_t = _rehber_bugun(r)
-    guncel_t = max(r["tarih"], veri_t) if veri_t else r["tarih"]
+    guncel_t = max(r["tarih"], r.get("guncelleme") or r["tarih"], veri_t or r["tarih"])
     aciklama = r["ozet"][:158]
     govde_metin = " ".join(p for _, p in r["bolumler"])
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
@@ -1796,10 +1797,11 @@ def yayinla(kok=None, paylas=False):
         for v in TI.hepsi():
             t = v["tarih"]
             if v.get("aranan"):
-                _guncel = (t == _ar_son)
-                _yaz(os.path.join(d, "aranan", t + ".html"), aranan_html(v, kok, _guncel), uretilen)
-                if _guncel:
-                    gunluk_adres.append(KOK_URL + "aranan/" + t)
+                # 28.09.2026: günün arama listesi okur için durur ama dizine girmez (noindex,
+                # follow). Başlıklar Google'ın; sayfanın özgün payı kısa bir okuma. AdSense
+                # "düşük değerli içerik" değerlendirmesinde başka kaynağın listesini dizine
+                # sokmamak için. Konuyu biz yazdıysak dizine giren sayfa o yazıdır.
+                _yaz(os.path.join(d, "aranan", t + ".html"), aranan_html(v, kok, False), uretilen)
             # Bölüm günlükleri (Google Haberler başlık derlemesi) 14.09.2026'da kaldırıldı:
             # başkasının başlığını listelemek özgün yayıncılık değil, AdSense "düşük değerli
             # içerik" değerlendirmesinin de çekirdeğiydi. Toplanan maddeler artık yalnız

@@ -222,3 +222,128 @@ REHBERLER = [
 
 def hepsi():
     return list(REHBERLER)
+
+
+# ---------------------------------------------------------------- 28.09.2026 genişletme
+DEGIS = {}   # slug -> {"degistir": {eski_baslik: (yeni_baslik, metin)}, "ekle": [(baslik, metin)], "sss": [...], "kaynak": [...]}
+
+DEGIS["dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli"] = {
+ "degistir": {"Bu sitede nasıl gösteriyoruz": ("Günün rakamı tek adreste",
+   "Günlük kur için ayrı bir sayfamız var: \"Dolar kaç TL bugün?\" sayfası TCMB'nin tablosunu her yayın turunda okur ve aynı adreste yeniden yazar. Sayfada dolar, euro ve sterlinin dört sütunu, 1-10-100-1.000 dolarlık hızlı çevirme tablosu, altın satırları ve son iki haftanın kur tablosu durur. Rakamın yanında tablonun tarihi ve bülten numarası yazar; tablo henüz yayımlanmadıysa bir önceki iş gününün rakamı görünür. Eski günlerin tam tablosu arşivdedir. Yorum, hedef ve tahmin yazılmaz.")},
+ "ekle": [("Efektif kur neden daha geniş",
+   "TCMB tablosundaki efektif alış ve satış, elden banknot alıp satarken geçerli olan gösterge kurlardır. Nakit dövizin taşınması, sigortası, kasada tutulması ve sahtelik kontrolü bir maliyettir; bu yüzden efektif sütunda alış ile satış arasındaki fark, hesaptan hesaba işlemlerin yapıldığı döviz sütunundan genellikle daha geniştir. Aynı durum bankada da geçerlidir: dövizi hesabınıza alıp hesapta tutmak ile gişeden banknot olarak çekmek farklı fiyatlanır. Yurt dışına nakit götürecekseniz bu farkı hesaba katın.")],
+ "sss": [("Kredi kartıyla yurt dışı harcamada hangi kur uygulanır?", "Kartı veren bankanın, harcamanın hesaba geçtiği gün uyguladığı satış kuru. Bazı bankalar ayrıca yurt dışı işlem ücreti alır; ekstrede ayrı satır olarak görünür."),
+         ("Dolar kuru saat kaçta belli olur?", "TCMB gösterge tablosu iş günlerinde 15:30'da yayımlanır. Banka ve piyasa kurları ise gün boyunca değişir.")],
+}
+
+DEGIS["gram-altin-nasil-hesaplanir-ons-dolar"] = {
+ "degistir": {"Fiyat gün içinde neden değişir": ("Fiyat gün içinde neden değişir",
+   "Ons fiyatı dünya piyasalarında hafta içi neredeyse kesintisiz işlem görür; Asya, Avrupa ve Amerika seansları birbirini izler. Dolar/TL kuru da gün içinde hareket eder. İki değişkenin çarpımı olduğu için gram altın gün içinde sürekli oynar. Günün rakamını \"Dolar kaç TL bugün?\" sayfasındaki altın tablosunda, beslemenin güncelleme saatiyle birlikte görebilirsiniz; bu rakam yayın turunda alınır, anlık değildir. Anlık işlem yapacaksanız kuyumcunuzun ya da bankanızın o anki fiyatını sorun.")},
+ "ekle": [("Örnek hesap",
+   "Formülü bir örnekle okuyalım; rakamlar bugünün fiyatı değil, hesabı göstermek için seçilmiş yuvarlak sayılardır. Ons 2.000 dolar, dolar 40 TL olsun. 2.000 × 40 = 80.000; bunu 31,1035'e bölünce gram başına yaklaşık 2.572 TL çıkar. Şimdi ons aynı kalsın, dolar 42 TL'ye çıksın: 2.000 × 42 / 31,1035 ≈ 2.701 TL. Dünyada altının fiyatı hiç değişmediği hâlde gram altın yaklaşık yüzde 5 artmış görünür; artışın tamamı kurdan gelir. Tersine, ons düşerken dolar yükselirse gram altın yerinde sayabilir. Haberde \"altın rekor kırdı\" yazıyorsa hangisinin rekor kırdığına bakın: ons mu, gram mı?"),
+  ("Ayar ne demek",
+   "Ayar, bir altın ürünün içindeki saf altın oranıdır ve binde olarak da yazılır. 24 ayar neredeyse saf altındır (999,9 binde); gram altın ve külçe bu ayardadır. 22 ayar binde 916 altın içerir; bilezik ve Cumhuriyet altınları (çeyrek, yarım, tam) bu ayardadır. 18 ayar binde 750, 14 ayar binde 585 altındır; takılarda yaygındır. Bir takının has altın değeri, gramı ile ayar oranının çarpımıdır; üstüne işçilik eklenir. Bu yüzden aynı gramdaki 14 ayar bir kolye ile 22 ayar bir bilezik çok farklı fiyatlanır.")],
+ "sss": [("22 ayar ile 24 ayar arasındaki fark nedir?", "24 ayar neredeyse saf altındır; 22 ayar binde 916 altın içerir. Bilezik ve Cumhuriyet altınları 22 ayar, gram altın ve külçe 24 ayardır."),
+         ("Gram altın hafta sonu değişir mi?", "Dünya piyasası hafta sonu kapalıdır; kuyumcular kendi makaslarıyla fiyat vermeye devam edebilir, bu fiyat pazartesi açılışta yeniden oluşur.")],
+}
+
+DEGIS["mac-hangi-kanalda-yayinci-nasil-bulunur"] = {
+ "degistir": {"Bu sitede spor ekranı nasıl çalışır": ("Bu sitede maç yazıları nasıl çıkar",
+   "Spor bölümünde derbi, millî maç ve büyük Avrupa maçları için ayrı yazı çıkar: maçın tarihi, saati ve yayıncısı, federasyonun ve yayıncının duyurusuna dayanarak yazılır; iki kaynak çelişiyorsa ikisi de adıyla belirtilir. Skor tahmini, yorum ve bahis içeriği yoktur. Maç günü yaklaşan büyük karşılaşmalar ana sayfadaki takvim kutusunda görünür. Yanlış bir yayıncı bilgisi görürseniz iletişim sayfasından yazın; düzeltir, düzelttiğimizi sayfada not ederiz.")},
+ "ekle": [("Yurt dışından izlerken",
+   "Yayın hakları ülke bazında satılır. Türkiye'deki yayıncının internet yayını çoğunlukla yalnız Türkiye'den izlenebilir; yurt dışındaysanız o ülkedeki hak sahibine bakmanız gerekir. Avrupa kupaları için organizasyonun kendi sitesi ülke ülke yayıncı listesi yayımlar. Millî takım maçlarında da durum aynıdır: aynı maç Türkiye'de bir kanalda, Almanya'da başka bir kanalda verilir. Yurt dışında yaşayan okurlarımızın en sık yaptığı hata, Türkiye'deki kanalın adını arayıp bulunduğu ülkede yayın aramasıdır."),
+  ("Saat karışıklığı",
+   "Avrupa kupası maçlarının saati organizasyonun sitesinde çoğu zaman bulunduğunuz yerin saatine göre gösterilir; Türk basınında ise Türkiye saati (TSİ) yazılır. Kış aylarında Avrupa'nın büyük bölümü saatini geri alırken Türkiye almadığı için aynı maçın Türkiye saati yaz ve kış arasında bir saat kayar. Maç saatini bir haberden okuduysanız haberin TSİ yazıp yazmadığına bakın.")],
+ "sss": [("Maç ertelenirse nereden öğrenirim?", "Federasyonun duyurusu ve kulübün resmî hesabı ilk kaynaktır; yayıncı yayın akışını buna göre günceller."),
+         ("Yurt dışında Türk maçları nasıl izlenir?", "Bulunduğunuz ülkedeki yayın hakkı sahibinden; organizasyonların sitelerinde ülke bazında yayıncı listesi bulunur.")],
+}
+
+DEGIS["vizyona-giren-filmler-ne-zaman-aciklanir-nereden-bakilir"] = {
+ "degistir": {"Haftalık düzen": ("Bu sitede nasıl yazıyoruz",
+   "Ekran bölümünde vizyon haftası, festival programı ve dizilerin yeni sezonu için ayrı yazılar çıkar. Her yazıda film ya da dizinin tarihi dağıtımcının veya yayıncının duyurusuna dayanır ve kaynak adıyla belirtilir; tarih açıklanmamışsa \"henüz açıklanmadı\" yazar, tahmin yürütmeyiz. Yazılar tarihle arşivlenir; \"geçen ay neler girmişti\" sorusunun cevabı bölüm sayfasında kalır.")},
+ "ekle": [("Ön gösterim ve seans",
+   "Bazı filmler cuma öncesi perşembe akşamı ön gösterimle başlar; ön gösterim seansları sinema zincirlerinin uygulama ve sitelerinde normal seanslardan ayrı listelenir. Bir film vizyon listesindeyken şehrinizdeki salonda olmayabilir: salon sayısı dağıtımcı ile sinema işletmesi arasında belirlenir. İzlemek istediğiniz film için en doğru kaynak, gideceğiniz salonun o haftaki seans listesidir; liste genellikle perşembe günü kesinleşir."),
+  ("Dijital platformlar",
+   "Platform filmleri ve dizileri sinema takvimine bağlı değildir; yayın günü ve saati platformun kendi duyurusunda yazar. Sinemada gösterilen bir filmin platforma ne zaman geleceği ise dağıtım anlaşmasına bağlıdır ve önceden bilinmeyebilir. \"Bu film hangi platformda\" sorusunun kesin cevabı platformun kendi arama sayfasındadır; haberlerdeki tarih değişebilir.")],
+ "sss": [("Film vizyondan ne zaman kalkar?", "Sabit bir süre yoktur; salon programı haftalık belirlenir, izleyici azaldıkça seans sayısı düşer."),
+         ("Ön gösterim nedir?", "Resmî vizyon gününden önce, genellikle perşembe akşamı yapılan ilk gösterimlerdir; seansları ayrıca listelenir.")],
+}
+
+DEGIS["google-trends-bugun-en-cok-aranan-listesi-nasil-okunur"] = {
+ "degistir": {"Haber bağlantısı nereden gelir": ("Haber bilgisi nereden gelir",
+   "Google çoğu başlığın yanına o aramayla ilişkilendirdiği bir haberi ekler. Bizim listemizde haberin kaynağı adıyla yazar; başka yayıncının metnini kopyalamayız ve dış bağlantı vermeyiz. Bir başlığı kendimiz araştırıp yazdıysak, o satır doğrudan kendi yazımıza gider: ne oldu, neden arandı, kaynaklarıyla. Google'ın haber bağlamadığı başlıklarda satırda bunu açıkça belirtiriz ve kendi kafamızdan bir haber eklemeyiz.")},
+ "ekle": [("Trend, en çok aranan demek değildir",
+   "Liste bir konunun kısa sürede ne kadar sıçradığını ölçer, toplam arama sayısını değil. \"Hava durumu\" ya da \"döviz\" gibi her gün çok aranan konular, aramaları olağan düzeyde seyrettiği için listeye girmeyebilir; buna karşılık birkaç saat içinde aniden aranmaya başlayan bir isim ilk sıraya çıkabilir. Bu yüzden listeyi \"Türkiye'nin gündemi\" diye değil, \"Türkiye'nin o gün aniden merak ettiği şeyler\" diye okumak daha doğrudur."),
+  ("Kendiniz nasıl bakarsınız",
+   "Google Trends'in \"Şu anda trend olanlar\" bölümünde ülke olarak Türkiye'yi seçip listeyi kendiniz görebilirsiniz. Süre filtresiyle son 4 saat, 24 saat, 48 saat ya da 7 günün sıçramalarına bakılabilir; kategori filtresi spor, eğlence, iş gibi alanları ayırır. Bir başlığa tıklayınca aramanın ne zaman başladığı ve ilişkili sorgular görünür. Kesin arama sayısı bu ekranda da yoktur; eşik değerleri kıyas için kullanılır.")],
+ "sss": [("Bir başlık neden birkaç gün listede kalır?", "Konu birkaç gün boyunca yeni gelişmelerle aranmaya devam ediyorsa her gün yeniden sıçrama yapar; günlük sayfalarda bu \"devreden başlık\" olarak görünür."),
+         ("Listede neden bazı önemli haberler yok?", "Liste sıçramayı ölçer; önemli ama beklenen bir haber, arama sayısı olağan seyrettiği için listeye girmeyebilir.")],
+}
+
+DEGIS["enflasyon-verisi-ne-zaman-aciklanir-tuik-takvimi"] = {
+ "degistir": {"Bu sitede nasıl gösteriyoruz": ("Bu sitede nasıl gösteriyoruz",
+   "Enflasyon günü ana sayfadaki takvim kutusunda önceden işaretlidir. Veri açıklandığında haber bölümünde TÜİK bülteninin kaynağıyla bir yazı çıkar: aylık ve yıllık oran, 12 aylık ortalama ve kira artışına etkisi. Yorum ve tahmin yapmayız; rakam yalnızca TÜİK'in bülteninde geçiyorsa yazılır. Bu sayfa bilgi amaçlıdır; mali karar için resmî kaynaklara ve uzman görüşüne başvurulmalıdır.")},
+ "ekle": [("Kira artışında hangi rakam geçerli",
+   "Konut kiralarında yıllık artış için yasal üst sınır, Türk Borçlar Kanunu'nun 344. maddesine göre bir önceki kira yılında TÜFE'nin on iki aylık ortalamalara göre değişimidir. Bu oran TÜİK bülteninde \"on iki aylık ortalamalara göre\" satırında yer alır; haber başlıklarındaki yıllık enflasyonla aynı rakam değildir. Kira sözleşmeniz hangi ayda yenileniyorsa, o aydan önce açıklanan son bültendeki on iki aylık ortalama rakamına bakılır. İşyeri kiralarında da aynı ölçüt uygulanır; sözleşmede daha düşük bir oran yazıyorsa sözleşme geçerlidir."),
+  ("TÜFE ile ÜFE farkı",
+   "TÜFE, hanelerin satın aldığı mal ve hizmetlerin fiyat değişimini ölçer; maaş, emekli aylığı ve kira hesaplarında esas alınan budur. Yurt içi üretici fiyat endeksi (Yİ-ÜFE) ise üreticinin sattığı malların fiyatını ölçer ve aynı gün açıklanır. Ticari sözleşmelerde ve bazı vergi hesaplarında Yİ-ÜFE geçebilir; hangi endeksin geçerli olduğu sözleşme ya da mevzuat metninde yazar.")],
+ "sss": [("Kira artışı için hangi oran kullanılır?", "Bir önceki kira yılının TÜFE on iki aylık ortalamalara göre değişimi; TÜİK bülteninde ayrı satırda yer alır."),
+         ("Yıllık enflasyon ile 12 aylık ortalama aynı şey mi?", "Hayır. Yıllık oran geçen yılın aynı ayına göre değişimdir; 12 aylık ortalama son on iki ayın ortalamasını önceki on iki ayla karşılaştırır.")],
+ "kaynak": [("Türk Borçlar Kanunu md. 344", "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.6098.pdf")],
+}
+
+DEGIS["yapay-zeka-ile-uretilmis-gorsel-nasil-anlasilir-etiket"] = {
+ "ekle": [("İçerik kimlik bilgisi ve görünmez filigran",
+   "Bazı görsel üretim araçları ve kamera üreticileri, dosyanın içine \"içerik kimlik bilgisi\" (C2PA standardı) ekler: görselin hangi araçla üretildiği ya da düzenlendiği bu kayıtta yazar ve herkese açık doğrulama sitelerinde okunabilir. Google da kendi modelleriyle üretilen görsellere SynthID adlı, gözle görülmeyen bir filigran ekliyor. Bu işaretler güçlü bir kanıttır ama her zaman yoktur: kayıt eklemeyen araçlar var, ekran görüntüsü alınınca ya da sosyal medyaya yüklenince dosya içindeki kayıt çoğunlukla silinir. Bu yüzden işaretin olması kesin sonuç verir, olmaması ise hiçbir şey kanıtlamaz."),
+  ("Ters görsel araması",
+   "Bir görselin nereden çıktığını anlamanın en hızlı yolu ters görsel aramasıdır: görseli arama motorunun görsel arama bölümüne yükleyin ya da bağlantısını verin. Görsel daha önce bir haber ajansında, bir fotoğrafçının arşivinde ya da bir stok sitesinde yayımlandıysa ilk kaynağı ve tarihi çoğunlukla bulunur. Hiçbir yerde önceki bir kaydı yoksa ve yukarıdaki ipuçlarından birkaçı da görülüyorsa, görselin üretilmiş olma ihtimali yükselir.")],
+ "sss": [("Ekran görüntüsü alınınca yapay zekâ kaydı kalır mı?", "Dosyaya gömülü içerik kimlik bilgisi çoğunlukla silinir; görünmez filigranlar bazı düzenlemelere dayanabilir ama kesin değildir."),
+         ("Ters görsel araması ne işe yarar?", "Görselin daha önce nerede ve ne zaman yayımlandığını gösterir; ilk kaynağı bulmanın en hızlı yoludur.")],
+ "kaynak": [("Content Credentials (C2PA)", "https://contentcredentials.org/")],
+}
+
+DEGIS["isletme-sosyal-medya-haftalik-paylasim-takvimi"] = {
+ "ekle": [("Örnek bir hafta",
+   "Kafe örneğiyle: pazartesi öğleden sonra bir saatlik çekim — yeni tatlının dört açısı, hazırlanışının üç kısa planı, baristanın bir cümlelik önerisi, bir müşterinin izniyle kısa sözü. Salı sabahı tatlının bitmiş karesi (iş), çarşamba hazırlanış videosu (süreç), perşembe baristanın önerisi (insan), cuma \"şekersiz seçenek var mı\" sorusunun cevabı (bilgi), cumartesi müşterinin sözü (kanıt). Pazar ve pazartesi boş kalır. Toplam hazırlık bir öğleden sonra ve her gün beş dakikalık paylaşım."),
+  ("Ayda bir yapılacak kontrol",
+   "Ay sonunda üç soruya bakın. Hangi içerik türü en çok mesaj ya da arama getirdi? Hangi gün ve saatte paylaşılan içerik daha çok izlendi? Hangi tür hiç karşılık bulmadı? Karşılık bulmayan türü bırakmak yerine bir ay farklı biçimde deneyin: aynı ürünü süreç yerine insan üzerinden anlatmak gibi. Takvimi bu üç cevaba göre değiştirin; platformların istatistik ekranı bu soruların hepsini cevaplar.")],
+ "sss": [("Çekimi telefonla yapabilir miyiz?", "Evet; iyi ışık ve sabit tutuş çoğu işletme içeriği için yeterlidir. Profesyonel çekim tanıtım filmi ve reklam için ayrılabilir."),
+         ("Hangi saatte paylaşmak gerekir?", "Genel bir doğru saat yoktur; kendi hesabınızın istatistik ekranı takipçilerinizin çevrimiçi olduğu saatleri gösterir.")],
+}
+
+DEGIS["sergi-konser-tiyatro-takvimi-nereden-takip-edilir"] = {
+ "degistir": {"Ücretsiz etkinlik nasıl bulunur": ("Ücretsiz etkinlik nasıl bulunur",
+   "Belediye konserleri, üniversite etkinlikleri, galeri açılışları ve kütüphane söyleşileri çoğunlukla ücretsizdir ve az duyurulur. Belediyenin kültür sayfasını ve şehirdeki galerilerin sosyal hesaplarını haftada bir taramak yeter. Sanat bölümünde yoğun haftalar için konser ve etkinlik takvimi yazıları çıkar; bu yazılarda ücretsiz etkinlikler ayrıca belirtilir, kaynağı ve tarihi olmayan etkinlik listeye girmez.")},
+ "ekle": [("Bilet alırken dikkat edilecekler",
+   "Bileti etkinliğin resmî satış kanalından alın; organizatörün duyurusunda hangi platformun yetkili olduğu yazar. İkinci el satışlarda sahte ya da iptal edilmiş bilet riski yüksektir ve etkinlik iptal edilirse iade alınamayabilir. İade ve değişim koşulları organizatöre göre değişir; satın almadan önce etkinlik sayfasındaki koşulları okuyun. Etkinlik ertelenir ya da iptal edilirse duyuru genellikle bilet platformundan ve e-postayla gelir; iade de aynı kanal üzerinden yapılır."),
+  ("Sezon ne zaman başlar",
+   "Kamu tiyatroları ve opera-bale sezonları genellikle ekim ayında açılır, mayıs-haziranda kapanır; sezon programı ve bilet satış tarihleri kurumların sitesinde sezon başından önce duyurulur. Yaz aylarında salonlardan çok açık hava konserleri ve festivaller öne çıkar. Galeriler ise sergi programını genellikle sonbahar ve ilkbaharda yoğunlaştırır; açılış davetleri çoğu zaman herkese açıktır.")],
+ "sss": [("İptal edilen etkinliğin bileti nasıl iade edilir?", "Bileti aldığınız resmî platform üzerinden; iade koşullarını organizatör belirler ve duyurusunu yapar."),
+         ("Tiyatro sezonu ne zaman başlar?", "Kamu tiyatrolarında genellikle ekimde; program ve satış tarihleri kurumların sitesinde önceden duyurulur.")],
+}
+
+
+def _genislet():
+    for r in REHBERLER:
+        d = DEGIS.get(r["slug"])
+        if not d:
+            continue
+        bol = list(r["bolumler"])
+        for eski, (yeni, metin) in d.get("degistir", {}).items():
+            bol = [(yeni, metin) if h == eski else (h, p) for h, p in bol]
+        mevcut = {h for h, _ in bol}
+        # yeni bölümler, sitenin kendini anlattığı son bölümden ÖNCE girer
+        son = bol[-1] if bol and ("sitede" in bol[-1][0].lower() or "bizim" in bol[-1][0].lower() or "tek adreste" in bol[-1][0].lower() or "nasıl yazıyoruz" in bol[-1][0].lower() or "maç yazıları" in bol[-1][0].lower()) else None
+        govde = bol[:-1] if son else bol
+        for h, p in d.get("ekle", []):
+            if h not in mevcut:
+                govde.append((h, p))
+        r["bolumler"] = govde + ([son] if son else [])
+        sorular = {q for q, _ in r.get("sss", [])}
+        r["sss"] = list(r.get("sss", [])) + [x for x in d.get("sss", []) if x[0] not in sorular]
+        kay = {a for a, _ in r.get("kaynaklar", [])}
+        r["kaynaklar"] = list(r.get("kaynaklar", [])) + [x for x in d.get("kaynak", []) if x[0] not in kay]
+        r["guncelleme"] = "2026-09-28"
+
+
+_genislet()
