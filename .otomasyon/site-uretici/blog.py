@@ -120,7 +120,11 @@ def indeks_uret(mevcut):
        "description":"Video prodüksiyon, drone çekimi, 3D modelleme ve emlak tanıtımı üzerine yazılar.",
        "publisher":{"@type":"Organization","name":"Luna Yapım","url":KOK},
        "blogPost":[{"@type":"BlogPosting","headline":m["baslik"],"url":KOK+"/blog/"+m["dosya"],
-                    "datePublished":m["tarih"],"description":m["ozet"]} for m in mevcut]}))
+                    "datePublished":m["tarih"],"description":m["ozet"],
+                    "image":KOK+"/assets/og-image.png",
+                    "author":{"@type":"Organization","name":"Luna Yapım","url":KOK},
+                    "publisher":{"@type":"Organization","name":"Luna Yapım",
+                      "logo":{"@type":"ImageObject","url":KOK+"/assets/og-image.png"}}} for m in mevcut]}))
 
     g = head(e(baslik), e(aciklama), e("video prodüksiyon blog, drone çekimi rehberi, inşaat 3d modelleme yazıları, emlak video rehberi, tanıtım filmi ipuçları"), url, semalar)
     g += """<div class="page-hero">

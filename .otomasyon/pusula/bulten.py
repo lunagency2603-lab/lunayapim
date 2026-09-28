@@ -74,20 +74,31 @@ FORM = """<div class="bl-abone" id="abone">
 </script>"""
 
 
-def _sema(baslik, aciklama, url, tur="WebPage"):
+def _sema(baslik, aciklama, url, tur="WebPage", tarih=None):
+    # 24.09.2026 — Article olarak isaretlenen bulten sayfalarinda image/author/
+    # datePublished yoktu; Google zorunlu alan eksikligi bildiriyordu. Sayfaya ozel
+    # gorsel olmadigi icin sitenin kendi og gorseli (blog yazilarinda da ayni).
+    ana = {"@type": tur, "name": baslik, "headline": baslik, "description": aciklama, "url": url,
+           "inLanguage": "tr", "isPartOf": {"@type": "WebSite", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
+           "publisher": {"@type": "Organization", "name": "Luna Yapım",
+                         "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}}}
+    if tur == "Article":
+        ana["image"] = "https://lunayapim.com/assets/og-image.png"
+        ana["author"] = {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"}
+        if tarih:
+            ana["datePublished"] = tarih
+            ana["dateModified"] = tarih
     return '<script type="application/ld+json">' + json.dumps({
         "@context": "https://schema.org", "@graph": [
-            {"@type": tur, "name": baslik, "headline": baslik, "description": aciklama, "url": url,
-             "inLanguage": "tr", "isPartOf": {"@type": "WebSite", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
-             "publisher": {"@type": "Organization", "name": "Luna Yapım"}},
+            ana,
             {"@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://lunayapim.com/"},
                 {"@type": "ListItem", "position": 2, "name": "Matrix Bülteni", "item": "https://lunayapim.com/bulten/"}]}
         ]}, ensure_ascii=False) + '</script>'
 
 
-def _bas(K, baslik, aciklama, url, tur="WebPage"):
-    b = K.head(_e(baslik), _e(aciklama), _e("matrix bülteni, kda matrix, otonom piyasa araştırma, kripto analiz sistemi, haftalık piyasa karnesi"), url, _sema(baslik, aciklama, url, tur))
+def _bas(K, baslik, aciklama, url, tur="WebPage", tarih=None):
+    b = K.head(_e(baslik), _e(aciklama), _e("matrix bülteni, kda matrix, otonom piyasa araştırma, kripto analiz sistemi, haftalık piyasa karnesi"), url, _sema(baslik, aciklama, url, tur, tarih))
     b = b.replace('<a href="./" style="opacity:1;color:var(--kirmizi)">İller</a>', '<a href="../sehir/">İller</a>')
     return b.replace('<a href="../bulten/">Bülten</a>', '<a href="./" style="opacity:1;color:var(--kirmizi)">Bülten</a>')
 
@@ -245,7 +256,9 @@ def sistem_html():
 <section class="acik"><div class="wrap">%s</div></section>
 <section><div class="wrap">%s</div></section>
 """ % (FORM, RISK)
-    return _bas(K, baslik, aciklama, url, "Article") + govde + K.FOOTER
+    # 24.09.2026 — 0. sayi tarihsiz kalici aciklama sayfasi; Article degil WebPage.
+    # Article olsaydi datePublished zorunlu olurdu ve uydurmak gerekirdi.
+    return _bas(K, baslik, aciklama, url, "WebPage") + govde + K.FOOTER
 
 
 def sayi_html(hafta, veri):
@@ -291,7 +304,12 @@ def sayi_html(hafta, veri):
 <section class="acik"><div class="wrap">%s</div></section>
 <section><div class="wrap">%s</div></section>
 """ % (_e(hafta), _e(hafta), "\n    ".join(p), FORM, RISK)
-    return _bas(K, baslik, aciklama, url, "Article") + govde + K.FOOTER
+    try:
+        _y, _w = hafta.split("-")
+        _t = datetime.date.fromisocalendar(int(_y), int(_w), 1).isoformat()
+    except Exception:
+        _t = None
+    return _bas(K, baslik, aciklama, url, "Article", _t) + govde + K.FOOTER
 
 
 def yayinla(kok=None):

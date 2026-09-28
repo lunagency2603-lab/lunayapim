@@ -9,6 +9,7 @@ yerine hepsi burada; üretimden sonra bir kez çalıştırılıyor.
 
 Hepsi ETKİSİZ TEKRARLANABİLİR (idempotent): iki kez çalıştırmak zarar vermez.
 """
+import html
 import glob, io, os, re, sys
 
 SURUM = {"css": "26", "videolar": "7", "asistan": "2", "ajan": "1", "agac": "5", "fon": "2"}
@@ -76,11 +77,66 @@ def okuma_ekle(s, on):
 ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3059196718190568" crossorigin="anonymous"></script>'
 
 
-# AdSense yalnız yayın bölümlerinde: gündem, bülten, TrendSaphiens. Diğer sayfalarda betik varsa kaldırılır.
-ADSENSE_BOLUM = ("gundem/", "bulten/", "trend/")
+# AdSense yalnız TrendSaphiens'te (trendsaphiens.com = /trend/). 28.09.2026: lunayapim.com
+# AdSense'te "düşük değerli içerik" ile reddedildi ve orada reklam hedefi yok; gündem/ ve
+# bulten/ (Matrix) listeden çıktı.
+ADSENSE_BOLUM = ("trend/",)
 
 
-ADSENSE_ASGARI_KELIME = 500      # ince sayfada reklam gösterilmez (AdSense içerik ölçütü)
+ADSENSE_ASGARI_KELIME = 400      # sayfanın KENDİ metni (kenar sütun, kart listesi, menü, form hariç)
+
+# 28.09.2026 — AdSense incelemesi sürerken reklam yalnız yayıncı içeriği olan ekranlarda.
+# Politika: "yayıncı içeriği olmayan / yalnız gezinme amaçlı ekranlarda reklam gösterilmez".
+# Bölüm indeksleri (başlık listesi), günün bülteni (başka sayfaların özeti), Google Trends
+# listesi (başlıklar Google'ın), arşiv gün sayfaları (noindex), araç dizini ve kurumsal
+# sayfalar bu yüzden reklamsız. Ana sayfa istisna: inceleme kodu arar, 1.700 kelime kendi metni var.
+ADSENSE_YASAK = [
+    r"^trend/[^/]+/index\.html$",            # bölüm indeksleri
+    r"^trend/(aranan|piyasa)/\d{4}-\d{2}-\d{2}\.html$",
+    r"^trend/(bulten|araclar|sistem|hakkimizda|iletisim|gizlilik|kosullar|denetim)(/index)?\.html$",
+]
+
+_OZ_ATLA_ETIKET = {"script", "style", "nav", "header", "footer", "svg", "aside", "form", "noscript", "button", "select"}
+_OZ_ATLA_SINIF = ("ts-kart", "ts-kartlar", "ts-serit", "ts-paylas", "ts-abone", "ts-reklam", "crumbs",
+                  "ts-bolumler", "ts-rehber-liste", "ts-arac-blok", "ts-bant", "ts-yan", "ts-takvim", "ts-rakam")
+
+
+def _oz_kelime(s):
+    """Sayfanın kendi metni: <main> içinde, kenar sütun/kart/menü/form/paylaş dışında kalan kelimeler."""
+    from html.parser import HTMLParser
+    m = re.search(r"(?is)<main[^>]*>(.*)</main>", s)
+    govde = m.group(1) if m else s
+    BOS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+
+    class P(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True); self.yigin = []; self.atla = 0; self.n = 0
+        def handle_starttag(self, tag, attrs):
+            if tag in BOS:
+                return
+            sinif = dict(attrs).get("class") or ""
+            gizle = tag in _OZ_ATLA_ETIKET or any(c.startswith(_OZ_ATLA_SINIF) for c in sinif.split())
+            self.yigin.append((tag, gizle))
+            if gizle:
+                self.atla += 1
+        def handle_endtag(self, tag):
+            if tag in BOS:
+                return
+            while self.yigin:
+                t, g = self.yigin.pop()
+                if g:
+                    self.atla -= 1
+                if t == tag:
+                    break
+        def handle_data(self, d):
+            if not self.atla:
+                self.n += len(re.findall(r"[\w]+", d))
+    p = P()
+    try:
+        p.feed(govde)
+    except Exception:
+        return _govde_kelime(s)
+    return p.n
 
 
 def _govde_kelime(s):
@@ -88,18 +144,29 @@ def _govde_kelime(s):
     return len(re.sub(r"(?s)<[^>]+>", " ", t).split())
 
 
-def adsense_ekle(s, p=""):
-    """AdSense betiği yalnız ADSENSE_BOLUM altındaki YETERLİ İÇERİKLİ sayfaların <head>'ine.
-
-    14.09.2026: liste/kapak sayfaları (bölüm indeksleri, sistem sayfaları) 350-440
-    kelimeydi; reklam taşıyan ince sayfa AdSense'in "düşük değerli içerik"
-    değerlendirmesini besliyor. Reklam artık yalnız yazı ve veri sayfalarında.
-    """
+def reklam_izinli(s, p=""):
     p = (p or "").replace(os.sep, "/")
-    izinli = p.startswith(ADSENSE_BOLUM) and _govde_kelime(s) >= ADSENSE_ASGARI_KELIME
-    if not izinli:
+    if not p.startswith(ADSENSE_BOLUM):
+        return False
+    if p == "trend/index.html":
+        return True
+    if any(re.search(d, p) for d in ADSENSE_YASAK):
+        return False
+    if re.search(r'name="robots" content="[^"]*noindex', s):
+        return False
+    return _oz_kelime(s) >= ADSENSE_ASGARI_KELIME
+
+
+def adsense_ekle(s, p=""):
+    """AdSense betiği yalnız TrendSaphiens'in YETERLİ KENDİ İÇERİĞİ olan sayfalarının <head>'ine.
+
+    14.09.2026: liste/kapak sayfaları reklam taşıyınca "düşük değerli içerik" değerlendirmesi besleniyordu.
+    28.09.2026: ölçüt sayfanın kendi metnine çekildi (kenar sütun ve kart listeleri sayılmıyor)
+    ve yalnız gezinme amaçlı ekranlar kesin yasak listesine alındı.
+    """
+    if not reklam_izinli(s, p):
         s = re.sub(r'[ \t]*<script async src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js[^<]*</script>\n?', "", s)
-        s = re.sub(r'\s*<div class="ts-reklam">.*?</div>\s*', "\n", s, flags=re.S)
+        s = re.sub(r'\s*<div class="ts-reklam"><ins class="adsbygoogle".*?</ins><script>\(adsbygoogle=window\.adsbygoogle\|\|\[\]\)\.push\(\{\}\);</script></div>\s*', "\n", s, flags=re.S)
         return s
     if "adsbygoogle.js" in s or "</head>" not in s:
         return s
@@ -341,6 +408,39 @@ def varlik_kat(s, p, kok):
 
 
 
+def il_hizmet_bagla(s, p, kok):
+    """İl sayfası, o ilin VAR OLAN her hizmet sayfasına bağlansın (idempotent).
+
+    28.09.2026 bulgusu: 46 ilin drone sayfası var ama 24'ü (kademe-2) kendi il sayfasından
+    hiç bağlantı almıyordu — il sayfasındaki drone bölümü genel /hizmetler/drone-fpv'ye
+    gidiyordu, "hizmet sayfalarımız" kutusunda da drone kartı yoktu. Arayan "<il> drone
+    çekimi" sayfasına il sayfasından ulaşamıyordu; Google da o sayfayı sahipsiz görüyordu.
+    """
+    pp = (p or "").replace(os.sep, "/")
+    m = re.match(r"^sehir/([a-z]+)\.html$", pp)
+    if not m or m.group(1) == "index":
+        return s
+    il = m.group(1)
+    hedef = il + "-drone-cekimi"
+    if not os.path.exists(os.path.join(kok, "sehir", hedef + ".html")):
+        return s
+    mt = re.search(r"<title>(.+?) Video Çekimi", s)
+    ad = html.unescape(mt.group(1)).strip() if mt else il.capitalize()
+    s = s.replace('<p><a href="../hizmetler/drone-fpv">Drone ve FPV çekim hizmet detayı →</a></p>',
+                  '<p><a href="%s">%s Drone ve FPV çekim detay sayfası →</a></p>' % (hedef, ad), 1)
+    s = s.replace('"name": "%s Drone ve FPV çekim", "url": "https://lunayapim.com/hizmetler/drone-fpv"' % ad,
+                  '"name": "%s Drone ve FPV çekim", "url": "https://lunayapim.com/sehir/%s"' % (ad, hedef), 1)
+    if ('href="%s"><b>' % hedef) not in s:
+        kart = '<a href="%s"><b>%s Drone Çekimi</b><span>Havadan 4K ve FPV planlar</span></a>' % (hedef, ad)
+        for sonraki in (il + "-klip-cekimi", il + "-dugun-cekimi", il + "-isletme-tanitim"):
+            k = '<a href="%s"><b>' % sonraki
+            if k in s:
+                i = s.index(k)
+                s = s[:i] + kart + "\n      " + s[i:]
+                break
+    return s
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -355,6 +455,7 @@ def calistir(kok, desen="**/*.html"):
         s = ajan_ekle(s, on)
         s = okuma_ekle(s, on)
         s = adsense_ekle(s, p)
+        s = il_hizmet_bagla(s, p, kok)
         s = menu_trend(s, on, p)
         s = altbilgi_yayin(s, on)
         s = gizlilik_ekle(s, on)

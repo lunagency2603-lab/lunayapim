@@ -89,6 +89,10 @@ def _sema(baslik, aciklama, url, maddeler, tarih):
     return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": baslik, "description": aciklama, "url": url,
          "datePublished": tarih, "dateModified": tarih, "inLanguage": "tr",
+         # 24.09.2026 — image zorunlu alan; yoksa Google Article'i gecersiz sayiyor.
+         # Sayfaya ozel gorsel olmadigi icin sitenin kendi og gorseli (1200x630),
+         # blog yazilarinda da ayni gorsel kullaniliyor.
+         "image": "https://lunayapim.com/assets/og-image.png",
          "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
          "publisher": {"@type": "Organization", "name": "Luna Yapım",
                        "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},

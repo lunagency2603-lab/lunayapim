@@ -21,6 +21,10 @@ from .ayarlar import SITE_KOK, KOK_DIZIN
 
 AY = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]
 KOK_URL = "https://lunayapim.com/trend/"
+# 28.09.2026 — "dolar kaç TL bugün" için TEK KALICI ADRES. Tarihli gün sayfaları her gün yeni
+# adres açtığı için sıralama gücü hiç birikmiyordu (18.09 sayfası 40 gösterim/9. sıra, ertesi gün
+# noindex). Artık aranan adres sabit, her tur en yeni veriyle yeniden yazılır; gün sayfaları arşivdir.
+SABIT_PIYASA = "dolar-kac-tl-bugun"
 ADSENSE = "ca-pub-3059196718190568"
 
 KATEGORI = {
@@ -316,10 +320,10 @@ def _ust_serit(tr=""):
     for kod, ad in (("USD", "Dolar"), ("EUR", "Euro")):
         x = k.get(kod, {}).get("satis")
         if x:
-            oge.append('<a href="%spiyasa/%s"><b>%s</b> %s ₺</a>' % (tr, _e(v["tarih"]), ad, _e(_tl(x))))
+            oge.append('<a href="%s%s"><b>%s</b> %s ₺</a>' % (tr, SABIT_PIYASA, ad, _e(_tl(x))))
     ga = (al.get("gram-altin") or {}).get("satis")
     if ga:
-        oge.append('<a href="%spiyasa/%s"><b>Gram altın</b> %s ₺</a>' % (tr, _e(v["tarih"]), _e(ga)))
+        oge.append('<a href="%s%s"><b>Gram altın</b> %s ₺</a>' % (tr, SABIT_PIYASA, _e(ga)))
     if not oge:
         return ""
     return ('<div class="ts-serit-ust"><div class="wrap ts-serit-ust-ic">'
@@ -527,13 +531,14 @@ def _gunluk_sayfalar():
                        "url": "aranan/%s" % t})
         # 14.09.2026: bölüm günlükleri (başlık derlemesi) kaldırıldı — akışa girmez.
         # Bölüm sayfaları artık yalnız kendi yazdığımız yazıları listeler.
-    for v in PG.hepsi():
+    _pv = [x for x in PG.hepsi() if x.get("tcmb") or x.get("altin")]
+    for v in _pv[-1:]:   # 28.09.2026: tek kart, sabit adrese gider (gün kartları akışı dolduruyordu)
         t = v.get("tarih"); k = (v.get("tcmb") or {}).get("kurlar", {})
         usd = _tl(k.get("USD", {}).get("satis", "")); eur = _tl(k.get("EUR", {}).get("satis", ""))
         ga = ((v.get("altin") or {}).get("gram-altin") or {}).get("satis", "")
         ozet = "TCMB satış: dolar %s, euro %s%s. Kaynaklı, yatırım tavsiyesi değildir." % (usd or "—", eur or "—", (", gram altın %s" % ga) if ga else "")
         ci.append({"tur": "sayfa", "tarih": t, "kat": "piyasa", "gorsel": BOLUM_GORSEL["piyasa"],
-                   "baslik": "Dolar, euro ve altın bugün · %s" % _tr_tarih(t), "olgu": ozet, "url": "piyasa/%s" % t})
+                   "baslik": "Dolar kaç TL bugün? %s" % _tr_tarih(t), "olgu": ozet, "url": SABIT_PIYASA})
     return ci
 
 
@@ -576,7 +581,7 @@ def _diskteki_gun_sayfalari(kok, mevcut):
     import glob as _g
     ek = []
     var = set(m.get("url") for m in mevcut)
-    for kat in ["aranan", "piyasa"]:   # bölüm günlükleri kaldırıldı (14.09.2026)
+    for kat in ["aranan"]:   # bölüm günlükleri kaldırıldı (14.09.2026); piyasa günleri 28.09'dan beri sabit sayfada
         d = os.path.join(kok, "trend", kat)
         if not os.path.isdir(d):
             continue
@@ -677,8 +682,8 @@ def _rakam_kutu(on="../", tr=""):
     if not hucre:
         return ""
     return ('<div class="ts-kutu ts-rakam"><h2 class="etk">Günün rakamı · %s</h2><div class="ts-rakam-izgara">%s</div>'
-            '<a class="ts-daha" href="%spiyasa/%s">Tam tablo ve kaynak →</a><p class="ts-not">Yatırım tavsiyesi değildir.</p></div>') % (
-            _e(_tr_tarih(v["tarih"])), "".join(hucre), tr, _e(v["tarih"]))
+            '<a class="ts-daha" href="%s%s">Dolar kaç TL bugün? Tam tablo →</a><p class="ts-not">Yatırım tavsiyesi değildir.</p></div>') % (
+            _e(_tr_tarih(v["tarih"])), "".join(hucre), tr, SABIT_PIYASA)
 
 
 def _bulten_bant(kok, tr=""):
@@ -1024,9 +1029,9 @@ def _rehber_bugun(r):
         ic = ("Gram altın satış: <b>%s TL</b> (alış %s TL). Güncelleme: %s. Kuyumcu fiyatı işçilik ve makasa göre farklıdır; "
               "hesabın nasıl yapıldığı aşağıda." % (_e(g["satis"]), _e(g.get("alis") or "—"), _e((v.get("altin") or {}).get("guncelleme") or t)))
     kutu = ('<div class="ts-analiz ts-bugun"><h2 class="etk">Bugünkü rakam · %s</h2><p>%s</p>'
-            '<p><a href="piyasa/%s">Dolar, euro ve altın — günün tam tablosu →</a></p>'
+            '<p><a href="%s">Dolar kaç TL bugün? Günün tam tablosu ve son iki hafta →</a></p>'
             '<p class="ts-not">Resmî kaynaktan otomatik alınır; yatırım tavsiyesi değildir.</p></div>'
-            % (_e(_tr_tarih(t)), ic, _e(t)))
+            % (_e(_tr_tarih(t)), ic, SABIT_PIYASA))
     return kutu, t
 
 
@@ -1402,6 +1407,160 @@ def piyasa_html(v, guncel=True):
     return _gunluk_kabuk(baslik, aciklama, url, "piyasa", BOLUM_GORSEL["piyasa"], govde, "Article", t, guncel)
 
 
+def _kisa_tarih(iso):
+    """2026-09-28 -> 28 Eylül (yılsız, başlık için)."""
+    try:
+        return " ".join(_tr_tarih(iso).split()[:2])
+    except Exception:
+        return iso
+
+
+def _cevir_tablosu(usd, eur):
+    """1 / 10 / 100 / 1.000 dolar ve euro kaç TL — TCMB satış kuruyla, yalnız veri varsa."""
+    if not (usd or eur):
+        return ""
+    sat = []
+    for mik in (1, 10, 100, 1000):
+        def h(k):
+            return ("%s" % _tl(str(round(k * mik, 4)))) if k else "—"
+        sat.append("<tr><td>%s</td><td>%s TL</td><td>%s TL</td></tr>" % (
+            "{:,}".format(mik).replace(",", "."), h(usd), h(eur)))
+    return ('<h2>Hızlı çevirme: kaç dolar kaç TL eder?</h2>'
+            '<div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Tutar</th><th>Dolar → TL</th><th>Euro → TL</th></tr></thead>'
+            '<tbody>%s</tbody></table></div><p class="ts-not">TCMB döviz satış kuruyla çarpılmıştır. Bankada ya da döviz bürosunda '
+            'eline geçecek tutar makas yüzünden farklıdır.</p>') % "".join(sat)
+
+
+def _son_gunler(gecmis, t, gun=14):
+    """Son N yayının tablosu + dönemin en düşük/en yüksek dolar kuru. Kendi kaydımızdan."""
+    satirlar = [x for x in gecmis if x.get("tarih", "") <= t and (x.get("tcmb") or x.get("altin"))][-gun:]
+    if len(satirlar) < 2:
+        return ""
+    sat = []; onceki = None; usdler = []
+    for x in satirlar:
+        k = (x.get("tcmb") or {}).get("kurlar", {})
+        u = _sayi((k.get("USD") or {}).get("satis")); e = _sayi((k.get("EUR") or {}).get("satis"))
+        g = ((x.get("altin") or {}).get("gram-altin") or {}).get("satis") or "—"
+        if u:
+            usdler.append((u, x["tarih"]))
+        deg = "—"
+        if u and onceki:
+            f = (u - onceki) / onceki * 100
+            deg = ("+" if f > 0 else ("−" if f < 0 else "")) + "%" + _yuzde(f)
+        if u:
+            onceki = u
+        sat.append('<tr><td><a href="piyasa/%s">%s</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+            _e(x["tarih"]), _e(_tr_tarih(x["tarih"])), _e(_tl(str(u)) if u else "—"), _e(_tl(str(e)) if e else "—"), _e(g), _e(deg)))
+    ozet = ""
+    if len(usdler) >= 2:
+        lo = min(usdler); hi = max(usdler); ilk = usdler[0]; son = usdler[-1]
+        ozet = ("<p>Son %d yayında dolar satış kuru en düşük <strong>%s TL</strong> (%s), en yüksek <strong>%s TL</strong> (%s). "
+                "Dönemin başından bu yana değişim %%%s %s.</p>" % (
+                    len(usdler), _e(_tl(str(lo[0]))), _e(_tr_tarih(lo[1])), _e(_tl(str(hi[0]))), _e(_tr_tarih(hi[1])),
+                    _yuzde((son[0] - ilk[0]) / ilk[0] * 100), "artış" if son[0] > ilk[0] else ("düşüş" if son[0] < ilk[0] else "")))
+    # 14 günden eski günler: aya göre arşiv satırı (noindex arşiv sayfaları yetim kalmasın)
+    eski = [x["tarih"] for x in gecmis if x.get("tarih", "") <= t and (x.get("tcmb") or x.get("altin"))][:-gun]
+    arsiv = ""
+    if eski:
+        aylar = {}
+        for d in eski:
+            aylar.setdefault(d[:7], []).append(d)
+        arsiv = '<p class="ts-not"><b>Daha eski günler:</b> ' + " · ".join(
+            "%s: %s" % (_e(" ".join(_tr_tarih(g[0]).split()[1:])), ", ".join('<a href="piyasa/%s">%s</a>' % (_e(x), int(x[8:])) for x in g))
+            for _, g in sorted(aylar.items(), reverse=True)) + "</p>"
+    return ('<h2>Son iki haftada dolar, euro ve altın</h2>%s'
+            '<div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Tarih</th><th>Dolar</th><th>Euro</th><th>Gram altın</th><th>Dolar, güne göre</th></tr></thead>'
+            '<tbody>%s</tbody></table></div><p class="ts-not">TCMB döviz satış kuru ve altın beslemesinin satış rakamı. Tarihe tıklayınca o günün tam tablosu açılır. '
+            'Hafta sonu ve resmî tatilde TCMB tablo yayınlamaz; o günler listede yoktur.</p>%s') % (ozet, "".join(reversed(sat)), arsiv)
+
+
+SABIT_SSS_EK = [
+    ("Dolar kuru ne zaman güncellenir?",
+     "TCMB gösterge kurlarını iş günlerinde saat 15.30'da açıklar. Bu sayfa her yayın turunda en yeni tabloyla yeniden yazılır; hafta sonu ve resmî tatilde bir önceki iş gününün kuru geçerlidir."),
+    ("Bankadaki dolar kuru neden bu sayfadakinden farklı?",
+     "Buradaki rakam TCMB'nin gösterge kurudur. Bankalar ve döviz büroları alış ile satış arasına kendi makasını koyar, gün içinde piyasaya göre fiyatı günceller. Ayrıntısı rehberimizde."),
+]
+
+
+def sabit_piyasa_html(v, gecmis):
+    """TEK KALICI 'dolar kaç TL bugün' sayfası — /trend/dolar-kac-tl-bugun (on=../, tr='')."""
+    t = v["tarih"]; tc = v.get("tcmb") or {}; al = v.get("altin") or {}; k = tc.get("kurlar", {})
+    usd = _sayi((k.get("USD") or {}).get("satis")); eur = _sayi((k.get("EUR") or {}).get("satis"))
+    ga = (al.get("gram-altin") or {}).get("satis")
+    baslik = "Dolar Kaç TL Bugün? Euro ve Gram Altın · %s | TrendSaphiens" % _kisa_tarih(t)
+    aciklama = ("%s TCMB kuru: 1 dolar %s TL, 1 euro %s TL%s. Son iki haftanın tablosu, kaynaklı. Yatırım tavsiyesi değildir." % (
+        _tr_tarih(t), _tl((k.get("USD") or {}).get("satis")) or "—", _tl((k.get("EUR") or {}).get("satis")) or "—",
+        (", gram altın %s TL" % ga) if ga else ""))[:160]
+    url = KOK_URL + SABIT_PIYASA
+    cevap = ("<p class=\"ts-olgu\"><strong>%s itibarıyla TCMB döviz satış kuru: 1 dolar = %s TL.</strong> "
+             "1 euro %s TL%s. Bu sayfa her yayın turunda en yeni veriyle kendiliğinden yenilenir; "
+             "son güncelleme %s.</p>" % (
+                 _e(_tr_tarih(t)), _e(_tl((k.get("USD") or {}).get("satis")) or "—"), _e(_tl((k.get("EUR") or {}).get("satis")) or "—"),
+                 (", gram altın %s TL" % _e(ga)) if ga else "", _e(v.get("alindi") or t)))
+    kur_sat = "".join("<tr><td>%s <span class='g'>(%s)</span></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
+                      % (_e(kod), _e(x.get("ad", "")), _e(_tl(x.get("alis")) or "—"), _e(_tl(x.get("satis")) or "—"), _e(_tl(x.get("efektif_alis")) or "—"), _e(_tl(x.get("efektif_satis")) or "—"))
+                      for kod, x in k.items())
+    altin_sat = "".join("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (_e(x["ad"]), _e(x.get("alis") or "—"), _e(x.get("satis") or "—"), _e(x.get("degisim") or "—"))
+                        for a, x in al.items() if isinstance(x, dict))
+    sorular = _piyasa_sorular(tc, al)
+    sss_ek = "".join("<h3>%s</h3><p>%s</p>" % (_e(q), _e(a)) for q, a in SABIT_SSS_EK)
+    sss_ek += '<p><a href="dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli">TCMB kuru ile banka kuru neden farklı? Rehberi oku →</a></p>'
+    # FAQPage: sayfada görünen soru-cevapların aynısı
+    faq = []
+    for kod, ad in (("USD", "Dolar"), ("EUR", "Euro")):
+        x = k.get(kod, {})
+        if x.get("satis"):
+            faq.append(("%s kaç TL?" % ad, "TCMB'nin %s tarihli tablosunda %s döviz satış kuru %s TL, döviz alış %s TL. Bu gösterge kurdur; banka kuru farklıdır." % (
+                tc.get("tarih") or t, ad.lower(), _tl(x["satis"]), _tl(x.get("alis")) or "—")))
+    if ga:
+        faq.append(("Gram altın kaç TL?", "Beslemenin %s güncellemesinde gram altın satış %s TL. Kuyumcuda işçilik ve makas eklenir." % (al.get("guncelleme") or t, ga)))
+    faq += SABIT_SSS_EK
+    sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [
+        {"@type": "WebPage", "name": baslik, "headline": "Dolar kaç TL bugün?", "description": aciklama, "url": url, "inLanguage": "tr",
+         "datePublished": "2026-09-28", "dateModified": t, "image": _gorsel_url(BOLUM_GORSEL["piyasa"], mutlak=True),
+         "author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"},
+         "publisher": {"@type": "Organization", "name": "TrendSaphiens", "url": KOK_URL, "logo": {"@type": "ImageObject", "url": "https://lunayapim.com/assets/luna-logo.png"}},
+         "citation": [{"@type": "CreativeWork", "name": "TCMB gösterge niteliğindeki döviz kurları", "url": "https://www.tcmb.gov.tr/kurlar/today.xml"}]},
+        {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "TrendSaphiens", "item": KOK_URL},
+            {"@type": "ListItem", "position": 2, "name": KATEGORI["piyasa"][0], "item": KOK_URL + "piyasa/"},
+            {"@type": "ListItem", "position": 3, "name": "Dolar kaç TL bugün?", "item": url}]}]}, ensure_ascii=False) + "</script>"
+    govde = """
+<article class="ts-yazi"><div class="wrap ts-yazi-izgara">
+  <div class="ts-yazi-ana">
+    <div class="crumbs"><a href="./">TrendSaphiens</a> · <a href="piyasa/">Piyasalar</a> · Dolar kaç TL bugün?</div>
+    <span class="ts-chip">Her gün güncellenir</span>
+    <h1>Dolar kaç TL bugün?</h1>
+    <p class="ts-yazi-meta">Güncellendi %s · TCMB bülten %s · kaynak: TCMB ve açık altın beslemesi</p>
+    %s
+    %s
+    <h2>TCMB döviz kurları (TL)</h2>
+    <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Para birimi</th><th>Döviz alış</th><th>Döviz satış</th><th>Efektif alış</th><th>Efektif satış</th></tr></thead><tbody>%s</tbody></table></div>
+    <p class="ts-not">Rakamlar TCMB'nin günlük kur tablosundan, tarih %s. Döviz alış/satış bankalar arası işlemlerin, efektif alış/satış nakit (banknot) işlemlerin gösterge kurudur.</p>
+    %s
+    <h2>Altın (TL)</h2>
+    <div class="tablo-kaydir"><table class="ts-tablo"><thead><tr><th>Ürün</th><th>Alış</th><th>Satış</th><th>Değişim</th></tr></thead><tbody>%s</tbody></table></div>
+    <p class="ts-not">Altın rakamları açık bir finans beslemesinden, güncelleme %s. Kuyumcu fiyatı işçilik ve makasa göre değişir. <a href="gram-altin-nasil-hesaplanir-ons-dolar">Gram altın nasıl hesaplanır?</a></p>
+    %s
+    %s
+    %s
+    <div class="ts-baglam ts-sss"><h2>Sık sorulanlar</h2>%s</div>
+    <div class="ts-baglam"><h2>Bu sayfa nasıl üretiliyor</h2><p>Kurlar TCMB'nin herkese açık günlük tablosundan, altın açık bir finans beslemesinden otomatik alınır; rakam kaynakta yoksa sayfaya yazılmaz, tahmin edilmez. "Bugünün okuması" ve iki haftalık özet bizim hesabımızdır: aynı tablonun önceki kayıtlarıyla karşılaştırılarak çıkarılır. Eski günlerin tam tablosu arşivde durur.</p></div>
+    <p class="ts-not">Piyasa içeriği bilgi ürünüdür; yatırım danışmanlığı ya da alım-satım önerisi değildir. <a href="piyasa/">Tam risk bildirimi ve piyasa bölümü</a>.</p>
+    %s
+  </div>
+  <aside class="ts-yan">%s%s</aside>
+</div></article>
+""" % (_e(_tr_tarih(t)), _e(tc.get("bulten") or "—"), cevap, _paylas(url, "Dolar kaç TL bugün? " + _tr_tarih(t)),
+       kur_sat or "<tr><td colspan='5'>TCMB bugün tablo yayınlamadı (tatil ya da erişim yok).</td></tr>", _e(tc.get("tarih") or "—"),
+       _cevir_tablosu(usd, eur),
+       altin_sat or "<tr><td colspan='4'>Altın beslemesi cevap vermedi; rakam uydurmuyoruz.</td></tr>", _e(al.get("guncelleme") or "—"),
+       _piyasa_okuma(v, gecmis), REKLAM, _son_gunler(gecmis, t), sorular.replace('<div class="ts-baglam ts-sss"><h2>Kısa cevaplar</h2>', '').replace('</div>', '', 1) + sss_ek if sorular else sss_ek,
+       "", _takvim_kutu("../", ""), _abone("../"))
+    return _bas(baslik, aciklama, url, BOLUM_GORSEL["piyasa"], sema, "article", "../", "") + govde + _alt("../", "")
+
+
 # ---------------------------------------------------------------- yayın
 def _yaz(yol, icerik, uretilen):
     """Sayfayı yaz ve üretilenler kümesine ekle (artık sweeper bunu kullanıyor)."""
@@ -1647,12 +1806,15 @@ def yayinla(kok=None, paylas=False):
             # yazar.py'den geçip özgün yazıya dönüşürse sayfa oluyor.
         _pi_gunler = sorted(x["tarih"] for x in PG.hepsi() if x.get("tcmb") or x.get("altin"))
         _pi_son = _pi_gunler[-1] if _pi_gunler else None
-        for v in PG.hepsi():
+        _pg = PG.hepsi()
+        for v in _pg:
             if v.get("tcmb") or v.get("altin"):
-                _guncel = (v["tarih"] == _pi_son)
-                _yaz(os.path.join(d, "piyasa", v["tarih"] + ".html"), piyasa_html(v, _guncel), uretilen)
-                if _guncel:
-                    gunluk_adres.append(KOK_URL + "piyasa/" + v["tarih"])
+                # 28.09.2026: gün sayfalarının HEPSİ arşiv (noindex, follow). Dizine giren
+                # tek piyasa adresi SABIT_PIYASA; bugünün gün sayfası onun kopyası olurdu.
+                _yaz(os.path.join(d, "piyasa", v["tarih"] + ".html"), piyasa_html(v, False), uretilen)
+                if v["tarih"] == _pi_son:
+                    _yaz(os.path.join(d, SABIT_PIYASA + ".html"), sabit_piyasa_html(v, _pg), uretilen)
+                    gunluk_adres.append(KOK_URL + SABIT_PIYASA)
     except Exception as ex:
         gunluk_adres.append("HATA: %s" % ex)
     _yaz(os.path.join(d, "index.html"), akis_html(kok), uretilen)
@@ -1678,8 +1840,12 @@ def yayinla(kok=None, paylas=False):
             u = m.group(1)
             if not u.startswith(KOK_URL) or u.endswith("/"):
                 return m.group(0)
+            if re.search(r"/(piyasa|aranan)/\d{4}-\d{2}-\d{2}$", u) and u not in adresler:
+                return ""   # 28.09.2026: noindex arşiv günleri haritada durmaz
             return m.group(0) if os.path.exists(os.path.join(kok, u[len("https://lunayapim.com/"):] + ".html")) else ""
         s = re.sub(r"[ \t]*<url><loc>([^<]+)</loc>.*?</url>\n?", _kalsin, s, flags=re.S)
+        # sabit piyasa adresi her gün yenilenir: lastmod'u bugüne çek
+        s = re.sub(r"(<loc>%s</loc><lastmod>)[^<]*(</lastmod>)" % re.escape(KOK_URL + SABIT_PIYASA), r"\g<1>%s\g<2>" % bugun, s)
         for a in adresler:
             if ("<loc>%s</loc>" % a) not in s:
                 s = s.replace("</urlset>", "  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>\n</urlset>" % (a, bugun))
@@ -1707,8 +1873,8 @@ def yayinla(kok=None, paylas=False):
             gonderiler = [("%s — TrendSaphiens" % m["baslik"], KOK_URL + m["slug"]) for m in yeni[:3]]
             if any(a.endswith("aranan/" + bugun) for a in gunluk_adres):
                 gonderiler.append(("Türkiye bugün ne aradı? Günün listesi, kaynaklarıyla — TrendSaphiens", KOK_URL + "aranan/" + bugun))
-            if any(a.endswith("piyasa/" + bugun) for a in gunluk_adres):
-                gonderiler.append(("Dolar, euro ve altın bugün — TCMB tablosu ve altın, kaynaklı. Yatırım tavsiyesi değildir.", KOK_URL + "piyasa/" + bugun))
+            if any(a.endswith(SABIT_PIYASA) for a in gunluk_adres):
+                gonderiler.append(("Dolar kaç TL bugün? TCMB tablosu, altın ve son iki hafta — kaynaklı. Yatırım tavsiyesi değildir.", KOK_URL + SABIT_PIYASA))
             # takvim sırası: bugün aranacak konuların sayfası üretildiyse, saat sırasıyla
             try:
                 from . import takvim as TK

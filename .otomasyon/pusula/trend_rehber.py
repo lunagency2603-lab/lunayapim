@@ -11,7 +11,7 @@ REHBERLER = [
     {
         "slug": "dolar-kac-tl-tcmb-kuru-banka-kuru-neden-farkli",
         "kat": "piyasa", "gorsel": "renk-masasi",
-        "baslik": "Dolar kaç TL? TCMB kuru ile bankadaki kur neden farklı",
+        "baslik": "TCMB kuru ile bankadaki dolar kuru neden farklı?",
         "ozet": "Aynı gün üç ayrı dolar kuru görürsünüz: TCMB tablosu, bankanın gişesi, döviz bürosu. Hangisi 'gerçek', hangisi ne işe yarar, saat kaçta değişir — kaynağıyla.",
         "tarih": "2026-09-03",
         "bolumler": [
