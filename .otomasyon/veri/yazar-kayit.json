@@ -1564,5 +1564,417 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfRTquWhdBnaQWhxBEybC\"}",
   "zaman": "2026-09-26 08:01"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 10,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-26 13:05"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fon",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:05"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "binyamin netanyahu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "dorgeles nene",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yargıtay",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "masterchef ödül oyununu kim kazandı",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:06"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "pastırma yazı",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "diyarbakır hava durumu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "şef",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "neslihan acar",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:07"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "sivas hava durumu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-26 13:08"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-26 14:28"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "haber",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfRyKh4GD71atScaKCXtH\"}",
+  "zaman": "2026-09-26 14:28"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-26 19:25"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "şener üşümezsoy",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfSN2YFdjTXUJ3n6SnGVj\"}",
+  "zaman": "2026-09-26 19:26"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-26 19:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "amed sportif faaliyetler",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfSQBCt3pDDybTVkUQz3p\"}",
+  "zaman": "2026-09-26 19:54"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 00:12"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "26 eylül",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfSju66tiBKHc1JYyXhCa\"}",
+  "zaman": "2026-09-27 00:12"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 02:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "26 eylül",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfSw6v4GFNGkjRc8ZGVnL\"}",
+  "zaman": "2026-09-27 02:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 08:21"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "wetter",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-09-27 08:21"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "weather",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfTP9wdP3exHN2cEQ2me4\"}",
+  "zaman": "2026-09-27 08:21"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 13:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "\"Kiralık Sosyal Konut Projesi\"nde İstanbul'daki örnek daireler tanıtıl",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfToR5rhKNTsrsiSZu8F7\"}",
+  "zaman": "2026-09-27 13:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 13:39"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yolcu otobüsü",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-09-27 13:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "çeyrek altın fiyatı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfToSLnQDACQneLnp1gYu\"}",
+  "zaman": "2026-09-27 13:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 15:06"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "maliye",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfTv3D2zp5e34JSBgSRFJ\"}",
+  "zaman": "2026-09-27 15:06"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 19:59"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "bahçeşehir koleji - fenerbahçe",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfUJRiTEuhfc5cZ7p1yGM\"}",
+  "zaman": "2026-09-27 19:59"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-27 20:34"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "gram altın fiyatı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfUM4ehXYdo2XCi1EofkJ\"}",
+  "zaman": "2026-09-27 20:34"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-28 00:22"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "kanal d canlı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfUeUcf9FXzsBnAhZuPti\"}",
+  "zaman": "2026-09-28 00:22"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-28 08:27"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "weather",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfVHRArbAdyweUJKtACJm\"}",
+  "zaman": "2026-09-28 08:27"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-28 14:52"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "\"Kiralık Sosyal Konut Projesi\"nde İstanbul'daki örnek daireler tanıtıl",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfVnmp2vGXyp2HjYNxvCi\"}",
+  "zaman": "2026-09-28 14:52"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-28 14:52"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "gram altın",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfVnnrkAHtUGAMnVMKyG2\"}",
+  "zaman": "2026-09-28 14:52"
  }
 ]
