@@ -2018,5 +2018,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfWS5afZJ21JQ8D65G6vy\"}",
   "zaman": "2026-09-28 23:01"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-09-29 00:14"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "altı üstü istanbul 16 bölüm",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfWXh2GVFUqeFpTdJPNbj\"}",
+  "zaman": "2026-09-29 00:15"
  }
 ]
