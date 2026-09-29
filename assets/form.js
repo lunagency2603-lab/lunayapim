@@ -10,7 +10,7 @@
    ============================================================ */
 
 window.LUNA_FORM = {
-  wa: "905411602603",
+  wa: "905542182603",
   eposta: "lunagency2603@gmail.com",
   isler: ["İnşaat / mimari 3D modelleme", "Ürün veya hizmet animasyonu",
           "Emlak tanıtım videosu", "Kurumsal tanıtım filmi", "Klip çekimi",

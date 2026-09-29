@@ -487,6 +487,19 @@ def gbp_ekle(s, p=""):
     return re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)', _blok, s, flags=re.S)
 
 
+# 29.09.2026: Luna Yapım telefonu 0554 218 26 03 oldu. Eski numara hiçbir sayfada kalmasın —
+# üreticiler, önbellekteki veri ya da elle yazılmış bir sayfa geri getirse bile her turda düzeltilir.
+TELEFON_ESKI_YENI = [("+90 541 160 26 03", "+90 554 218 26 03"), ("0541 160 26 03", "0554 218 26 03"),
+                     ("905411602603", "905542182603")]
+
+
+def telefon_guncelle(s):
+    for a, b in TELEFON_ESKI_YENI:
+        if a in s:
+            s = s.replace(a, b)
+    return s
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -497,6 +510,7 @@ def calistir(kok, desen="**/*.html"):
         o = s
         on = _derinlik(yol, kok)
         s = uzantisizlastir(s)
+        s = telefon_guncelle(s)
         s = asistan_ekle(s, on)
         s = ajan_ekle(s, on)
         s = okuma_ekle(s, on)

@@ -447,7 +447,7 @@ def taslak(metin, hizmet=None):
     u_.append("")
     u_.append("Saygılarımla,")
     u_.append("**Luna Yapım** · Bursa")
-    u_.append("0541 160 26 03 · lunayapim.com%s" % c["sayfa"])
+    u_.append("0554 218 26 03 · lunayapim.com%s" % c["sayfa"])
 
     # WhatsApp kalın yazıyı tek yıldızla yapıyor; markdown çift yıldızı
     # orada olduğu gibi görünür. Kısa sürümü WhatsApp yazımına çeviriyoruz.

@@ -248,7 +248,7 @@ def ana_sayfa(s, p):
     s = s.replace(ANA_H1_ESKI, ANA_H1_YENI, 1)
     s = s.replace(ANA_ETK_ESKI, ANA_ETK_YENI, 1)
     s = s.replace('<a class="btn btn-dolu" href="matrix">Çalışan bir sistemi gör</a>',
-                  '<a class="btn btn-dolu" href="https://wa.me/905411602603">Fiyat iste</a>\n      <a class="btn btn-cizgi" href="hizmetler/">Hizmetler</a>', 1)
+                  '<a class="btn btn-dolu" href="https://wa.me/905542182603">Fiyat iste</a>\n      <a class="btn btn-cizgi" href="hizmetler/">Hizmetler</a>', 1)
     s = s.replace("<title>Luna Yapım — İnşaat 3D Modelleme, Video ve Yazılım</title>",
                   "<title>Luna Yapım — Video Prodüksiyon, Drone ve 3D Render | Bursa</title>", 1)
     s = s.replace('og:title" content="Luna Yapım — Yazılım, Otonom Sistemler ve Prodüksiyon"',

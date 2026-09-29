@@ -495,8 +495,8 @@ def demo_uret(aday, eksikler, detay, tahmin, klasor=None, cekim_plani=None,
   <p class="etk" style="color:rgba(255,255,255,.75)">İletişim</p>
   <h2>Bu analizi birlikte konuşalım.</h2>
   <p>Rakamları kendi verinizle güncelleyelim, sizin için ne anlama geldiğini beraber çıkaralım.</p>
-  <a class="btn" href="https://wa.me/905411602603">WhatsApp'tan yaz</a>
-  <a class="btn cizgi" href="tel:+905411602603">0541 160 26 03</a>
+  <a class="btn" href="https://wa.me/905542182603">WhatsApp'tan yaz</a>
+  <a class="btn cizgi" href="tel:+905542182603">0554 218 26 03</a>
 </div></div>
 
 <footer><div class="wrap mrk"><span>Luna Yapım · lunayapim.com · Bursa</span>

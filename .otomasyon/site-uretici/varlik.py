@@ -354,7 +354,7 @@ KURULUS = {
     "name": "Luna Yapım",
     "url": "https://lunayapim.com/",
     "image": "https://lunayapim.com/assets/og-image.png",
-    "telephone": "+905411602603",
+    "telephone": "+905542182603",
     "email": EPOSTA,
     "priceRange": "$$",
     "address": {"@type": "PostalAddress", "addressLocality": "Bursa",

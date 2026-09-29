@@ -6,7 +6,7 @@
   "use strict";
   if (window.__lunaAjan) return; window.__lunaAjan = 1;
 
-  var WA = "905411602603", EPOSTA = "lunagency2603@gmail.com";
+  var WA = "905542182603", EPOSTA = "lunagency2603@gmail.com";
   // (anahtar, ad, bant alt, bant üst, birim, belirleyen, kapsamlar[3], plan adımları [(ad, iş günü)])
   var HIZMET = [
     ["3d", "İnşaat 3D modelleme", 45000, 250000, "proje", "Blok sayısı, daire tipi, ışık senaryosu",

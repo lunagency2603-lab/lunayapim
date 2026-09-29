@@ -23,7 +23,7 @@ def _kabuk(c, slug, baslik_seo, aciklama, anahtar, semalar, h1, lede, govde,
     <h1>{h1}</h1>
     <p class="lede">{lede}</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#surec">Nasıl çalışıyor?</a>
     </div>
   </div>
@@ -40,7 +40,7 @@ def _kabuk(c, slug, baslik_seo, aciklama, anahtar, semalar, h1, lede, govde,
     <h2>{ad}{ek} diğer hizmetlerimiz</h2>
     {ilgili}
 
-    <p style="margin-top:30px"><a href="https://wa.me/905411602603" class="btn btn-dolu">{ad} için teklif al</a></p>
+    <p style="margin-top:30px"><a href="https://wa.me/905542182603" class="btn btn-dolu">{ad} için teklif al</a></p>
   </div>
 </section>
 
@@ -502,7 +502,7 @@ def sayfa_sehir(c):
         {"@type":"ListItem","position":2,"name":"İller","item":KOK+"/sehir/"},
         {"@type":"ListItem","position":3,"name":ad,"item":url}]},
       {"@context":"https://schema.org","@type":"LocalBusiness","name":"Luna Yapım","description":aciklama,
-       "url":url,"image":KOK+"/assets/og-image.png","telephone":"+905411602603","priceRange":"$$",
+       "url":url,"image":KOK+"/assets/og-image.png","telephone":"+905542182603","priceRange":"$$",
        "address":{"@type":"PostalAddress","addressLocality":"Bursa","addressRegion":"Bursa","addressCountry":"TR"},
        "areaServed":{"@type":"City","name":ad,"containedInPlace":{"@type":"Country","name":"Türkiye"}},
        "knowsAbout":[x[1] for x in HIZMET_ANLATIM],
@@ -521,7 +521,7 @@ def sayfa_sehir(c):
     <h1>{ad}{ek} video, drone ve <i>3D modelleme</i></h1>
     <p class="lede">İnşaat 3D modellemeden emlak videosuna, ürün animasyonundan klip çekimine kadar yedi hizmet — {ad}{ek} tek ekipten.</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#hizmetler">Hizmetleri gör</a>
     </div>
   </div>

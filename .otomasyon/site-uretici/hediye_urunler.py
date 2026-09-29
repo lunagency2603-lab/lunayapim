@@ -44,7 +44,7 @@ def _studyo(slug, urun_ad):
 ya da kendi dosyanızı açın. Beğendiğinizde tek tuşla sipariş.</p></div></div>
   <div data-studyo="%s">
     <p class="hs-yok">Stüdyo yükleniyor\u2026 Açılmazsa \
-<a href="https://wa.me/905411602603">WhatsApp\u0027tan</a> yazın, tasarımı birlikte kuralım.</p>
+<a href="https://wa.me/905542182603">WhatsApp\u0027tan</a> yazın, tasarımı birlikte kuralım.</p>
   </div>
   <p class="hs-kucuk" style="margin-top:26px">Önizleme baskının yerini, ölçüsünü ve rengini gösterir; \
 kumaş dokusu ve ekran ayarları yüzünden gerçek ürün birebir aynı görünmeyebilir. Baskıdan önce \

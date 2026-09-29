@@ -31,8 +31,8 @@ PAGESPEED_ANAHTAR = (_OZEL.get("pagespeed_anahtar") or os.environ.get("PAGESPEED
 # ---------------------------------------------------------------- firma
 FIRMA = {
     "ad": "Luna Yapım",
-    "telefon": "+905411602603",
-    "wa": "905411602603",
+    "telefon": "+905542182603",
+    "wa": "905542182603",
     "eposta": _OZEL.get("eposta", ""),
     "site": "https://lunayapim.com",
     "imza": _OZEL.get("imza", "Luna Yapım"),

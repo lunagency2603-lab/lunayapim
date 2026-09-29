@@ -679,7 +679,7 @@ window.LUNA_HEDIYE = (function () {
   };
 
   return {
-    wa: "905411602603",
+    wa: "905542182603",
     eposta: "lunagency2603@gmail.com",
     gorselKok: G,
     tasarimlar: TASARIM,

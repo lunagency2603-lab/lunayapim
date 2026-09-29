@@ -245,7 +245,7 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
       <div class="dg-kutu"><span class="etk">Bu sayıda</span><ol class="dg-toc">%s</ol></div>
       %s
       <div class="dg-kutu dg-abone"><span class="etk">Matrix Bülteni</span><p>Piyasayı okuyan sistemin haftalık karnesi, e-postana. Ücretsiz.</p><a class="btn btn-dolu" href="../bulten/#abone">Abone ol</a></div>
-      <div class="dg-kutu"><span class="etk">Gündemi işe çevir</span><p>Sektörünüzdeki gelişmeyi tanıtıma dönüştürelim; aynı gün net aralık.</p><a class="btn btn-cizgi" href="https://wa.me/905411602603">WhatsApp'tan yaz</a></div>
+      <div class="dg-kutu"><span class="etk">Gündemi işe çevir</span><p>Sektörünüzdeki gelişmeyi tanıtıma dönüştürelim; aynı gün net aralık.</p><a class="btn btn-cizgi" href="https://wa.me/905542182603">WhatsApp'tan yaz</a></div>
     </aside>""" % (toc, aranan_html)
 
     govde = """
@@ -275,7 +275,7 @@ def sayi_html(tarih, maddeler, aranan=None, komsu=None):
     <h2>Sektörünüzdeki gelişmeyi <i>tanıtıma</i> dönüştürelim.</h2>
     <p>Haberi okumak bir şey, ondan iş çıkarmak başka. Projenizi anlatın; aynı gün net bir aralık verelim.</p>
     <div class="btnlar">
-      <a href="https://wa.me/905411602603" class="btn btn-dolu" style="background:#fff;color:var(--kirmizi)">WhatsApp'tan yaz</a>
+      <a href="https://wa.me/905542182603" class="btn btn-dolu" style="background:#fff;color:var(--kirmizi)">WhatsApp'tan yaz</a>
       <a href="../iletisim" class="btn btn-cizgi" style="border-color:rgba(255,255,255,.5);color:#fff">İletişim</a>
     </div>
   </div>

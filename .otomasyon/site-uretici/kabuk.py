@@ -26,7 +26,7 @@ HEADER = """<header>
       <a href="../trend/">TrendSaphiens</a>
       <a href="../iletisim">İletişim</a>
     </nav>
-    <a class="hbtn" href="https://wa.me/905411602603">Teklif Al</a>
+    <a class="hbtn" href="https://wa.me/905542182603">Teklif Al</a>
   </div>
 </header>"""
 
@@ -51,8 +51,8 @@ FOOTER = """<footer>
         <a href="../matrix">KDA Matrix</a>
         <a href="./">Tüm iller</a></div>
       <div><h4>İletişim</h4>
-        <a href="https://wa.me/905411602603">WhatsApp</a>
-        <a href="tel:+905411602603">0541 160 26 03</a>
+        <a href="https://wa.me/905542182603">WhatsApp</a>
+        <a href="tel:+905542182603">0554 218 26 03</a>
         <a href="mailto:lunagency2603@gmail.com">E-posta</a>
         <a href="../iletisim">İletişim sayfası</a>
         <a href="../kosullar">Koşullar</a>

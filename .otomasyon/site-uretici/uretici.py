@@ -16,7 +16,7 @@ HEDEF = os.path.expanduser("~/Documents/GitHub/lunayapim/sehir")
 if not os.path.isdir(HEDEF):
     HEDEF = os.path.expanduser("~/mnt/Documents/GitHub/lunayapim/sehir")
 KOK = "https://lunayapim.com"
-TEL = "+905411602603"
+TEL = "+905542182603"
 
 def e(x): return html.escape(x, quote=True)
 def j(x): return json.dumps(x, ensure_ascii=False)
@@ -185,8 +185,8 @@ def cta(c, baslik, alt):
     <h2>%s</h2>
     <p>%s</p>
     <div class="btnlar">
-      <a href="https://wa.me/905411602603" class="btn btn-koyu">WhatsApp'tan Yaz</a>
-      <a href="tel:+905411602603" class="btn btn-cizgi" style="border-color:rgba(255,255,255,.5);color:#fff">Ara · 0541 160 26 03</a>
+      <a href="https://wa.me/905542182603" class="btn btn-koyu">WhatsApp'tan Yaz</a>
+      <a href="tel:+905542182603" class="btn btn-cizgi" style="border-color:rgba(255,255,255,.5);color:#fff">Ara · 0554 218 26 03</a>
     </div>
   </div>
 </section>
@@ -265,7 +265,7 @@ def sayfa_insaat3d(c):
     <h1>{ad}{ek} inşaat <i>3D modelleme</i></h1>
     <p class="lede">{ad}{ek} konut projesi, villa, site ve ticari yapı için mimari render, proje tanıtım animasyonu, iç mekân görselleştirme ve 360° sanal tur.</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#surec">Nasıl çalışıyor?</a>
     </div>
   </div>
@@ -318,7 +318,7 @@ def sayfa_insaat3d(c):
     {ilgili}
 
     <p style="margin-top:30px"><a href="../hizmetler/insaat-3d-modelleme" class="btn btn-cizgi">Hizmetin tüm detayları</a>
-      <a href="https://wa.me/905411602603" class="btn btn-dolu">{ad} için teklif al</a></p>
+      <a href="https://wa.me/905542182603" class="btn btn-dolu">{ad} için teklif al</a></p>
   </div>
 </section>
 
@@ -369,7 +369,7 @@ def sayfa_emlak(c):
     <h1>{ad}{ek} <i>emlak video</i> çekimi</h1>
     <p class="lede">Villa, daire, konut projesi, arsa ve ticari mülk için drone destekli ilan videosu, sanal tur ve fotoğraf. İlanınız listede farklı bir yerde dursun.</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#surec">Nasıl çalışıyor?</a>
     </div>
   </div>
@@ -423,7 +423,7 @@ def sayfa_emlak(c):
     {ilgili}
 
     <p style="margin-top:30px"><a href="../hizmetler/emlak-kurumsal" class="btn btn-cizgi">Hizmetin tüm detayları</a>
-      <a href="https://wa.me/905411602603" class="btn btn-dolu">{ad} için teklif al</a></p>
+      <a href="https://wa.me/905542182603" class="btn btn-dolu">{ad} için teklif al</a></p>
   </div>
 </section>
 
@@ -474,7 +474,7 @@ def sayfa_urun(c):
     <h1>{ad}{ek} <i>3D ürün</i> animasyonu</h1>
     <p class="lede">Ürününüzü 3D modelleyip videoya çeviriyoruz: çalışma prensibi, kesit anlatım, montaj, üretim hattı ve hizmet süreci animasyonu. Fuarda ve ihracatta çalışan video.</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#surec">Nasıl çalışıyor?</a>
     </div>
   </div>
@@ -546,7 +546,7 @@ def sayfa_urun(c):
     {ilgili}
 
     <p style="margin-top:30px"><a href="../hizmetler/urun-animasyon" class="btn btn-cizgi">Hizmetin tüm detayları</a>
-      <a href="https://wa.me/905411602603" class="btn btn-dolu">{ad} için teklif al</a></p>
+      <a href="https://wa.me/905542182603" class="btn btn-dolu">{ad} için teklif al</a></p>
   </div>
 </section>
 

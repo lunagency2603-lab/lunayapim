@@ -120,7 +120,7 @@ def sayfa_sehir(c):
         {"@type":"ListItem","position":2,"name":"İller","item":KOK+"/sehir/"},
         {"@type":"ListItem","position":3,"name":ad,"item":url}]},
       {"@context":"https://schema.org","@type":"LocalBusiness","name":"Luna Yapım",
-       "description":aciklama,"url":url,"image":KOK+"/assets/og-image.png","telephone":"+905411602603",
+       "description":aciklama,"url":url,"image":KOK+"/assets/og-image.png","telephone":"+905542182603",
        "priceRange":"$$",
        "address":{"@type":"PostalAddress","addressLocality":"Bursa","addressRegion":"Bursa","addressCountry":"TR"},
        "areaServed":{"@type":"City","name":ad,"containedInPlace":{"@type":"Country","name":"Türkiye"}}},
@@ -135,7 +135,7 @@ def sayfa_sehir(c):
     <h1>{ad}{ek} tanıtım filmi, drone ve <i>3D modelleme</i></h1>
     <p class="lede">İnşaat 3D modelleme, emlak tanıtım videosu, ürün animasyonu, klip çekimi ve drone prodüksiyonu — {ad}{ek} tek ekipten.</p>
     <div class="btnlar">
-      <a class="btn btn-dolu" href="https://wa.me/905411602603">{ad} için teklif al</a>
+      <a class="btn btn-dolu" href="https://wa.me/905542182603">{ad} için teklif al</a>
       <a class="btn btn-cizgi" href="#hizmetler">Hizmetler</a>
     </div>
   </div>

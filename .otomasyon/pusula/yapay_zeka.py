@@ -228,8 +228,8 @@ def govde(paket, yukselen):
     <h2>Sizin sektörünüzde <i>ne aranıyor</i>?</h2>
     <p>Aynı derlemeyi sizin işiniz için de çıkarıyoruz; hangi soruya cevap yazmanız
       gerektiğini rakamla konuşalım.</p>
-    <a href="https://wa.me/905411602603" class="btn btn-dolu">WhatsApp'tan Yaz</a>
-    <a href="tel:+905411602603" class="btn btn-cizgi">Ara · 0541 160 26 03</a>
+    <a href="https://wa.me/905542182603" class="btn btn-dolu">WhatsApp'tan Yaz</a>
+    <a href="tel:+905542182603" class="btn btn-cizgi">Ara · 0554 218 26 03</a>
   </div>
 </section>
 
