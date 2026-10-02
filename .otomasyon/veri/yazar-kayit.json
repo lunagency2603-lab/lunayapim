@@ -2501,5 +2501,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfcVRp3AFxdEtdnaneEfK\"}",
   "zaman": "2026-10-02 03:49"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-02 12:49"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "eyüp sultan belediyesi hangi partiden",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-02 12:49"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "namaz vakitleri",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfdCf2BJLXsS7ra575bzE\"}",
+  "zaman": "2026-10-02 12:49"
  }
 ]
