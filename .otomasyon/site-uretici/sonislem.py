@@ -500,6 +500,33 @@ def telefon_guncelle(s):
     return s
 
 
+# 30.09.2026 — _headers /assets/* için "max-age=1 yıl, immutable" veriyor. Sürüm eki olmayan
+# ya da elle artırılmayı bekleyen JS/CSS (olcum.js, form.js, ajan.js?v=1 …) değiştiğinde geri
+# dönen ziyaretçi ESKİSİNİ görüyordu (29.09 telefon değişikliği ajan.js ve form.js'e böyle
+# ulaşmazdı). Artık her assets/*.js ve *.css bağlantısına dosyanın içerik özeti eklenir:
+# dosya değişince adres değişir, değişmeyince önbellek aynen çalışır.
+_VARLIK_OZET = {}
+
+
+def _varlik_ozeti(kok, yol):
+    anahtar = (kok, yol)
+    if anahtar not in _VARLIK_OZET:
+        import hashlib
+        try:
+            with open(os.path.join(kok, yol), "rb") as f:
+                _VARLIK_OZET[anahtar] = hashlib.md5(f.read()).hexdigest()[:8]
+        except Exception:
+            _VARLIK_OZET[anahtar] = None
+    return _VARLIK_OZET[anahtar]
+
+
+def varlik_surumu(s, kok):
+    def _d(m):
+        oz = _varlik_ozeti(kok, m.group(2))
+        return (m.group(1) + m.group(2) + "?v=" + oz) if oz else m.group(0)
+    return re.sub(r'((?:\.\./)*|/|https://lunayapim\.com/)(assets/[A-Za-z0-9_\-/]+\.(?:js|css))(?:\?v=[A-Za-z0-9]+)?(?=["\'])', _d, s)
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -526,6 +553,7 @@ def calistir(kok, desen="**/*.html"):
         s = altbilgi_yayin(s, on)
         s = gizlilik_ekle(s, on)
         s = surumle(s)
+        s = varlik_surumu(s, kok)
         s = tablo_sar(s)
         s = ilk_gorsel_oncelik(s)
         s = varlik_kat(s, p, kok)

@@ -39,7 +39,20 @@ window.LUNA_OLCUM = {
       document.head.appendChild(s);
       gtag("js", new Date());
     }
-    gtag("config", o.ga4);
+    /* 30.09.2026 — KENDİ TRAFİĞİMİZ. Ev bağlantısının IPv6 adresi her gün değişiyor
+       (28.09: …:72ac, 30.09: …:8a45), IP kuralı bu yüzden hiçbir şeyi yakalamıyordu.
+       Artık cihaz işaretleniyor: bir kez lunayapim.com/?ic=1 açılınca o tarayıcıdaki
+       bütün ziyaretler "internal" sayılır ve GA4'teki "Ofis ve ev" filtresi onları raporlardan
+       çıkarır. Kaldırmak için ?ic=0. Tarayıcı depolaması kapalıysa sessizce geçer. */
+    var ic = false;
+    try {
+      var q = location.search;
+      if (/[?&]ic=1\b/.test(q)) localStorage.setItem("luna_ic", "1");
+      if (/[?&]ic=0\b/.test(q)) localStorage.removeItem("luna_ic");
+      ic = localStorage.getItem("luna_ic") === "1";
+    } catch (e) { ic = false; }
+    if (ic) gtag("config", o.ga4, { traffic_type: "internal" });
+    else gtag("config", o.ga4);
   }
 
   if (o.cloudflare) {
@@ -60,7 +73,21 @@ window.LUNA_OLCUM = {
     if (!a) return;
     var h = (a.getAttribute("href") || "").toLowerCase();
     var tf = a.getAttribute("data-tf");
-    if (h.indexOf("wa.me") !== -1) olay("whatsapp_tikla", { sayfa: location.pathname });
+    if (h.indexOf("wa.me") !== -1) {
+      /* 30.09.2026 — WhatsApp mesajı hangi sayfadan geldiğini söylesin: talebin hangi
+         il/hizmet sayfasından geldiği sohbetin ilk satırında görünür. Sayfa zaten hazır
+         bir metin veriyorsa ona dokunulmaz. */
+      try {
+        var raw = a.getAttribute("href") || "";
+        if (raw.indexOf("text=") === -1) {
+          var bas = document.querySelector("h1");
+          var ad = ((bas && bas.innerText) || document.title || "").replace(/\s+/g, " ").trim().slice(0, 90);
+          var metin = "Merhaba, lunayapim.com'da \u201c" + ad + "\u201d sayfasından yazıyorum.";
+          a.setAttribute("href", raw + (raw.indexOf("?") === -1 ? "?" : "&") + "text=" + encodeURIComponent(metin));
+        }
+      } catch (x) {}
+      olay("whatsapp_tikla", { sayfa: location.pathname });
+    }
     else if (h.indexOf("tel:") === 0) olay("telefon_tikla", { sayfa: location.pathname });
     else if (h.indexOf("mailto:") === 0) olay("eposta_tikla", { sayfa: location.pathname });
     else if (tf) olay("form_gonder", { kanal: tf, sayfa: location.pathname });
