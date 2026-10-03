@@ -147,6 +147,23 @@ jobs:
           python3 -m pusula.asistan
           python3 -m pusula.motor
 
+      - name: JS kapısı (satır-içi betik sözdizimi)
+        working-directory: .otomasyon
+        run: |
+          # 03.10.2026 — sonislem.py'nin tablo sarmalayıcısı bir <script> bloğunun
+          # içine HTML bastı; sayfa gözle normal görünürken o sayfadaki bütün JS
+          # düştü ve araç sessizce çalışmaz oldu. HTML denetimi bunu göremez.
+          set +e
+          CIKTI=$(python3 site-uretici/js_denetim.py "$GITHUB_WORKSPACE")
+          KOD=$?
+          set -e
+          echo "$CIKTI"
+          { echo "### JS kapısı"; echo '```'; echo "$CIKTI"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$KOD" != "0" ]; then
+            echo "::error::Satır-içi JS sözdizimi hatası var — yukarıdaki sayfaya bakın."
+            exit 1
+          fi
+
       - name: SEO kapısı
         working-directory: .otomasyon
         run: |

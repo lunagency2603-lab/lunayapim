@@ -222,10 +222,39 @@ def gizlilik_ekle(s, on):
     return s
 
 
+_KOD_BLOK = re.compile(r"<(script|style)\b[\s\S]*?</\1\s*>", re.I)
+
+
+def kod_disinda(s, islev):
+    """islev'i YALNIZ <script>/<style> bloklarının DIŞINDAKI parçalara uygular.
+
+    HTML'i yeniden yazan bir adım kod bloğunun içine girerse, oradaki metin
+    HTML değil JavaScript kaynağı olduğu için sayfa sessizce bozulur.
+    """
+    parca, son = [], 0
+    for m in _KOD_BLOK.finditer(s):
+        parca.append(islev(s[son:m.start()]))
+        parca.append(m.group(0))
+        son = m.end()
+    parca.append(islev(s[son:]))
+    return "".join(parca)
+
+
 def tablo_sar(s):
-    """Dar ekranda tablo sayfayı yatay kaydırıyordu — kendi içinde kaysın."""
-    return re.sub(r'(?<!<div class="tablo-kaydir">)<table\b[\s\S]*?</table>',
-                  lambda m: '<div class="tablo-kaydir">' + m.group(0) + '</div>', s)
+    """Dar ekranda tablo sayfayı yatay kaydırıyordu — kendi içinde kaysın.
+
+    03.10.2026 — ikinci pahalı ders, birincisiyle aynı kökten: bu düzenli ifade
+    <script> bloklarının içine de giriyordu. Doğum haritası aracının JS'i tablo
+    HTML'ini çift tırnaklı bir dizgi içinde kuruyor; araya basılan
+    class="tablo-kaydir" o dizgiyi kapatınca sayfadaki BÜTÜN JS
+    "Unexpected identifier" ile düştü ve araç canlıda sessizce çalışmaz oldu —
+    sayfa normal görünüyordu, yalnız il listesi boştu.
+    Kural: HTML'i yeniden yazan her adım <script>/<style> içini atlamalı.
+    """
+    def _sar(p):
+        return re.sub(r'(?<!<div class="tablo-kaydir">)<table\b[\s\S]*?</table>',
+                      lambda m: '<div class="tablo-kaydir">' + m.group(0) + '</div>', p)
+    return kod_disinda(s, _sar)
 
 
 BELGE_BLOK = '''<h2 id="belgeler">Yetki ve belgeler</h2>
