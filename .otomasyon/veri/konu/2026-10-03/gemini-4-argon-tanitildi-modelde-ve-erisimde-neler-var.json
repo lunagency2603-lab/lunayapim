@@ -64,7 +64,19 @@
    }
   ]
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Laser Guide Star experiment at CTIO (noao-03583)",
+  "yazar": "Maxime Boccas, CTIO/NOIRLab/ NSF /AURA/",
+  "lisans": "CC BY 4.0",
+  "lisans_url": "https://creativecommons.org/licenses/by/4.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Laser_Guide_Star_experiment_at_CTIO_(noao-03583).jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "gemini-4-argon-tanitildi-modelde-ve-erisimde-neler-var.jpg",
+  "genislik": 960,
+  "yukseklik": 540,
+  "sorgu": "Gemini 4 Argon",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Webrazzi",

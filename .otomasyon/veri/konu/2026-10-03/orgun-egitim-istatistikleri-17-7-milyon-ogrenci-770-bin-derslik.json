@@ -68,7 +68,19 @@
    }
   ]
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Reclining man looming over New York City subway station LCCN2017645506",
+  "yazar": "Phelan, A. B., photographer",
+  "lisans": "Public domain",
+  "lisans_url": "",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Reclining_man_looming_over_New_York_City_subway_station_LCCN2017645506.jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "orgun-egitim-istatistikleri-17-7-milyon-ogrenci-770-bin-derslik.jpg",
+  "genislik": 960,
+  "yukseklik": 540,
+  "sorgu": "city hall public building",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Anadolu Ajansı",

@@ -68,7 +68,19 @@
    }
   ]
  },
- "gorsel": null,
+ "gorsel": {
+  "baslik": "Dasarath Rangasala Stadium",
+  "yazar": "Piterpan",
+  "lisans": "CC BY 2.0",
+  "lisans_url": "https://creativecommons.org/licenses/by/2.0",
+  "kaynak_url": "https://commons.wikimedia.org/wiki/File:Dasarath_Rangasala_Stadium.jpg",
+  "kaynak": "Wikimedia Commons",
+  "dosya": "belcika-turkiye-3-0-de-bruyne-iki-lukaku-bir-gol-atti.jpg",
+  "genislik": 960,
+  "yukseklik": 540,
+  "sorgu": "stadium football match",
+  "genel": false
+ },
  "kaynaklar": [
   {
    "ad": "Hürriyet",
