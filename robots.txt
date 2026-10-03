@@ -1,4 +1,9 @@
+# Icerik kullanim tercihleri (contentsignals.org):
+#   search   = arama sonuclarinda gosterim
+#   ai-input = yapay zeka cevaplarinda kaynak olarak kullanim
+#   ai-train = yapay zeka model egitimi
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Disallow: /kda.db
 Disallow: /admin
@@ -8,3 +13,4 @@ Disallow: /onizleme/
 Sitemap: https://lunayapim.com/sitemap.xml
 
 # Yapay zeka asistanlari icin duz metin ozet: https://lunayapim.com/llms.txt
+# Her sayfa "Accept: text/markdown" istegiyle duz metin (Markdown) olarak da alinabilir.

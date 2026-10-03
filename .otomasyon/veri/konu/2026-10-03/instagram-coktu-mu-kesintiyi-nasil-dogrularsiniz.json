@@ -1,0 +1,90 @@
+{
+ "tur": "konu",
+ "tarih": "2026-10-03",
+ "terim": "Instagram çöktü mü",
+ "hacim": "",
+ "kat": "sosyal-medya",
+ "kaynak_tur": "elle",
+ "slug": "instagram-coktu-mu-kesintiyi-nasil-dogrularsiniz",
+ "yazi": {
+  "baslik": "Instagram çöktü mü: kesintiyi nasıl doğrularsınız",
+  "meta": "Instagram çöktü mü sorusunun kalıcı yanıtı: son kesinti ne zaman oldu, hangi sayfalardan doğrulanır ve kullanıcı tarafında hangi adımlar denenir.",
+  "giris": "Akış yenilenmediğinde ya da uygulama açılmadığında akla gelen ilk soru Instagram'ın çöküp çökmediği oluyor. Oysa sorunun kaynağı çoğu zaman tek bir hesap, tek bir cihaz veya bağlantı olabiliyor. Bu rehber, doğrulanmış son kesintiyi, kesintinin gerçekten yaşandığını gösteren kaynakları ve kullanıcı tarafında denenecek adımları sırayla anlatıyor.",
+  "bolumler": [
+   {
+    "h2": "Instagram çöktü mü sorusunda son durum ne?",
+    "paragraflar": [
+     "Doğrulanmış en yakın geniş kesinti 21 Eylül 2026 Pazar günü yaşandı. Dünya Gazetesi'nin aktardığına göre ABD doğu saatiyle 21.11'de Downdetector'da Facebook için 17 binden fazla, Instagram için 5 binden fazla bildirim birikti. Karmactive ise Meta'nın erişimi yeniden sağladığını, teknik nedene dair kamuya açık bir açıklama yapmadığını yazıyor.",
+     "Kesintinin süresi kaynaklarda farklı aktarılıyor. Milli Gazete 21 Eylül'de yaklaşık 37 dakikalık bir kesinti kaydedildiğini belirtiyor; Dünya Gazetesi ve Karmactive ise süre vermiyor. Yani net bir resmî süre açıklanmadı.",
+     "Sonraki günlerde tablo daha dağınık. CHIP Online, 29 Eylül'de akış yenileme ve uygulama kullanımına dair hata bildirimleri geldiğini, kesintilerin gün içinde zaman zaman göründüğünü aktarıyor. Milli Gazete ise 26 Eylül için dünya genelinde büyük ölçekli bir kesinti görünmediğini yazıyor."
+    ]
+   },
+   {
+    "h2": "Instagram çöktü mü aramaları neden bu kadar arttı?",
+    "paragraflar": [
+     "İlk neden belirtilerin benzerliği. Akışın yenilenmemesi, hikâyelerin yüklenmemesi ve mesajların gitmemesi hem genel bir kesintide hem de tek bir cihazdaki bağlantı sorununda aynı şekilde görünüyor. Kullanıcı aradaki farkı uygulamanın içinden anlayamıyor.",
+     "İkinci neden bilgi boşluğu. Instagram, küçük ölçekli aksaklıklarda genellikle anlık bir duyuru yapmıyor. CHIP Online da 29 Eylül bildirimlerinin ardından yayın saatinde resmî bir açıklama bulunmadığını belirtiyor.",
+     "Üçüncü neden tarih başlıklarının çokluğu. Her gün için ayrı yazılan erişim sorunu haberleri, gerçekten kesinti olan günle olmayan günü ayırmayı güçleştiriyor. Bu yüzden tek doğru yöntem, tarih haberi okumak yerine bildirim verisine bakmak."
+    ]
+   },
+   {
+    "h2": "Instagram çöktü mü: bilinenler ve henüz bilinmeyenler",
+    "paragraflar": [
+     "Doğrulamanın birinci basamağı Downdetector. Milli Gazete ve CHIP Online, kesinti olup olmadığını Downdetector verisiyle değerlendiriyor; Milli Gazete ayrıca IsDown'ı ikinci kaynak olarak kullanıyor. Burada grafikte ani ve yüksek bir sıçrama varsa sorun geneldir, dağınık tek tük bildirimler genellikle yereldir.",
+     "İkinci basamak Meta'nın durum sayfası. Ancak metastatus.com, Ads Manager, Meta Business Suite ve WhatsApp Business API gibi işletme ürünlerinin durumunu gösteriyor; Instagram uygulaması bu listede ayrı bir kalem olarak yer almıyor. Bu nedenle sayfa, reklam ve işletme araçları için yararlı, tüketici uygulaması için sınırlıdır.",
+     "Bilinmeyen tarafı da kaydetmek gerekiyor. Dünya Gazetesi, Downdetector sayılarının platforma gönderilen kullanıcı bildirimlerini gösterdiğini, etkilenen toplam kişi sayısı olmadığını hatırlatıyor. 21 Eylül kesintisinin teknik nedeni ise henüz açıklanmadı."
+    ]
+   },
+   {
+    "h2": "Instagram çöktü mü derken kullanıcı tarafında ne yapılır?",
+    "paragraflar": [
+     "Milli Gazete'nin sıraladığı adımlar şöyle: uygulamayı tamamen kapatıp yeniden açmak, Wi-Fi ile mobil veri arasında geçiş yapmak, cihazı yeniden başlatmak, uygulama güncellemesi olup olmadığını kontrol etmek ve farklı bir cihazdan tarayıcı üzerinden giriş denemek.",
+     "Bu sıra bir teşhis aracı olarak işe yarıyor. Tarayıcıdan giriş çalışıyorsa sorun uygulamada, başka bir cihazda da aynı hata görünüyorsa sorun hesapta, farklı bir bağlantıda düzeliyorsa sorun ağdadır. Hiçbiri değişmiyorsa bildirim verisine bakmak daha anlamlı olur."
+    ]
+   }
+  ],
+  "alinti": {
+   "metin": "26 Eylül 2026 Cumartesi günü itibarıyla Instagram'ın dünya genelinde tamamen çöktüğünü gösteren büyük ölçekli bir kesinti görünmüyor",
+   "kaynak": "Milli Gazete"
+  },
+  "izle": [
+   "Downdetector'ın Türkiye sayfası (downdetector.com.tr) üzerindeki Instagram bildirim grafiği",
+   "Meta'nın işletme ürünleri durum sayfası metastatus.com (Ads Manager, Business Suite, WhatsApp Business API)",
+   "IsDown'un Instagram servis durumu sayfası (isdown.app/status/instagram)"
+  ],
+  "sss": [
+   {
+    "soru": "Instagram çöktü mü, en son ne zaman kesinti oldu?",
+    "cevap": "Doğrulanmış en yakın geniş kesinti 21 Eylül 2026'da yaşandı. Dünya Gazetesi, Downdetector'da Instagram için 5 binden fazla bildirim toplandığını yazıyor. Milli Gazete kesintinin yaklaşık 37 dakika sürdüğünü belirtiyor, diğer kaynaklar süre vermiyor."
+   },
+   {
+    "soru": "Instagram çöktü mü nereden doğrulanır?",
+    "cevap": "Önce Downdetector'daki bildirim grafiğine bakılır; ani ve yüksek bir sıçrama genel kesintiye işaret eder. İkinci kaynak olarak IsDown kullanılabilir. Meta'nın metastatus.com sayfası ise işletme ürünlerini kapsıyor, tüketici uygulamasını ayrı kalem olarak listelemiyor."
+   },
+   {
+    "soru": "Instagram açılmıyorsa ne yapmak gerekir?",
+    "cevap": "Uygulamayı tamamen kapatıp yeniden açın, Wi-Fi ile mobil veri arasında geçiş yapın, cihazı yeniden başlatın, güncelleme olup olmadığını kontrol edin ve farklı bir cihazda tarayıcıdan giriş deneyin. Hangisinde düzeldiği sorunun kaynağını gösterir."
+   }
+  ]
+ },
+ "gorsel": null,
+ "kaynaklar": [
+  {
+   "ad": "Dünya Gazetesi",
+   "tarih": "2026-09-21"
+  },
+  {
+   "ad": "Karmactive",
+   "tarih": "2026-09-21"
+  },
+  {
+   "ad": "Milli Gazete",
+   "tarih": "2026-09-26"
+  },
+  {
+   "ad": "CHIP Online",
+   "tarih": "2026-09-29"
+  }
+ ],
+ "model": "elle"
+}

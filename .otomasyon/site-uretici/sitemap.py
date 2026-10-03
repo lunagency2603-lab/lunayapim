@@ -40,13 +40,8 @@ def uret(bugun=None):
     open("sitemap.xml","w",encoding="utf-8").write(
       '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s\n</urlset>\n'
       % "\n".join(satir))
-    open("robots.txt","w",encoding="utf-8").write(
-"""User-agent: *
-Allow: /
-Disallow: /kda.db
-
-Sitemap: https://lunayapim.com/sitemap.xml
-""")
+    # 02.10.2026: robots.txt elle yönetiliyor (Content-Signal, /admin, /api/, /onizleme/).
+    # Bu üretici artık robots.txt'nin üzerine yazmaz; eski hali kuralları siliyordu.
     os.chdir(eski)
     return len(satir)
 

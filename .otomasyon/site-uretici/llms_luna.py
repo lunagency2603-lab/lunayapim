@@ -45,6 +45,9 @@ BOLUM = [
     ("Yazılım ve dijital", [
         "yazilim", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
     ]),
+    ("Ölçülmüş örnek çalışmalar", [
+        "hizmetler/seo-ornegi-lunayapim", "hizmetler/seo-ornegi-trendsaphiens",
+    ]),
 ]
 
 SAYFA = [

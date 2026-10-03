@@ -3,6 +3,7 @@
 import os, datetime
 from kabuk import head, FOOTER
 from uretici import KOK, e, j, sss_blok, cta, video_bolumu, kisa_baslik, meta_desc
+from seo_ornekleri import kart_bolumu
 
 
 def _sema(tur, **k):
@@ -79,9 +80,10 @@ def seo_icerik():
       "Teknik düzeltmelerin etkisi 2–6 hafta içinde görülüyor. İçerik tarafında ilk anlamlı "
       "kıyas üçüncü ayda yapılabiliyor. İlk ay ölçüm ayıdır; taban çizgisi o ay yazılır."),
      ("Kendi sitemizde ne yaptınız?",
-      "326 sayfayı kendi denetçimizden geçirdik, 385 uyarıyı sıfıra indirdik ve sonucu "
-      "şeffaflık sayfamızda yayınlıyoruz. Kendi eksiğini yazmayan bir ajansın sizin "
-      "eksiğinizi doğru söylemesi beklenemez."),
+      "Google dizinindeki sayfa sayımızı 31 Ağustos'taki 27'den 2 Ekim'de 470'e çıkardık; "
+      "arama tıklaması son 3 ayda 8'den son 28 günde 43'e yükseldi. Düşüşler dahil bütün "
+      "rakamları kaynağıyla örnek sayfamızda yayınlıyoruz. Kendi eksiğini yazmayan bir "
+      "ajansın sizin eksiğinizi doğru söylemesi beklenemez."),
      ("İçeriği siz mi yazıyorsunuz?",
       "İskeleti ve araştırmayı biz kuruyoruz; metni birlikte yazıyoruz. Sizin işinizi "
       "sizden iyi bilen yok — yapay zekâyla doldurulmuş, kimsenin okumadığı içerik "
@@ -106,6 +108,7 @@ def seo_icerik():
              '<tr><td><strong>İçerik</strong></td><td>Hizmet sayfaları, şehir sayfaları, '
              'SSS, blog; aranan sorulara gerçek cevap</td><td>2–4 ay</td></tr>'
              "</table></div>")
+    g.append(kart_bolumu())
     g.append("<h2>Neyle ölçüyoruz</h2>")
     g.append("<p>44 kontrolden geçen bir denetim çalıştırıyoruz ve sonucu beş başlıkta "
              "notluyoruz: ziyaretçiyi müşteriye çevirme, güven verme, aramada bulunma, "
@@ -135,7 +138,9 @@ def seo_icerik():
     ]))
     g.append("<h2>Sık sorulan sorular</h2>")
     g.append(sss_blok(sss))
-    g.append('<p><a href="../seffaflik">Kendi sitemizin ölçüm sonuçlarını</a> ve '
+    g.append('<p>Örnekler: <a href="seo-ornegi-lunayapim">lunayapim.com</a> · '
+             '<a href="seo-ornegi-trendsaphiens">trendsaphiens.com</a>. '
+             '<a href="../seffaflik">Kendi ölçüm sonuçlarımızı</a> ve '
              '<a href="../fiyatlar">fiyat aralıklarını</a> açıkça yayınlıyoruz.</p>')
     g.append("</div></section>\n")
     g.append(cta({"slug": "seo"}, "Sitenizi <i>denetleyelim</i>.",
@@ -211,7 +216,14 @@ def yapay_zeka_seo():
              "geldiği yazılı; kaynağı olmayan iddia yazmıyoruz</li>"
              "<li><strong>Güncellik</strong> — tarih damgası ve düzenli güncelleme; "
              "duran site bu sistemlerde de geri düşüyor</li>"
+             "<li><strong>Yapay zekâ erişimi</strong> — llms.txt dosyası, yapay zekâ "
+             "tarayıcılarının engellenmemesi, robots.txt'de içerik kullanım tercihi "
+             "(Content-Signal) ve istendiğinde sayfanın düz metin (Markdown) sürümü</li>"
+             "<li><strong>Ölçüm</strong> — hangi yapay zekâ tarayıcısının siteyi ne sıklıkla "
+             "okuduğu (Cloudflare) ve ChatGPT gibi asistanlardan gelen ziyaretçi sayısı "
+             "(Google Analytics) her ay raporda</li>"
              "</ul>")
+    g.append(kart_bolumu())
     g.append('<div class="kutu"><p><strong>Garanti sözü yok.</strong> Yapay zekâ '
              'sistemlerinin hangi kaynağı seçtiği açıklanmıyor ve sık değişiyor. '
              'Yapabileceğimiz şey, seçilme ihtimalini artıran her koşulu sağlamak ve '
@@ -228,8 +240,9 @@ def yapay_zeka_seo():
     ]))
     g.append("<h2>Sık sorulan sorular</h2>")
     g.append(sss_blok(sss))
-    g.append('<p>Klasik tarafı <a href="seo-icerik">SEO ve içerik sayfamızda</a>, '
-             'kendi ölçümlerimiz <a href="../seffaflik">şeffaflık sayfamızda</a>.</p>')
+    g.append('<p>Klasik tarafı <a href="seo-icerik">SEO ve içerik sayfamızda</a>; '
+             'ölçülmüş örnekler: <a href="seo-ornegi-lunayapim">lunayapim.com</a> ve '
+             '<a href="seo-ornegi-trendsaphiens">trendsaphiens.com</a>.</p>')
     g.append("</div></section>\n")
     g.append(cta({"slug": "ai-seo"}, "Önce <i>ölçelim</i>.",
                  "Denetim sonucunu kaynaklarıyla gönderelim; sonra ne yapılacağını konuşalım."))
