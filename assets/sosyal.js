@@ -22,13 +22,16 @@ window.LUNA_SOSYAL = [
   { ag:"tiktok",    ad:"TikTok",    kullanici:"", adres:"https://www.tiktok.com/@%s" },
   { ag:"x",         ad:"X",         kullanici:"", adres:"https://x.com/%s" },
   { ag:"behance",   ad:"Behance",   kullanici:"", adres:"https://www.behance.net/%s" },
-  { ag:"vimeo",     ad:"Vimeo",     kullanici:"", adres:"https://vimeo.com/%s" }
+  { ag:"vimeo",     ad:"Vimeo",     kullanici:"", adres:"https://vimeo.com/%s" },
+  { ag:"artstation",ad:"ArtStation",kullanici:"", adres:"https://www.artstation.com/%s" },
+  { ag:"pinterest", ad:"Pinterest", kullanici:"", adres:"https://tr.pinterest.com/%s" },
+  { ag:"facebook",  ad:"Facebook",  kullanici:"", adres:"https://www.facebook.com/%s" }
 ];
 
 /* Yol tarifi bağlantısı — haritadaki işletme adresini yapıştır.
    Boş bırakılırsa harita satırı görünmez.
    Nereden alınır: Google Haritalar → işletme → Paylaş → Bağlantıyı kopyala */
-window.LUNA_HARITA = "";
+window.LUNA_HARITA = "https://maps.google.com/?cid=17888603735370903993";
 
 /* ============================================================
    RENDER — bu kısma dokunmana gerek yok
@@ -97,7 +100,14 @@ window.LUNA_HARITA = "";
       var degisti = false;
       dugumler(v, []).forEach(function (n) {
         if (!firma_mi(n)) return;
-        if (url.length) { n.sameAs = url; degisti = true; }
+        if (url.length) {
+          /* 03.10.2026: burada n.sameAs = url yazıyordu; statik şemadaki
+             Google Haritalar bağlantısı her sayfa yüklemesinde siliniyordu.
+             Artık birleştiriliyor — varlık kaydı eksilmesin. */
+          var eski = Array.isArray(n.sameAs) ? n.sameAs : (n.sameAs ? [n.sameAs] : []);
+          var hep = eski.concat(url).filter(function (x, i, d) { return d.indexOf(x) === i; });
+          n.sameAs = hep; degisti = true;
+        }
         if (harita) { n.hasMap = harita; degisti = true; }
       });
       if (degisti) s.textContent = JSON.stringify(v);
