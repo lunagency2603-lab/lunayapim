@@ -44,6 +44,10 @@ BOLUM = [
     ]),
     ("Yazılım ve dijital", [
         "yazilim", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
+        "hizmetler/pazar-arastirmasi-otomasyon",
+    ]),
+    ("Reklam ve sosyal medya", [
+        "hizmetler/reklam-yonetimi", "hizmetler/sosyal-medya-yonetimi",
     ]),
     ("Ölçülmüş örnek çalışmalar", [
         "hizmetler/seo-ornegi-lunayapim", "hizmetler/seo-ornegi-trendsaphiens",
