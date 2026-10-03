@@ -441,6 +441,8 @@ def yukselen_html():
   <h2>Göğün ortası (MC) nedir?</h2>
   <p>Sonuçta yükselenle birlikte göğün ortası da verilir. MC, doğum anında tam tepe noktasından
   geçen ekliptik derecesidir. Astrolojide meslek ve toplumsal görünürlükle ilişkilendirilir.</p>
+  <p>Yükselen ve MC'nin yanında Güneş, Ay ve gezegenlerin konumlarını da görmek isterseniz
+  <a href="dogum-haritasi">doğum haritası çıkarma</a> aracı aynı üç bilgiyle tüm tabloyu verir.</p>
   <h2>Hesap ne kadar hassas?</h2>
   <p>Kullanılan bağıntılar astronomi literatürünün standart yaklaşımlarıdır ve yükseleni derece
   düzeyinde verir. Doğruluğu sınırlayan şey formül değil, girdiğiniz doğum saatinin kesinliğidir.
@@ -880,6 +882,298 @@ sonucu hiçbir yere kaydetmez.</p>
                   '<div id="oyun-kutu" class="ts-arac-kutu ts-oyun"></div>' + js + anlatim, sss=sss)
 
 
+
+
+# ───────────────────────────────────────────────────────── doğum haritası (JS)
+
+DOGUM_JS = """
+<script>
+(function(){
+  var IL = @@ILLER@@;
+  var Z  = ["Koç","Boğa","İkizler","Yengeç","Aslan","Başak","Terazi","Akrep","Yay","Oğlak","Kova","Balık"];
+  var R = Math.PI/180, D = 180/Math.PI;
+  function mod(x){ x = x % 360; return x < 0 ? x + 360 : x; }
+  function mod2(x){ x = x % 360; if (x > 180) x -= 360; if (x < -180) x += 360; return x; }
+
+  // Yerel saat -> UTC kayması; Türkiye 2016'ya kadar yaz saati uyguladı.
+  function ofsetDk(y, ay, g, sa, dk){
+    try {
+      var d = new Date(Date.UTC(y, ay-1, g, sa, dk));
+      var f = new Intl.DateTimeFormat("en-US", {timeZone:"Europe/Istanbul", timeZoneName:"longOffset"});
+      var p = f.formatToParts(d).find(function(x){ return x.type === "timeZoneName"; });
+      var m = p && p.value.match(/GMT([+-])(\\d{1,2})(?::(\\d{2}))?/);
+      if (!m) return 180;
+      return (m[1] === "-" ? -1 : 1) * (parseInt(m[2],10)*60 + (m[3] ? parseInt(m[3],10) : 0));
+    } catch(e){ return 180; }
+  }
+
+  function julian(y, ay, g, kesir){
+    if (ay <= 2){ y -= 1; ay += 12; }
+    var A = Math.floor(y/100), B = 2 - A + Math.floor(A/4);
+    return Math.floor(365.25*(y+4716)) + Math.floor(30.6001*(ay+1)) + g + kesir/24 + B - 1524.5;
+  }
+
+  // ---- Güneş: Meeus bölüm 25, görünür boylam (tarih ekliptiği)
+  function gunes(T){
+    var L0 = mod(280.46646 + 36000.76983*T + 0.0003032*T*T);
+    var M  = mod(357.52911 + 35999.05029*T - 0.0001537*T*T);
+    var C  = (1.914602 - 0.004817*T - 0.000014*T*T)*Math.sin(M*R)
+           + (0.019993 - 0.000101*T)*Math.sin(2*M*R) + 0.000289*Math.sin(3*M*R);
+    var O  = 125.04 - 1934.136*T;
+    return mod(L0 + C - 0.00569 - 0.00478*Math.sin(O*R));
+  }
+
+  // ---- Ay: Meeus bölüm 47, ana terimler (~0,3 derece)
+  function ay_boylam(T){
+    var Lp = mod(218.3164477 + 481267.88123421*T - 0.0015786*T*T + T*T*T/538841);
+    var Dd = mod(297.8501921 + 445267.1114034*T - 0.0018819*T*T + T*T*T/545868);
+    var M  = mod(357.5291092 + 35999.0502909*T - 0.0001536*T*T);
+    var Mp = mod(134.9633964 + 477198.8675055*T + 0.0087414*T*T + T*T*T/69699);
+    var F  = mod(93.2720950 + 483202.0175233*T - 0.0036539*T*T - T*T*T/3526000);
+    var E  = 1 - 0.002516*T - 0.0000074*T*T;
+    var t = [
+      [6288774,0,0,1,0],[1274027,2,0,-1,0],[658314,2,0,0,0],[213618,0,0,2,0],
+      [-185116,0,1,0,0],[-114332,0,0,0,2],[58793,2,0,-2,0],[57066,2,-1,-1,0],
+      [53322,2,0,1,0],[45758,2,-1,0,0],[-40923,0,1,-1,0],[-34720,1,0,0,0],
+      [-30383,0,1,1,0],[15327,2,0,-2,0],[-12528,0,0,1,2],[10980,0,0,1,-2],
+      [10675,4,0,-1,0],[10034,0,0,3,0],[8548,4,0,-2,0],[-7888,2,1,-1,0],
+      [-6766,2,1,0,0],[-5163,1,0,-1,0],[4987,1,1,0,0],[4036,2,-1,1,0],
+      [3994,2,0,2,0],[3861,4,0,0,0],[3665,2,0,-3,0],[-2689,0,1,-2,0],
+      [-2602,2,0,-1,2],[2390,2,-1,-2,0],[-2348,1,0,1,0],[2236,2,-2,0,0],
+      [-2120,0,1,2,0],[-2069,0,2,0,0],[2048,2,-2,-1,0],[-1773,2,0,1,-2],
+      [-1595,2,0,0,2],[1215,4,-1,-1,0],[-1110,0,0,2,2],[-892,3,0,-1,0],
+      [-810,2,1,1,0],[759,4,-1,-2,0],[-713,0,2,-1,0],[-700,2,2,-1,0]
+    ];
+    var s = 0;
+    for (var i = 0; i < t.length; i++){
+      var a = t[i], k = a[0];
+      if (a[2] === 1 || a[2] === -1) k *= E;
+      if (a[2] === 2 || a[2] === -2) k *= E*E;
+      s += k * Math.sin((a[1]*Dd + a[2]*M + a[3]*Mp + a[4]*F) * R);
+    }
+    return mod(Lp + s/1000000);
+  }
+
+  // ---- Gezegenler: JPL yaklaşık yörünge ögeleri (1800-2050)
+  // [a, e, I, L, uzun_günberi, uzun_düğüm] ve yüzyıllık değişimleri
+  var GEZ = {
+    "Merkür":[[0.38709927,0.20563593,7.00497902,252.25032350,77.45779628,48.33076593],
+              [0.00000037,0.00001906,-0.00594749,149472.67411175,0.16047689,-0.12534081]],
+    "Venüs": [[0.72333566,0.00677672,3.39467605,181.97909950,131.60246718,76.67984255],
+              [0.00000390,-0.00004107,-0.00078890,58517.81538729,0.00268329,-0.27769418]],
+    "Mars":  [[1.52371034,0.09339410,1.84969142,-4.55343205,-23.94362959,49.55953891],
+              [0.00001847,0.00007882,-0.00813131,19140.30268499,0.44441088,-0.29257343]],
+    "Jüpiter":[[5.20288700,0.04838624,1.30439695,34.39644051,14.72847983,100.47390909],
+              [-0.00011607,-0.00013253,-0.00183714,3034.74612775,0.21252668,0.20469106]],
+    "Satürn":[[9.53667594,0.05386179,2.48599187,49.95424423,92.59887831,113.66242448],
+              [-0.00125060,-0.00050991,0.00193609,1222.49362201,-0.41897216,-0.28867794]],
+    "Uranüs":[[19.18916464,0.04725744,0.77263783,313.23810451,170.95427630,74.01692503],
+              [-0.00196176,-0.00004397,-0.00242939,428.48202785,0.40805281,0.04240589]],
+    "Neptün":[[30.06992276,0.00859048,1.77004347,-55.12002969,44.96476227,131.78422574],
+              [0.00026291,0.00005105,0.00035372,218.45945325,-0.32241464,-0.00508664]],
+    "Plüton":[[39.48211675,0.24882730,17.14001206,238.92903833,224.06891629,110.30393684],
+              [-0.00031596,0.00005170,0.00004818,145.20780515,-0.04062942,-0.01183482]]
+  };
+  var DUNYA = [[1.00000261,0.01671123,-0.00001531,100.46457166,102.93768193,0.0],
+               [0.00000562,-0.00004392,-0.01294668,35999.37244981,0.32327364,0.0]];
+
+  function konum(el, T){           // güneş merkezli J2000 dik koordinat
+    var a = el[0][0] + el[1][0]*T, e = el[0][1] + el[1][1]*T;
+    var I = el[0][2] + el[1][2]*T, L = el[0][3] + el[1][3]*T;
+    var vp = el[0][4] + el[1][4]*T, Om = el[0][5] + el[1][5]*T;
+    var w = vp - Om, M = mod2(L - vp);
+    var Es = M + (e*D)*Math.sin(M*R);
+    for (var k = 0; k < 8; k++){
+      var dM = M - (Es - (e*D)*Math.sin(Es*R));
+      Es += dM / (1 - e*Math.cos(Es*R));
+    }
+    var xo = a*(Math.cos(Es*R) - e), yo = a*Math.sqrt(1-e*e)*Math.sin(Es*R);
+    var cw = Math.cos(w*R), sw = Math.sin(w*R);
+    var cO = Math.cos(Om*R), sO = Math.sin(Om*R);
+    var cI = Math.cos(I*R),  sI = Math.sin(I*R);
+    return [ (cw*cO - sw*sO*cI)*xo + (-sw*cO - cw*sO*cI)*yo,
+             (cw*sO + sw*cO*cI)*xo + (-sw*sO + cw*cO*cI)*yo,
+             (sw*sI)*xo + (cw*sI)*yo ];
+  }
+
+  function presesyon(T){           // J2000 ekliptiğinden tarih ekliptiğine
+    return (5029.0966*T + 1.11113*T*T) / 3600;
+  }
+
+  function gezegenler(T){
+    var d = konum(DUNYA, T), out = {}, p = presesyon(T);
+    for (var ad in GEZ){
+      var h = konum(GEZ[ad], T);
+      out[ad] = mod(Math.atan2(h[1]-d[1], h[0]-d[0])*D + p);
+    }
+    return out;
+  }
+
+  function burc(lon){ return {i: Math.floor(mod(lon)/30), derece: mod(lon) % 30}; }
+  function yaz(lon){
+    var b = burc(lon);
+    return Z[b.i] + " " + b.derece.toFixed(1).replace(".", ",") + "°";
+  }
+  function sinirMi(lon){ var d = mod(lon) % 30; return d < 1 || d > 29; }
+
+  var f = document.getElementById("dh-form");
+  if (!f) return;
+  var sec = document.getElementById("dh-il");
+  Object.keys(IL).sort(function(a,b){ return a.localeCompare(b,"tr"); }).forEach(function(ad){
+    var o = document.createElement("option"); o.value = ad; o.textContent = ad;
+    if (ad === "İstanbul") o.selected = true;
+    sec.appendChild(o);
+  });
+
+  f.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var c = document.getElementById("dh-sonuc");
+    var t = (document.getElementById("dh-tarih").value || "").split("-");
+    var s = (document.getElementById("dh-saat").value || "").split(":");
+    if (t.length !== 3 || s.length < 2){
+      c.innerHTML = "<p class='ts-uyari'>Doğum tarihini ve saatini giriniz.</p>"; return;
+    }
+    var y = +t[0], ay = +t[1], g = +t[2], sa = +s[0], dk = +s[1];
+    if (!(y >= 1900 && y <= 2050)){
+      c.innerHTML = "<p class='ts-uyari'>Bu araç 1900-2050 aralığında çalışır.</p>"; return;
+    }
+    var k = IL[sec.value] || IL["İstanbul"];
+    var ofs = ofsetDk(y, ay, g, sa, dk);
+    var utcDk = sa*60 + dk - ofs, gun = g, kesir = utcDk/60;
+    while (kesir < 0){ kesir += 24; gun -= 1; }
+    while (kesir >= 24){ kesir -= 24; gun += 1; }
+    var JD = julian(y, ay, gun, kesir), T = (JD - 2451545.0)/36525;
+
+    var GMST = mod(280.46061837 + 360.98564736629*(JD-2451545.0) + 0.000387933*T*T - T*T*T/38710000);
+    var ramc = mod(GMST + k[1]) * R;
+    var eps = (23.4392911 - 0.0130042*T - 0.00000016*T*T + 0.000000504*T*T*T) * R;
+    var fi = k[0] * R;
+    var MC = mod(Math.atan2(Math.sin(ramc), Math.cos(ramc)*Math.cos(eps)) * D);
+    var ASC = mod(Math.atan2(Math.cos(ramc), -(Math.sin(eps)*Math.tan(fi) + Math.cos(eps)*Math.sin(ramc))) * D);
+    if (mod(ASC - MC) > 180) ASC = mod(ASC + 180);
+
+    var gz = gezegenler(T);
+    var sira = [["Güneş", gunes(T)], ["Ay", ay_boylam(T)], ["Merkür", gz["Merkür"]],
+                ["Venüs", gz["Venüs"]], ["Mars", gz["Mars"]], ["Jüpiter", gz["Jüpiter"]],
+                ["Satürn", gz["Satürn"]], ["Uranüs", gz["Uranüs"]], ["Neptün", gz["Neptün"]],
+                ["Plüton", gz["Plüton"]]];
+
+    var evBas = Math.floor(mod(ASC)/30);   // tam burç ev sistemi
+    var satir = "", sinirli = [];
+    satir += "<tr><th scope='row'>Yükselen</th><td>" + yaz(ASC) + "</td><td>1</td></tr>";
+    satir += "<tr><th scope='row'>Göğün ortası</th><td>" + yaz(MC) + "</td><td>" +
+             (((Math.floor(mod(MC)/30) - evBas + 12) % 12) + 1) + "</td></tr>";
+    for (var i = 0; i < sira.length; i++){
+      var ad = sira[i][0], lon = sira[i][1];
+      var ev = ((Math.floor(mod(lon)/30) - evBas + 12) % 12) + 1;
+      satir += "<tr><th scope='row'>" + ad + "</th><td>" + yaz(lon) + "</td><td>" + ev + "</td></tr>";
+      if (sinirMi(lon)) sinirli.push(ad);
+    }
+    if (sinirMi(ASC)) sinirli.push("Yükselen");
+
+    var uyari = sinirli.length
+      ? "<p class='ts-uyari'>Şu konumlar burç sınırına bir dereceden yakın: " + sinirli.join(", ") +
+        ". Doğum saatindeki küçük bir hata bunları komşu burca kaydırabilir.</p>" : "";
+    var gb = burc(gunes(T)), yb = burc(ASC), ab = burc(ay_boylam(T));
+
+    c.innerHTML =
+      "<div class='ts-sonuc-kart'><span class='etk'>Üçlünüz</span>" +
+      "<strong class='ts-sonuc-buyuk'>" + Z[gb.i] + " · " + Z[ab.i] + " · " + Z[yb.i] + "</strong>" +
+      "<p>Güneş " + Z[gb.i] + ", Ay " + Z[ab.i] + ", Yükselen " + Z[yb.i] + ".</p></div>" +
+      "<div class='ts-tablo-sar'><table class='ts-tablo'><caption>Doğum anındaki konumlar</caption>" +
+      "<thead><tr><th>Gök cismi</th><th>Burç ve derece</th><th>Ev</th></tr></thead><tbody>" +
+      satir + "</tbody></table></div>" + uyari +
+      "<p class='ts-not'>Evler tam burç yöntemiyle verildi: yükselenin burcu birinci ev sayılır. " +
+      "Saat farkı " + (ofs/60).toFixed(1).replace(".", ",") + " saat olarak alındı.</p>";
+  });
+})();
+</script>
+"""
+
+
+# ───────────────────────────────────────────────────────── doğum haritası
+
+def dogum_haritasi_html():
+    form = """
+<form id="dh-form" class="ts-arac-kutu" autocomplete="off">
+  <div class="ts-alanlar">
+    <label>Doğum tarihi<input type="date" id="dh-tarih" required min="1900-01-01" max="2050-12-31"></label>
+    <label>Doğum saati<input type="time" id="dh-saat" required></label>
+    <label>Doğum ili<select id="dh-il"></select></label>
+  </div>
+  <button type="submit" class="btn">Haritamı çıkar</button>
+</form>
+<div id="dh-sonuc" aria-live="polite"></div>
+""" + DOGUM_JS.replace("@@ILLER@@", json.dumps(ILLER, ensure_ascii=False))
+    anlatim = """
+<section class="ts-giris">
+  <h2>Doğum haritası nedir?</h2>
+  <p>Doğum haritası, doğduğunuz anda Güneş'in, Ay'ın ve gezegenlerin gökyüzünde nerede
+  durduğunu gösteren bir konum listesidir. Astroloji geleneği bu konumları yorumlar; harita
+  ise yorum değil, ölçülebilir bir gök durumudur.</p>
+  <p>Yukarıdaki araç üç bilgi ister: doğum tarihi, doğum saati ve doğum ili. Saat gerekli,
+  çünkü yükselen ve ev dağılımı tamamen saate bağlıdır. İl gerekli, çünkü ufuk çizgisi enlem
+  ve boylama göre değişir.</p>
+  <h2>Sonuçta ne çıkıyor?</h2>
+  <p>On iki satırlık bir tablo: yükselen, göğün ortası, Güneş, Ay ve Merkür'den Plüton'a kadar
+  sekiz gezegen. Her satırda o cismin hangi burçta, burcun kaçıncı derecesinde ve kaçıncı evde
+  olduğu yazar. Üstte ayrıca "üçlünüz" olarak Güneş · Ay · Yükselen üçlemesi verilir; astrolojide
+  en çok konuşulan üç konum budur.</p>
+  <h2>Hesap nasıl yapılıyor?</h2>
+  <p>Önce doğum anı evrensel zamana çevrilir. Türkiye 8 Eylül 2016'ya kadar yaz saati uyguladığı
+  için saat farkı sabit alınmaz; tarayıcınızın saat dilimi veritabanından o tarihe ait gerçek
+  fark okunur. Ardından Julian gün sayısı ve Greenwich yıldız zamanı bulunur.</p>
+  <p>Yükselen ve göğün ortası, yerel yıldız zamanı, ekliptik eğikliği ve enlemden çözülür.
+  Güneş'in boylamı astronomi literatürünün standart güneş bağıntılarıyla, Ay'ın boylamı ana
+  periyodik terimleri içeren serisiyle hesaplanır. Gezegenler için 1800–2050 aralığı için
+  yayımlanmış yaklaşık yörünge ögeleri kullanılır: Kepler denklemi çözülür, güneş merkezli konum
+  Dünya'nın konumundan çıkarılarak yer merkezli konuma çevrilir ve sonuç doğum tarihine
+  presesyonla taşınır.</p>
+  <h2>Hesap ne kadar hassas?</h2>
+  <p>Güneş derecenin binde biri, Ay yaklaşık yüzde üç derece, gezegenler derecenin onda biri
+  düzeyinde doğru çıkar. Astrolojik yorum için gereken hassasiyet bunun çok altındadır; sonucu
+  sınırlayan şey formül değil, girdiğiniz doğum saatinin kesinliğidir.</p>
+  <p>Dört dakikalık bir saat hatası yükseleni yaklaşık bir derece kaydırır. Bir konum burç
+  sınırına bir dereceden yakınsa araç bunu ayrıca uyarı olarak yazar.</p>
+  <h2>Evler hangi yöntemle veriliyor?</h2>
+  <p>Tam burç yöntemi kullanılıyor: yükselenin bulunduğu burcun tamamı birinci ev sayılır,
+  sonraki burçlar sırayla ikinci, üçüncü ev olur. Bu, Helenistik astrolojinin en eski ev
+  yöntemidir ve bir evin nerede bittiği konusunda belirsizlik bırakmaz.</p>
+  <p>Modern yazılımların çoğu Placidus yöntemini kullanır; orada ev sınırları burç sınırlarıyla
+  çakışmaz ve yüksek enlemlerde ev büyüklükleri bozulur. İki yöntem aynı haritada bir gezegeni
+  farklı eve koyabilir. Burada tek ve açık bir yöntem tercih edildi.</p>
+  <h2>Doğum saatimi bilmiyorsam?</h2>
+  <p>Saat olmadan yükselen ve evler hesaplanamaz; Güneş ile yavaş gezegenler yine doğru çıkar
+  ama Ay gün içinde yarım burç yol alabilir. Doğum saati nüfus kayıt örneğinde ya da doğum
+  belgesinde yazar; nüfus kayıt örneği e-Devlet üzerinden alınabilir.</p>
+  <h2>Bilgilerim nereye gidiyor?</h2>
+  <p>Hiçbir yere. Hesabın tamamı sayfanın içinde, tarayıcınızda yapılır. Doğum tarihiniz,
+  saatiniz ve iliniz sunucuya gönderilmez, kaydedilmez, çerez olarak tutulmaz. Sayfayı
+  kapattığınızda hiçbir iz kalmaz.</p>
+</section>
+<p class="ts-not ts-durust">Astroloji bir inanç ve kültür alanıdır; kişiliği ölçen ya da geleceği
+bildiren bilimsel bir yöntem değildir. Buradaki hesap gökyüzünün o andaki konumunu doğru şekilde
+bulur — bu konumun insan karakteriyle ilişkisi astrolojinin kendi yorumudur. Sağlık, para ve
+hukuk kararlarında harita bir dayanak değildir.</p>
+"""
+    sss = [
+        ("Doğum haritası nasıl çıkarılır?", "Doğum tarihi, doğum saati ve doğum yeri gerekir. Bu üç bilgiyle doğum anındaki yükselen, Güneş, Ay ve gezegen konumları hesaplanır. Yukarıdaki araç üçünü girdiğinizde haritayı anında çıkarır."),
+        ("Doğum haritası için doğum saati şart mı?", "Yükselen ve evler için şart. Saat olmadan Güneş ve yavaş gezegenler doğru çıkar ama yükselen bulunamaz, Ay da gün içinde yarım burç yol alabilir."),
+        ("Doğum haritasında hangi gezegenler var?", "Güneş, Ay, Merkür, Venüs, Mars, Jüpiter, Satürn, Uranüs, Neptün ve Plüton ile yükselen ve göğün ortası."),
+        ("Güneş, Ay ve yükselen üçlüsü ne demek?", "Astrolojide en çok kullanılan üç konumdur: Güneş doğum gününüze, Ay doğum anındaki Ay burcuna, yükselen doğum saatinize ve yerinize bağlıdır. Araç üçünü ayrı bir kartta birlikte verir."),
+        ("Evler hangi yöntemle hesaplanıyor?", "Tam burç yöntemiyle: yükselenin burcu birinci ev sayılır, sonraki burçlar sırayla devam eder. Placidus gibi yöntemler ev sınırlarını burç sınırlarından ayırır ve bir gezegeni farklı eve koyabilir."),
+        ("Doğum haritası ücretli mi, kayıt gerekiyor mu?", "Hayır. Ücretsizdir, üyelik istemez. Hesap tarayıcınızda çalışır; girdiğiniz bilgiler hiçbir sunucuya gönderilmez."),
+        ("Hangi yıllar için çalışıyor?", "1900 ile 2050 arası. Kullanılan yörünge ögeleri bu aralıkta geçerlidir; dışına çıkıldığında gezegen konumları sapar."),
+    ]
+    return _sayfa(
+        "dogum-haritasi",
+        "Doğum Haritası Çıkarma — ücretsiz, saatle hesaplanır | TrendSaphiens",
+        "Doğum tarihi, saati ve ilinizle haritanızı çıkarın: yükselen, Güneş, Ay ve gezegen konumları, dereceleri ve evleri. Tarayıcıda hesaplanır, kaydedilmez.",
+        "Doğum haritası çıkarma",
+        "Doğum tarihinizi, saatinizi ve ilinizi girin; yükselen, Güneş, Ay ve tüm gezegen konumları derecesiyle çıksın.",
+        form + anlatim, sss=sss)
+
+
 # ───────────────────────────────────────────────────────── araç dizini
 
 ARACLAR = [
@@ -888,6 +1182,7 @@ ARACLAR = [
     ("yas-hesaplama", "Yaş hesaplama", "Yıl, ay, gün olarak tam yaş ve doğum gününe kalan süre.", "Günlük"),
     ("vucut-kitle-indeksi", "Vücut kitle indeksi", "Boy ve kilodan VKİ ve Dünya Sağlık Örgütü aralıkları.", "Sağlık"),
     ("yuzde-hesaplama", "Yüzde hesaplama", "Yüzdesi, oranı, değişimi ve eklemeli hâli tek araçta.", "Günlük"),
+    ("dogum-haritasi", "Doğum haritası çıkarma", "Doğum saatine göre yükselen, Güneş, Ay ve gezegen konumları.", "Burç"),
     ("oruntu-oyunu", "Örüntü ve mantık oyunu", "On soru, çözümleri açıklamalı. IQ testi değildir.", "Oyun"),
 ]
 
@@ -911,7 +1206,7 @@ def dizin_html():
   <p>Kredi taksit hesabı da aynı nedenle beklemede: vergiler ve masraflar hariç tutulduğunda
   çıkan rakam gerçek ödemeden düşük görünüyor, bu da yanıltıcı oluyor.</p>
   <h2>Sırada ne var?</h2>
-  <p>Bölüm büyüdükçe doğum haritası çıkarma, gün farkı hesaplama ve kelime oyunu eklenecek.
+  <p>Bölüm büyüdükçe gün farkı hesaplama ve kelime oyunu eklenecek.
   Ölçüt aynı kalacak: sonucu doğru veren, yöntemini açıklayan ve veriyi toplamayan araçlar.</p>
   <h2>Araçlar neden reklamsız çalışıyor?</h2>
   <p>Hesaplama sayfalarında en çok şikâyet edilen şey, sonucun reklam arasında kaybolmasıdır.
@@ -939,6 +1234,7 @@ def yayinla(kok=None):
         ("yas-hesaplama", yas_html()),
         ("vucut-kitle-indeksi", vki_html()),
         ("yuzde-hesaplama", yuzde_html()),
+        ("dogum-haritasi", dogum_haritasi_html()),
         ("oruntu-oyunu", oyun_html()),
         ("araclar", dizin_html()),
     ]
