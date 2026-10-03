@@ -1130,9 +1130,12 @@ def dogum_haritasi_html():
   Dünya'nın konumundan çıkarılarak yer merkezli konuma çevrilir ve sonuç doğum tarihine
   presesyonla taşınır.</p>
   <h2>Hesap ne kadar hassas?</h2>
-  <p>Güneş derecenin binde biri, Ay yaklaşık yüzde üç derece, gezegenler derecenin onda biri
-  düzeyinde doğru çıkar. Astrolojik yorum için gereken hassasiyet bunun çok altındadır; sonucu
-  sınırlayan şey formül değil, girdiğiniz doğum saatinin kesinliğidir.</p>
+  <p>Sonuçları 1990 tarihli bir efemerise karşı tek tek karşılaştırdık. Güneş, Merkür, Venüs,
+  Mars, Jüpiter, Satürn, Uranüs ve Neptün derecenin yüzde biri ile yüzde dördü arasında tuttu;
+  Ay yüzde üç derece saptı. Tek istisna Plüton: orada sapma üçte bir dereceye kadar çıkabiliyor,
+  çünkü Plüton'un yörüngesi yaklaşık ögelerle en zor temsil edilen yörüngedir. Hiçbiri burcu ya da
+  evi değiştirecek büyüklükte değildir; sonucu sınırlayan şey formül değil, girdiğiniz doğum
+  saatinin kesinliğidir.</p>
   <p>Dört dakikalık bir saat hatası yükseleni yaklaşık bir derece kaydırır. Bir konum burç
   sınırına bir dereceden yakınsa araç bunu ayrıca uyarı olarak yazar.</p>
   <h2>Evler hangi yöntemle veriliyor?</h2>
