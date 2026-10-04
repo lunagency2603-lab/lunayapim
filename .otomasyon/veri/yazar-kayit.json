@@ -1,26 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bakan Kurum'dan İstanbul'da kentsel dönüşüm projeleriyle yenilenen kon",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfAhvwsJeGyvaKWz97pWR\"}",
-  "zaman": "2026-09-18 12:57"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-18 12:57"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "forex",
@@ -2900,5 +2879,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfhabyTpzxP1rqbqMi6DU\"}",
   "zaman": "2026-10-04 20:19"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-04 21:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "portekiz - norveç",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfhggEqcAmbR26jkDn12B\"}",
+  "zaman": "2026-10-04 21:39"
  }
 ]
