@@ -2809,5 +2809,88 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfggZU9MDYAAuLQf4JcKV\"}",
   "zaman": "2026-10-04 08:57"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 10,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-04 14:14"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "kpss önlisans",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:14"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "f1",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "emniyet genel müdürlüğü",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "armand duplantis",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "mersin hava durumu",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "op dr rahmi kaya",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "victor osimhen",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:15"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "formula 1",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:16"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "füze",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-04 14:16"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "abdullah gül",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-04 14:16"
  }
 ]
