@@ -599,6 +599,11 @@ def uret(sec=None):
 
 
 if __name__ == "__main__":
-    sec = sys.argv[1] if len(sys.argv) > 1 else None
+    # 05.10.2026 KİLİT: il × hizmet sayfaları kaldırıldı. Bu üretici 81 il × 7 hizmet
+    # sayfası basıyordu; Google bunları kapı sayfası saydı (20.09'da il sayfası
+    # gösterimi %90 düştü). İl sayfaları artık il_sayfasi.py ile üretiliyor.
+    if "--eski-yapiyi-geri-getir" not in sys.argv:
+        sys.exit("uretici.py kilitli: il sayfaları için il_sayfasi.py kullanın.")
+    sec = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else None
     y = uret(sec)
     print("%d sayfa üretildi → %s" % (len(y), HEDEF))
