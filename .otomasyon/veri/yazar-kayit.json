@@ -10,48 +10,6 @@
    "kaynak": "ortam"
   },
   "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-18 19:26"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "cuma günü hangi diziler var",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfBDb9ppcKvLWMzU45oEM\"}",
-  "zaman": "2026-09-18 19:26"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-18 19:58"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "show tv yayın akışı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfBG48yTqoksmzAXfnGZF\"}",
-  "zaman": "2026-09-18 19:58"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
   "zaman": "2026-09-18 23:56"
  },
  {
@@ -2906,5 +2864,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfiZR3RXsSrcsJ6JFkCb3\"}",
   "zaman": "2026-10-05 08:44"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-05 15:28"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "TOKİ ANKARA AÇIK SATIŞ HANGİ İLÇELERDE, KAÇ KONUT? Ankara TOKİ başvuru",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfj6DYaVGRG6mpnX59dYc\"}",
+  "zaman": "2026-10-05 15:28"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-05 15:28"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "enflasyon",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfj6Et4nXVcQUMDLEjpEJ\"}",
+  "zaman": "2026-10-05 15:29"
  }
 ]
