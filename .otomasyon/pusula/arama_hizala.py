@@ -222,7 +222,7 @@ def calistir(kok):
         s = io.open(yol, encoding="utf-8").read()
         # 05.10.2026: il sayfası v2 (site-uretici/il_sayfasi.py) başlığını ve
         # metnini kendisi kurar; fiyat kancalı eski başlık kalıbı uygulanmaz.
-        if "<!-- il-sayfasi:v2 -->" in s:
+        if "<!-- il-sayfasi:v2 -->" in s or "<!-- il-sabit" in s:
             continue
         s2, d = hizala(s, tur, c)
         if d:

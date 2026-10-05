@@ -166,7 +166,7 @@ def _genel_tanim_ayikla(s):
 
 def il_sayfasi(s, p):
     tur, hizmet = _tur(p)
-    if not tur or "<!-- il-sayfasi:v2 -->" in s:
+    if not tur or "<!-- il-sayfasi:v2 -->" in s or "<!-- il-sabit" in s:
         return s
     # H1
     m = re.search(r"<h1>([^<]+?) <i>([^<]+)</i></h1>", s)

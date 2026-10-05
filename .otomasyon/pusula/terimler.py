@@ -62,6 +62,8 @@ def calistir(kok):
                 continue
             y = os.path.join(dz, f)
             s = io.open(y, encoding="utf-8").read()
+            if "<!-- il-sabit" in s:      # 05.10.2026: 14.09 sürümüne dönen il sayfaları dondu
+                continue
             s2, d = hizala(s)
             if d:
                 io.open(y, "w", encoding="utf-8").write(s2)

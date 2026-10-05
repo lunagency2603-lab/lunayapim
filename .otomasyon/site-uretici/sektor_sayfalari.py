@@ -241,7 +241,7 @@ def _il_bloku(iller, hizmet_slug):
     bag = []
     for c in iller:
         if c["kademe"] in (1, 2):
-            bag.append('<a href="../sehir/%s#%s">%s</a>' % (c["slug"], hizmet_slug, e(c["ad"])))  # 05.10.2026: il×hizmet sayfası yok
+            bag.append('<a href="../sehir/%s-%s">%s</a>' % (c["slug"], hizmet_slug, e(c["ad"])))
         else:
             bag.append('<a href="../sehir/%s">%s</a>' % (c["slug"], e(c["ad"])))
     return ('<h2>Bu sektörün yoğun olduğu iller</h2>\n<p>Aşağıdaki illerde bu alanda üreten '
@@ -254,7 +254,7 @@ def _il_bloku_yapi(iller):
     bag = []
     for c in iller:
         if c["kademe"] in (1, 2):
-            bag.append('<a href="../sehir/%s#insaat-3d-modelleme">%s</a>' % (c["slug"], e(c["ad"])))  # 05.10.2026
+            bag.append('<a href="../sehir/%s-insaat-3d-modelleme">%s</a>' % (c["slug"], e(c["ad"])))
         else:
             bag.append('<a href="../sehir/%s">%s</a>' % (c["slug"], e(c["ad"])))
     return ('<h2>Hangi illerde çalışıyoruz</h2>\n<p>Konut üretiminin yoğun olduğu illerde ayrı '

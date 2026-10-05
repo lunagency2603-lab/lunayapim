@@ -571,7 +571,8 @@ def calistir(kok, desen="**/*.html"):
         s = ajan_ekle(s, on)
         s = okuma_ekle(s, on)
         s = adsense_ekle(s, p)
-        s = il_hizmet_bagla(s, p, kok)
+        if "<!-- il-sabit" not in s:      # 05.10.2026: 14.09 sürümü il sayfaları donduruldu
+            s = il_hizmet_bagla(s, p, kok)
         s = gbp_ekle(s, p)
         try:
             import sayfa_duzeni as _SD
@@ -624,8 +625,10 @@ def calistir(kok, desen="**/*.html"):
         print("sitemap:", ex)
     # il x hizmet sayfalari: ortak hizmet metnini incelt, ile ozel bolumleri ekle
     try:
-        import yerelles
-        print("yerelles:", yerelles.calistir(kok))
+        # 05.10.2026 KAPALI: yerelles 14.09'da il×hizmet sayfalarındaki süreç/SSS metnini
+        # silip kalıp "yerel unsurlar" bloğu ekliyordu; 20.09'da il sayfalarının Google
+        # gösterimi 42/gün'den 0'a indi. Sayfalar 14.09 sürümüne döndü ve donduruldu.
+        print("yerelles: kapalı — il sayfaları 14.09 sürümünde donduruldu")
     except Exception as ex:
         print("yerelles:", ex)
     # llms.txt — yapay zeka asistanlarina sitenin duz metin haritasi

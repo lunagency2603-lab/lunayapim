@@ -18,13 +18,13 @@ from sehirler import SEHIR_INDEKS
 
 # ana sayfa dosyası → (il sayfası eki, blok başlığı)
 ESLEME = {
-    "drone-fpv":            ("drone-cekimi",        "Drone çekimi yaptığımız iller"),
-    "emlak-kurumsal":       ("emlak-video",         "Emlak videosu çektiğimiz iller"),
-    "insaat-3d-modelleme":  ("insaat-3d-modelleme", "İnşaat 3D modelleme: iller"),
-    "urun-animasyon":       ("urun-animasyon",      "Ürün animasyonu: iller"),
-    "klip-cekimi":          ("klip-cekimi",         "Klip çektiğimiz iller"),
-    "dugun-etkinlik":       ("dugun-cekimi",        "Düğün çektiğimiz iller"),
-    "isletme-tanitim":      ("isletme-tanitim",     "İşletme tanıtım filmi çektiğimiz iller"),
+    "drone-fpv":            ("drone-cekimi",        "İllere göre drone çekimi"),
+    "emlak-kurumsal":       ("emlak-video",         "İllere göre emlak video çekimi"),
+    "insaat-3d-modelleme":  ("insaat-3d-modelleme", "İllere göre inşaat 3D modelleme"),
+    "urun-animasyon":       ("urun-animasyon",      "İllere göre ürün animasyonu"),
+    "klip-cekimi":          ("klip-cekimi",         "İllere göre klip çekimi"),
+    "dugun-etkinlik":       ("dugun-cekimi",        "İllere göre düğün çekimi"),
+    "isletme-tanitim":      ("isletme-tanitim",     "İllere göre işletme tanıtım videosu"),
 }
 
 BAS = "<!-- il-baglari -->"
@@ -32,26 +32,23 @@ SON = "<!-- /il-baglari -->"
 
 
 def blok(kok, ek, baslik):
-    """05.10.2026: il × hizmet sayfaları kaldırıldı (kapı sayfası riski); her ilde tek
-    sayfa var. Hizmet sayfası, kendi ekibin gittiği illeri ve 81 il listesini gösterir.
-    Bağlantı il sayfasının ilgili bölümüne gider (#<ek>)."""
-    def _sira(x):
-        return x[0].lower().replace("ç","c").replace("ğ","g").replace("ı","i") \
-                   .replace("ö","o").replace("ş","s").replace("ü","u")
-    kendi = sorted([(c["ad"], slug) for slug, c in SEHIR_INDEKS.items()
-                    if c.get("ekip") == "kendi" and os.path.exists(os.path.join(kok, "sehir", slug + ".html"))],
-                   key=_sira)
-    if not kendi:
+    iller = []
+    for slug, c in SEHIR_INDEKS.items():
+        if os.path.exists(os.path.join(kok, "sehir", "%s-%s.html" % (slug, ek))):
+            iller.append((c["ad"], slug))
+    iller.sort(key=lambda x: x[0].lower().replace("ç","c").replace("ğ","g").replace("ı","i")
+                                .replace("ö","o").replace("ş","s").replace("ü","u"))
+    if not iller:
         return ""
-    ci = "".join('<a href="../sehir/%s#%s">%s</a>' % (slug, ek, html.escape(ad)) for ad, slug in kendi)
-    ci += '<a href="../sehir/" style="border-color:var(--kirmizi);color:var(--kirmizi)">81 ilin tamamı →</a>'
+    ci = "".join('<a href="../sehir/%s-%s">%s</a>' % (slug, ek, html.escape(ad))
+                 for ad, slug in iller)
     return ('%s\n<section>\n  <div class="wrap">\n'
             '    <div class="bas"><span class="no">◎</span><div><h2>%s</h2>\n'
-            '      <p class="aciklama">Bu illerde çekime Bursa\'daki kendi ekibimiz geliyor. Diğer illerde '
-            'sahadaki çekimi bölgedeki çözüm ortağımız yapıyor; kurgu, renk ve 3D Bursa\'da. '
-            'Her ilin çalışma şekli <a href="../sehir/">il sayfasında</a> yazıyor.</p></div></div>\n'
+            '      <p class="aciklama">%d ilde ayrı sayfa — her biri o ilin pazarına, '
+            'ilçelerine ve coğrafyasına göre yazıldı. Diğer iller için '
+            '<a href="../sehir/">il sayfalarına</a> bakın.</p></div></div>\n'
             '    <div class="iller">%s</div>\n  </div>\n</section>\n%s\n'
-            % (BAS, html.escape(baslik), ci, SON))
+            % (BAS, html.escape(baslik), len(iller), ci, SON))
 
 
 def calistir(kok):
