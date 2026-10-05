@@ -1,12 +1,12 @@
 {
- "tarih": "2026-09-28T15:55:39",
+ "tarih": "2026-10-05T16:37:23",
  "site": "https://trendsaphiens.com",
  "canli": {
-  "tarih": "2026-09-28T15:55:39",
-  "adres": 89,
-  "iyi": 89,
+  "tarih": "2026-10-05T16:37:23",
+  "adres": 97,
+  "iyi": 97,
   "sorun": [],
-  "bagli_adres": 41
+  "bagli_adres": 57
  },
  "pagespeed": [
   {
@@ -104,7 +104,7 @@
   ]
  },
  "ozet": {
-  "adres": 89,
+  "adres": 97,
   "canli_sorun": 0,
   "psi_ortalama": {},
   "w3c_hata": 2,
