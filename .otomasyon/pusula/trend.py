@@ -1720,9 +1720,16 @@ def _yonlendirme(kok, silinen, elle=None):
     bu defterden yeniden yazılır. Yalnız /trend/ adresleri için.
     """
     defter_yol = os.path.join(KOK_DIZIN, "veri", "yonlendirme.json")
-    try:
-        defter = json.load(open(defter_yol, encoding="utf-8"))
-    except Exception:
+    # 06.10.2026: bir git birleştirmesi defteri çakışma işaretleriyle bozuk bıraktı;
+    # eski kod bozuk dosyayı "boş defter" sayıp 250 yönlendirmeyi sildi. Artık dosya
+    # var ama okunamıyorsa HİÇBİR ŞEY yazılmaz — defter ve _redirects olduğu gibi kalır.
+    if os.path.exists(defter_yol):
+        try:
+            defter = json.load(open(defter_yol, encoding="utf-8"))
+        except Exception as ex:
+            print("UYARI yonlendirme.json okunamadı, _redirects'e dokunulmadı:", ex)
+            return "defter-bozuk"
+    else:
         defter = {}
     for yol in silinen or []:
         adres = "/" + yol[:-5] if yol.endswith(".html") else "/" + yol
