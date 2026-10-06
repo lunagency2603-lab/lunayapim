@@ -1878,7 +1878,12 @@ def yayinla(kok=None, paylas=False):
     try:
         from . import indexnow as IN
         bildirilecek = [KOK_URL] + [KOK_URL + m["slug"] for m in yeni] + [a for a in gunluk_adres if not a.startswith("HATA")]
-        indexnow_sonuc = IN.bildir(bildirilecek, kok)
+        # 06.10.2026: yayın trendsaphiens.com'da; lunayapim.com/trend/* adresleri oraya 301
+        # dönüyor. Bing'e yönlenen adres bildirmek boşa tarama demekti — artık asıl adresler,
+        # trendsaphiens.com host'u ve oradaki anahtar dosyasıyla bildiriliyor.
+        bildirilecek = list(dict.fromkeys(
+            "https://trendsaphiens.com/" + u[len(KOK_URL):] for u in bildirilecek if u.startswith(KOK_URL)))
+        indexnow_sonuc = IN.bildir(bildirilecek, kok, alan="trendsaphiens.com")
         indexnow_sonuc = {"gonderilen": indexnow_sonuc.get("gonderilen"), "sonuc": [(x.get("uc"), x.get("durum")) for x in indexnow_sonuc.get("sonuc", [])]} if isinstance(indexnow_sonuc, dict) else indexnow_sonuc
     except Exception as ex:
         indexnow_sonuc = "bildirilemedi: %s" % ex
