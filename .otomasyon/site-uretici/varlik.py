@@ -36,7 +36,13 @@ ISLETME = ("LocalBusiness", "Organization", "ProfessionalService", "Corporation"
 
 _HESAP = re.compile(
     r'\{\s*ag:\s*"([^"]*)"\s*,\s*ad:\s*"([^"]*)"\s*,\s*kullanici:\s*"([^"]*)"\s*,\s*adres:\s*"([^"]*)"')
-_SOSYAL_YER = re.compile(r'(<span[^>]*data-sosyal[^>]*>)(\s*)(</span>)', re.I)
+# 06.10.2026: eskiden yalnız BOŞ yer tutucu doluyordu; sosyal.js'e yeni hesap
+# eklenince (Hizmetgo) dolu şeritler eski kalıyordu. Artık şerit yalnız bizim
+# ürettiğimiz bağlantılardan oluşuyorsa güncel listeyle yeniden yazılır.
+_SOSYAL_YER = re.compile(
+    r'(<span[^>]*data-sosyal[^>]*>)'
+    r'((?:\s*<a href="[^"]*" rel="me noopener" target="_blank">[^<]*</a>)*\s*)'
+    r'(</span>)', re.I)
 _LD = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
 _TABAN_FIYAT = re.compile(r"([\d][\d.]{2,})\s*₺['’]?d[ae]n", re.I)
 
@@ -120,9 +126,14 @@ def _sema_zenginlestir(blok, hsp, taban, url):
     for n in _dugumler(d):
         t = _tur(n)
         if t in ISLETME:
-            if adresler and not n.get("sameAs"):
-                n["sameAs"] = adresler
-                degisti = True
+            if adresler:
+                eski = n.get("sameAs") or []
+                if isinstance(eski, str):
+                    eski = [eski]
+                eksik = [u for u in adresler if u not in eski]
+                if eksik:                 # sosyal.js'e eklenen hesap mevcut kayda katılır
+                    n["sameAs"] = list(eski) + eksik
+                    degisti = True
             if not n.get("@id"):
                 n["@id"] = KURULUS_ID
                 degisti = True
@@ -404,7 +415,9 @@ def calistir(s, yol, kok):
 
     # 1) alt bilgideki yer tutucu — yalnız boşsa doldur (iki kez basmayalım)
     if "data-sosyal" in s and _SOSYAL_YER.search(s):
-        s = _SOSYAL_YER.sub(lambda m: m.group(1) + _sosyal_serit(hsp) + m.group(3), s, count=0)
+        serit = _sosyal_serit(hsp)
+        s = _SOSYAL_YER.sub(lambda m: m.group(0) if m.group(2).strip() == serit
+                            else m.group(1) + serit + m.group(3), s, count=0)
 
     # 2) sayfada açıkça yazan taban fiyat (başlıkta ya da metinde)
     taban = None
