@@ -51,6 +51,10 @@
 window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
+  { yerel:"yade-vogue", detay:"gustosound'un 130 BPM'lik Vogue parçası için hazırlanan 2 dakika 40 saniyelik 3D animasyon klip. Klibin sanatçısı Luna Yapım'ın tasarladığı YADE adlı ejderha karakteri; beş perdelik hikâyenin her dünyası Blender'da 3D olarak kurulup render edildi, kurgu şarkının ritim ve vuruş analizine göre biçildi. Karakter yakın planları yapay zekâ desteğiyle üretilip 3D sahnelerle aynı renk düzenine oturtuldu. 1080p ve 4K olarak teslim edildi.", sayfa:"isler/yade-vogue-3d-animasyon-klip", baslik:"YADE × Vogue — 3D Animasyon Klip", kat:"Klip",
+    sure:"2:40", olcu:"1920×1080 · 4K",
+    teslim:"Şarkı analizi, karakter tasarımı, Blender 3D dünyalar, kurgu ve renk",
+    one:3, etiket:["isler","ornek","klip"], yil:"2026-10-01" },
   { yerel:"ornek-cm", detay:"Avusturya'daki CM Vorarlberg için hazırlanan 15 saniyelik konut projesi tanıtım animasyonu. Projenin dış cephesi 3D olarak modellenip render edildi; kamera hareketiyle yapının çevresinde dolaşan tek bir plan kuruldu ve film marka kapanışıyla bitirildi. 1600×900 çözünürlükte teslim edildi.", sayfa:"isler/cm-vorarlberg-konut-projesi-3d-animasyon", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
     musteri:"CM Vorarlberg · Avusturya", sure:"0:15", olcu:"1600×900",
     teslim:"Dış cephe render + kamera hareketi + marka kapanışı",

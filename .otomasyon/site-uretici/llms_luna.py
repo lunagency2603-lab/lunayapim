@@ -43,7 +43,7 @@ BOLUM = [
         "hizmetler/magnetli-kapak-acacagi", "hizmetler/dtf-baski", "hizmetler/uv-dtf-baski",
     ]),
     ("Yazılım ve dijital", [
-        "yazilim", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
+        "yazilim", "hizmetler/web-sitesi-tasarimi", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
         "hizmetler/pazar-arastirmasi-otomasyon",
     ]),
     ("Reklam ve sosyal medya", [

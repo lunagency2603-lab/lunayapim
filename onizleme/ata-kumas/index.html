@@ -1,0 +1,1300 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/favicon-32.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ata Kumaş</title>
+<meta name="description" content="Ata Kumaş — Bursa'dan metreyle kumaş: pamuk viskon, türlü viskon, müslin, keten, scuba, bürümcük ve polar battaniye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: "kartela" — kumaş numune defteri. Ürünler kartela yaprağı gibi; üstte asılı etiket, altta spesifikasyon şeridi. */
+:root{
+  --bg:#ebe8e1;        /* yıkanmış greige */
+  --surface:#f7f5f0;   /* ham pamuk */
+  --surface-2:#e2ded5;
+  --ink:#1b1e2a;       /* çivit mürekkep */
+  --muted:#656a78;
+  --line:#d3cec3;
+  --accent:#b23a2e;    /* Türk kırmızısı (kökboya) */
+  --accent-ink:#fff8f4;
+  --indigo:#232c57;
+  --display:"Fraunces","Iowan Old Style","Georgia",serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono","SFMono-Regular",Menlo,monospace;
+  --radius:6px;
+  --shadow:0 1px 2px rgba(27,30,42,.06),0 10px 30px -14px rgba(27,30,42,.25);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#14161d; --surface:#1d2029; --surface-2:#262a36; --ink:#ece8df; --muted:#9ea3b2; --line:#303543;
+  --accent:#d85b4d; --accent-ink:#fff6f3; --indigo:#aab4e8; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#14161d; --surface:#1d2029; --surface-2:#262a36; --ink:#ece8df; --muted:#9ea3b2; --line:#303543;
+  --accent:#d85b4d; --accent-ink:#fff6f3; --indigo:#aab4e8; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+a{color:inherit}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Üst bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:var(--accent-ink);font-family:var(--display);font-weight:700;font-size:18px}
+.brand .name{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em}
+.brand .name small{display:block;font-family:var(--mono);font-weight:400;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;gap:4px}
+nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted)}
+nav a:hover{background:var(--surface-2);color:var(--ink)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:600;font-size:14px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.small{padding:7px 12px;font-size:13px}
+@media (max-width:720px){ nav{display:none} .top .lg{display:none} }
+@media (min-width:721px){ .top .sm{display:none} }
+
+/* Hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(32px,5vw,64px)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(40px,6.2vw,76px);font-weight:600}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero p.lead{font-size:clamp(16px,1.4vw,19px);max-width:52ch;color:var(--muted);margin:20px 0 28px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.hero .facts div b{display:block;font-family:var(--display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums}
+.hero .facts div span{font-size:13px;color:var(--muted)}
+/* kartela yelpazesi */
+.fan{position:relative;height:clamp(300px,36vw,460px)}
+.fan .leaf{position:absolute;left:50%;bottom:0;width:clamp(150px,19vw,230px);aspect-ratio:3/4;border-radius:var(--radius) var(--radius) 10px 10px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow);transform-origin:50% 115%;border:4px solid var(--surface)}
+.fan .leaf img{width:100%;height:100%;object-fit:cover}
+.fan .leaf i{position:absolute;top:8px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 2px rgba(0,0,0,.35)}
+.fan .leaf:nth-child(1){transform:translateX(-50%) rotate(-22deg)}
+.fan .leaf:nth-child(2){transform:translateX(-50%) rotate(-11deg)}
+.fan .leaf:nth-child(3){transform:translateX(-50%) rotate(0deg)}
+.fan .leaf:nth-child(4){transform:translateX(-50%) rotate(11deg)}
+.fan .leaf:nth-child(5){transform:translateX(-50%) rotate(22deg)}
+@media (max-width:860px){ .hero .wrap{grid-template-columns:1fr} .fan{height:clamp(240px,60vw,340px);order:-1} .fan .leaf{width:clamp(130px,30vw,190px)} }
+
+/* Bölüm başlıkları */
+section{padding-block:clamp(40px,6vw,80px)}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,3.4vw,42px)}
+.sec-head p{margin:6px 0 0;color:var(--muted);max-width:60ch}
+
+/* Kartela: grup kartları */
+.groups{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gcard{position:relative;display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.gcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.gcard img{aspect-ratio:4/3;width:100%;object-fit:cover}
+.gcard .t{padding:12px 14px 14px}
+.gcard h3{font-size:19px;font-weight:600}
+.gcard .kisa{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.45}
+.gcard .n{position:absolute;top:10px;left:10px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 9px;font-family:var(--mono);font-size:11px}
+@media (max-width:980px){ .groups{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:460px){ .groups{grid-template-columns:1fr 1fr;gap:10px} .gcard h3{font-size:16px} }
+
+/* Filtreler */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .sw{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.18);display:inline-block}
+.filters .sep{width:1px;height:22px;background:var(--line);margin-inline:4px}
+.count{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+
+/* Ürün kartları (kartela yaprakları) */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 16px}
+@media (max-width:980px){ .grid{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:640px){ .grid{grid-template-columns:repeat(2,1fr);gap:14px 10px} }
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;text-align:left;padding:0;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card .ph{position:relative;aspect-ratio:3/4;background:var(--surface-2);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .ph img{transform:scale(1.04)}
+.card .tag{position:absolute;top:0;left:14px;background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px;padding:4px 8px 5px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.card .tag::before{content:"";position:absolute;top:-1px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 1px rgba(0,0,0,.3)}
+.card .t{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-family:var(--body);font-size:14.5px;font-weight:600;line-height:1.3;letter-spacing:0}
+.card .spec{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.card .spec .sw{width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,.18);flex:none}
+.card .price{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:6px;padding-top:6px;border-top:1px dashed var(--line)}
+.card .price b{font-family:var(--display);font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.card .price small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:var(--radius)}
+
+/* Nasıl alınır */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px}
+.step .k{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em}
+.step h3{font-size:21px;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:14.5px}
+@media (max-width:760px){ .steps{grid-template-columns:1fr} }
+
+/* Hakkımızda + iletişim */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,64px);align-items:start}
+.about p{font-size:17px;max-width:56ch;margin:0 0 14px}
+.about .spec-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.about .spec-list li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.about .spec-list li span:first-child{color:var(--muted)}
+.about .spec-list li span:last-child{font-family:var(--mono);font-size:13px;text-align:right}
+@media (max-width:760px){ .about{grid-template-columns:1fr} }
+.contact{background:var(--indigo);color:#f1efe7;border-radius:10px;padding:clamp(24px,4vw,44px)}
+.contact h2{font-size:clamp(26px,3vw,36px);color:#fff}
+.contact p{color:#cfd3ea;max-width:52ch}
+.contact .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.contact .btn{background:#fff;color:#1b1e2a;border-color:#fff}
+.contact .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.contact .addr{margin-top:20px;font-family:var(--mono);font-size:13px;color:#cfd3ea}
+.todo{display:inline-block;border:1px dashed rgba(255,255,255,.5);border-radius:4px;padding:1px 6px;font-size:12px;color:#ffd8d2}
+footer{padding:28px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* Ürün detay (yan panel) */
+.sheet{position:fixed;inset:0;z-index:50;display:none}
+.sheet.open{display:block}
+.sheet .bg{position:absolute;inset:0;background:rgba(10,12,20,.55);backdrop-filter:blur(2px)}
+.sheet .panel{position:absolute;top:0;right:0;bottom:0;width:min(960px,100%);background:var(--bg);overflow:auto;box-shadow:-20px 0 60px rgba(0,0,0,.35);padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.sheet .inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:0;min-height:100%}
+.sheet .gal,.sheet .info{min-width:0}
+.sheet .gal{background:var(--surface-2);padding:16px;display:flex;flex-direction:column;gap:10px}
+.sheet .gal .main{aspect-ratio:3/4;border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.sheet .gal .main img{width:100%;height:100%;object-fit:cover}
+.sheet .thumbs{display:flex;gap:8px;flex-wrap:wrap}
+.sheet .thumbs button{width:64px;aspect-ratio:3/4;border-radius:4px;overflow:hidden;border:2px solid transparent;padding:0;background:var(--surface);cursor:pointer}
+.sheet .thumbs button[aria-current="true"]{border-color:var(--accent)}
+.sheet .thumbs img{width:100%;height:100%;object-fit:cover}
+.sheet .info{padding:clamp(18px,3vw,34px)}
+.sheet .close{position:sticky;top:12px;float:right;margin:-6px -6px 0 0;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:18px;line-height:1}
+.sheet h2{font-size:clamp(26px,3vw,36px);margin:4px 0 6px}
+.sheet .kod{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.sheet .pr{display:flex;align-items:baseline;gap:8px;margin:18px 0 6px}
+.sheet .pr b{font-family:var(--display);font-size:38px;font-weight:600;font-variant-numeric:tabular-nums}
+.sheet .pr span{color:var(--muted);font-family:var(--mono);font-size:13px}
+.sheet .note{font-size:13.5px;color:var(--muted);margin:0 0 18px}
+.sheet .acts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.sheet table{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0 18px}
+.sheet td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.sheet td:first-child{color:var(--muted);width:38%}
+.sheet td:last-child{font-family:var(--mono);font-size:13px}
+.sheet .desc{font-size:15.5px;max-width:58ch}
+.sheet .swl{display:inline-flex;align-items:center;gap:8px}
+.sheet .swl i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+.sheet .more{margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+.sheet .more .eyebrow{margin-bottom:10px}
+.sheet .mini{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.sheet .mini button{flex:none;width:84px;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:0;overflow:hidden;cursor:pointer;text-align:left}
+.sheet .mini img{aspect-ratio:3/4;width:100%;object-fit:cover}
+.sheet .mini span{display:block;font-family:var(--mono);font-size:10px;padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:760px){ .sheet .inner{grid-template-columns:1fr} .sheet .gal .main{aspect-ratio:4/5} }
+body.locked{overflow:hidden}
+
+/* ===== Video açılış ===== */
+.vhero{position:relative;min-height:min(86svh,780px);display:grid;align-items:end;color:#f3efe7;overflow:hidden;background:#141216}
+.vhero video,.vhero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vhero .poster{z-index:0}
+.vhero video{z-index:1}
+.vhero::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(20,18,22,.42) 0%,rgba(20,18,22,.28) 40%,rgba(20,18,22,.86) 100%),linear-gradient(90deg,rgba(20,18,22,.55) 0%,rgba(20,18,22,0) 60%)}
+.vhero .wrap{position:relative;z-index:3;padding-block:clamp(40px,8vw,96px) clamp(28px,5vw,56px);width:100%}
+.vhero .eyebrow{color:#e6dfd3}
+.vhero h1{font-size:clamp(42px,7vw,96px);font-weight:600;max-width:12ch;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.vhero h1 em{font-style:italic;font-weight:500;color:#ffb3a8}
+.vhero p.lead{font-size:clamp(16px,1.5vw,20px);max-width:54ch;color:#e6dfd3;margin:18px 0 26px}
+.vhero .cta{display:flex;flex-wrap:wrap;gap:10px}
+.vhero .btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(6px)}
+.vhero .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.vhero .facts{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.22)}
+.vhero .facts div b{display:block;font-family:var(--display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;color:#fff}
+.vhero .facts div span{font-size:13px;color:#cfc7ba}
+.vhero .vtag{position:absolute;right:16px;bottom:14px;z-index:3;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.55);text-transform:uppercase}
+.vhero .mute{position:absolute;right:16px;top:14px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.25);color:#fff;cursor:pointer;display:none}
+
+/* ===== 3B bölümler ortak ===== */
+.stage{position:relative;background:#1b1a1f;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.stage canvas{display:block;width:100%;height:100%;touch-action:none;outline:none}
+.stage .hud{position:absolute;left:12px;top:12px;z-index:2;display:flex;flex-wrap:wrap;gap:6px}
+.stage .hud .pill{font-family:var(--mono);font-size:11px;letter-spacing:.05em;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 10px;backdrop-filter:blur(4px)}
+.stage .hud button.pill{cursor:pointer}
+.stage .hud button.pill[aria-pressed="true"]{background:var(--accent);border-color:var(--accent)}
+.stage .hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:6px 12px;border-radius:999px;white-space:nowrap;pointer-events:none;transition:opacity .4s}
+.stage .hint.off{opacity:0}
+.stage .tip{position:absolute;z-index:3;pointer-events:none;background:#fff;color:#1b1e2a;border-radius:6px;padding:6px 10px;font-size:12.5px;box-shadow:0 6px 24px rgba(0,0,0,.3);transform:translate(-50%,-130%);white-space:nowrap;display:none}
+.stage .tip b{display:block;font-size:13px}
+.stage .tip span{font-family:var(--mono);font-size:11px;color:#656a78}
+.stage .loading{position:absolute;inset:0;display:grid;place-items:center;z-index:4;background:#1b1a1f;color:#cfc7ba;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;transition:opacity .5s}
+.stage .loading.off{opacity:0;pointer-events:none}
+.stage .err{position:absolute;inset:0;display:none;place-items:center;z-index:5;background:#1b1a1f;color:#e6dfd3;padding:20px;text-align:center}
+.stage.failed .err{display:grid}
+
+/* Sanal tur */
+.tur-stage{aspect-ratio:16/9;max-height:78vh;min-height:360px}
+@media (max-width:640px){ .tur-stage{aspect-ratio:4/5;min-height:420px} .tur-stage .hint{left:12px;transform:none;max-width:calc(100% - 180px);white-space:normal;text-align:left} }
+.tur-stage .pad{position:absolute;right:12px;bottom:12px;z-index:2;display:grid;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:6px}
+.tur-stage .pad button{border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.45);color:#fff;border-radius:10px;font-size:18px;cursor:pointer;backdrop-filter:blur(4px);touch-action:none;user-select:none;-webkit-user-select:none}
+.tur-stage .pad button:active{background:var(--accent);border-color:var(--accent)}
+.tur-stage .pad .up{grid-column:2;grid-row:1}
+.tur-stage .pad .left{grid-column:1;grid-row:2}
+.tur-stage .pad .down{grid-column:2;grid-row:2}
+.tur-stage .pad .right{grid-column:3;grid-row:2}
+@media (hover:hover) and (pointer:fine){ .tur-stage .pad{opacity:.55} .tur-stage .pad:hover{opacity:1} }
+.tur-legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tur-legend kbd{font-family:inherit;border:1px solid var(--line);border-radius:4px;padding:1px 6px;background:var(--surface);color:var(--ink)}
+
+/* 3B manken */
+.manken{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(16px,3vw,32px);align-items:start}
+@media (max-width:860px){ .manken{grid-template-columns:1fr} }
+.manken-stage{aspect-ratio:4/5;max-height:720px;min-height:420px;background:radial-gradient(ellipse at 50% 30%,#f4f0e8 0%,#e7e1d6 55%,#d6cfc3 100%)}
+.manken-stage .loading{background:#e9e4da;color:#656a78}
+.mk-panel{display:flex;flex-direction:column;gap:18px}
+.mk-panel .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface);gap:2px}
+.seg button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.fabrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px;max-height:232px;overflow:auto;padding:2px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.fabrics button{aspect-ratio:1;border-radius:4px;overflow:hidden;border:2px solid transparent;padding:0;background:var(--surface-2);cursor:pointer;position:relative}
+.fabrics button img{width:100%;height:100%;object-fit:cover}
+.fabrics button[aria-pressed="true"]{border-color:var(--accent)}
+.fabrics button[aria-pressed="true"]::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 2px #fff}
+.mk-sel{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.mk-sel img{width:56px;height:70px;object-fit:cover;border-radius:4px;flex:none}
+.mk-sel b{display:block;font-size:14.5px}
+.mk-sel span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.mk-sel .btn{margin-left:auto}
+.range{display:flex;align-items:center;gap:12px}
+.range input{flex:1;accent-color:var(--accent)}
+.range output{font-family:var(--mono);font-size:12px;color:var(--muted);min-width:5ch;text-align:right}
+.mk-note{font-size:12.5px;color:var(--muted);font-family:var(--mono);line-height:1.5}
+@media (max-width:860px){ .mk-sel .btn{margin-left:0} }
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fabrics button[data-d]{border:2px solid var(--line)}
+.fabrics button[data-d][aria-pressed="true"]{border-color:var(--accent)}
+
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="mark">A</span><span class="name">Ata Kumaş<small>Bursa · metreyle kumaş</small></span></a>
+    <nav>
+      <a href="#tur">Sanal tur</a><a href="#manken">3B manken</a><a href="#urunler">Ürünler</a><a href="#nasil">Nasıl alınır</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a>
+    </nav>
+    <a class="btn small primary" href="https://www.trendyol.com/magaza/ata-kumas-m-1259076" target="_blank" rel="noopener"><span class="lg">Trendyol mağazası</span><span class="sm">Trendyol</span> ↗</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="vhero" id="acilis">
+  <img class="poster" src="video/acilis-poster.jpg" alt="" aria-hidden="true">
+  <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="video/acilis-poster.jpg" aria-hidden="true">
+    <source src="video/acilis.webm" type="video/webm">
+    <source src="video/acilis.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <div class="eyebrow">Bursa · Yıldırım · Trendyol satıcı puanı 9.5</div>
+    <h1>Metreyle kumaş, <em>dokusunu görerek.</em></h1>
+    <p class="lead">Pamuk viskon, türlü viskon, müslin, keten, scuba ve bürümcük: 150–180 cm enlerde, 1 metre ve katları halinde kesilir, tek parça gönderilir. Mağazayı sanal turla gezin, kumaşı mankende deneyin, Trendyol güvencesiyle sipariş verin.</p>
+    <div class="cta">
+      <a class="btn primary" href="#tur">Mağazayı gez</a>
+      <a class="btn" href="#manken">Mankende dene</a>
+      <a class="btn" href="#urunler">Tüm kumaşlar</a>
+    </div>
+    <div class="facts">
+      <div><b>31</b><span>ürün</span></div>
+      <div><b>8</b><span>kumaş grubu</span></div>
+      <div><b>150–180</b><span>cm en</span></div>
+      <div><b>1 m</b><span>ve katları</span></div>
+    </div>
+  </div>
+  <div class="vtag">Mağazadaki kumaşlardan · 20 sn döngü</div>
+</section>
+
+<section id="tur">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Sanal tur</div><h2>Mağazanın içinde gezin</h2><p>Duvarlarda asılı 31 kumaş, gerçek fotoğraflarıyla. Bakmak için sürükleyin, yürümek için ok tuşlarını ya da köşedeki düğmeleri kullanın; bir kumaşa tıklayınca ayrıntısı açılır.</p></div>
+      <button class="btn" id="tur-auto" aria-pressed="true">Otomatik tur: açık</button>
+    </div>
+    <div class="stage tur-stage" id="tur-stage">
+      <canvas id="tur-canvas" tabindex="0" aria-label="Sanal mağaza turu"></canvas>
+      <div class="hud"><span class="pill" id="tur-konum">Giriş</span></div>
+      <div class="hint" id="tur-hint">Sürükle: bak · Ok tuşları: yürü · Tıkla: incele</div>
+      <div class="tip" id="tur-tip"><b></b><span></span></div>
+      <div class="pad" aria-label="Yürüme düğmeleri">
+        <button class="up" data-k="ileri" aria-label="İleri">▲</button>
+        <button class="left" data-k="sol" aria-label="Sola dön">◀</button>
+        <button class="down" data-k="geri" aria-label="Geri">▼</button>
+        <button class="right" data-k="sag" aria-label="Sağa dön">▶</button>
+      </div>
+      <div class="loading" id="tur-loading">Mağaza hazırlanıyor</div>
+      <div class="err">Tarayıcınız 3B görüntülemeyi desteklemiyor. Kumaşları aşağıdaki listeden inceleyebilirsiniz.</div>
+    </div>
+    <div class="tur-legend"><span><kbd>W</kbd> <kbd>↑</kbd> ileri</span><span><kbd>S</kbd> <kbd>↓</kbd> geri</span><span><kbd>A</kbd> <kbd>D</kbd> <kbd>←</kbd> <kbd>→</kbd> dön</span><span>Sürükle / dokun: etrafa bak</span><span>Panele tıkla: ürün ayrıntısı</span></div>
+  </div>
+</section>
+
+<section id="manken">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">3B manken</div><h2>Kumaş üstünde nasıl durur?</h2><p>Kumaşı seçin; kadın ya da erkek mankende elbise, etek, bluz, gömlek veya pantolon olarak görün. Etek ve elbise gerçek zamanlı kumaş fiziğiyle sarkar: yer çekimi, vücutla çarpışma, yürürken savrulma. Dar kalıplar vücut hatlarını birebir izler.</p></div>
+    </div>
+    <div class="manken">
+      <div class="stage manken-stage" id="mk-stage">
+        <canvas id="mk-canvas" aria-label="3B manken görünümü"></canvas>
+        <div class="hud"><button class="pill" id="mk-rotate" aria-pressed="true">Döndür</button></div>
+        <div class="hint" id="mk-hint">Sürükleyerek çevirin</div>
+        <div class="loading" id="mk-loading">Manken hazırlanıyor</div>
+        <div class="err">Tarayıcınız 3B görüntülemeyi desteklemiyor.</div>
+      </div>
+      <div class="mk-panel">
+        <div>
+          <div class="lbl">Manken</div>
+          <div class="seg" id="mk-cins"><button data-v="kadin" aria-pressed="true">Kadın</button><button data-v="erkek" aria-pressed="false">Erkek</button></div>
+        </div>
+        <div>
+          <div class="lbl">Kalıp</div>
+          <div class="chips" id="mk-kalip"></div>
+        </div>
+        <div>
+          <div class="lbl">Duruş</div>
+          <div class="seg" id="mk-durus"><button data-v="bekle" aria-pressed="true">Dur</button><button data-v="yuru" aria-pressed="false">Yürü</button></div>
+        </div>
+        <div>
+          <div class="lbl">Kumaş <span id="mk-sayi"></span></div>
+          <div class="fabrics" id="mk-kumas"></div>
+        </div>
+        <div>
+          <div class="lbl">Desen ölçeği</div>
+          <div class="range"><input type="range" id="mk-olcek" min="0.5" max="2" step="0.05" value="1"><output id="mk-olcek-out">1.00×</output></div>
+        </div>
+        <div class="mk-sel" id="mk-sel"><img alt=""><div><b></b><span></span></div><a class="btn small primary" href="#">Bu kumaşı incele</a></div>
+        <p class="mk-note">Gerçek zamanlı 3B görselleştirme: döküm, ortalama gramajlı dokuma kumaş için hesaplanır; dikim modeline ve kumaşın ağırlığına göre değişir. Renk ve desen gerçek ürün fotoğrafından alınır.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kartela">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Kartela</div><h2>Kumaş grupları</h2><p>Her grup kendi eni, gramajı ve bileşenine göre listelenir. Bir gruba tıklayınca o grubun tüm renkleri açılır.</p></div>
+    </div>
+    <div class="groups" id="groups"></div>
+  </div>
+</section>
+
+<section id="urunler">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">Ürünler</div><h2>Tüm kumaşlar ve battaniyeler</h2><p>Fiyatlar metre başınadır (battaniyede adet). Güncel fiyat ve stok Trendyol'daki ürün sayfasında geçerlidir.</p></div>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filtreler"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="nasil">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Nasıl alınır</div><h2>Üç adımda kapında</h2></div></div>
+    <div class="steps">
+      <div class="step"><div class="k">01</div><h3>Metreyi belirle</h3><p>Kumaşlar 1 metre ve katları halinde satılır. 3 adet alırsan 3 metre tek parça kesilir; 3,5 metre gibi ara ölçüler alınamaz.</p></div>
+      <div class="step"><div class="k">02</div><h3>Trendyol'da sepete ekle</h3><p>Her ürünün sayfasındaki "Trendyol'da satın al" düğmesi seni doğrudan ürüne götürür. Ödeme ve iade Trendyol güvencesiyle.</p></div>
+      <div class="step"><div class="k">03</div><h3>Hızlı teslimat</h3><p>Bursa'dan hızlı teslimatla gönderilir; 350 TL ve üzeri siparişlerde kargo ücretsiz. 15 gün içinde ücretsiz iade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hakkimizda">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">Hakkımızda</div>
+      <h2 style="font-size:clamp(28px,3.4vw,42px);margin:8px 0 18px">Tekstilin başkentinden</h2>
+      <p>Ata Kumaş, Bursa Yıldırım'da yerleşik bir kumaş satıcısı. Trendyol mağazasında 2026'dan bu yana pamuk viskon, türlü viskon, müslin ve desenli kumaşları metreyle; polar battaniyeleri adetle satıyor.</p>
+      <p>Her kumaşın eni, gramajı ve bileşeni ürün sayfasında yazar. Sorulara Trendyol üzerinden dakikalar içinde cevap verilir.</p>
+    </div>
+    <ul class="spec-list">
+      <li><span>Konum</span><span>Bursa / Yıldırım</span></li>
+      <li><span>Trendyol satıcı puanı</span><span>9.5 / 10</span></li>
+      <li><span>Satış birimi</span><span>1 metre ve katları</span></li>
+      <li><span>Kumaş enleri</span><span>100 · 150 · 180 cm</span></li>
+      <li><span>Kargo</span><span>350 TL üzeri ücretsiz</span></li>
+      <li><span>İade</span><span>15 gün ücretsiz</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow" style="color:#cfd3ea">İletişim</div>
+      <h2>Toptan veya özel ölçü için yazın</h2>
+      <p>Mağazadaki tüm ürünler Trendyol üzerinden sipariş edilir. Toptan alım, farklı en ve özel kesim talepleri için bize ulaşın.</p>
+      <div class="row">
+        <a class="btn" href="https://www.trendyol.com/magaza/ata-kumas-m-1259076" target="_blank" rel="noopener">Trendyol mağazasını aç ↗</a>
+        <a class="btn ghost" href="https://www.trendyol.com/magaza/ata-kumas-m-1259076" target="_blank" rel="noopener">Trendyol'dan soru sor</a>
+      </div>
+      <div class="addr">Ata Kumaş · Anadolu Mah., Yıldırım / Bursa<br><span class="todo">telefon ve WhatsApp numarası müşteriden alınacak</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Ata Kumaş · Bursa</span><span>Tasarım: Luna Yapım</span></div></footer>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-title">
+  <div class="bg" data-close></div>
+  <div class="panel">
+    <div class="inner">
+      <div class="gal">
+        <div class="main"><img id="sh-img" alt=""></div>
+        <div class="thumbs" id="sh-thumbs"></div>
+      </div>
+      <div class="info">
+        <button class="close" data-close aria-label="Kapat">×</button>
+        <div class="eyebrow" id="sh-grup"></div>
+        <h2 id="sh-title"></h2>
+        <div class="kod" id="sh-kod"></div>
+        <div class="pr"><b id="sh-fiyat"></b><span id="sh-birim"></span></div>
+        <p class="note" id="sh-note"></p>
+        <div class="acts">
+          <a class="btn primary" id="sh-buy" target="_blank" rel="noopener">Trendyol'da satın al ↗</a>
+          <button class="btn" id="sh-copy">Ürün kodunu kopyala</button>
+        </div>
+        <table id="sh-table"></table>
+        <p class="desc" id="sh-desc"></p>
+        <div class="more"><div class="eyebrow">Aynı gruptan</div><div class="mini" id="sh-more"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const URUNLER = [{"id": 1140999305, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Lacivert · No.01", "kod": "DV01", "no": "01", "renk": "Lacivert", "renkHex": "#1e2a5a", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv01-1140999305-1", "dv01-1140999305-2", "dv01-1140999305-3", "dv01-1140999305-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140999305"}, {"id": 1142724194, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Siyah · No.02", "kod": "DV02", "no": "02", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv02-1142724194-1", "dv02-1142724194-2", "dv02-1142724194-3", "dv02-1142724194-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1142724194"}, {"id": 1142724464, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Siyah · No.03", "kod": "DV03", "no": "03", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv03-1142724464-1", "dv03-1142724464-2", "dv03-1142724464-3", "dv03-1142724464-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1142724464"}, {"id": 1142724797, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Sarı · No.04", "kod": "DV04", "no": "04", "renk": "Sarı", "renkHex": "#e5c23a", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv04-1142724797-1", "dv04-1142724797-2", "dv04-1142724797-3", "dv04-1142724797-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1142724797"}, {"id": 1142725227, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Mor · No.05", "kod": "DV05", "no": "05", "renk": "Mor", "renkHex": "#6a3f9e", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 1, "imgs": ["dv05-1142725227-1", "dv05-1142725227-2", "dv05-1142725227-3", "dv05-1142725227-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1142725227"}, {"id": 1142725541, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Mor · No.06", "kod": "DV06", "no": "06", "renk": "Mor", "renkHex": "#6a3f9e", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 1, "imgs": ["dv06-1142725541-1", "dv06-1142725541-2", "dv06-1142725541-3", "dv06-1142725541-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1142725541"}, {"id": 1157230882, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Pembe · No.07", "kod": "DV07", "no": "07", "renk": "Pembe", "renkHex": "#e38fb0", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv07-1157230882-1", "dv07-1157230882-2", "dv07-1157230882-3", "dv07-1157230882-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1157230882"}, {"id": 1157231843, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Siyah · No.08", "kod": "DV08", "no": "08", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv08-1157231843-1", "dv08-1157231843-2", "dv08-1157231843-3", "dv08-1157231843-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1157231843"}, {"id": 1157232493, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Yeşil · No.09", "kod": "DV09", "no": "09", "renk": "Yeşil", "renkHex": "#3e7a4d", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv09-1157232493-1", "dv09-1157232493-2", "dv09-1157232493-3", "dv09-1157232493-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1157232493"}, {"id": 1157231043, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Mavi · No.10", "kod": "DV10", "no": "10", "renk": "Mavi", "renkHex": "#3b78cf", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv10-1157231043-1", "dv10-1157231043-2", "dv10-1157231043-3", "dv10-1157231043-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1157231043"}, {"id": 1171860863, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Mavi · No.11", "kod": "DV11", "no": "11", "renk": "Mavi", "renkHex": "#3b78cf", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv11-1171860863-1", "dv11-1171860863-2", "dv11-1171860863-3", "dv11-1171860863-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1171860863"}, {"id": 1171861273, "grup": "pamuk-viskon", "ad": "Pamuk Viskon · Pembe · No.12", "kod": "DV12", "no": "12", "renk": "Pembe", "renkHex": "#e38fb0", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C hassas yıkama", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["dv12-1171861273-1", "dv12-1171861273-2", "dv12-1171861273-3", "dv12-1171861273-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1171861273"}, {"id": 1136233629, "grup": "turlu-viskon", "ad": "Türlü Viskon · Bej · No.01", "kod": "Turlu Viskon01", "no": "01", "renk": "Bej", "renkHex": "#d6c3a0", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "97% Viskon, 3% Likra", "yikama": "30 Derece", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 2, "imgs": ["turlu-viskon01-1136233629-1", "turlu-viskon01-1136233629-2"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1136233629"}, {"id": 1140582836, "grup": "turlu-viskon", "ad": "Türlü Viskon · Siyah · No.02", "kod": "Turlu Viskon02", "no": "02", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["turlu-viskon02-1140582836-1", "turlu-viskon02-1140582836-2", "turlu-viskon02-1140582836-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140582836"}, {"id": 1140583395, "grup": "turlu-viskon", "ad": "Türlü Viskon · Kırmızı · No.03", "kod": "Turlu Viskon03", "no": "03", "renk": "Kırmızı", "renkHex": "#c0392b", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 1, "imgs": ["turlu-viskon03-1140583395-1", "turlu-viskon03-1140583395-2", "turlu-viskon03-1140583395-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140583395"}, {"id": 1140585785, "grup": "turlu-viskon", "ad": "Türlü Viskon · Gri · No.05", "kod": "Turlu Viskon05", "no": "05", "renk": "Gri", "renkHex": "#8b8b8b", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 1, "imgs": ["turlu-viskon05-1140585785-1", "turlu-viskon05-1140585785-2", "turlu-viskon05-1140585785-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140585785"}, {"id": 1140586364, "grup": "turlu-viskon", "ad": "Türlü Viskon · Lacivert · No.06", "kod": "Turlu Viskon06", "no": "06", "renk": "Lacivert", "renkHex": "#1e2a5a", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["turlu-viskon06-1140586364-1", "turlu-viskon06-1140586364-2", "turlu-viskon06-1140586364-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140586364"}, {"id": 1140586828, "grup": "turlu-viskon", "ad": "Türlü Viskon · Siyah · No.07", "kod": "Turlu Viskon07", "no": "07", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["turlu-viskon07-1140586828-1", "turlu-viskon07-1140586828-2", "turlu-viskon07-1140586828-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140586828"}, {"id": 1140587338, "grup": "turlu-viskon", "ad": "Türlü Viskon · Siyah · No.08", "kod": "Turlu Viskon08", "no": "08", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["turlu-viskon08-1140587338-1", "turlu-viskon08-1140587338-2", "turlu-viskon08-1140587338-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140587338"}, {"id": 1140588732, "grup": "turlu-viskon", "ad": "Türlü Viskon · Ekru · No.09", "kod": "Turlu Viskon09", "no": "09", "renk": "Ekru", "renkHex": "#efe6d3", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": 4, "puanSayi": 1, "imgs": ["turlu-viskon09-1140588732-1", "turlu-viskon09-1140588732-2", "turlu-viskon09-1140588732-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140588732"}, {"id": 1140998242, "grup": "turlu-viskon", "ad": "Türlü Viskon · Lacivert · No.10", "kod": "Turlu Viskon10", "no": "10", "renk": "Lacivert", "renkHex": "#1e2a5a", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "180 gr/m²", "bilesen": "%97 Viskon, %3 Likra", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["turlu-viskon10-1140998242-1", "turlu-viskon10-1140998242-2", "turlu-viskon10-1140998242-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140998242"}, {"id": 1135649092, "grup": "muslin", "ad": "Müslin · Beyaz", "kod": "Müslimkumaş", "no": null, "renk": "Beyaz", "renkHex": "#f6f6f4", "fiyat": 399, "birim": "metre", "en": "100 cm", "ebat": "1 m × 100 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["muslimkumas-1135649092-1", "muslimkumas-1135649092-2"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1135649092"}, {"id": 1135649647, "grup": "muslin", "ad": "Müslin · Siyah", "kod": "Müslimkumaş", "no": null, "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "100 cm", "ebat": "1 m × 100 cm", "gramaj": null, "bilesen": "%100 Pamuk", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": 5, "puanSayi": 1, "imgs": ["muslimkumas-1135649647-1", "muslimkumas-1135649647-2"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1135649647"}, {"id": 1157232829, "grup": "keten", "ad": "Keten · Ekru", "kod": "keten1", "no": "01", "renk": "Ekru", "renkHex": "#efe6d3", "fiyat": 300, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": null, "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["keten1-1157232829-1", "keten1-1157232829-2", "keten1-1157232829-3", "keten1-1157232829-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1157232829"}, {"id": 1140636248, "grup": "scuba", "ad": "Scuba · Bej", "kod": "Scuba01", "no": "01", "renk": "Bej", "renkHex": "#d6c3a0", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": null, "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["scuba01-1140636248-1", "scuba01-1140636248-2", "scuba01-1140636248-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1140636248"}, {"id": 1141382388, "grup": "burumcuk", "ad": "Bürümcük · Ekru", "kod": "DB01", "no": "01", "renk": "Ekru", "renkHex": "#efe6d3", "fiyat": 399, "birim": "metre", "en": "150 cm", "ebat": "1 m × 150 cm", "gramaj": null, "bilesen": null, "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["db01-1141382388-1", "db01-1141382388-2", "db01-1141382388-3", "db01-1141382388-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1141382388"}, {"id": 1145399139, "grup": "oysho", "ad": "Oysho 230 gr · Siyah", "kod": "Oysho01", "no": "01", "renk": "Siyah", "renkHex": "#141414", "fiyat": 399, "birim": "metre", "en": "180 cm", "ebat": "1 m × 180 cm", "gramaj": "230 gr/m²", "bilesen": null, "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["oysho01-1145399139-1", "oysho01-1145399139-2", "oysho01-1145399139-3", "oysho01-1145399139-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1145399139"}, {"id": 1149459845, "grup": "battaniye", "ad": "Polar Battaniye · Green Tea", "kod": "greentea", "no": null, "renk": "Yeşil", "renkHex": "#3e7a4d", "fiyat": 999, "birim": "adet", "en": null, "ebat": "135 x 175 cm", "gramaj": null, "bilesen": "Polar", "yikama": "30°C", "mensei": "TR", "desen": "Geometrik", "puan": null, "puanSayi": 0, "imgs": ["greentea-1149459845-1", "greentea-1149459845-2", "greentea-1149459845-3", "greentea-1149459845-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1149459845"}, {"id": 1149460009, "grup": "battaniye", "ad": "Polar Battaniye · Snowcat", "kod": "snowcat", "no": null, "renk": "Gri", "renkHex": "#8b8b8b", "fiyat": 999, "birim": "adet", "en": null, "ebat": "135 x 175 cm", "gramaj": null, "bilesen": "Polar", "yikama": "30°C", "mensei": "TR", "desen": "Leopar", "puan": null, "puanSayi": 0, "imgs": ["snowcat-1149460009-1", "snowcat-1149460009-2", "snowcat-1149460009-3", "snowcat-1149460009-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1149460009"}, {"id": 1149460475, "grup": "battaniye", "ad": "Polar Battaniye · Forest Camp", "kod": "forestcamp", "no": null, "renk": "Ekru", "renkHex": "#efe6d3", "fiyat": 999, "birim": "adet", "en": null, "ebat": "135 x 175 cm", "gramaj": null, "bilesen": "Polar", "yikama": "30°C", "mensei": "TR", "desen": null, "puan": null, "puanSayi": 0, "imgs": ["forestcamp-1149460475-1", "forestcamp-1149460475-2", "forestcamp-1149460475-3", "forestcamp-1149460475-4"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1149460475"}, {"id": 1149460611, "grup": "battaniye", "ad": "Polar Battaniye · London Touch", "kod": "londontouch", "no": null, "renk": "Bej", "renkHex": "#d6c3a0", "fiyat": 999, "birim": "adet", "en": null, "ebat": "135 x 175 cm", "gramaj": null, "bilesen": "Polar", "yikama": "30°C", "mensei": "TR", "desen": "Geometrik", "puan": null, "puanSayi": 0, "imgs": ["londontouch-1149460611-1", "londontouch-1149460611-2", "londontouch-1149460611-3"], "trendyol": "https://www.trendyol.com/ata-kumas/x-p-1149460611"}];
+const GRUPLAR = [{"id": "pamuk-viskon", "ad": "Pamuk Viskon", "kisa": "%100 pamuk dokuma viskon · 150 cm en", "aciklama": "%100 pamuk dokuma viskon. Yumuşak tuşesi ve dökümlü yapısıyla nefes alır, deseni canlı gösterir; yazlık kullanıma uygundur. Elbise, gömlek, etek, tunik, pijama, şal, pareo ve ev tekstilinde kullanılır.", "sayi": 12, "kapak": "dv01-1140999305-1", "fiyat": 399, "birim": "metre"}, {"id": "turlu-viskon", "ad": "Türlü Viskon", "kisa": "%97 viskon %3 likra · 180 cm en · 180 gr/m²", "aciklama": "Yüksek kaliteli viskon iplikten dokunmuş, hafif esnek bir kumaş. Akışkan dökümü ve pürüzsüz tuşesiyle dikim sonrası zarif bir duruş verir. Elbise, gömlek, kimono, pareo, pijama ve yazlık kombinler için.", "sayi": 9, "kapak": "turlu-viskon01-1136233629-1", "fiyat": 399, "birim": "metre"}, {"id": "muslin", "ad": "Müslin", "kisa": "%100 pamuk · 100 cm en", "aciklama": "%100 pamuk müslin. Hafif, gevşek dokulu ve nefes alan bir kumaş; bebek örtüsü, şal, perde ve yazlık giyim için tercih edilir.", "sayi": 2, "kapak": "muslimkumas-1135649092-1", "fiyat": 399, "birim": "metre"}, {"id": "keten", "ad": "Keten", "kisa": "Desenli keten · 150 cm en", "aciklama": "Desenli keten kumaş. Doğal dokusu ve serin tutuşuyla yazlık elbise, gömlek, pantolon ve ev dekorasyonu için.", "sayi": 1, "kapak": "keten1-1157232829-1", "fiyat": 300, "birim": "metre"}, {"id": "scuba", "ad": "Scuba", "kisa": "Desenli scuba · 150 cm en", "aciklama": "Desenli scuba kumaş. Formunu koruyan, dolgun ve esnek dokusuyla etek, elbise ve ceket dikiminde kullanılır.", "sayi": 1, "kapak": "scuba01-1140636248-1", "fiyat": 399, "birim": "metre"}, {"id": "burumcuk", "ad": "Bürümcük", "kisa": "Desenli bürümcük · 150 cm en", "aciklama": "Desenli bürümcük kumaş. Doğal kırışık dokusu ütü istemez; hafif ve serin tutar. Elbise, gömlek, pijama ve plaj giyimi için.", "sayi": 1, "kapak": "db01-1141382388-1", "fiyat": 399, "birim": "metre"}, {"id": "oysho", "ad": "Oysho 230 gr", "kisa": "230 gr/m² · 180 cm en", "aciklama": "Satıcının Oysho tipi olarak adlandırdığı 230 gr/m² ağırlığında kumaş; 180 cm en, siyah. Ev giyimi ve rahat kesimler için.", "sayi": 1, "kapak": "oysho01-1145399139-1", "fiyat": 399, "birim": "metre"}, {"id": "battaniye", "ad": "Polar Battaniye", "kisa": "135 x 175 cm · tek kişilik TV battaniyesi", "aciklama": "135 x 175 cm polar TV battaniyesi. Yumuşak, hafif ve sıcak tutan dokusuyla koltuk ve yatak için; dört farklı desen.", "sayi": 4, "kapak": "greentea-1149459845-1", "fiyat": 999, "birim": "adet"}];
+const RENKLER = [["Siyah", "#141414"], ["Beyaz", "#f6f6f4"], ["Ekru", "#efe6d3"], ["Bej", "#d6c3a0"], ["Gri", "#8b8b8b"], ["Lacivert", "#1e2a5a"], ["Mavi", "#3b78cf"], ["Yeşil", "#3e7a4d"], ["Mor", "#6a3f9e"], ["Pembe", "#e38fb0"], ["Kırmızı", "#c0392b"], ["Sarı", "#e5c23a"]];
+const img = (n, s) => `img/${n}-${s}.webp`;
+const tl = (v) => new Intl.NumberFormat('tr-TR').format(v) + ' ₺';
+const byId = Object.fromEntries(URUNLER.map(u => [u.id, u]));
+const grupAd = Object.fromEntries(GRUPLAR.map(g => [g.id, g.ad]));
+const grupAciklama = Object.fromEntries(GRUPLAR.map(g => [g.id, g.aciklama]));
+let fGrup = null, fRenk = null;
+
+/* Hero yelpazesi: 5 farklı gruptan birer yaprak */
+(function(){
+  const picks = ['pamuk-viskon','turlu-viskon','burumcuk','keten','scuba'].map(g => URUNLER.find(u => u.grup === g)).filter(Boolean);
+  const fanEl = document.getElementById('fan'); if (fanEl) fanEl.innerHTML = picks.map(u => `<div class="leaf"><i></i><img src="${img(u.imgs[0],560)}" alt="" loading="eager"></div>`).join('');
+})();
+
+/* Gruplar */
+document.getElementById('groups').innerHTML = GRUPLAR.map(g => `
+  <a class="gcard" href="#urunler" data-grup="${g.id}">
+    <span class="n">${g.sayi} ${g.sayi === 1 ? 'ürün' : 'renk/desen'}</span>
+    <img src="${img(g.kapak,560)}" alt="${g.ad}" loading="lazy">
+    <div class="t"><h3>${g.ad}</h3><div class="kisa">${g.kisa}<br>${tl(g.fiyat)} / ${g.birim}</div></div>
+  </a>`).join('');
+document.getElementById('groups').addEventListener('click', e => {
+  const a = e.target.closest('[data-grup]'); if (!a) return;
+  fGrup = a.dataset.grup; fRenk = null; renderFilters(); renderGrid();
+});
+
+/* Filtreler */
+function renderFilters(){
+  const f = document.getElementById('filters');
+  const gchips = [['Tümü', null], ...GRUPLAR.map(g => [g.ad, g.id])].map(([ad, id]) =>
+    `<button class="chip" data-g="${id ?? ''}" aria-pressed="${fGrup === id}">${ad}</button>`).join('');
+  const rchips = RENKLER.map(([r, hex]) => `<button class="chip" data-r="${r}" aria-pressed="${fRenk === r}"><span class="sw" style="background:${hex}"></span>${r}</button>`).join('');
+  f.innerHTML = gchips + '<span class="sep"></span>' + rchips + `<span class="count" id="count"></span>`;
+}
+document.getElementById('filters').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  if (b.dataset.g !== undefined) fGrup = b.dataset.g || null;
+  if (b.dataset.r !== undefined) fRenk = (fRenk === b.dataset.r) ? null : b.dataset.r;
+  renderFilters(); renderGrid();
+});
+
+/* Izgara */
+function renderGrid(){
+  const list = URUNLER.filter(u => (!fGrup || u.grup === fGrup) && (!fRenk || u.renk === fRenk));
+  const g = document.getElementById('grid');
+  document.getElementById('count').textContent = `${list.length} / ${URUNLER.length}`;
+  if (!list.length) { g.innerHTML = `<div class="empty" style="grid-column:1/-1">Bu seçimde ürün yok. Filtreyi genişletin.</div>`; return; }
+  g.innerHTML = list.map(u => `
+    <button class="card" data-id="${u.id}" aria-label="${u.ad}">
+      <div class="ph"><span class="tag">${u.kod}</span><img src="${img(u.imgs[0],560)}" alt="${u.ad}" loading="lazy"></div>
+      <div class="t">
+        <h3>${u.ad}</h3>
+        <div class="spec"><span class="sw" style="background:${u.renkHex}"></span>${u.renk}${u.en ? ' · ' + u.en + ' en' : ' · ' + (u.ebat||'')}${u.gramaj ? ' · ' + u.gramaj : ''}</div>
+        <div class="price"><b>${tl(u.fiyat)}</b><small>/ ${u.birim}</small></div>
+      </div>
+    </button>`).join('');
+}
+document.getElementById('grid').addEventListener('click', e => {
+  const c = e.target.closest('.card'); if (!c) return;
+  location.hash = 'u-' + c.dataset.id;
+});
+
+/* Detay paneli */
+const sheet = document.getElementById('sheet');
+let cur = null, curImg = 0;
+function openSheet(id){
+  const u = byId[id]; if (!u) return;
+  cur = u; curImg = 0;
+  document.getElementById('sh-grup').textContent = grupAd[u.grup];
+  document.getElementById('sh-title').textContent = u.ad;
+  document.getElementById('sh-kod').textContent = `Ürün kodu ${u.kod} · Trendyol #${u.id}`;
+  document.getElementById('sh-fiyat').textContent = tl(u.fiyat);
+  document.getElementById('sh-birim').textContent = '/ ' + u.birim + (u.birim === 'metre' ? ' · 1 metre ve katları' : '');
+  document.getElementById('sh-note').textContent = u.birim === 'metre'
+    ? 'Birden fazla metre alındığında tek parça olarak kesilir ve gönderilir. 350 TL üzeri kargo bedava.'
+    : 'Tek kişilik polar TV battaniyesi. 350 TL üzeri kargo bedava.';
+  document.getElementById('sh-buy').href = u.trendyol;
+  const rows = [
+    ['Kumaş', grupAd[u.grup]], ['Renk', `<span class="swl"><i style="background:${u.renkHex}"></i>${u.renk}</span>`],
+    u.desen ? ['Desen', u.desen] : null,
+    u.en ? ['En', u.en] : null, u.ebat ? ['Ebat', u.ebat] : null,
+    u.gramaj ? ['Gramaj', u.gramaj] : null, u.bilesen ? ['Bileşen', u.bilesen] : null,
+    ['Yıkama', u.yikama], ['Menşei', u.mensei === 'TR' ? 'Türkiye' : u.mensei],
+    u.puan ? ['Değerlendirme', `${u.puan.toFixed(1)} / 5 (${u.puanSayi})`] : null,
+  ].filter(Boolean);
+  document.getElementById('sh-table').innerHTML = rows.map(([k, v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join('');
+  document.getElementById('sh-desc').textContent = grupAciklama[u.grup];
+  document.getElementById('sh-thumbs').innerHTML = u.imgs.map((n, i) => `<button data-i="${i}" aria-current="${i===0}"><img src="${img(n,560)}" alt=""></button>`).join('');
+  showImg(0);
+  const more = URUNLER.filter(x => x.grup === u.grup && x.id !== u.id).slice(0, 8);
+  document.getElementById('sh-more').innerHTML = more.map(x => `<button data-id="${x.id}"><img src="${img(x.imgs[0],560)}" alt=""><span>${x.renk}${x.kod.match(/\d+$/) ? ' · ' + x.kod.match(/\d+$/)[0] : ''}</span></button>`).join('') || '<span class="kod">Bu grupta tek ürün var.</span>';
+  sheet.classList.add('open'); document.body.classList.add('locked');
+  sheet.querySelector('.panel').scrollTop = 0;
+  document.getElementById('sh-title').focus?.();
+}
+function showImg(i){
+  curImg = i; const n = cur.imgs[i];
+  const im = document.getElementById('sh-img'); im.src = img(n, 1100); im.alt = cur.ad + ' görsel ' + (i + 1);
+  document.querySelectorAll('#sh-thumbs button').forEach((b, k) => b.setAttribute('aria-current', k === i));
+}
+document.getElementById('sh-thumbs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showImg(+b.dataset.i); });
+document.getElementById('sh-more').addEventListener('click', e => { const b = e.target.closest('button'); if (b) location.hash = 'u-' + b.dataset.id; });
+document.getElementById('sh-copy').addEventListener('click', async function(){
+  const t = cur.kod; const btn = this;
+  try { await navigator.clipboard.writeText(t); btn.textContent = 'Kopyalandı: ' + t; }
+  catch(e){ const r = document.createRange(); r.selectNodeContents(document.getElementById('sh-kod')); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent = 'Metni seçtim, kopyalayın'; }
+  setTimeout(() => btn.textContent = 'Ürün kodunu kopyala', 2200);
+});
+function closeSheet(){ sheet.classList.remove('open'); document.body.classList.remove('locked'); if (location.hash.startsWith('#u-')) history.replaceState(null, '', location.pathname + location.search + '#urunler'); }
+sheet.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeSheet));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.classList.contains('open')) closeSheet(); });
+function route(){ const m = location.hash.match(/^#u-(\d+)$/); if (m) openSheet(+m[1]); else if (sheet.classList.contains('open')) closeSheet(); }
+window.addEventListener('hashchange', route);
+
+renderFilters(); renderGrid(); route();
+</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+/* ===================== 3B ortak ===================== */
+const hasWebGL = (() => { try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); } catch (e) { return false; } })();
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const texCache = new Map();
+const texLoader = new THREE.TextureLoader();
+const doku = (u) => u.grup === 'battaniye' ? img(u.imgs[0], 560) : `img/${u.imgs[0]}-doku.webp`;
+function loadTex(url, cb) {
+  if (texCache.has(url)) { cb(texCache.get(url)); return; }
+  texLoader.load(url, t => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; texCache.set(url, t); cb(t); }, undefined, () => cb(null));
+}
+function makeRenderer(canvas) {
+  const r = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+  r.outputColorSpace = THREE.SRGBColorSpace;
+  r.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  return r;
+}
+function fitRenderer(renderer, camera, stage) {
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+function textCanvas(lines, opts) {
+  const o = Object.assign({ w: 512, h: 128, bg: 'rgba(247,245,240,0.96)', fg: '#1b1e2a', sub: '#656a78', font: 'bold 34px "Public Sans", Arial', subFont: '24px "IBM Plex Mono", Menlo, monospace' }, opts || {});
+  const c = document.createElement('canvas'); c.width = o.w; c.height = o.h; const x = c.getContext('2d');
+  x.fillStyle = o.bg; x.beginPath(); if (x.roundRect) x.roundRect(0, 0, o.w, o.h, 14); else x.rect(0, 0, o.w, o.h); x.fill();
+  x.fillStyle = o.fg; x.font = o.font; x.textBaseline = 'middle'; x.fillText(lines[0], 24, o.h * 0.36, o.w - 48);
+  if (lines[1]) { x.fillStyle = o.sub; x.font = o.subFont; x.fillText(lines[1], 24, o.h * 0.72, o.w - 48); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const visible = new Map();
+const io = new IntersectionObserver(es => es.forEach(e => visible.set(e.target, e.isIntersecting)), { threshold: 0.05 });
+
+/* ===================== Sanal tur ===================== */
+function initTur() {
+  const stage = document.getElementById('tur-stage'), canvas = document.getElementById('tur-canvas');
+  if (!hasWebGL) { stage.classList.add('failed'); return; }
+  let renderer; try { renderer = makeRenderer(canvas); } catch (e) { stage.classList.add('failed'); return; }
+  const scene = new THREE.Scene();
+  const bgCol = 0x25222a; scene.background = new THREE.Color(bgCol); scene.fog = new THREE.Fog(bgCol, 9, 34);
+  const camera = new THREE.PerspectiveCamera(66, 1, 0.05, 80);
+
+  const kumaslar = URUNLER.filter(u => u.grup !== 'battaniye');
+  const battaniyeler = URUNLER.filter(u => u.grup === 'battaniye');
+  const perSide = Math.ceil(kumaslar.length / 2), gap = 1.5;
+  const W = 6.2, H = 3.3, L = perSide * gap + 4.2;
+
+  // Zemin: tahta döşeme dokusu (canvas)
+  const fc = document.createElement('canvas'); fc.width = 512; fc.height = 512; const fx = fc.getContext('2d');
+  fx.fillStyle = '#9a8c78'; fx.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 8; i++) { fx.fillStyle = i % 2 ? '#a3957f' : '#8f8169'; fx.fillRect(0, i * 64, 512, 64); fx.fillStyle = 'rgba(0,0,0,.18)'; fx.fillRect(0, i * 64, 512, 2); const off = (i * 173) % 512; fx.fillRect(off, i * 64, 2, 64); }
+  const floorTex = new THREE.CanvasTexture(fc); floorTex.colorSpace = THREE.SRGBColorSpace; floorTex.wrapS = floorTex.wrapT = THREE.RepeatWrapping; floorTex.repeat.set(W / 1.2, L / 1.2); floorTex.center.set(0.5, 0.5); floorTex.rotation = Math.PI / 2;
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(W, L), new THREE.MeshStandardMaterial({ map: floorTex, roughness: 0.85 }));
+  floor.rotation.x = -Math.PI / 2; floor.position.set(0, 0, -L / 2 + 2); scene.add(floor);
+  const wallMat = new THREE.MeshStandardMaterial({ color: 0xe6e0d4, roughness: 0.95 });
+  const ceilMat = new THREE.MeshStandardMaterial({ color: 0xf2eee6, roughness: 1 });
+  const mkWall = (w, h, pos, rotY) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), wallMat); m.position.copy(pos); m.rotation.y = rotY; scene.add(m); return m; };
+  mkWall(L, H, new THREE.Vector3(-W / 2, H / 2, -L / 2 + 2), Math.PI / 2);
+  mkWall(L, H, new THREE.Vector3(W / 2, H / 2, -L / 2 + 2), -Math.PI / 2);
+  mkWall(W, H, new THREE.Vector3(0, H / 2, -L + 2), 0);
+  mkWall(W, H, new THREE.Vector3(0, H / 2, 2), Math.PI);
+  const ceil = new THREE.Mesh(new THREE.PlaneGeometry(W, L), ceilMat); ceil.rotation.x = Math.PI / 2; ceil.position.set(0, H, -L / 2 + 2); scene.add(ceil);
+  // Süpürgelik ve askı rayı
+  const trimMat = new THREE.MeshStandardMaterial({ color: 0x3b3a40, roughness: 0.6, metalness: 0.3 });
+  [-1, 1].forEach(s => {
+    const rail = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, L - 0.4, 10), trimMat); rail.rotation.x = Math.PI / 2; rail.position.set(s * (W / 2 - 0.16), 2.42, -L / 2 + 2); scene.add(rail);
+    const sk = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.12, L), trimMat); sk.position.set(s * (W / 2 - 0.02), 0.06, -L / 2 + 2); scene.add(sk);
+  });
+  // Işıklar
+  scene.add(new THREE.HemisphereLight(0xfff6ea, 0x5a5048, 1.15));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.2); sun.position.set(1, 6, 2); scene.add(sun);
+  const stripMat = new THREE.MeshBasicMaterial({ color: 0xfff8ee });
+  for (let z = 0; z > -L + 1; z -= 3.4) {
+    const strip = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 0.22), stripMat); strip.rotation.x = Math.PI / 2; strip.position.set(0, H - 0.02, z - 1); scene.add(strip);
+    const pl = new THREE.PointLight(0xfff1e0, 9, 9, 1.6); pl.position.set(0, H - 0.4, z - 1); scene.add(pl);
+  }
+  // Tabela (uç duvar)
+  const sign = new THREE.Mesh(new THREE.PlaneGeometry(3.0, 0.75), new THREE.MeshBasicMaterial({ map: textCanvas(['ATA KUMAŞ', 'Bursa · metreyle kumaş'], { w: 1024, h: 256, bg: 'rgba(27,30,42,1)', fg: '#f3efe7', sub: '#cfc7ba', font: 'bold 96px "Fraunces", Georgia, serif', subFont: '40px "IBM Plex Mono", Menlo, monospace' }), transparent: true }));
+  sign.position.set(0, 2.75, -L + 2.02); scene.add(sign);
+
+  // Paneller
+  const panels = [], waves = [];
+  const addPanel = (u, pos, rotY, w, h) => {
+    const geo = new THREE.PlaneGeometry(w, h, 10, 14);
+    const mat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.92, side: THREE.DoubleSide });
+    const m = new THREE.Mesh(geo, mat); m.position.copy(pos); m.rotation.y = rotY; m.userData.u = u; scene.add(m); panels.push(m);
+    waves.push({ geo, base: geo.attributes.position.array.slice(), ph: Math.random() * 6.28, h });
+    loadTex(doku(u), t => { if (t) { mat.map = t; mat.needsUpdate = true; } loaded++; });
+    // askı klipsleri
+    const clip = new THREE.Mesh(new THREE.BoxGeometry(w + 0.02, 0.05, 0.03), trimMat); clip.position.set(0, h / 2 + 0.015, 0.01); m.add(clip);
+    // etiket
+    const lab = new THREE.Sprite(new THREE.SpriteMaterial({ map: textCanvas([u.ad.replace(/ · No\.\d+$/, ''), tl(u.fiyat) + ' / ' + u.birim]), transparent: true, depthWrite: false }));
+    lab.scale.set(0.8, 0.2, 1); lab.position.set(pos.x * 0.97, pos.y - h / 2 - 0.16, pos.z); if (Math.abs(rotY) < 0.01) lab.position.z += 0.08; scene.add(lab);
+    return m;
+  };
+  let loaded = 0;
+  kumaslar.forEach((u, i) => {
+    const s = i < perSide ? -1 : 1, j = i % perSide, z = -(1.6 + j * gap);
+    addPanel(u, new THREE.Vector3(s * (W / 2 - 0.14), 1.6, z), s < 0 ? Math.PI / 2 : -Math.PI / 2, 1.0, 1.5);
+  });
+  battaniyeler.forEach((u, i) => addPanel(u, new THREE.Vector3(-1.95 + i * 1.3, 1.45, -L + 2.1), 0, 1.0, 1.3));
+
+  // Kamera durumu
+  const st = { x: 0, z: 1.1, yaw: 0, pitch: -0.02, auto: true, dir: -1, pause: 0, keys: {}, pad: {}, dragging: false, moved: 0 };
+  camera.rotation.order = 'YXZ';
+  const autoBtn = document.getElementById('tur-auto'), hint = document.getElementById('tur-hint'), tip = document.getElementById('tur-tip'), konum = document.getElementById('tur-konum');
+  if (matchMedia('(pointer: coarse)').matches) hint.textContent = 'Sürükle: bak · Düğmeler: yürü · Dokun: incele';
+  const setAuto = v => { st.auto = v; autoBtn.setAttribute('aria-pressed', v); autoBtn.textContent = 'Otomatik tur: ' + (v ? 'açık' : 'kapalı'); };
+  autoBtn.addEventListener('click', () => setAuto(!st.auto));
+  const userInput = () => { if (st.auto) setAuto(false); hint.classList.add('off'); };
+
+  // Fare / dokunma
+  let px = 0, py = 0;
+  canvas.addEventListener('pointerdown', e => { st.dragging = true; st.moved = 0; px = e.clientX; py = e.clientY; canvas.setPointerCapture(e.pointerId); canvas.focus({ preventScroll: true }); });
+  canvas.addEventListener('pointermove', e => {
+    if (st.dragging) { const dx = e.clientX - px, dy = e.clientY - py; px = e.clientX; py = e.clientY; st.moved += Math.abs(dx) + Math.abs(dy); st.yaw -= dx * 0.0045; st.pitch = Math.max(-0.7, Math.min(0.6, st.pitch - dy * 0.003)); if (st.moved > 6) userInput(); }
+    else if (e.pointerType === 'mouse') hover(e);
+  });
+  const endDrag = e => { if (!st.dragging) return; st.dragging = false; if (st.moved < 6) pick(e); };
+  canvas.addEventListener('pointerup', endDrag); canvas.addEventListener('pointercancel', () => st.dragging = false);
+  canvas.addEventListener('pointerleave', () => tip.style.display = 'none');
+  // Klavye
+  const keymap = { KeyW: 'ileri', ArrowUp: 'ileri', KeyS: 'geri', ArrowDown: 'geri', KeyA: 'sol', ArrowLeft: 'sol', KeyD: 'sag', ArrowRight: 'sag' };
+  canvas.addEventListener('keydown', e => { const k = keymap[e.code]; if (k) { st.keys[k] = true; e.preventDefault(); userInput(); } });
+  canvas.addEventListener('keyup', e => { const k = keymap[e.code]; if (k) st.keys[k] = false; });
+  // Ekran düğmeleri
+  stage.querySelectorAll('.pad button').forEach(b => {
+    const on = e => { e.preventDefault(); st.pad[b.dataset.k] = true; userInput(); };
+    const off = () => st.pad[b.dataset.k] = false;
+    b.addEventListener('pointerdown', on); b.addEventListener('pointerup', off); b.addEventListener('pointercancel', off); b.addEventListener('pointerleave', off);
+  });
+
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+  const castAt = e => { const r = canvas.getBoundingClientRect(); ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1); ray.setFromCamera(ndc, camera); const hits = ray.intersectObjects(panels, false); return hits.length ? hits[0].object : null; };
+  let hovered = null;
+  function hover(e) {
+    const m = castAt(e);
+    if (hovered && hovered !== m) { hovered.material.emissive.setHex(0x000000); hovered = null; }
+    if (m) { hovered = m; m.material.emissive.setHex(0x2a1a14); const u = m.userData.u; tip.querySelector('b').textContent = u.ad; tip.querySelector('span').textContent = tl(u.fiyat) + ' / ' + u.birim + ' · tıkla'; const r = stage.getBoundingClientRect(); tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; tip.style.display = 'block'; canvas.style.cursor = 'pointer'; }
+    else { tip.style.display = 'none'; canvas.style.cursor = 'grab'; }
+  }
+  function pick(e) { const m = castAt(e); if (m) { setAuto(false); location.hash = 'u-' + m.userData.u.id; } }
+
+  // Döngü
+  const clock = new THREE.Clock(); let running = false, needsFrame = true;
+  io.observe(stage);
+  new ResizeObserver(() => { fitRenderer(renderer, camera, stage); needsFrame = true; }).observe(stage);
+  fitRenderer(renderer, camera, stage);
+  const fwd = (yaw) => [-Math.sin(yaw), -Math.cos(yaw)];
+  function step(dt) {
+    const t = clock.elapsedTime;
+    const ileri = st.keys.ileri || st.pad.ileri, geri = st.keys.geri || st.pad.geri, sol = st.keys.sol || st.pad.sol, sag = st.keys.sag || st.pad.sag;
+    if (sol) st.yaw += 1.5 * dt; if (sag) st.yaw -= 1.5 * dt;
+    let mv = (ileri ? 1 : 0) - (geri ? 1 : 0);
+    if (st.auto && !reduceMotion) {
+      if (st.pause > 0) { st.pause -= dt; }
+      else {
+        const [fx, fz] = fwd(st.yaw); const targetYaw = st.dir < 0 ? 0 : Math.PI; const sway = Math.sin(t * 0.45) * 0.42;
+        let dy = (targetYaw + sway) - st.yaw; dy = Math.atan2(Math.sin(dy), Math.cos(dy)); st.yaw += dy * Math.min(1, dt * 1.2);
+        st.z += st.dir * 0.55 * dt;
+        if (st.dir < 0 && st.z < -L + 4.6) { st.dir = 1; st.pause = 2.2; }
+        if (st.dir > 0 && st.z > 0.9) { st.dir = -1; st.pause = 1.2; }
+      }
+    } else if (mv) { const [fx, fz] = fwd(st.yaw); st.x += fx * mv * 1.9 * dt; st.z += fz * mv * 1.9 * dt; }
+    st.x = Math.max(-W / 2 + 0.7, Math.min(W / 2 - 0.7, st.x)); st.z = Math.max(-L + 3.2, Math.min(1.3, st.z));
+    camera.position.set(st.x, 1.58 + Math.sin(t * 2.2) * 0.004, st.z); camera.rotation.set(st.pitch, st.yaw, 0);
+    // dalgalanma
+    if (!reduceMotion) for (const w of waves) { const p = w.geo.attributes.position.array, b = w.base; for (let i = 0; i < p.length; i += 3) { const x = b[i], y = b[i + 1]; const f = (w.h / 2 - y) / w.h; p[i + 2] = (Math.sin(x * 4.2 + t * 1.4 + w.ph) * 0.028 + Math.sin(y * 3.1 - t * 0.8 + w.ph) * 0.012) * f; } w.geo.attributes.position.needsUpdate = true; }
+    // konum etiketi
+    let best = null, bd = 1e9; for (const m of panels) { const d = Math.abs(m.position.z - st.z) + Math.abs(m.position.x - st.x) * 0.3; if (d < bd) { bd = d; best = m; } }
+    if (best) { const u = best.userData.u; konum.textContent = (st.z > 0.6 ? 'Giriş · ' : '') + grupAd[u.grup] + (best.position.x < -0.5 ? ' · sol duvar' : best.position.x > 0.5 ? ' · sağ duvar' : ' · uç duvar'); }
+  }
+  function loop() {
+    requestAnimationFrame(loop);
+    running = visible.get(stage) !== false;
+    if (!running && !needsFrame) return;
+    const dt = Math.min(0.05, clock.getDelta()); step(dt); renderer.render(scene, camera); needsFrame = false;
+  }
+  loop();
+  const ld = document.getElementById('tur-loading'); const doneLd = () => ld.classList.add('off');
+  const chk = setInterval(() => { if (loaded >= panels.length) { clearInterval(chk); doneLd(); } }, 200); setTimeout(() => { clearInterval(chk); doneLd(); }, 6000);
+  canvas.style.cursor = 'grab';
+}
+
+
+/* ===================== 3B manken v4: gerçek kadın/erkek gövdesi, kabuk kalıplar, kumaş fiziği ===================== */
+function initManken() {
+  const stage = document.getElementById('mk-stage'), canvas = document.getElementById('mk-canvas');
+  if (!hasWebGL) { stage.classList.add('failed'); return; }
+  let renderer; try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' }); } catch (e) { stage.classList.add('failed'); return; }
+  renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.82;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  const scene = new THREE.Scene();
+  const pmrem = new THREE.PMREMGenerator(renderer); scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+  const camera = new THREE.PerspectiveCamera(28, 1, 0.1, 50); camera.position.set(0, 1.1, 4.6); camera.lookAt(0, 0.95, 0);
+  const key = new THREE.DirectionalLight(0xfff4e8, 2.0); key.position.set(2.2, 4.5, 3); key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048); key.shadow.camera.near = 1; key.shadow.camera.far = 12; key.shadow.camera.left = key.shadow.camera.bottom = -1.4; key.shadow.camera.right = key.shadow.camera.top = 1.4; key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; scene.add(key);
+  const rim = new THREE.DirectionalLight(0xdfe8ff, 0.8); rim.position.set(-3, 3, -3); scene.add(rim);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.12));
+  const ground = new THREE.Mesh(new THREE.CircleGeometry(3, 64), new THREE.ShadowMaterial({ opacity: 0.25 })); ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.55, 0.58, 0.025, 64), new THREE.MeshStandardMaterial({ color: 0x2f2d33, roughness: 0.45, metalness: 0.35 })); disc.position.y = 0.0125; disc.receiveShadow = true; scene.add(disc);
+  const root = new THREE.Group(); scene.add(root);
+
+  /* ---------- dokuma kabartısı (tüm kumaşlarda) ---------- */
+  const weave = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const x = c.getContext('2d'); const id = x.createImageData(128, 128);
+    for (let j = 0; j < 128; j++) for (let i = 0; i < 128; i++) { const wx = Math.sin((i + (j % 8 < 4 ? 0 : 4)) * Math.PI / 4), wy = Math.sin((j + (i % 8 < 4 ? 4 : 0)) * Math.PI / 4); const n = 128 + 40 * (wx * 0.5 + wy * 0.5) + (Math.random() - 0.5) * 30; const k = (j * 128 + i) * 4; id.data[k] = id.data[k + 1] = id.data[k + 2] = n; id.data[k + 3] = 255; }
+    x.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t; })();
+  function fabricMat() { const m = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.88, metalness: 0, sheen: 0.6, sheenRoughness: 0.75, sheenColor: new THREE.Color(0xffffff), side: THREE.DoubleSide, bumpMap: weave, bumpScale: 0.6, envMapIntensity: 0.5 }); return m; }
+
+  const YURU_HIZ = 0.82; // yürüyüş temposu (podyum yürüyüşü)
+  /* podyum şeridi: yürürken adım hızında geriye akar */
+  const pist = (() => { const c = document.createElement('canvas'); c.width = 64; c.height = 256; const x = c.getContext('2d'); x.fillStyle = '#3b383f'; x.fillRect(0, 0, 64, 256);
+      for (let i = 0; i < 4; i++) { x.fillStyle = '#4b4750'; x.fillRect(0, i * 64, 64, 2); x.fillStyle = 'rgba(255,255,255,0.03)'; x.fillRect(0, i * 64 + 2, 64, 30); }
+      const map = new THREE.CanvasTexture(c); map.wrapS = map.wrapT = THREE.RepeatWrapping; map.colorSpace = THREE.SRGBColorSpace; map.repeat.set(1, 1.5);
+      const a = document.createElement('canvas'); a.width = 64; a.height = 64; const y = a.getContext('2d'); const g = y.createLinearGradient(0, 0, 0, 64); g.addColorStop(0, '#000'); g.addColorStop(0.28, '#fff'); g.addColorStop(0.72, '#fff'); g.addColorStop(1, '#000'); y.fillStyle = g; y.fillRect(0, 0, 64, 64);
+      const g2 = y.createLinearGradient(0, 0, 64, 0); g2.addColorStop(0, 'rgba(0,0,0,1)'); g2.addColorStop(0.12, 'rgba(0,0,0,0)'); g2.addColorStop(0.88, 'rgba(0,0,0,0)'); g2.addColorStop(1, 'rgba(0,0,0,1)'); y.fillStyle = g2; y.fillRect(0, 0, 64, 64);
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(0.62, 1.5), new THREE.MeshStandardMaterial({ map, alphaMap: new THREE.CanvasTexture(a), transparent: true, opacity: 0, roughness: 0.55, metalness: 0.15, depthWrite: false }));
+      m.rotation.x = -Math.PI / 2; m.position.y = 0.0262; m.receiveShadow = true; return m; })();
+  const GC = (attr, i, k) => k === 0 ? attr.getX(i) : k === 1 ? attr.getY(i) : k === 2 ? attr.getZ(i) : attr.getW(i);
+  /* ---------- modeller ---------- */
+  const MODELS = { kadin: { url: 'models/kadin.wasm', scale: 0.965 }, erkek: { url: 'models/erkek.wasm', scale: 1.0 } };
+  const loader = new GLTFLoader();
+  let clips = null; // X Bot hareketleri (iki gövdeye de aktarılır)
+  const bodyMat = new THREE.MeshStandardMaterial({ color: 0xc9c2b6, roughness: 0.6, metalness: 0.0 });
+  const jointMat = new THREE.MeshStandardMaterial({ color: 0x8f8a82, roughness: 0.5, metalness: 0.1 });
+  const ARM = /^(Left|Right)(Arm|ForeArm|Hand)/;
+  function loadModel(cins) {
+    return new Promise((res, rej) => loader.load(MODELS[cins].url, g => res(prepModel(cins, g)), undefined, rej));
+  }
+  function prepModel(cins, gltf) {
+    const M = { cins, model: gltf.scene, bones: {}, boneIdx: {} };
+    const wrap = new THREE.Group(); wrap.add(M.model); wrap.scale.setScalar(MODELS[cins].scale); M.wrap = wrap; root.add(wrap);
+    const meshes = []; M.model.traverse(o => { if (o.isSkinnedMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; meshes.push(o); } });
+    meshes.sort((a, b) => b.geometry.attributes.position.count - a.geometry.attributes.position.count);
+    // yüzey = en çok noktalı olan (Surface); eklem kapakları = diğeri
+    M.surface = meshes.find(m => /Surface/i.test(m.name)) || meshes[0]; M.joints = meshes.find(m => m !== M.surface);
+    M.surface.material = bodyMat; if (M.joints) M.joints.material = jointMat;
+    M.skeleton = M.surface.skeleton; M.skeleton.bones.forEach((b, i) => { const n = b.name.replace(/^mixamorig:?/, ''); M.bones[n] = b; M.boneIdx[n] = i; });
+    M.boneName = M.skeleton.bones.map(b => b.name.replace(/^mixamorig:?/, ''));
+    if (!clips) clips = gltf.animations;
+    // ---- bağlama pozunda (T-poz) ölçüm: tüm vücut noktaları "manken uzayında" (root içi, metre) ----
+    root.updateMatrixWorld(true); M.skeleton.update(); if (M.joints) M.joints.skeleton.update();
+    const rootInv = new THREE.Matrix4().copy(root.matrixWorld).invert();
+    const collect = (mesh) => { const g = mesh.geometry, n = g.attributes.position.count, P = new Float32Array(n * 3), v = new THREE.Vector3(); const mw = new THREE.Matrix4().multiplyMatrices(rootInv, mesh.matrixWorld);
+      for (let i = 0; i < n; i++) { mesh.getVertexPosition(i, v); v.applyMatrix4(mw); P[i * 3] = v.x; P[i * 3 + 1] = v.y; P[i * 3 + 2] = v.z; } return P; };
+    M.P = collect(M.surface); M.PJ = M.joints ? collect(M.joints) : new Float32Array(0);
+    // 'attached' modda dünya = S · B · geo (bindMatrixInverse her karede matrixWorld⁻¹ olur) -> geo = B⁻¹ · S⁻¹ · rootMW · P
+    M.rootMW = root.matrixWorld.clone(); M.Binv = M.surface.bindMatrix.clone().invert();
+    M.boneOff = M.skeleton.bones.map((b, i) => new THREE.Matrix4().fromArray(M.skeleton.boneMatrices, i * 16)); // bağlama pozundaki kemik matrisleri (getVertexPosition ile aynı kaynak)
+    const si = M.surface.geometry.attributes.skinIndex, sw = M.surface.geometry.attributes.skinWeight; const n = si.count;
+    M.dom = new Int16Array(n); for (let i = 0; i < n; i++) { let best = -1, bw = 0; for (let k = 0; k < 4; k++) { const w = GC(sw, i, k); if (w > bw) { bw = w; best = GC(si, i, k); } } M.dom[i] = best; }
+    const jsi = M.joints && M.joints.geometry.attributes.skinIndex, jsw = M.joints && M.joints.geometry.attributes.skinWeight; const nj = M.PJ.length / 3;
+    M.domJ = new Int16Array(nj); for (let i = 0; i < nj; i++) { let best = -1, bw = 0; for (let k = 0; k < 4; k++) { const w = GC(jsw, i, k); if (w > bw) { bw = w; best = GC(jsi, i, k); } } M.domJ[i] = best; }
+    const bp = (name) => { const v = new THREE.Vector3(); M.bones[name].getWorldPosition(v); return v.applyMatrix4(rootInv); };
+    M.bp = {}; ['Hips', 'Spine', 'Spine1', 'Spine2', 'Neck', 'Head', 'LeftShoulder', 'RightShoulder', 'LeftArm', 'RightArm', 'LeftForeArm', 'RightForeArm', 'LeftHand', 'RightHand', 'LeftUpLeg', 'RightUpLeg', 'LeftLeg', 'RightLeg', 'LeftFoot', 'RightFoot', 'LeftHandMiddle2', 'RightHandMiddle2'].forEach(b => { if (M.bones[b]) M.bp[b] = bp(b); });
+    M.boneBindInv = M.skeleton.bones.map(b => new THREE.Matrix4().multiplyMatrices(rootInv, b.matrixWorld).invert()); // kemik bağlama pozu (manken uzayı)
+    M.hipsBindInv = new THREE.Matrix4().multiplyMatrices(new THREE.Matrix4().copy(M.bones.Hips.matrixWorld).invert(), root.matrixWorld); // manken uzayı -> kalça kemiği yerel
+    // kNN için ızgara (yüzey noktaları)
+    M.grid = new Map(); const C = 0.03; M.cell = C; for (let i = 0; i < n; i++) { const k = Math.floor(M.P[i * 3] / C) + ',' + Math.floor(M.P[i * 3 + 1] / C) + ',' + Math.floor(M.P[i * 3 + 2] / C); let a = M.grid.get(k); if (!a) M.grid.set(k, a = []); a.push(i); }
+    // hareketler: yalnız dönüşler + kalça konumu (boy farkına göre ölçekli)
+    M.mixer = new THREE.AnimationMixer(M.model); M.actions = {};
+    const hb = M.bones.Hips, hipsNode = (hb.parent && hb.parent.name === hb.name) ? hb.parent : hb; const hipsRest = hipsNode.position.y;
+    for (const c of clips) {
+      const src = c.tracks.find(t => /Hips\.position$/.test(t.name)); const ratio = src ? hipsRest / src.values[1] : 1;
+      const cc = c.clone(); cc.tracks = cc.tracks.filter(t => t.name.endsWith('.quaternion') || /Hips\.position$/.test(t.name)).map(t => { if (!/Hips\.position$/.test(t.name)) return t; const t2 = t.clone(); const V = t2.values, nk = V.length / 3;
+        // yatay ortalama sıfırlanır: manken diskin ortasında kalır, dur/yürü geçişinde geri kaymaz
+        let mx = 0, mz = 0; for (let i = 0; i < nk; i++) { mx += V[i * 3]; mz += V[i * 3 + 2]; } mx /= nk; mz /= nk; for (let i = 0; i < nk; i++) { V[i * 3] = (V[i * 3] - mx) * ratio + hipsNode.position.x; V[i * 3 + 1] *= ratio; V[i * 3 + 2] = (V[i * 3 + 2] - mz) * ratio + hipsNode.position.z; } return t2; });
+      M.actions[c.name] = M.mixer.clipAction(cc);
+    }
+    M.actions.idle.play();
+    // çarpışma kapsülleri: yarıçap vücut noktalarından ölçülür
+    M.caps = [['Hips', 'Spine'], ['Spine', 'Spine2'], ['LeftUpLeg', 'LeftLeg'], ['RightUpLeg', 'RightLeg'], ['LeftLeg', 'LeftFoot'], ['RightLeg', 'RightFoot'], ['LeftArm', 'LeftForeArm'], ['RightArm', 'RightForeArm'], ['LeftForeArm', 'LeftHand'], ['RightForeArm', 'RightHand'], ['LeftHand', 'LeftHandMiddle2'], ['RightHand', 'RightHandMiddle2']].filter(([a, b]) => M.bones[a] && M.bones[b]).map(([a, b]) => {
+      const A = M.bp[a], B = M.bp[b], ab = B.clone().sub(A), L2 = ab.lengthSq(); const ia = M.boneIdx[a]; const ds = [];
+      for (let i = 0; i < n; i++) { if (M.dom[i] !== ia) continue; const p = new THREE.Vector3(M.P[i * 3], M.P[i * 3 + 1], M.P[i * 3 + 2]); let t = p.clone().sub(A).dot(ab) / L2; if (t < 0.1 || t > 0.9) continue; ds.push(p.distanceTo(A.clone().addScaledVector(ab, t))); }
+      ds.sort((x, y) => x - y); const r = ds.length ? ds[Math.floor(ds.length * 0.8)] : (/Hand/.test(a) ? 0.035 : 0.06);
+      return { na: a, nb: b, r, a: new THREE.Vector3(), b: new THREE.Vector3(), el: /Hand/.test(a) };
+    });
+    // bacak yarıçap profili (kemik boyunca, t: -0.2..1): kalça başı / uyluk üstü daha geniştir
+    M.legProf = {}; const NB = 24, T0 = -0.25;
+    for (const sd of ['Left', 'Right']) for (const [a, b] of [['UpLeg', 'Leg'], ['Leg', 'Foot']]) {
+      const A = M.bp[sd + a], B = M.bp[sd + b], ab = B.clone().sub(A), L2 = ab.lengthSq(); const bins = Array.from({ length: NB }, () => []); const okB = new Set([M.boneIdx[sd + a], M.boneIdx[sd + b]]);
+      const scanL = (P, D) => { for (let i = 0; i < P.length / 3; i++) { if (!okB.has(D[i])) continue; const p = new THREE.Vector3(P[i * 3], P[i * 3 + 1], P[i * 3 + 2]); const t = p.clone().sub(A).dot(ab) / L2; if (t < T0 || t > 1) continue; bins[Math.min(NB - 1, Math.floor((t - T0) / (1 - T0) * NB))].push(p.distanceTo(A.clone().addScaledVector(ab, t))); } };
+      scanL(M.P, M.dom); if (M.PJ.length) scanL(M.PJ, M.domJ);
+      let last = 0.06; M.legProf[sd + a] = bins.map(v => { if (!v.length) return last; v.sort((x, y) => x - y); return last = v[Math.floor(v.length * 0.97)]; });
+    }
+    M.legT0 = T0;
+    // bel dolgusu: gövde yüzeyinin olmadığı mekanik bel bölgesi, göğüs altı ile leğen arasında pürüzsüz gövdeyle kapanır (kıyafet mankeni gibi)
+    { const T = tube(M, { axis: 'y', from: M.bp.Spine1.y + 0.07, to: M.bp.Hips.y - 0.03, step: 0.01, K: 64, filt: (b) => /Hips|Spine/.test(b), ease: () => -0.001, J: 'her', smooth: 2 });
+      const R = T.rings; let a = -1, b = -1; for (let i = 1; i < R.length - 1; i++) if (!R[i].s && R[i - 1].s) { a = i - 1; for (let j = i; j < R.length; j++) if (R[j].s) { b = j; break; } break; }
+      if (a >= 0 && b > a + 2) { T.rings = R.slice(a, b + 1); const dm = tubeMesh(M, T, { parca: 'dolgu', fallback: 'Spine' }); dm.material.dispose(); dm.material = bodyMat; M.dolgu = dm; } }
+    // yürüyüş hızı: basan ayağın geriye kayma hızı ölçülür; podyum şeridi bu hızla akar (ayak zemine göre sabit kalır)
+    { const wa = M.actions.walk; if (wa) { wa.timeScale = YURU_HIZ; M.actions.idle.stop(); wa.reset().play(); const d = wa.getClip().duration, N = 48, F = [M.bones.LeftFoot, M.bones.RightFoot], smp = [], v = new THREE.Vector3();
+      for (let i = 0; i <= N; i++) { wa.time = d * i / N; M.mixer.update(0); root.updateMatrixWorld(true); smp.push(F.map(f => { f.getWorldPosition(v).applyMatrix4(rootInv); return [v.y, v.z]; })); }
+      const vs = []; for (let i = 0; i < N; i++) { const a = smp[i], b = smp[i + 1]; const k = a[0][0] < a[1][0] ? 0 : 1; if (b[k][0] - Math.min(b[0][0], b[1][0]) > 0.01) continue; vs.push((b[k][1] - a[k][1]) / (d / N)); }
+      vs.sort((x, y) => x - y); M.pistHiz = vs.length ? -vs[Math.floor(vs.length / 2)] * YURU_HIZ : 0; wa.stop(); M.actions.idle.reset().play(); } }
+    wrap.visible = false; return M;
+  }
+
+  /* ---------- geometri yardımcıları ---------- */
+  function hull2(pts) { // pts: [[a,b],...] -> dışbükey zarf (saat yönü tersine)
+    if (pts.length < 3) return pts.slice(); const p = pts.slice().sort((u, v) => u[0] - v[0] || u[1] - v[1]); const cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lo = []; for (const q of p) { while (lo.length >= 2 && cr(lo[lo.length - 2], lo[lo.length - 1], q) <= 0) lo.pop(); lo.push(q); }
+    const up = []; for (let i = p.length - 1; i >= 0; i--) { const q = p[i]; while (up.length >= 2 && cr(up[up.length - 2], up[up.length - 1], q) <= 0) up.pop(); up.push(q); }
+    up.pop(); lo.pop(); return lo.concat(up);
+  }
+  function clipHalf(h, sg) { // dışbükey çokgeni sg*x >= 0 yarı düzlemine kırp (pantolon orta dikişi)
+    const out = []; for (let i = 0; i < h.length; i++) { const a = h[i], b = h[(i + 1) % h.length]; const ia = sg * a[0] >= 0, ib = sg * b[0] >= 0; if (ia) out.push(a); if (ia !== ib) { const t = a[0] / (a[0] - b[0]); out.push([0, a[1] + (b[1] - a[1]) * t]); } } return out; }
+  function rayHull(h, cx, cy, ang) { // merkezden açıyla ışın, zarfa uzaklık
+    const dx = Math.sin(ang), dy = Math.cos(ang); let best = 0;
+    for (let i = 0; i < h.length; i++) { const a = h[i], b = h[(i + 1) % h.length]; const ex = b[0] - a[0], ey = b[1] - a[1]; const den = dx * ey - dy * ex; if (Math.abs(den) < 1e-9) continue; const t = ((a[0] - cx) * ey - (a[1] - cy) * ex) / den; const s = ((a[0] - cx) * dy - (a[1] - cy) * dx) / den; if (t > 0 && s >= -1e-6 && s <= 1 + 1e-6) best = Math.max(best, t); }
+    return best;
+  }
+  // Kesit: eksen 'y' (gövde/bacak: düzlem x-z) veya 'x' (kol: düzlem z-y). filtre(boneName, x,y,z) -> bool
+  // Kesit: üçgen–düzlem kesişimi (tam kontur) + düzleme yakın köşeler. J: 'yok' | 'her' | (oto: yüzey, boşsa eklem)
+  function triCache(M, which) { const key = '_tc' + which; if (M[key]) return M[key]; const P = which === 'S' ? M.P : M.PJ, mesh = which === 'S' ? M.surface : M.joints; if (!mesh || !P.length) return M[key] = null;
+    const I = mesh.geometry.index.array, nt = I.length / 3, mm = new Float32Array(nt * 4); for (let t = 0; t < nt; t++) { const a = I[t * 3], b = I[t * 3 + 1], c = I[t * 3 + 2]; for (const [o, k] of [[0, 1], [2, 0]]) { const va = P[a * 3 + k], vb = P[b * 3 + k], vc = P[c * 3 + k]; mm[t * 4 + o] = Math.min(va, vb, vc); mm[t * 4 + o + 1] = Math.max(va, vb, vc); } }
+    return M[key] = { I, mm, P, D: which === 'S' ? M.dom : M.domJ }; }
+  function slab1(M, which, axis, at, filt) {
+    const C = triCache(M, which); if (!C) return []; const { I, mm, P, D } = C, k = axis === 'y' ? 1 : 0, o = axis === 'y' ? 0 : 2, pts = [];
+    for (let t = 0, nt = I.length / 3; t < nt; t++) { if (mm[t * 4 + o] > at || mm[t * 4 + o + 1] < at) continue;
+      for (let e = 0; e < 3; e++) { const a = I[t * 3 + e], b = I[t * 3 + (e + 1) % 3]; const ca = P[a * 3 + k] - at, cb = P[b * 3 + k] - at; if ((ca > 0) === (cb > 0) && ca !== 0) continue; const u = ca === cb ? 0 : ca / (ca - cb);
+        const x = P[a * 3] + (P[b * 3] - P[a * 3]) * u, y = P[a * 3 + 1] + (P[b * 3 + 1] - P[a * 3 + 1]) * u, z = P[a * 3 + 2] + (P[b * 3 + 2] - P[a * 3 + 2]) * u;
+        if (!filt(M.boneName[D[a]] || '', x, y, z) || !filt(M.boneName[D[b]] || '', x, y, z)) continue; pts.push(axis === 'y' ? [x, z] : [z, y]); } }
+    return pts; }
+  function slab(M, axis, at, half, filt, J) {
+    if (J === true) J = 'yok'; let pts = slab1(M, 'S', axis, at, filt); const nS = pts.length; if (J === 'her' || (J !== 'yok' && pts.length < 10)) pts = pts.concat(slab1(M, 'J', axis, at, filt)); pts.nS = nS; return pts;
+  }
+
+  /* Tüp: halkalar boyunca; her halka K açı. opts: axis, from, to, step, filt, ease(t), drape (aşağı doğru daralmayı sınırla), K */
+  function tube(M, o) {
+    const K = o.K || 56, rings = []; const n = Math.max(2, Math.round(Math.abs(o.to - o.from) / o.step) + 1);
+    // 1) kesit zarfları; 2) merkezler (kutu merkezi) eksen boyunca yumuşatılır; 3) yarıçaplar sabit merkezden ölçülür
+    const H = []; for (let r = 0; r < n; r++) { const at = o.from + (o.to - o.from) * r / (n - 1); const pts = slab(M, o.axis, at, 0, o.filt, o.noJ ? 'yok' : (o.J || 'her')); if (pts.length < 6) { H.push(null); continue; }
+      let h = hull2(pts); if (o.clipX) h = clipHalf(h, o.clipX); if (h.length < 3) { H.push(null); continue; } let x0 = 9, x1 = -9, y0 = 9, y1 = -9; for (const q of h) { x0 = Math.min(x0, q[0]); x1 = Math.max(x1, q[0]); y0 = Math.min(y0, q[1]); y1 = Math.max(y1, q[1]); } let dolu = false; if (pts.nS >= 10) { const hs = hull2(pts.slice(0, pts.nS)); let a0 = 9, a1 = -9, b0 = 9, b1 = -9; for (const q of hs) { a0 = Math.min(a0, q[0]); a1 = Math.max(a1, q[0]); b0 = Math.min(b0, q[1]); b1 = Math.max(b1, q[1]); } const w = a1 - a0, d = b1 - b0; dolu = Math.min(w, d) / Math.max(w, d) > 0.45 && Math.min(w, d) > 0.06 && w >= 0.85 * (x1 - x0) && d >= 0.85 * (y1 - y0); }
+      H.push({ at, h, cx: (x0 + x1) / 2, cy: (y0 + y1) / 2, s: dolu }); }
+    while (H.length && !H[0]) H.shift(); for (let i = 1; i < H.length; i++) if (!H[i]) H[i] = Object.assign({}, H[i - 1], { at: o.from + (o.to - o.from) * i / (n - 1) });
+    for (let pass = 0; pass < (o.csmooth ?? 8); pass++) { const c = H.map(q => [q.cx, q.cy]); for (let i = 1; i < H.length - 1; i++) { H[i].cx = (c[i - 1][0] + 2 * c[i][0] + c[i + 1][0]) / 4; H[i].cy = (c[i - 1][1] + 2 * c[i][1] + c[i + 1][1]) / 4; } }
+    for (const q of H) { let cx = q.cx, cy = q.cy; if (o.cx !== undefined) cx = o.cx(q.at, cx); if (o.cy !== undefined) cy = o.cy(q.at, cy); const R = new Float32Array(K); for (let k = 0; k < K; k++) R[k] = rayHull(q.h, cx, cy, k / K * Math.PI * 2 + Math.PI) || 0.01; rings.push({ at: q.at, cx, cy, R, s: q.s }); }
+    // yüzeyin olmadığı (yalnız mekanik eklem) halkalar: üst ve alt gövde kesitleri arasında doğrusal geçiş
+    for (let i = 0; i < rings.length; i++) { if (rings[i].s) continue; let a = i - 1, b = i + 1; while (a >= 0 && !rings[a].s) a--; while (b < rings.length && !rings[b].s) b++; if (a < 0 || b >= rings.length) continue;
+      const u = (i - a) / (b - a), A = rings[a], B = rings[b], pinch = 1 - (o.bel ?? 0.1) * Math.sin(Math.PI * u); rings[i].cx = A.cx + (B.cx - A.cx) * u; rings[i].cy = A.cy + (B.cy - A.cy) * u; for (let k = 0; k < K; k++) rings[i].R[k] = (A.R[k] + (B.R[k] - A.R[k]) * u) * pinch; }
+    // kumaş oyuklara girmez: pencere içindeki en dış zarf (gömlek karın kaslarının üstünden geçer)
+    if (o.kapa) { const old = rings.map(q => q.R.slice()); for (let i = 0; i < rings.length; i++) for (let k = 0; k < K; k++) { let m = old[i][k]; for (let j = Math.max(0, i - o.kapa); j <= Math.min(rings.length - 1, i + o.kapa); j++) m = Math.max(m, old[j][k] - Math.abs(j - i) * (o.kapaEgim ?? 0.004)); rings[i].R[k] = m; } }
+    // dikey yumuşatma (merkez ve yarıçap)
+    for (let pass = 0; pass < (o.smooth || 4); pass++) { const old = rings.map(q => q.R.slice()); for (let i = 1; i < rings.length - 1; i++) for (let k = 0; k < K; k++) rings[i].R[k] = (old[i - 1][k] + 2 * old[i][k] + old[i + 1][k]) / 4; }
+    for (const q of rings) { const o2 = q.R.slice(); for (let k = 0; k < K; k++) q.R[k] = (o2[(k + K - 1) % K] + 2 * o2[k] + o2[(k + 1) % K]) / 4; }
+    // dökülme: halka i+1, i'den (yukarıdan) çok daralmasın
+    if (o.drape) for (let i = 1; i < rings.length; i++) for (let k = 0; k < K; k++) rings[i].R[k] = Math.max(rings[i].R[k], rings[i - 1].R[k] * o.drape(i / (rings.length - 1)));
+    // bolluk
+    rings.forEach((q, i) => { const e = o.ease(i / Math.max(1, rings.length - 1)); const ic = o.icEk ? o.icEk(q.at) : 0; for (let k = 0; k < K; k++) q.R[k] += e + (ic ? ic * Math.max(0, -o.clipX * Math.sin(k / K * Math.PI * 2 + Math.PI)) : 0); });
+    return { rings, K, axis: o.axis };
+  }
+  // Tüpten SkinnedMesh üret (UV metre cinsinden: u = çevre boyunca, v = eksen boyunca)
+  function tubeMesh(M, T, opts) {
+    const { rings, K, axis } = T; const NR = rings.length, NC = K + 1; const pos = new Float32Array(NR * NC * 3), uv = new Float32Array(NR * NC * 2);
+    const sgn = opts.side || 1;
+    for (let i = 0; i < NR; i++) {
+      const q = rings[i]; let arc = 0, prev = null; const ring = [];
+      for (let k = 0; k <= K; k++) { const ang = (k % K) / K * Math.PI * 2 + Math.PI; const r = q.R[k % K]; const a = q.cx + Math.sin(ang) * r, b = q.cy + Math.cos(ang) * r; const p = axis === 'y' ? [a, q.at, b] : [q.at, b, a]; ring.push(p); if (prev) arc += Math.hypot(p[0] - prev[0], p[1] - prev[1], p[2] - prev[2]); prev = p; const j = (i * NC + k); pos[j * 3] = p[0]; pos[j * 3 + 1] = p[1]; pos[j * 3 + 2] = p[2]; uv[j * 2] = arc; }
+      const half = arc / 2; for (let k = 0; k <= K; k++) { const j = i * NC + k; uv[j * 2] -= half; uv[j * 2 + 1] = axis === 'y' ? q.at : Math.abs(q.at) * sgn; }
+    }
+    const idx = []; for (let i = 0; i < NR - 1; i++) for (let k = 0; k < K; k++) { const a = i * NC + k, b = a + 1, c = a + NC, d = c + 1; idx.push(a, b, c, b, d, c); }
+    return finalizeShell(M, pos, uv, idx, opts);
+  }
+  function deriAgirlik(M, x, y, z, allow) { // vücut yüzeyinden kNN ile en çok 4 kemik ağırlığı
+    const C = M.cell, cx = Math.floor(x / C), cy = Math.floor(y / C), cz = Math.floor(z / C); const bsi = M.surface.geometry.attributes.skinIndex, bsw = M.surface.geometry.attributes.skinWeight;
+    let cand = []; for (let rad = 1; rad <= 5 && cand.length < 8; rad++) { cand = []; for (let a = -rad; a <= rad; a++) for (let b = -rad; b <= rad; b++) for (let c = -rad; c <= rad; c++) { const L = M.grid.get((cx + a) + ',' + (cy + b) + ',' + (cz + c)); if (L) for (const j of L) { if (allow && !allow.has(M.dom[j])) continue; cand.push(j); } } }
+    const d2 = j => (M.P[j * 3] - x) ** 2 + (M.P[j * 3 + 1] - y) ** 2 + (M.P[j * 3 + 2] - z) ** 2; cand.sort((p, q) => d2(p) - d2(q));
+    const acc = new Map(); for (const j of cand.slice(0, 8)) { const w0 = 1 / ((Math.sqrt(d2(j)) + 0.01) ** 2); for (let k = 0; k < 4; k++) { const bi = GC(bsi, j, k), bw = GC(bsw, j, k); if (bw <= 0) continue; if (allow && !allow.has(bi)) continue; acc.set(bi, (acc.get(bi) || 0) + bw * w0); } }
+    const arr = [...acc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4); const sm = arr.reduce((a, b) => a + b[1], 0) || 1; return arr.map(([b, w]) => [b, w / sm]); }
+  function finalizeShell(M, pos, uv, idx, opts) {
+    // kesip atma (kol oyuğu, yaka vb.)
+    if (opts.cut) { // işaretli alanla üçgen kırpma: kesim kenarları basamaksız, düzgün
+      const P = Array.from(pos), U = Array.from(uv), F = []; const fv = j => { if (F[j] === undefined) { const r = opts.cut(P[j * 3], P[j * 3 + 1], P[j * 3 + 2]); F[j] = typeof r === 'number' ? r : (r ? 1 : -1); } return F[j]; };
+      const cache = new Map(); const cross = (a, b) => { const k = a < b ? a + '_' + b : b + '_' + a; if (cache.has(k)) return cache.get(k); const fa = fv(a), fb = fv(b), t = fa / (fa - fb); const j = P.length / 3;
+        for (let c = 0; c < 3; c++) P.push(P[a * 3 + c] + (P[b * 3 + c] - P[a * 3 + c]) * t); for (let c = 0; c < 2; c++) U.push(U[a * 2 + c] + (U[b * 2 + c] - U[a * 2 + c]) * t); F[j] = 0; cache.set(k, j); return j; };
+      const keep = []; for (let t = 0; t < idx.length; t += 3) { const tri = [idx[t], idx[t + 1], idx[t + 2]]; const ins = tri.map(j => fv(j) <= 0); const nIn = ins.filter(Boolean).length; if (nIn === 3) { keep.push(...tri); continue; } if (!nIn) continue;
+        const poly = []; for (let e = 0; e < 3; e++) { const a = tri[e], b = tri[(e + 1) % 3]; if (ins[e]) poly.push(a); if (ins[e] !== ins[(e + 1) % 3]) poly.push(cross(a, b)); }
+        for (let e = 1; e < poly.length - 1; e++) keep.push(poly[0], poly[e], poly[e + 1]); }
+      idx = keep; pos = new Float32Array(P); uv = new Float32Array(U); }
+    const n = pos.length / 3; const si = new Uint16Array(n * 4), sw = new Float32Array(n * 4);
+    const bsi = M.surface.geometry.attributes.skinIndex, bsw = M.surface.geometry.attributes.skinWeight; const C = M.cell; const allow = opts.bones ? new Set(opts.bones.map(b => M.boneIdx[b]).filter(x => x !== undefined)) : null;
+    for (let i = 0; i < n; i++) {
+      const x = pos[i * 3], y = pos[i * 3 + 1], z = pos[i * 3 + 2]; const cx = Math.floor(x / C), cy = Math.floor(y / C), cz = Math.floor(z / C);
+      let cand = []; for (let rad = 1; rad <= 4 && cand.length < 8; rad++) { cand = []; for (let a = -rad; a <= rad; a++) for (let b = -rad; b <= rad; b++) for (let c = -rad; c <= rad; c++) { const L = M.grid.get((cx + a) + ',' + (cy + b) + ',' + (cz + c)); if (L) for (const j of L) { if (allow && !allow.has(M.dom[j])) continue; cand.push(j); } } }
+      cand.sort((p, q) => ((M.P[p * 3] - x) ** 2 + (M.P[p * 3 + 1] - y) ** 2 + (M.P[p * 3 + 2] - z) ** 2) - ((M.P[q * 3] - x) ** 2 + (M.P[q * 3 + 1] - y) ** 2 + (M.P[q * 3 + 2] - z) ** 2));
+      const acc = new Map(); for (const j of cand.slice(0, 8)) { const d = Math.hypot(M.P[j * 3] - x, M.P[j * 3 + 1] - y, M.P[j * 3 + 2] - z); const w0 = 1 / ((d + 0.01) ** 2); for (let k = 0; k < 4; k++) { const bi = GC(bsi, j, k), bw = GC(bsw, j, k); if (bw <= 0) continue; if (allow && !allow.has(bi)) continue; acc.set(bi, (acc.get(bi) || 0) + bw * w0); } }
+      let arr = [...acc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4); if (!arr.length) arr = [[M.boneIdx[opts.fallback || 'Hips'], 1]]; const s = arr.reduce((a, b) => a + b[1], 0);
+      for (let k = 0; k < 4; k++) { si[i * 4 + k] = arr[k] ? arr[k][0] : 0; sw[i * 4 + k] = arr[k] ? arr[k][1] / s : 0; }
+    }
+    // manken uzayı -> yüzey geometri uzayı
+    // manken uzayı -> yerel -> ters deri dönüşümü -> geometri uzayı (geo = B⁻¹ · S⁻¹ · B · yerel)
+    const v = new THREE.Vector3(), S = new THREE.Matrix4(), T = new THREE.Matrix4(); const gp = new Float32Array(pos.length);
+    for (let i = 0; i < n; i++) {
+      S.set(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0); const se = S.elements;
+      for (let k = 0; k < 4; k++) { const w = sw[i * 4 + k]; if (!w) continue; const be = M.boneOff[si[i * 4 + k]].elements; for (let e = 0; e < 16; e++) se[e] += be[e] * w; }
+      v.set(pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]).applyMatrix4(M.rootMW).applyMatrix4(T.copy(S).invert()).applyMatrix4(M.Binv);
+      gp[i * 3] = v.x; gp[i * 3 + 1] = v.y; gp[i * 3 + 2] = v.z;
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(gp, 3)); g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+    g.setAttribute('skinIndex', new THREE.Uint16BufferAttribute(si, 4)); g.setAttribute('skinWeight', new THREE.Float32BufferAttribute(sw, 4)); g.setIndex(idx); g.computeVertexNormals();
+    const mesh = new THREE.SkinnedMesh(g, fabricMat()); mesh.castShadow = true; mesh.receiveShadow = true; mesh.frustumCulled = false;
+    const src = M.surface; mesh.position.copy(src.position); mesh.quaternion.copy(src.quaternion); mesh.scale.copy(src.scale); src.parent.add(mesh);
+    mesh.bind(src.skeleton, src.bindMatrix); mesh.userData.parca = opts.parca || 'ana'; return mesh;
+  }
+
+  /* Üst parça: vücut yüzeyinin dışa ötelenmiş kopyası (omuz, göğüs, sırt tam oturur). o: off, yMin, cut, dom (izinli kemikler) */
+  function ustParca(M, o) {
+    const g = M.surface.geometry, I = g.index.array, P = M.P, n = P.length / 3; const N = new Float32Array(n * 3);
+    for (let t = 0; t < I.length; t += 3) { const a = I[t] * 3, b = I[t + 1] * 3, c = I[t + 2] * 3; const ux = P[b] - P[a], uy = P[b + 1] - P[a + 1], uz = P[b + 2] - P[a + 2], vx = P[c] - P[a], vy = P[c + 1] - P[a + 1], vz = P[c + 2] - P[a + 2];
+      const nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx; for (const j of [a, b, c]) { N[j] += nx; N[j + 1] += ny; N[j + 2] += nz; } }
+    const key = i => Math.round(P[i * 3] * 2e3) + ',' + Math.round(P[i * 3 + 1] * 2e3) + ',' + Math.round(P[i * 3 + 2] * 2e3); const W = new Map();
+    for (let i = 0; i < n; i++) { const k = key(i); const a = W.get(k); if (a) { a[0] += N[i * 3]; a[1] += N[i * 3 + 1]; a[2] += N[i * 3 + 2]; } else W.set(k, [N[i * 3], N[i * 3 + 1], N[i * 3 + 2]]); }
+    const dom = new Set(o.dom.map(b => M.boneIdx[b]).filter(x => x !== undefined)); const ok = new Uint8Array(n);
+    for (let i = 0; i < n; i++) { const x = P[i * 3], y = P[i * 3 + 1], z = P[i * 3 + 2]; ok[i] = dom.has(M.dom[i]) && y >= o.yMin ? 1 : 0; }
+    const map = new Int32Array(n).fill(-1), pos = [], uv = [], idx = []; const cx = M.bp.Spine2.x, cz = M.bp.Spine2.z, Rm = o.Rm || 0.13;
+    const byKey = new Map(); // keskin kenarlarda bölünmüş köşeler tek noktada birleşir (yumuşak normal)
+    const add = i => { if (map[i] >= 0) return map[i]; const kk = key(i); if (byKey.has(kk)) return map[i] = byKey.get(kk); const w = W.get(kk), l = Math.hypot(w[0], w[1], w[2]) || 1; const x = P[i * 3] + w[0] / l * o.off, y = P[i * 3 + 1] + w[1] / l * o.off, z = P[i * 3 + 2] + w[2] / l * o.off;
+      map[i] = pos.length / 3; byKey.set(kk, map[i]); pos.push(x, y, z); uv.push(Math.atan2(x - cx, z - cz) * Rm, y); return map[i]; };
+    for (let t = 0; t < I.length; t += 3) { const a = I[t], b = I[t + 1], c = I[t + 2]; if (ok[a] && ok[b] && ok[c]) { const A = add(a), B = add(b), C = add(c); if (A !== B && B !== C && A !== C) idx.push(A, B, C); } }
+    // hafif Laplace yumuşatma (sınır noktaları sabit): plaka köşeleri kumaşta yumuşar, vücuda gömülmez (dışa doğru en az ofset korunur)
+    { const nv = pos.length / 3, nb = Array.from({ length: nv }, () => new Set()), ec = new Map(); for (let t = 0; t < idx.length; t += 3) for (let e = 0; e < 3; e++) { const a = idx[t + e], b = idx[t + (e + 1) % 3]; nb[a].add(b); nb[b].add(a); const k = a < b ? a + '_' + b : b + '_' + a; ec.set(k, (ec.get(k) || 0) + 1); }
+      const bnd = new Uint8Array(nv); for (const [k, c] of ec) if (c === 1) { const [a, b] = k.split('_'); bnd[+a] = bnd[+b] = 1; }
+      const o0 = pos.slice(); for (let it = 0; it < (o.yumusat ?? 3); it++) { const old = pos.slice(); for (let i = 0; i < nv; i++) { if (bnd[i] || !nb[i].size) continue; let x = 0, y = 0, z = 0; for (const j of nb[i]) { x += old[j * 3]; y += old[j * 3 + 1]; z += old[j * 3 + 2]; } const m = nb[i].size;
+        pos[i * 3] = old[i * 3] * 0.5 + x / m * 0.5; pos[i * 3 + 1] = old[i * 3 + 1] * 0.5 + y / m * 0.5; pos[i * 3 + 2] = old[i * 3 + 2] * 0.5 + z / m * 0.5; } }
+      for (let i = 0; i < nv; i++) { const dx = pos[i * 3] - o0[i * 3], dy = pos[i * 3 + 1] - o0[i * 3 + 1], dz = pos[i * 3 + 2] - o0[i * 3 + 2]; const d = Math.hypot(dx, dy, dz); if (d > 0.006) { const f = 0.006 / d; pos[i * 3] = o0[i * 3] + dx * f; pos[i * 3 + 1] = o0[i * 3 + 1] + dy * f; pos[i * 3 + 2] = o0[i * 3 + 2] + dz * f; } } }
+    // alt bant tüpün ilk halkasına kaynar: dikişte basamak/kırık kalmaz
+    if (o.T) { const q = o.T.rings[0], K = o.T.K, y0 = o.seamY, band = o.band || 0.04; for (let i = 0; i < pos.length / 3; i++) { const y = pos[i * 3 + 1]; if (y > y0 + band) continue; let w = 1 - Math.max(0, (y - y0 - 0.006) / band); w = Math.min(1, w); w = w * w * (3 - 2 * w); /* dikiş altı kırpılır */
+        const dx = pos[i * 3] - q.cx, dz = pos[i * 3 + 2] - q.cy, d = Math.hypot(dx, dz); if (d < 1e-5) continue; let a = (Math.atan2(dx, dz) - Math.PI) / (Math.PI * 2) * K; a = ((a % K) + K) % K; const k0 = Math.floor(a), k1 = (k0 + 1) % K, u = a - k0; const R = q.R[k0] * (1 - u) + q.R[k1] * u;
+        const r = d + (Math.max(R + 0.003, d) - d) * w; /* tüpün 3 mm dışında: çatlak/titreşim yok */ pos[i * 3] = q.cx + dx / d * r; pos[i * 3 + 2] = q.cy + dz / d * r; } }
+    return finalizeShell(M, new Float32Array(pos), new Float32Array(uv), idx, { parca: 'ust', fallback: 'Spine2', cut: (x, y, z) => Math.max(o.cut ? +o.cut(x, y, z) : -1, Math.abs(x) - Math.abs(M.bp.LeftArm.x) - 0.01) }); // ağırlıklar vücuttan aynen (kol inince omuz da iner)
+  }
+
+  // bel yüksekliği: istenen yükseklikten aşağı inerek gerçek yüzeyin (eklem silindiri değil) başladığı ilk kesit
+  function belY(M, want) { const tamam = (y) => { const pts = slab(M, 'y', y - 0.014, 0.006, b => /Hips|Spine/.test(b), true); if (pts.length < 12) return false; const h = hull2(pts); let cx = 0, cy = 0; for (const q of h) { cx += q[0]; cy += q[1]; } cx /= h.length; cy /= h.length;
+      let mn = 9, mx = 0; for (let k = 0; k < 24; k++) { const r = rayHull(h, cx, cy, k / 24 * Math.PI * 2); mn = Math.min(mn, r); mx = Math.max(mx, r); } return mn > 0.6 * mx && mn > 0.06; };
+    let y = want; while (y > M.bp.Hips.y - 0.03 && !tamam(y)) y -= 0.004; return y; }
+  /* ---------- kalıplar ---------- */
+  const isArm = (b) => ARM.test(b) || /Hand/.test(b);
+  const TORSO_B = ['Hips', 'Spine', 'Spine1', 'Spine2', 'Neck', 'LeftShoulder', 'RightShoulder'];
+  function govde(M, o) { // gövde parçası: etek ucu -> boyun
+    const bp = M.bp, neckY = bp.Neck.y; const armY = (bp.LeftArm.y + bp.RightArm.y) / 2; const top = o.top || armY - 0.07;
+    const eu = Math.max(0.004, o.ease0 * 0.8), nR = Math.max(2, Math.round(Math.abs(top - o.hem) / 0.014)); // üst parça ofseti = tüpün ilk halkası (dikiş basamaksız)
+    const T = tube(M, { axis: 'y', from: top + 0.01, to: o.hem, step: 0.014, K: 64, filt: (b, x, y) => !isArm(b) && !/Head/.test(b) && (y < bp.LeftUpLeg.y + 0.02 ? true : !/UpLeg/.test(b)) && !(/Neck/.test(b) && y > neckY + 0.01),
+      ease: t => { if (o.altKes !== undefined && top + 0.01 + (o.hem - top - 0.01) * t < o.altKes) return -0.008; const e = o.ease0 + (o.ease1 - o.ease0) * t, u = Math.min(1, t * nR / 4); return eu + (e - eu) * u * u * (3 - 2 * u); }, drape: o.drape, kapa: o.kapa, kapaEgim: o.kapaEgim });
+    const alt = tubeMesh(M, T, { bones: TORSO_B.concat(o.legBones ? ['LeftUpLeg', 'RightUpLeg'] : []), cut: o.cut, parca: 'govde' });
+    let Rm = 0; { const q = T.rings[0]; for (let k = 0; k < T.K; k++) Rm += q.R[k]; Rm /= T.K; }
+    const n = bp.Neck; if (M.boynuR === undefined) { const pts = slab(M, 'y', n.y + 0.03, 0, b => /Neck/.test(b), 'yok'); M.boynuR = pts.length ? pts.reduce((a, q) => a + Math.hypot(q[0] - n.x, q[1] - n.z), 0) / pts.length : 0.05; }
+    const rN = M.boynuR + (o.yakaBos ?? 0.014);
+    const ust = ustParca(M, { T, seamY: top, band: o.band || 0.045, off: eu, yMin: top - 0.05, cut: (x, y, z) => Math.max(o.cut ? +o.cut(x, y, z) : -1, top - y, rN - Math.hypot(x - n.x, z - n.z)), Rm, dom: ['Spine', 'Spine1', 'Spine2', 'LeftShoulder', 'RightShoulder'] });
+    return [alt, ust];
+  }
+  function yaka(M, h, ease) { // boyun bandı
+    const bp = M.bp; const T = tube(M, { axis: 'y', from: bp.Neck.y + h, to: bp.Neck.y - 0.02, step: 0.008, K: 48, filt: (b, x, y) => /Neck|Head/.test(b), ease: t => ease + 0.006 * t, kapa: 3, kapaEgim: 0.002 });
+    return tubeMesh(M, T, { bones: ['Neck', 'Spine2'], parca: 'yaka' });
+  }
+  function kol(M, side, len, o) { // side: 'Left' | 'Right'; len: omuzdan uzunluk (m) veya 'bilek'
+    const bp = M.bp, s = Math.sign(bp[side + 'Arm'].x); const x0 = bp[side + 'Arm'].x - s * 0.035; const xHand = bp[side + 'Hand'].x - s * 0.015; const x1 = len === 'bilek' ? xHand : x0 + s * len;
+    const T = tube(M, { axis: 'x', from: x0, to: x1, step: 0.014, K: 40, half: 0.012, filt: (b, x) => Math.sign(x) === s && new RegExp('^' + side + '(Arm|ForeArm|Shoulder)$').test(b),
+      ease: t => o.ease0 + (o.ease1 - o.ease0) * t, drape: o.drape || (() => 0.9), kapa: o.kapa });
+    return tubeMesh(M, T, { bones: [side + 'Shoulder', side + 'Arm', side + 'ForeArm', 'Spine2'], side: s, parca: 'kol', fallback: side + 'Arm' });
+  }
+  function pantolon(M, o) { // iki bacak, belden paçaya kesintisiz; kasığın üstünde kalça yarısını sarar, ön/arka ortada buluşur
+    const bp = M.bp; const crotch = Math.min(bp.LeftUpLeg.y, bp.RightUpLeg.y) - 0.06; const waist = belY(M, bp.Hips.y + (o.waistUp || 0.06)); const parts = [];
+    for (const side of ['Left', 'Right']) {
+      const s = Math.sign(bp[side + 'UpLeg'].x); const hem = bp[side + 'Foot'].y + 0.035; const legRe = new RegExp('^' + side + '(UpLeg|Leg)$');
+      const T = tube(M, { axis: 'y', from: waist, to: hem, step: 0.014, K: 48, clipX: s, kapa: o.kapa || 2, csmooth: 10,
+        filt: (b, x, y) => y > crotch ? /^(Hips|Spine|LeftUpLeg|RightUpLeg)$/.test(b) : legRe.test(b) && Math.sign(x) === s,
+        ease: t => 0.008 + 0.016 * Math.min(1, t * 1.6), drape: t => t > 0.4 ? 0.99 : 0.96, icEk: y => y > crotch - 0.02 ? 0.018 : Math.max(0, 0.018 * (1 - (crotch - 0.02 - y) / 0.06)) });
+      parts.push(tubeMesh(M, T, { bones: ['Hips', 'Spine', side + 'UpLeg', side + 'Leg'], parca: 'pantolon', fallback: side + 'UpLeg' }));
+    }
+    return parts;
+  }
+  const kolOyugu = (M, r) => (x, y, z) => { let f = -1; for (const sd of ['Left', 'Right']) { const a = M.bp[sd + 'Arm']; f = Math.max(f, r - Math.hypot(x - a.x, y - a.y + 0.02, z - a.z)); } return f; };
+  const kolAgzi = (M, rx, ry) => (x, y, z) => { const a = M.bp.LeftArm, cx = Math.abs(a.x) + 0.01, cy = a.y - 0.01; return Math.max(0.05 * (1 - ((Math.abs(x) - cx) / rx) ** 2 - ((y - cy) / ry) ** 2), Math.abs(x) - cx); };
+  const birlesim = (...f) => (x, y, z) => Math.max(...f.map(g => g(x, y, z)));
+  const dekolte = (M, depth, width) => (x, y, z) => { const n = M.bp.Neck, dx = x - n.x; return Math.min(y - (n.y - depth * Math.max(0, 1 - (dx / width) ** 2) - 0.005), width - Math.abs(dx), (z - (n.z - 0.01)) * 2); };
+  const KALIP = {
+    kadin: {
+      elbise: { ad: 'Elbise', yap: M => [...govde(M, { hem: M.bp.Hips.y - 0.01, altKes: M.bp.Hips.y + 0.055, ease0: 0.006, ease1: 0.007, kapa: 6, kapaEgim: 0.0075, cut: birlesim(kolAgzi(M, 0.06, 0.11), dekolte(M, 0.12, 0.078)) })], etek: { boy: 0.62, bol: 1.25 } },
+      etek: { ad: 'Etek', yap: () => [], etek: { boy: 0.56, bol: 1.0 } },
+      bluz: { ad: 'Bluz', yap: M => [...govde(M, { hem: M.bp.Hips.y - 0.10, ease0: 0.012, ease1: 0.03, drape: t => 0.985, cut: dekolte(M, 0.07, 0.08) }), kol(M, 'Left', 0.16, { ease0: 0.014, ease1: 0.03 }), kol(M, 'Right', 0.16, { ease0: 0.014, ease1: 0.03 })] },
+      bluzetek: { ad: 'Bluz + Etek', yap: M => [...govde(M, { hem: M.bp.Hips.y - 0.01, altKes: M.bp.Hips.y + 0.055, ease0: 0.012, ease1: 0.008, kapa: 6, kapaEgim: 0.0075, cut: dekolte(M, 0.07, 0.08) }), kol(M, 'Left', 0.16, { ease0: 0.014, ease1: 0.03 }), kol(M, 'Right', 0.16, { ease0: 0.014, ease1: 0.03 })], etek: { boy: 0.56, bol: 1.0 } },
+      pantolon: { ad: 'Pantolon', yap: M => pantolon(M, {}) },
+    },
+    erkek: {
+      gomlek: { ad: 'Gömlek', yap: M => [...govde(M, { hem: M.bp.Hips.y - 0.15, ease0: 0.016, ease1: 0.034, drape: t => 0.99, kapa: 5, top: M.bp.LeftArm.y - 0.035 }), yaka(M, 0.045, 0.01), kol(M, 'Left', 'bilek', { ease0: 0.02, ease1: 0.016, drape: () => 0.93, kapa: 4 }), kol(M, 'Right', 'bilek', { ease0: 0.02, ease1: 0.016, drape: () => 0.93, kapa: 4 })] },
+      tisort: { ad: 'Tişört', yap: M => [...govde(M, { hem: M.bp.Hips.y - 0.11, ease0: 0.014, ease1: 0.03, drape: t => 0.99, kapa: 5, top: M.bp.LeftArm.y - 0.035 }), kol(M, 'Left', 0.2, { ease0: 0.018, ease1: 0.032, kapa: 4 }), kol(M, 'Right', 0.2, { ease0: 0.018, ease1: 0.032, kapa: 4 })] },
+      pantolon: { ad: 'Pantolon', yap: M => pantolon(M, {}) },
+      takim: { ad: 'Gömlek + Pantolon', yap: M => [...pantolon(M, {}).map(m => (m.userData.ikinci = true, m) ), ...govde(M, { hem: M.bp.Hips.y - 0.15, ease0: 0.016, ease1: 0.034, drape: t => 0.99, kapa: 5, top: M.bp.LeftArm.y - 0.035 }), yaka(M, 0.045, 0.01), kol(M, 'Left', 'bilek', { ease0: 0.02, ease1: 0.016, drape: () => 0.93, kapa: 4 }), kol(M, 'Right', 'bilek', { ease0: 0.02, ease1: 0.016, drape: () => 0.93, kapa: 4 })] },
+    }
+  };
+
+  /* ---------- kumaş fiziği (etek) ---------- */
+  class Cloth {
+    constructor(M, o) {
+      const bp = M.bp; const K = 72, rows = Math.round(o.boy / 0.022) + 1; this.cols = K; this.rows = rows; this.n = K * rows; this.M = M;
+      const waistY = bp.Hips.y + (o.belUst ?? 0.075); // gerçek bel: göğüs altı ile leğen arası köprülenmiş kesit
+      const T = tube(M, { axis: 'y', from: bp.Spine1.y + 0.07, to: bp.Hips.y - 0.03, step: 0.012, K, filt: (b) => /Hips|Spine/.test(b), ease: () => 0.005, J: 'her', kapa: 8, kapaEgim: 0.0065 });
+      { let bi = 0; T.rings.forEach((r, i) => { if (Math.abs(r.at - waistY) < Math.abs(T.rings[bi].at - waistY)) bi = i; }); T.rings = [T.rings[bi]]; }
+      const q = T.rings[0]; this.pinLocal = []; this.topRing = q;
+      const top = []; for (let k = 0; k < K; k++) { const ang = k / K * Math.PI * 2 + Math.PI; top.push(new THREE.Vector3(q.cx + Math.sin(ang) * q.R[k], waistY, q.cy + Math.cos(ang) * q.R[k])); this.pinLocal.push(top[k].clone().applyMatrix4(M.hipsBindInv)); this.pinW = this.pinW || []; this.pinW.push(deriAgirlik(M, top[k].x, top[k].y, top[k].z, null)); }
+      this.pin0 = top.map(v => v.clone());
+      let topLen = 0; for (let k = 0; k < K; k++) topLen += top[k].distanceTo(top[(k + 1) % K]); const seg0 = topLen / K, dy = 0.022;
+      // kalça profili (kalça kemiği uzayında, açıya bağlı yarıçap): kalça/karın kumaştan taşmasın
+      const crotch = Math.min(bp.LeftUpLeg.y, bp.RightUpLeg.y) - 0.015; this.pDy = 0.012;
+      this.prof = tube(M, { axis: 'y', from: bp.Spine1.y + 0.07, to: crotch, step: this.pDy, K: 48, filt: (b) => /Hips|Spine|UpLeg/.test(b), ease: () => 0.007, J: 'her', kapa: 8, kapaEgim: 0.0065 });
+      { const R = this.prof.rings; this.pY0 = R[0].at; this.pDy = (R[0].at - R[R.length - 1].at) / Math.max(1, R.length - 1); } this.crotch = crotch;
+      const PR = this.prof.rings, PK = this.prof.K;
+      const profAt = (y) => { const f = (this.pY0 - y) / this.pDy; if (f < 0 || f > PR.length - 1) return null; const i0 = Math.floor(f), i1 = Math.min(PR.length - 1, i0 + 1), u = f - i0; return { cx: PR[i0].cx * (1 - u) + PR[i1].cx * u, cy: PR[i0].cy * (1 - u) + PR[i1].cy * u, R: (k) => PR[i0].R[k] * (1 - u) + PR[i1].R[k] * u }; };
+      const perim = (y) => { const q2 = profAt(y); if (!q2) return 0; let L = 0, px, pz; for (let k = 0; k <= PK; k++) { const an = (k % PK) / PK * Math.PI * 2 + Math.PI, r = q2.R(k % PK); const x = q2.cx + Math.sin(an) * r, z = q2.cy + Math.cos(an) * r; if (k) L += Math.hypot(x - px, z - pz); px = x; pz = z; } return L; };
+      // sıra boyu: A-kesim payı ile kalça çevresinin büyüğü (pens/genişlik payı: kumaş kalçada büzülüp raf yapmaz)
+      const hRow = []; for (let i = 0; i < rows; i++) { const t = i / (rows - 1); hRow.push(Math.max(seg0 * (1 + o.bol * t), i ? perim(waistY - i * dy) * 1.04 / K : 0)); }
+      this.pos = new Float32Array(this.n * 3); this.prev = new Float32Array(this.n * 3);
+      root.updateMatrixWorld(true); const hw = new THREE.Matrix4().copy(root.matrixWorld).invert().multiply(M.bones.Hips.matrixWorld); const v = new THREE.Vector3();
+      const cxz = new THREE.Vector2(q.cx, q.cy); const toNow = new THREE.Matrix4().multiplyMatrices(hw, M.hipsBindInv);
+      for (let i = 0; i < rows; i++) { const t = i / (rows - 1), grow = 1 + o.bol * t, y = waistY - i * dy, pq = profAt(y); for (let k = 0; k < K; k++) { const p0 = top[k]; const dx = p0.x - cxz.x, dz = p0.z - cxz.y, d0 = Math.hypot(dx, dz) || 1e-6; const wav = 1 + 0.04 * Math.sin(k / K * Math.PI * 2 * 9) * t; let r = d0 * (1 + (grow - 1) * 0.55) * wav;
+          if (pq) { const an = Math.atan2(dx, dz); let a2 = (an - Math.PI) / (Math.PI * 2) * PK; a2 = ((a2 % PK) + PK) % PK; const k0 = Math.floor(a2), k1 = (k0 + 1) % PK, w = a2 - k0; r = Math.max(r, pq.R(k0) * (1 - w) + pq.R(k1) * w + 0.004); }
+          v.set(cxz.x + dx / d0 * r, y, cxz.y + dz / d0 * r).applyMatrix4(toNow); const j = (i * K + k) * 3; this.pos[j] = v.x; this.pos[j + 1] = v.y; this.pos[j + 2] = v.z; } }
+      this.prev.set(this.pos);
+      this.sert = 0; this.sert0 = o.sert ?? 0.012;
+      const id = (i, k) => i * K + ((k + K) % K); this.cons = [];
+      for (let i = 0; i < rows; i++) { const h = hRow[i], h2 = hRow[Math.min(rows - 1, i + 1)];
+        for (let k = 0; k < K; k++) { this.cons.push(id(i, k), id(i, k + 1), h, 1); if (i < rows - 1) { const dg = Math.hypot((h + h2) / 2, dy); this.cons.push(id(i, k), id(i + 1, k), dy, 1); this.cons.push(id(i, k), id(i + 1, k + 1), dg, 0.5); this.cons.push(id(i, k + 1), id(i + 1, k), dg, 0.5); } if (i < rows - 2) this.cons.push(id(i, k), id(i + 2, k), dy * 2, 0.15); } }
+      this.cons = new Float32Array(this.cons);
+      const g = new THREE.BufferGeometry(); const NC = K + 1; const P = new Float32Array(rows * NC * 3), UV = new Float32Array(rows * NC * 2);
+      for (let i = 0; i < rows; i++) { const h = hRow[i]; for (let k = 0; k <= K; k++) { UV[(i * NC + k) * 2] = (k - K / 2) * h; UV[(i * NC + k) * 2 + 1] = waistY - i * dy; } }
+      g.setAttribute('position', new THREE.BufferAttribute(P, 3)); g.setAttribute('uv', new THREE.BufferAttribute(UV, 2));
+      const ind = []; for (let i = 0; i < rows - 1; i++) for (let k = 0; k < K; k++) { const a = i * NC + k, b = a + 1, c = a + NC, d = c + 1; ind.push(a, b, c, b, d, c); } g.setIndex(ind); this.geo = g; this.NC = NC; this.sync();
+      this.hipsBind = M.hipsBindInv.clone().invert(); this.A = new THREE.Matrix4(); this.Ai = new THREE.Matrix4();
+      this.leg = { Left: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()], Right: [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] };
+      const cr = n => (M.caps.find(c => c.na === n) || { r: 0.07 }).r; this.legR = [cr('LeftUpLeg'), cr('LeftLeg')];
+      for (let s = 0; s < 150; s++) this.step(1 / 90, new THREE.Vector3()); // yerleşsin
+      { const hw2 = new THREE.Matrix4().copy(root.matrixWorld).invert().multiply(M.bones.Hips.matrixWorld).invert(); this.rest = new Float32Array(this.n * 3); for (let i = 0; i < this.n; i++) { v.set(this.pos[i * 3], this.pos[i * 3 + 1], this.pos[i * 3 + 2]).applyMatrix4(hw2); this.rest[i * 3] = v.x; this.rest[i * 3 + 1] = v.y; this.rest[i * 3 + 2] = v.z; } }
+      this.sert = this.sert0; // kalıp hafızası = yerleşmiş doğal döküm (kalça altında içe çekme yok)
+    }
+    sync() { const P = this.geo.attributes.position.array, K = this.cols, NC = this.NC; for (let i = 0; i < this.rows; i++) for (let k = 0; k <= K; k++) { const s = (i * K + (k % K)) * 3, d = (i * NC + k) * 3; P[d] = this.pos[s]; P[d + 1] = this.pos[s + 1]; P[d + 2] = this.pos[s + 2]; } this.geo.attributes.position.needsUpdate = true; this.geo.computeVertexNormals();
+      // dikiş normallerini birleştir
+      const N = this.geo.attributes.normal.array; for (let i = 0; i < this.rows; i++) { const a = (i * NC) * 3, b = (i * NC + K) * 3; for (let c = 0; c < 3; c++) { const m = (N[a + c] + N[b + c]) / 2; N[a + c] = N[b + c] = m; } } }
+    legAt(sd, y) { const L = this.leg[sd], M = this.M, T0 = M.legT0; for (let s = 0; s < 2; s++) { const a = L[s], b = L[s + 1]; if (Math.abs(a.y - b.y) < 1e-4) continue; const t = (a.y - y) / (a.y - b.y); if (t < (s === 0 ? T0 : 0) || t > 1) continue;
+        const pr = M.legProf[sd + (s === 0 ? 'UpLeg' : 'Leg')], f = (t - T0) / (1 - T0) * pr.length - 0.5, i0 = Math.max(0, Math.min(pr.length - 1, Math.floor(f))), i1 = Math.min(pr.length - 1, i0 + 1), u = Math.max(0, Math.min(1, f - i0));
+        return [a.x + (b.x - a.x) * t, a.z + (b.z - a.z) * t, pr[i0] * (1 - u) + pr[i1] * u]; } return null; }
+    body(p, j) { // vücut sınırı: kalça profili + iki bacağın dışbükey zarfı (etek bacak arasına girmez)
+      const v = this._v || (this._v = new THREE.Vector3()); v.set(p[j], p[j + 1], p[j + 2]).applyMatrix4(this.A);
+      const f = (this.pY0 - v.y) / this.pDy, R = this.prof.rings;
+      if (f >= 0 && f <= R.length - 1) { const i0 = Math.floor(f), i1 = Math.min(R.length - 1, i0 + 1), u = f - i0, K = this.prof.K; const q0 = R[i0], q1 = R[i1];
+        const cx = q0.cx + (q1.cx - q0.cx) * u, cz = q0.cy + (q1.cy - q0.cy) * u; const dx = v.x - cx, dz = v.z - cz; const d = Math.hypot(dx, dz);
+        let a = (Math.atan2(dx, dz) - Math.PI) / (Math.PI * 2) * K; a = ((a % K) + K) % K; const k0 = Math.floor(a), k1 = (k0 + 1) % K, w = a - k0;
+        const r = (q0.R[k0] * (1 - w) + q0.R[k1] * w) * (1 - u) + (q1.R[k0] * (1 - w) + q1.R[k1] * w) * u;
+        if (d < r && d > 1e-6) { v.x = cx + dx * r / d; v.z = cz + dz * r / d; v.applyMatrix4(this.Ai); p[j] = v.x; p[j + 1] = v.y; p[j + 2] = v.z; } }
+      const y = p[j + 1]; const A = this.legAt('Left', y), B = this.legAt('Right', y); if (!A || !B) return;
+      const r = Math.max(A[2], B[2]) + 0.012, px = p[j], pz = p[j + 2]; const ex = B[0] - A[0], ez = B[1] - A[1], L2 = ex * ex + ez * ez || 1e-9; let t = ((px - A[0]) * ex + (pz - A[1]) * ez) / L2; t = t < 0 ? 0 : t > 1 ? 1 : t;
+      const cx = A[0] + ex * t, cz = A[1] + ez * t; let dx = px - cx, dz = pz - cz; const d = Math.hypot(dx, dz); if (d < r) { if (d < 1e-6) { dx = 0; dz = 1; } const s = r / (d || 1); p[j] = cx + dx * s; p[j + 2] = cz + dz * s; }
+    }
+    step(dt, wind) {
+      const M = this.M, p = this.pos, q = this.prev, K = this.cols, n = this.n, g = -9.81 * dt * dt, damp = 0.982;
+      // simülasyon manken (root) uzayında: döner tabla kumaşı savurmaz
+      const ri = this.ri || (this.ri = new THREE.Matrix4()); ri.copy(root.matrixWorld).invert();
+      for (const c of M.caps) { M.bones[c.na].getWorldPosition(c.a).applyMatrix4(ri); M.bones[c.nb].getWorldPosition(c.b).applyMatrix4(ri); }
+      const hw = new THREE.Matrix4().multiplyMatrices(ri, M.bones.Hips.matrixWorld); const v = new THREE.Vector3();
+      // bel halkası vücutla aynı ağırlıklarla derilenir (bel bükülünce korseyle birlikte hareket eder)
+      const BM = this.BM || (this.BM = M.skeleton.bones.map(() => new THREE.Matrix4())), used = this.used || (this.used = [...new Set(this.pinW.flat().map(e => e[0]))]); for (const bi of used) BM[bi].multiplyMatrices(ri, M.skeleton.bones[bi].matrixWorld).multiply(M.boneBindInv[bi]);
+      const u = this._u || (this._u = new THREE.Vector3());
+      for (let k = 0; k < K; k++) { v.set(0, 0, 0); for (const [bi, w] of this.pinW[k]) { u.copy(this.pin0[k]).applyMatrix4(BM[bi]); v.addScaledVector(u, w); } const j = k * 3; p[j] = q[j] = v.x; p[j + 1] = q[j + 1] = v.y; p[j + 2] = q[j + 2] = v.z; }
+      for (let i = K; i < n; i++) { const j = i * 3; const vx = (p[j] - q[j]) * damp, vy = (p[j + 1] - q[j + 1]) * damp, vz = (p[j + 2] - q[j + 2]) * damp; q[j] = p[j]; q[j + 1] = p[j + 1]; q[j + 2] = p[j + 2]; p[j] += vx + wind.x * dt * dt; p[j + 1] += vy + g; p[j + 2] += vz + wind.z * dt * dt; }
+      if (this.sert) { const e = hw.elements, R = this.rest; for (let i = K; i < n; i++) { const t = Math.floor(i / K) / (this.rows - 1), k = this.sert * (0.4 + 0.6 * t); const j = i * 3, x = R[j], y = R[j + 1], z = R[j + 2];
+          const tx = e[0] * x + e[4] * y + e[8] * z + e[12], ty = e[1] * x + e[5] * y + e[9] * z + e[13], tz = e[2] * x + e[6] * y + e[10] * z + e[14]; p[j] += (tx - p[j]) * k; p[j + 1] += (ty - p[j + 1]) * k * 0.3; p[j + 2] += (tz - p[j + 2]) * k; } }
+      const C = this.cons, caps = M.caps;
+      this.A.multiplyMatrices(this.hipsBind, this.Ai.copy(hw).invert()); this.Ai.copy(this.A).invert();
+      for (const sd of ['Left', 'Right']) ['UpLeg', 'Leg', 'Foot'].forEach((b, i) => M.bones[sd + b].getWorldPosition(this.leg[sd][i]).applyMatrix4(ri));
+      for (let it = 0; it < 6; it++) {
+        for (let c = 0; c < C.length; c += 4) {
+          const a = C[c], b = C[c + 1], rest = C[c + 2], kk = C[c + 3]; const ja = a * 3, jb = b * 3; let dx = p[jb] - p[ja], dy = p[jb + 1] - p[ja + 1], dz = p[jb + 2] - p[ja + 2]; const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1e-6;
+          if (d <= rest) continue; // kumaş gerilmez ama büzülür (kıvrım oluşur)
+          const wa = a < K ? 0 : 1, wb = b < K ? 0 : 1, ws = wa + wb; if (!ws) continue; const f = (d - rest) / d * kk / ws;
+          dx *= f; dy *= f; dz *= f; p[ja] += dx * wa; p[ja + 1] += dy * wa; p[ja + 2] += dz * wa; p[jb] -= dx * wb; p[jb + 1] -= dy * wb; p[jb + 2] -= dz * wb;
+        }
+        for (let i = K; i < n; i++) { const j = i * 3; let px = p[j], py = p[j + 1], pz = p[j + 2];
+          for (const cp of caps) { if (cp.el) continue; const ax = cp.a.x, ay = cp.a.y, az = cp.a.z, bx = cp.b.x - ax, by = cp.b.y - ay, bz = cp.b.z - az; const L2 = bx * bx + by * by + bz * bz || 1e-9; let t = ((px - ax) * bx + (py - ay) * by + (pz - az) * bz) / L2; t = t < 0 ? 0 : t > 1 ? 1 : t;
+            const cx = ax + bx * t, cy = ay + by * t, cz = az + bz * t; const r = cp.r + 0.012; let ex = px - cx, ey = py - cy, ez = pz - cz; const dd = Math.sqrt(ex * ex + ey * ey + ez * ez); if (dd < r && dd > 1e-6) { const s = r / dd; px = cx + ex * s; py = cy + ey * s; pz = cz + ez * s; } }
+          if (py < 0.03) py = 0.03; p[j] = px; p[j + 1] = py; p[j + 2] = pz; this.body(p, j); }
+      }
+    }
+  }
+
+  /* ---------- durum ---------- */
+  const DUZ = [ // erkek: düz renkler (mağazadaki düz ürünler + renk örnekleri)
+    { ad: 'Beyaz', hex: '#efece6', id: 1135649092, not: 'Müslin · %100 pamuk' }, { ad: 'Siyah', hex: '#1f1f22', id: 1145399139, not: 'Oysho · 230 gr' },
+    { ad: 'Lacivert', hex: '#232c4a' }, { ad: 'Antrasit', hex: '#3a3d42' }, { ad: 'Gri', hex: '#8c8e91' }, { ad: 'Açık mavi', hex: '#a9c1db' },
+    { ad: 'Bej', hex: '#cdb995' }, { ad: 'Haki', hex: '#6b6a4a' }, { ad: 'Bordo', hex: '#5e1f28' },
+  ];
+  const mk = { cins: 'kadin', kalip: 'elbise', olcek: 1, rotate: true, durus: 'bekle', kumas: { kadin: null, erkek: DUZ[2] }, tex: null };
+  const models = {}; let cur = null, parts = [], cloth = null, clothMesh = null, building = 0;
+  function clearGarment() {
+    for (const m of parts) { m.parent && m.parent.remove(m); m.geometry.dispose(); m.material.dispose(); } parts = [];
+    if (clothMesh) { root.remove(clothMesh); clothMesh.geometry.dispose(); clothMesh.material.dispose(); } clothMesh = null; cloth = null;
+  }
+  function buildGarment() {
+    if (!cur) return; clearGarment(); const K = KALIP[mk.cins][mk.kalip];
+    // ölçümler bağlama pozunda yapıldı; inşa sırasında hareket bir an sıfır karede tutulur
+    parts = K.yap(cur);
+    if (K.etek) { cloth = new Cloth(cur, K.etek); clothMesh = new THREE.Mesh(cloth.geo, fabricMat()); clothMesh.castShadow = true; clothMesh.receiveShadow = true; clothMesh.frustumCulled = false; root.add(clothMesh); }
+    applyLook();
+  }
+  function texFor(m, base, ikinci) {
+    const sc = mk.olcek; if (mk.cins === 'erkek' || ikinci) { m.map = null; m.color.set(ikinci ? '#2d3036' : mk.kumas.erkek.hex); m.sheenColor.copy(m.color).multiplyScalar(0.9); m.sheen = 0.45; m.bumpMap = weave.clone(); m.bumpMap.wrapS = m.bumpMap.wrapT = THREE.RepeatWrapping; m.bumpMap.repeat.set(70, 70); m.bumpMap.needsUpdate = true; m.needsUpdate = true; return; }
+    m.sheenColor.set(0x8a8a8a); m.sheen = 0.5; if (!base) return; const t = base.clone(); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(1 / (0.36 * sc), 1 / (0.54 * sc)); t.needsUpdate = true; m.map = t; m.color.set(0xffffff);
+    m.bumpMap = weave.clone(); m.bumpMap.wrapS = m.bumpMap.wrapT = THREE.RepeatWrapping; m.bumpMap.repeat.set(70, 70); m.bumpMap.needsUpdate = true; m.needsUpdate = true;
+  }
+  function applyLook() { for (const m of parts) texFor(m.material, mk.tex, !!m.userData.ikinci); if (clothMesh) texFor(clothMesh.material, mk.tex, false); }
+
+  /* ---------- arayüz ---------- */
+  const kumaslar = URUNLER.filter(u => u.grup !== 'battaniye');
+  const kList = document.getElementById('mk-kumas'), kSay = document.getElementById('mk-sayi'), kLbl = kSay.parentElement;
+  function renderKumas() {
+    if (mk.cins === 'erkek') {
+      kLbl.firstChild.textContent = 'Düz renk '; kSay.textContent = '· ' + DUZ.length + ' seçenek';
+      kList.innerHTML = DUZ.map((d, i) => `<button data-d="${i}" aria-pressed="${mk.kumas.erkek === d}" title="${d.ad}" style="background:${d.hex}"><span class="sr">${d.ad}</span></button>`).join('');
+    } else {
+      kLbl.firstChild.textContent = 'Kumaş '; kSay.textContent = '· ' + kumaslar.length + ' seçenek';
+      kList.innerHTML = kumaslar.map(u => `<button data-id="${u.id}" aria-pressed="${mk.kumas.kadin === u}" title="${u.ad}"><img src="${doku(u)}" alt="${u.ad}" loading="lazy"></button>`).join('');
+    }
+    document.getElementById('mk-olcek').closest('div').parentElement.hidden = mk.cins === 'erkek';
+    renderSel();
+  }
+  function renderSel() {
+    const sel = document.getElementById('mk-sel'), im = sel.querySelector('img'), b = sel.querySelector('b'), sp = sel.querySelector('span'), a = sel.querySelector('a');
+    if (mk.cins === 'erkek') { const d = mk.kumas.erkek; im.src = 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="${d.hex}"/></svg>`); im.alt = d.ad; im.style.background = d.hex; b.textContent = 'Düz ' + d.ad.toLowerCase();
+      if (d.id) { const u = byId[d.id]; sp.textContent = d.not + ' · ' + tl(u.fiyat) + ' / ' + u.birim; a.textContent = 'Bu kumaşı incele'; a.href = '#u-' + d.id; }
+      else { sp.textContent = 'Renk örneği · stok için mağazaya sorun'; a.textContent = 'Mağazaya sor'; a.href = '#iletisim'; } }
+    else { const u = mk.kumas.kadin; if (!u) return; im.style.background = ''; im.src = img(u.imgs[0], 560); b.textContent = u.ad; sp.textContent = (u.en ? u.en + ' en · ' : '') + tl(u.fiyat) + ' / ' + u.birim; a.textContent = 'Bu kumaşı incele'; a.href = '#u-' + u.id; }
+  }
+  kList.addEventListener('click', e => { const bt = e.target.closest('button'); if (!bt) return;
+    if (bt.dataset.d !== undefined) { mk.kumas.erkek = DUZ[+bt.dataset.d]; kList.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === bt)); renderSel(); applyLook(); }
+    else setFabric(byId[+bt.dataset.id]); });
+  function setFabric(u) { mk.kumas.kadin = u; kList.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.id === u.id)); renderSel(); loadTex(doku(u), t => { if (t && mk.kumas.kadin === u) { mk.tex = t; applyLook(); } }); }
+  function renderKalip() { const K = KALIP[mk.cins]; if (!K[mk.kalip]) mk.kalip = Object.keys(K)[0]; document.getElementById('mk-kalip').innerHTML = Object.entries(K).map(([k, v]) => `<button class="chip" data-k="${k}" aria-pressed="${k === mk.kalip}">${v.ad}</button>`).join(''); }
+  document.getElementById('mk-kalip').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; mk.kalip = b.dataset.k; renderKalip(); buildGarment(); });
+  async function setCins(c) {
+    mk.cins = c; document.querySelectorAll('#mk-cins button').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === c)); renderKalip(); renderKumas();
+    const ld = document.getElementById('mk-loading'); if (!models[c]) { ld.classList.remove('off'); try { models[c] = await loadModel(c); } catch (e) { console.error('manken yüklenemedi', e && (e.stack || e.message || e)); stage.classList.add('failed'); return; } }
+    if (mk.cins !== c) return; for (const k in models) models[k].wrap.visible = (k === c); cur = models[c]; setDurus(mk.durus, true); buildGarment(); ld.classList.add('off');
+  }
+  document.getElementById('mk-cins').addEventListener('click', e => { const b = e.target.closest('button'); if (b && b.dataset.v !== mk.cins) setCins(b.dataset.v); });
+  function setDurus(d, instant) { mk.durus = d; document.querySelectorAll('#mk-durus button').forEach(x => x.setAttribute('aria-pressed', x.dataset.v === d)); if (!cur) return; const next = cur.actions[d === 'yuru' ? 'walk' : 'idle'], prev = cur.actions[d === 'yuru' ? 'idle' : 'walk']; if (instant) { prev.stop(); next.reset().play(); } else { next.reset().setEffectiveWeight(1).fadeIn(0.4).play(); prev.fadeOut(0.4); } }
+  document.getElementById('mk-durus').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setDurus(b.dataset.v); });
+  const olcek = document.getElementById('mk-olcek'), olcekOut = document.getElementById('mk-olcek-out');
+  olcek.addEventListener('input', () => { mk.olcek = +olcek.value; olcekOut.textContent = mk.olcek.toFixed(2) + '×'; applyLook(); });
+  const rotBtn = document.getElementById('mk-rotate'); rotBtn.addEventListener('click', () => { mk.rotate = !mk.rotate; rotBtn.setAttribute('aria-pressed', mk.rotate); });
+  let drag = false, px = 0, vy = 0;
+  canvas.addEventListener('pointerdown', e => { drag = true; px = e.clientX; canvas.setPointerCapture(e.pointerId); document.getElementById('mk-hint').classList.add('off'); });
+  canvas.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - px; px = e.clientX; root.rotation.y += dx * 0.011; vy = dx * 0.011; });
+  const stop = () => drag = false; canvas.addEventListener('pointerup', stop); canvas.addEventListener('pointercancel', stop);
+  canvas.addEventListener('wheel', e => { e.preventDefault(); camera.position.z = Math.max(2.4, Math.min(6.5, camera.position.z + e.deltaY * 0.003)); camera.lookAt(0, 0.95, 0); }, { passive: false });
+  renderKalip(); setFabric(kumaslar.find(u => u.kod === 'DV05') || kumaslar[0]); renderKumas(); setCins('kadin');
+  // test kancası
+  window.__mk = { ready: () => !!cur && (mk.cins === 'erkek' || !!mk.tex) && document.getElementById('mk-loading').classList.contains('off'),
+    set: async (o) => { if (o.cins && o.cins !== mk.cins) await setCins(o.cins); if (o.kalip) { mk.kalip = o.kalip; renderKalip(); buildGarment(); } if (o.durus) setDurus(o.durus, true); if (o.rot !== undefined) { mk.rotate = false; root.rotation.y = o.rot; } if (o.cam) { camera.position.set(...o.cam); camera.lookAt(0, o.look ?? 0.95, 0); } },
+    kaliplar: () => Object.keys(KALIP[mk.cins]) }; // test kancası (görsel kontrol betikleri için)
+
+  /* Kollar gövdeden hafifçe açılır (vitrin mankeni duruşu): eller etek/bluz içine girmez */
+  const _qa = new THREE.Quaternion(), _qp = new THREE.Quaternion(), _qr = new THREE.Quaternion(), _z = new THREE.Vector3(0, 0, 1);
+  function acikKol(M, dt) {
+    const hedef = mk.durus === 'yuru' ? 0.22 : (mk.cins === 'kadin' ? 0.3 : 0.22); M.abd = M.abd === undefined ? hedef : M.abd + (hedef - M.abd) * Math.min(1, (dt || 0) * 3);
+    root.updateMatrixWorld(true); _qr.copy(root.quaternion).invert();
+    for (const [sd, sg] of [['Left', 1], ['Right', -1]]) { const b = M.bones[sd + 'Arm']; if (!b) continue; b.parent.getWorldQuaternion(_qp); _qp.premultiply(_qr);
+      _qa.setFromAxisAngle(_z, sg * Math.sign(M.bp[sd + 'Arm'].x) * M.abd); b.quaternion.premultiply(_qp.clone().invert().multiply(_qa).multiply(_qp)); }
+  }
+  /* ---------- döngü ---------- */
+  root.add(pist);
+  const clock = new THREE.Clock(); io.observe(stage); let needsFrame = true, acc = 0; const FIXED = 1 / 90; const wind = new THREE.Vector3();
+  new ResizeObserver(() => { fitRenderer(renderer, camera, stage); needsFrame = true; }).observe(stage); fitRenderer(renderer, camera, stage);
+  function loop() {
+    requestAnimationFrame(loop);
+    const vis = visible.get(stage) !== false; if (!vis && !needsFrame) return;
+    const dt = Math.min(0.05, clock.getDelta()), t = clock.elapsedTime;
+    if (!drag) { if (mk.rotate && !reduceMotion) root.rotation.y += 0.3 * dt; else if (Math.abs(vy) > 0.0005) { root.rotation.y += vy; vy *= 0.93; } }
+    if (cur) { cur.mixer.update(reduceMotion ? 0 : dt); acikKol(cur, dt); root.updateMatrixWorld(true); }
+    if (cur) { const yur = mk.durus === 'yuru'; const pm = pist.material; pm.opacity += ((yur ? 1 : 0.0) - pm.opacity) * Math.min(1, dt * 4); pist.visible = pm.opacity > 0.01; if (yur && !reduceMotion) pm.map.offset.y -= (cur.pistHiz || 0) * dt / 1.0; }
+    if (cloth) { wind.set(Math.sin(t * 0.7) * 0.18, 0, Math.cos(t * 0.5) * 0.14 - (mk.durus === 'yuru' ? 0.9 : 0)); acc = Math.min(acc + dt, FIXED * 4); while (acc >= FIXED) { cloth.step(FIXED, wind); acc -= FIXED; } cloth.sync(); }
+    renderer.render(scene, camera); needsFrame = false;
+  }
+  loop();
+}
+
+initTur(); initManken();
+
+</script>
+
+<div id="luna-onizleme" style="position:fixed;left:12px;bottom:12px;z-index:9999;max-width:min(92vw,420px);background:#111;color:#f2efe8;font:500 13px/1.45 system-ui,-apple-system,sans-serif;padding:10px 34px 10px 14px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.25)">
+  <b>Tasarım önizlemesi.</b> Luna Yapım'ın Ata Kumaş için hazırladığı vitrin sitesi; güncel fiyat ve stok Trendyol mağazasında geçerlidir.
+  <a href="/hizmetler/web-sitesi-tasarimi" style="color:#ff6a4d;white-space:nowrap">Web sitesi tasarımı →</a>
+  <button type="button" aria-label="Kapat" onclick="this.parentNode.remove()" style="position:absolute;right:8px;top:6px;background:none;border:0;color:#f2efe8;font-size:18px;cursor:pointer">×</button>
+</div>
+
+</body>
+</html>
