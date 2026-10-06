@@ -42,7 +42,7 @@
     if (yukleniyor) return;
     yukleniyor = true;
     var x = new XMLHttpRequest();
-    x.open("GET", KOK + "asistan-veri.json", true);
+    x.open("GET", KOK + "asistan-veri.json?s=" + Math.floor(Date.now() / 36e5), true);
     x.onload = function () {
       yukleniyor = false;
       if (x.status < 200 || x.status >= 300) { V = false; bosalt(); return; }

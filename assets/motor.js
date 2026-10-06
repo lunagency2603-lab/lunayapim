@@ -39,7 +39,7 @@
   }
 
   var x = new XMLHttpRequest();
-  x.open("GET", KOK + "motor.json", true);
+  x.open("GET", KOK + "motor.json?s=" + Math.floor(Date.now() / 36e5), true);
   x.onload = function () {
     if (x.status < 200 || x.status >= 300) { yer.remove(); return; }
     var d;
