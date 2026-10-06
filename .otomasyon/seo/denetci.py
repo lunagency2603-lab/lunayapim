@@ -114,7 +114,11 @@ def denetle():
         if len(h2) < E["h2_min"]: uyari("h2_az", "%d adet H2 (<%d)" % (len(h2), E["h2_min"]))
         # 9 kelime sayısı
         ks = kelime_sayisi(s)
-        if ks < E["kelime_min"]: uyari("ince_icerik", "%d kelime (<%d)" % (ks, E["kelime_min"]))
+        # 06.10.2026: izleme sayfası (isler/<iş>) — asıl içerik videonun kendisi; Google
+        # video dizinlemesi için sayfanın ana öğesinin video olmasını ister, metin
+        # yardımcıdır. Bu sayfalarda alt sınır 120 kelime.
+        kmin = 120 if f.replace("\\", "/").startswith("isler/") else E["kelime_min"]
+        if ks < kmin: uyari("ince_icerik", "%d kelime (<%d)" % (ks, kmin))
         # 10 og
         for og in ("og:title", "og:description", "og:url", "og:image"):
             if 'property="%s"' % og not in s: uyari("og", "%s yok" % og)

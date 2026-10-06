@@ -51,24 +51,24 @@
 window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
-  { yerel:"ornek-cm", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
+  { yerel:"ornek-cm", detay:"Avusturya'daki CM Vorarlberg için hazırlanan 15 saniyelik konut projesi tanıtım animasyonu. Projenin dış cephesi 3D olarak modellenip render edildi; kamera hareketiyle yapının çevresinde dolaşan tek bir plan kuruldu ve film marka kapanışıyla bitirildi. 1600×900 çözünürlükte teslim edildi.", sayfa:"isler/cm-vorarlberg-konut-projesi-3d-animasyon", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
     musteri:"CM Vorarlberg · Avusturya", sure:"0:15", olcu:"1600×900",
     teslim:"Dış cephe render + kamera hareketi + marka kapanışı",
     one:2, etiket:["isler","ornek","insaat-3d","emlak"] },
-  { yerel:"ornek-galzura", baslik:"Galzura Tanıtım Animasyonu", kat:"Animasyon",
+  { yerel:"ornek-galzura", detay:"Lojistik firmaları için filo yönetim yazılımı geliştiren Galzura'nın 1 dakikalık tanıtım animasyonu. Animasyon Türkçe ve Almanca iki dilde seslendirildi; web sitesi için yatay, sosyal medya için 9:16 dikey sürüm ayrı ayrı teslim edildi.", sayfa:"isler/galzura-tanitim-animasyonu", baslik:"Galzura Tanıtım Animasyonu", kat:"Animasyon",
     musteri:"Galzura · Avusturya", sure:"1:00", olcu:"1280×720",
     teslim:"Animasyon + seslendirme + TR/DE iki dil, yatay ve 9:16 dikey sürüm",
     one:1, etiket:["isler","ornek","urun-animasyon"] },
 
   /* ---------- YAYINDA ---------- */
-  { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", baslik:"Sanat bazen de aşk içindir",              kat:"Kısa Film",      etiket:["isler"], yil:"2025-08-13" },
-  { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", baslik:"İstanbul artık bana iyi gelmiyor",          kat:"Sinematografi",  etiket:["isler"], yil:"2023-06-18" },
-  { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", baslik:"2 Dakikada Ayakkabı İmalatı",    kat:"Reklam",         etiket:["isler","isletme"], yil:"2022-12-29" },
-  { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", baslik:"Another Love — Düğün Kurgusu",            kat:"Düğün",          etiket:["isler","dugun"], yil:"2022-12-22" },
-  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14", sehir:"İstanbul" },
-  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18", sehir:"Hatay" },
-  { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", baslik:"Yalan — Opener",           kat:"Opener",         etiket:["isler"], yil:"2023-09-25" },
-  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
+  { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", sure:"3:24", detay:"3 dakika 24 saniyelik kısa film. Senaryo, çekim, kurgu ve renk düzenlemesi ekibimize ait; film 13 Ağustos 2025'te yayınlandı.", sayfa:"isler/sanat-bazen-de-ask-icindir-kisa-film", baslik:"Sanat bazen de aşk içindir",              kat:"Kısa Film",      etiket:["isler"], yil:"2025-08-13" },
+  { teslim:"Görüntü yönetmenliği ve renk çalışması", id:"aV6_WSjJcnU", sure:"0:22", detay:"22 saniyelik sinematografi çalışması; açıklaması \"Soluk bir İstanbul akşamında radyolarımızda bugün gene Fairuz var.\" Görüntü yönetmenliği ve renk çalışması ekibimize ait.", sayfa:"isler/istanbul-artik-bana-iyi-gelmiyor", baslik:"İstanbul artık bana iyi gelmiyor",          kat:"Sinematografi",  etiket:["isler"], yil:"2023-06-18" },
+  { teslim:"Reklam filmi — çekim ve kurgu", id:"kRc1KAWI-_o", sure:"2:24", detay:"Albero Ayakkabı İmalathanesi'nde çekilen 2 dakika 24 saniyelik reklam filmi. Bir ayakkabının onlarca elden ve işlemden geçen üretim yolculuğunu \"Emek, Disiplin, İşçilik\" başlığıyla anlatıyor. Çekim ve kurgu ekibimize ait.", sayfa:"isler/2-dakikada-ayakkabi-imalati-reklam-filmi", baslik:"2 Dakikada Ayakkabı İmalatı",    kat:"Reklam",         etiket:["isler","isletme"], yil:"2022-12-29" },
+  { teslim:"Düğün günü çekimi ve klip kurgusu", id:"YGYCJZPC1cA", sure:"6:34", detay:"Tom Odell'in \"Another Love\" şarkısıyla kurgulanmış 6 dakika 34 saniyelik düğün filmi. Düğün günü çekimi ve klip kurgusu ekibimize ait.", sayfa:"isler/another-love-dugun-kurgusu", baslik:"Another Love — Düğün Kurgusu",            kat:"Düğün",          etiket:["isler","dugun"], yil:"2022-12-22" },
+  { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", sure:"1:00", detay:"1 dakikalık klip çalışması. Çekim ve kurgu ekibimize ait; video 14 Ocak 2018'de yayınlandı.", sayfa:"isler/bir-peron-klip", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14", sehir:"İstanbul" },
+  { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", sure:"2:02", detay:"2 dakikalık kısa film. Çekim Blackmagic Pocket Cinema Camera 4K ve Lumix 25 mm f/1.7 objektifle yapıldı; çekim, kurgu ve renk ekibimize ait. Film 18 Nisan 2023'te yayınlandı.", sayfa:"isler/munzevi-kisa-film", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18", sehir:"Hatay" },
+  { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", sure:"0:40", detay:"40 saniyelik açılış jeneriği (opener) çalışması. Tasarım ve kurgu ekibimize ait.", sayfa:"isler/yalan-opener", baslik:"Yalan — Opener",           kat:"Opener",         etiket:["isler"], yil:"2023-09-25" },
+  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", sure:"1:40", detay:"Ceyrose'nin \"Kirli\" şarkısının müzik klibi. Klibin yönetmenliğini Luna Yapım üstlendi; çekim ve kurgu ekibimize ait. Şarkının sözleri Ceyrose'ye, prodüksiyonu Thats'e, mix ve mastering'i Enes Karaaslan'a ait. Klip 21 Ağustos 2026'da sanatçının YouTube kanalında yayınlandı ve 40 binden fazla izlendi.", sayfa:"isler/ceyrose-kirli-muzik-klibi", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
 
   /* ---------- İNŞAAT & MİMARİ 3D MODELLEME (kimlik bekliyor) ---------- */
   { id:"", baslik:"Villa Dış Cephe Render Animasyonu",   kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
@@ -141,7 +141,7 @@ window.LUNA_VIDEOLAR = [
       '</div>'+
       '<div class="is-alt">'+
         '<span class="kat">'+k+'</span>'+
-        '<h3>'+b+'</h3>'+
+        '<h3>'+(v.sayfa ? '<a class="is-sayfa" href="'+KOK.replace(/assets\/$/,'')+v.sayfa+'">'+b+'</a>' : b)+'</h3>'+
         (v.musteri ? '<span class="musteri">'+kacir(v.musteri)+'</span>' : '')+
         (v.teslim ? '<span class="teslim">'+kacir(v.teslim)+'</span>' : '')+
       '</div></article>';
@@ -444,7 +444,7 @@ window.LUNA_VIDEOLAR = [
         var bul = function(e){ var k = e.target.closest('.is');
           return (k && kap.contains(k)) ? k : null; };
         var isi = function(k){ return kap._sec[parseInt(k.getAttribute('data-i'), 10)]; };
-        kap.addEventListener('click', function(e){ var k = bul(e); if(k) ac(isi(k)); });
+        kap.addEventListener('click', function(e){ if(e.target.closest && e.target.closest('a.is-sayfa')) return; var k = bul(e); if(k) ac(isi(k)); });
         kap.addEventListener('keydown', function(e){ var k = bul(e);
           if(k && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); ac(isi(k)); } });
         kap.addEventListener('mouseover', function(e){ var k = bul(e);

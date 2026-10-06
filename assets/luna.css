@@ -1612,3 +1612,9 @@ body:not(.bl-js) .bl-denetim,body:not(.bl-js) .bl-nolar{display:none}
 .kiyas>*{min-width:0}
 .kiyas:has(>.tablo-kaydir:only-child){display:block;background:none;gap:0}
 .kiyas>.tablo-kaydir{background:none;padding:0}
+
+/* izleme sayfaları (isler/<iş>) — 06.10.2026 */
+.izle-kap{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden;margin:8px 0 28px}
+.izle-kap iframe,.izle-kap video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.is-alt h3 a.is-sayfa{color:inherit;text-decoration:none}
+.is-alt h3 a.is-sayfa:hover{text-decoration:underline}

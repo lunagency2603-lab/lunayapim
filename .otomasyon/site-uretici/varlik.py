@@ -212,10 +212,10 @@ def isler(kok):
         if "baslik:" not in b:
             continue
         d = {}
-        for k in ("id", "yerel", "baslik", "kat", "musteri", "sure", "olcu", "teslim", "yil", "sehir"):
-            mm = re.search(k + r':\s*"([^"]*)"', b)
+        for k in ("id", "yerel", "baslik", "kat", "musteri", "sure", "olcu", "teslim", "yil", "sehir", "sayfa", "detay"):
+            mm = re.search(r'(?<![A-Za-z_])' + k + r':\s*"((?:[^"\\]|\\.)*)"', b)
             if mm and mm.group(1).strip():
-                d[k] = mm.group(1).strip()
+                d[k] = mm.group(1).strip().replace('\\"', '"')
         et = re.search(r"etiket:\s*\[([^\]]*)\]", b)
         d["etiket"] = [x.strip().strip('"') for x in et.group(1).split(",")] if et else []
         if d.get("id") or d.get("yerel"):      # yayınlanmış örneği olan
@@ -248,7 +248,11 @@ def _is_karti(d, on, il=None):
     if il and _il_norm(d.get("sehir")) == _il_norm(il):
         rozet = '<span class="is-rozet">Bu ildeki işimiz</span>'
     d = dict(d, _rozet=rozet)
-    if d.get("id"):
+    # 06.10.2026: işin kendi izleme sayfası varsa kart oraya gider (iç bağlantı +
+    # Google'ın videoyu dizine alabilmesi için izleme sayfası; bkz. izleme_sayfalari.py)
+    if d.get("sayfa"):
+        adres, dis = on + d["sayfa"], ""
+    elif d.get("id"):
         adres = "https://www.youtube.com/watch?v=" + d["id"]
         dis = ' target="_blank" rel="noopener"'
     else:
@@ -342,7 +346,10 @@ def isler_bas(s, yol, kok):
     if bos_etiket:
         s = s.replace("<section class=\"acik\" data-video-bolum>",
                       "<section class=\"acik\" data-video-bolum hidden>", 1)
-    sema = _video_sema({x.get("id") or x.get("yerel"): x for x in kullanilan}.values())
+    # 06.10.2026: VideoObject artık yalnız izleme sayfalarında (isler/<iş>). Vitrinde
+    # ikincil duran video için Google "izleme sayfasında değil" deyip dizine almıyordu
+    # (Search Console: 109 video). Vitrin sayfalarına şema basılmaz.
+    sema = ""
     if sema:
         s = basa_ekle(s, sema)
     return s

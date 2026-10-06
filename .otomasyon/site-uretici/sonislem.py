@@ -28,6 +28,9 @@ def uzantisizlastir(s):
     s = s.replace("https://lunayapim.com/index", "https://lunayapim.com/")
     # bağlantılar: .html + varsa #çapa / ?sorgu — çapa yüzünden atlanan 421 bağlantı
     # (376 sayfada index.html#urunler) Google'a sürekli yönlendirme besliyordu (14.09.2026)
+    # 06.10.2026: tek tırnaklı .html bağlantıları (SSS metinleri) aşağıdaki kurala
+    # takılmıyordu; /sehir/index.html yönlendirmeye düşüyordu. Önce çift tırnağa çevir.
+    s = re.sub(r"href='([^'\"<>]*?\.html(?:[#?][^']*)?)'", r'href="\1"', s)
     def _b(m):
         yol, kuyruk = m.group(1), (m.group(2) or "")
         return 'href="%s%s"' % (yol, kuyruk)
@@ -36,17 +39,32 @@ def uzantisizlastir(s):
         s = s.replace('href="%sindex"' % on, 'href="%s"' % (on or "./"))
         s = s.replace('href="%sindex#' % on, 'href="%s#' % (on or "./"))
         s = s.replace('href="%sindex?' % on, 'href="%s?' % (on or "./"))
+    # alt klasör dizinleri: ../sehir/index → ../sehir/
+    s = re.sub(r'href="((?:\.\./)*[A-Za-z0-9_\-]+/)index([#?][^"]*)?"', lambda m: 'href="%s%s"' % (m.group(1), m.group(2) or ""), s)
+    return s
+
+
+def eposta_koru(s):
+    """06.10.2026: Cloudflare'in e-posta gizleme özelliği mailto bağlantılarını
+    /cdn-cgi/l/email-protection adresine çeviriyordu; bu adres arama motoruna 404
+    dönüyor ve 398 sayfada kırık iç bağlantı olarak sayılıyordu. Cloudflare'in
+    kendi işaretiyle (email_off) bu bağlantılar gizlemeden muaf tutulur."""
+    if "mailto:" not in s:
+        return s
+    def _sar(m):
+        return "<!--email_off-->" + m.group(0) + "<!--/email_off-->"
+    s = re.sub(r'(?<!<!--email_off-->)<a [^>]*href="mailto:[^"]*"[^>]*>.*?</a>', _sar, s, flags=re.S)
     return s
 
 
 def surumle(s):
     """Önbellek kırıcı sürümleri tek yerden yönet."""
-    s = re.sub(r'luna\.css(\?v=\d+)?', 'luna.css?v=' + SURUM["css"], s)
-    s = re.sub(r'videolar\.js(\?v=\d+)?', 'videolar.js?v=' + SURUM["videolar"], s)
-    s = re.sub(r'asistan\.js(\?v=\d+)?', 'asistan.js?v=' + SURUM["asistan"], s)
-    s = re.sub(r'agac\.js(\?v=\d+)?', 'agac.js?v=' + SURUM["agac"], s)
-    s = re.sub(r'agac3d\.js(\?v=\d+)?', 'agac3d.js?v=' + SURUM["agac"], s)
-    s = re.sub(r'fon\.js(\?v=\d+)?', 'fon.js?v=' + SURUM["fon"], s)
+    s = re.sub(r'luna\.css(?:\?v=[A-Za-z0-9]+)*', 'luna.css?v=' + SURUM["css"], s)
+    s = re.sub(r'videolar\.js(?:\?v=[A-Za-z0-9]+)*', 'videolar.js?v=' + SURUM["videolar"], s)
+    s = re.sub(r'asistan\.js(?:\?v=[A-Za-z0-9]+)*', 'asistan.js?v=' + SURUM["asistan"], s)
+    s = re.sub(r'agac\.js(?:\?v=[A-Za-z0-9]+)*', 'agac.js?v=' + SURUM["agac"], s)
+    s = re.sub(r'agac3d\.js(?:\?v=[A-Za-z0-9]+)*', 'agac3d.js?v=' + SURUM["agac"], s)
+    s = re.sub(r'fon\.js(?:\?v=[A-Za-z0-9]+)*', 'fon.js?v=' + SURUM["fon"], s)
     return s
 
 
@@ -63,7 +81,7 @@ def ajan_ekle(s, on):
     if "</body>" not in s:
         return s
     if "ajan.js" in s:
-        return re.sub(r'ajan\.js(\?v=\d+)?', 'ajan.js?v=' + SURUM["ajan"], s)
+        return re.sub(r'ajan\.js(?:\?v=[A-Za-z0-9]+)*', 'ajan.js?v=' + SURUM["ajan"], s)
     return s.replace("</body>", '<script src="%sassets/ajan.js?v=%s" defer></script>\n</body>' % (on, SURUM["ajan"]))
 
 
@@ -553,7 +571,7 @@ def varlik_surumu(s, kok):
     def _d(m):
         oz = _varlik_ozeti(kok, m.group(2))
         return (m.group(1) + m.group(2) + "?v=" + oz) if oz else m.group(0)
-    return re.sub(r'((?:\.\./)*|/|https://lunayapim\.com/)(assets/[A-Za-z0-9_\-/]+\.(?:js|css))(?:\?v=[A-Za-z0-9]+)?(?=["\'])', _d, s)
+    return re.sub(r'((?:\.\./)*|/|https://lunayapim\.com/)(assets/[A-Za-z0-9_\-/]+\.(?:js|css))(?:\?v=[A-Za-z0-9]+)*(?=["\'])', _d, s)
 
 
 def calistir(kok, desen="**/*.html"):
@@ -567,6 +585,7 @@ def calistir(kok, desen="**/*.html"):
         on = _derinlik(yol, kok)
         s = uzantisizlastir(s)
         s = telefon_guncelle(s)
+        s = eposta_koru(s)
         s = asistan_ekle(s, on)
         s = ajan_ekle(s, on)
         s = okuma_ekle(s, on)

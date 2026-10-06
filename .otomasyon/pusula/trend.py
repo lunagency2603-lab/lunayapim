@@ -1373,7 +1373,15 @@ def piyasa_html(v, guncel=True):
     k = tc.get("kurlar", {})
     aciklama = ("%s: TCMB döviz satış — dolar %s TL, euro %s TL%s. Resmî kaynak, yatırım tavsiyesi değildir." % (
         _tr_tarih(t), _tl(k.get("USD", {}).get("satis")) or "—", _tl(k.get("EUR", {}).get("satis")) or "—",
-        (", gram altın %s TL" % al["gram-altin"]["satis"]) if al.get("gram-altin") else ""))[:158]
+        (", gram altın %s TL" % al["gram-altin"]["satis"]) if al.get("gram-altin") else ""))
+    # 06.10.2026: altın verisi olmayan günlerde açıklama 104 karaktere düşüyordu (denetçi
+    # alt sınırı 110). Sığarsa tamamlayıcı cümle eklenir; kelime ortasından kesilmez.
+    if len(aciklama) < 110:
+        ek = " Alış, satış ve efektif kurlar tek tabloda."
+        if len(aciklama + ek) <= 158:
+            aciklama += ek
+    if len(aciklama) > 158:
+        aciklama = aciklama[:158].rsplit(" ", 1)[0].rstrip(" ,;—-") + "."
     url = KOK_URL + "piyasa/" + t
     kur_sat = "".join("<tr><td>%s <span class='g'>(%s)</span></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>"
                       % (_e(kod), _e(x.get("ad", "")), _e(_tl(x.get("alis")) or "—"), _e(_tl(x.get("satis")) or "—"), _e(_tl(x.get("efektif_alis")) or "—"), _e(_tl(x.get("efektif_satis")) or "—"))
