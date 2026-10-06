@@ -15,6 +15,7 @@
       oynayan hafif önizleme olur.
 
    musteri:"..."  →  kartın altında müşteri adı yazar (isteğe bağlı)
+   il_sayfasi:false →  iş il (şehir) sayfalarında gösterilmez (06.10.2026)
 
    etiket → videonun hangi sayfalarda çıkacağını belirler:
      isler          → İşler sayfası + ana sayfa (hepsi buraya girer)
@@ -51,10 +52,14 @@
 window.LUNA_VIDEOLAR = [
 
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
-  { yerel:"yade-vogue", detay:"gustosound'un 130 BPM'lik Vogue parçası için hazırlanan 2 dakika 40 saniyelik 3D animasyon klip. Klibin sanatçısı Luna Yapım'ın tasarladığı YADE adlı ejderha karakteri; beş perdelik hikâyenin her dünyası Blender'da 3D olarak kurulup render edildi, kurgu şarkının ritim ve vuruş analizine göre biçildi. Karakter yakın planları yapay zekâ desteğiyle üretilip 3D sahnelerle aynı renk düzenine oturtuldu. 1080p ve 4K olarak teslim edildi.", sayfa:"isler/yade-vogue-3d-animasyon-klip", baslik:"YADE × Vogue — 3D Animasyon Klip", kat:"Klip",
+  { yerel:"yade-vogue", detay:"gustosound'un 130 BPM'lik Vogue parçası için hazırlanan 2 dakika 40 saniyelik 3D animasyon klip. Klibin sanatçısı Luna Yapım'ın tasarladığı YADE adlı ejderha karakteri; beş perdelik hikâyenin her dünyası Blender'da 3D olarak kurulup render edildi, kurgu şarkının ritim ve vuruş analizine göre biçildi. 1080p ve 4K olarak teslim edildi.", sayfa:"isler/yade-vogue-3d-animasyon-klip", baslik:"YADE × Vogue — 3D Animasyon Klip", kat:"Klip",
     sure:"2:40", olcu:"1920×1080 · 4K",
     teslim:"Şarkı analizi, karakter tasarımı, Blender 3D dünyalar, kurgu ve renk",
-    one:3, etiket:["isler","ornek","klip"], yil:"2026-10-01" },
+    one:3, etiket:["isler","ornek","klip"], yil:"2026-10-01", il_sayfasi:false },
+  { yerel:"bgk-egitim-demo", detay:"Akaryakıt istasyonlarındaki buhar geri kazanım (BGK) sisteminin Faz I ve Faz II çalışma prensibini anlatan 30 saniyelik teknik eğitim animasyonu demosu. Tanker boşaltımında yakıtın yeraltı tankına inişi ve yer değiştiren buharın tankere dönüşü, tank kesitinde seviye değişimi, dispenser içindeki akış sensörü, vakum pompası ve kontrol kartı, koaksiyel hortumun kesiti ve kapalı döngünün havadan özeti ayrı sahnelerde gösteriliyor. Akış yönleri renkle ayrıldı: yakıt mavi, buhar turuncu. Talep gelen gün hazırlandı; 720p önizleme olarak paylaşıldı.", sayfa:"isler/buhar-geri-kazanim-egitim-animasyonu", baslik:"Buhar Geri Kazanım Sistemi — Teknik Eğitim Animasyonu", kat:"Eğitim Animasyonu",
+    sure:"0:30", olcu:"1280×720 önizleme",
+    teslim:"Çalışma prensibi anlatımı, kesit sahneleri, akış renk kodlaması, Türkçe ara yazılar",
+    one:2, etiket:["isler","ornek","urun-animasyon"], yil:"2026-09-17", il_sayfasi:false },
   { yerel:"ornek-cm", detay:"Avusturya'daki CM Vorarlberg için hazırlanan 15 saniyelik konut projesi tanıtım animasyonu. Projenin dış cephesi 3D olarak modellenip render edildi; kamera hareketiyle yapının çevresinde dolaşan tek bir plan kuruldu ve film marka kapanışıyla bitirildi. 1600×900 çözünürlükte teslim edildi.", sayfa:"isler/cm-vorarlberg-konut-projesi-3d-animasyon", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
     musteri:"CM Vorarlberg · Avusturya", sure:"0:15", olcu:"1600×900",
     teslim:"Dış cephe render + kamera hareketi + marka kapanışı",
@@ -424,6 +429,7 @@ window.LUNA_VIDEOLAR = [
       var etiket = kap.getAttribute('data-video');
       var limit  = parseInt(kap.getAttribute('data-limit')||'0',10);
       var sec = liste.filter(function(v){
+        if(v.il_sayfasi === false && /\/sehir\//.test(location.pathname)) return false;
         return (v.id || v.yerel) && v.etiket && v.etiket.indexOf(etiket) !== -1;
       });
       /* öne çıkan işler başa: one değeri büyük olan önce */

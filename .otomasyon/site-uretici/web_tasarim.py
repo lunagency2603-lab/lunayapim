@@ -87,8 +87,7 @@ def web_sitesi_tasarimi():
          "YADE × Vogue klibinden kare: siyah ejderha YADE, bazalt sütunlar arasında",
          "Klip", "iii · Müzik klibi", "YADE × Vogue — 3D animasyon klip",
          "gustosound'un Vogue parçası için 2:40'lık klip. Beş dünya Blender'da 3D olarak "
-         "kuruldu, kurgu şarkının vuruşlarına göre biçildi; karakter yakın planları yapay "
-         "zekâ desteğiyle üretildi.", "Klibi izle →"),
+         "kuruldu, kurgu şarkının vuruşlarına göre biçildi.", "Klibi izle →"),
     ]:
         src = gorsel if gorsel.startswith("../") else "web/" + gorsel
         g.append('<a class="uv gor" href="%s"%s><span class="uv-gorsel">'

@@ -227,6 +227,8 @@ def isler(kok):
             mm = re.search(r'(?<![A-Za-z_])' + k + r':\s*"((?:[^"\\]|\\.)*)"', b)
             if mm and mm.group(1).strip():
                 d[k] = mm.group(1).strip().replace('\\"', '"')
+        if re.search(r"(?<![A-Za-z_])il_sayfasi:\s*false", b):
+            d["il_disi"] = True       # 06.10.2026: il sayfalarında gösterilmez (ör. müzik klibi)
         et = re.search(r"etiket:\s*\[([^\]]*)\]", b)
         d["etiket"] = [x.strip().strip('"') for x in et.group(1).split(",")] if et else []
         if d.get("id") or d.get("yerel"):      # yayınlanmış örneği olan
@@ -336,6 +338,7 @@ def isler_bas(s, yol, kok):
         # gizliyor; statik taraf artık onunla aynı davranıyor.
         liste = [x for x in hepsi if etiket in x["etiket"]]
         if il:
+            liste = [x for x in liste if not x.get("il_disi")]
             # o ilde çekilmiş iş varsa EN ÜSTE — yerel aramada en ağır kanıt bu
             def _il_mi(x):
                 return _il_norm(x.get("sehir")) == _il_norm(il)
