@@ -11,7 +11,7 @@
 
 window.LUNA_FORM = {
   wa: "905542182603",
-  eposta: "lunagency2603@gmail.com",
+  eposta: "info@lunayapim.com",
   isler: ["İnşaat / mimari 3D modelleme", "Ürün veya hizmet animasyonu",
           "Emlak tanıtım videosu", "Kurumsal tanıtım filmi", "Klip çekimi",
           "Drone / FPV çekim", "Düğün ve etkinlik", "Sosyal medya içerik üretimi",

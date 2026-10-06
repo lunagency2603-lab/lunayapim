@@ -123,7 +123,7 @@ def metin(kok):
     a("")
     # 28.09.2026: kimlik doğrulama için iletişim ve Google İşletme Profili (yapay zekâ
     # asistanları işletmeyi bu kayıtla eşleştiriyor)
-    a("İletişim: +90 554 218 26 03 · lunagency2603@gmail.com · Çalışma saatleri Pzt–Cmt 09:00–18:00. "
+    a("İletişim: +90 554 218 26 03 · info@lunayapim.com · Çalışma saatleri Pzt–Cmt 09:00–18:00. "
       "81 ilde yerel çözüm ortaklarıyla çekim yapılır; kurgu, renk ve 3D Bursa'daki ekipte.")
     a("Google İşletme Profili: https://maps.google.com/?cid=17888603735370903993")
     a("")
@@ -157,7 +157,7 @@ def metin(kok):
     a("")
     a("## İletişim")
     a("")
-    a("- E-posta: lunagency2603@gmail.com")
+    a("- E-posta: info@lunayapim.com")
     a("- Telefon: +90 554 218 26 03")
     a("- Instagram: https://www.instagram.com/lunayapim.mov/")
     a("- Merkez: Bursa, Türkiye — hizmet alanı: Türkiye geneli")

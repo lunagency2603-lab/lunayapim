@@ -26,7 +26,8 @@ window.LUNA_SOSYAL = [
   { ag:"artstation",ad:"ArtStation",kullanici:"", adres:"https://www.artstation.com/%s" },
   { ag:"pinterest", ad:"Pinterest", kullanici:"", adres:"https://tr.pinterest.com/%s" },
   { ag:"facebook",  ad:"Facebook",  kullanici:"", adres:"https://www.facebook.com/%s" },
-  { ag:"hizmetgo",  ad:"Hizmetgo",  kullanici:"bursa/luna-y-genel-4c2614d7", adres:"https://www.hizmetgo.app/uzman/%s" }
+  { ag:"hizmetgo",  ad:"Hizmetgo",  kullanici:"bursa/luna-y-genel-4c2614d7", adres:"https://www.hizmetgo.app/uzman/%s" },
+  { ag:"gigbi",     ad:"Gigbi",     kullanici:"deniz-catak1791247368", adres:"https://www.gigbi.com/p/%s" }
 ];
 
 /* Yol tarifi bağlantısı — haritadaki işletme adresini yapıştır.

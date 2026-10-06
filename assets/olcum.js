@@ -15,7 +15,9 @@
    ============================================================ */
 
 window.LUNA_OLCUM = {
-  ga4: "G-CQYDCWF2DG",         // örn: "G-XXXXXXXXXX"
+  /* 06.10.2026: TrendSaphiens kendi GA4 mülküne yazar (G-6Y0N298BY3). Önceden iki site
+     aynı mülke (lunayapim.com) yazıyordu; Luna'nın ziyaretçi ve talep sayıları karışıyordu. */
+  ga4: /(^|\.)trendsaphiens\.com$/.test(location.hostname) ? "G-6Y0N298BY3" : "G-CQYDCWF2DG",
   cloudflare: "",  // örn: "a1b2c3d4e5f6..."
 };
 

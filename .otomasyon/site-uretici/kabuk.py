@@ -55,7 +55,7 @@ FOOTER = """<footer>
       <div><h4>İletişim</h4>
         <a href="https://wa.me/905542182603">WhatsApp</a>
         <a href="tel:+905542182603">0554 218 26 03</a>
-        <a href="mailto:lunagency2603@gmail.com">E-posta</a>
+        <a href="mailto:info@lunayapim.com">E-posta</a>
         <a href="../iletisim">İletişim sayfası</a>
         <a href="../kosullar">Koşullar</a>
         <span data-sosyal class="sosyal-serit" style="margin-top:12px"></span></div>

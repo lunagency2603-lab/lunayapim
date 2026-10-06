@@ -20,7 +20,7 @@ from .ayarlar import SITE_KOK
 from . import trend as T
 
 KOK_URL = "https://lunayapim.com/trend/"
-EPOSTA = "lunagency2603@gmail.com"
+EPOSTA = "info@lunayapim.com"
 YAYINCI = "Luna Yapım"
 SEHIR = "Bursa"
 

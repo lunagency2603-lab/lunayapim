@@ -254,13 +254,7 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288531900"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18288531900');
-</script>
+<!-- 06.10.2026: Luna'nın Google Ads etiketi TrendSaphiens'ten kaldırıldı; ölçüm assets/olcum.js ile kendi GA4 mülküne gider -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%s" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>%s</title>

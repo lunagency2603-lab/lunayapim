@@ -31,7 +31,7 @@ import re
 import unicodedata
 
 KURULUS_ID = "https://lunayapim.com/#kurulus"
-EPOSTA = "lunagency2603@gmail.com"
+EPOSTA = "info@lunayapim.com"
 ISLETME = ("LocalBusiness", "Organization", "ProfessionalService", "Corporation")
 
 _HESAP = re.compile(
