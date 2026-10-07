@@ -1,46 +1,46 @@
 {
  "tarih": "2026-10-07",
  "tcmb": {
-  "tarih": "06.10.2026",
-  "bulten": "2026/188",
+  "tarih": "07.10.2026",
+  "bulten": "2026/189",
   "kurlar": {
    "USD": {
-    "alis": "49.0918",
-    "satis": "49.1802",
-    "efektif_alis": "49.0574",
-    "efektif_satis": "49.2540",
+    "alis": "49.1091",
+    "satis": "49.1976",
+    "efektif_alis": "49.0747",
+    "efektif_satis": "49.2714",
     "ad": "ABD DOLARI"
    },
    "EUR": {
-    "alis": "55.1853",
-    "satis": "55.2847",
-    "efektif_alis": "55.1466",
-    "efektif_satis": "55.3676",
+    "alis": "54.9907",
+    "satis": "55.0898",
+    "efektif_alis": "54.9522",
+    "efektif_satis": "55.1724",
     "ad": "EURO"
    },
    "GBP": {
-    "alis": "64.9049",
-    "satis": "65.2432",
-    "efektif_alis": "64.8594",
-    "efektif_satis": "65.3411",
+    "alis": "64.8726",
+    "satis": "65.2108",
+    "efektif_alis": "64.8272",
+    "efektif_satis": "65.3087",
     "ad": "İNGİLİZ STERLİNİ"
    },
    "CHF": {
-    "alis": "58.9029",
-    "satis": "59.2811",
-    "efektif_alis": "58.8145",
-    "efektif_satis": "59.3700",
+    "alis": "58.8358",
+    "satis": "59.2136",
+    "efektif_alis": "58.7476",
+    "efektif_satis": "59.3024",
     "ad": "İSVİÇRE FRANGI"
    },
    "JPY": {
-    "alis": "30.9673",
-    "satis": "31.1724",
-    "efektif_alis": "30.8528",
-    "efektif_satis": "31.2909",
+    "alis": "30.9595",
+    "satis": "31.1645",
+    "efektif_alis": "30.8450",
+    "efektif_satis": "31.2830",
     "ad": "JAPON YENİ"
    }
   }
  },
  "altin": null,
- "alindi": "2026-10-07 14:54"
+ "alindi": "2026-10-07 16:28"
 }

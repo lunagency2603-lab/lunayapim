@@ -2,20 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "jimmy fallon",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "fikstür",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "gs barcelona",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-09-20 02:09"
@@ -2914,5 +2900,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnqGYwvkRWs7MW2cYUe2\"}",
   "zaman": "2026-10-07 14:55"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-07 16:28"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "cevdet yılmaz",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnxNe3yhSFFMSxuRu4H9\"}",
+  "zaman": "2026-10-07 16:28"
  }
 ]
