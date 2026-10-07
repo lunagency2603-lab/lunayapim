@@ -2,34 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "puan durumu",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:08"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "raphinha",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:08"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "bein sport özet",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "bolu deprem",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "jimmy fallon",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-09-20 02:09"
@@ -2900,5 +2872,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnNUgmfCy4jyH4VNZyZi\"}",
   "zaman": "2026-10-07 09:03"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-07 14:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Başkan Dutlulu açıkladı... Manisa’da 100 dönümlük alana sosyal konut p",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnqFMLPXT6emZdgyJ1g1\"}",
+  "zaman": "2026-10-07 14:54"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-07 14:55"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "mazot",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnqGYwvkRWs7MW2cYUe2\"}",
+  "zaman": "2026-10-07 14:55"
  }
 ]
