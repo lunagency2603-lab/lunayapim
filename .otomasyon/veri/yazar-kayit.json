@@ -2,20 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "Vizyondaki filmler 18-24 Eylül 2026: İşte bu hafta vizyona giren 10 film",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "Trabzonspor Galatasaray'ı 4-0 mağlup etti! Mohammed Salah hattrick yaptı! Trabzonspor-Galatasaray maçı önemli anları ve maçın özeti...",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-20 02:09"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "21 – 27 Eylül İstanbul Konser Takvimi: Bu Haftanın En Eğlenceli Konserleri ve Festivalleri",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-09-20 02:10"
@@ -2935,5 +2921,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfoXCmRK8ANdTKLRDpFc3\"}",
   "zaman": "2026-10-07 23:38"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-08 04:02"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "2026 dünya uzay haftası",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfosHc3iETL8izQtueZGV\"}",
+  "zaman": "2026-10-08 04:02"
  }
 ]
