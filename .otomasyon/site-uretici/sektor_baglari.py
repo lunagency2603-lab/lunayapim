@@ -30,7 +30,7 @@ import re
 # ana sayfa slug → (alt sayfa önek(ler)i, blok başlığı, açıklama)
 AILE = {
     "urun-animasyon": (
-        ("urun-animasyon-",),
+        ("urun-animasyon-", "animasyon-"),
         "Sektöre göre ürün animasyonu",
         "Her sektörün anlatım sorunu başka: birinde kesit, ötekinde üretim hattı, "
         "ötekinde montaj sırası konuşuyor. Aşağıdaki sayfaların her biri o sektörün "
@@ -41,6 +41,12 @@ AILE = {
         "Görseli kimin izlediği yapıya göre değişiyor: konutta alıcı, sanayide "
         "yatırımcı ve izin veren kurum, kentsel dönüşümde hak sahibi. Her tür için "
         "ayrı sayfa var."),
+    # 11.10.2026: web + SEO + sanal showroom sektör sayfaları (sektor_dijital.py)
+    "web-sitesi-tasarimi": (
+        ("sanal-showroom", "web-sitesi-", "seo-ornegi-"),
+        "Sektöre göre web sitesi, SEO ve sanal showroom",
+        "Bir inşaat firmasının sitesiyle bir mobilya mağazasının vitrini aynı soruyu cevaplamıyor. "
+        "Aşağıdaki sayfalar sektörün kendi satış sorusuna göre yazıldı; kanıtlı örnekler de burada."),
     "kisiye-ozel-baski-hediye": (
         ("baskili-", "kisiye-ozel-", "dtf-", "uv-dtf-", "magnetli-"),
         "Ürüne göre baskı ve hediye",

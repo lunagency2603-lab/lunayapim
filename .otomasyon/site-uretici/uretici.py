@@ -104,6 +104,10 @@ def yerel_veri_tam(c, anahtar):
 
 def sayfa_var(c, anahtar):
     """Bu il için o hizmetin ayrı sayfası üretiliyor mu?"""
+    # 11.10.2026: uzaktan teslim edilen hizmetlerde yalnız pilot iller (pilot_uzaktan.py)
+    from pilot_uzaktan import PILOT, UZAKTAN
+    if anahtar in UZAKTAN:
+        return c["slug"] in PILOT
     if anahtar in VERI_KOSULU:
         return yerel_veri_tam(c, anahtar)
     if c["kademe"] == 1: return True

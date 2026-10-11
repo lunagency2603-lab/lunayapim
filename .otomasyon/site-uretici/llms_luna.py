@@ -43,7 +43,7 @@ BOLUM = [
         "hizmetler/magnetli-kapak-acacagi", "hizmetler/dtf-baski", "hizmetler/uv-dtf-baski",
     ]),
     ("Yazılım ve dijital", [
-        "yazilim", "hizmetler/web-sitesi-tasarimi", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
+        "yazilim", "hizmetler/web-sitesi-tasarimi", "hizmetler/web-sitesi-saglik-denetimi", "hizmetler/seo-ornegi-aktas-prefabrik", "hizmetler/web-sitesi-insaat-ve-yapi-firmalari", "hizmetler/web-sitesi-uretici-firmalar", "hizmetler/sanal-showroom", "hizmetler/sanal-showroom-mobilya", "hizmetler/sanal-showroom-ev-tekstili-kumas", "hizmetler/sanal-showroom-otomotiv-galerisi", "hizmetler/sanal-showroom-konut-projesi", "hizmetler/sanal-showroom-seramik-banyo", "hizmetler/sanal-showroom-aydinlatma", "hizmetler/animasyon-teknik-egitim-isg", "hizmetler/animasyon-enerji-isi-sistemleri", "hizmetler/animasyon-maskot-karakter", "hizmetler/e-ticaret", "hizmetler/seo-icerik", "hizmetler/yapay-zeka-seo",
         "hizmetler/pazar-arastirmasi-otomasyon",
     ]),
     ("Reklam ve sosyal medya", [

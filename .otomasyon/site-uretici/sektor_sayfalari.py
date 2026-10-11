@@ -238,9 +238,10 @@ def _il_bloku(iller, hizmet_slug):
         return ""
     if hizmet_slug == "insaat-3d-modelleme":
         return _il_bloku_yapi(iller)
+    from pilot_uzaktan import PILOT, UZAKTAN
     bag = []
     for c in iller:
-        if c["kademe"] in (1, 2):
+        if c["kademe"] in (1, 2) and (hizmet_slug not in UZAKTAN or c["slug"] in PILOT):
             bag.append('<a href="../sehir/%s-%s">%s</a>' % (c["slug"], hizmet_slug, e(c["ad"])))
         else:
             bag.append('<a href="../sehir/%s">%s</a>' % (c["slug"], e(c["ad"])))
@@ -251,14 +252,15 @@ def _il_bloku(iller, hizmet_slug):
 
 
 def _il_bloku_yapi(iller):
+    from pilot_uzaktan import PILOT
     bag = []
     for c in iller:
-        if c["kademe"] in (1, 2):
+        if c["slug"] in PILOT:
             bag.append('<a href="../sehir/%s-insaat-3d-modelleme">%s</a>' % (c["slug"], e(c["ad"])))
         else:
             bag.append('<a href="../sehir/%s">%s</a>' % (c["slug"], e(c["ad"])))
-    return ('<h2>Hangi illerde çalışıyoruz</h2>\n<p>Konut üretiminin yoğun olduğu illerde ayrı '
-            'sayfa tuttuk; her il sayfasında o ildeki konut piyasasının kendine özgü yanını '
+    return ('<h2>Hangi illerde çalışıyoruz</h2>\n<p>Konut üretiminin en yoğun olduğu beş ilde ayrı '
+            'sayfa tuttuk; her birinde o ildeki konut piyasasının kendine özgü yanını '
             'yazdık — Nilüfer\'de manzara üzerinden satılan proje ile deprem sonrası hak sahibi '
             'sunumu aynı anlatımı kaldırmıyor. Bu yüzden görselleştirmeyi de ile göre kuruyoruz.</p>'
             '\n<p>%s</p>\n<p>Listede olmayan bir ildeyseniz de çalışıyoruz; mimari proje dijital '
