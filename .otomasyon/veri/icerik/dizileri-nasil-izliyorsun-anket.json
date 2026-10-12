@@ -1,0 +1,31 @@
+{
+  "tur": "anket",
+  "slug": "dizileri-nasil-izliyorsun-anket",
+  "tarih": "2026-10-12",
+  "kat": "ekran",
+  "baslik": "Dizileri nasıl izliyorsun?",
+  "meta": "Yayın akşamı televizyon mu, ertesi gün dijital platform mu, sezon sonu toplu izleme mi? RTÜK ve TÜİK verilerinin ardından oyunu sen ver.",
+  "giris": "Türkiye'de televizyon hâlâ günde saatlerce açık kalıyor, ama dizinin izlendiği saat ve ekran giderek dağılıyor. Resmî araştırmaların söylediklerini aşağıda topladık; şimdi senin alışkanlığını merak ediyoruz.",
+  "kapak": {"emoji": "📺"},
+  "soru": "Dizileri en çok nasıl izliyorsun?",
+  "secenekler": [
+    "Yayın akşamı televizyondan",
+    "Ertesi gün dijital platformdan ya da internetten",
+    "Sezon bitince toplu halde",
+    "Kısa videolardan ve özetlerden takip ediyorum",
+    "Dizi izlemiyorum"
+  ],
+  "baglam": [
+    "RTÜK'ün Ağustos 2026'da açıklanan Medyametre Medya Kullanım Alışkanlıkları Araştırması-2025, 26 ilde 20.200 kişiyle yüz yüze yapıldı. Sonuca göre televizyon başında günde ortalama 3 saat 40 dakika geçiyor. Bir önceki yılın araştırmasında bu süre 3 saat 43 dakikaydı. O çalışmada kadınlar günde 4 saat 2 dakika, erkekler 3 saat 25 dakika, 65 yaş üstü izleyiciler ise 5 saat 16 dakika televizyon izliyordu. Dizi ve film, katılımcıların yüzde 85,7'sinin izlediği türdü ve yalnızca haberin (yüzde 89,3) gerisinde kalıyordu.",
+    "Gençlerde tablo bambaşka. RTÜK'ün 15-21 yaş arasındaki 7.511 gençle yaptığı Gençlerin Medya Kullanımı ve Dijital Okuryazarlık Araştırması'na göre bu yaş grubunda günlük televizyon izleme süresi 2022'de 1 saat 40 dakikayken 2025'te 40 dakikaya indi. Aynı dönemde son bir ayda isteğe bağlı yayın platformu kullananların oranı yaklaşık yüzde 40'tan yüzde 65'e çıktı. Gençlerin yalnızca yüzde 10,1'i televizyonu her gün izliyor.",
+    "Ekranın kendisi de değişiyor. TÜİK'in 5 Ağustos 2026'da açıkladığı Hanehalkı Bilişim Teknolojileri Kullanım Araştırması'na göre 16-74 yaş grubunda internet kullanımı yüzde 92,3'e ulaştı. İnternete bağlı cihazlar arasında ilk sırada yüzde 62 ile internet bağlantılı televizyonlar yer aldı; YouTube'u kullananların oranı da yüzde 77,6.",
+    "Bu rakamlar ne kadar izlediğimizi gösteriyor ama nasıl izlediğimizi pek anlatmıyor. Aynı dizi bir evde yayın akşamı reklam aralarıyla, başka bir evde üç ay sonra tek hafta sonunda bitiriliyor. Senin yöntemin hangisi?"
+  ],
+  "kaynaklar": [
+    {"ad": "RTÜK, Medyametre 2025 (CNBC-e, Bengütürk, Nefes haberleri)", "not": "Günlük ortalama TV süresi 3 saat 40 dakika; 26 il, 20.200 katılımcı, yüz yüze; 13 Ağustos 2026'da haberleşti"},
+    {"ad": "RTÜK, Medyametre 2024 (CNBC-e)", "not": "Günlük ortalama 3 saat 43 dakika; kadın 4 sa 2 dk, erkek 3 sa 25 dk, 65+ 5 sa 16 dk; dizi-film izleme yüzde 85,7, haber yüzde 89,3"},
+    {"ad": "RTÜK, Gençlerin Medya Kullanımı ve Dijital Okuryazarlık Araştırması (Diken, Bengütürk)", "not": "15-21 yaş, 7.511 genç; TV 2022'de 1 sa 40 dk, 2025'te 40 dk; isteğe bağlı platform son ay yüzde 65 (2022 yaklaşık yüzde 40); günlük TV izleyen yüzde 10,1"},
+    {"ad": "TÜİK, Hanehalkı Bilişim Teknolojileri Kullanım Araştırması 2026 (Karar, Takvim)", "not": "İnternet kullanımı yüzde 92,3; internet bağlantılı TV yüzde 62 ile ilk sırada; YouTube yüzde 77,6; 5 Ağustos 2026"}
+  ],
+  "editor_notu": "Anket sonuçları okur oylarını gösterir, bilimsel bir örneklem değildir."
+}

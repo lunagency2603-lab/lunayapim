@@ -307,6 +307,68 @@ def _aralik_metni(t):
     return "%s – %s" % (t[0], t[1])
 
 
+# 12.10.2026 — 12 yükselen sayfası metnin yarısını paylaşıyordu. Her burca özgü iki katman eklendi:
+# (1) hesaptan çıkan veri (süre sırası, gün içindeki payı, gündüz/gece ayları, alçalan burç),
+# (2) geleneğin o burçta yükselene yüklediği anlam — bilimsel iddia olarak değil, gelenek olarak.
+YONETICI = {"koc": "Mars", "boga": "Venüs", "ikizler": "Merkür", "yengec": "Ay", "aslan": "Güneş",
+            "basak": "Merkür", "terazi": "Venüs", "akrep": "Mars (modern astrolojide Plüton)",
+            "yay": "Jüpiter", "oglak": "Satürn", "kova": "Satürn (modern astrolojide Uranüs)",
+            "balik": "Jüpiter (modern astrolojide Neptün)"}
+NITELIK = {"koc": "öncü", "yengec": "öncü", "terazi": "öncü", "oglak": "öncü",
+           "boga": "sabit", "aslan": "sabit", "akrep": "sabit", "kova": "sabit",
+           "ikizler": "değişken", "basak": "değişken", "yay": "değişken", "balik": "değişken"}
+YUKSELEN_GELENEK = {
+    "koc": "Gelenekte yükselen Koç, ilk izlenimde hızlı ve doğrudan biri olarak anlatılır: bir odaya girdiğinde ilk sözü alan, karar vermek için uzun düşünmeyen. Harita yöneticisi Mars olduğu için, Mars'ın haritadaki yeri bu kişinin enerjisini nereye harcadığının ipucu sayılır. Eski metinler bu yükseleni başlangıçlarla eşler; yarım kalan işler ise aynı metinlerde zayıf taraf olarak geçer.",
+    "boga": "Yükselen Boğa geleneğin en sakin ilk izlenimlerinden biridir: acele etmeyen, rahat ve güven veren bir duruş. Yöneticisi Venüs olduğu için dış görünüşe, sese ve dokunulan şeylerin kalitesine önem verdiği söylenir. Astroloji metinleri bu yükseleni sabit nitelikle ilişkilendirir; kolay fikir değiştirmeyen, bir kez başladığını bitiren biri olarak tarif eder.",
+    "ikizler": "Yükselen İkizler gelenekte meraklı, konuşkan ve hareketli bir ilk izlenimle anlatılır. Yöneticisi Merkür olduğu için dil, yazı ve öğrenme bu yükselenin anahtar kelimeleri sayılır. Değişken nitelikte olduğundan aynı anda birkaç işi yürütme eğilimi ve odak dağınıklığı birlikte anılır; eski kaynaklarda genç görünen yüz de bu yükselene yakıştırılır.",
+    "yengec": "Yükselen Yengeç, dışarıya korunaklı ama yakın çevresine sıcak biri olarak yorumlanır. Harita yöneticisi Ay'dır; Ay hızlı yer değiştirdiği için gelenek bu yükseleni ruh hâli değişken, sezgisi güçlü biri olarak tarif eder. Ev, aile ve geçmişle bağ bu yükselenin metinlerde en sık geçen temalarıdır.",
+    "aslan": "Yükselen Aslan gelenekte görünür olmayı seven, duruşuyla dikkat çeken bir ilk izlenimle anlatılır. Yöneticisi Güneş olan tek yükselendir; bu yüzden Güneş'in haritadaki yeri hem temel eğilimi hem dışa dönük yüzü belirler diye yorumlanır. Cömertlik ve sahne isteği güçlü taraf, takdir görmemeye karşı hassasiyet zayıf taraf olarak geçer.",
+    "basak": "Yükselen Başak, ayrıntıya dikkat eden, düzenli ve ölçülü biri olarak yorumlanır. Yöneticisi Merkür'dür; ama İkizler'deki konuşkan Merkür'ün aksine burada çözümleyen, düzelten bir Merkür anlatılır. Gelenek bu yükseleni sağlık, iş düzeni ve yararlı olma isteğiyle ilişkilendirir; aşırı eleştirellik zayıf taraf sayılır.",
+    "terazi": "Yükselen Terazi gelenekte nazik, uzlaşmacı ve görünüşüne özen gösteren bir ilk izlenimle anlatılır. Yöneticisi Venüs'tür; Boğa'daki dokunsal Venüs'ün yerine burada ilişki ve denge arayan bir Venüs yorumlanır. Karar vermekte zorlanma, iki tarafı da haklı bulma eğilimi bu yükselenin metinlerde en sık anılan zayıf tarafıdır.",
+    "akrep": "Yükselen Akrep, mesafeli ve yoğun bir ilk izlenimle anlatılır: az konuşan ama çok gözlemleyen biri. Geleneksel yöneticisi Mars'tır; modern astroloji buna Plüton'u ekler. Gizlilik, sadakat ve derinlik bu yükselenin anahtar kelimeleri sayılır; kıskançlık ve güvenmekte zorlanma aynı metinlerde zayıf taraf olarak geçer.",
+    "yay": "Yükselen Yay gelenekte açık sözlü, iyimser ve yolculuğu seven bir ilk izlenimle anlatılır. Yöneticisi Jüpiter olduğu için öğrenme, inanç ve uzak yerler bu yükselenin temaları sayılır. Eski metinler bu yükseleni bağımsızlığına düşkün biri olarak tarif eder; düşünmeden söz verme eğilimi zayıf taraf olarak anılır.",
+    "oglak": "Yükselen Oğlak, ciddi, sorumluluk alan ve yaşından olgun görünen biri olarak yorumlanır. Yöneticisi Satürn'dür; gelenekte Satürn sınır, zaman ve emekle eşlendiği için bu yükselen geç ama kalıcı başarıyla anlatılır. Duygularını göstermekte çekingenlik ve aşırı temkin metinlerde zayıf taraf olarak geçer.",
+    "kova": "Yükselen Kova gelenekte bağımsız, alışılmışın dışında düşünen ve arkadaşlığa önem veren bir ilk izlenimle anlatılır. Geleneksel yöneticisi Satürn'dür; modern astroloji Uranüs'ü ekler. Bu ikili yüzden yükselen hem kurallara hem yeniliğe yatkın diye yorumlanır; duygusal mesafe zayıf taraf olarak anılır.",
+    "balik": "Yükselen Balık, yumuşak, hayalperest ve çevresindeki havayı çabuk kapan biri olarak yorumlanır. Geleneksel yöneticisi Jüpiter'dir; modern astroloji Neptün'ü ekler. Sanat, sezgi ve yardımseverlik bu yükselenin anahtar kelimeleri sayılır; sınır koymakta zorlanma metinlerde en sık geçen zayıf taraftır.",
+}
+
+
+def _dk(hhmm):
+    h, m = hhmm.split(":")
+    return int(h) * 60 + int(m)
+
+
+def _yukselen_ozgun(i, tablo):
+    """Burca özgü hesap cümleleri: süre sırası, gün içi pay, gündüz/gece ayları, sabah/akşam ayı."""
+    # ortanca: gün sonunda burcun ikinci kez başlaması bazı aylarda süreyi birkaç dakika şişirir
+    ort = {k: sorted(s[1]["Ankara"][2] for s in tablo[k])[6] for k in range(12)}
+    # Türkiye enleminde süreler karşılıklı çiftler hâlinde eşittir (Koç=Balık, Boğa=Kova, ...):
+    # 1 en kısa çift, 6 en uzun çift (Aslan–Akrep; Başak–Terazi bir iki dakika geride)
+    cift = {0: 1, 11: 1, 1: 2, 10: 2, 2: 3, 9: 3, 3: 4, 8: 4, 5: 5, 6: 5, 4: 6, 7: 6}
+    sira = cift[i]
+    pay = ort[i] / 1440.0 * 100
+    gunduz, gece, sabah, aksam = [], [], None, None
+    for ay_ad, v in tablo[i]:
+        a, z = _dk(v["Ankara"][0]), _dk(v["Ankara"][1])
+        orta = (a + ((z - a) % 1440) // 2) % 1440
+        if 8 * 60 <= orta <= 17 * 60:
+            gunduz.append(ay_ad)
+        elif orta >= 21 * 60 or orta <= 4 * 60:
+            gece.append(ay_ad)
+        uzak6 = min(abs(a - 360), 1440 - abs(a - 360))
+        uzak18 = min(abs(a - 1080), 1440 - abs(a - 1080))
+        if sabah is None or uzak6 < sabah[0]:
+            sabah = (uzak6, ay_ad, v["Ankara"][0])
+        if aksam is None or uzak18 < aksam[0]:
+            aksam = (uzak18, ay_ad, v["Ankara"][0])
+    return {"sira": sira, "pay": pay, "gunduz": gunduz, "gece": gece, "sabah": sabah, "aksam": aksam,
+            "ort": ort[i]}
+
+
+def _liste_tr(x):
+    return x[0] if len(x) == 1 else ", ".join(x[:-1]) + " ve " + x[-1]
+
+
 def yukselen_burc_html(i, tablo=None):
     import datetime
     ad, zs = BURCLAR[i]
@@ -321,6 +383,7 @@ def yukselen_burc_html(i, tablo=None):
               "".join("<tr><td>%s</td>%s</tr>" % (_e(ay_ad), "".join("<td>%s</td>" % _aralik_metni(v[s]) for s, _a, _b in YUKSELEN_SEHIR))
                       for ay_ad, v in satirlar)))
     kisa_mi = en_uzun < 100
+    oz = _yukselen_ozgun(i, tablo)
     govde = """
 <section class="ts-giris">
   <h2>Yükselen %(ad)s saat kaçta?</h2>
@@ -337,17 +400,25 @@ def yukselen_burc_html(i, tablo=None):
 dakika hesaplandı ve 5 dakikaya yuvarlandı. Ayın başında saatler yaklaşık bir saat daha geç, ayın
 sonunda bir saat daha erkendir. Aralığın sınırına yakın bir saatte doğduysanız tam sonucu
 <a href="yukselen-burc-hesaplama">yükselen burç hesaplama</a> aracından alın.</p>
+<p>Tabloda İstanbul, Ankara ve İzmir var; doğuya gidildikçe saatler erkene kayar (Van'da İstanbul'a
+göre bir saate yakın). Başka bir ilde doğduysanız ya da saatiniz kesin değilse
+<a href="yukselen-burc-hesaplama">hesaplama sayfası</a> ilinize göre tam sonucu verir.</p>
 <section class="ts-giris">
-  <h2>Şehre göre neden farklı?</h2>
-  <p>Türkiye tek saat dilimini kullanır ama güneş ve yıldızlar doğuda daha erken doğar. İstanbul ile
-  Ankara arasında yaklaşık 15 dakika fark vardır; Van ya da Hakkâri gibi doğu illerinde yükselen
-  İstanbul'a göre bir saate yakın erken gelir. Enlem de sürenin uzunluğunu biraz değiştirir.</p>
-  <h2>Doğum saatim yoksa yükselen %(ad)s olup olmadığımı bilebilir miyim?</h2>
-  <p>Kesin olarak hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati olmadan
-  hesaplanamaz. Doğum saati nüfus kayıt örneğinde yer alır ve e-Devlet üzerinden alınabilir.</p>
+  <h2>Yükselen %(ad)s hesapta nasıl görünüyor?</h2>
+  <p>Ankara'da yükselen %(ad)s günde ortalama %(ort)d dakika ufukta kalır; 12 burç içinde bu süre
+  %(sira_metni)s. Doğum saatleri güne eşit dağılsaydı, Ankara'da doğanların yaklaşık
+  <strong>%%%(pay)s</strong> kadarının yükseleni %(ad)s olurdu.%(pay_notu)s</p>
+  <p>Yükselen %(ad)s, %(sabah_ay)s ayının ortasında sabah %(sabah_saat)s civarında, %(aksam_ay)s ayının
+  ortasında akşam %(aksam_saat)s civarında doğmaya başlar. %(gunduz_metni)s %(gece_metni)s</p>
+  <p>Karşı noktadaki burç, yani alçalan, %(alcalan)s burcudur: yükseleni %(ad)s olan her haritada
+  yedinci evin başında %(alcalan)s durur.</p>
+</section>
+<section class="ts-giris">
   <h2>Yükselen %(ad)s ne anlama gelir?</h2>
   <p>Astroloji geleneğinde yükselen, kişinin dışarıya dönük yüzü ve ilk izlenimi olarak yorumlanır.
-  %(ad)s burcunun gelenekte atfedilen özellikleri <a href="%(zs)s-burcu-ozellikleri">%(ad)s burcu
+  %(ad)s %(element)s grubunda, %(nitelik)s nitelikte bir burçtur; yöneticisi %(yonetici)s.</p>
+  <p>%(gelenek)s</p>
+  <p>%(ad)s burcunun gelenekte atfedilen genel özellikleri <a href="%(zs)s-burcu-ozellikleri">%(ad)s burcu
   sayfasında</a>. Bu yorumlar astrolojinin kendi anlatısıdır; kişiliği ölçen bilimsel bir yöntem
   değildir.</p>
 </section>
@@ -360,6 +431,29 @@ sonunda bir saat daha erkendir. Aralığın sınırına yakın bir saatte doğdu
         "sure_notu": (" Kısa yükselen burçlardan biridir: gökyüzünde ufka eğik geldiği için hızlı geçer."
                       if kisa_mi else ""),
         "tablo": tbl,
+        "ort": round(oz["ort"]),
+        "sira_metni": {1: "en kısa iki yükselenden birine ait; diğeri %s",
+                       2: "kısa yükselenler arasında, Koç ve Balık'tan sonra en kısa süren çifttir; eşi %s",
+                       3: "ortalamanın biraz altında kalır; aynı süreyi paylaştığı burç %s",
+                       4: "uzun yükselenler arasındadır; aynı süreyi paylaştığı burç %s",
+                       5: "en uzunlar arasındadır, Aslan ve Akrep'in yalnızca bir iki dakika gerisinde; eşi %s",
+                       6: "Türkiye'nin enleminde en uzun iki yükselenden birine ait; diğeri %s"}[oz["sira"]]
+                      % _e(BURCLAR[11 - i][0]),
+        "pay": ("%.1f" % oz["pay"]).replace(".", ","),
+        "pay_notu": (" Bu yüzden yükseleni %s olan biriyle karşılaşmak, yükseleni Aslan ya da Akrep olan biriyle karşılaşmaktan yaklaşık iki kat daha seyrektir." % _e(ad) if oz["sira"] == 1 else
+                     " Bu yüzden yükseleni %s olan biriyle karşılaşmak, yükseleni Aslan ya da Akrep olan biriyle karşılaşmaktan daha seyrektir." % _e(ad)
+                     if oz["sira"] <= 2 else
+                     " Bu yüzden yükseleni %s olan biriyle karşılaşmak, yükseleni Koç ya da Balık olan biriyle karşılaşmaktan daha olasıdır." % _e(ad)
+                     if oz["sira"] >= 5 else ""),
+        "sabah_ay": oz["sabah"][1], "sabah_saat": oz["sabah"][2],
+        "aksam_ay": oz["aksam"][1], "aksam_saat": oz["aksam"][2],
+        "gunduz_metni": ("%s aylarında gündüz, 08:00 ile 17:00 arasında yükselir." % _liste_tr(oz["gunduz"])
+                         if oz["gunduz"] else ""),
+        "gece_metni": ("%s aylarında ise gece, 21:00 ile 04:00 arasında." % _liste_tr(oz["gece"])
+                       if oz["gece"] else ""),
+        "alcalan": _e(BURCLAR[(i + 6) % 12][0]),
+        "element": ELEMENT_AD[ELEMENT[zs]].lower(), "nitelik": NITELIK[zs], "yonetici": _e(YONETICI[zs]),
+        "gelenek": _e(YUKSELEN_GELENEK[zs]),
         "diger": " · ".join('<a href="yukselen-%s">Yükselen %s</a>' % (z2, _e(a2))
                            for a2, z2 in BURCLAR if z2 != zs),
     }
@@ -370,7 +464,9 @@ sonunda bir saat daha erkendir. Aralığın sınırına yakın bir saatte doğdu
         ("Yükselen %s ne kadar sürer?" % ad,
          "Ankara'da günde %d ile %d dakika arasında; burç ufka hangi açıyla geldiğine göre değişir." % (en_kisa, en_uzun)),
         ("Doğum saati olmadan yükselen hesaplanır mı?",
-         "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati gerekir; saat nüfus kayıt örneğinde yazar."),
+         "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati gerekir; saat doğum belgesinde yazar, belge yoksa CİMER üzerinden bilgi edinme başvurusuyla istenebilir."),
+        ("Yükselen %s olanın alçalanı hangi burç?" % ad,
+         "%s. Yükselen ile alçalan her zaman karşı burçlardır; alçalan yedinci evin başıdır ve gelenekte ortaklık ve evlilikle ilişkilendirilir." % BURCLAR[(i + 6) % 12][0]),
     ]
     return _sayfa(
         "yukselen-" + zs,
@@ -428,9 +524,16 @@ def yukselen_html():
   eklenerek yerel yıldız zamanı bulunur. Ufuk ile ekliptiğin kesiştiği nokta, ekliptik eğikliği
   ve enlem kullanılarak çözülür. Sonuç, yükselenin hangi burçta ve kaçıncı derecede olduğudur.</p>
   <h2>Doğum saatimi bilmiyorsam?</h2>
-  <p>Yükselen saat olmadan hesaplanamaz. Doğum saati nüfus kayıt örneğinde ya da doğum belgesinde
-  yer alır; e-Devlet üzerinden nüfus kayıt örneği alınabilir. Yaklaşık bir saat girerseniz sonuç
-  da yaklaşık olur.</p>
+  <p>Yükselen saat olmadan hesaplanamaz. Doğum saati doğum belgesinde, yani doğumun yapıldığı
+  hastanenin kaydında yazar. Belge elinizde değilse CİMER'in bilgi edinme bölümünden İçişleri
+  Bakanlığı'na başvurup doğum saatinizi isteyebilirsiniz. Yaklaşık bir saat girerseniz sonuç da
+  yaklaşık olur; aşağıdaki "saatim kesin değil" bölümü bu durumda ne yapılacağını anlatır.</p>
+  <h2>Saatim kesin değil, ne yapmalıyım?</h2>
+  <p>Aileden duyulan "sabaha karşı" ya da "öğlene doğru" gibi bir bilgi varsa, o aralığın başını ve
+  sonunu ayrı ayrı girin. İki sonuç aynı burcu veriyorsa yükseleniniz büyük olasılıkla odur.
+  Farklı burç çıkıyorsa aralık bir burç sınırından geçiyordur; aşağıdaki tablodan sınırın hangi
+  saate düştüğünü görebilirsiniz. Saat yalnızca "yarım saat kadar" belirsizse çoğu durumda sonuç
+  değişmez; çünkü bir burç Türkiye'de günde 1 ile 3 saat arasında ufukta kalır.</p>
   <h2>Yükselen ile güneş burcu arasındaki fark</h2>
   <p>Güneş burcu, doğduğunuz gün Güneş'in hangi zodyak diliminde olduğunu söyler. Aynı gün doğan
   herkesin güneş burcu aynıdır. Yükselen ise saat ve yere bağlı olduğu için aynı gün doğan iki
@@ -455,7 +558,7 @@ bulur — bu konumun insan karakteriyle ilişkisi astrolojinin kendi yorumudur.<
     anlatim = yukselen_bu_ay_html() + anlatim
     sss = [
         ("Yükselen burç saat aralıkları nelerdir?", "Her burç günde bir kez yükselir; sırası Koç, Boğa, İkizler diye devam eder. Hangi saatte hangi burcun yükseldiği aya ve şehre göre değişir; bu ayın tablosu sayfada, her burcun 12 aylık saatleri kendi sayfasında."),
-        ("Doğum saati olmadan yükselen burç hesaplanır mı?", "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati olmadan bulunamaz. Doğum saati nüfus kayıt örneğinde yazar; e-Devlet'ten alınabilir."),
+        ("Doğum saati olmadan yükselen burç hesaplanır mı?", "Hayır. Yükselen yaklaşık iki saatte bir değiştiği için doğum saati olmadan bulunamaz. Doğum saati doğum belgesinde yazar; belge yoksa CİMER üzerinden bilgi edinme başvurusuyla istenebilir."),
         ("Yükselen burç nasıl hesaplanır?", "Doğum tarihi, saati ve yerinin koordinatları kullanılarak, doğum anında doğu ufkunda yükselen zodyak derecesi bulunur. Hesap yıldız zamanı, ekliptik eğikliği ve enlem üzerinden yapılır."),
         ("Yükselen kaç saatte bir değişir?", "Ortalama iki saatte bir. Yıl içinde ve enleme göre bu süre bir miktar değişir."),
         ("Doğum saatim yanlışsa ne olur?", "Dört dakikalık hata yaklaşık bir derecelik kayma yaratır. Burç sınırına yakın doğumlarda yükselen komşu burca kayabilir."),
@@ -1147,8 +1250,8 @@ def dogum_haritasi_html():
   farklı eve koyabilir. Burada tek ve açık bir yöntem tercih edildi.</p>
   <h2>Doğum saatimi bilmiyorsam?</h2>
   <p>Saat olmadan yükselen ve evler hesaplanamaz; Güneş ile yavaş gezegenler yine doğru çıkar
-  ama Ay gün içinde yarım burç yol alabilir. Doğum saati nüfus kayıt örneğinde ya da doğum
-  belgesinde yazar; nüfus kayıt örneği e-Devlet üzerinden alınabilir.</p>
+  ama Ay gün içinde yarım burç yol alabilir. Doğum saati doğum belgesinde (hastane kaydında)
+  yazar; belge yoksa CİMER'in bilgi edinme bölümünden İçişleri Bakanlığı'na başvurulabilir.</p>
   <h2>Bilgilerim nereye gidiyor?</h2>
   <p>Hiçbir yere. Hesabın tamamı sayfanın içinde, tarayıcınızda yapılır. Doğum tarihiniz,
   saatiniz ve iliniz sunucuya gönderilmez, kaydedilmez, çerez olarak tutulmaz. Sayfayı

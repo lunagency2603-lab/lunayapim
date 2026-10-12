@@ -41,7 +41,7 @@ def _maddeler(kok):
 
 
 def _u(m, tr=""):
-    if m["tur"] in ("haber", "rehber"):
+    if m["tur"] in ("haber", "rehber", "bicim"):
         return tr + m["slug"]
     if m["tur"] == "sayfa":
         return tr + m["url"]
@@ -200,8 +200,12 @@ def yayinla(kok=None):
     html = bulten_html(kok)
     if not html:
         return {"bulten": "madde yok"}
+    # 12.10.2026: bülten günlük arama listelerinin tekrarıydı (AdSense "düşük değerli içerik").
+    # Okur için durur, dizine girmez, site haritasına eklenmez; ana sayfadan bağlanmaz.
+    html = html.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<meta name="robots" content="noindex, follow">', 1)
     yol = os.path.join(kok, "trend", SLUG + ".html")
     io.open(yol, "w", encoding="utf-8").write(html)
+    return {"bulten": SLUG, "madde": html.count('class="bl-slayt"'), "dizin": "noindex"}
     # sitemap
     y = os.path.join(kok, "sitemap.xml")
     try:

@@ -1,0 +1,197 @@
+{
+ "tur": "bilgi",
+ "slug": "90lar-turkce-pop-testi",
+ "tarih": "2026-10-12",
+ "kat": "muzik",
+ "baslik": "90'lar Türkçe pop testi: Kaset dönemini ne kadar hatırlıyorsun?",
+ "meta": "Şımarık hangi albümdeydi, Dinle Eurovision'da kaçıncı oldu? 90'lar Türkçe popunu ne kadar hatırladığını on soruluk bu testte sına.",
+ "giris": "Kasetçalarların, walkman'lerin ve video klip kuşaklarının on yılıydı 90'lar. Türkçe pop o yıllarda hem çok sattı hem de sınırın dışına taştı. Aşağıdaki on soru albüm adlarından çıkış yıllarına, oradan da Eurovision'a uzanıyor; bakalım hafızan kaset kadar sağlam mı.",
+ "kapak": {
+  "emoji": "📼"
+ },
+ "sorular": [
+  {
+   "soru": "Tarkan'ın \"Şımarık\" şarkısı ilk kez hangi albümünde yer aldı?",
+   "secenekler": [
+    "Aacayipsin",
+    "Ölürüm Sana",
+    "Karma",
+    "Yine Sensiz"
+   ],
+   "dogru": 1,
+   "aciklama": "\"Şımarık\", 15 Temmuz 1997'de İstanbul Plak etiketiyle çıkan Ölürüm Sana'nın ilk şarkısı ve albümün ilk klibiydi. Albümün düzenlemelerini Ozan Çolakoğlu üstlenmişti."
+  },
+  {
+   "soru": "\"Şımarık\"ın sözlerini kim yazdı?",
+   "secenekler": [
+    "Nazan Öncel",
+    "Ozan Çolakoğlu",
+    "Yıldız Tilbe",
+    "Sezen Aksu"
+   ],
+   "dogru": 3,
+   "aciklama": "Sözler Sezen Aksu'ya ait; besteyi Sezen Aksu ile Tarkan birlikte yaptı. Ozan Çolakoğlu ise albümün aranjörüydü."
+  },
+  {
+   "soru": "1999'da \"Şıkıdım\" adıyla tekli olarak yayımlanan Tarkan şarkısının, 1994 tarihli albümdeki asıl adı nedir?",
+   "secenekler": [
+    "Hepsi Senin mi?",
+    "Kış Güneşi",
+    "Unutmamalı",
+    "Dön Bebeğim"
+   ],
+   "dogru": 0,
+   "aciklama": "Şarkı, 1994'te çıkan Aacayipsin albümünün açılış parçası \"Hepsi Senin mi?\". Diğer üç şık da aynı albümden; üstelik \"Unutmamalı\" ve \"Kış Güneşi\" de listelerde bir numaraya çıkmıştı."
+  },
+  {
+   "soru": "Şebnem Paker ve Grup Etnic, 1997 Eurovision Şarkı Yarışması'nda \"Dinle\" ile kaçıncı oldu?",
+   "secenekler": [
+    "Birinci",
+    "On ikinci",
+    "Üçüncü",
+    "Sekizinci"
+   ],
+   "dogru": 2,
+   "aciklama": "\"Dinle\" 121 puanla üçüncü oldu. Bu sıralama, Türkiye'nin o güne kadar yarışmada elde ettiği en iyi dereceydi."
+  },
+  {
+   "soru": "Mustafa Sandal'ın Temmuz 1994'te çıkan ilk albümünün adı ne?",
+   "secenekler": [
+    "Detay",
+    "Gölgede Aynı",
+    "Akışına Bırak",
+    "Suç Bende"
+   ],
+   "dogru": 3,
+   "aciklama": "İlk albüm Suç Bende'ydi. Gölgede Aynı 1996'da, Detay 1998'de, Akışına Bırak ise 2000'de geldi."
+  },
+  {
+   "soru": "Levent Yüksel'in 1993'te yayımlanan ilk albümü hangisi?",
+   "secenekler": [
+    "Med Cezir",
+    "Adı Menekşe",
+    "Aşkla",
+    "Uslanmadım"
+   ],
+   "dogru": 0,
+   "aciklama": "Levent Yüksel diskografisine 1993'te Med Cezir ile başladı. Adı Menekşe 1998, Aşkla 2000, Uslanmadım 2004 tarihli."
+  },
+  {
+   "soru": "1995'te \"Her Gece\" şarkısıyla adını duyuran sanatçı kim?",
+   "secenekler": [
+    "Kenan Doğulu",
+    "Mirkelam",
+    "Levent Yüksel",
+    "Mustafa Sandal"
+   ],
+   "dogru": 1,
+   "aciklama": "\"Her Gece\", Mirkelam'ın İstanbul Plak'tan çıkan 1995 tarihli ilk albümünde yer aldı ve onu bir anda tanınır yaptı. Diğer üç isim ilk albümlerini 1993–1994'te çıkarmıştı."
+  },
+  {
+   "soru": "Kenan Doğulu'nun 8 Temmuz 1993'te çıkan ilk albümünün adı ne?",
+   "secenekler": [
+    "Ex Aşkım",
+    "Festival",
+    "Yaparım Bilirsin",
+    "Demedi Deme"
+   ],
+   "dogru": 2,
+   "aciklama": "İlk albüm Yaparım Bilirsin'di; ardından 1994'te Sımsıkı Sıkı Sıkı geldi. Ex Aşkım 2001, Demedi Deme 2003, Festival 2006 tarihli."
+  },
+  {
+   "soru": "Sertab Erener'in ilk albümü \"Sakin Ol!\" hangi yıl çıktı?",
+   "secenekler": [
+    "1989",
+    "1992",
+    "1996",
+    "1999"
+   ],
+   "dogru": 1,
+   "aciklama": "Sakin Ol! 1992'de yayımlandı; onu 1994'te Lâ'l ve 1997'de Sertab Gibi izledi. Sertab Erener 2003'te \"Everyway That I Can\" ile Türkiye'ye ilk Eurovision birinciliğini getirecekti."
+  },
+  {
+   "soru": "Sezen Aksu'nun, Türk halk müziği tarzlarıyla yoğrulmuş albümü \"Işık Doğudan Yükselir\" hangi yıl çıktı?",
+   "secenekler": [
+    "1991",
+    "1998",
+    "2002",
+    "1995"
+   ],
+   "dogru": 3,
+   "aciklama": "Albüm 28 Haziran 1995'te Foneks etiketiyle yayımlandı. Sanatçının işinde, farklı halk müziği tarzlarına açıkça yöneldiği bir dönemeç olarak anılır."
+  }
+ ],
+ "derece": [
+  {
+   "min": 0,
+   "baslik": "Kaset bandı biraz dolanmış",
+   "metin": [
+    "Sorun yok, kurşun kalemle sarıp yeniden dinleriz. Ölürüm Sana ile Aacayipsin'i bir kez baştan sona çalarsan bir sonraki denemede puanın şaşırtıcı biçimde yükselecek."
+   ]
+  },
+  {
+   "min": 40,
+   "baslik": "Radyoda denk gelince eşlik edenlerden",
+   "metin": [
+    "Nakaratlar sende, albüm adları biraz bulanık. Bu, 90'ları yaşamış çoğu kişinin profili; albüm kapaklarına bir göz atman yeter."
+   ]
+  },
+  {
+   "min": 70,
+   "baslik": "Müzik kanalı müdavimi",
+   "metin": [
+    "Klip listelerini takip ettiğin belli. Hangi şarkının hangi albümden çıktığını çoğunlukla biliyorsun; birkaç yıl karışmışsa kimse seni suçlamaz."
+   ]
+  },
+  {
+   "min": 90,
+   "baslik": "Kaset raflarının arşivcisi",
+   "metin": [
+    "Albüm, yıl, söz yazarı... Hepsi yerli yerinde. Bir 90'lar partisinde çalma listesini sana bırakmak en doğru karar olur."
+   ]
+  }
+ ],
+ "kaynaklar": [
+  {
+   "ad": "Wikipedia (EN) – Ölürüm Sana (album)",
+   "not": "S1–S2: Şımarık'ın albümü, çıkış tarihi, söz/beste ve aranjör bilgisi"
+  },
+  {
+   "ad": "Wikipedia (EN) – Aacayipsin",
+   "not": "S3: Hepsi Senin mi?'nin 1999'da Şıkıdım adıyla tekli çıkışı, albüm şarkı listesi"
+  },
+  {
+   "ad": "Wikipedia (EN) – Tarkan discography",
+   "not": "S1, S3: Tarkan albümlerinin yılları"
+  },
+  {
+   "ad": "Wikipedia (EN) – Turkey in the Eurovision Song Contest 1997",
+   "not": "S4: Dinle'nin 121 puanla üçüncülüğü"
+  },
+  {
+   "ad": "Wikipedia (EN) – Mustafa Sandal",
+   "not": "S5: Suç Bende (Temmuz 1994) ve sonraki albümlerin yılları"
+  },
+  {
+   "ad": "Wikipedia (EN) – Levent Yüksel",
+   "not": "S6: Med Cezir (1993) ve diğer albüm yılları"
+  },
+  {
+   "ad": "Wikipedia (EN) – Mirkelam",
+   "not": "S7: Her Gece'nin yer aldığı 1995 tarihli ilk albüm"
+  },
+  {
+   "ad": "Wikipedia (EN) – Kenan Doğulu",
+   "not": "S8: Yaparım Bilirsin (8 Temmuz 1993) ve albüm yılları"
+  },
+  {
+   "ad": "Wikipedia (EN) – Sertab Erener",
+   "not": "S9: Sakin Ol! (1992), sonraki albümler ve 2003 Eurovision birinciliği"
+  },
+  {
+   "ad": "Wikipedia (EN) – Işık Doğudan Yükselir",
+   "not": "S10: Çıkış tarihi (28 Haziran 1995), Foneks etiketi, halk müziği yönelimi"
+  }
+ ],
+ "editor_notu": "Sorular albüm künyelerine dayanır; tekli ve derleme yayınlar ayrıca belirtilmiştir."
+}

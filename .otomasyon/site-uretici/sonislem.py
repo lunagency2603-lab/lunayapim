@@ -172,6 +172,10 @@ def reklam_izinli(s, p=""):
         return False
     if re.search(r'name="robots" content="[^"]*noindex', s):
         return False
+    # 12.10.2026: editör onayından geçmemiş yazı reklam taşımaz (AdSense: insan incelemesi
+    # olmayan otomatik içerik). Araç, bölüm ve kurumsal sayfalarda bu etiket yoktur.
+    if re.search(r'name="ts-editor" content="(?:inceleme|taslak)"', s):
+        return False
     return _oz_kelime(s) >= ADSENSE_ASGARI_KELIME
 
 
@@ -574,6 +578,39 @@ def varlik_surumu(s, kok):
     return re.sub(r'((?:\.\./)*|/|https://lunayapim\.com/)(assets/[A-Za-z0-9_\-/]+\.(?:js|css))(?:\?v=[A-Za-z0-9]+)*(?=["\'])', _d, s)
 
 
+def yonlendirme_html_esle(kok):
+    """_redirects'teki her uzantısız tekil kaynak için '.html' eşini ekler.
+
+    Neden (12.10.2026): Google kaldırılan sayfaları '.html'li adresiyle de
+    tanıyor (ör. /sehir/erzurum-urun-animasyon.html Search Console'da gösterim
+    almıştı). Uzantısız adres yönleniyordu ama '.html'li hâli 404 dönüyordu.
+    Eş satır asıl satırın hemen altına yazılır; etkisiz tekrarlanabilir.
+    """
+    yol = os.path.join(kok, "_redirects")
+    if not os.path.exists(yol):
+        return {"_redirects": "yok"}
+    satirlar = open(yol, encoding="utf-8").read().split("\n")
+    var = {l.split()[0] for l in satirlar if l.strip() and not l.startswith("#")}
+    yeni, eklenen = [], 0
+    for l in satirlar:
+        yeni.append(l)
+        p = l.split()
+        if len(p) < 2 or l.startswith("#"):
+            continue
+        k = p[0]
+        if "*" in k or ":" in k or k.endswith("/") or "." in k.rsplit("/", 1)[-1]:
+            continue
+        e = k + ".html"
+        if e in var:
+            continue
+        yeni.append("%s  %s  %s" % (e, p[1], p[2] if len(p) > 2 else "301"))
+        var.add(e)
+        eklenen += 1
+    if eklenen:
+        open(yol, "w", encoding="utf-8").write("\n".join(yeni))
+    return {"html_eslenen": eklenen}
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -661,6 +698,11 @@ def calistir(kok, desen="**/*.html"):
         print("sitemap-olu:", sitemap_olu_temizle(kok))
     except Exception as ex:
         print("sitemap-olu:", ex)
+    # _redirects: kaldırılan adreslerin '.html' eşleri de yönlensin
+    try:
+        print("yonlendirme-html:", yonlendirme_html_esle(kok))
+    except Exception as ex:
+        print("yonlendirme-html:", ex)
     return {"degisen_sayfa": degisen}
 
 

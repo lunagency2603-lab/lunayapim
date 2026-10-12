@@ -1,0 +1,33 @@
+{
+  "tur": "anket",
+  "slug": "milli-maclari-nerede-izliyorsun-anket",
+  "tarih": "2026-10-12",
+  "kat": "spor",
+  "baslik": "Milli maçları nerede izliyorsun?",
+  "meta": "Evde mi, kafede arkadaşlarla mı, stadyumda mı? A Milli Takım'ın 24 yıl sonra döndüğü Dünya Kupası yazının ardından milli maç alışkanlığını soruyoruz.",
+  "giris": "2026, milli maç izleme alışkanlıklarını sınayan bir yıl oldu: önce İstanbul'da ve Priştine'de iki play-off gecesi, ardından sabahın erken saatlerine denk gelen Dünya Kupası maçları. Biz de merak ettik, sen milli maçları nerede izliyorsun?",
+  "kapak": {"emoji": "🇹🇷"},
+  "soru": "Milli maçları genelde nerede izliyorsun?",
+  "secenekler": [
+    "Evde",
+    "Kafede ya da arkadaşlarla",
+    "Stadyumda",
+    "Telefondan",
+    "İzlemiyorum"
+  ],
+  "baglam": [
+    "A Milli Futbol Takımı, 2026 Dünya Kupası'na play-off yoluyla katıldı. 26 Mart 2026'da İstanbul'da oynanan yarı finalde Romanya'yı Ferdi Kadıoğlu'nun golüyle 1-0 yendi. 31 Mart'ta Priştine'deki Fadil Vokrri Stadyumu'nda oynanan finalde de Kosova'yı Kerem Aktürkoğlu'nun golüyle 1-0 geçti. Böylece Türkiye, üçüncülükle tamamladığı 2002'den bu yana, 24 yıl sonra ilk kez Dünya Kupası'na gitti.",
+    "Türkiye, ABD, Kanada ve Meksika'nın ortak ev sahipliğindeki turnuvada D Grubu'nda ABD, Paraguay ve Avustralya ile eşleşti. Saat farkı yüzünden maçlar Türkiye'de sabaha denk geldi: 14 Haziran'da saat 07.00'de Vancouver'da Avustralya'ya 2-0 yenildi. 20 Haziran'da saat 06.00'da başlayan Paraguay maçında tek gol, Matías Galarza'dan daha ilk dakikada geldi ve maç 1-0 bitti. 26 Haziran'da saat 05.00'te Los Angeles'ta 70.492 seyircinin önünde oynanan son maçta ise ABD'yi 3-2 yendi; Arda Güler 10. dakikada, Kaan Ayhan 90+8. dakikada gol attı.",
+    "Bu galibiyet gruptan çıkmaya yetmedi; Türkiye D Grubu'nu 3 puanla son sırada tamamladı, ABD ise grubu 6 puanla lider bitirdi. Yine de son maçın uzatmasında gelen gol, sabah beşte ekran başına geçenler için güzel bir kapanış oldu.",
+    "Kosova'daki play-off finali Türkiye saatiyle 21.45'te, yani alışıldık bir akşam saatinde başlamıştı. Dünya Kupası'nda ise üç maç da sabah 05.00 ile 07.00 arasında başladı. Saat hangisi olursa olsun, sen milli maçı en çok nerede izliyorsun?"
+  ],
+  "kaynaklar": [
+    {"ad": "Medyascope / Fanatik", "not": "Türkiye-Romanya 1-0, 26 Mart 2026, İstanbul; gol Ferdi Kadıoğlu"},
+    {"ad": "Milliyet / Küre Ansiklopedi", "not": "Kosova-Türkiye 0-1, 31 Mart 2026, Priştine Fadil Vokrri Stadyumu, TSİ 21.45; gol Kerem Aktürkoğlu; son katılım 2002 (üçüncülük); D Grubu rakipleri ABD, Paraguay, Avustralya"},
+    {"ad": "Milliyet (maç takvimi)", "not": "Grup maçları TSİ: 14 Haziran 07.00 Avustralya, 20 Haziran 06.00 Paraguay, 26 Haziran 05.00 ABD"},
+    {"ad": "NTV", "not": "Avustralya 2-0 Türkiye, BC Place, Vancouver"},
+    {"ad": "Morocco World News", "not": "Paraguay 1-0 Türkiye; gol Matías Galarza, 64. saniye"},
+    {"ad": "Euronews Türkçe / Sky Sports", "not": "Türkiye 3-2 ABD, SoFi Stadyumu (Inglewood, Los Angeles), 70.492 seyirci; Arda Güler 10', Kaan Ayhan 90+8'; Türkiye grubu 3 puanla son sırada bitirdi"}
+  ],
+  "editor_notu": "Maç saatleri Türkiye saatine (TSİ) göredir; anket sonuçları okur oylarını gösterir."
+}

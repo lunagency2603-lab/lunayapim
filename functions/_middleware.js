@@ -140,7 +140,7 @@ function tsRobots() {
    Google'a "sahte sayfa" sinyali veriyordu. Artık 410 Gone dönüyor: "kalıcı
    olarak kaldırıldı" — Google bu adresleri 404'ten daha hızlı listeden düşürür.
    Eşlemesi olan eski kategoriler (/category/music/ → /muzik/) 301 olarak kalır. */
-const ESKI_WP = /^\/(?:tag|category|author|page|product|shop|portfolio)\/|^\/(?:home-two|home-three|blog-2|blog|shop|cart|checkout|my-account|sample-page)\/?$|^\/(?:wp-|xmlrpc\.php|feed\/?$|comments\/)|^\/\d{4}\/\d{2}\//;
+const ESKI_WP = /^\/(?:tag|category|author|page|product|shop|portfolio)\/|^\/(?:home|home-two|home-three|blog-2|blog|shop|cart|checkout|my-account|sample-page)\/?$|^\/(?:wp-|xmlrpc\.php|feed\/?$|comments\/)|^\/\d{4}\/\d{2}\//;
 const eskiWpMi = (p) => ESKI_WP.test(p);
 const anaSayfaMi = (konum) => {
   try { return ["/", "/trend", "/trend/"].includes(new URL(konum, TSU).pathname); } catch (e) { return false; }

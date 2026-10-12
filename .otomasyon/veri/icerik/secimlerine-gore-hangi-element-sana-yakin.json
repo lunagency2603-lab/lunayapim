@@ -1,0 +1,123 @@
+{
+  "tur": "test",
+  "slug": "secimlerine-gore-hangi-element-sana-yakin",
+  "tarih": "2026-10-12",
+  "kat": "burc",
+  "baslik": "Seçimlerine göre hangi element sana daha yakın?",
+  "meta": "Ateş, toprak, hava, su: Astrolojinin dört element geleneğinden yola çıkan sekiz soruluk eğlencelik test. Seçimlerin hangi elemente yakın, gör.",
+  "giris": "Astroloji geleneği on iki burcu dört elemente ayırır: ateş, toprak, hava ve su. Bu test doğum tarihine bakmıyor; tatil tercihinden mesaj atma biçimine kadar sekiz gündelik seçime bakıyor. Bilimsel bir ölçüm değil, keyif için hazırlandı; çıkan element kendi burcunun elementiyle aynı olmayabilir, o da ayrı bir sohbet konusu.",
+  "kapak": {"emoji": "🔮"},
+  "sorular": [
+    {
+      "soru": "Önünde boş bir cumartesi var. Ne olur?",
+      "secenekler": [
+        {"metin": "Sabah hiç plan yoktur, öğlene üç plan çıkar", "sonuc": "a"},
+        {"metin": "Ertelediğim işleri bitirir, sonra kendimi ödüllendiririm", "sonuc": "b"},
+        {"metin": "Üç arkadaşa yazarım, hangisi önce dönerse", "sonuc": "c"},
+        {"metin": "Evde kalırım; sevdiğim bir dizi, bir battaniye", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Bir tartışmanın ortasındasın. Ne yaparsın?",
+      "secenekler": [
+        {"metin": "Rakamları ve örnekleri masaya koyarım", "sonuc": "b"},
+        {"metin": "Önce söylerim, sonra düşünürüm", "sonuc": "a"},
+        {"metin": "Ne söylendiğinden çok nasıl söylendiğine takılırım", "sonuc": "d"},
+        {"metin": "İki tarafı da dinleyip ortayı bulurum", "sonuc": "c"}
+      ]
+    },
+    {
+      "soru": "Tatil için hangisi?",
+      "secenekler": [
+        {"metin": "Yeni bir şehir, her gün başka bir semt", "sonuc": "c"},
+        {"metin": "Deniz kenarı; gerisi pek önemli değil", "sonuc": "d"},
+        {"metin": "Rafting, dalış, ne varsa", "sonuc": "a"},
+        {"metin": "Bağ evi, köy kahvaltısı, telefonun çekmediği bir yer", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Birine hediye alırken neye bakarsın?",
+      "secenekler": [
+        {"metin": "Gerçekten işine yarayacak mı?", "sonuc": "b"},
+        {"metin": "Bir anlamı olsun, fiyatı ikinci planda", "sonuc": "d"},
+        {"metin": "Sürpriz olsun; mümkünse son dakikada", "sonuc": "a"},
+        {"metin": "Bir kitap ya da birlikte yaşanacak bir deneyim", "sonuc": "c"}
+      ]
+    },
+    {
+      "soru": "Mesajlaşma tarzın hangisine yakın?",
+      "secenekler": [
+        {"metin": "Uzun sesli mesaj; ortasında konu değişir", "sonuc": "c"},
+        {"metin": "Tek kelime, büyük harf", "sonuc": "a"},
+        {"metin": "Emojisiz yazmam, ton yanlış anlaşılmasın", "sonuc": "d"},
+        {"metin": "Noktası virgülü yerinde, kısa ve net", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Yeni bir hobiye başlayacaksın. Hangisi?",
+      "secenekler": [
+        {"metin": "Seramik ya da balkon bahçeciliği", "sonuc": "b"},
+        {"metin": "Yeni bir dil", "sonuc": "c"},
+        {"metin": "Boks", "sonuc": "a"},
+        {"metin": "Fotoğraf ya da günlük tutmak", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Grup ödevinde ya da iş projesinde rolün?",
+      "secenekler": [
+        {"metin": "Ekibin moralini ben tutarım", "sonuc": "d"},
+        {"metin": "Takvimi ben hazırlarım", "sonuc": "b"},
+        {"metin": "Sunumu ben yaparım", "sonuc": "a"},
+        {"metin": "Fikri ben bulurum, gerisini konuşuruz", "sonuc": "c"}
+      ]
+    },
+    {
+      "soru": "Hangi manzara sana iyi gelir?",
+      "secenekler": [
+        {"metin": "Yağmurdan sonra ıslak, parlak taş bir sokak", "sonuc": "d"},
+        {"metin": "Rüzgârlı bir tepe ve gökyüzünde uçurtmalar", "sonuc": "c"},
+        {"metin": "Sonbaharda yaprak dökmüş bir orman yolu", "sonuc": "b"},
+        {"metin": "Gün batımında kızıla dönen bir gökyüzü", "sonuc": "a"}
+      ]
+    }
+  ],
+  "sonuclar": {
+    "a": {
+      "baslik": "Ateş sana daha yakın",
+      "emoji": "🔥",
+      "metin": [
+        "Önce harekete geçip sonra düşünmekten çekinmiyorsun. Ortama enerji getiren, sahneye ilk çıkan, son dakika sürprizlerini seven tarafsın. Sabırsız göründüğün anlar oluyor ama çoğu zaman işleri başlatan da sen oluyorsun.",
+        "Astroloji geleneğinde ateş grubunda Koç, Aslan ve Yay burçları yer alır. Kendi burcun bunlardan biri değilse de şaşırma; bu test burcunu değil, bugünkü seçimlerini okuyor. Bir dahaki sefere farklı bir ruh hâlinde çözersen başka bir elementle karşılaşman da mümkün."
+      ]
+    },
+    "b": {
+      "baslik": "Toprak sana daha yakın",
+      "emoji": "🌱",
+      "metin": [
+        "Ayakların yere sağlam basıyor. Takvimi hazırlayan, hediyenin işe yarayıp yaramayacağını düşünen, kararlarını rakamla destekleyen sensin. Çevrendekiler bir şey ters gittiğinde ilk sana dönüyor. Telefonun çekmediği bir bağ evi senin için tatil değil, ödül.",
+        "Gelenekte toprak grubunda Boğa, Başak ve Oğlak burçları bulunur. Bu üç burç zodyak çemberinde birbirinden yaklaşık 120 derece uzakta durur; astrolojide aynı elementin üç burcuna bu yüzden \"üçlü grup\" (triplisite) denir."
+      ]
+    },
+    "c": {
+      "baslik": "Hava sana daha yakın",
+      "emoji": "🌬️",
+      "metin": [
+        "Fikirler senin yakıtın. Konuşmayı, tartışmayı, yeni bir şehirde kaybolmayı seviyorsun; iki tarafı da dinleyip ortayı bulabildiğin için arkadaş grubunda arabulucu rolü sık sık sana düşüyor. Bir konuya bağlanman için önce merakının uyanması gerekiyor.",
+        "Astroloji geleneğinde hava grubunda İkizler, Terazi ve Kova burçları yer alır. Sonucun kendi burcunla uyuşmuyorsa, sohbet için iyi bir konu çıktı demektir. Testi bir arkadaşınla birlikte çöz, aynı soruya verdiğiniz farklı cevaplar büyük ihtimalle sonuçtan daha eğlenceli olacak."
+      ]
+    },
+    "d": {
+      "baslik": "Su sana daha yakın",
+      "emoji": "🌊",
+      "metin": [
+        "Söylenen sözden çok o sözün tonunu duyuyorsun. Ekibin moralini tutan, anlamı olan hediyeyi seçen, manzarada bile duyguya bakan tarafsın. Evde geçen sakin bir akşam senin için boşa geçmiş sayılmaz. Mesajlarında emojiyi eksik etmemen de bundan; yanlış anlaşılmak istemiyorsun.",
+        "Gelenekte su grubunda Yengeç, Akrep ve Balık burçları bulunur. Bu test doğum haritasına bakmadığı için sonucu bir fal gibi değil, kendine dair küçük bir not gibi okumak en doğrusu."
+      ]
+    }
+  },
+  "kaynaklar": [
+    {"ad": "Türkgün Astroloji", "not": "Elementlere göre burç grupları: ateş Koç-Aslan-Yay, toprak Boğa-Başak-Oğlak, hava İkizler-Terazi-Kova, su Yengeç-Akrep-Balık"},
+    {"ad": "Wikipedia (Triplicity)", "not": "Aynı elementin üç burcu, aralarında yaklaşık 120 derece bulunan üçlü grup; gruplar Türkgün listesiyle aynı"}
+  ],
+  "editor_notu": "Bu test astroloji geleneğine atıfla hazırlanmış bir eğlence içeriğidir; bilimsel bir ölçüm iddiası taşımaz."
+}

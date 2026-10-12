@@ -1,0 +1,193 @@
+{
+ "tur": "bilgi",
+ "slug": "turk-sinemasi-klasikleri-testi",
+ "tarih": "2026-10-12",
+ "kat": "ekran",
+ "baslik": "Türk sineması klasikleri testi: Yeşilçam'dan Cannes'a 10 soru",
+ "meta": "Susuz Yaz'ın yönetmeni kim, Kış Uykusu hangi yıl Altın Palmiye aldı? Yeşilçam'dan bugüne Türk sinemasını on soruda test et.",
+ "giris": "Berlin'de Altın Ayı kazanan Susuz Yaz'dan Cannes'da Altın Palmiye alan Kış Uykusu'na, Hababam Sınıfı'ndan Eşkıya'ya uzanan on soru hazırladık. Kimi yönetmen-film eşleşmesi, kimi festival ödülü, kimi de bir rolün sahibi. Hafızan ne kadar sinefil, bakalım.",
+ "kapak": {
+  "emoji": "🎬"
+ },
+ "sorular": [
+  {
+   "soru": "Nuri Bilge Ceylan'ın Kış Uykusu, Cannes Film Festivali'nde hangi yıl Altın Palmiye kazandı?",
+   "secenekler": [
+    "2008",
+    "2011",
+    "2018",
+    "2014"
+   ],
+   "dogru": 3,
+   "aciklama": "Kış Uykusu, Altın Palmiye'yi 2014'te aldı. Kapadokya'da geçen film, Ceylan'ın Cannes'dan dönen en büyük ödülü oldu."
+  },
+  {
+   "soru": "Kış Uykusu'nda Kapadokya'da otel işleten eski tiyatro oyuncusu Aydın'ı kim canlandırdı?",
+   "secenekler": [
+    "Şener Şen",
+    "Haluk Bilginer",
+    "Uğur Yücel",
+    "Muzaffer Özdemir"
+   ],
+   "dogru": 1,
+   "aciklama": "Aydın rolünde Haluk Bilginer oynadı. 196 dakikalık filmde Aydın, yerel gazeteye yazılar yazan ve Türk tiyatrosu üzerine kitap hazırlamak isteyen bir karakter."
+  },
+  {
+   "soru": "1964'te Berlin Film Festivali'nde Altın Ayı kazanan Susuz Yaz'ın yönetmeni kim?",
+   "secenekler": [
+    "Metin Erksan",
+    "Lütfi Ö. Akad",
+    "Atıf Yılmaz",
+    "Halit Refiğ"
+   ],
+   "dogru": 0,
+   "aciklama": "Susuz Yaz'ı Metin Erksan yönetti. 1963 yapımı filmin başrollerinde Hülya Koçyiğit, Erol Taş ve Ulvi Doğan vardı."
+  },
+  {
+   "soru": "Semih Kaplanoğlu'nun \"Yusuf Üçlemesi\"nden hangi film 2010'da Berlin'de Altın Ayı kazandı?",
+   "secenekler": [
+    "Yumurta",
+    "Süt",
+    "Bal",
+    "Meleğin Düşüşü"
+   ],
+   "dogru": 2,
+   "aciklama": "Altın Ayı, 60. Berlin Film Festivali'nde Bal'a verildi. Üçlemenin diğer filmleri Yumurta ve Süt'tür."
+  },
+  {
+   "soru": "Bir Zamanlar Anadolu'da, 2011 Cannes Film Festivali'nden hangi ödülle döndü?",
+   "secenekler": [
+    "Altın Palmiye",
+    "En İyi Yönetmen",
+    "Büyük Ödül (Grand Prix)",
+    "En İyi Senaryo"
+   ],
+   "dogru": 2,
+   "aciklama": "Film, Büyük Ödül'ü Dardenne kardeşlerin Bisikletli Çocuk filmiyle paylaştı. Ceylan, 2003'te Uzak ile de aynı ödülü almıştı."
+  },
+  {
+   "soru": "2023 Cannes Film Festivali'nde Kuru Otlar Üstüne'deki rolüyle En İyi Kadın Oyuncu ödülünü kim kazandı?",
+   "secenekler": [
+    "Demet Evgar",
+    "Merve Dizdar",
+    "Ece Bağcı",
+    "Nesrin Cavadzade"
+   ],
+   "dogru": 1,
+   "aciklama": "Ödül, Nuri Bilge Ceylan'ın filminde oynayan Merve Dizdar'a verildi. Kuru Otlar Üstüne o yıl Altın Palmiye için de yarışıyordu."
+  },
+  {
+   "soru": "1975 yapımı Hababam Sınıfı'nın yönetmeni kim?",
+   "secenekler": [
+    "Ertem Eğilmez",
+    "Kartal Tibet",
+    "Zeki Ökten",
+    "Osman F. Seden"
+   ],
+   "dogru": 0,
+   "aciklama": "Film, Ertem Eğilmez'in yönetmenliğinde Arzu Film yapımı olarak 1 Nisan 1975'te vizyona girdi. Hikâye Rıfat Ilgaz'ın romanına dayanıyor."
+  },
+  {
+   "soru": "Hababam Sınıfı'nda Mahmut Hoca'yı kim oynadı?",
+   "secenekler": [
+    "Tarık Akan",
+    "Halit Akçatepe",
+    "Adile Naşit",
+    "Münir Özkul"
+   ],
+   "dogru": 3,
+   "aciklama": "Mahmut Hoca, Münir Özkul'du. Diğer şıklar da filmdeydi: Tarık Akan Damat Ferit'i, Halit Akçatepe Güdük Necmi'yi, Adile Naşit Hafize Ana'yı canlandırdı."
+  },
+  {
+   "soru": "Atıf Yılmaz'ın Türkan Şoray ve Kadir İnanır'lı filmi Selvi Boylum Al Yazmalım, hangi yazarın eserinden uyarlandı?",
+   "secenekler": [
+    "Yaşar Kemal",
+    "Cengiz Aytmatov",
+    "Orhan Kemal",
+    "Sait Faik Abasıyanık"
+   ],
+   "dogru": 1,
+   "aciklama": "Senaryo, Kırgız yazar Cengiz Aytmatov'un bir öyküsüne dayanıyor. Türkan Şoray Asya'yı, Kadir İnanır İlyas'ı oynadı."
+  },
+  {
+   "soru": "Şener Şen ile Uğur Yücel'in başrolde olduğu 1996 yapımı Eşkıya'nın yönetmeni kim?",
+   "secenekler": [
+    "Çağan Irmak",
+    "Zeki Demirkubuz",
+    "Yavuz Turgul",
+    "Ömer Kavur"
+   ],
+   "dogru": 2,
+   "aciklama": "Eşkıya'nın yönetmeni Yavuz Turgul. Filmin müzikleri Erkan Oğur ve Aşkın Arsunan imzalı."
+  }
+ ],
+ "derece": [
+  {
+   "min": 0,
+   "baslik": "Fragmanı izleyip çıkanlardan",
+   "metin": [
+    "Bu sefer perde biraz erken kapandı. Bir hafta sonu Hababam Sınıfı ile Susuz Yaz'ı art arda izlersen bir sonraki denemede salonun en ön sırasındasın."
+   ]
+  },
+  {
+   "min": 40,
+   "baslik": "Pazar matinesinin sadık seyircisi",
+   "metin": [
+    "Klasikleri izlemişsin, künyeler biraz karışıyor. Yönetmen adlarına bir göz atman, puanını hızla yukarı taşır."
+   ]
+  },
+  {
+   "min": 70,
+   "baslik": "Festival programını işaretleyenlerden",
+   "metin": [
+    "Yeşilçam'ı da festival filmlerini de tanıyorsun. Film gecesi seçimini arkadaşların büyük ihtimalle sana bırakıyordur."
+   ]
+  },
+  {
+   "min": 90,
+   "baslik": "Sinematek arşivinin anahtarı sende",
+   "metin": [
+    "Yönetmen, ödül, rol, uyarlama... Hepsi yerinde. Bir sonraki film sohbetinde jüri başkanlığı senin."
+   ]
+  }
+ ],
+ "kaynaklar": [
+  {
+   "ad": "Wikipedia (EN) – Winter Sleep (film)",
+   "not": "S1–S2: Nuri Bilge Ceylan, 2014 Altın Palmiye, Kapadokya, 196 dk, Haluk Bilginer (Aydın) ve karakter tanımı"
+  },
+  {
+   "ad": "Wikipedia (EN) – Dry Summer",
+   "not": "S3: Susuz Yaz, Metin Erksan, 1963 yapımı, 1964 Berlin Altın Ayı, oyuncular"
+  },
+  {
+   "ad": "Wikipedia (EN) – Honey (2010 film)",
+   "not": "S4: Bal, Semih Kaplanoğlu, 60. Berlin Altın Ayı, Yusuf Üçlemesi (Yumurta, Süt, Bal)"
+  },
+  {
+   "ad": "Wikipedia (EN) – Once Upon a Time in Anatolia",
+   "not": "S5: 2011 Cannes Büyük Ödülü, Bisikletli Çocuk ile paylaşım"
+  },
+  {
+   "ad": "Wikipedia (EN) – Distant (2002 film)",
+   "not": "S5 açıklaması: Uzak'ın 2003 Cannes Büyük Ödülü"
+  },
+  {
+   "ad": "Wikipedia (EN) – About Dry Grasses",
+   "not": "S6: Kuru Otlar Üstüne, 2023 Cannes, Merve Dizdar En İyi Kadın Oyuncu, Altın Palmiye yarışması"
+  },
+  {
+   "ad": "Wikipedia (EN) – Hababam Sınıfı",
+   "not": "S7–S8: Ertem Eğilmez, 1 Nisan 1975, Arzu Film, Rıfat Ilgaz; Münir Özkul, Tarık Akan, Halit Akçatepe, Adile Naşit rolleri"
+  },
+  {
+   "ad": "Wikipedia (EN) – The Girl with the Red Scarf",
+   "not": "S9: Atıf Yılmaz, Türkan Şoray (Asya), Kadir İnanır (İlyas), Cengiz Aytmatov uyarlaması"
+  },
+  {
+   "ad": "Wikipedia (EN) – The Bandit (1996 film)",
+   "not": "S10: Eşkıya, Yavuz Turgul, Şener Şen, Uğur Yücel, müzik Erkan Oğur ve Aşkın Arsunan"
+  }
+ ],
+ "editor_notu": "Festival ödülleri, ilgili festivalin yapıldığı yıla göre verilmiştir."
+}

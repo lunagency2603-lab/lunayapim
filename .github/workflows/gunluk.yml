@@ -76,6 +76,13 @@ jobs:
           ln -sfn "$GITHUB_WORKSPACE/.otomasyon" "$HOME/Documents/luna-pusula"
           echo "PUSULA=$GITHUB_WORKSPACE/.otomasyon" >> $GITHUB_ENV
 
+      - name: Editör onaylarını indir
+        working-directory: .otomasyon
+        run: |
+          # 12.10.2026 — yeni yazılar taslak doğar; editörün /editor panelinden onayladıkları
+          # bu adımla veri/onay.json'a iner ve aynı turda imzasıyla yayına girer.
+          python3 -m pusula.onay_cek || true
+
       - name: Veri topla ve yayınla
         working-directory: .otomasyon
         run: |

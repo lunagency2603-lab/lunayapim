@@ -1,0 +1,129 @@
+{
+  "tur": "liste",
+  "slug": "sarj-aksami-cikarmiyorsa-iphone-ve-android-9-ayar",
+  "tarih": "2026-10-12",
+  "kat": "teknoloji",
+  "baslik": "Şarj akşamı çıkarmıyorsa: iPhone ve Android'de 9 ayar",
+  "meta": "Telefonun şarjı akşama yetmiyorsa bu 9 ayara bak: iPhone ve Android için menü yolları ve her birinin neden işe yaradığı, Apple ve Google kaynaklı.",
+  "giris": "Sabah yüzde yüzle çıkıp akşamüstü priz aramaya başlıyorsan sorun çoğu zaman telefonun kendisinde değil, ayarlarında. Aşağıdaki dokuz ayarı Apple ve Google'ın kendi destek sayfalarından derledik. Her maddede iPhone ve Android menü yolu ayrı ayrı, ayarın ne işe yaradığıyla birlikte duruyor.",
+  "kapak": {
+    "emoji": "🔋"
+  },
+  "maddeler": [
+    {
+      "baslik": "Önce pili kimin yediğini bul",
+      "bilgi": "iPhone: Ayarlar > Pil · Android (Pixel): Ayarlar > Pil > Pil kullanımı > Uygulama bazında göster",
+      "metin": [
+        "Ayarları kurcalamaya başlamadan önce pil ekranına bir bak. iOS 26 ile gelen Günlük Kullanım grafiği bugünkü tüketimi son yedi günle karşılaştırıyor. Bir uygulamaya dokunduğunda harcamanın arka plan etkinliğinden mi, zayıf sinyalden mi, yoksa ekranı sürekli uyandıran bildirimlerden mi geldiğini görüyorsun.",
+        "Android'de de uygulama bazında bir liste var. Listenin tepesinde hiç açmadığın bir uygulama duruyorsa aşağıdaki maddelerden hangisini önce uygulayacağın belli olur."
+      ]
+    },
+    {
+      "baslik": "Parlaklığı ortama bırak",
+      "bilgi": "iPhone: Ayarlar > Erişilebilirlik > Ekran ve Metin Puntosu > Otomatik Parlaklık · Android (Pixel): Ayarlar > Ekran ve dokunma > Otomatik parlaklık",
+      "metin": [
+        "Apple da Google da pil önerilerinde ekran parlaklığını kısmayı ya da otomatiğe almayı ilk sıralara koyuyor. Otomatik parlaklık, ortam ışığı sensörüyle karanlık odada ekranı kısıyor, güneş altında açıyor.",
+        "iPhone'da bu ayar ekran menüsünde değil, Erişilebilirlik altında duruyor; aradığın yerde bulamamanın sebebi bu. Varsayılan olarak açık gelir. Bir ara kapattıysan geri açmak, gün boyu gereğinden parlak bir ekranla dolaşmanı engeller."
+      ]
+    },
+    {
+      "baslik": "Ekran daha erken kararsın",
+      "bilgi": "iPhone: Ayarlar > Ekran ve Parlaklık > Otomatik Kilit · Android (Pixel): Ayarlar > Ekran ve dokunma > Ekran zaman aşımı",
+      "metin": [
+        "Masada unuttuğun telefonun ekranı her seferinde dakikalarca açık kalıyorsa bu süreler gün sonunda birikiyor. Google, Pixel kullanıcılarına ekran zaman aşımı için 30 saniye gibi kısa bir süre öneriyor. Apple da Otomatik Kilit için kısa bir süre seçilmesini tavsiye ediyor.",
+        "Pil ekranında Apple'ın kendi önerileri arasında da otomatik kilidi etkinleştirmek yer alıyor. Yani telefon, sana neyi değiştirmen gerektiğini zaten söylüyor olabilir."
+      ]
+    },
+    {
+      "baslik": "Arka planda çalışan uygulamaları dizginle",
+      "bilgi": "iPhone: Ayarlar > Genel > Arka Planda Uygulama Yenile · Android (Pixel): Ayarlar > Pil > Pil kullanımı > uygulama > Arka planda kullanıma izin ver",
+      "metin": [
+        "Haber, alışveriş ve sosyal medya uygulamaları sen açmadan da içerik yenileyebiliyor. iPhone'da bu özelliği tamamen kapatabilir ya da yalnızca Wi-Fi'deyken çalışacak şekilde sınırlayabilirsin.",
+        "Android'de ayar uygulama uygulama yapılıyor: pil kullanımı listesinden uygulamayı seçip arka planda çalışma iznini değiştiriyorsun. Google, Pixel'lerde tüm uygulamalar için \"Optimize edilmiş\" ayarının açık tutulmasını öneriyor; bu ayar, telefonun arka plan tüketimini kendisinin dengelemesi demek."
+      ]
+    },
+    {
+      "baslik": "Konumu yalnızca gerekene ver",
+      "bilgi": "iPhone: Ayarlar > Gizlilik ve Güvenlik > Konum Servisleri · Android: Ayarlar > Konum > Uygulama konum izinleri",
+      "metin": [
+        "Harita, hava durumu, kargo takibi… Konum isteyen uygulama çok, ama nerede olduğunu her an bilmesi gereken pek yok. Apple, konum takibini pil ekranında arka plan etkinliği olarak sayıyor.",
+        "Listeyi tek tek gez. Navigasyon dışındaki uygulamalara iPhone'da \"Uygulamayı Kullanırken\", Android'de \"Yalnızca uygulama kullanılırken izin ver\" seçeneğini ver; hiç ihtiyacı olmayanlara \"Asla\" ya da \"İzin verme\" de. Bonus: Bu, pil kadar gizliliğin için de iyi bir temizlik."
+      ]
+    },
+    {
+      "baslik": "Wi-Fi'yi kapatma, sinyalsiz yerde Uçak Modu'nu aç",
+      "bilgi": "iPhone: Ayarlar > Wi-Fi · Android (Pixel 4a 5G ve sonrası): Ayarlar > Ağ ve internet > Uyarlanabilir bağlantı",
+      "metin": [
+        "Pil kurtarmak için Wi-Fi'yi kapatmak ters tepebilir. Apple, Wi-Fi'nin hücresel ağa göre daha az enerji harcadığını yazıyor; Google da mümkünse mobil veri yerine kablosuz ağ kullanmayı öneriyor.",
+        "Asıl pil düşmanı zayıf sinyal: telefon şebeke aradıkça enerji harcıyor. Metroda, dağ evinde ya da çekmeyen bir bodrumda uzun süre kalacaksan Uçak Modu'nu aç. iPhone 12 ve sonrasındaki 5G Otomatik seçeneği de hız farkı belirgin değilse LTE'ye geçerek tasarruf ediyor."
+      ]
+    },
+    {
+      "baslik": "Koyu temayı dene",
+      "bilgi": "iPhone: Ayarlar > Ekran ve Parlaklık > Koyu · Android (Pixel): Ayarlar > Ekran ve dokunma > Koyu tema",
+      "metin": [
+        "Google, Android yardım sayfasında koyu temanın bazı ekranlarda pil tasarrufu sağlayabileceğini açıkça yazıyor. Pil Tasarrufu modu açıldığında koyu temanın kendiliğinden devreye girmesi de bundan.",
+        "Apple ise Koyu Mod'u pil için değil, göz yorgunluğunu azaltmak için tanıtıyor. Kısacası kazanç telefonunun ekranına göre değişir; ama denemenin hiçbir bedeli yok, beğenmezsen tek dokunuşla geri dönersin."
+      ]
+    },
+    {
+      "baslik": "Düşük Güç Modu'nu yüzde 20'yi beklemeden aç",
+      "bilgi": "iPhone 15 ve sonrası: Ayarlar > Pil > Güç Modu > Düşük Güç Modu (14 ve öncesi: Ayarlar > Pil > Düşük Güç Modu) · Android: Ayarlar > Pil > Pil Tasarrufu",
+      "metin": [
+        "Telefon bu modu pil yüzde 20'ye inince öneriyor, ama akşam programın uzunsa öğleden açmak daha akıllıca. iPhone'da Düşük Güç Modu 5G'yi kapatıyor, Otomatik Kilit'i 30 saniyeye çekiyor, parlaklığı düşürüyor, arka plan yenilemeyi ve otomatik indirmeleri durduruyor.",
+        "Android'deki Pil Tasarrufu da arka plan etkinliğini sınırlıyor ve koyu temayı açıyor. iPhone'da mod, pil yüzde 80'e dolunca kendiliğinden kapanıyor; yani kapatmayı unutma derdin yok."
+      ]
+    },
+    {
+      "baslik": "Telefonun alışkanlıklarını öğrenmesine izin ver",
+      "bilgi": "iPhone: Ayarlar > Pil > Güç Modu > Adaptif Güç · Android (Pixel): Ayarlar > Pil > Pil Tasarrufu > Uyarlanabilir Pil",
+      "metin": [
+        "Yeni telefonlar enerjiyi senin kullanım düzenine göre dağıtabiliyor. iPhone'daki Adaptif Güç yoğun günleri tahmin edip performansı ayarlıyor, parlaklığı hafifçe kısıyor ve pil yüzde 20'ye inince Düşük Güç Modu'nu açıyor. Şarj alışkanlıklarını öğrenmesi en az 7 gün sürüyor.",
+        "Özellik iPhone 17 serisi ve iPhone Air'de varsayılan olarak açık; iPhone 16 serisi ile 15 Pro modellerinde elle açman gerekiyor. Android'deki Uyarlanabilir Pil de pil optimizasyonunu kullanım alışkanlıklarına göre ayarlıyor."
+      ]
+    }
+  ],
+  "kapanis": [
+    "İki not daha. Arka plandaki uygulamaları kaydırıp tek tek kapatmak pil kazandırmıyor: Apple, son kullanılan uygulamaların yalnızca etkinken kaynak harcadığını ve hepsini kapatmanın genel performansı etkilemediğini belirtiyor.",
+    "Bu ayarların hepsini yaptın ve telefon hâlâ öğleden sonra yoruluyorsa pilin kendisine bak: iPhone'da Ayarlar > Pil > Pil Sağlığı (14 ve öncesinde Pil Sağlığı ve Şarj Etme), Pixel'de Ayarlar > Pil > Pil sağlığı. Apple, bu ekranda \"Servis\" ibaresi görürsen pil değişimini düşünmeni öneriyor."
+  ],
+  "kaynaklar": [
+    {
+      "ad": "Apple Destek (TR) – iPhone veya iPad'in pili çok hızlı tükeniyorsa (120745)",
+      "not": "Ayarlar > Pil, iOS 26 Günlük Kullanım grafiği, Wi-Fi'nin hücresel ağdan az enerji harcaması, zayıf sinyal ve Uçak Modu, 5G Otomatik, Pil Sağlığı yolu ve Servis notu"
+    },
+    {
+      "ad": "Apple Destek (TR) – Düşük Güç Modu (101604)",
+      "not": "iPhone 15 ve sonrası / 14 ve öncesi menü yolları, modun kapattığı özellikler, %80'de kendiliğinden kapanması"
+    },
+    {
+      "ad": "Apple Destek (TR) – Adaptif Güç (123707)",
+      "not": "Ayarlar > Pil > Güç Modu > Adaptif Güç yolu, varsayılan açık/kapalı modeller, 7 günlük öğrenme süresi"
+    },
+    {
+      "ad": "Apple Destek (TR) – Parlaklık ve renk sıcaklığı (109351)",
+      "not": "Ayarlar > Erişilebilirlik > Ekran ve Metin Puntosu > Otomatik Parlaklık yolu, varsayılan açık olması, Koyu Mod'un Ekran ve Parlaklık'ta olması ve göz yorgunluğu amacı"
+    },
+    {
+      "ad": "Apple Destek (TR) – Super Retina ekranlar hakkında (109039)",
+      "not": "Ayarlar > Ekran ve Parlaklık > Otomatik Kilit yolu ve kısa süre önerisi"
+    },
+    {
+      "ad": "Apple Destek (TR) – Uygulamalar arasında geçiş (118408)",
+      "not": "Arka Planda Uygulama Yenile yolu; uygulamaları kapatmanın performansı etkilemediği"
+    },
+    {
+      "ad": "Apple Destek (TR) – Konum Servisleri'ni açma/kapama (102647)",
+      "not": "Ayarlar > Gizlilik ve Güvenlik > Konum Servisleri yolu ve seçenek adları"
+    },
+    {
+      "ad": "Pixel Telefon Yardım (TR) – Pilden en uzun süre yararlanma (6090612, 7015477)",
+      "not": "Pixel menü yolları: pil kullanımı, ekran zaman aşımı ve 30 sn önerisi, otomatik parlaklık, koyu tema, Uyarlanabilir Pil, Uyarlanabilir bağlantı, Optimize edilmiş ayarı, Pil sağlığı"
+    },
+    {
+      "ad": "Android Yardım (TR) – Pil ömrü, koyu tema, konum izinleri (7664692, 9730472, 6179507)",
+      "not": "Ayarlar > Pil > Pil Tasarrufu, Pil Tasarrufu'nun arka planı sınırlayıp koyu temayı açması, koyu temanın bazı ekranlarda pil tasarrufu, Ayarlar > Konum > Uygulama konum izinleri, Wi-Fi önerisi"
+    }
+  ],
+  "editor_notu": "iPhone yolları iOS 26'ya, Android yolları Google'ın Pixel ve Android yardım sayfalarına göredir; Samsung, Xiaomi gibi markalarda menü adları farklı olabilir."
+}

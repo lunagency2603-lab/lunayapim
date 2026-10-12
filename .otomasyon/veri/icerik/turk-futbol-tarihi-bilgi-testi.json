@@ -1,0 +1,193 @@
+{
+ "tur": "bilgi",
+ "slug": "turk-futbol-tarihi-bilgi-testi",
+ "tarih": "2026-10-12",
+ "kat": "spor",
+ "baslik": "Türk futbol tarihi bilgi testi: 1923'ten EURO 2008'e 10 soru",
+ "meta": "Kopenhag finali, 11 saniyelik gol, Semih'in 120+2'deki golü... Türk futbol tarihini ne kadar bildiğini on soruluk bu testte gör.",
+ "giris": "Taksim Stadı'ndaki ilk milli maçtan Kopenhag'daki penaltılara, Daegu'daki üçüncülükten EURO 2008'in uzatma dakikalarına kadar Türk futbolunun dönüm noktalarını on soruda topladık. Skorları ve isimleri hatırlıyorsan işin kolay; hatırlamıyorsan açıklamalar seni hızla güncelleyecek.",
+ "kapak": {
+  "emoji": "⚽"
+ },
+ "sorular": [
+  {
+   "soru": "Galatasaray'ın 17 Mayıs 2000'de Arsenal'i yenerek kazandığı UEFA Kupası finali hangi şehirde oynandı?",
+   "secenekler": [
+    "Viyana",
+    "Kopenhag",
+    "Amsterdam",
+    "Brüksel"
+   ],
+   "dogru": 1,
+   "aciklama": "Final, Kopenhag'daki Parken Stadyumu'nda oynandı. Maç uzatmalarla 0-0 bitti, Galatasaray penaltılarda 4-1 kazandı."
+  },
+  {
+   "soru": "O finalde kupayı getiren son penaltıyı kim attı?",
+   "secenekler": [
+    "Gheorghe Hagi",
+    "Cláudio Taffarel",
+    "Gheorghe Popescu",
+    "Mário Jardel"
+   ],
+   "dogru": 2,
+   "aciklama": "Son vuruşu Gheorghe Popescu gole çevirdi. Maçın oyuncusu seçilen isim ise kaleci Cláudio Taffarel'di; takımın başında Fatih Terim vardı."
+  },
+  {
+   "soru": "Galatasaray, 25 Ağustos 2000'de Monaco'da oynanan UEFA Süper Kupası'nda hangi takımı 2-1 yendi?",
+   "secenekler": [
+    "Real Madrid",
+    "Bayern Münih",
+    "Barcelona",
+    "Valencia"
+   ],
+   "dogru": 0,
+   "aciklama": "Rakip Real Madrid'di. Galatasaray'ın iki golünü de Mário Jardel attı; ikincisi uzatmadaki altın goldü."
+  },
+  {
+   "soru": "Hakan Şükür'ün 11. saniyede attığı, Dünya Kupası tarihinin en hızlı golü hangi rakibe karşıydı?",
+   "secenekler": [
+    "Japonya",
+    "Senegal",
+    "Brezilya",
+    "Güney Kore"
+   ],
+   "dogru": 3,
+   "aciklama": "Gol, 29 Haziran 2002'de Daegu'da oynanan üçüncülük maçında Güney Kore'ye atıldı. Türkiye maçı 3-2 kazanıp turnuvayı üçüncü bitirdi."
+  },
+  {
+   "soru": "2002 Dünya Kupası'nda Türkiye'yi üçüncülüğe taşıyan teknik direktör kimdi?",
+   "secenekler": [
+    "Fatih Terim",
+    "Mustafa Denizli",
+    "Şenol Güneş",
+    "Ersun Yanal"
+   ],
+   "dogru": 2,
+   "aciklama": "Takımın başında Şenol Güneş vardı. Türkiye, 1954'ten sonra ilk kez katıldığı Dünya Kupası'ndan üçüncülükle döndü."
+  },
+  {
+   "soru": "EURO 2008 çeyrek finalinde Hırvatistan karşısında 120+2. dakikada eşitliği getiren gol kimin?",
+   "secenekler": [
+    "Semih Şentürk",
+    "Nihat Kahveci",
+    "Arda Turan",
+    "Tuncay Şanlı"
+   ],
+   "dogru": 0,
+   "aciklama": "Hırvatistan 119. dakikada Ivan Klasnić ile öne geçmişti; Semih Şentürk 120+2'de skoru 1-1'e getirdi. Türkiye penaltılarda 3-1 kazanıp yarı finale yükseldi."
+  },
+  {
+   "soru": "Fatih Terim'in çalıştırdığı Türkiye, EURO 2008 yarı finalinde hangi takıma 3-2 yenildi?",
+   "secenekler": [
+    "İspanya",
+    "Almanya",
+    "Rusya",
+    "Hollanda"
+   ],
+   "dogru": 1,
+   "aciklama": "25 Haziran 2008'deki yarı finalde Almanya 90. dakikada Philipp Lahm'ın golüyle 3-2 kazandı. Türkiye'nin gollerini Uğur Boral ve Semih Şentürk atmıştı."
+  },
+  {
+   "soru": "Türkiye'nin 26 Ekim 1923'te İstanbul Taksim Stadı'nda oynadığı ilk resmi milli maçta rakibi kimdi?",
+   "secenekler": [
+    "Macaristan",
+    "Bulgaristan",
+    "Yunanistan",
+    "Romanya"
+   ],
+   "dogru": 3,
+   "aciklama": "İlk resmi milli maçta Romanya ile 2-2 berabere kalındı. Maç, Cumhuriyet'in ilanından yalnızca üç gün önce oynandı."
+  },
+  {
+   "soru": "Türkiye bir Dünya Kupası'nda ilk kez hangi turnuvada sahaya çıktı?",
+   "secenekler": [
+    "1950 Brezilya",
+    "1954 İsviçre",
+    "1966 İngiltere",
+    "1974 Batı Almanya"
+   ],
+   "dogru": 1,
+   "aciklama": "İlk katılım 1954 İsviçre'deydi. Türkiye 1950 turnuvasına da katılma hakkı kazanmış, ancak maddi nedenlerle çekilmişti."
+  },
+  {
+   "soru": "1975-76 sezonunda şampiyon olarak lig tarihinde İstanbul dışından ilk şampiyon olan kulüp hangisi?",
+   "secenekler": [
+    "Bursaspor",
+    "Göztepe",
+    "Trabzonspor",
+    "Eskişehirspor"
+   ],
+   "dogru": 2,
+   "aciklama": "Trabzonspor, 1975-76'da kulüp tarihindeki ilk lig şampiyonluğunu kazandı ve İstanbul dışından şampiyon olan ilk takım oldu. Bursaspor ise lig şampiyonluğunu 2009-10 sezonunda kazandı."
+  }
+ ],
+ "derece": [
+  {
+   "min": 0,
+   "baslik": "Isınma turundasın",
+   "metin": [
+    "Henüz soyunma odasından çıkmamışsın gibi duruyor. Açıklamaları bir kez okuyup tekrar sahaya çıkarsan ikinci yarı bambaşka geçer."
+   ]
+  },
+  {
+   "min": 40,
+   "baslik": "Tribünde yüksek sesle maç anlatan",
+   "metin": [
+    "Büyük anları hatırlıyorsun, ayrıntılar biraz dağınık. Kopenhag'ı ve Daegu'yu bilen birine ayrıntıları öğrenmek zor gelmez."
+   ]
+  },
+  {
+   "min": 70,
+   "baslik": "Maç özetlerinin değişmez izleyicisi",
+   "metin": [
+    "Skorlar, şehirler, dakikalar büyük ölçüde sende. Kahvehane tartışmalarında sözüne itibar edilen kişi muhtemelen sensin."
+   ]
+  },
+  {
+   "min": 90,
+   "baslik": "Yaşayan futbol arşivi",
+   "metin": [
+    "Taksim Stadı'ndan Parken'e kadar her şey kayıtlı. Bir sonraki maçta istatistik yorumunu sana bırakıyoruz."
+   ]
+  }
+ ],
+ "kaynaklar": [
+  {
+   "ad": "Wikipedia (EN) – 2000 UEFA Cup final",
+   "not": "S1–S2: Tarih, Parken/Kopenhag, 0-0 ve penaltılarda 4-1, Popescu'nun son penaltısı, Taffarel maçın oyuncusu, Fatih Terim"
+  },
+  {
+   "ad": "Wikipedia (EN) – 2000 UEFA Super Cup",
+   "not": "S3: 25 Ağustos 2000, Monaco, Real Madrid'e 2-1, Jardel'in iki golü ve altın gol"
+  },
+  {
+   "ad": "Topend Sports – Fastest World Cup goals",
+   "not": "S4: Hakan Şükür'ün 11 saniyelik golü, Güney Kore, 2002 üçüncülük maçı"
+  },
+  {
+   "ad": "Lawrence Journal-World (AP), 29.06.2002",
+   "not": "S4: 3-2 skor, Daegu, 1954'ten sonraki ilk katılım"
+  },
+  {
+   "ad": "Wikipedia (EN) – 2002 FIFA World Cup squads",
+   "not": "S5: Türkiye teknik direktörü Şenol Güneş"
+  },
+  {
+   "ad": "Wikipedia (EN) – UEFA Euro 2008 knockout stage",
+   "not": "S6–S7: Klasnić 119', Semih 120+2', penaltılarda 3-1; Almanya 3-2, golcüler"
+  },
+  {
+   "ad": "Wikipedia (EN) – UEFA Euro 2008 squads",
+   "not": "S7: Türkiye teknik direktörü Fatih Terim"
+  },
+  {
+   "ad": "Wikipedia (EN) – Turkey national football team",
+   "not": "S8–S9: 26.10.1923 Romanya 2-2, Taksim Stadı; ilk Dünya Kupası 1954, 1950'den çekilme"
+  },
+  {
+   "ad": "Wikipedia (EN) – 1975–76 1.Lig",
+   "not": "S10: Trabzonspor'un ilk şampiyonluğu ve İstanbul dışından ilk şampiyon olması"
+  }
+ ],
+ "editor_notu": "Penaltı atışları skora eklenmemiş, ayrıca belirtilmiştir."
+}

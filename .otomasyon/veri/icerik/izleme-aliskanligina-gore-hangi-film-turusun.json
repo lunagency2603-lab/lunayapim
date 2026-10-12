@@ -1,0 +1,136 @@
+{
+  "tur": "test",
+  "slug": "izleme-aliskanligina-gore-hangi-film-turusun",
+  "tarih": "2026-10-12",
+  "kat": "ekran",
+  "baslik": "İzleme alışkanlıklarına göre sen hangi film türüsün?",
+  "meta": "Film seçme biçimin, atıştırmalığın ve sinemadaki koltuğun ele veriyor. Sekiz soruda hangi film türü olduğunu bul, sonuçta iki klasikle izlemeye başla.",
+  "giris": "Bazı insanlar afişe bakıp karar verir, bazıları jenerikteki yönetmen adına. Bu sekiz soru, filmi nasıl seçtiğine, ne zaman izlediğine ve bitince ne yaptığına bakıp seni bir türle eşleştiriyor. Sonuç tamamen eğlencelik; sinema bilgini ya da kişiliğini ölçmüyor, ama karşına çıkan iki klasikle bu akşamın film sorununu çözebilir.",
+  "kapak": {"emoji": "🎬"},
+  "sorular": [
+    {
+      "soru": "Film seçerken ilk neye bakarsın?",
+      "secenekler": [
+        {"metin": "Afişte yağmurlu bir sokak ve bir silüet varsa tamamdır", "sonuc": "a"},
+        {"metin": "Başroldeki iki kişinin aynı karede yakışıp yakışmadığına", "sonuc": "b"},
+        {"metin": "Konu \"Yıl 2149\" diye açılıyorsa başka söze gerek yok", "sonuc": "c"},
+        {"metin": "\"Gerçek hayattan\" damgasına; kurgu bana az geliyor", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "En sevdiğin izleme saati hangisi?",
+      "secenekler": [
+        {"metin": "Gece yarısından sonra, ışıklar kapalı", "sonuc": "e"},
+        {"metin": "Akşam geç saat, yanımda sert bir kahve", "sonuc": "a"},
+        {"metin": "Pazar öğleden sonrası, battaniyenin altında", "sonuc": "b"},
+        {"metin": "Kahvaltıda; günün ilk yeni bilgisi filmden gelsin", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Film bitti. İlk ne yaparsın?",
+      "secenekler": [
+        {"metin": "Teori videolarını açarım, gece uzun", "sonuc": "c"},
+        {"metin": "Konuyla ilgili üç makale açar, birini bitiririm", "sonuc": "d"},
+        {"metin": "Koridorun ışığını yakmadan yatağa gitmem", "sonuc": "e"},
+        {"metin": "Kim kimi ne zaman kandırdı, kafamda yeniden kurarım", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Filmin yanında ne var?",
+      "secenekler": [
+        {"metin": "Paylaşmalık kocaman bir kase patlamış mısır", "sonuc": "b"},
+        {"metin": "Sarılacak bir yastık; yemek ikinci planda", "sonuc": "e"},
+        {"metin": "Astronot dondurması bulamadığım için sıradan bir gofret", "sonuc": "c"},
+        {"metin": "Demli siyah çay. Şekersiz.", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Seni en çok hangi sahne yakalar?",
+      "secenekler": [
+        {"metin": "Bir kuşun yuva ördüğü uzun, sessiz plan", "sonuc": "d"},
+        {"metin": "Havalimanında son dakika koşusu", "sonuc": "b"},
+        {"metin": "Gemi bilgisayarının kapıyı açmayı kibarca reddettiği an", "sonuc": "c"},
+        {"metin": "Kameranın aralık bir kapıya yavaş yavaş yaklaştığı an", "sonuc": "e"}
+      ]
+    },
+    {
+      "soru": "Arkadaşların seni nasıl anlatır?",
+      "secenekler": [
+        {"metin": "Az konuşur ama her şeyi fark eder", "sonuc": "a"},
+        {"metin": "Telefonunu herkesten önce günceller", "sonuc": "c"},
+        {"metin": "Sofrada \"Aslında bunun tarihi şöyle...\" diye başlar", "sonuc": "d"},
+        {"metin": "Ortamdaki herkesi birbiriyle tanıştırır", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Sinemada nereye oturursun?",
+      "secenekler": [
+        {"metin": "Arka sıraya; çıkış kapısı görüş alanımda olmalı", "sonuc": "e"},
+        {"metin": "Tam ortaya; ses sistemi beni sarsın", "sonuc": "c"},
+        {"metin": "Yanımdakiyle göz göze gelebileceğim bir yere", "sonuc": "b"},
+        {"metin": "Öne; perdedeki her ayrıntıyı görmeliyim", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Bir filmde seni en çok ne rahatsız eder?",
+      "secenekler": [
+        {"metin": "Her şeyin baştan anlatılması; bırak da ben çözeyim", "sonuc": "a"},
+        {"metin": "Uydurma bilgi", "sonuc": "d"},
+        {"metin": "Fazla aydınlık sahneler", "sonuc": "e"},
+        {"metin": "Fizik kurallarının hiç umursanmaması", "sonuc": "c"}
+      ]
+    }
+  ],
+  "sonuclar": {
+    "a": {
+      "baslik": "Sen bir kara filmsin",
+      "emoji": "🕵️",
+      "metin": [
+        "Gölgeler, yağmur, söylenmeyen cümleler. Bir hikâyede en çok ipuçlarının peşine düşmeyi seviyorsun ve kimseye kolay güvenmiyorsun. Seyirci koltuğunda bile dedektif gibisin; olay örgüsünü çözmeden rahat etmiyorsun.",
+        "Başlamak için iki klasik: John Huston'ın ilk yönetmenlik işi olan The Maltese Falcon (1941) ve Billy Wilder'ın Double Indemnity (1944). İkisi de türün dilini kuran filmler arasında; birini izledikten sonra sonraki onlarca polisiye sahnede o izleri görmeye başlıyorsun."
+      ]
+    },
+    "b": {
+      "baslik": "Sen bir romantik komedisin",
+      "emoji": "💌",
+      "metin": [
+        "İki kişinin birbirine laf yetiştirdiği sahneler senin için aksiyon sahnesi sayılır. Ortamı yumuşatan, insanları buluşturan kişi çoğu zaman sensin. Mutlu sonu küçümsemiyorsun; oraya giden yolun eğlenceli olmasını istiyorsun.",
+        "Önerimiz: Frank Capra'nın It Happened One Night (1934) filmi ve Rob Reiner'ın When Harry Met Sally... (1989) filmi. Aralarında elli beş yıl var ama ikisi de aynı soruyu soruyor: Birbirini çekemeyen iki kişi ne zaman fark eder?"
+      ]
+    },
+    "c": {
+      "baslik": "Sen bir bilimkurgusun",
+      "emoji": "🚀",
+      "metin": [
+        "Aklın sürekli \"ya şöyle olsaydı?\" sorusunda. Teknolojiye meraklısın, bir filmi bitirdikten sonra asıl düşünme kısmı başlıyor. İnandırıcı olsun, kurallarına sadık kalsın, yeter ki seni biraz geleceğe taşısın.",
+        "Listene eklemen gereken iki temel taş: Stanley Kubrick'in 2001: A Space Odyssey (1968) filmi ve Ridley Scott'ın Blade Runner (1982) filmi. Biri uzay yolculuğunu, öteki yapay insanı anlatıyor. Yapay zekâ konuşulan bir sofrada ikisini de izlemiş olmak işine yarar."
+      ]
+    },
+    "d": {
+      "baslik": "Sen bir belgeselsin",
+      "emoji": "🌍",
+      "metin": [
+        "Uydurma hikâyeler sana biraz dar geliyor; gerçek dünyanın kendisi yeterince ilginç. Öğrendiğin şeyi anlatmayı seviyorsun ve bir konuya takıldığında kaynağına kadar iniyorsun. Sofradaki \"biliyor muydunuz\" cümleleri genelde senden çıkıyor.",
+        "Türün köklerine inmek istersen: Robert J. Flaherty'nin Nanook of the North (1922) filmi ve Dziga Vertov'un Man with a Movie Camera (1929) filmi. İkisi de sessiz dönemden; biri bir ailenin gündelik hayatını, öteki bir şehrin bir gününü kameranın gözünden izliyor."
+      ]
+    },
+    "e": {
+      "baslik": "Sen bir korku filmisin",
+      "emoji": "🕯️",
+      "metin": [
+        "Kalbinin biraz hızlanmasından hoşlanıyorsun ama bunu kontrollü ortamda yapmayı tercih ediyorsun. Detaylara dikkat ediyorsun; kapı gıcırtısını herkesten önce sen duyuyorsun. Gece izlemek, işin yarısı.",
+        "İki klasikle başla: F. W. Murnau'nun sessiz dönemden kalma Nosferatu (1922) filmi ve John Carpenter'ın Halloween (1978) filmi. Aralarında elli altı yıl var; biri gölgeyle, öteki müzikle korkutuyor. Hangisinin daha çok işe yaradığına sen karar ver."
+      ]
+    }
+  },
+  "kaynaklar": [
+    {"ad": "Criterion Channel / Wikipedia", "not": "The Maltese Falcon: 1941, yönetmen John Huston, Huston'ın ilk yönetmenlik işi"},
+    {"ad": "Reelviews", "not": "Double Indemnity: 1944, yönetmen Billy Wilder"},
+    {"ad": "AFI Catalog / Britannica", "not": "When Harry Met Sally...: 1989, yönetmen Rob Reiner"},
+    {"ad": "Girl Culture (Substack) ve film arşiv kayıtları", "not": "It Happened One Night: 1934, yönetmen Frank Capra"},
+    {"ad": "Moria Reviews / Far Out Magazine", "not": "2001: A Space Odyssey (1968, Stanley Kubrick); Blade Runner (1982, Ridley Scott)"},
+    {"ad": "naturedocumentaries.org / Handelshögskolan i Stockholm", "not": "Nanook of the North (1922, Robert Flaherty); Man with a Movie Camera (1929, Dziga Vertov)"},
+    {"ad": "Internet Archive / Letterboxd", "not": "Nosferatu (1922, F. W. Murnau); Halloween (1978, John Carpenter)"}
+  ],
+  "editor_notu": "Film adları uluslararası özgün adlarıyla verilmiştir."
+}

@@ -1,0 +1,136 @@
+{
+  "tur": "test",
+  "slug": "gunluk-aliskanliklarina-gore-hangi-muzik-turusun",
+  "tarih": "2026-10-12",
+  "kat": "muzik",
+  "baslik": "Günlük alışkanlıklarına göre hangi müzik türünün dinleyicisisin?",
+  "meta": "Sabah kulaklığın, mutfaktaki çalma listen ve yol müziğin seni ele veriyor. Sekiz soruda hangi türün dinleyicisi olduğunu bul, iki sanatçıyla başla.",
+  "giris": "Kulaklığa ne taktığın kadar onu ne zaman taktığın da bir şey anlatır. Bu test sabah rutininden yol müziğine kadar sekiz gündelik ana bakıp seni bir türle eşleştiriyor. Sonuç eğlencelik; müzik zevkini puanlamıyor, sadece bir sonraki dinleme listene iki isim ekliyor: biri Türkiye'den, biri dünyadan.",
+  "kapak": {"emoji": "🎧"},
+  "sorular": [
+    {
+      "soru": "Sabah evden çıkarken kulaklığında ne çalıyor?",
+      "secenekler": [
+        {"metin": "Bir gitar riffi; günü o açıyor", "sonuc": "a"},
+        {"metin": "Nakaratını ikinci dinleyişte ezberlediğim bir şarkı", "sonuc": "b"},
+        {"metin": "Sözlerine kulak vermem gereken bir parça", "sonuc": "e"},
+        {"metin": "Sözü olmayan, temposu hiç düşmeyen bir şey", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "On dakikalık mola verdin. Ne yaparsın?",
+      "secenekler": [
+        {"metin": "Pencere kenarında acelesi olmayan bir piyano açarım", "sonuc": "c"},
+        {"metin": "Masada parmaklarımla davul çalarım", "sonuc": "a"},
+        {"metin": "Arkadaşlarla son çıkan klibi konuşurum", "sonuc": "b"},
+        {"metin": "Aklıma gelen kafiyeleri not defterine yazarım", "sonuc": "e"}
+      ]
+    },
+    {
+      "soru": "Yemek yaparken mutfakta ne çalar?",
+      "secenekler": [
+        {"metin": "Bir saatlik bir set; bitince yemek de hazır olur", "sonuc": "d"},
+        {"metin": "Plak varsa plak, yoksa eski bir canlı kayıt", "sonuc": "c"},
+        {"metin": "Mutfakta konser veririm, kepçe mikrofon olur", "sonuc": "b"},
+        {"metin": "Ses biraz yüksek; tencereler de eşlik etsin", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Arkadaş grubundaki rolün ne?",
+      "secenekler": [
+        {"metin": "Lafı yerine oturtan, son sözü söyleyen", "sonuc": "e"},
+        {"metin": "Herkes susunca konuşan; az ama öz", "sonuc": "c"},
+        {"metin": "Gece nereye gidileceğini bilen", "sonuc": "d"},
+        {"metin": "Plan bozulunca \"yolda çözeriz\" diyen", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Bir konser biletinde seni en çok ne heyecanlandırır?",
+      "secenekler": [
+        {"metin": "Dev ekranlar, koreografi, ışık şovu", "sonuc": "b"},
+        {"metin": "Gün doğana kadar süren bir program", "sonuc": "d"},
+        {"metin": "Küçük bir salon ve sahneye yakın bir masa", "sonuc": "c"},
+        {"metin": "Sahnede bir kişi, bir mikrofon", "sonuc": "e"}
+      ]
+    },
+    {
+      "soru": "Uzun yolda çalma listesi kimde?",
+      "secenekler": [
+        {"metin": "Bende; arada bir gitar solosu biraz uzun sürebilir", "sonuc": "a"},
+        {"metin": "Herkeste; ortak şarkılarda araba koroya dönüyor", "sonuc": "b"},
+        {"metin": "Bende; her şarkının hikâyesini de anlatırım", "sonuc": "e"},
+        {"metin": "Kimse dokunmasın, geçişleri hesapladım", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Hafta sonu sabahın nasıl başlar?",
+      "secenekler": [
+        {"metin": "Geç kahvaltı, uzun sohbet, acele yok", "sonuc": "c"},
+        {"metin": "Dün geceden kalan bir ritim hâlâ kafamda", "sonuc": "d"},
+        {"metin": "Bisiklet ya da yürüyüş; enerji atmam lazım", "sonuc": "a"},
+        {"metin": "Aynanın karşısında saç fırçasıyla prova", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Bir şarkıda seni ilk ne yakalar?",
+      "secenekler": [
+        {"metin": "Sözlerdeki tek bir cümle", "sonuc": "e"},
+        {"metin": "Hiç beklemediğin bir akor", "sonuc": "c"},
+        {"metin": "Basın girdiği an", "sonuc": "d"},
+        {"metin": "Herkesin bildiği nakarat", "sonuc": "b"}
+      ]
+    }
+  ],
+  "sonuclar": {
+    "a": {
+      "baslik": "Rock dinleyicisisin",
+      "emoji": "🎸",
+      "metin": [
+        "Enerjini bir yere akıtman gerekiyor ve gitar bunun için en iyi araç. Planların bozulduğunda kolay kolay moralin bozulmuyor; sesini biraz açıp yola devam ediyorsun. Canlı çalınan müziğe, sahnedeki terlemiş gruplara ayrı bir saygın var.",
+        "Türkiye'den önerimiz Duman: 1999'da İstanbul'da kurulan grubun ilk albümü Eski Köprünün Altında da aynı yıl çıktı. Dünyadan da Dave Grohl'un 1994'te Seattle'da tek kişilik bir proje olarak başlattığı Foo Fighters. Biri Anadolu rock'a göz kırpan alternatif bir ses, öteki grunge'ın ardından gelen kuşağın en gürültülü temsilcilerinden."
+      ]
+    },
+    "b": {
+      "baslik": "Pop dinleyicisisin",
+      "emoji": "🎤",
+      "metin": [
+        "Bir şarkıyı herkesle paylaşabilmek senin için zevkin yarısı. Nakaratı ezberlemek, klibi konuşmak, arabada koro olmak... Popun hafif olduğunu söyleyenlere gülüp geçiyorsun, çünkü iyi bir pop şarkısının ne kadar zor yazıldığını biliyorsun.",
+        "Türkiye'den Tarkan: 1997 tarihli Ölürüm Sana albümündeki Şımarık, Belçika'nın Valonya listesinde bir numaraya çıktı; Fransa ve Hollanda'da da ilk üçe girdi. Dünyadan da Dua Lipa ve 2020'de çıkan Future Nostalgia albümü. İkisini art arda dinlediğinde dans pistinin dilinin pek değişmediğini görüyorsun."
+      ]
+    },
+    "c": {
+      "baslik": "Caz dinleyicisisin",
+      "emoji": "🎷",
+      "metin": [
+        "Acele etmeyi sevmiyorsun. Bir parçanın nereye gideceğini bilmemek seni rahatsız etmiyor, aksine merakını açıyor. Az ama yerinde konuşuyorsun; dinlemeyi bilen biri olarak çevrende güven veriyorsun.",
+        "Türkiye'den caz piyanisti Kerem Görsev'in kayıtlarıyla başlayabilirsin. Dünyadan ise Miles Davis'in 1959 tarihli Kind of Blue albümü. Biri piyanonun başında, öteki trompetle ama ikisi de dinleyiciden aynı şeyi istiyor: biraz sabır ve iyi bir koltuk."
+      ]
+    },
+    "d": {
+      "baslik": "Elektronik müzik dinleyicisisin",
+      "emoji": "🎛️",
+      "metin": [
+        "Ritim senin için bir çeşit odak aracı. Uzun bir set açıp işine gömülebiliyor, gece nereye gidileceğini de genelde ilk sen biliyorsun. Bir şarkıdan diğerine yumuşak geçiş senin için şarkının kendisi kadar önemli.",
+        "Türkiye'den Bursa doğumlu DJ ve prodüktör Mahmut Orhan: 2016'da Sena Şener'le yaptığı Feel, Avrupa'da listelere girdi. Dünyadan da Daft Punk'ın 2001 tarihli Discovery albümü. Biri deep house'un sakin tarafında, öteki dans müziğinin popla buluştuğu yerde duruyor."
+      ]
+    },
+    "e": {
+      "baslik": "Rap dinleyicisisin",
+      "emoji": "📝",
+      "metin": [
+        "Senin için şarkı demek önce söz demek. Bir dizeyi duyduğunda geri sarıp tekrar dinlersin, kafiyeleri fark edersin, arkadaş ortamında lafı yerine oturtan kişi de genelde sensin. Bir şarkının hikâyesi varsa onu anlatmadan geçemezsin.",
+        "Türkiye'den Ceza ve 2002 tarihli ilk solo albümü Med Cezir; sonrasında Rapstar (2004) ve Yerli Plaka (2006) geldi. Dünyadan Kendrick Lamar ve 2015 tarihli To Pimp a Butterfly. İkisini yan yana dinlemek, rap'in yalnızca hız değil anlatım işi olduğunu gösteriyor."
+      ]
+    }
+  },
+  "kaynaklar": [
+    {"ad": "Wikipedia (Duman)", "not": "1999'da İstanbul'da kuruldu; ilk albüm Eski Köprünün Altında (1999)"},
+    {"ad": "Wikipedia (Şımarık)", "not": "Ölürüm Sana (1997) albümünde; Valonya'da 1 numara, Fransa ve Hollanda'da 3 numara"},
+    {"ad": "Wikipedia (Foo Fighters)", "not": "Dave Grohl 1994'te Seattle'da tek kişilik proje olarak başlattı; post-grunge"},
+    {"ad": "Cumhuriyet / Time Out İstanbul", "not": "Kerem Görsev caz piyanisti"},
+    {"ad": "Wikipedia (Mahmut Orhan)", "not": "Bursa doğumlu DJ ve prodüktör; Feel (Sena Şener ile) 2016, Avrupa'da listelere girdi"},
+    {"ad": "Wikipedia (Ceza)", "not": "İlk solo albüm Med Cezir 2002; Rapstar 2004, Yerli Plaka 2006"},
+    {"ad": "Album of the Year", "not": "Kind of Blue (Miles Davis), Discovery (Daft Punk), To Pimp a Butterfly (Kendrick Lamar), Future Nostalgia (Dua Lipa) künyeleri"}
+  ],
+  "editor_notu": "Her sonuçta biri Türkiye'den, biri dünyadan iki başlangıç önerisi var."
+}

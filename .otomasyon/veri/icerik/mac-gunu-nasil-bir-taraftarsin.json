@@ -1,0 +1,133 @@
+{
+  "tur": "test",
+  "slug": "mac-gunu-nasil-bir-taraftarsin",
+  "tarih": "2026-10-12",
+  "kat": "spor",
+  "baslik": "Maç günü nasıl bir taraftarsın?",
+  "meta": "Statta mı bağırırsın, ikinci ekranda istatistik mi açarsın, uğurlu formanı mı ararsın? Sekiz soruda maç günü hangi taraftar tipi olduğunu bul.",
+  "giris": "Aynı maçı izleyen iki kişi bambaşka şeyler yaşayabilir: biri pas yüzdesine bakar, öteki uğurlu koltuğundan kalkmaz. Bu test maç gününün sekiz anına bakıp seni bir taraftar tipiyle eşleştiriyor. Tamamen eğlence için; hangi takımı tuttuğunu sormuyor, kimseyi de küçümsemiyor.",
+  "kapak": {"emoji": "⚽"},
+  "sorular": [
+    {
+      "soru": "Maç akşam. Saat kaçta hazırsın?",
+      "secenekler": [
+        {"metin": "Kapılar açılmadan stadın önündeyim", "sonuc": "a"},
+        {"metin": "Sabahtan; aynı forma, aynı atkı, aynı çorap", "sonuc": "c"},
+        {"metin": "Öğleden sonra; kim nereden gelecek, yemek ne olacak, organizasyon bende", "sonuc": "d"},
+        {"metin": "İlk 11 açıklandığı an; analize başlıyorum", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Devre arası, takımın 0-1 geride. Aklından ne geçer?",
+      "secenekler": [
+        {"metin": "İkinci yarı bizim, hissediyorum", "sonuc": "e"},
+        {"metin": "Topla oynama ve şut sayısına bakarım; umut var mı?", "sonuc": "b"},
+        {"metin": "Oturduğum yeri değiştiririm, belli ki şanssız", "sonuc": "c"},
+        {"metin": "Sesimi biraz daha açarım, takım duymalı", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Maç izlerken elinde ne var?",
+      "secenekler": [
+        {"metin": "Çekirdek tabağı ve beş kişilik çay", "sonuc": "d"},
+        {"metin": "İkinci ekranda canlı istatistik", "sonuc": "b"},
+        {"metin": "Uğurlu atkım; yıkanmış ama aynı atkı", "sonuc": "c"},
+        {"metin": "Kumanda; uzatmalarda sesi açmak için", "sonuc": "e"}
+      ]
+    },
+    {
+      "soru": "Gol oldu! İlk tepkin?",
+      "secenekler": [
+        {"metin": "Yanımdaki tanımadığım kişiye sarılırım", "sonuc": "a"},
+        {"metin": "Gruba ilk mesajı ben atarım", "sonuc": "d"},
+        {"metin": "Sevinirim ama asıl ikinciyi beklerim", "sonuc": "e"},
+        {"metin": "Golün hangi pas zincirinden geldiğini geri sararım", "sonuc": "b"}
+      ]
+    },
+    {
+      "soru": "Rakip takımın taraftarı da aynı ortamda. Ne olur?",
+      "secenekler": [
+        {"metin": "Sorun yok, sofraya bir tabak daha", "sonuc": "d"},
+        {"metin": "Eski maçların skorlarını kibarca hatırlatırım", "sonuc": "b"},
+        {"metin": "Aynı kanepeye oturmam; uğur bozulur", "sonuc": "c"},
+        {"metin": "Tezahürat yarışına girerim, tatlı sert", "sonuc": "a"}
+      ]
+    },
+    {
+      "soru": "Maç bitti, kaybettik. Sonra?",
+      "secenekler": [
+        {"metin": "Fikstürü açarım; rövanş yakında", "sonuc": "e"},
+        {"metin": "Formanın suçu. Yarın başka forma", "sonuc": "c"},
+        {"metin": "Gol beklentisine bakınca aslında hak etmişiz", "sonuc": "b"},
+        {"metin": "Maç bahaneydi zaten, tatlıya geçelim", "sonuc": "d"}
+      ]
+    },
+    {
+      "soru": "Maç gününde telefonun ne durumda?",
+      "secenekler": [
+        {"metin": "Bildirimler açık; tüm liglerden", "sonuc": "b"},
+        {"metin": "Cepte; tribündeyken kimse ekrana bakmaz", "sonuc": "a"},
+        {"metin": "Skor uygulaması açık; 90+5'te bile bakmayı bırakmam", "sonuc": "e"},
+        {"metin": "Uğurlu duvar kâğıdı yerinde mi, kontrol", "sonuc": "c"}
+      ]
+    },
+    {
+      "soru": "Maç gününün en sevdiğin anı hangisi?",
+      "secenekler": [
+        {"metin": "Takım sahaya çıkarken yükselen ses", "sonuc": "a"},
+        {"metin": "Uzatma dakikalarındaki son atak", "sonuc": "e"},
+        {"metin": "Maçtan sonra uzayan sohbet", "sonuc": "d"},
+        {"metin": "Maç öncesi rutinin eksiksiz tamamlandığı an", "sonuc": "c"}
+      ]
+    }
+  ],
+  "sonuclar": {
+    "a": {
+      "baslik": "Tribünün sesi",
+      "emoji": "📣",
+      "metin": [
+        "Maçı ekrandan izlemek sana biraz eksik geliyor. Kapılar açılmadan oradasın, marşları ezbere biliyorsun, gol olunca yanındaki tanımadık kişiyle kucaklaşmak senin için gayet normal. Takımın seni duyduğuna içtenlikle inanıyorsun.",
+        "Senin gibiler için bir hatırlatma: A Milli Takım, 2026 Dünya Kupası play-off yarı finalinde 26 Mart 2026'da İstanbul'da Romanya'yı 1-0 yendi ve beş gün sonra Priştine'de Kosova'yı da 1-0 geçerek 24 yıl aradan sonra Dünya Kupası biletini aldı. O iki gecede tribünde olanlar ne demek istediğimizi biliyor."
+      ]
+    },
+    "b": {
+      "baslik": "İstatistik defteri",
+      "emoji": "📊",
+      "metin": [
+        "Skor tabelası sana hikâyenin yalnızca bir kısmını anlatıyor. İlk 11'i görür görmez dizilişi çözüyor, ikinci ekranda topla oynama oranını takip ediyor, kaybedilen maçta bile \"aslında iyi oynadık\" diyebileceğin rakamı buluyorsun. Arkadaşlar maç sonrası tartışmayı sana bırakıyor.",
+        "Sana küçük bir arşiv bilgisi: Futbol tarihinin ilk resmî uluslararası maçı 30 Kasım 1872'de Glasgow'da İskoçya ile İngiltere arasında oynandı ve 0-0 bitti. Defterin ilk satırı yani golsüz."
+      ]
+    },
+    "c": {
+      "baslik": "Uğur ustası",
+      "emoji": "🍀",
+      "metin": [
+        "Bir maçı kazanmak için sahadaki 11 kişi yetmez; aynı forma, aynı koltuk, aynı atkı da gerekir. Kaybedince suçu önce kıyafete atıyor, bir sonraki maçta rutini yeniden kuruyorsun. Kimseye zararın yok, sadece kanepedeki yerin kimseye verilmiyor.",
+        "Rahat ol, yalnız değilsin; hemen her evde maç saatinde kimsenin dokunmadığı bir koltuk vardır. Rutinin sana iyi geliyorsa sürdür, yeter ki uğurlu forma arada bir yıkansın."
+      ]
+    },
+    "d": {
+      "baslik": "Sofranın taraftarı",
+      "emoji": "🫖",
+      "metin": [
+        "Maç senin için insanları bir araya getiren en iyi bahane. Kim nereden gelecek, ne yenecek, çay demlendi mi, hepsi senin kontrolünde. Skor tabii ki önemli ama asıl keyif, maçtan sonra uzayan sohbette.",
+        "Rakip takımın taraftarını bile sofraya oturtabildiğin için ortamın en sevilen kişisi olman şaşırtıcı değil. Bir sonraki büyük maç için şimdiden davet listesine başlayabilirsin."
+      ]
+    },
+    "e": {
+      "baslik": "Son düdüğe kadar umutlu",
+      "emoji": "⏱️",
+      "metin": [
+        "Skor ne olursa olsun kumandayı bırakmıyorsun. Geride olduğunda \"ikinci yarı bizim\" diyen, kaybettiğinde fikstürü açan sensin. Seni karamsar görmek pek mümkün değil, uzatma dakikaları da en sevdiğin dakikalar.",
+        "Haklı olduğun anlar da oluyor. A Milli Takım, Türkiye saatiyle 26 Haziran 2026 sabahı oynanan Dünya Kupası'ndaki son grup maçında ABD'yi 3-2 yendi; galibiyet golü Kaan Ayhan'dan 90+8. dakikada geldi. Türkiye gruptan çıkamadı ama o gol, son saniyeye kadar ekranı kapatmayanların ödülü oldu."
+      ]
+    }
+  },
+  "kaynaklar": [
+    {"ad": "Medyascope / Fanatik", "not": "Türkiye-Romanya 1-0, 26 Mart 2026, İstanbul; play-off yarı finali"},
+    {"ad": "Milliyet / Küre Ansiklopedi", "not": "Kosova-Türkiye 0-1, 31 Mart 2026, Priştine Fadil Vokrri Stadyumu; 24 yıl sonra Dünya Kupası (son katılım 2002)"},
+    {"ad": "The FA / Atlas Obscura", "not": "İlk resmî uluslararası maç: İskoçya-İngiltere 0-0, 30 Kasım 1872, Glasgow (Hamilton Crescent)"},
+    {"ad": "Euronews Türkçe / Sky Sports", "not": "Türkiye-ABD 3-2, 26 Haziran 2026; Kaan Ayhan 90+8; Türkiye D Grubu'nu 3 puanla son sırada bitirdi"}
+  ],
+  "editor_notu": "Test hangi takımı tuttuğunu sormaz; sonuçlar yalnızca maç günü alışkanlıklarına göre belirlenir."
+}

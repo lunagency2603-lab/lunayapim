@@ -31,7 +31,7 @@ KATEGORI = {
     "haber":       ("Haber",        "Türkiye'nin çok aradığı konular, kendi kalemimizden"),
     "gundem":      ("Gündem",       "Günün haberleri, kaynaklı ve tarihli"),
     "aranan":      ("Bugün Aranan", "Türkiye bugün ne aradı — günlük liste"),
-    "piyasa":      ("Piyasalar",    "Dolar, euro, altın ve piyasayı okuyan sistemin defteri"),
+    "piyasa":      ("Piyasalar",    "Dolar, euro, altın: günün kurları ve hesap rehberleri"),
     "ekran":       ("Dizi & Film",  "Vizyondakiler, yeni bölümler, platform yayınları"),
     "spor":        ("Spor Ekranı",  "Maç hangi kanalda, saat kaçta"),
     "muzik":       ("Müzik",        "Yeni şarkılar, albümler, konserler"),
@@ -53,6 +53,22 @@ BOLUM_KAT = {"piyasalar": "piyasa", "ekran": "ekran", "spor": "spor", "sanat": "
 # Ust menude gorunen bolumler (arastirma 20.09: 6-8 baslik + "Tumu").
 # Tamami altbilgide ve ana sayfa bolum seritlerinde duruyor.
 MENU = ["haber", "aranan", "piyasa", "ekran", "spor", "burc", "teknoloji"]
+# 12.10.2026 — AdSense "düşük değerli içerik" incelemesi: boş (3 yazının altında) ya da
+# yayının konusu dışında kalan bölümler menüde, altbilgide, ana sayfada ve site haritasında
+# görünmez; bölüm sayfası noindex,follow olarak kalır, dosya silinmez. Yazılar yerinde durur.
+YAYIN_DISI = {"sistem", "rapor", "sehir", "analiz"}
+INCE_BOLUM_ESIK = 3
+GORUNUR = set(KATEGORI) - YAYIN_DISI          # yayinla() yazı sayısına göre daraltır
+_GORUNUR_DOSYA = os.path.join(KOK_DIZIN, "veri", "trend_gorunur.json")
+try:   # arac/kurumsal/bulten ayrı süreçte çalışır: son yayının görünür bölümlerini okusun
+    GORUNUR = set(json.load(open(_GORUNUR_DOSYA, encoding="utf-8"))) & GORUNUR
+except Exception:
+    pass
+TEKRAR_GORSEL = set()                          # birden çok yazıda tekrar eden temsilî görseller
+YAZI_TURLERI = ("haber", "rehber", "bicim")    # slug'lı, kendi sayfası olan içerikler
+TASLAKLAR = []                                 # editör onayı bekleyen yeni içerikler (yayın dışı)
+NOINDEX = '<meta name="robots" content="noindex, follow">'
+ABONE_KUTUSU = False
 
 BOLUM_GORSEL = {"piyasa": "../video/karga-k3", "ekran": "renk-masasi", "spor": "../video/karga-k5", "sanat": "set-isik",
                 "teknoloji": "render-istasyonu", "muhendislik": "render-istasyonu", "sosyal-medya": "../video/karga-k2", "aranan": "../video/karga-k6",
@@ -61,7 +77,7 @@ KAT_GIRIS = {
     "gundem": "Her sabah inşaat, konut, emlak, sanayi, turizm ve tanıtım sektörlerinden günün haberleri taranır; işimize dokunanlar seçilir. Her madde kaynağı ve tarihiyle durur, altında tek bir soru cevaplanır: bu bizim için ne demek? Haberi yeniden yazmıyoruz; olgu kaynaktan, analiz bizden. Rakam yalnızca kaynakta geçiyorsa yazılır; tahmin ve projeksiyon bu sayfada yok.",
     "analiz": "Analiz yazıları haberin bir adım ötesi: bir gelişmenin bir inşaat firmasının, bir emlak ofisinin ya da bir üreticinin tanıtım kararını nasıl değiştirdiğini anlatır. Fiyat bantları, teslim süreleri ve kontrol listeleri gerçek işlerden gelir. Uzun yazılar blogda, kısa okumalar burada.",
     "rapor": "Raporlar ölçümdür, yorum değil. Haftalık karne, piyasayı okuyan sistemin yedi günlük sonucunu kazanan ve kaybeden bütün kayıtlarla verir; seçme yapılmaz. Sektör raporları ise TÜİK, sahibindex ve sektör derneklerinin yayınladığı verilerin kısa okumasıdır. Hiçbir rapor yatırım tavsiyesi değildir.",
-    "piyasa": "Piyasa bölümü KDA Matrix'in kanıt defterinden beslenir: sistem neye baktı, hangi hatlar sınavı geçti, hangileri elendi. Fiyat hedefi, al-sat önerisi ya da açık pozisyon paylaşılmaz; sonuçlar kapanışta doğrulandıktan sonra yazılır. Kripto ve hisse piyasaları yüksek risk taşır.",
+    "piyasa": "Piyasalar bölümü her gün sorulan soruları cevaplar: dolar kaç TL, gram altın nasıl hesaplanır, enflasyon ne zaman açıklanır, kira artışı nasıl bulunur. Kurlar TCMB'nin her iş günü 15:30'da yayımladığı gösterge kurlardır; altın fiyatı kaynak adıyla verilir. Fiyat tahmini, al-sat önerisi ya da yatırım yorumu yazılmaz.",
     "sehir": "Şehir bölümü Bursa'dan başlar, 81 ile uzanır: yatırım gündemi, sanayi ve turizm haberleri, ilan ve konut piyasasının yerel görünümü. Her ilin kendi sayfası ana sitede; burada günün gelişmesi ve o ilde ne anlama geldiği yazılır.",
     "teknoloji": "Teknoloji bölümü yapay zekâ ile görsel ve video üretimi, reklam düzenlemeleri, yazılım ve üretim araçlarını izler. Hangi aracın neye yaradığını gerçek kullanımdan anlatırız; etiket zorunluluğu, telif ve gizlilik gibi kuralları da atlamayız.",
 }
@@ -70,9 +86,9 @@ KAT_IZLEME = {
     "gundem": ("Neyi izliyoruz", "TÜİK konut satış ve yapı ruhsatı verileri, sahibindex ve Endeksa piyasa raporları, kentsel dönüşüm kararları, sanayi üretimi ve ihracat rakamları, fuar takvimi, otel ve turizm yatırımları, mobilya ve dekorasyon sektörü, yapay zekâ ile reklam düzenlemeleri, küçük işletmelerin sosyal medya kullanımı ve Bursa'nın yatırım gündemi. Siyaset, asayiş, spor, magazin ve döviz-borsanın günlük hareketi bu sayfaya girmez.", [("../hizmetler/", "Prodüksiyon hizmetleri"), ("../gundem/", "Gündem arşivi"), ("../blog/", "Blog")]),
     "analiz": ("Nasıl yazıyoruz", "Her analiz bir soruyla başlar: bu gelişme kimin hangi kararını değiştirir? Cevap gerçek bir işten gelir — bir satış ofisinin görsel ihtiyacı, bir emlak ofisinin ilan süresi, bir üreticinin fuar takvimi. Fiyat yazıyorsak sitede yayınlanmış banttır; süre yazıyorsak teslim ettiğimiz işlerin ortalamasıdır. Kaynak göstermeden sayı vermeyiz.", [("../fiyatlar", "Fiyat listesi"), ("../blog/", "Uzun yazılar"), ("../studyo", "Nasıl çalışıyoruz")]),
     "rapor": ("Raporun anatomisi", "Haftalık karne dört bölümden oluşur: sistemin taradığı hareket sayısı, ham isabet oranı (kazanan ve kaybeden bütün sinyaller dahil), sınavı geçen ve elenen hatlar, sistemin dikkatinin kaydığı bölgeler. Bir hat kırk sonuçlanmış sinyal biriktirmeden yayına çıkmaz; elenen hat listeden silinmez, mezarlığa kaldırılır. Sayı, sistemin kendi kaydıdır; insan eli değmez.", [("../bulten/", "Matrix Bülteni"), ("../bulten/00-sistem", "Sistem nasıl çalışıyor"), ("../matrix", "Kanıt defteri")]),
-    "piyasa": ("Ne paylaşmıyoruz", "Açık pozisyon, fiyat hedefi, alım-satım önerisi ve \"şu coin patlayacak\" cümlesi bu bölümde yoktur. Hangi hattın hangi sinyali verdiği ancak sonuç kapanışta doğrulandıktan sonra yazılır. Kripto varlık ve hisse piyasaları yüksek risk taşır; yatırdığınız tutarın tamamını kaybedebilirsiniz. Bu bölüm bir araştırma sisteminin şeffaf günlüğüdür, başka bir şey değil.", [("../matrix", "Kanıt defteri"), ("../bulten/", "Haftalık karne"), ("../kosullar", "Koşullar")]),
+    "piyasa": ("Ne yazmıyoruz", "Fiyat tahmini, hedef fiyat, alım-satım önerisi ve kripto para yorumu bu bölümde yoktur. Kur ve altın rakamı her zaman kaynağı ve tarihiyle verilir; bankaların ve kuyumcuların uyguladığı fiyat bu gösterge rakamdan farklı olabilir, bunun nedenini rehberde ayrıca anlatırız. Bu bölümdeki hiçbir bilgi yatırım tavsiyesi değildir.", [("../trend/dolar-kac-tl-bugun", "Dolar kaç TL bugün"), ("../trend/gram-altin-nasil-hesaplanir-ons-dolar", "Gram altın nasıl hesaplanır"), ("../trend/kosullar", "Kullanım koşulları")]),
     "sehir": ("Bursa'dan 81 ile", "Bursa; otomotiv, tekstil ve mobilya sanayisi, Uludağ turizmi ve kentsel dönüşüm projeleriyle bizim sahamız. Diğer 80 il için her ilin kendi sayfası ana sitede: o ilde hangi hizmeti verdiğimiz, yerel sektör yapısı ve teslim takvimi. Buradaki haberler o sayfalara bağlanır; drone çekimi 81 ilin tamamında.", [("../sehir/bursa", "Bursa sayfası"), ("../sehir/", "Tüm iller"), ("../hizmetler/drone-fpv", "Drone çekimi")]),
-    "teknoloji": ("Kullandığımız araçlar", "Görsel ve video üretiminde Runway ve Higgsfield, tel kafes ve hareketli grafikte kendi kodumuz, kurgu ve kodlamada ffmpeg; siteyi ve bu yayını Luna Pusula işletir. Yapay zekâ ile üretilen her görsel teslimde işaretlenir. Hangi aracın nerede işe yaradığını ve nerede yaramadığını gerçek denemelerden yazarız.", [("../yapay-zeka/", "Yapay zekâ sayfası"), ("../yazilim", "Yazılım"), ("../studyo", "Stüdyo")]),
+    "teknoloji": ("Kullandığımız araçlar", "Görsel ve video üretiminde Runway ve Higgsfield, tel kafes ve hareketli grafikte kendi kodumuz, kurgu ve kodlamada ffmpeg. Yapay zekâ ile üretilen her görsel teslimde işaretlenir. Hangi aracın nerede işe yaradığını ve nerede yaramadığını gerçek denemelerden yazarız.", [("../yapay-zeka/", "Yapay zekâ sayfası"), ("../yazilim", "Yazılım"), ("../studyo", "Stüdyo")]),
 }
 
 # hizmet sayfası → kategori, görsel
@@ -105,14 +121,14 @@ KAT_DUZEN = {
     "sosyal-medya": ("Ne zaman, nasıl güncellenir", "Platform değişiklikleri ve akımlar her sabah taranır; küçük işletmeyi ilgilendiren maddeler öne alınır. Her madde platformun kendi duyurusuna ya da haberin kaynağına bağlanır. Sosyal medya yönetimi bizim hizmetimiz olduğu için burada gerçekten söyleyecek sözümüz var: bir değişikliğin işletme hesabına ne yaptığını, ne yapılması gerektiğini kısa ve kaynaklı yazarız. Algoritma söylentileri ile platformun resmî duyurusu ayrı tutulur; söylenti, kaynağı yazılarak ve öyle olduğu belirtilerek girer. Reklamda yapay zekâ etiketi gibi mevzuat değişiklikleri de burada, resmî metnine bağlanarak duyurulur."),
 }
 KAT_DUZEN.update({
-    "haber": ("Ne zaman, nasıl güncellenir", "Google Trends'in Türkiye listesi gün içinde birkaç kez okunur; hacmi yüksek ve en az iki farklı yayıncının haber yaptığı konular sırayla yazılır. Aynı konu bir hafta içinde ikinci kez yazılmaz; gelişme varsa yeni yazı açılır ve eskisine bağlanır. Her yazının başında arayanın sorusunun kısa cevabı, sonunda takip edilecek resmî kanallar durur. Ölüm, suç, kaza ve sağlık haberleri otomatik yazılmaz; bu konular editör kararı ister. Görseller serbest lisanslı arşivlerden (Wikimedia Commons, Openverse) künyesiyle alınır; haber sitelerinin fotoğrafı kullanılmaz."),
+    "haber": ("Ne zaman, nasıl güncellenir", "Google Trends'in Türkiye listesi gün içinde birkaç kez okunur; hacmi yüksek ve en az iki farklı yayıncının haber yaptığı konular sırayla yazılır. Aynı konu bir hafta içinde ikinci kez yazılmaz; gelişme varsa yeni yazı açılır ve eskisine bağlanır. Her yazının başında arayanın sorusunun kısa cevabı, sonunda takip edilecek resmî kanallar durur. Ölüm, suç, kaza ve sağlık haberleri yazılmaz. Görseller serbest lisanslı arşivlerden (Wikimedia Commons, Openverse) künyesiyle alınır; haber sitelerinin fotoğrafı kullanılmaz."),
     "muzik": ("Ne zaman, nasıl güncellenir", "Yeni şarkı ve albüm haberleri, konser ve turne duyuruları, listeler ve ödüller her gün taranır; iki farklı kaynağın doğruladığı gelişme yazıya dönüşür. Şarkı sözü, albüm kapağı ve klip görüntüsü telif kapsamında olduğu için sayfaya alınmaz; sanatçının kendi duyurusu ve basın bültenlerindeki olgular kullanılır. Konser haberlerinde tarih, şehir ve mekân yazılır; bilet fiyatı yalnız resmî satış kanalında açıklanmışsa geçer. Klip çekimi bizim işimiz olduğu için bir prodüksiyonun nasıl kurulduğunu da arada anlatırız."),
     "edebiyat": ("Ne zaman, nasıl güncellenir", "Yeni çıkan kitaplar, yayınevi duyuruları, edebiyat ödülleri ve kitap fuarları haftalık izlenir; iki kaynağın doğruladığı haber yazıya dönüşür. Kitaptan uzun alıntı yapılmaz, kapak görseli kullanılmaz; tanıtım yayınevinin ve basının açıkladığı olgulara dayanır. Ödül haberlerinde jüri ve gerekçe yalnız resmî açıklamada geçiyorsa yazılır. Fuar ve imza günlerinde tarih, şehir ve mekân bilgisi verilir; okurun kitaba ulaşacağı resmî kanallar sayfanın sonunda sıralanır."),
 })
 KAT_SSS_EK = {
     "haber": [("Hangi konular yazılıyor?", "Google Trends Türkiye listesinde yüksek hacimle yer alan ve en az iki farklı yayıncının haber yaptığı konular."),
-              ("Yazıları kim yazıyor?", "TrendSaphiens; olgular kaynaklardan, cümleler ve açıklama bizden. Her yazı yayından önce kaynaklarla örtüşme denetiminden geçer."),
-              ("Neden bazı çok aranan konular yok?", "Ölüm, suç, kaza ve sağlık haberleri otomatik yazılmaz; tek kaynaklı konular da beklemeye alınır.")],
+              ("Yazıları kim yazıyor?", "TrendSaphiens; olgular kaynaklardan, cümleler ve açıklama bizden. Kaynakların adı her yazının başında ve sonunda durur."),
+              ("Neden bazı çok aranan konular yok?", "Ölüm, suç, kaza ve sağlık haberlerini yazmıyoruz; tek kaynaklı konular da doğrulanana kadar beklemeye alınır.")],
     "muzik": [("Şarkı sözleri neden yok?", "Sözler telif kapsamındadır; yalnız sanatçının ve yayıncının açıkladığı bilgileri yazarız."),
               ("Konser bilet bilgisi nereden?", "Resmî satış kanalının duyurusundan; açıklanmamış fiyat yazılmaz."),
               ("Görseller nereden geliyor?", "Serbest lisanslı arşivlerden, künyesiyle; albüm kapağı ve basın fotoğrafı kullanılmaz.")],
@@ -143,7 +159,7 @@ KAT_SSS = {
 }
 KAT_SSS.update(KAT_SSS_EK)
 KAT_GIRIS_EK = {
-    "haber": "Türkiye'nin gün içinde en çok aradığı konular, arayanın sorusuna cevap verecek biçimde yazılır: ne oldu, neden konuşuluyor, neyi henüz bilmiyoruz. Her yazı en az iki farklı yayıncının haberinden derlenen olgulara dayanır; cümleler bizimdir ve yayından önce örtüşme denetiminden geçer. Ölüm, suç ve kaza haberleri otomatik yazılmaz.",
+    "haber": "Türkiye'nin gün içinde en çok aradığı konular, arayanın sorusuna cevap verecek biçimde yazılır: ne oldu, neden konuşuluyor, neyi henüz bilmiyoruz. Her yazı en az iki farklı yayıncının haberinden derlenen olgulara dayanır; cümleler bizimdir. Ölüm, suç ve kaza haberleri yazılmaz.",
     "muzik": "Yeni şarkılar, albümler, listeler ve konser takvimi. Her yazı en az iki kaynağa dayanır; şarkı sözü ve kapak görseli alınmaz, görseller serbest lisanslı arşivlerden künyesiyle gelir.",
     "edebiyat": "Yeni çıkan kitaplar, yazarlar, edebiyat ödülleri ve kitap fuarları. Kitaptan uzun alıntı yapılmaz; tanıtım yayınevi ve basın duyurularındaki olgulara dayanır, yorum bizimdir.",
     "aranan": "Her sabah Google Trends'in Türkiye listesini alır, her başlığın yanına Google'ın bağladığı haberi (kaynak ve adres) koyarız. Bizim eklediğimiz tek şey bir cümlelik çerçeve: neden arandı, nereye bakılır. Liste Google'ındır, sıralama Google'ındır; biz okunur hâle getiririz.",
@@ -227,6 +243,16 @@ def _atif(m):
     return out
 
 
+def _gorsel_anahtar(m):
+    """Serbest lisanslı görselin kimliği: dosya adı yazıya göre değişir, kaynak adresi değişmez."""
+    k = m.get("gorsel_kunye") or {}
+    return k.get("kaynak_url") or k.get("baslik") or ""
+
+
+def _tekrar_mi(m):
+    return bool(_gorsel_anahtar(m)) and _gorsel_anahtar(m) in TEKRAR_GORSEL
+
+
 def _gorsel_url(ad, mutlak=False):
     """Görsel anahtarı → adres. 'ts:x.jpg' indirilen serbest lisanslı görseldir (assets/ts/)."""
     kok = "https://lunayapim.com/" if mutlak else ""
@@ -277,6 +303,7 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="{on}assets/luna.css">
+<link rel="stylesheet" href="{on}assets/ts-vitrin.css?v=1">
 %s
 </head>
 <body class="ts-tema">
@@ -284,14 +311,14 @@ def _bas(baslik, aciklama, url, gorsel=None, sema=None, tur="website", on="../",
 {serit}
 <header class="ts-ust">
   <div class="wrap ts-ust-ic">
-    <a class="ts-marka" href="{trk}">Luna<b>Trend</b>Saphiens</a>
+    <a class="ts-marka" href="{trk}"><b>Trend</b>Saphiens</a>
     <nav class="ts-nav">%s</nav>
-    <div class="ts-ust-sag"><a href="{on}" class="ts-ana">Luna Yapım</a><a href="#abone" class="ts-abone-dug">Abone ol</a></div>
+    <div class="ts-ust-sag"><a href="{tr}araclar" class="ts-abone-dug">Araçlar</a></div>
   </div>
 </header>
 {ana}
 """.replace("{ana}", '<main id="icerik">' if ana else '<a id="icerik" tabindex="-1"></a>').replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr).replace("{serit}", _ust_serit(tr)) % (ADSENSE, _e(baslik), _e(aciklama), url, _e(baslik), _e(aciklama), tur, url, og, og, sema or "",
-       "".join('<a href="%s%s/">%s</a>' % (tr, k, KATEGORI[k][0]) for k in MENU if k in KATEGORI)
+       "".join('<a href="%s%s/">%s</a>' % (tr, k, KATEGORI[k][0]) for k in MENU if k in KATEGORI and k in GORUNUR)
        + '<a class="ts-nav-tumu" href="%s#bolumler">Tümü</a>' % (tr or "./"))
 
 
@@ -322,8 +349,8 @@ def _ust_serit(tr=""):
         return ""
     return ('<div class="ts-serit-ust"><div class="wrap ts-serit-ust-ic">'
             '<span class="ts-serit-tarih">%s</span><div class="ts-serit-veri">%s</div>'
-            '<a class="ts-serit-arac" href="%sbulten">Bülten</a><a class="ts-serit-arac" href="%saraclar">Araçlar</a></div></div>'
-            % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr, tr))
+            '<a class="ts-serit-arac" href="%saraclar">Araçlar</a></div></div>'
+            % (_e(_tr_tarih(v["tarih"])), "".join(oge), tr))
 
 
 def _alt(on="../", tr="", ana=True):
@@ -331,12 +358,12 @@ def _alt(on="../", tr="", ana=True):
 <footer class="ts-alt">
   <div class="wrap">
     <div class="ts-alt-izgara">
-      <div><a class="ts-marka" href="{trk}">Luna<b>Trend</b>Saphiens</a>
-        <p>Günün haberleri, analizler ve raporlar. Her madde kaynaklı; rakam yalnızca kaynakta varsa yazılır. Piyasa tarafı yatırım tavsiyesi değildir.</p></div>
+      <div><a class="ts-marka" href="{trk}"><b>Trend</b>Saphiens</a>
+        <p>Türkiye'nin aradığı konular, burçlar, maç ve yayın rehberleri, günün kurları ve hesaplama araçları. Her yazı kaynaklı; rakam yalnızca kaynakta varsa yazılır. Kur bilgisi yatırım tavsiyesi değildir.</p></div>
       <div><h4>Bölümler</h4>%s</div>
-      <div><h4>Luna Yapım</h4><a href="{on}">Ana site</a><a href="{on}yazilim">Yazılım</a><a href="{on}hizmetler/">Prodüksiyon</a><a href="{on}studyo">Stüdyo</a><a href="{on}matrix">KDA Matrix</a></div>
-      <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}bulten">Günün bülteni</a><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
-      <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{tr}denetim">Bağımsız denetim</a><a href="{on}iletisim">Luna Yapım iletişim</a><a href="{on}gizlilik">Gizlilik ve çerezler</a><a href="{on}kosullar">Koşullar</a><a href="{on}seffaflik">Şeffaflık</a></div>
+      <div><h4>Yayıncı</h4><a href="{on}">Luna Yapım</a><a href="{on}hizmetler/">Prodüksiyon hizmetleri</a></div>
+      <div class="ts-alt-arac"><h4>Araçlar</h4><a href="{tr}yukselen-burc-hesaplama">Yükselen burç</a><a href="{tr}burc-uyumu">Burç uyumu</a><a href="{tr}yas-hesaplama">Yaş hesaplama</a><a href="{tr}vucut-kitle-indeksi">Vücut kitle indeksi</a><a href="{tr}yuzde-hesaplama">Yüzde hesaplama</a><a href="{tr}oruntu-oyunu">Örüntü oyunu</a></div>
+      <div><h4>Kurumsal</h4><a href="{tr}hakkimizda">Hakkımızda</a><a href="{tr}iletisim">İletişim</a><a href="{tr}gizlilik">Gizlilik ve çerezler</a><a href="{tr}kosullar">Kullanım koşulları</a><a href="{tr}yayin-ilkeleri">Yayın ilkeleri ve düzeltmeler</a><a href="{tr}yazar/pusat-ceylan">Editör: Pusat Ceylan</a></div>
     </div>
     <div class="ts-alt-satir"><span>© <span id="yil"></span> Luna Yapım · Bursa</span><span>TrendSaphiens bir Luna Yapım yayınıdır</span></div>
   </div>
@@ -345,8 +372,9 @@ def _alt(on="../", tr="", ana=True):
 <script src="{on}assets/olcum.js"></script>
 <script src="{on}assets/okuma.js" defer></script>
 <script src="{on}assets/sahne.js?v=1" defer></script>
+<script src="{on}assets/ts-etkilesim.js?v=1" defer></script>
 </body>
-</html>""".replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr)) % "".join('<a href="%s%s/">%s</a>' % (tr, k, v[0]) for k, v in KATEGORI.items())
+</html>""".replace("{on}", on).replace("{trk}", tr or "./").replace("{tr}", tr)) % "".join('<a href="%s%s/">%s</a>' % (tr, k, v[0]) for k, v in KATEGORI.items() if k in GORUNUR)
 
 
 def _paylas(url, baslik):
@@ -359,6 +387,10 @@ def _paylas(url, baslik):
 
 
 def _abone(on="../"):
+    # 12.10.2026: bu kutu piyasa bülteninin (Matrix, haftalık karne) aboneliğiydi; genel bir
+    # haber ve rehber yayınında konu dışı kalıyordu (AdSense incelemesi). TrendSaphiens'te kapalı.
+    if not ABONE_KUTUSU:
+        return ""
     return """<div class="ts-abone" id="abone">
   <span class="etk">Ücretsiz bülten</span>
   <h3>Günün özeti ve haftalık karne, e-postana.</h3>
@@ -373,7 +405,7 @@ def _abone(on="../"):
 </script>""" % on
 
 RISK = """<div class="bl-risk"><span class="etk">Risk bildirimi</span>
-  <p>Piyasa içeriği bir <strong>bilgi ürünüdür</strong>; yatırım danışmanlığı, tavsiyesi ya da alım-satım önerisi değildir. Kripto varlık ve hisse piyasaları yüksek risk taşır; geçmiş performans gelecek için gösterge değildir, hiçbir kazanç vaat edilmez.</p></div>"""
+  <p>Kur ve altın bilgisi <strong>bilgilendirme amaçlıdır</strong>; yatırım danışmanlığı, tavsiyesi ya da alım-satım önerisi değildir. Bankaların ve kuyumcuların uyguladığı fiyat gösterge rakamdan farklı olabilir; geçmiş fiyatlar gelecek için gösterge değildir.</p></div>"""
 
 # Gün sayfalarında kısa risk satırı: uzun metin bölüm sayfasında durur.
 # 22.09.2026 — gün sayfaları arasındaki benzerlik %76'ya çıkmıştı; şablon payını
@@ -488,9 +520,16 @@ def _bulten_sayilari(kok):
 
 
 # ---------------------------------------------------------------- kartlar
+def _kapak(m, on="../"):
+    """12.10.2026: görsel ancak konuya ait (serbest lisanslı, tekrar etmeyen) ise basılır;
+    yoksa bölüm renginde tasarlanmış kapak. Stüdyo fotoğrafları haber kartında konu dışıydı."""
+    from . import bicim as BC
+    return BC.kapak_html(m, on, _tekrar_mi)
+
+
 def _kart(m, buyuk=False, on="../", tr=""):
     kat_ad = KATEGORI.get(m["kat"], ("Gündem",))[0]
-    if m["tur"] in ("haber", "rehber"):
+    if m["tur"] in YAZI_TURLERI:
         url = tr + m["slug"]
     elif m["tur"] == "sayfa":
         url = tr + m["url"]
@@ -504,7 +543,7 @@ def _kart(m, buyuk=False, on="../", tr=""):
         <h3>%s</h3>
         <p>%s</p>
       </div>
-    </a>""" % (" ts-kart-buyuk" if buyuk else "", _e(url), _gorsel(m["gorsel"], m["baslik"], "b" if buyuk else "k", on),
+    </a>""" % (" ts-kart-buyuk" if buyuk else "", _e(url), _kapak(m, on),
                _e(kat_ad), _e(_tr_tarih(m["tarih"])), sure, _e(m["baslik"]), _e((m.get("olgu") or "")[:220].rsplit(" ", 1)[0] + ("…" if len(m.get("olgu") or "") > 220 else "")))
 
 
@@ -602,11 +641,28 @@ def _diskteki_gun_sayfalari(kok, mevcut):
 def _hepsi(kok):
     h = _konu_yazilari() + _gundem_maddeleri() + _blog_yazilari(kok) + _bulten_sayilari(kok) + _gunluk_sayfalar() + _rehberler()
     try:
+        from . import bicim as BC
+        h += BC.akis_maddeleri()
+    except Exception as ex:
+        print("biçim içerikleri:", ex)
+    try:
         h += _diskteki_gun_sayfalari(kok, h)
     except Exception as ex:
         print("diskteki gun sayfalari:", ex)
     h.sort(key=lambda x: (x["tarih"], -x.get("sira", 0)), reverse=True)
-    return h
+    # 12.10.2026 — editörlük: KESIM sonrası onaysız içerik taslaktır, akışlara girmez
+    from . import editor as ED
+    global TASLAKLAR
+    TASLAKLAR = []
+    acik = []
+    for m in h:
+        if m["tur"] in YAZI_TURLERI and m.get("slug"):
+            m["durum"] = ED.durum(m["slug"], m.get("tarih"))
+            if m["durum"] == "taslak":
+                TASLAKLAR.append(m)
+                continue
+        acik.append(m)
+    return acik
 
 
 # ---------------------------------------------------------------- sayfalar
@@ -653,8 +709,8 @@ def _rehber_kutu(tr=""):
     if not rl:
         return ""
     sat = "".join('<li><a href="%s%s">%s</a></li>' % (tr, _e(r["slug"]), _e(r["baslik"])) for r in rl[:9])
-    return ('<div class="ts-kutu ts-rehber"><h2 class="etk">Kalici rehberler</h2><ul class="ts-rehber-liste">%s</ul>'
-            '<p class="ts-not">Gunu gecmeyen sorular: nereye bakilir, nasil okunur.</p></div>') % sat
+    return ('<div class="ts-kutu ts-rehber"><h2 class="etk">Kalıcı rehberler</h2><ul class="ts-rehber-liste">%s</ul>'
+            '<p class="ts-not">Günü geçmeyen sorular: nereye bakılır, nasıl okunur.</p></div>') % sat
 
 
 def _rakam_kutu(on="../", tr=""):
@@ -682,7 +738,10 @@ def _rakam_kutu(on="../", tr=""):
 
 
 def _bulten_bant(kok, tr=""):
-    """Ana sayfada gunun bultenine gonderen bant — 30 madde tek sayfada."""
+    """Ana sayfada gunun bultenine gonderen bant — 30 madde tek sayfada.
+    12.10.2026: kapatıldı. Bülten çoğunlukla günlük arama listelerinin tekrarıydı
+    (8 kez "Türkiye bugün ne aradı?"); sayfa noindex, ana sayfadan bağlanmıyor."""
+    return ""
     try:
         from . import bulten_sayfa as B
         adet = len(B._maddeler(kok))
@@ -720,14 +779,14 @@ def _kat_seritleri(kok, hepsi, on="../", tr=""):
     sayfalari da ic baglanti almiyordu. Bos bolum atlanir.
     """
     def _u(m):
-        return tr + m["slug"] if m["tur"] in ("haber", "rehber") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
+        return tr + m["slug"] if m["tur"] in ("haber", "rehber", "bicim") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
 
     sira = ["haber", "aranan", "piyasa", "ekran", "spor", "burc", "muzik", "edebiyat", "sanat",
             "teknoloji", "muhendislik", "sosyal-medya", "analiz", "rapor", "sehir"]
     par = []
     for kat in sira:
         liste = [m for m in hepsi if m.get("kat") == kat][:3]
-        if not liste:
+        if not liste or kat not in GORUNUR:
             continue
         ad, alt = KATEGORI.get(kat, (kat.title(), ""))
         kart = []
@@ -752,12 +811,16 @@ def akis_html(kok, kat=None):
     hepsi = _hepsi(kok)
     if kat:
         hepsi = [m for m in hepsi if m["kat"] == kat]
+    else:
+        hepsi = [m for m in hepsi if m.get("kat") in GORUNUR and m["tur"] != "sayfa"]
+    # 12.10.2026: kartlarda önce yazılar; günlük kur/arama arşiv sayfaları (noindex) arşiv listesinde
+    hepsi = [m for m in hepsi if m["tur"] != "sayfa"] + [m for m in hepsi if m["tur"] == "sayfa"]
     on, tr = ("../../", "../") if kat else ("../", "")
-    ad, alt_baslik = KATEGORI.get(kat, ("Akış", "Günün haberleri, analizler, raporlar"))
-    baslik = ("%s — %s | TrendSaphiens" % (ad, KAT_KISA.get(kat, alt_baslik))) if kat else "TrendSaphiens — günün haberleri, analizler, raporlar"
+    ad, alt_baslik = KATEGORI.get(kat, ("Akış", "Günün haberleri, rehberler ve araçlar"))
+    baslik = ("%s — %s | TrendSaphiens" % (ad, KAT_KISA.get(kat, alt_baslik))) if kat else "TrendSaphiens — günün haberleri, rehberler ve araçlar"
     if len(baslik) > 68:
         baslik = "%s | TrendSaphiens" % ad
-    aciklama = (alt_baslik + ". Her madde kaynaklı ve tarihli; rakam yalnızca kaynakta varsa yazılır. Luna Yapım'ın günlük yayını: haber, analiz, rapor.")[:158]
+    aciklama = (alt_baslik + ". Her madde kaynaklı ve tarihli; rakam yalnızca kaynakta varsa yazılır. TrendSaphiens: haber, rehber ve hesaplama araçları.")[:158]
     url = KOK_URL + ((kat + "/") if kat else "")
     sema = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": baslik, "url": url,
             "description": aciklama, "isPartOf": {"@type": "WebSite", "name": "TrendSaphiens", "url": KOK_URL},
@@ -765,7 +828,7 @@ def akis_html(kok, kat=None):
     man = hepsi[0] if hepsi else None
     kartlar = "".join(_kart(m, False, on, tr) for m in hepsi[1:13])
     def _u(m):
-        return tr + m["slug"] if m["tur"] in ("haber", "rehber") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
+        return tr + m["slug"] if m["tur"] in ("haber", "rehber", "bicim") else (tr + m["url"] if m["tur"] == "sayfa" else on + m["url"][3:])
     trend = "".join('<li><a href="%s"><span>%02d</span>%s</a></li>' % (_e(_u(m)), i, _e(m["baslik"])) for i, m in enumerate(hepsi[:6], 1))
     govde = """
 <section class="ts-manset">
@@ -789,18 +852,17 @@ def akis_html(kok, kat=None):
       %s
       %s
       %s
-      <div class="ts-kutu ts-sistem"><span class="etk">Sistem</span><h3>Sonuç veren organlarımız</h3><p>Gözcü, Aday, Rejim, Beyin, İcra, Bekçi… Bu yayını ve piyasa defterini işleten organlar.</p><a class="btn btn-cizgi" href="%ssistem/">Tanış →</a></div>
       %s
     </aside>
   </div>
 </section>
-""" % (_e(ad if kat else "Bugün ne oldu, ne anlama geliyor?"), _e(alt_baslik if kat else "Sektör haberleri, analizler ve piyasayı okuyan sistemin raporları — kaynaklı, kısa, günlük."),
+""" % (_e(ad if kat else "Bugün ne oldu, ne anlama geliyor?"), _e(alt_baslik if kat else "Türkiye'nin aradığı konular, burçlar, maç ve yayın rehberleri, günün kurları — kaynaklı, kısa, günlük."),
        (_kart(man, True, on, tr) if man else ""), _e("Akış" if not kat else ad), len(hepsi), kartlar, REKLAM_YAN,
-       _e(KAT_GIRIS.get(kat) or KAT_GIRIS_EK.get(kat) or (KAT_GIRIS["gundem"] + " " + KAT_GIRIS["rapor"])),
+       _e(KAT_GIRIS.get(kat) or KAT_GIRIS_EK.get(kat) or "TrendSaphiens, Türkiye'de çok aranan soruları kaynaklarıyla cevaplayan bir yayın. Haber yazılarında ne olduğunu, neden konuşulduğunu ve neyin henüz bilinmediğini ayırırız; burç, kur ve maç gibi her gün sorulan konular için kalıcı rehber ve hesaplama sayfaları tutarız. Rakam yalnızca kaynakta geçiyorsa yazılır."),
        ('<div class="ts-giris"><h2>%s</h2><p>%s</p><p class="ts-baglar">%s</p></div>' % (_e(KAT_IZLEME[kat][0]), _e(KAT_IZLEME[kat][1]),
         " · ".join('<a href="%s%s">%s</a>' % (on, h[3:], _e(t)) for h, t in KAT_IZLEME[kat][2])) +
-        '<div class="ts-giris"><h2>Neden bir yapım şirketi yayın tutuyor</h2><p>Çünkü işimiz sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin görsele ihtiyacı artıyor; kira talebi yükseldiğinde ilan videosu fark yaratıyor; reklamda yapay zekâ etiketi zorunlu olunca gerçek çekimin değeri değişiyor. Bunları izlemeyen bir yapım şirketi müşterisine yalnızca kamera satar; biz neyin neden işe yaradığını da anlatmak istiyoruz. TrendSaphiens bu yüzden var: her sabah günün haberleri seçilir, haftada bir piyasa defterinin karnesi çıkar, öne çıkan konu blogda derinleşir. Bütün yayını iki kişilik bir stüdyonun kendi yazdığı sistem işletir; sayfaların SEO kapısından geçtiğini de o denetler. Okuduğunuz bir maddeyle ilgili işiniz varsa altındaki hizmet bağlantısından o sayfaya geçebilir ya da bize yazabilirsiniz.</p></div>') if kat in KAT_IZLEME else "",
-       trend, _rakam_kutu(on, tr), _takvim_kutu(on, tr), _abone(on), _rehber_kutu(tr), tr, REKLAM_YAN)
+        '<div class="ts-giris"><h2>Neden bir yapım şirketi yayın tutuyor</h2><p>Çünkü işimiz sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin görsele ihtiyacı artıyor; kira talebi yükseldiğinde ilan videosu fark yaratıyor; reklamda yapay zekâ etiketi zorunlu olunca gerçek çekimin değeri değişiyor. Bunları izlemeyen bir yapım şirketi müşterisine yalnızca kamera satar; biz neyin neden işe yaradığını da anlatmak istiyoruz. TrendSaphiens bu yüzden var: Türkiye\'nin aradığı konuları kaynağıyla yazıyor, her gün sorulan sorular için kalıcı rehberler tutuyoruz. Okuduğunuz bir maddeyle ilgili işiniz varsa altındaki hizmet bağlantısından o sayfaya geçebilir ya da bize yazabilirsiniz.</p></div>') if kat in KAT_IZLEME else "",
+       trend, _rakam_kutu(on, tr), _takvim_kutu(on, tr), _abone(on), _rehber_kutu(tr), REKLAM_YAN)
     ek = ""
     if kat in KAT_DUZEN:
         ek += '      <div class="ts-giris"><h2>%s</h2><p>%s</p></div>\n' % (_e(KAT_DUZEN[kat][0]), _e(KAT_DUZEN[kat][1]))
@@ -878,12 +940,39 @@ def _makale_govde(m, yz, hizmet_ad):
         h.append('<section class="ts-sss"><h2>Sık sorulan sorular</h2>%s</section>'
                  % "".join("<h3>%s</h3><p>%s</p>" % (_e(q.get("soru", "")), _e(q.get("cevap", ""))) for q in yz["sss"]))
     if m.get("konu"):
-        h.append('<p class="ts-not">Olgular şu yayıncıların haberlerinden derlendi: %s. Metnin tamamı TrendSaphiens tarafından yazıldı; kaynaklarla kelime örtüşmesi %%%.1f (eşik %%5). Kaynaklarda olmayan bilgi eklenmedi.</p>'
-                 % (_e(m["kaynak_ad"]), 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
+        h.append('<p class="ts-not">Kaynaklar: %s.</p>' % _e(m["kaynak_ad"]))
     else:
-        h.append('<p class="ts-not">Olgular %s kaynağının %s tarihli haberinden alındı; metnin tamamı Luna Yapım tarafından yazıldı. Kaynakla kelime örtüşmesi %%%.1f (eşik %%5). Kaynağa bağlantı vermiyoruz; olguyu doğrulamak isteyen okur kaynağın adıyla arayabilir.</p>'
-                 % (_e(m["kaynak_ad"]), kt, 100 * float((yz.get("intihal") or {}).get("kapsama", 0))))
+        h.append('<p class="ts-not">Kaynak: %s, %s.</p>' % (_e(m["kaynak_ad"]), kt))
     return "\n      ".join(h)
+
+
+def _editorlu(h, m, havuz, taslak=False):
+    """12.10.2026 — haber/rehber sayfasına editörlük katmanı:
+    imza satırı, yazar şeması, editör kutusu, emoji tepki, ilgili 3 kart (biri test),
+    en çok okunanlar. Onaysız yazıda reklam birimi basılmaz (sonislem de ts-editor
+    etiketine bakar); taslakta sayfa noindex ve üstünde taslak şeridi olur."""
+    from . import bicim as BC, editor as ED
+    slug = m.get("slug", "")
+    onayli = slug in ED.onaylar()
+    on, tr = "../", ""
+    if taslak:
+        on, tr = "../../", "../"
+        h = h.replace('href="../', 'href="../../').replace('src="../', 'src="../../')
+        h = re.sub(r'href="(?!https?:|#|\.\./|mailto:|/)([^"]*)"', r'href="../\1"', h)
+        h = h.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n' + NOINDEX, 1)
+        h = h.replace('<main id="icerik">', '<main id="icerik"><div class="ts-taslak-serit">TASLAK — editör onayı bekliyor. Bu sayfa arama motorlarına kapalıdır.</div>', 1)
+        h = h.replace(KOK_URL + slug, KOK_URL + "taslak/" + slug)
+    yazar = json.dumps(ED.kisi_sema(), ensure_ascii=False) if onayli else \
+        json.dumps({"@type": "Organization", "name": "TrendSaphiens", "url": KOK_URL}, ensure_ascii=False)
+    h = h.replace('"author": {"@type": "Organization", "name": "Luna Yapım", "url": "https://lunayapim.com/"}', '"author": ' + yazar)
+    h = re.sub(r'(<p class="ts-yazi-meta">.*?</p>)', lambda x: x.group(1) + "\n      " + ED.imza_html(slug, tr), h, count=1, flags=re.S)
+    h = h.replace("</head>", '<meta name="ts-editor" content="%s">\n</head>' % ("onayli" if onayli else ("taslak" if taslak else "inceleme")), 1)
+    if not onayli or taslak:
+        h = h.replace(REKLAM, "")
+    son = ED.editor_kutu_html(slug, tr) + BC.tepki_html() + BC.ilgili_html(m, havuz, on, tr, _tekrar_mi)
+    h = re.sub(r'(\n\s*</div>\s*<aside class="ts-yan">)', lambda x: "\n      " + son + x.group(1), h, count=1)
+    h = re.sub(r'(<aside class="ts-yan">)', lambda x: x.group(1) + "\n      " + BC.populer_html(havuz, tr), h, count=1)
+    return h
 
 
 def _kunye(g):
@@ -951,16 +1040,14 @@ def haber_html(m, komsular):
     sure = _okuma_sure(m.get("olgu", "") + m.get("ek", "") + m.get("aci", ""))
     komsu_kart = "".join(_kart(k, False, "../", "") for k in komsular[:3])
     if m.get("konu"):
-        alt_not = ('<p><strong>Bu yazıyı biz yazdık.</strong> Konu, Türkiye\'de çok aranan başlıklar arasından seçildi%s. '
-                   'Olgular %s haberlerinden; cümleler, sıralama ve açıklama bize ait. Her yazı yayından önce bütün kaynaklarla '
-                   'kelime örtüşmesi denetiminden geçer; kaynakta olmayan rakam, isim ve iddia yazılmaz. Bölüm: <a href="%s/">%s</a> · '
-                   '<a href="aranan/">Bugün Aranan</a>.</p>'
-                   % ((" (yaklaşık %s arama)" % _e(m["hacim"])) if m.get("hacim") else "", _e(m["kaynak_ad"]), m["kat"], _e(kat_ad)))
+        alt_not = ('<p>Olgular %s haberlerinden; cümleler, sıralama ve açıklama TrendSaphiens\'e ait. '
+                   'Kaynakta olmayan rakam, isim ve iddia yazılmaz; yazıda hata görürseniz <a href="iletisim">bize yazın</a>. '
+                   'Bölüm: <a href="%s/">%s</a>.</p>'
+                   % (_e(m["kaynak_ad"]), m["kat"], _e(kat_ad)))
     else:
-        alt_not = ('<p><strong>Bu yazıyı biz yazdık.</strong> Olgular %s kaynağının %s tarihli haberinden; cümleler, sıralama ve yorum bize ait. '
-                   'Kaynak metni kopyalanmaz, yeniden sözcüklerle de yazılmaz; her yazı yayından önce kelime örtüşmesi denetiminden geçer. '
-                   'Rakam yalnızca kaynakta geçiyorsa yazılır. Bölüm: %s. Bu madde <a href="%s">Gündem</a> sayısından.</p>'
-                   % (_e(m["kaynak_ad"]), _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"])), _e(kat_ad), _e(m["gundem_url"])))
+        alt_not = ('<p>Olgular %s kaynağının %s tarihli haberinden; cümleler, sıralama ve yorum TrendSaphiens\'e ait. '
+                   'Rakam yalnızca kaynakta geçiyorsa yazılır; yazıda hata görürseniz <a href="iletisim">bize yazın</a>. Bölüm: %s.</p>'
+                   % (_e(m["kaynak_ad"]), _e(m.get("kaynak_tarih") or _tr_tarih(m["tarih"])), _e(kat_ad)))
     govde = """
 <article class="ts-yazi">
   <div class="wrap ts-yazi-izgara">
@@ -985,10 +1072,13 @@ def haber_html(m, komsular):
 </article>
 """ % (m["kat"], _e(kat_ad), _e(_tr_tarih(m["tarih"])), _e(m["sektor"]), _e(baslik), _e(_tr_tarih(m["tarih"])), sure,
        _e(m["kaynak_ad"]), (" · " + _e(m["kaynak_tarih"])) if m.get("kaynak_tarih") else "",
-       _gorsel(m["gorsel"], baslik, "b"), _kunye(m.get("gorsel_kunye")), _paylas(url, baslik),
+       (_gorsel(m["gorsel"], baslik, "b") if not _tekrar_mi(m) else ""),
+       (_kunye(m.get("gorsel_kunye")) if not _tekrar_mi(m) else ""), _paylas(url, baslik),
        _makale_govde(m, yz, hizmet_ad),
        REKLAM, alt_not, _abone("../"), komsu_kart)
-    return _bas(_sayfa_basligi(baslik), aciklama, url, m["gorsel"], sema, "article") + govde + _alt("../", "")
+    _g = m["gorsel"] if not _tekrar_mi(m) else None
+    govde = govde.replace('<div class="ts-yazi-gorsel"></div>', '')
+    return _bas(_sayfa_basligi(baslik), aciklama, url, _g, sema, "article") + govde + _alt("../", "")
 
 
 
@@ -1025,7 +1115,7 @@ def _rehber_bugun(r):
               "hesabın nasıl yapıldığı aşağıda." % (_e(g["satis"]), _e(g.get("alis") or "—"), _e((v.get("altin") or {}).get("guncelleme") or t)))
     kutu = ('<div class="ts-analiz ts-bugun"><h2 class="etk">Bugünkü rakam · %s</h2><p>%s</p>'
             '<p><a href="%s">Dolar kaç TL bugün? Günün tam tablosu ve son iki hafta →</a></p>'
-            '<p class="ts-not">Resmî kaynaktan otomatik alınır; yatırım tavsiyesi değildir.</p></div>'
+            '<p class="ts-not">Kaynak: TCMB gösterge kurları; yatırım tavsiyesi değildir.</p></div>'
             % (_e(_tr_tarih(t)), ic, SABIT_PIYASA))
     return kutu, t
 
@@ -1549,7 +1639,7 @@ def sabit_piyasa_html(v, gecmis):
     %s
     %s
     <div class="ts-baglam ts-sss"><h2>Sık sorulanlar</h2>%s</div>
-    <div class="ts-baglam"><h2>Bu sayfa nasıl üretiliyor</h2><p>Kurlar TCMB'nin herkese açık günlük tablosundan, altın açık bir finans beslemesinden otomatik alınır; rakam kaynakta yoksa sayfaya yazılmaz, tahmin edilmez. "Bugünün okuması" ve iki haftalık özet bizim hesabımızdır: aynı tablonun önceki kayıtlarıyla karşılaştırılarak çıkarılır. Eski günlerin tam tablosu arşivde durur.</p></div>
+    <div class="ts-baglam"><h2>Rakamlar nereden geliyor</h2><p>Kurlar TCMB'nin herkese açık günlük tablosundan, altın açık bir finans beslemesinden alınır; rakam kaynakta yoksa sayfaya yazılmaz, tahmin edilmez. "Bugünün okuması" ve iki haftalık özet bizim hesabımızdır: aynı tablonun önceki kayıtlarıyla karşılaştırılarak çıkarılır. Eski günlerin tam tablosu arşivde durur.</p></div>
     <p class="ts-not">Piyasa içeriği bilgi ürünüdür; yatırım danışmanlığı ya da alım-satım önerisi değildir. <a href="piyasa/">Tam risk bildirimi ve piyasa bölümü</a>.</p>
     %s
   </div>
@@ -1736,7 +1826,9 @@ def _yonlendirme(kok, silinen, elle=None):
     for yol in silinen or []:
         adres = "/" + yol[:-5] if yol.endswith(".html") else "/" + yol
         parca = adres.strip("/").split("/")
-        if len(parca) == 3 and re.match(r"\d{4}-\d{2}-\d{2}$", parca[2]):
+        if len(parca) == 3 and parca[1] == "taslak":
+            hedef = "/trend/%s" % parca[2]           # 12.10.2026: onaylanan taslak -> yayındaki adresi
+        elif len(parca) == 3 and re.match(r"\d{4}-\d{2}-\d{2}$", parca[2]):
             hedef = "/trend/%s/" % parca[1]          # gün sayfası -> bölüm akışı
         else:
             hedef = "/trend/"                        # yazı -> ana akış
@@ -1782,21 +1874,68 @@ def yayinla(kok=None, paylas=False):
         os.makedirs(os.path.join(d, k), exist_ok=True)
     hepsi = _hepsi(kok)
     haberler = [m for m in hepsi if m["tur"] == "haber"]
+    # 12.10.2026: yazı sayısı eşiğin altındaki bölüm görünmez (bkz. YAYIN_DISI)
+    global GORUNUR, TEKRAR_GORSEL
+    _say = {}
+    for m in hepsi:
+        if m["tur"] in ("haber", "rehber", "bicim"):
+            _say[m.get("kat")] = _say.get(m.get("kat"), 0) + 1
+    GORUNUR = {k for k in KATEGORI if k not in YAYIN_DISI and _say.get(k, 0) >= INCE_BOLUM_ESIK}
+    # aynı temsilî görsel birden çok yazıda (burç takımyıldızları hariç) → görselsiz yayın
+    _gs = {}
+    for m in haberler:
+        if m.get("kat") != "burc" and _gorsel_anahtar(m):
+            _gs[_gorsel_anahtar(m)] = _gs.get(_gorsel_anahtar(m), 0) + 1
+    TEKRAR_GORSEL = {g for g, n in _gs.items() if n >= 2}
+    print("trend: görünür bölümler %s; tekrar görsel %d" % (",".join(sorted(GORUNUR)), len(TEKRAR_GORSEL)))
+    try:
+        json.dump(sorted(GORUNUR), open(_GORUNUR_DOSYA, "w", encoding="utf-8"), ensure_ascii=False)
+    except Exception as ex:
+        print("görünür bölüm dosyası:", ex)
     yeni = []
     for i, m in enumerate(haberler):
         yol = os.path.join(d, m["slug"] + ".html")
         if not os.path.exists(yol):
             yeni.append(m)
-        komsu = [k for k in hepsi if k is not m][:3]
-        _yaz(yol, haber_html(m, komsu), uretilen)
+        komsu = [k for k in hepsi if k is not m and k["tur"] in YAZI_TURLERI and k.get("kat") in GORUNUR][:3]
+        _yaz(yol, _editorlu(haber_html(m, komsu), m, hepsi), uretilen)
     # rehberler (kalıcı yazılar)
     rehberler = [m for m in hepsi if m["tur"] == "rehber"]
     for m in rehberler:
         yol = os.path.join(d, m["slug"] + ".html")
         if not os.path.exists(yol):
             yeni.append(m)
-        komsu = [k for k in hepsi if k is not m and k["kat"] == m["kat"]][:3] or [k for k in hepsi if k is not m][:3]
-        _yaz(yol, rehber_html(m, komsu), uretilen)
+        _yazi = [k for k in hepsi if k is not m and k["tur"] in YAZI_TURLERI and k.get("kat") in GORUNUR]
+        komsu = [k for k in _yazi if k["kat"] == m["kat"]][:3] or _yazi[:3]
+        _yaz(yol, _editorlu(rehber_html(m, komsu), m, hepsi), uretilen)
+    # 12.10.2026 — liste / test / bilgi testi / anket
+    from . import bicim as BC, editor as ED, vitrin as VT
+    bicimler = [m for m in hepsi if m["tur"] == "bicim"]
+    for m in bicimler:
+        yol = os.path.join(d, m["slug"] + ".html")
+        if not os.path.exists(yol):
+            yeni.append(m)
+        _yaz(yol, BC.sayfa_html(m["veri"], hepsi, _tekrar_mi), uretilen)
+    # taslaklar: /taslak/<slug> — noindex, reklamsız, akış ve harita dışında
+    os.makedirs(os.path.join(d, "taslak"), exist_ok=True)
+    for m in TASLAKLAR:
+        yol = os.path.join(d, "taslak", m["slug"] + ".html")
+        if m["tur"] == "bicim":
+            h = BC.sayfa_html(m["veri"], hepsi, _tekrar_mi, taslak=True)
+        else:
+            h = _editorlu(haber_html(m, hepsi[:3]) if m["tur"] == "haber" else rehber_html(m, hepsi[:3]), m, hepsi, taslak=True)
+        _yaz(yol, h, uretilen)
+    # editör paneli, yazar sayfası, yayın ilkeleri, başlık dizini
+    _yaz(os.path.join(d, "editor.html"), VT.panel_html(hepsi, TASLAKLAR), uretilen)
+    os.makedirs(os.path.join(d, "yazar"), exist_ok=True)
+    _yaz(os.path.join(d, "yazar", ED.EDITOR["slug"] + ".html"), VT.yazar_html(hepsi), uretilen)
+    _yaz(os.path.join(d, "yayin-ilkeleri.html"), VT.ilkeler_html(), uretilen)
+    try:
+        dz = {m["slug"]: {"b": _e(m["baslik"]), "k": _e(KATEGORI.get(m.get("kat"), ("",))[0])}
+              for m in hepsi if m["tur"] in YAZI_TURLERI and m.get("slug")}
+        json.dump(dz, open(os.path.join(d, "baslik-dizin.json"), "w", encoding="utf-8"), ensure_ascii=False)
+    except Exception as ex:
+        print("başlık dizini:", ex)
     # günlük sayfalar: aranan, bölüm günlükleri, piyasa
     gunluk_adres = []
     try:
@@ -1828,12 +1967,16 @@ def yayinla(kok=None, paylas=False):
                     gunluk_adres.append(KOK_URL + SABIT_PIYASA)
     except Exception as ex:
         gunluk_adres.append("HATA: %s" % ex)
-    _yaz(os.path.join(d, "index.html"), akis_html(kok), uretilen)
+    try:
+        _yaz(os.path.join(d, "index.html"), VT.vitrin_html(kok, hepsi), uretilen)
+    except Exception as ex:
+        print("vitrin basılamadı, eski akış kullanılıyor:", ex)
+        _yaz(os.path.join(d, "index.html"), akis_html(kok), uretilen)
     for k in KATEGORI:
-        if k == "sistem":
-            _yaz(os.path.join(d, k, "index.html"), sistem_html(), uretilen)
-        else:
-            _yaz(os.path.join(d, k, "index.html"), akis_html(kok, k), uretilen)
+        icerik = sistem_html() if k == "sistem" else akis_html(kok, k)
+        if k not in GORUNUR:
+            icerik = icerik.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n' + NOINDEX, 1)
+        _yaz(os.path.join(d, k, "index.html"), icerik, uretilen)
     # artık üretilmeyen trend sayfalarını sil (derleme günlükleri, yazısız haberler)
     silinen = _supur(kok, uretilen)
     try:
@@ -1844,11 +1987,14 @@ def yayinla(kok=None, paylas=False):
     y = os.path.join(kok, "sitemap.xml")
     if os.path.exists(y):
         s = open(y, encoding="utf-8").read()
-        adresler = [KOK_URL] + [KOK_URL + k + "/" for k in KATEGORI] + [KOK_URL + m["slug"] for m in haberler + rehberler] + [a for a in gunluk_adres if not a.startswith("HATA")]
+        adresler = [KOK_URL] + [KOK_URL + k + "/" for k in KATEGORI if k in GORUNUR] + [KOK_URL + m["slug"] for m in haberler + rehberler + bicimler] + [a for a in gunluk_adres if not a.startswith("HATA")] \
+            + [KOK_URL + "yazar/" + ED.EDITOR["slug"], KOK_URL + "yayin-ilkeleri"]
         bugun = datetime.date.today().isoformat()
         # artık var olmayan trend/ sayfalarını haritadan düşür (ince sayfa kapısı, slug değişimi)
         def _kalsin(m):
             u = m.group(1)
+            if u.startswith(KOK_URL) and u.endswith("/") and u[len(KOK_URL):-1] in KATEGORI and u[len(KOK_URL):-1] not in GORUNUR:
+                return ""   # 12.10.2026: görünmeyen (noindex) bölüm haritada durmaz
             if not u.startswith(KOK_URL) or u.endswith("/"):
                 return m.group(0)
             if re.search(r"/(piyasa|aranan)/\d{4}-\d{2}-\d{2}$", u) and u not in adresler:

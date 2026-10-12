@@ -74,8 +74,10 @@ def hakkimizda_html():
   <p>TrendSaphiens, Bursa merkezli yapım ve yazılım stüdyosu Luna Yapım'ın günlük yayınıdır.
   Türkiye'de o gün çok aranan konuları alır, kaynaklarına bakar ve okurun sorusunu doğrudan
   cevaplayan yazılara çevirir.</p>
-  <p>Yayın iki kişilik bir stüdyonun kendi yazdığı sistemle işler: veri toplama, konu seçimi,
-  yazım ve yayın adımlarının tamamı bu sistemin içindedir.</p>
+  <p>Yayının sorumluluğu Luna Yapım'dadır. Yayına çıkan her yazıyı, testi ve anketi editörümüz
+  <a href="yazar/pusat-ceylan">Pusat Ceylan</a> okuyup kaynaklarını kontrol ettikten sonra onaylar;
+  onaylanmamış taslaklar arama motorlarına kapalıdır. Kuralların tamamı
+  <a href="yayin-ilkeleri">yayın ilkeleri</a> sayfasında.</p>
 
   <h2>Yayın ilkelerimiz</h2>
   <p><b>Kaynak gösteririz.</b> Her maddenin dayandığı yayıncı ve tarih sayfanın içinde durur.
@@ -90,9 +92,8 @@ def hakkimizda_html():
   puanı vermez. Vücut kitle indeksi hesaplayıcısı tanı koymaz.</p>
 
   <h2>Hangi bölümler var?</h2>
-  <p>Haber, bugün aranan, piyasalar, dizi ve film, spor, burç, müzik, edebiyat, sanat,
-  teknoloji, mühendislik ve sosyal medya. Bunlara ek olarak hesaplama araçları ve günün
-  bülteni sayfası bulunur.</p>
+  <p>%(bolumler)s. Bunlara ek olarak yükselen burç, yaş, yüzde ve vücut kitle indeksi gibi
+  hesaplama araçları bulunur.</p>
 
   <h2>Düzeltme ve geri bildirim</h2>
   <p>Bir yazıda hata gördüğünüzde yazın: düzeltir ve sayfada belirtiriz. İletişim adresimiz
@@ -108,12 +109,9 @@ def hakkimizda_html():
   karşılaştırılır: rakam, tarih ve isimler kaynakta yazdığı gibi geçer; kaynakta olmayan
   hiçbir sayı sayfaya girmez.</p>
   <p>Özgünlük şartımız değişmez. Metin başka bir yayından kopyalanmaz, cümleleri
-  değiştirilerek yeniden yazılmış hâli de yayımlanmaz. Her yazı yayından önce benzerlik
-  kontrolünden geçer; eşik aşılırsa sayfa yayımlanmaz.</p>
+  değiştirilerek yeniden yazılmış hâli de yayımlanmaz.</p>
   <p>Üretilmiş görsel kullanıldığında sayfada açıkça belirtilir. Kapaklarda serbest lisanslı
   fotoğraflar kullanılır ve her birinin eseri, üreteni ve lisansı aynı sayfada durur.</p>
-  <p>Yayının teknik durumu bizden bağımsız araçlarla da ölçülür; sonuçlar
-  <a href="denetim">denetim sayfasında</a> açık durur.</p>
 
   <h2>Neden bir yapım şirketi yayın tutuyor?</h2>
   <p>Luna Yapım'ın işi sektörün nabzına bağlı. Konut satışı düştüğünde satış ofisinin
@@ -121,7 +119,9 @@ def hakkimizda_html():
   değişir. Bunları izlemek işimizin parçası; yayın da bu izlemenin okura açılmış hâli.</p>
 </section>
 """
-    sss = [("TrendSaphiens'i kim yayınlıyor?", "Bursa merkezli Luna Yapım. Yayın, stüdyonun kendi yazdığı sistemle günlük olarak derlenir."),
+    _b = [T.KATEGORI[k][0] for k in T.KATEGORI if k in T.GORUNUR]
+    govde = govde.replace("%(bolumler)s", ", ".join(_b[:-1]) + " ve " + _b[-1] if len(_b) > 1 else "".join(_b))
+    sss = [("TrendSaphiens'i kim yayınlıyor?", "Bursa merkezli video prodüksiyon stüdyosu Luna Yapım. Yayının sorumluluğu Luna Yapım'a aittir."),
            ("Yazılar nasıl hazırlanıyor?", "Günün çok aranan konuları belirlenir, en az iki bağımsız yayıncıdan olgular toplanır ve yazı kendi cümlelerimizle yazılır. Kaynaklar sayfanın sonunda listelenir."),
            ("Yayında reklam var mı?", "Evet, Google AdSense üzerinden reklam gösterilebilir. Reklamlar içeriği etkilemez; hangi konunun yazılacağına reklam veren karar vermez.")]
     return _sayfa("hakkimizda", "Hakkımızda — TrendSaphiens yayın künyesi",
@@ -165,13 +165,19 @@ def iletisim_html():
   <p>E-postalar iş günlerinde okunur. Düzeltme bildirimleri öncelikli sırada değerlendirilir;
   diğer talepler birkaç gün içinde yanıtlanır.</p>
 
+  <h2>Bize yazarken</h2>
+  <p>Bir yazıyla ilgili yazıyorsanız sayfanın adresini, sorunun hangi cümlede olduğunu ve
+  biliyorsanız doğru bilginin kaynağını ekleyin. Telif bildiriminde eserin size ait olduğunu
+  gösteren bir bağlantı ya da belge işimizi hızlandırır. Reklam ve iş birliği tekliflerinde
+  firma adını ve iletişim kişisini yazmanız yeterli.</p>
+
   <h2>Yazıda adı geçenler için</h2>
   <p>Bir yazıda adınız ya da kurumunuz geçiyorsa ve eksik veya yanlış aktarıldığını
   düşünüyorsanız yazın. Açıklamanızı kaynak göstererek sayfaya ekleriz; gerekiyorsa
   ilgili bölümü yeniden yazarız. Bu talepler için ayrı bir ücret ya da koşul yoktur.</p>
 </section>
 """ % (EPOSTA, EPOSTA, YAYINCI, SEHIR)
-    sss = [("Düzeltme talebim ne kadar sürede sonuçlanır?", "Talepler günlük yayın turunda değerlendirilir. Doğrulanan düzeltme aynı gün sayfaya işlenir."),
+    sss = [("Düzeltme talebim ne kadar sürede sonuçlanır?", "Düzeltme bildirimleri öncelikli okunur; doğrulanan düzeltme sayfaya işlenir ve güncelleme tarihi değişir."),
            ("Yazılarınızı alıntılayabilir miyim?", "Kaynak göstererek ve bağlantı vererek kısa alıntı yapabilirsiniz. Yazının tamamını kopyalamak için izin isteyin.")]
     return _sayfa("iletisim", "İletişim — TrendSaphiens yayınına ulaşın",
                   "TrendSaphiens'e düzeltme, geri bildirim, telif bildirimi ve reklam konularında nasıl ulaşabileceğinizi anlatan iletişim sayfası.",
@@ -275,10 +281,16 @@ def kosullar_html():
   <p>Resmî işlem gerektiren hesapları (emeklilik, tazminat, vergi) bilerek yayınlamıyoruz.
   Bu konularda ilgili kurumun kendi aracını kullanın.</p>
 
+  <h2>Reklamlar</h2>
+  <p>Sayfalarda Google AdSense aracılığıyla reklam gösterilir. Reklamlar yazının içinden
+  ayrı alanlarda durur; hangi konunun yazılacağına ya da bir yazının ne söyleyeceğine reklam
+  veren karar vermez. Reklamlarda tanıtılan ürün ve hizmetlerin sorumluluğu reklam verene
+  aittir. Reklam kişiselleştirme ve çerez tercihleriniz için gizlilik sayfasına bakın.</p>
+
   <h2>Yayının sürekliliği</h2>
-  <p>Sayfalar günlük olarak yeniden derlenir. Bir bölümde o gün kaynak bulunamazsa o bölüm
-  boş kalabilir; eski sayfalar adresini korur. Yayın durdurulursa mevcut adreslerin
-  erişilebilir kalması için gerekli yönlendirmeler yapılır.</p>
+  <p>Yayımlanan yazılar adreslerini korur. Bir yazı güncellendiğinde sayfadaki tarih değişir;
+  kaldırılan bir sayfanın adresi ilgili bölüme yönlendirilir. Yayın durdurulursa mevcut
+  adreslerin erişilebilir kalması için gerekli yönlendirmeler yapılır.</p>
 
   <h2>Bu koşullardaki değişiklikler</h2>
   <p>Koşullar değiştiğinde sayfanın altındaki tarih güncellenir. Değişiklikten sonra yayını
@@ -398,25 +410,28 @@ def bulunamadi_html():
     kafa karistirici, arama motoru icin de iki yayinin ayni sey oldugu sinyali.
     """
     from . import trend as T
-    bolum = [(k, ad) for k, (ad, _o) in T.KATEGORI.items() if k != "sistem"]
+    bolum = [(k, ad) for k, (ad, _o) in T.KATEGORI.items() if k in T.GORUNUR]
     liste = "".join('<li><a href="./%s/">%s</a></li>' % (k, _e(ad)) for k, ad in bolum[:12])
     govde = """
 <section class="ts-giris">
-  <h2>Aradiginiz sayfa burada degil</h2>
-  <p>Adres degismis, yazi kaldirilmis ya da bagalanti yanlis yazilmis olabilir.
-  Gunun akisina donebilir ya da asagidaki bolumlerden birine girebilirsiniz.</p>
+  <h2>Aradığınız sayfa burada değil</h2>
+  <p>Adres değişmiş, yazı kaldırılmış ya da bağlantı yanlış yazılmış olabilir.
+  Ana sayfaya dönebilir ya da aşağıdaki bölümlerden birine girebilirsiniz.</p>
   <ul class="ts-liste">%s</ul>
-  <p><a href="./bulten">Gunun bulteni</a> gunun butun basliklarini tek sayfada toplar.</p>
+  <p><a href="./araclar">Araçlar</a> sayfasında yükselen burç, yaş ve yüzde hesaplama gibi araçlar var.</p>
 </section>
 """ % liste
-    h = _sayfa("404", "Sayfa bulunamadi — TrendSaphiens",
-               "Aradiginiz sayfa bulunamadi. Gunun akisina donun ya da bolumlerden birini secin.",
-               "Sayfa bulunamadi", "Bu adreste bir sayfa yok.", govde, None, "WebPage")
+    h = _sayfa("404", "Sayfa bulunamadı — TrendSaphiens",
+               "Aradığınız sayfa bulunamadı. Ana sayfaya dönün ya da bölümlerden birini seçin.",
+               "Sayfa bulunamadı", "Bu adreste bir sayfa yok.", govde, None, "WebPage")
     # 404 sayfasi dizine girmez; canonical de olmaz (her adres icin ayni sayfa basilir)
     h = h.replace("<head>", '<head>\n<meta name="robots" content="noindex, follow">', 1)
     h = re.sub(r'<link rel="canonical"[^>]*>', "", h)
     return h
 
+
+# 12.10.2026: denetim sayfası yayının konusu değil (teknik ölçüm); dosya durur, dizine girmez
+DIZIN_DISI = {"denetim"}
 
 SAYFALAR = [
     ("hakkimizda", "Hakkımızda", hakkimizda_html),
@@ -447,11 +462,10 @@ def llms_txt(kok):
              "Dil: Turkce. Gunluk guncellenir. Iceriklerin alintilanmasinda kaynak olarak "
              "sayfa adresi gosterilmelidir.", "", "## Bolumler", ""]
     for k, (ad, ozet) in T.KATEGORI.items():
-        if k == "sistem":
+        if k not in T.GORUNUR:
             continue
         satir.append("- [%s](%s%s/): %s" % (ad, kok_url, k, ozet))
-    satir += ["", "## Gunluk derleme", "",
-              "- [Gunun bulteni](%sbulten): gunun 30 basligi tek sayfada" % kok_url,
+    satir += ["", "## Site haritasi", "",
               "- [Site haritasi](%ssitemap.xml)" % kok_url, "", "## Araclar", ""]
     try:
         from . import arac as A
@@ -461,6 +475,8 @@ def llms_txt(kok):
         pass
     satir += ["", "## Kurumsal", ""]
     for slug, ad, _fn in SAYFALAR:
+        if slug in DIZIN_DISI:
+            continue
         satir.append("- [%s](%s%s)" % (ad, kok_url, slug))
     metin = "\n".join(satir) + "\n"
     io.open(os.path.join(kok, "trend", "llms.txt"), "w", encoding="utf-8").write(metin)
@@ -477,8 +493,14 @@ def yayinla(kok=None):
     except Exception as ex:
         print("llms.txt:", ex)
     for slug, _ad, fn in SAYFALAR:
-        io.open(os.path.join(d, slug + ".html"), "w", encoding="utf-8").write(fn())
-        yazilan.append(slug)
+        h = fn()
+        if slug in DIZIN_DISI:
+            h = h.replace("<head>", '<head>\n<meta name="robots" content="noindex, follow">', 1)
+            if '<meta name="robots"' not in h:
+                h = h.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<meta name="robots" content="noindex, follow">', 1)
+        io.open(os.path.join(d, slug + ".html"), "w", encoding="utf-8").write(h)
+        if slug not in DIZIN_DISI:
+            yazilan.append(slug)
     try:
         io.open(os.path.join(d, "404.html"), "w", encoding="utf-8").write(bulunamadi_html())
         yazilan.append("404")
