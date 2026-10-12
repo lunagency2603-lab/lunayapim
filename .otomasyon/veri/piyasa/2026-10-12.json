@@ -42,43 +42,43 @@
   }
  },
  "altin": {
-  "guncelleme": "2026-10-12 03:30:03",
+  "guncelleme": "2026-10-12 13:45:03",
   "gram-altin": {
    "ad": "Gram altın",
-   "alis": "6.671,06",
-   "satis": "6.671,95",
-   "degisim": "%0,41"
+   "alis": "6.628,27",
+   "satis": "6.629,09",
+   "degisim": "%-0,24"
   },
   "ceyrek-altin": {
    "ad": "Çeyrek altın",
-   "alis": "10.596,82",
-   "satis": "10.841,11",
-   "degisim": "%0,00"
+   "alis": "10.580,58",
+   "satis": "10.822,32",
+   "degisim": "%-0,17"
   },
   "yarim-altin": {
    "ad": "Yarım altın",
-   "alis": "21.127,41",
-   "satis": "21.682,23",
-   "degisim": "%0,00"
+   "alis": "21.095,04",
+   "satis": "21.644,65",
+   "degisim": "%-0,17"
   },
   "tam-altin": {
    "ad": "Tam altın",
-   "alis": "42.387,28",
-   "satis": "43.231,84",
-   "degisim": "%0,00"
+   "alis": "42.322,33",
+   "satis": "43.156,91",
+   "degisim": "%-0,17"
   },
   "ons": {
    "ad": "Ons altın (USD)",
-   "alis": "$4.205,43",
-   "satis": "$4.205,99",
-   "degisim": "%0,27"
+   "alis": "$4.178,69",
+   "satis": "$4.179,21",
+   "degisim": "%-0,37"
   },
   "gumus": {
    "ad": "Gümüş",
-   "alis": "97,16",
-   "satis": "97,27",
-   "degisim": "%0,93"
+   "alis": "96,23",
+   "satis": "96,33",
+   "degisim": "%-0,05"
   }
  },
- "alindi": "2026-10-12 03:34"
+ "alindi": "2026-10-12 13:54"
 }
