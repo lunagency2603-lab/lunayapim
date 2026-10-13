@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-24 14:49"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "ais",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfNDMR1XrqdTq4ZqmyozQ\"}",
-  "zaman": "2026-09-24 14:49"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-24 20:14"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "2027",
@@ -2956,5 +2922,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfzp58AnA2g9U3omj5Xkm\"}",
   "zaman": "2026-10-13 22:46"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-14 01:47"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "anne yarısı son bölüm",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-10-14 01:47"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "taban gıda",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg13sgaUhVprPYvazXy9V\"}",
+  "zaman": "2026-10-14 01:47"
  }
 ]
