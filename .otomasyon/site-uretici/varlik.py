@@ -223,7 +223,7 @@ def isler(kok):
         if "baslik:" not in b:
             continue
         d = {}
-        for k in ("id", "yerel", "baslik", "kat", "musteri", "sure", "olcu", "teslim", "yil", "sehir", "sayfa", "detay"):
+        for k in ("id", "yerel", "baslik", "kat", "musteri", "sure", "olcu", "teslim", "yil", "sehir", "sayfa", "detay", "baglanti"):
             mm = re.search(r'(?<![A-Za-z_])' + k + r':\s*"((?:[^"\\]|\\.)*)"', b)
             if mm and mm.group(1).strip():
                 d[k] = mm.group(1).strip().replace('\\"', '"')
@@ -231,6 +231,10 @@ def isler(kok):
             d["il_disi"] = True       # 06.10.2026: il sayfalarında gösterilmez (ör. müzik klibi)
         et = re.search(r"etiket:\s*\[([^\]]*)\]", b)
         d["etiket"] = [x.strip().strip('"') for x in et.group(1).split(",")] if et else []
+        # 13.10.2026: web uygulaması işlerinin ekran görüntüleri (izleme sayfası galerisi)
+        ga = re.search(r"galeri:\s*\[([^\]]*)\]", b)
+        if ga:
+            d["galeri"] = [x.strip().strip('"') for x in ga.group(1).split(",") if x.strip()]
         if d.get("id") or d.get("yerel"):      # yayınlanmış örneği olan
             out.append(d)
     return out

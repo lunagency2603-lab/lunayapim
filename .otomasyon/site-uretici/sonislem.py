@@ -12,7 +12,7 @@ Hepsi ETKİSİZ TEKRARLANABİLİR (idempotent): iki kez çalıştırmak zarar ve
 import html
 import glob, io, os, re, sys
 
-SURUM = {"css": "26", "videolar": "7", "asistan": "2", "ajan": "1", "agac": "5", "fon": "2"}
+SURUM = {"css": "27", "videolar": "8", "asistan": "2", "ajan": "1", "agac": "5", "fon": "2"}
 
 
 def _derinlik(yol, kok):

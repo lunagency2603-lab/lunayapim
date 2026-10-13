@@ -43,8 +43,8 @@ AILE = {
         "ayrı sayfa var."),
     # 11.10.2026: web + SEO + sanal showroom sektör sayfaları (sektor_dijital.py)
     "web-sitesi-tasarimi": (
-        ("sanal-showroom", "web-sitesi-", "seo-ornegi-"),
-        "Sektöre göre web sitesi, SEO ve sanal showroom",
+        ("sanal-tur", "sanal-showroom", "web-sitesi-", "seo-ornegi-"),
+        "Sektöre göre web sitesi, SEO, sanal tur ve showroom",
         "Bir inşaat firmasının sitesiyle bir mobilya mağazasının vitrini aynı soruyu cevaplamıyor. "
         "Aşağıdaki sayfalar sektörün kendi satış sorusuna göre yazıldı; kanıtlı örnekler de burada."),
     "kisiye-ozel-baski-hediye": (

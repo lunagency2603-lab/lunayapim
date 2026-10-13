@@ -25,7 +25,7 @@ BOLUM = [
         "hizmetler/dugun-etkinlik", "hizmetler/emlak-kurumsal", "hizmetler/ai-kisa-film",
     ]),
     ("3D görselleştirme ve animasyon", [
-        "hizmetler/insaat-3d-modelleme", "hizmetler/insaat-3d-konut-projesi",
+        "hizmetler/sanal-tur", "hizmetler/insaat-3d-modelleme", "hizmetler/insaat-3d-konut-projesi",
         "hizmetler/insaat-3d-villa", "hizmetler/insaat-3d-ticari-avm",
         "hizmetler/insaat-3d-otel", "hizmetler/insaat-3d-fabrika-sanayi",
         "hizmetler/insaat-3d-kentsel-donusum",

@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from uretici import e, sss_blok, cta
 from yeni_hizmetler import _hizmet_kabugu, _surec
+from isler_blok import blok
 
 # ================================================================ SANAL SHOWROOM
 SHOWROOM_ANA = dict(
@@ -33,7 +34,7 @@ SHOWROOM_ANA = dict(
         ("Varyantı tek ekranda göster", "Renk, kumaş, kaplama seçenekleri aynı ürün üzerinde değişiyor. Her varyant için ayrı sayfa ve ayrı çekim gerekmiyor."),
         ("Talebi ölç", "Hangi ürünün kaç kez döndürüldüğü, hangi renge bakıldığı, kaç kişinin 'fiyat iste'ye bastığı ölçüme düşüyor. Mağazada göremediğiniz ilgiyi sayı olarak görüyorsunuz."),
         ("Siparişi kısalt", "Ziyaretçi seçtiği ürünü ve varyantı tek tuşla WhatsApp ya da forma taşıyor; satış temsilcisi soruyu baştan sormuyor.")],
- kanit="İlk uygulama bir kumaş satıcısı için kuruldu: 243 ürün görseli, doku yakın planları ve kumaş kartelası tek vitrinde; müşteri ürünü pazaryerine gitmeden inceleyebiliyor. Aynı yaklaşımla bir prefabrik ev üreticisi için müşterinin evini kendisinin tasarladığı 3B tasarlayıcıyı kurduk.",
+ kanit="İlk uygulama Bursa'daki kumaş toptancısı <a href=\"../isler/ata-kumas-sanal-magaza-ve-manken\">Ata Kumaş</a> için kuruldu: müşteri mağazanın içinde geziyor, duvardaki kumaşa tıklayıp ürüne geçiyor, kumaşı 3B mankenin üzerinde görüyor; 243 ürün görseli ve doku yakın planları tek vitrinde. Aynı yaklaşımla <a href=\"../isler/aktas-prefabrik-3b-ev-tasarlayici\">Aktaş Prefabrik</a> için müşterinin evini kendisinin tasarladığı, içinde yürüdüğü 3B tasarlayıcıyı kurduk. İkisi de yayında.",
  sss=[("Sanal showroom için ayrı bir site mi gerekiyor?", "Hayır. Var olan sitenize bir bölüm ya da sayfa olarak eklenir. Siteniz yoksa tanıtım sitesiyle birlikte kuruyoruz."),
       ("Ürünlerin 3D modeli bizde yok, olur mu?", "Olur. Ürün az sayıdaysa modelliyoruz; çoksa çok açılı fotoğraf çekimiyle döndürülebilir görüntü kuruyoruz. Hangisinin uygun olduğunu ürün listenize bakıp söylüyoruz."),
       ("Telefonda yavaş açılır mı?", "Açılmamalı, ölçüyoruz. Görseller ihtiyaç oldukça yükleniyor; sayfa önce açılıyor, model sonra geliyor. Teslimden önce mobil hız ölçümünü size gösteriyoruz.")],
@@ -162,7 +163,7 @@ ANIM = {
         ("Hareket dili kur", "Karakterin yürüyüşü, mimikleri ve tekrar eden hareketleri belirleniyor; her videoda aynı karakter gibi davranıyor."),
         ("Her mecraya uyarla", "Aynı karakter reklam filminde, sosyal medya kısa videosunda, ambalajda ve fuar standında kullanılıyor."),
         ("Karakter kılavuzu", "Renkler, duruşlar ve kullanım kuralları bir kılavuzla teslim ediliyor; başka ajansla çalışsanız da karakter bozulmuyor.")],
- kanit="Kendi müzik kliplerimiz için tasarladığımız YADE karakteri 3D modellenip bir klipte canlandırıldı.",
+ kanit="Kendi kliplerimiz için tasarladığımız YADE karakteri 3D modellenip 2 dakika 40 saniyelik bir klipte beş dünyada canlandırıldı; logomuzdaki karga altı bölümlük bir seriye dönüştü; Evliya Çelebi Soruyor serisinde dört karakter Türkçe konuşuyor.",
  girdi="Marka kimliği, hedef kitle ve karakterin hangi mecralarda kullanılacağı. Varsa daha önceki çizim denemeleri.",
  dikkat="Maskot projesinde en çok zaman kaybettiren şey onay döngüsü. Bu yüzden önce üç farklı yönde kaba taslak sunuyoruz, siz birini seçince detaylandırıyoruz; her aşamada neyin değişebileceği ve neyin kilitlendiği yazılı oluyor. Karakter 3D modele geçtikten sonra yüz ve oran değişikliği maliyetli; bu karar taslak aşamasında netleşiyor.",
  sss=[("Karakterin hakları kimde olur?", "Teslimle birlikte sizde. Sözleşmede karakterin kullanım haklarının size geçtiği açıkça yazılır."),
@@ -170,6 +171,25 @@ ANIM = {
       ("Ne kadar sürede hazır olur?", "Karakter tasarımı ve 3D model iki-üç hafta, ilk animasyon bunun üzerine. Takvim taslak onay hızına göre değişir.")],
 ),
 }
+
+# ================================================================ SANAL TUR (13.10.2026)
+SANAL_TUR = dict(
+ ad="3B Sanal Tur ve Gezinti",
+ lede="Müşteri mağazanızı, showroom'unuzu ya da henüz bitmemiş projenizi telefonundan geziyor; kapıdan girer gibi. Yayında iki işimiz var, tıklayıp deneyebilirsiniz.",
+ sorun="Fotoğraf galerisi mekânı anlatmıyor: ölçek yok, yön yok, 'şu köşede ne var' sorusu cevapsız. Bitmemiş projede ise gösterecek fotoğraf hiç yok. Satış ekibi her müşteriyi mekâna çağırmak zorunda kalıyor; gelmeyen müşteri rakibe gidiyor. 360° fotoğraf turları da çoğu zaman bir kez çekilip unutuluyor — ürün değişince tur eskiyor.",
+ cozum=[("Mekânı kur", "Mekân bitmişse 360° kamerayla çekiyoruz; bitmemişse ya da ürün odaklıysa 3B olarak modelliyoruz. Kumaş mağazasında duvardaki her kumaş gerçek fotoğrafıyla asılı; prefabrik evde her oda gerçek plandan ölçülü."),
+        ("Yürüt", "Ziyaretçi sürükleyerek bakıyor, ok tuşlarıyla ya da ekrandaki düğmelerle yürüyor, zemine tıklayıp oraya gidiyor. Telefonda dokunmatik, bilgisayarda klavye — ikisi de test edilmiş."),
+        ("Ürüne bağla", "Duvardaki kumaşa tıklayınca ürün sayfası açılıyor; evde odaya girince ölçü yerde okunuyor. Tur bir gösteri değil, satış sayfasının kendisi."),
+        ("Güncel tut", "Ürün listesi değişince tur yeniden kuruluyor; kumaş mağazasında yeni ürün panelden eklendiğinde duvara kendiliğinden asılıyor. Yeniden çekim yok.")],
+ kanit="Aktaş Prefabrik'in <a href=\"../isler/aktas-prefabrik-3b-ev-tasarlayici\">3B ev tasarlayıcısında</a> ziyaretçi kat planından kurulan evin içinde yürüyor, oda ölçülerini okuyor, gece görünümüne geçiyor. Ata Kumaş'ın <a href=\"../isler/ata-kumas-sanal-magaza-ve-manken\">sanal mağazasında</a> 27 kumaş gerçek dokusuyla duvarda; tıklayınca ürün açılıyor, seçilen kumaş 3B mankenin üzerinde görülüyor. İkisi de tarayıcıda çalışıyor, uygulama indirilmiyor.",
+ dikkat="Turun yavaş açılması müşteriyi kaybettirir; bu yüzden sayfa önce açılıyor, 3B sahne ziyaretçi istediğinde yükleniyor, dokular ihtiyaç oldukça geliyor. Eski telefonda ya da WebGL olmayan tarayıcıda sahne yerine düz galeri gösteriliyor; kimse boş ekran görmüyor. Teslimden önce mobil hız ölçümünü ve farklı cihazlarda açılış kaydını size gösteriyoruz.",
+ girdi="Mekânın planı ya da ölçüleri, ürün listesi ve ürün fotoğrafları. Bitmiş mekân için çekim günü; 81 ilde çözüm ortağımızla çekiyoruz, model ve kurgu Bursa'da yapılıyor.",
+ sss=[("360° çekim mi, 3B model mi — hangisi bize uygun?", "Mekân bitmişse ve sık değişmiyorsa 360° çekim hızlı ve ucuz. Ürün sık değişiyorsa, mekân henüz yoksa ya da ziyaretçinin ürüne tıklayıp satın almasını istiyorsanız 3B model. İlk görüşmede ikisinin de maliyetini yazıyoruz."),
+      ("Mevcut sitemize eklenebilir mi?", "Evet. Tur tek bir sayfa ya da bölüm olarak var olan sitenize giriyor; WordPress dahil. Siteniz yoksa tanıtım sitesiyle birlikte kuruyoruz."),
+      ("Telefonda çalışıyor mu?", "Çalışıyor; yayındaki iki örneği telefonunuzdan açıp deneyebilirsiniz. Dokunmatik kontroller ayrı tasarlandı, sahne telefonun gücüne göre sadeleşiyor."),
+      ("Google turu görüyor mu?", "Turun kendisini değil, sayfasını görüyor. Bu yüzden tur sayfasını başlık, açıklama, ürün listesi ve yapılandırılmış veriyle kuruyoruz; tur içindeki ürünler ayrı sayfalarda da yaşıyor."),
+      ("Ne kadar sürede hazır olur?", "Bitmiş mekânın 360° turu çekimden sonra bir hafta. 3B tur mekânın büyüklüğüne göre iki–dört hafta; kumaş mağazası kataloğuyla birlikte üç haftada açıldı.")],
+)
 
 # ================================================================ WEB + SEO
 WEB = {
@@ -181,7 +201,7 @@ WEB = {
         ("Önceliklendir", "Bulunan her sorun, getireceği etkiye göre sıralanıyor; 'şunu düzeltirsek ne değişir' sorusu her madde için cevaplanıyor."),
         ("Düzelt", "Bulunanları biz düzeltiyoruz ya da ekibinize uygulanabilir talimat veriyoruz; hangisi olacağı sizin kararınız."),
         ("Tekrar ölç", "Düzeltme sonrası aynı ölçüm tekrar yapılıyor; önce ve sonra yan yana teslim ediliyor.")],
- kanit="Bir prefabrik ev üreticisinin sitesini WordPress'ten taşıdık; taşıma sonrası mobil hız puanını 72'den 100'e çıkardık, eski sistemden kalan hatalı adresleri ve sayfadaki çift fiyat listesini bulup düzelttik. Ayrıntılar <a href=\"seo-ornegi-aktas-prefabrik\">örnek sayfasında</a>. Kendi sitemizde 27 olan dizinli sayfa sayısını 470'in üzerine çıkardık; <a href=\"seo-ornegi-lunayapim\">o örnek de açık</a>.",
+ kanit="Aktaş Prefabrik'in sitesini WordPress'ten taşıdık; taşıma sonrası mobil hız puanını 72'den 100'e çıkardık, eski sistemden kalan hatalı adresleri, sayfadaki çift fiyat listesini ve 450'ye yakın kırık \"içindekiler\" bağlantısını bulup düzelttik; 28 günde aramadan gelen tıklama üç katına çıktı. Ayrıntılar <a href=\"seo-ornegi-aktas-prefabrik\">örnek sayfasında</a>. Kendi sitemizde 27 olan dizinli sayfa sayısını 470'in üzerine çıkardık; <a href=\"seo-ornegi-lunayapim\">o örnek de açık</a>.",
  girdi="Search Console ve Analytics erişimi (salt okunur yeterli), varsa reklam hesabı okuma yetkisi. Erişim vermek istemiyorsanız dışarıdan görülebilen kısmı ölçüyoruz.",
  sss=[("Denetim için sitemizi değiştirmeniz gerekiyor mu?", "Hayır. Denetim yalnız okuma yapar; hiçbir şey değiştirilmez. Düzeltme ayrı bir adımdır ve sizin onayınızla başlar."),
       ("Hangi altyapıda çalışıyorsunuz?", "WordPress, hazır paneller ve kendi yazılmış siteler. Gerekiyorsa siteyi daha hızlı ve bakımı kolay statik yapıya taşıyoruz; eski adresler yönlendirmeyle korunur."),
@@ -197,7 +217,7 @@ WEB = {
         ("Teslim edilen işler", "Tamamlanan projeler il ve tarih bilgisiyle yayında; alıcının en çok güvendiği kanıt bu."),
         ("Arayanın sorusuna sayfa", "'Tarlaya ev yapılır mı', 'kaç günde teslim' gibi gerçekten aranan sorulara mevzuat kaynaklı cevap sayfaları."),
         ("Ölçülen talep", "Telefon, WhatsApp ve form ayrı ayrı sayılıyor; hangi sayfanın ve hangi reklamın talep getirdiği görülüyor.")],
- kanit="Bir prefabrik ev üreticisinin sitesini taşıyıp yeniden kurduk: 57 model sayfası, kat planları, tamamlanan projeler ve arsa-izin rehberi; mobil hız 100, 'sakarya prefabrik ev' aramasında birinci sıra. <a href=\"seo-ornegi-aktas-prefabrik\">Örneği inceleyin</a>.",
+ kanit="Aktaş Prefabrik'in sitesini taşıyıp yeniden kurduk: 57 model sayfası, kat planları, tamamlanan projeler, arsa-izin rehberi ve ziyaretçinin kendi evini kurduğu 3B tasarlayıcı; Türkçe, İngilizce ve Almanca. Mobil hız 100, 'sakarya prefabrik ev' aramasında birinci sıra, 28 günde organik tıklama 203'ten 616'ya. <a href=\"seo-ornegi-aktas-prefabrik\">Örneği inceleyin</a>.",
  girdi="Proje listesi, planlar, fiyat aralıkları ve teslim edilen işlerin fotoğrafları. Mevcut siteniz varsa adresi.",
  sss=[("Fiyatları sitede göstermek zorunda mıyız?", "Hayır, ama başlangıç fiyatı veren sayfalar aramada daha çok tıklanıyor. Kesin fiyat yerine 'den başlayan' aralık yeterli."),
       ("3D render ve drone çekimini de siz mi yapıyorsunuz?", "Evet; sitedeki proje görselleri, 3D render ve drone görüntüleri aynı ekipten çıkıyor, ayrı ajans gerekmiyor."),
@@ -213,7 +233,7 @@ WEB = {
         ("Kapasite ve kalite", "Makine parkı, üretim kapasitesi, sertifikalar ve test süreçleri kanıtıyla; fabrika fotoğrafları ve kısa üretim videolarıyla."),
         ("İkinci dil", "İhracat yapılan pazarın dilinde ayrı sayfalar; çeviri değil, o pazarın aradığı terimlerle."),
         ("Teklif talebi", "Ürün koduyla teklif isteme formu; talep hangi üründen geldiğiyle satış ekibine düşüyor.")],
- kanit="Ürün animasyonu, teknik eğitim animasyonu ve 3D ürün görselini aynı ekipte üretiyoruz; sitedeki ürün sayfaları bu görsellerle birlikte kuruluyor.",
+ kanit="Bursa'daki kumaş toptancısı Ata Kumaş için vitrin sitesi, 3B sanal mağaza ve satış-stok paneli; Galzura için iki dilli tanıtım animasyonu ve site. Ürün animasyonu, teknik eğitim animasyonu ve 3D ürün görselini aynı ekipte üretiyoruz; ürün sayfaları bu görsellerle birlikte kuruluyor.",
  girdi="Ürün listesi ve teknik föyler, sertifikalar, fabrika fotoğrafları. İhracat pazarlarınız.",
  dikkat="Sanayi sitesinde en çok ihmal edilen sayfa 'teklif iste' sonrası. Form gönderildiğinde müşteriye neyin ne zaman olacağını söyleyen bir teşekkür sayfası ve satış ekibinize ürün koduyla düşen bir bildirim kuruyoruz. Böylece hangi ürün grubunun talep getirdiği, ayda kaç teklif istendiği ve hangisinin siparişe döndüğü takip edilebiliyor.",
  sss=[("Katalogumuz PDF, onu koysak yetmez mi?", "PDF'in içindeki ürünleri Google tek tek göstermiyor; her ürün ailesinin kendi sayfası olunca 'ürün adı + üretici' aramalarında görünür olursunuz."),
@@ -253,11 +273,17 @@ AKTAS_GOVDE = """<section><div class="wrap prose">
 </div></section>"""
 
 
-def _govde(v, kok_slug, kardes, kok_ad, kok_yol, cta_baslik, cta_alt, fiyat=None):
+def _govde(v, kok_slug, kardes, kok_ad, kok_yol, cta_baslik, cta_alt, fiyat=None, sayfa_slug=None):
     g = ['<section><div class="wrap prose">']
     g.append('<div class="kutu"><h2 style="margin-bottom:8px">Sorun</h2><p>%s</p></div>' % e(v["sorun"]))
     g.append("<h2>Ne yapıyoruz</h2>")
     g.append(_surec(v["cozum"]))
+    # 13.10.2026: yaptığımız işin kartları — sayfaya göre isler_blok.SAYFA
+    kanit_blok = blok(sayfa_slug) if sayfa_slug else ""
+    if kanit_blok:
+        g.append("</div></section>")
+        g.append(kanit_blok)
+        g.append('<section><div class="wrap prose">')
     if v.get("kanit"):
         g.append("<h2>Yaptığımız iş</h2>")
         g.append("<p>%s</p>" % v["kanit"])   # bağlantı içerebilir, kaynağı bu dosya
@@ -295,7 +321,7 @@ def uret():
     v = SHOWROOM_ANA
     govde = _govde(dict(v, girdi="Ürün listeniz ve varsa mevcut ürün fotoğraflarınız. İlk görüşmede hangi ürünlerle başlayacağımızı birlikte seçiyoruz."),
                    "web-sitesi-tasarimi", [], "", "", "Ürününüz sitede <i>dönsün</i>.",
-                   "Ne sattığınızı ve kaç ürününüz olduğunu yazın; aynı gün dönüş yapalım.")
+                   "Ne sattığınızı ve kaç ürününüz olduğunu yazın; aynı gün dönüş yapalım.", sayfa_slug="sanal-showroom")
     govde = govde.replace("<h2>Fiyat</h2>", "<h2>Sektörlere göre sanal showroom</h2><p>%s</p><h2>Fiyat</h2>" % " · ".join(kardes_sr), 1)
     cikti.append(("sanal-showroom.html", _hizmet_kabugu(
         "sanal-showroom.html", "Sanal Showroom — Ürünleriniz Sitede 3D | Luna Yapım",
@@ -306,11 +332,26 @@ def uret():
         kardes = [k for k in kardes_sr if 'sanal-showroom-%s"' % slug not in k]
         govde = _govde(v, "web-sitesi-tasarimi", kardes, "Sanal Showroom", "sanal-showroom",
                        "Vitrininizi <i>sitede</i> açalım.",
-                       "Ürünlerinizi ve kaç çeşit olduğunu yazın; hangi ürünlerle başlayacağımızı aynı gün söyleyelim.")
+                       "Ürünlerinizi ve kaç çeşit olduğunu yazın; hangi ürünlerle başlayacağımızı aynı gün söyleyelim.",
+                       sayfa_slug="sanal-showroom-%s" % slug)
         baslik = "%s | Luna Yapım" % v["ad"]
         h1 = v["ad"].replace(" için Sanal Showroom", " için <i>sanal showroom</i>").replace(" için Sanal Örnek Daire", " için <i>sanal örnek daire</i>")
         cikti.append((dosya, _hizmet_kabugu(dosya, baslik, _aciklama(v["lede"], "Ürününüzü mağazaya gelmeden gösterin."),
                                             "%s, sanal showroom, 3d vitrin" % v["ad"].lower(), h1, v["lede"], govde, v["ad"], v["sss"])))
+    # sanal tur (13.10.2026)
+    v = SANAL_TUR
+    govde = _govde(v, "web-sitesi-tasarimi",
+                   ['<a href="sanal-showroom">Sanal showroom</a>', '<a href="insaat-3d-modelleme">İnşaat 3D modelleme</a>',
+                    '<a href="emlak-kurumsal">Emlak ve kurumsal tanıtım</a>', '<a href="web-sitesi-tasarimi">Web sitesi tasarımı</a>'],
+                   "Web Sitesi Tasarımı", "web-sitesi-tasarimi",
+                   "Mekânınızı <i>gezdirelim</i>.", "Mekânın planını ya da ürün listenizi yazın; hangi turun uygun olduğunu aynı gün söyleyelim.",
+                   "Fiyat mekânın büyüklüğüne ve ürün sayısına göre değişiyor; 360° çekim ve 3B model için ayrı rakam yazıyoruz.",
+                   sayfa_slug="sanal-tur")
+    govde = govde.replace("<h2>Diğer alanlar</h2>\n<p>Aynı hizmetin başka sektörlerdeki karşılığı:", "<h2>İlgili hizmetler</h2>\n<p>Turun yanında genellikle istenenler:", 1)
+    cikti.append(("sanal-tur.html", _hizmet_kabugu(
+        "sanal-tur.html", "3B Sanal Tur — Mağazanızı ve Projenizi Sitede Gezdirin | Luna Yapım",
+        _aciklama(v["lede"], ""), "sanal tur, 3d sanal tur, 360 sanal tur, sanal mağaza, sanal gezinti, sanal showroom",
+        "3B sanal tur ve <i>gezinti</i>", v["lede"], govde, "3B Sanal Tur", v["sss"])))
     # animasyon alanları
     kardes_an = ['<a href="animasyon-%s">%s</a>' % (k, e(v["ad"].replace(" Animasyonu", ""))) for k, v in ANIM.items()]
     for slug, v in ANIM.items():
@@ -319,7 +360,8 @@ def uret():
         fiyat = ("Karakter tasarımı ve 3D model ile ilk animasyon birlikte fiyatlanır; karakter sayısı ve süre belirleyici."
                  if slug == "maskot-karakter" else "Teknik animasyon 40.000 ₺'den başlıyor; süre ve hareketli parça sayısı belirleyici.")
         govde = _govde(v, "urun-animasyon", kardes, "Ürün Animasyonu", "urun-animasyon",
-                       "Anlatması zor olanı <i>gösterelim</i>.", "Ne anlatmak istediğinizi ve elinizdeki dokümanı yazın; aynı gün dönüş yapalım.", fiyat)
+                       "Anlatması zor olanı <i>gösterelim</i>.", "Ne anlatmak istediğinizi ve elinizdeki dokümanı yazın; aynı gün dönüş yapalım.", fiyat,
+                       sayfa_slug="animasyon-%s" % slug)
         h1 = v["ad"].replace(" Animasyonu", " <i>animasyonu</i>")
         cikti.append((dosya, _hizmet_kabugu(dosya, "%s | Luna Yapım" % v["ad"], _aciklama(v["lede"], "Reklamda, sosyal medyada ve ambalajda aynı karakter."),
                                             "%s, teknik animasyon, 3d animasyon" % v["ad"].lower(), h1, v["lede"], govde, v["ad"], v["sss"],
@@ -331,7 +373,7 @@ def uret():
         kardes = [k for k in kardes_web if '"%s"' % slug not in k] if slug != "web-sitesi-saglik-denetimi" else []
         govde = _govde(v, "web-sitesi-tasarimi", kardes, "Web Sitesi Tasarımı", "web-sitesi-tasarimi",
                        "Sitenizi <i>ölçelim</i>." if "saglik" in slug else "Sitenizi <i>satış ofisine</i> çevirelim.",
-                       "Site adresinizi yazın; ilk ölçümü aynı gün paylaşalım.", v.get("fiyat"))
+                       "Site adresinizi yazın; ilk ölçümü aynı gün paylaşalım.", v.get("fiyat"), sayfa_slug=slug)
         h1 = (v["ad"].replace(" için Web Sitesi", " için <i>web sitesi</i>")
                      .replace("Sağlık Denetimi ve İyileştirme", "<i>sağlık denetimi</i> ve iyileştirme"))
         cikti.append((dosya, _hizmet_kabugu(dosya, "%s | Luna Yapım" % v["ad"], _aciklama(v["lede"], ""),

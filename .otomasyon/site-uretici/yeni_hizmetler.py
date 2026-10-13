@@ -2,6 +2,7 @@
 """Yeni hizmet sayfaları: SEO & içerik, yapay zekâ destekli SEO, AI kısa film."""
 import os, datetime
 from kabuk import head, FOOTER
+from isler_blok import blok
 from uretici import KOK, e, j, sss_blok, cta, video_bolumu, kisa_baslik, meta_desc
 from seo_ornekleri import kart_bolumu
 
@@ -124,6 +125,9 @@ def seo_icerik():
       ("Ölçüm", "Search Console ve harita profili verisi her ay okunuyor; ne değişti yazılıyor."),
       ("Devam kararı", "Üçüncü ayda taban çizgisiyle kıyas. Rakam ikna etmezse devam etmiyorsunuz."),
     ]))
+    g.append("</div></section>")
+    g.append(blok("seo-icerik"))
+    g.append('<section><div class="wrap prose">')
     g.append("<h2>Paketler</h2>")
     g.append(_paketler([
       ("Denetim", "Tek seferlik, karar vermeden önce",
@@ -229,6 +233,9 @@ def yapay_zeka_seo():
              'Yapabileceğimiz şey, seçilme ihtimalini artıran her koşulu sağlamak ve '
              'sonucu ölçmek. "AI aramalarında birinci sıra" diyen bir teklif alırsanız, '
              'o teklifin ölçemeyeceği bir şeyi sattığını bilin.</p></div>')
+    g.append("</div></section>")
+    g.append(blok("yapay-zeka-seo"))
+    g.append('<section><div class="wrap prose">')
     g.append("<h2>Süreç</h2>")
     g.append(_surec([
       ("Tam denetim", "44 kontrol + yapılandırılmış veri kontrolü + varlık tutarlılığı."),
@@ -364,18 +371,20 @@ def ai_kisa_film():
     ]))
 
     g.append("<h2>Benzer işlerimiz</h2>")
-    g.append("<p>Karakter tutarlılığı konusunda gösterebileceğimiz en yakın çalışma "
-             "<strong>Karga serisi</strong>: tamamen üretilmiş bir karakterin açılış, geçiş, "
-             "makro göz, kanat açılışı ve kapanış olmak üzere birden çok sahnede aynı kimlikle "
-             "korunduğu bir seri. Tüy dokusu, göz içi kırılma ve ışık her sahnede tutarlı. "
-             "Bunun yanında kısa film ve klip işlerimiz kurgu ve ışık tarafını gösteriyor.</p>")
+    g.append("<p>Karakter tutarlılığını üç işte çözdük. <strong>Evliya Çelebi Soruyor</strong>, "
+             "sokak röportajı formatında bir seri: dört karakter, Türkçe replikler, telaffuzu tek tek "
+             "denetlenmiş seslendirme — ilk bölüm 23 saniye. <strong>YADE × Vogue</strong>, tek bir "
+             "karakterin 2 dakika 40 saniye boyunca beş ayrı dünyada aynı kimlikle kaldığı klip. "
+             "<strong>Karga serisi</strong> ise açılış, geçiş, makro göz, kanat açılışı ve kapanış "
+             "sahnelerinde tüy dokusu ve ışığı sabit tutan altı bölüm. Kısa film ve klip işlerimiz de "
+             "kurgu ve ışık tarafını gösteriyor.</p>")
     g.append('<div class="rozetler">'
+             '<div class="rozet"><b>Evliya Çelebi Soruyor</b><span>Seri format</span>'
+             '<small>Türkçe seslendirme, telaffuz denetimi, dört karakter</small></div>'
+             '<div class="rozet"><b>YADE × Vogue</b><span>2:40 klip</span>'
+             '<small>Tek karakter beş dünyada aynı kimlikle</small></div>'
              '<div class="rozet"><b>Karga serisi</b><span>3D karakter</span>'
              '<small>Çok sahnede sabit karakter kimliği</small></div>'
-             '<div class="rozet"><b>Galzura</b><span>Anlatım animasyonu</span>'
-             '<small>TR/DE, yatay + dikey, tek üretimden çok sürüm</small></div>'
-             '<div class="rozet"><b>Kısa film</b><span>Kurgu ve ışık</span>'
-             '<small>Hikâye ritmi ve oyuncu yönetimi</small></div>'
              "</div>")
     g.append('<p style="color:var(--gri);font-size:14.5px;margin-top:14px">'
              'Gerçek kişilerin yüzünden üretilmiş, yayınlanmış bir referans filmimiz '
@@ -384,6 +393,7 @@ def ai_kisa_film():
              'yapıyoruz: kendi fotoğraflarınızla üç plan ölçeğinde test kareleri üretip '
              'gösteriyoruz. Böylece başkasının işine değil, kendi işinizin sonucuna bakarak '
              'karar veriyorsunuz.</p>')
+    g.append(blok("ai-kisa-film", rakam=False))
     g.append(video_bolumu("isler", "İşlerimizden"))
     g.append('<section><div class="wrap prose">')
     g.append("<h2>Sık sorulan sorular</h2>")
@@ -465,6 +475,9 @@ def e_ticaret():
     g.append("<p>Başka bir pazaryeri için aynı hattı kurmak, o platformun API belgesine bağlı. "
              "Daha önce çalışmadığımız bir platformsa bunu baştan söylüyoruz — "
              "\u201cher yerde çalışır\u201d demiyoruz.</p>")
+    g.append("</div></section>")
+    g.append(blok("e-ticaret"))
+    g.append('<section><div class="wrap prose">')
     g.append("<h2>Ürün görseli ve videosu</h2>")
     g.append("<p>Asıl işimiz burası. Stüdyoda ürün çekimi, 360° dönen ürün, doku makrosu; "
              "fiziksel olarak çekilemeyen ya da henüz üretilmemiş ürün için "

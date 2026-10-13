@@ -15,6 +15,10 @@
       oynayan hafif önizleme olur.
 
    musteri:"..."  →  kartın altında müşteri adı yazar (isteğe bağlı)
+   baglanti:"https://…" → iş bir web uygulamasıysa (13.10.2026): kart ve
+                       izleme sayfası videoyu değil canlı siteyi açar; mp4
+                       yalnız fareyle üzerine gelince dönen ekran kayıtlarıdır
+   galeri:["isler/x/1.jpg", …] → izleme sayfasındaki ekran görüntüleri
    il_sayfasi:false →  iş il (şehir) sayfalarında gösterilmez (06.10.2026)
 
    etiket → videonun hangi sayfalarda çıkacağını belirler:
@@ -27,6 +31,13 @@
      drone          → hizmetler/drone-fpv.html
      dugun          → hizmetler/dugun-etkinlik.html
      isletme        → hizmetler/isletme-tanitim.html
+     sanal-tur      → hizmetler/sanal-tur.html (3B gezinti işleri)
+     web            → web sitesi sayfaları
+     e-ticaret      → hizmetler/e-ticaret.html
+     sosyal         → hizmetler/sosyal-medya-yonetimi.html (Reels işleri)
+     maskot         → hizmetler/animasyon-maskot-karakter.html
+     egitim         → teknik eğitim / enerji animasyonu sayfaları
+     ai-film        → hizmetler/ai-kisa-film.html
    ============================================================ */
 
 /* ============================================================
@@ -51,15 +62,59 @@
 
 window.LUNA_VIDEOLAR = [
 
+
+  /* ---------- WEB UYGULAMALARI VE 3B GEZİNTİ (13.10.2026) ---------- */
+  { yerel:"aktas-3b-tasarlayici", baglanti:"https://aktasprefabrikev.com/ev-tasarla/", baslik:"Aktaş Prefabrik — 3B Ev Tasarlayıcı", kat:"3B Tasarlayıcı",
+    musteri:"Aktaş Prefabrik Ev · Sakarya", olcu:"Web uygulaması",
+    teslim:"Kat planından kurulan 3B ev, iç mekân gezintisi, gece görünümü, teklif formu",
+    detay:"Firmanın 40 modelinin ölçülü kat planları okunup tarayıcıda çalışan bir ev tasarlayıcısına dönüştürüldü. Ziyaretçi kat sayısını, oda düzenini, cepheyi, çatıyı ve terası seçiyor; ev her seçimde yeniden kuruluyor. Evin içinde yürünebiliyor, oda ölçüleri yerde okunuyor, gece görünümüne geçiliyor; yanda seçime en yakın model ve liste fiyatı çıkıyor. 321 oda ve 455 pencere-kapı açıklığı gerçek plan çizimlerinden ölçüldü; mobil hız puanı 100.",
+    galeri:["isler/aktas-3b/dis-gunduz.jpg","isler/aktas-3b/ic-salon.jpg","isler/aktas-3b/plan.jpg","isler/aktas-3b/dis-gece.jpg","isler/aktas-3b/ic-gezinti.jpg","isler/aktas-3b/arayuz.jpg"],
+    sayfa:"isler/aktas-prefabrik-3b-ev-tasarlayici", one:3, etiket:["isler","ornek","insaat-3d","sanal-tur","web","emlak"], yil:"2026-09-17", sehir:"Sakarya" },
+  { yerel:"aktas-montaj", baslik:"Aktaş Prefabrik — 3B Montaj Filmi", kat:"3D Mimari",
+    musteri:"Aktaş Prefabrik Ev · Sakarya", sure:"0:10", olcu:"1920×1080",
+    teslim:"Arsadan teslime yedi aşamalı 3B montaj animasyonu, 4K kareler",
+    detay:"Prefabrik evin kuruluşu yedi aşamada modellendi: arsa, temel, çelik iskelet, panel montajı, doğrama, çatı ve teslim. Kareler 4K çözünürlükte üretilip tek kadrajda birbirine bağlandı; ev kendi kendine kuruluyormuş gibi izleniyor. Firmanın ana sayfasında açılış filmi olarak kullanılıyor.",
+    sayfa:"isler/aktas-prefabrik-3b-montaj-filmi", etiket:["isler","ornek","insaat-3d","emlak"], yil:"2026-09-17", sehir:"Sakarya" },
+  { yerel:"atakumas-sanal-magaza", baglanti:"https://atakumas.com/", baslik:"Ata Kumaş — Sanal Mağaza ve 3B Manken", kat:"Sanal Mağaza",
+    musteri:"Ata Kumaş · Bursa", olcu:"Web sitesi + panel",
+    teslim:"Vitrin sitesi, 3B mağaza turu, kumaşı mankende gösteren podyum, satış-stok-maliyet paneli, Telegram ile ürün yükleme",
+    detay:"Bursa'daki kumaş toptancısının Trendyol kataloğu siteye taşındı. Müşteri mağazanın içinde geziyor, duvardaki kumaşa tıklayınca ürün açılıyor; seçtiği kumaşı kadın ya da erkek mankenin üzerinde elbise, etek, gömlek olarak görüyor. Arka planda satış, stok, maliyet ve rapor paneli çalışıyor; depodan Telegram'a atılan fotoğraf onaylanınca ürün siteye düşüyor. Hepsi Cloudflare üzerinde, aylık sunucu ücreti yok.",
+    galeri:["isler/atakumas/tur.jpg","isler/atakumas/manken.jpg","isler/atakumas/tur-bolum.jpg"],
+    sayfa:"isler/ata-kumas-sanal-magaza-ve-manken", one:2, etiket:["isler","ornek","sanal-tur","web","e-ticaret"], yil:"2026-10-11", sehir:"Bursa" },
+
+  /* ---------- SOSYAL MEDYA — REELS ---------- */
+  { yerel:"aktas-reel-3", baslik:"Aktaş Prefabrik — Bir Rulo Sacdan Havuzlu Eve", kat:"Reels",
+    musteri:"Aktaş Prefabrik Ev · Sakarya", sure:"0:23", olcu:"1080×1920",
+    teslim:"Firma arşivinden görüntü seçimi, kurgu, yazı bantları, kapak",
+    detay:"Fabrikadaki rulo sacdan teslim edilen havuzlu eve giden üretim hattı, firmanın kendi çekimlerinden 23 saniyelik dikey kurguyla anlatıldı. Punch-in ve flaş geçişler, okunur yazı bantları, uygulama içi sese uygun sessiz teslim.",
+    sayfa:"isler/aktas-prefabrik-reels-sactan-eve", etiket:["isler","sosyal","isletme"], yil:"2026-09-20", sehir:"Sakarya" },
+  { yerel:"aktas-reel-1", baslik:"Aktaş Prefabrik — İçinde Ne Var", kat:"Reels",
+    musteri:"Aktaş Prefabrik Ev · Sakarya", sure:"0:28", olcu:"1080×1920",
+    teslim:"Görüntü seçimi, kurgu, yazı bantları, kapak",
+    detay:"Panelin içindeki katmanları ve montaj detaylarını gösteren 28 saniyelik dikey video; firmanın şantiye ve fabrika arşivinden seçilen gerçek görüntülerle kuruldu.",
+    sayfa:"isler/aktas-prefabrik-reels-icinde-ne-var", etiket:["sosyal","isletme"], yil:"2026-09-20", sehir:"Sakarya" },
+  { yerel:"aktas-reel-2", baslik:"Aktaş Prefabrik — Şans Değil", kat:"Reels",
+    musteri:"Aktaş Prefabrik Ev · Sakarya", sure:"0:30", olcu:"1080×1920",
+    teslim:"Görüntü seçimi, kurgu, ✓/✗ yazı kartları, kapak",
+    detay:"Doğru malzeme ve doğru montajın tesadüf olmadığını anlatan 30 saniyelik dikey video; her sahne firmanın gerçek çekimlerinden, yazı kartları markanın renkleriyle.",
+    sayfa:"isler/aktas-prefabrik-reels-sans-degil", etiket:["sosyal"], yil:"2026-09-20", sehir:"Sakarya" },
+
+  /* ---------- YAPAY ZEKÂ KISA FİLM ---------- */
+  { yerel:"evliya-soruyor-b1", baslik:"Evliya Çelebi Soruyor — 1. Bölüm", kat:"Yapay Zekâ Kısa Film",
+    sure:"0:23", olcu:"720×1280", il_sayfasi:false,
+    teslim:"Format tasarımı, karakter sayfaları, Türkçe seslendirme, kurgu ve altyazı",
+    detay:"Bursa sokak röportajı formatında bir seri: Evliya Çelebi elinde mikrofonla soruyor, Karagöz, Hacivat ve Hannibal cevaplıyor. İlk bölümün sorusu \"Bursa'yı kim kurdu?\". Karakterler kamu malı figürlerden tasarlandı, replikler Türkçe seslendirildi, telaffuz tek tek denetlendi; 23 saniyelik dikey bölüm altyazılı ve altyazısız teslim edildi.",
+    sayfa:"isler/evliya-celebi-soruyor-1-bolum", etiket:["isler","ornek","ai-film"], yil:"2026-09-19" },
+
   /* ---------- KENDİ DOSYALARIMIZ ---------- */
   { yerel:"yade-vogue", detay:"gustosound'un 130 BPM'lik Vogue parçası için hazırlanan 2 dakika 40 saniyelik 3D animasyon klip. Klibin sanatçısı Luna Yapım'ın tasarladığı YADE adlı ejderha karakteri; beş perdelik hikâyenin her dünyası Blender'da 3D olarak kurulup render edildi, kurgu şarkının ritim ve vuruş analizine göre biçildi. 1080p ve 4K olarak teslim edildi.", sayfa:"isler/yade-vogue-3d-animasyon-klip", baslik:"YADE × Vogue — 3D Animasyon Klip", kat:"Klip",
     sure:"2:40", olcu:"1920×1080 · 4K",
     teslim:"Şarkı analizi, karakter tasarımı, Blender 3D dünyalar, kurgu ve renk",
-    one:3, etiket:["isler","ornek","klip"], yil:"2026-10-01", il_sayfasi:false },
+    one:3, etiket:["isler","ornek","klip","maskot","ai-film"], yil:"2026-10-01", il_sayfasi:false },
   { yerel:"bgk-egitim-demo", detay:"Akaryakıt istasyonlarındaki buhar geri kazanım (BGK) sisteminin Faz I ve Faz II çalışma prensibini anlatan 30 saniyelik teknik eğitim animasyonu demosu. Tanker boşaltımında yakıtın yeraltı tankına inişi ve yer değiştiren buharın tankere dönüşü, tank kesitinde seviye değişimi, dispenser içindeki akış sensörü, vakum pompası ve kontrol kartı, koaksiyel hortumun kesiti ve kapalı döngünün havadan özeti ayrı sahnelerde gösteriliyor. Akış yönleri renkle ayrıldı: yakıt mavi, buhar turuncu. Talep gelen gün hazırlandı; 720p önizleme olarak paylaşıldı.", sayfa:"isler/buhar-geri-kazanim-egitim-animasyonu", baslik:"Buhar Geri Kazanım Sistemi — Teknik Eğitim Animasyonu", kat:"Eğitim Animasyonu",
     sure:"0:30", olcu:"1280×720 önizleme",
     teslim:"Çalışma prensibi anlatımı, kesit sahneleri, akış renk kodlaması, Türkçe ara yazılar",
-    one:2, etiket:["isler","ornek","urun-animasyon"], yil:"2026-09-17", il_sayfasi:false },
+    one:2, etiket:["isler","ornek","urun-animasyon","egitim"], yil:"2026-09-17", il_sayfasi:false },
   { yerel:"ornek-cm", detay:"Avusturya'daki CM Vorarlberg için hazırlanan 15 saniyelik konut projesi tanıtım animasyonu. Projenin dış cephesi 3D olarak modellenip render edildi; kamera hareketiyle yapının çevresinde dolaşan tek bir plan kuruldu ve film marka kapanışıyla bitirildi. 1600×900 çözünürlükte teslim edildi.", sayfa:"isler/cm-vorarlberg-konut-projesi-3d-animasyon", baslik:"Konut Projesi 3D Tanıtım Animasyonu", kat:"3D Mimari",
     musteri:"CM Vorarlberg · Avusturya", sure:"0:15", olcu:"1600×900",
     teslim:"Dış cephe render + kamera hareketi + marka kapanışı",
@@ -67,7 +122,7 @@ window.LUNA_VIDEOLAR = [
   { yerel:"ornek-galzura", detay:"Lojistik firmaları için filo yönetim yazılımı geliştiren Galzura'nın 1 dakikalık tanıtım animasyonu. Animasyon Türkçe ve Almanca iki dilde seslendirildi; web sitesi için yatay, sosyal medya için 9:16 dikey sürüm ayrı ayrı teslim edildi.", sayfa:"isler/galzura-tanitim-animasyonu", baslik:"Galzura Tanıtım Animasyonu", kat:"Animasyon",
     musteri:"Galzura · Avusturya", sure:"1:00", olcu:"1280×720",
     teslim:"Animasyon + seslendirme + TR/DE iki dil, yatay ve 9:16 dikey sürüm",
-    one:1, etiket:["isler","ornek","urun-animasyon"] },
+    one:1, etiket:["isler","ornek","urun-animasyon","web"] },
 
   /* ---------- YAYINDA ---------- */
   { teslim:"Senaryo, çekim, kurgu, renk", id:"TjUTFk9LZSs", sure:"3:24", detay:"3 dakika 24 saniyelik kısa film. Senaryo, çekim, kurgu ve renk düzenlemesi ekibimize ait; film 13 Ağustos 2025'te yayınlandı.", sayfa:"isler/sanat-bazen-de-ask-icindir-kisa-film", baslik:"Sanat bazen de aşk içindir",              kat:"Kısa Film",      etiket:["isler"], yil:"2025-08-13" },
@@ -77,11 +132,10 @@ window.LUNA_VIDEOLAR = [
   { teslim:"Klip çekimi ve kurgu", id:"DuMsRUDUYc8", sure:"1:00", detay:"1 dakikalık klip çalışması. Çekim ve kurgu ekibimize ait; video 14 Ocak 2018'de yayınlandı.", sayfa:"isler/bir-peron-klip", baslik:"Bir Peron",             kat:"Klip",           etiket:["isler","klip"], yil:"2018-01-14", sehir:"İstanbul" },
   { teslim:"Çekim, kurgu, renk", id:"CV6kVVBuxxM", sure:"2:02", detay:"2 dakikalık kısa film. Çekim Blackmagic Pocket Cinema Camera 4K ve Lumix 25 mm f/1.7 objektifle yapıldı; çekim, kurgu ve renk ekibimize ait. Film 18 Nisan 2023'te yayınlandı.", sayfa:"isler/munzevi-kisa-film", baslik:"münzevi — Kısa Film",       kat:"Kısa Film",      etiket:["isler","klip"], yil:"2023-04-18", sehir:"Hatay" },
   { teslim:"Açılış jeneriği tasarımı", id:"itxSC873O_U", sure:"0:40", detay:"40 saniyelik açılış jeneriği (opener) çalışması. Tasarım ve kurgu ekibimize ait.", sayfa:"isler/yalan-opener", baslik:"Yalan — Opener",           kat:"Opener",         etiket:["isler"], yil:"2023-09-25" },
-  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", sure:"1:40", detay:"Ceyrose'nin \"Kirli\" şarkısının müzik klibi. Klibin yönetmenliğini Luna Yapım üstlendi; çekim ve kurgu ekibimize ait. Şarkının sözleri Ceyrose'ye, prodüksiyonu Thats'e, mix ve mastering'i Enes Karaaslan'a ait. Klip 21 Ağustos 2026'da sanatçının YouTube kanalında yayınlandı ve 40 binden fazla izlendi.", sayfa:"isler/ceyrose-kirli-muzik-klibi", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
+  { teslim:"Müzik klibi — çekim ve kurgu", id:"SAL0X164pbA", sure:"1:40", detay:"Ceyrose'nin \"Kirli\" şarkısının müzik klibi. Klibin yönetmenliğini Luna Yapım üstlendi; çekim ve kurgu ekibimize ait. Şarkının sözleri Ceyrose'ye, prodüksiyonu Thats'e, mix ve mastering'i Enes Karaaslan'a ait. Klip 21 Ağustos 2026'da sanatçının YouTube kanalında yayınlandı ve 40 binden fazla izlendi. Şarkının albüm kapağı da Luna Yapım'da tasarlandı.", sayfa:"isler/ceyrose-kirli-muzik-klibi", baslik:"Ceyrose — Kirli",            kat:"Klip",           etiket:["isler","klip"], yil:"2026-08-21", sehir:"Bursa" },
 
   /* ---------- İNŞAAT & MİMARİ 3D MODELLEME (kimlik bekliyor) ---------- */
   { id:"", baslik:"Villa Dış Cephe Render Animasyonu",   kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
-  { id:"", baslik:"İç Mekân Sanal Tur",                  kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
   { id:"", baslik:"Site / Yerleşim Maket Videosu",       kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
   { id:"", baslik:"İnşaat Aşama Simülasyonu",            kat:"3D Mimari",   etiket:["kapsam","insaat-3d"] },
 
@@ -134,6 +188,19 @@ window.LUNA_VIDEOLAR = [
                    : 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg';
   }
 
+  /* il sayfası mı? sehir/<il>-... → "il"; Türkçe harfler sadeleştirilir (varlik.py _il_norm ile aynı) */
+  function ilNorm(x){
+    x = String(x || '');
+    var t = {'İ':'i','I':'i','ı':'i','Ş':'s','ş':'s','Ğ':'g','ğ':'g','Ü':'u','ü':'u','Ö':'o','ö':'o','Ç':'c','ç':'c'};
+    x = x.replace(/[İIıŞşĞğÜüÖöÇç]/g, function(c){ return t[c]; });
+    return x.toLowerCase().normalize ? x.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'') : x.toLowerCase();
+  }
+  var SAYFA_IL = (function(){
+    var m = /\/sehir\/([a-z0-9]+)(?:-|\.html|$)/.exec(location.pathname);
+    return m ? m[1] : '';
+  })();
+  function ilde(v){ return !!(SAYFA_IL && v.sehir && ilNorm(v.sehir) === SAYFA_IL); }
+
   function kart(v, i){
     var b = kacir(v.baslik), k = kacir(v.kat);
     /* künye: yalnızca gerçekten bildiğimiz alanlar — boş olan hiç yazılmıyor */
@@ -141,10 +208,13 @@ window.LUNA_VIDEOLAR = [
     if(v.sure) kunye.push(kacir(v.sure));
     if(v.olcu) kunye.push(kacir(v.olcu));
     var one = v.one ? ' one one-'+v.one : '';
-    return '<article class="is'+one+'" data-i="'+i+'" data-kat="'+k+'" tabindex="0" '+
-      'role="button" aria-label="'+b+' — videoyu aç">'+
+    var web = v.baglanti ? ' is-web' : '';
+    return '<article class="is'+one+web+'" data-i="'+i+'" data-kat="'+k+'" tabindex="0" '+
+      'role="button" aria-label="'+b+(v.baglanti ? ' — işi aç' : ' — videoyu aç')+'">'+
       '<div class="kapak">'+
         '<img loading="lazy" src="'+afis(v)+'" alt="'+b+'">'+
+        (ilde(v) ? '<span class="is-rozet">Bu ildeki işimiz</span>' : '')+
+        (v.baglanti ? '<span class="is-canli">Canlı</span>' : '')+
         '<span class="im"></span>'+
         (kunye.length ? '<span class="is-kunye">'+kunye.join(' · ')+'</span>' : '')+
       '</div>'+
@@ -204,6 +274,11 @@ window.LUNA_VIDEOLAR = [
 
   /* ---------- büyük oynatıcı ---------- */
   function ac(v){
+    /* web uygulaması: video değil, işin kendi sayfası (oradan canlı site) açılır */
+    if(v && v.baglanti){
+      location.href = v.sayfa ? KOK.replace(/assets\/$/,'') + v.sayfa : v.baglanti;
+      return;
+    }
     var m = document.getElementById('vmodal');
     if(!m) return;
     var f = document.getElementById('vframe');
@@ -434,6 +509,8 @@ window.LUNA_VIDEOLAR = [
       });
       /* öne çıkan işler başa: one değeri büyük olan önce */
       sec = sec.slice().sort(function(a,b){ return (b.one||0) - (a.one||0); });
+      /* il sayfasında o ilde yapılmış iş en başa (varlik.py ile aynı kural) */
+      if(SAYFA_IL) sec = sec.slice().sort(function(a,b){ return (ilde(b)?1:0) - (ilde(a)?1:0); });
       if(limit > 0) sec = sec.slice(0, limit);
 
       if(!sec.length){

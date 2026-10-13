@@ -11,6 +11,8 @@ import os
 from kabuk import head, FOOTER
 from uretici import KOK, e, j, sss_blok, cta, kisa_baslik, meta_desc
 from yeni_hizmetler import _hizmet_kabugu, _surec, _paketler
+from isler_blok import blok, rakamlar
+from uretici import video_bolumu
 
 
 # ══════════════════════════════════════════════════ REKLAM YÖNETİMİ + DENETİM
@@ -112,6 +114,20 @@ def reklam_yonetimi():
     ]))
     g.append('</div><div class="wrap prose">')
 
+    g.append("<h2>Bir devirde ölçtüklerimiz</h2>")
+    g.append("<p>Aynı hesabın 30 günlük okumasından, firma adı olmadan:</p>")
+    g.append('<div class="vk-rakam">'
+             '<div class="vk"><b>60</b><span>reklam, 6 kampanya tek tek okundu</span></div>'
+             '<div class="vk"><b>¼</b><span>bütçe, yanlış fiyatlı iki reklama gitmiş</span></div>'
+             '<div class="vk"><b>6</b><span>ölçülen talep — 76.000 sayfa görüntülemeye karşılık</span></div>'
+             '<div class="vk"><b>0 → 4</b><span>yeniden hedefleme kitlesi</span></div>'
+             '</div>')
+    g.append("<p>İlk hafta: iş sonucu üretmeyen kampanya kapatıldı, yanlış fiyatlı reklamlar durduruldu, "
+             "siteye gelenlerden kitle kuruldu, satış ekibine form başvurularını gördüğü bir hesap açıldı. "
+             "Rapor iki belge olarak teslim edildi: denetim ve yeni kurulum-bütçe planı.</p>")
+    g.append("</div></section>")
+    g.append(blok("reklam-yonetimi", rakam=False))
+    g.append('<section><div class="wrap prose">')
     g.append("<h2>Paketler</h2>")
     g.append(_paketler([
         ("Reklam denetimi", "Tek seferlik", [
@@ -248,6 +264,20 @@ def sosyal_medya():
         ("Aylık okuma", "Neyin tuttuğu, neyin tutmadığı ve bir sonraki ayın planı."),
     ]))
     g.append('</div><div class="wrap prose">')
+    g.append("<h2>İki hesaptan okuduklarımız</h2>")
+    g.append("<p>Teklif vermeden önce hesabı sayıyla okuyoruz; iki örnek, firma adı olmadan:</p>")
+    g.append('<div class="vk-rakam">'
+             '<div class="vk"><b>−%60</b><span>bir kafe hesabında üç ayda etkileşim düşüşü — paylaşım sıklığı artarken</span></div>'
+             '<div class="vk"><b>2,2×</b><span>aynı hesapta videonun fotoğrafa göre etkileşimi (Eylül’de 3,5×)</span></div>'
+             '<div class="vk"><b>4,18 M</b><span>bir inşaat hesabında 32 Reels’in toplam izlenmesi — beğeni/izlenme ‰0,9</span></div>'
+             '<div class="vk"><b>24 gün</b><span>aynı hesapta en uzun paylaşım boşluğu</span></div>'
+             '</div>')
+    g.append("<p>Bu okuma teklifin kendisi oluyor: hangi biçim çalışıyor, hangisi bütçeyi yiyor, "
+             "nerede boşluk var. Sonra üretim başlıyor.</p>")
+    g.append("</div></section>")
+    g.append(blok("sosyal-medya-yonetimi", rakam=False))
+    g.append(video_bolumu("sosyal", "Firma arşivinden kurduğumuz Reels’ler"))
+    g.append('<section><div class="wrap prose">')
 
     g.append("<h2>Paketler</h2>")
     g.append(_paketler([
@@ -370,6 +400,9 @@ def pazar_arastirmasi():
     ]))
     g.append('</div><div class="wrap prose">')
 
+    g.append("</div></section>")
+    g.append(blok("pazar-arastirmasi-otomasyon"))
+    g.append('<section><div class="wrap prose">')
     g.append("<h2>Paketler</h2>")
     g.append(_paketler([
         ("Pazar raporu", "Tek seferlik", [

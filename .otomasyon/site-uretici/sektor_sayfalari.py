@@ -20,6 +20,7 @@ import re
 from kabuk import head, FOOTER
 from uretici import KOK, e, j, sss_blok, cta
 from yeni_hizmetler import _hizmet_kabugu, _surec, _paketler
+from isler_blok import blok
 import sehirler
 
 # --------------------------------------------------------------- ÜRÜN ANİMASYONU
@@ -268,11 +269,17 @@ def _il_bloku_yapi(iller):
             'gerekiyorsa o gün için yerinde olmamız gerekiyor.</p>' % " · ".join(bag))
 
 
-def _govde(v, hizmet_slug, il_anahtar, fiyat_metni, kardesler, kok_baslik, kok_yol):
+def _govde(v, hizmet_slug, il_anahtar, fiyat_metni, kardesler, kok_baslik, kok_yol, sayfa_slug=None):
     g = ['<section><div class="wrap prose">']
     g.append('<div class="kutu"><h2 style="margin-bottom:8px">Sorun</h2><p>%s</p></div>' % e(v["sorun"]))
     g.append("<h2>Ne yapıyoruz</h2>")
     g.append(_surec(v["cozum"]))
+    # 13.10.2026: "Ne yapıyoruz"dan hemen sonra yaptığımız iş — sayfaya göre isler_blok.SAYFA
+    kanit = blok(sayfa_slug) if sayfa_slug else ""
+    if kanit:
+        g.append("</div></section>")
+        g.append(kanit)
+        g.append('<section><div class="wrap prose">')
     g.append("<h2>Bizden ne isteniyor</h2>")
     g.append("<p>%s</p>" % e(v["girdi"]))
     g.append("<h2>Fiyat</h2>")
@@ -305,7 +312,7 @@ def uret_urun():
                   for k in slugs if k != slug]
         govde = _govde(v, "urun-animasyon", v["anahtar_il"],
                        "3D ürün animasyonu 40.000 ₺'den başlıyor; süre ve hareketli parça sayısı belirleyici.",
-                       kardes, "Ürün Animasyonu", "urun-animasyon")
+                       kardes, "Ürün Animasyonu", "urun-animasyon", sayfa_slug="urun-animasyon-%s" % slug)
         baslik = "%s | Luna Yapım" % v["ad"]
         aciklama = (v["lede"][:150] if len(v["lede"]) >= 110 else
                     (v["lede"] + " Fiyat 40.000 ₺'den başlıyor, teknik dosyanızdan modelliyoruz."))
@@ -327,7 +334,7 @@ def uret_yapi():
                   for k in slugs if k != slug]
         govde = _govde(v, "insaat-3d-modelleme", ("insaat", "inşaat", "konut", "yapı"),
                        "İnşaat 3D modelleme ve mimari render 45.000 ₺'den başlıyor; blok sayısı ve istenen kare adedi belirleyici.",
-                       kardes, "İnşaat 3D Modelleme", "insaat-3d-modelleme")
+                       kardes, "İnşaat 3D Modelleme", "insaat-3d-modelleme", sayfa_slug="insaat-3d-%s" % slug)
         baslik = "%s | Luna Yapım" % v["ad"]
         aciklama = (v["lede"][:150] if len(v["lede"]) >= 110 else
                     (v["lede"] + " Fiyat 45.000 ₺'den başlıyor, mimari projenizden modelliyoruz."))

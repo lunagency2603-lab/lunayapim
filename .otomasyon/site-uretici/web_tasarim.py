@@ -11,6 +11,7 @@ YAZILMAZ. "Neyi yapmıyoruz" bölümü zorunlu. Fiyat bandı yok: kapsama göre 
 """
 import os
 
+from isler_blok import kartlar
 from uretici import sss_blok, cta
 from yeni_hizmetler import _hizmet_kabugu, _surec, _paketler
 
@@ -67,35 +68,9 @@ def web_sitesi_tasarimi():
 
     g.append("<h2>Müşteri işleri</h2>")
     g.append("<p>Kendi sitelerimizde denediğimiz parçaları müşterilerimiz için de kuruyoruz. "
-             "Üçü de çalışır hâlde; tıklayıp açabilirsiniz.</p>")
-    g.append('</div><div class="wrap"><div class="uv-izgara">')
-    for href, gorsel, alt, etiket, rom, baslik, metin, ok in [
-        ("https://aktasprefabrikev.com/ev-tasarla/", "aktas-ev-tasarlayici.jpg",
-         "Aktaş Prefabrik 3B ev tasarlayıcısı: tek katlı 2+1 model ve seçim paneli",
-         "Canlı", "i · Prefabrik ev üreticisi", "Aktaş Prefabrik — 3B ev tasarlayıcı",
-         "Ziyaretçi kat sayısını, oda düzenini, cepheyi, çatıyı ve terası seçiyor; ev "
-         "tarayıcıda firmanın ölçülü plan çizimlerinden kuruluyor. İçinde yürünüyor, gece "
-         "görünümüne geçiliyor, seçime en yakın model ve liste fiyatı yanda çıkıyor. Sitenin "
-         "tamamını da WordPress'ten statik yapıya biz taşıdık.", "Tasarlayıcıyı aç →"),
-        ("../onizleme/ata-kumas/", "ata-kumas-vitrin.jpg",
-         "Ata Kumaş vitrin sitesinin açılış görüntüsü: desenli kumaşlar",
-         "Tasarım önizlemesi", "ii · Kumaş mağazası", "Ata Kumaş — vitrin ve sanal mağaza",
-         "Bursa'daki kumaş mağazasının Trendyol ürünleri kartela düzeninde. Sanal mağaza "
-         "turu ve kumaşı kadın ve erkek 3B mankenin üzerinde gösteren podyum; satın alma "
-         "doğrudan Trendyol'daki ürüne bağlanıyor.", "Vitrini aç →"),
-        ("../isler/yade-vogue-3d-animasyon-klip", "../video/yade-vogue.jpg",
-         "YADE × Vogue klibinden kare: siyah ejderha YADE, bazalt sütunlar arasında",
-         "Klip", "iii · Müzik klibi", "YADE × Vogue — 3D animasyon klip",
-         "gustosound'un Vogue parçası için 2:40'lık klip. Beş dünya Blender'da 3D olarak "
-         "kuruldu, kurgu şarkının vuruşlarına göre biçildi.", "Klibi izle →"),
-    ]:
-        src = gorsel if gorsel.startswith("../") else "web/" + gorsel
-        g.append('<a class="uv gor" href="%s"%s><span class="uv-gorsel">'
-                 '<img src="../assets/%s" width="800" height="450" loading="lazy" alt="%s">'
-                 '<i class="uv-yz">%s</i></span><span class="uv-metin"><span class="rom">%s</span>'
-                 '<h3>%s</h3><p>%s</p><span class="ok">%s</span></span></a>'
-                 % (href, ' rel="noopener" target="_blank"' if href.startswith("http") else "",
-                    src.replace("../video/", "video/"), alt, etiket, rom, baslik, metin, ok))
+             "Üçü de yayında; tıklayıp açabilirsiniz.</p>")
+    g.append('</div><div class="wrap">')
+    g.append(kartlar(["aktas-3b", "ata-kumas", "aktas-site"], on="../"))
     g.append('</div></div><div class="wrap prose">')
 
     g.append("<h2>Sitenize ekleyebileceğimiz yaratıcı parçalar</h2>")

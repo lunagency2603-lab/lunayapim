@@ -1618,3 +1618,25 @@ body:not(.bl-js) .bl-denetim,body:not(.bl-js) .bl-nolar{display:none}
 .izle-kap iframe,.izle-kap video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .is-alt h3 a.is-sayfa{color:inherit;text-decoration:none}
 .is-alt h3 a.is-sayfa:hover{text-decoration:underline}
+
+/* v27 — iş kanıtı blokları (13.10.2026): ölçü kutuları, web uygulaması kartı, izleme galerisi */
+[data-is-blok] .bas .no{color:var(--kirmizi)}
+.vk-rakam{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:4px 0 22px}
+.vk{background:#fff;border:1px solid rgba(10,10,12,.09);border-left:3px solid var(--kirmizi);border-radius:12px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.vk b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(26px,3vw,34px);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.vk span{font:500 11px/1.45 "Space Mono",monospace;letter-spacing:.04em;text-transform:none;color:var(--gri-2)}
+.koyu .vk,section:not(.acik) .vk-rakam .vk{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);border-left-color:var(--kirmizi)}
+section:not(.acik) .vk b{color:var(--bone)}
+section:not(.acik) .vk span{color:rgba(239,237,232,.72)}
+.is.is-web .im{border-radius:6px}
+.is.is-web .im::after{content:"↗";border:0;width:auto;height:auto;font:700 18px/1 "Bricolage Grotesque",sans-serif;color:#fff;position:static;transform:none}
+.is .is-canli{position:absolute;right:10px;top:10px;z-index:5;font:500 9px/1 "Space Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--kirmizi);padding:5px 8px;border-radius:2px}
+.is .kapak .is-rozet{position:absolute;left:10px;top:10px;z-index:5;font-size:11px;padding:5px 8px;border-radius:2px;margin:0}
+.iz-galeri{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:8px 0 18px}
+.iz-galeri .iz-kare{display:block;border-radius:12px;overflow:hidden;background:#000;aspect-ratio:16/9;border:1px solid rgba(10,10,12,.09)}
+.iz-galeri .iz-kare img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.iz-galeri .iz-kare:hover img{transform:scale(1.03)}
+.iz-galeri .iz-kare:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.iz-canli{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 28px}
+.iz-canli span{font-size:14px;color:var(--gri-2)}
+@media(max-width:640px){.vk-rakam{grid-template-columns:repeat(2,1fr);gap:10px}.vk{padding:13px 14px 12px}.vk b{font-size:24px}}

@@ -25,6 +25,13 @@ KABUK = "hizmetler/klip-cekimi.html"
 ISARET = "<!-- izleme-sayfasi -->"
 
 HIZMET = {   # etiket → (hizmet sayfası, ad)
+    "sanal-tur": ("sanal-tur", "3B sanal tur"),
+    "web": ("web-sitesi-tasarimi", "Web sitesi tasarımı"),
+    "e-ticaret": ("e-ticaret", "E-ticaret"),
+    "sosyal": ("sosyal-medya-yonetimi", "Sosyal medya yönetimi"),
+    "maskot": ("animasyon-maskot-karakter", "Maskot ve karakter animasyonu"),
+    "egitim": ("animasyon-teknik-egitim-isg", "Teknik eğitim animasyonu"),
+    "ai-film": ("ai-kisa-film", "Yapay zekâ kısa film"),
     "klip": ("klip-cekimi", "Klip çekimi"),
     "insaat-3d": ("insaat-3d-modelleme", "İnşaat 3D modelleme"),
     "urun-animasyon": ("urun-animasyon", "3D ürün animasyonu"),
@@ -84,7 +91,8 @@ def aciklama(d):
     p += "."
     if d.get("teslim"):
         p += " Yapılan iş: %s." % d["teslim"]
-    ek = " Luna Yapım işlerinden; videoyu bu sayfada izleyebilirsiniz."
+    ek = (" Luna Yapım işlerinden; ekran görüntüleri ve canlı bağlantı bu sayfada."
+          if d.get("baglanti") else " Luna Yapım işlerinden; videoyu bu sayfada izleyebilirsiniz.")
     if len(p + ek) <= 158:
         p += ek
     if len(p) < 110:
@@ -95,6 +103,19 @@ def aciklama(d):
 
 
 def sema(d, url):
+    if d.get("baglanti"):
+        v = {"@context": "https://schema.org", "@type": "WebApplication",
+             "name": d["baslik"], "description": d.get("detay") or d.get("teslim") or d["baslik"],
+             "url": d["baglanti"], "applicationCategory": "BusinessApplication",
+             "browserRequirements": "Modern tarayıcı, WebGL",
+             "image": [SITE + "/assets/" + g for g in d.get("galeri", [])] or SITE + "/assets/video/%s.jpg" % d["yerel"],
+             "datePublished": d["yil"],
+             "author": {"@id": SITE + "/#kurulus"}, "publisher": {"@id": SITE + "/#kurulus"}}
+        iz = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "İşler", "item": SITE + "/isler"},
+            {"@type": "ListItem", "position": 3, "name": d["baslik"], "item": url}]}
+        return "\n".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False) for x in (iz, v))
     v = {"@context": "https://schema.org", "@type": "VideoObject",
          "name": d["baslik"], "description": d.get("detay") or d.get("teslim") or d["baslik"],
          "uploadDate": d["yil"], "url": url, "publisher": {"@id": SITE + "/#kurulus"}}
@@ -115,6 +136,16 @@ def sema(d, url):
 
 
 def oynatici(d):
+    if d.get("baglanti"):
+        # web uygulaması: ekran görüntüleri + canlı bağlantı (video yerine)
+        g = d.get("galeri") or ["video/%s.jpg" % d["yerel"]]
+        kareler = "".join('<a class="iz-kare" href="../assets/%s" target="_blank" rel="noopener">'
+                          '<img src="../assets/%s" alt="%s — ekran görüntüsü %d" loading="%s"></a>'
+                          % (x, x, _e(d["baslik"]), i + 1, "eager" if i == 0 else "lazy")
+                          for i, x in enumerate(g))
+        return ('<div class="iz-galeri">%s</div>'
+                '<p class="iz-canli"><a class="btn btn-dolu" href="%s" target="_blank" rel="noopener">Canlı siteyi aç ↗</a> '
+                '<span>Tarayıcıda çalışıyor; kurulum gerektirmez.</span></p>' % (kareler, _e(d["baglanti"])))
     if d.get("id"):
         return ('<div class="izle-kap"><iframe src="https://www.youtube-nocookie.com/embed/%s?rel=0" '
                 'title="%s" loading="eager" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" '
@@ -174,7 +205,7 @@ def govde(d, hepsi):
   <div class="wrap">
     <p class="etk">İletişim</p>
     <h2>Benzer bir işe <i>başlayalım</i>.</h2>
-    <p>Ne çekileceğini ve tarihi yazın, genelde aynı gün dönüyoruz.</p>
+    <p>%(cta_alt)s</p>
     <div class="btnlar">
       <a href="https://wa.me/905542182603" class="btn btn-koyu">WhatsApp'tan Yaz</a>
       <a href="tel:+905542182603" class="btn btn-cizgi" style="border-color:rgba(255,255,255,.5);color:#fff">Ara · 0554 218 26 03</a>
@@ -183,6 +214,8 @@ def govde(d, hepsi):
 </section>
 
 """ % dict(isaret=ISARET, b=_e(d["baslik"]),
+           cta_alt=("Ürünlerinizi ya da projenizi yazın; sitenize nasıl oturacağını aynı gün anlatalım."
+                    if d.get("baglanti") else "Ne çekileceğini ve tarihi yazın, genelde aynı gün dönüyoruz."),
            lede=_e(" · ".join(x for x in (d.get("kat"), d.get("musteri")) if x)),
            oyn=oynatici(d), teslim=_e(d.get("teslim") or d["baslik"]), detay=_e(d.get("detay") or d.get("teslim") or d["baslik"]),
            kunye="".join(kunye), hz=hz_html, dg=dg)
@@ -205,13 +238,15 @@ def sayfa_yap(kabuk, d, hepsi):
                      (r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % t),
                      (r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="%s">' % a),
                      (r'<meta property="og:url" content="[^"]*">', '<meta property="og:url" content="%s">' % url),
-                     (r'<meta property="og:type" content="[^"]*">', '<meta property="og:type" content="video.other">'),
+                     (r'<meta property="og:type" content="[^"]*">', '<meta property="og:type" content="%s">' % ("website" if d.get("baglanti") else "video.other")),
                      (r'<link rel="canonical" href="[^"]*">', '<link rel="canonical" href="%s">' % url),
                      (r'<meta name="keywords" content="[^"]*">', '<meta name="keywords" content="%s">' % _e(", ".join(
                          x.lower() for x in (d["baslik"], d.get("kat", ""), "luna yapım") if x)))):
         s = re.sub(pat, val, s, count=1)
     if d.get("id"):
         og = "https://i.ytimg.com/vi/%s/hqdefault.jpg" % d["id"]
+    elif d.get("galeri"):
+        og = SITE + "/assets/" + d["galeri"][0]
     else:
         og = SITE + "/assets/video/%s.jpg" % d["yerel"]
     s = re.sub(r'<meta property="og:image" content="[^"]*">', '<meta property="og:image" content="%s">' % og, s, count=1)
