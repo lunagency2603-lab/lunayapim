@@ -231,6 +231,22 @@ def altbilgi_yayin(s, on):
     return s
 
 
+def hakkimizda_bagla(s, on, p=""):
+    """14.10.2026: Altbilgi "Keşfet" sütununa Hakkımızda (bir kez). trend/ sayfaları TrendSaphiens'in
+    kendi Hakkımızda'sını taşır, onlara dokunulmaz."""
+    if p.startswith("trend/") or 'hakkimizda">Hakkımızda</a>' in s:
+        return s
+    i = s.find("<footer"); j = s.find("</footer>", i)
+    if i < 0 or j < 0:
+        return s
+    f = s[i:j]
+    for h in ('<a href="%skariyer">Kariyer ve Staj</a>' % on, '<a href="%sisler">İşler</a>' % on):
+        if h in f:
+            f = f.replace(h, '<a href="%shakkimizda">Hakkımızda</a>\n        %s' % (on, h), 1)
+            return s[:i] + f + s[j:]
+    return s
+
+
 def gizlilik_ekle(s, on):
     """Alt bilgiye Gizlilik bağlantısı (AdSense ve KVKK için görünür olmalı)."""
     if 'gizlilik"' in s or "gizlilik.html" in s:
@@ -637,6 +653,7 @@ def calistir(kok, desen="**/*.html"):
             print("sayfa_duzeni:", p, _ex)
         s = menu_trend(s, on, p)
         s = altbilgi_yayin(s, on)
+        s = hakkimizda_bagla(s, on, p)
         s = gizlilik_ekle(s, on)
         s = surumle(s)
         s = varlik_surumu(s, kok)

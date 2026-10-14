@@ -56,6 +56,7 @@ BOLUM = [
 
 SAYFA = [
     ("Hizmetlerin tamamı", "hizmetler/"),
+    ("Hakkımızda", "hakkimizda"),
     ("Fiyatlar", "fiyatlar"),
     ("Yapılan işler", "isler"),
     ("Stüdyo", "studyo"),
