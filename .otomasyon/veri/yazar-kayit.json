@@ -1,27 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Ankara’nın Ağustos ayı ilçe düzeyinde konut satış verileri - Ekonomi A",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfPzYR1am2ZchCWFp9VS5\"}",
-  "zaman": "2026-09-25 13:23"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-25 13:23"
- },
- {
-  "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "cuma namazı kaçta",
   "kod": 400,
@@ -2950,5 +2929,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg263x3Quz6d92QKCJnba\"}",
   "zaman": "2026-10-14 14:56"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-14 20:13"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "antalyaspor - kayserispor",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg2WFeAWsqcNuSqADhJ8N\"}",
+  "zaman": "2026-10-14 20:14"
  }
 ]
