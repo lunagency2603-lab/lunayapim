@@ -2,55 +2,6 @@
  {
   "olay": "api_hatasi",
   "tur": "konu",
-  "baslik": "petrol",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfNgZcs9QGTgojgo4w4zq\"}",
-  "zaman": "2026-09-24 20:46"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-25 00:32"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "suç",
-  "ayrinti": "haber başlığı hassas konu",
-  "zaman": "2026-09-25 00:33"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "erling haaland",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfNyqc5wLhWcVP666E4K5\"}",
-  "zaman": "2026-09-25 00:33"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-25 08:00"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
   "baslik": "2027 memur maaş zammı",
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfPZwcLCS9hUKAJnCzCCs\"}",
@@ -2950,5 +2901,54 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg1Y4nMZWinF6pZvefVBa\"}",
   "zaman": "2026-10-14 07:57"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-14 13:25"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Çayyolu'nun en iyi emlakçısı Gayrimenkul PR'dan müşteri oluşturma yönt",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg1y6wiakJpvPiHrSfRSP\"}",
+  "zaman": "2026-10-14 13:25"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-14 13:25"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "alpay",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-14 13:25"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "kar",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg1y8NeZhyH7fmtwBpRpF\"}",
+  "zaman": "2026-10-14 13:25"
  }
 ]
