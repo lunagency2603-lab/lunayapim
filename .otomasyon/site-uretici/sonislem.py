@@ -365,7 +365,7 @@ def sitemap_noindex_cikar(kok):
         for a in adaylar:
             tam = os.path.join(kok, a)
             if os.path.isfile(tam):
-                govde = open(tam, encoding="utf-8", errors="replace").read(4000)
+                govde = open(tam, encoding="utf-8", errors="replace").read(40000)
                 if re.search(r'<meta[^>]+name="robots"[^>]+noindex', govde, re.I):
                     s = s.replace(b, "")
                     cikan.append(adres)
@@ -627,6 +627,38 @@ def yonlendirme_html_esle(kok):
     return {"html_eslenen": eklenen}
 
 
+_NOINDEX_LISTE = None
+
+
+def noindex_liste_uygula(s, p):
+    """noindex_liste.txt'deki sayfalara <meta name="robots" content="noindex,follow"> koyar.
+
+    15.10.2026: Search Console'da hiç taranmamış şehir × hizmet kombinasyonları. Silinmez;
+    site haritasından sitemap_noindex_cikar düşer. Listeden çıkarılan sayfa bir sonraki
+    çalıştırmada etiketini kaybeder (yalnız bu işlevin eklediği etiket silinir).
+    """
+    global _NOINDEX_LISTE
+    if _NOINDEX_LISTE is None:
+        _NOINDEX_LISTE = set()
+        yol = os.path.join(os.path.dirname(os.path.abspath(__file__)), "noindex_liste.txt")
+        if os.path.exists(yol):
+            for satir in io.open(yol, encoding="utf-8"):
+                satir = satir.strip()
+                if satir and not satir.startswith("#"):
+                    _NOINDEX_LISTE.add(satir)
+    p = (p or "").replace(os.sep, "/")
+    anahtar = p[:-5] if p.endswith(".html") else p
+    etiket = '<meta name="robots" content="noindex,follow"><!-- noindex-liste -->'
+    if not p.startswith("sehir/"):
+        return s
+    if anahtar in _NOINDEX_LISTE:
+        if "<!-- noindex-liste -->" in s or re.search(r'<meta[^>]+name="robots"[^>]+noindex', s, re.I):
+            return s
+        return s.replace("</head>", etiket + "\n</head>", 1)
+    return s.replace(etiket + "\n", "").replace(etiket, "")
+
+
+
 def calistir(kok, desen="**/*.html"):
     degisen = 0
     for yol in glob.glob(os.path.join(kok, desen), recursive=True):
@@ -654,6 +686,7 @@ def calistir(kok, desen="**/*.html"):
         s = menu_trend(s, on, p)
         s = altbilgi_yayin(s, on)
         s = hakkimizda_bagla(s, on, p)
+        s = noindex_liste_uygula(s, p)
         s = gizlilik_ekle(s, on)
         s = surumle(s)
         s = varlik_surumu(s, kok)
