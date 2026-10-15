@@ -160,7 +160,7 @@ def metin(kok):
     a("")
     a("- E-posta: info@lunayapim.com")
     a("- Telefon: +90 554 218 26 03")
-    a("- Instagram: https://www.instagram.com/lunayapim.mov/")
+    a("- Instagram: https://www.instagram.com/luna.yapim/")
     a("- Merkez: Bursa, Türkiye — hizmet alanı: Türkiye geneli")
     a("")
     return "\n".join(sat)

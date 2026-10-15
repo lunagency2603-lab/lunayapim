@@ -143,7 +143,7 @@ def semalar():
         "telephone": "+905542182603", "email": "info@lunayapim.com",
         "address": {"@type": "PostalAddress", "addressLocality": "Bursa", "addressCountry": "TR"},
         "areaServed": {"@type": "Country", "name": "Türkiye"},
-        "sameAs": ["https://www.instagram.com/lunayapim.mov"],
+        "sameAs": ["https://www.instagram.com/luna.yapim/"],
         "contactPoint": {"@type": "ContactPoint", "telephone": "+905542182603",
                          "contactType": "sales", "availableLanguage": "tr"},
     })

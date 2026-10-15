@@ -3,7 +3,7 @@
 VARLIK KATMANI — firmayı arama motoruna ve yapay zekâya TANITAN alanlar.
 
 22.09.2026'da bulunan sorun:
-assets/sosyal.js içinde Instagram hesabı (lunayapim.mov) zaten tanımlıydı ve
+assets/sosyal.js içinde Instagram hesabı (luna.yapim) zaten tanımlıydı ve
 dosyanın başındaki not "sameAs alanına da yazılır" diyordu. Ama bu iş
 TARAYICIDA, JavaScript ile yapılıyordu. Sonuç: sayfanın ham HTML'inde ne
 instagram.com geçiyordu ne de sameAs.
