@@ -2,34 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "yargıtay",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-26 13:06"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "masterchef ödül oyununu kim kazandı",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-26 13:06"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "pastırma yazı",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-26 13:07"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "diyarbakır hava durumu",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-09-26 13:07"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "şef",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-09-26 13:07"
@@ -2957,5 +2929,40 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg4PHmbFWcNncJRWbwyPT\"}",
   "zaman": "2026-10-15 20:03"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-15 20:39"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "trtspor",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-15 20:39"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fenerbahçe - partizan",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-15 20:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "polis",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg4S1x8eVUP34GiEUnh1w\"}",
+  "zaman": "2026-10-15 20:39"
  }
 ]
