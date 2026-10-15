@@ -371,16 +371,12 @@ def ai_kisa_film():
     ]))
 
     g.append("<h2>Benzer işlerimiz</h2>")
-    g.append("<p>Karakter tutarlılığını üç işte çözdük. <strong>Evliya Çelebi Soruyor</strong>, "
-             "sokak röportajı formatında bir seri: dört karakter, Türkçe replikler, telaffuzu tek tek "
-             "denetlenmiş seslendirme — ilk bölüm 23 saniye. <strong>YADE × Vogue</strong>, tek bir "
+    g.append("<p>Karakter tutarlılığını iki işte çözdük. <strong>YADE × Vogue</strong>, tek bir "
              "karakterin 2 dakika 40 saniye boyunca beş ayrı dünyada aynı kimlikle kaldığı klip. "
              "<strong>Karga serisi</strong> ise açılış, geçiş, makro göz, kanat açılışı ve kapanış "
              "sahnelerinde tüy dokusu ve ışığı sabit tutan altı bölüm. Kısa film ve klip işlerimiz de "
              "kurgu ve ışık tarafını gösteriyor.</p>")
     g.append('<div class="rozetler">'
-             '<div class="rozet"><b>Evliya Çelebi Soruyor</b><span>Seri format</span>'
-             '<small>Türkçe seslendirme, telaffuz denetimi, dört karakter</small></div>'
              '<div class="rozet"><b>YADE × Vogue</b><span>2:40 klip</span>'
              '<small>Tek karakter beş dünyada aynı kimlikle</small></div>'
              '<div class="rozet"><b>Karga serisi</b><span>3D karakter</span>'

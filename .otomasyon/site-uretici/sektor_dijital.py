@@ -163,7 +163,7 @@ ANIM = {
         ("Hareket dili kur", "Karakterin yürüyüşü, mimikleri ve tekrar eden hareketleri belirleniyor; her videoda aynı karakter gibi davranıyor."),
         ("Her mecraya uyarla", "Aynı karakter reklam filminde, sosyal medya kısa videosunda, ambalajda ve fuar standında kullanılıyor."),
         ("Karakter kılavuzu", "Renkler, duruşlar ve kullanım kuralları bir kılavuzla teslim ediliyor; başka ajansla çalışsanız da karakter bozulmuyor.")],
- kanit="Kendi kliplerimiz için tasarladığımız YADE karakteri 3D modellenip 2 dakika 40 saniyelik bir klipte beş dünyada canlandırıldı; logomuzdaki karga altı bölümlük bir seriye dönüştü; Evliya Çelebi Soruyor serisinde dört karakter Türkçe konuşuyor.",
+ kanit="Kendi kliplerimiz için tasarladığımız YADE karakteri 3D modellenip 2 dakika 40 saniyelik bir klipte beş dünyada canlandırıldı; logomuzdaki karga altı bölümlük bir seriye dönüştü.",
  girdi="Marka kimliği, hedef kitle ve karakterin hangi mecralarda kullanılacağı. Varsa daha önceki çizim denemeleri.",
  dikkat="Maskot projesinde en çok zaman kaybettiren şey onay döngüsü. Bu yüzden önce üç farklı yönde kaba taslak sunuyoruz, siz birini seçince detaylandırıyoruz; her aşamada neyin değişebileceği ve neyin kilitlendiği yazılı oluyor. Karakter 3D modele geçtikten sonra yüz ve oran değişikliği maliyetli; bu karar taslak aşamasında netleşiyor.",
  sss=[("Karakterin hakları kimde olur?", "Teslimle birlikte sizde. Sözleşmede karakterin kullanım haklarının size geçtiği açıkça yazılır."),

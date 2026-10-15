@@ -102,14 +102,6 @@ IS = {
     metin="Logodaki karga altı kısa bölümde canlandırıldı; ana sayfamızın açılış filmi bu "
           "seriden. Dikey sürümleri sosyal medya için hazır, karakter her bölümde aynı.",
     rakam=None),
-"evliya": dict(
-    baslik="Evliya Çelebi Soruyor — 1. bölüm", rom="Yapay zekâ kısa film · sokak röportajı formatı",
-    etiket="Video", gorsel="video/evliya-soruyor-b1.jpg",
-    alt="Evliya Çelebi Soruyor: mikrofonlu Evliya Çelebi Bursa sokağında",
-    href="../isler/evliya-celebi-soruyor-1-bolum", ok="Bölümü izle →",
-    metin="Karakter sayfaları, Türkçe seslendirme ve telaffuz denetimiyle 23 saniyelik dikey "
-          "bölüm. Kamu malı karakterler, gerçek hayattan bir sahne hissi; seri formatı.",
-    rakam=None),
 "pusula": dict(
     baslik="Luna Pusula — hedef kitle ve teklif hattı", rom="Kendi yazılımımız · satış altyapısı",
     etiket="Yazılım", gorsel="urun/pusula.jpg",
@@ -190,8 +182,8 @@ SAYFA = {
     aciklama="Eğitim animasyonunda her adım aynı sırayla, her izleyicide aynı; BGK demosu tam bu kurgu."),
 "animasyon-enerji-isi-sistemleri": dict(baslik="Enerji sistemlerinde yaptığımız iş", kartlar=["bgk", "aktas-montaj"],
     aciklama="Buhar geri kazanım hattı için hazırladığımız animasyon; akış yönü ve çalışma ilkesi tek videoda."),
-"animasyon-maskot-karakter": dict(baslik="Tasarladığımız karakterler", kartlar=["yade", "karga", "evliya"],
-    aciklama="Üçü de bizim: bir ejderha, bir karga ve bir sokak röportajı kadrosu."),
+"animasyon-maskot-karakter": dict(baslik="Tasarladığımız karakterler", kartlar=["yade", "karga"],
+    aciklama="İkisi de bizim: bir ejderha ve bir karga."),
 "web-sitesi-tasarimi": dict(baslik="Müşteri işleri", kartlar=["aktas-3b", "ata-kumas", "aktas-site"],
     aciklama="Üçü de çalışır hâlde; tıklayıp açabilirsiniz."),
 "web-sitesi-insaat-ve-yapi-firmalari": dict(baslik="İnşaatta yaptığımız iş", kartlar=["aktas-site", "aktas-3b", "aktas-montaj"],
@@ -210,14 +202,14 @@ SAYFA = {
     aciklama="Önce kendi satışımız için yazdık; aynı hattı müşteriye kuruyoruz."),
 "reklam-yonetimi": dict(baslik="Reklamla birlikte ürettiklerimiz", kartlar=["aktas-site", "aktas-3b"],
     aciklama="Reklam bütçesinin gittiği site ve o sitedeki dönüşüm aracı — ikisi de bizim işimiz."),
-"sosyal-medya-yonetimi": dict(baslik="Sosyal medya için ürettiklerimiz", kartlar=["yade", "karga", "evliya"],
+"sosyal-medya-yonetimi": dict(baslik="Sosyal medya için ürettiklerimiz", kartlar=["yade", "karga"],
     aciklama="Firma arşivinden kurgu Reels'ler aşağıda; karakterli içerikler burada."),
 "isletme-tanitim": dict(baslik="İşletmeler için yaptıklarımız", kartlar=["aktas-site", "ata-kumas"],
     aciklama="Tanıtım filmiyle birlikte sitenin ve vitrinin de kurulduğu iki iş."),
 "drone-fpv": dict(baslik="Havadan görüntünün gittiği yer", kartlar=["aktas-site", "cm"],
     aciklama="Drone çekimini tek başına değil, gideceği site ve projeyle birlikte planlıyoruz."),
-"ai-kisa-film": dict(baslik="Yapay zekâ ile ürettiklerimiz", kartlar=["evliya", "yade", "karga"],
-    aciklama="Karakter tutarlılığı ve Türkçe seslendirme — üç işte de çözüldü."),
+"ai-kisa-film": dict(baslik="Yapay zekâ ile ürettiklerimiz", kartlar=["yade", "karga"],
+    aciklama="Karakter tutarlılığı — iki işte de çözüldü."),
 }
 
 # --------------------------------------------------------------- ÜRETİM
