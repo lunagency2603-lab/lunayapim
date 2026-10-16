@@ -1,20 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "yolcu otobüsü",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-09-27 13:39"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "çeyrek altın fiyatı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfToSLnQDACQneLnp1gYu\"}",
-  "zaman": "2026-09-27 13:39"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2965,5 +2950,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg6c4EeorLS2kbCnD8Bje\"}",
   "zaman": "2026-10-17 00:12"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-17 02:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "istanbul",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg6oFJSbqC5P823RHSWRb\"}",
+  "zaman": "2026-10-17 02:39"
  }
 ]
