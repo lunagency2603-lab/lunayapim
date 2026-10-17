@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-27 15:06"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "maliye",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfTv3D2zp5e34JSBgSRFJ\"}",
-  "zaman": "2026-09-27 15:06"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 20,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-27 19:59"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "bahçeşehir koleji - fenerbahçe",
@@ -2971,5 +2937,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg6oFJSbqC5P823RHSWRb\"}",
   "zaman": "2026-10-17 02:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 18,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-17 07:30"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "الطقس",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-10-17 07:30"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "weather",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg7BUxyXG3zQeCJmP9s9W\"}",
+  "zaman": "2026-10-17 07:30"
  }
 ]
