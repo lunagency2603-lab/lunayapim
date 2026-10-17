@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-28 14:52"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "gram altın",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfVnnrkAHtUGAMnVMKyG2\"}",
-  "zaman": "2026-09-28 14:52"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-09-28 16:59"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "altın neden düştü",
@@ -2964,5 +2930,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg84Pvh9xrnsSQcsnFrMj\"}",
   "zaman": "2026-10-17 18:38"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-17 19:10"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "real betis - barselona",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-17 19:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "pastırma yazı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg86qeLMqo2niTYkaf3hb\"}",
+  "zaman": "2026-10-17 19:10"
  }
 ]
