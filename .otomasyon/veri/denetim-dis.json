@@ -1,12 +1,12 @@
 {
- "tarih": "2026-10-12T17:26:28",
+ "tarih": "2026-10-19T15:08:59",
  "site": "https://trendsaphiens.com",
  "canli": {
-  "tarih": "2026-10-12T17:26:28",
-  "adres": 97,
-  "iyi": 97,
+  "tarih": "2026-10-19T15:08:59",
+  "adres": 0,
+  "iyi": 0,
   "sorun": [],
-  "bagli_adres": 71
+  "bagli_adres": 0
  },
  "pagespeed": [
   {
@@ -33,24 +33,20 @@
  "w3c": [
   {
    "yol": "/",
-   "hata": 1,
-   "uyari": 0,
-   "ornek": [
-    "The heading “h3” (with computed level 3) follows the heading “h1” (with computed level 1), skipping 1 heading level."
-   ]
+   "hata": 0,
+   "uyari": 14,
+   "ornek": []
   },
   {
    "yol": "/bulten",
-   "hata": 1,
-   "uyari": 0,
-   "ornek": [
-    "The heading “h4” (with computed level 4) follows the heading “h2” (with computed level 2), skipping 1 heading level."
-   ]
+   "hata": 0,
+   "uyari": 14,
+   "ornek": []
   },
   {
    "yol": "/hakkimizda",
    "hata": 0,
-   "uyari": 0,
+   "uyari": 14,
    "ornek": []
   }
  ],
@@ -104,10 +100,10 @@
   ]
  },
  "ozet": {
-  "adres": 97,
+  "adres": 0,
   "canli_sorun": 0,
   "psi_ortalama": {},
-  "w3c_hata": 2,
+  "w3c_hata": 0,
   "lunayapim_psi": {}
  }
 }
