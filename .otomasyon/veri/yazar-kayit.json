@@ -1,46 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-01 14:44"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "'Kiralık Sosyal Konut Projesi'nde İstanbul'daki örnek daireler tanıtıl",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfbTa1BsASasg6yx2dPh1\"}",
-  "zaman": "2026-10-01 14:44"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-01 14:44"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "buğra gökce",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-01 14:44"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "şener üşümezsoy",
@@ -2964,5 +2923,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgDBYyGm7tRQGMziNVGte\"}",
   "zaman": "2026-10-20 11:35"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-20 13:16"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Google, yapay zeka üretimi görseller, videolar ve ses kliplerinin tesp",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgDKE65hAjUe7uArjmDcq\"}",
+  "zaman": "2026-10-20 13:16"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-20 13:16"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "ortak yazılı sınav sistemi",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgDKFG8xk1e3N8Yj5SY9z\"}",
+  "zaman": "2026-10-20 13:16"
  }
 ]
