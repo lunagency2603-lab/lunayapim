@@ -1,20 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "yasin kol",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-02 03:48"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "portekiz milli takımı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfcVRp3AFxdEtdnaneEfK\"}",
-  "zaman": "2026-10-02 03:49"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2965,5 +2950,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgE2c1vJQu6HtkeHrksd8\"}",
   "zaman": "2026-10-20 22:18"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-21 02:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "işkur gençlik programı 2026 başvuru",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgEPg6n4ZvvrG4xGo5WHY\"}",
+  "zaman": "2026-10-21 02:54"
  }
 ]
