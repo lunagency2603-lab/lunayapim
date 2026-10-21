@@ -1,25 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-02 12:49"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "eyüp sultan belediyesi hangi partiden",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-02 12:49"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "namaz vakitleri",
@@ -2971,5 +2951,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgEPg6n4ZvvrG4xGo5WHY\"}",
   "zaman": "2026-10-21 02:54"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-21 07:52"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "emekli maaş promosyonu",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgEnN4N7q7bVrmdzuhoAw\"}",
+  "zaman": "2026-10-21 07:52"
  }
 ]
