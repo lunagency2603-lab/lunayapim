@@ -1,27 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "izmir büyükşehir belediye başkanı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfek1tEziYC6JUecNkniL\"}",
-  "zaman": "2026-10-03 08:21"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-03 13:31"
- },
- {
-  "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "İzmir’in kalbine dev proje: Vakıf GYO ve ilk inşaat firmasının ortak p",
   "kod": 400,
@@ -2972,5 +2951,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgG7anNGzYig2dXVuApXb\"}",
   "zaman": "2026-10-22 00:45"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-22 07:51"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "mazot",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgGg7xXYyVtH6uZ2mTdsp\"}",
+  "zaman": "2026-10-22 07:51"
  }
 ]
