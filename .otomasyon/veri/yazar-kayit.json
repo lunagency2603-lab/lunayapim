@@ -1,48 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "İzmir’in kalbine dev proje: Vakıf GYO ve ilk inşaat firmasının ortak p",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cff9dsYGNsdYNHiBDak1g\"}",
-  "zaman": "2026-10-03 13:31"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-03 13:31"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "ekrem imamoğlu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cff9fB3FxmP6tkTFexQyD\"}",
-  "zaman": "2026-10-03 13:31"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-03 14:42"
- },
- {
-  "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "ekrem imamoğlu",
   "kod": 400,
@@ -2972,5 +2930,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgGg7xXYyVtH6uZ2mTdsp\"}",
   "zaman": "2026-10-22 07:51"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-22 13:24"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "OYAK’ın 6.214 konut projesi ÇED onayı aldı - GAYRİMENKUL - Ankara'nın ",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgH7WyJzivV2gbFkhJYjq\"}",
+  "zaman": "2026-10-22 13:24"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-22 13:25"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "atilla karaoğlan",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgH7YgwodGaEXWFNLLAS9\"}",
+  "zaman": "2026-10-22 13:25"
  }
 ]
