@@ -2,34 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "f1",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:15"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "emniyet genel müdürlüğü",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:15"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "armand duplantis",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:15"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "mersin hava durumu",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:15"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "op dr rahmi kaya",
   "ayrinti": "hassas konu — otomatik yazılmaz",
   "zaman": "2026-10-04 14:15"
@@ -2972,5 +2944,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgJa7SqBs9S5RDG49j4hi\"}",
   "zaman": "2026-10-23 07:54"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-23 13:21"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "OYAK’ın 6.214 konut projesi ÇED onayı aldı - GAYRİMENKUL - Ankara'nın ",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgK15Pz8wPWVmh8Kgk3j3\"}",
+  "zaman": "2026-10-23 13:21"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-23 13:21"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "cuma namazı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgK16f8jY3wYs7VrBCq5Q\"}",
+  "zaman": "2026-10-23 13:21"
  }
 ]
