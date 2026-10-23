@@ -1,32 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "füze",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:16"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "abdullah gül",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-04 14:16"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-04 15:24"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "son dakika deprem",
@@ -2993,5 +2966,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgK7Fvrznj6ZdJEa8wUJS\"}",
   "zaman": "2026-10-23 14:42"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-23 20:11"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yatsı namazı kaçta",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-23 20:11"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "alanyaspor - kocaelispor",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgKYKJ8ArEgyXxgaAjXbd\"}",
+  "zaman": "2026-10-23 20:11"
  }
 ]
