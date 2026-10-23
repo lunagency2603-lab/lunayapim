@@ -1,25 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 10,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-04 14:14"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "kpss önlisans",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-04 14:14"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "f1",
@@ -2971,5 +2951,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgHzu2TYd3P7e5LV8k2EB\"}",
   "zaman": "2026-10-23 00:38"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-23 07:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "hava durumu istanbul",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgJa7SqBs9S5RDG49j4hi\"}",
+  "zaman": "2026-10-23 07:54"
  }
 ]
