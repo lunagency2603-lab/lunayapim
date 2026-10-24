@@ -10,118 +10,6 @@
    "kaynak": "ortam"
   },
   "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-05 15:28"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "enflasyon",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfj6Et4nXVcQUMDLEjpEJ\"}",
-  "zaman": "2026-10-05 15:29"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-05 17:46"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "göksel arsoy",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-05 17:46"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "bağ-kur",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfjGmGjZEBAECnUaePKnP\"}",
-  "zaman": "2026-10-05 17:47"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-06 01:02"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "fransa millî futbol takımı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfjqxLmHqxLgJWRqGWYkk\"}",
-  "zaman": "2026-10-06 01:02"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-06 09:24"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "israil",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfkWFfY3dJ8fEMNSfEX6A\"}",
-  "zaman": "2026-10-06 09:24"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-06 15:08"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bakan Kurum Kütahya’dan kentsel dönüşüm görüntüleri paylaştı | Video v",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfkxWhYnracXF9nXjLUSJ\"}",
-  "zaman": "2026-10-06 15:08"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
   "zaman": "2026-10-06 15:09"
  },
  {
@@ -2979,5 +2867,88 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgLSrikuynkCirnA5jgoN\"}",
   "zaman": "2026-10-24 07:40"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 10,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-24 12:45"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "şenol güneş",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:45"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fenerbahçe galatasaray",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:45"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "wilfried singo",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:46"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yağmur",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:46"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "eyüpspor - kasımpaşa",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:46"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "29 ekim kaç gün tatil",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:46"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "büşra develi",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:47"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "osmangazi köprüsü",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:47"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "مطر",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:47"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "new zealand vs india",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 12:47"
  }
 ]
