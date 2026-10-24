@@ -1,76 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "kpss sonuçları",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfmnfSfgU6aVZyTfUetwq\"}",
-  "zaman": "2026-10-07 01:40"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-07 09:03"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "resmi gazete",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnNUgmfCy4jyH4VNZyZi\"}",
-  "zaman": "2026-10-07 09:03"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-07 14:54"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Başkan Dutlulu açıkladı... Manisa’da 100 dönümlük alana sosyal konut p",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnqFMLPXT6emZdgyJ1g1\"}",
-  "zaman": "2026-10-07 14:54"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-07 14:55"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "mazot",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfnqGYwvkRWs7MW2cYUe2\"}",
-  "zaman": "2026-10-07 14:55"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2951,5 +2880,61 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgMj2EE5EYzqHzXeZYRnq\"}",
   "zaman": "2026-10-24 23:52"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "mustafa sarıgül ve koruması",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "kompany",
+  "ayrinti": "haber başlığı hassas konu",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "islam makhachev",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ريد بولز ضد إنتر ميامي",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "nusaybin son dakika",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-25 02:17"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "helin kandemir",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgMv66vv8Fd1crvJdpAk4\"}",
+  "zaman": "2026-10-25 02:17"
  }
 ]
