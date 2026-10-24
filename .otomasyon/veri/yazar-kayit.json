@@ -2,48 +2,6 @@
  {
   "olay": "tur",
   "tur": "konu",
-  "aday": 20,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-05 08:44"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "haberler",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfiZR3RXsSrcsJ6JFkCb3\"}",
-  "zaman": "2026-10-05 08:44"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-05 15:28"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "TOKİ ANKARA AÇIK SATIŞ HANGİ İLÇELERDE, KAÇ KONUT? Ankara TOKİ başvuru",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cfj6DYaVGRG6mpnX59dYc\"}",
-  "zaman": "2026-10-05 15:28"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
   "aday": 21,
   "anahtar": {
    "var": true,
@@ -2986,5 +2944,40 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgKsnU4RpNXAG3k8s3TH2\"}",
   "zaman": "2026-10-24 00:26"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-24 07:40"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "betplay",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 07:40"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "spurs - rockets",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-24 07:40"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "pastırma yazı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgLSrikuynkCirnA5jgoN\"}",
+  "zaman": "2026-10-24 07:40"
  }
 ]
