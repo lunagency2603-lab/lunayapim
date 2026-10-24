@@ -10,27 +10,6 @@
    "kaynak": "ortam"
   },
   "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-06 15:09"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "vgm burs başvurusu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfkxXyhfsuKBh4kjvUQjX\"}",
-  "zaman": "2026-10-06 15:09"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
   "zaman": "2026-10-06 18:58"
  },
  {
@@ -2950,5 +2929,26 @@
   "baslik": "new zealand vs india",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-10-24 12:47"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-24 14:05"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "aston villa - manchester city",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgLxEVcPTqjeEXq8JsDhz\"}",
+  "zaman": "2026-10-24 14:05"
  }
 ]
