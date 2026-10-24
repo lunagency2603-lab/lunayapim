@@ -1,25 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-06 18:58"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "ali emre ballı",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-06 18:58"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "salı günü hangi diziler var",
@@ -2950,5 +2930,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgLxEVcPTqjeEXq8JsDhz\"}",
   "zaman": "2026-10-24 14:05"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-24 18:59"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "günün maçları",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgMLg3Hsvt6PexAvWcjmG\"}",
+  "zaman": "2026-10-24 18:59"
  }
 ]
