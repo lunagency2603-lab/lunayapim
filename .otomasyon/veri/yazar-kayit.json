@@ -1,34 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "ajet",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfpdFD1CCQEHheBLszW4A\"}",
-  "zaman": "2026-10-08 13:38"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-08 15:10"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bakan Kurum Kütahya’dan kentsel dönüşüm görüntüleri paylaştı | Video v",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfpkE1qHXUwJTvpuZfphk\"}",
-  "zaman": "2026-10-08 15:10"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2937,5 +2908,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgPGRwn9q9mwcrJNADbUj\"}",
   "zaman": "2026-10-25 19:25"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-25 19:58"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "yatsı namazı kaçta",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-10-25 19:58"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "pazar günü hangi diziler var 2026",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgPK18FLhaGMHJ8Npcdj3\"}",
+  "zaman": "2026-10-25 19:59"
  }
 ]
