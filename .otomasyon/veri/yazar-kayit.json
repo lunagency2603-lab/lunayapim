@@ -1,46 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-07 22:14"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "deniz can aktaş",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfoQmZWK2LnN9QGVGdDHD\"}",
-  "zaman": "2026-10-07 22:14"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-07 23:38"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "sözcü",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-07 23:38"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "milli maç ne zaman",
@@ -2936,5 +2895,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNM3d7CkMDAJEAEuvonA\"}",
   "zaman": "2026-10-25 07:45"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-25 12:59"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Bursa'nın bu ilçesine yeni konut projesi - Olay Gazetesi Bursa - Olay ",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNm2TDR8PHo6SVZBNbuS\"}",
+  "zaman": "2026-10-25 12:59"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-25 12:59"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "batman petrolspor - erokspor",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNm3vfgsM8e2srwA7Y3u\"}",
+  "zaman": "2026-10-25 13:00"
  }
 ]
