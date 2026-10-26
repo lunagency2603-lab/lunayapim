@@ -1,34 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "necla uygur",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-08 22:10"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "canlı maç izle",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-08 22:10"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "betplay",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-08 22:10"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "ihsan ayrancı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfqJHutRq9UAWfeHKj1Fs\"}",
-  "zaman": "2026-10-08 22:10"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2937,5 +2908,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgQFJMZYzHK5eKW7Z4m8D\"}",
   "zaman": "2026-10-26 07:51"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-26 14:21"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Ankara'da 2 milyarlık arsa satışı, 2.175 yeni konut projesi - GAYRİMEN",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgQm74punLuyoEjDb19zD\"}",
+  "zaman": "2026-10-26 14:21"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-26 14:22"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "28 ekim 29 ekim resmi tatil mi",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgQm8GJkn7pxN3iFXvUE8\"}",
+  "zaman": "2026-10-26 14:22"
  }
 ]
