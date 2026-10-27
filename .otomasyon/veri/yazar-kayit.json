@@ -1,27 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "İyi konut projesi üretmek yetmiyor doğru anlatmak gerekiyor - GAYRİMEN",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CftTqB89Qc2nvzCFoSL8k\"}",
-  "zaman": "2026-10-10 14:17"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-10 14:17"
- },
- {
-  "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "nihat kahveci",
   "kod": 400,
@@ -2951,5 +2930,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgTDy1JG1Pk9nRW6giAXg\"}",
   "zaman": "2026-10-27 21:35"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-28 01:16"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "arsenal",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgTWsSjX3KoRU4H1jmBoN\"}",
+  "zaman": "2026-10-28 01:17"
  }
 ]
