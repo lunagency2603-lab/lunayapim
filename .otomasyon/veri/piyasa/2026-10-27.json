@@ -1,46 +1,84 @@
 {
  "tarih": "2026-10-27",
  "tcmb": {
-  "tarih": "26.10.2026",
-  "bulten": "2026/202",
+  "tarih": "27.10.2026",
+  "bulten": "2026/203",
   "kurlar": {
    "USD": {
-    "alis": "49.6732",
-    "satis": "49.7627",
-    "efektif_alis": "49.6385",
-    "efektif_satis": "49.8374",
+    "alis": "49.6997",
+    "satis": "49.7892",
+    "efektif_alis": "49.6649",
+    "efektif_satis": "49.8639",
     "ad": "ABD DOLARI"
    },
    "EUR": {
-    "alis": "55.6539",
-    "satis": "55.7542",
-    "efektif_alis": "55.6149",
-    "efektif_satis": "55.8378",
+    "alis": "55.4243",
+    "satis": "55.5241",
+    "efektif_alis": "55.3855",
+    "efektif_satis": "55.6074",
     "ad": "EURO"
    },
    "GBP": {
-    "alis": "66.2204",
-    "satis": "66.5656",
-    "efektif_alis": "66.1740",
-    "efektif_satis": "66.6655",
+    "alis": "66.0944",
+    "satis": "66.4389",
+    "efektif_alis": "66.0481",
+    "efektif_satis": "66.5386",
     "ad": "İNGİLİZ STERLİNİ"
    },
    "CHF": {
-    "alis": "60.0283",
-    "satis": "60.4137",
-    "efektif_alis": "59.9383",
-    "efektif_satis": "60.5044",
+    "alis": "59.8609",
+    "satis": "60.2452",
+    "efektif_alis": "59.7711",
+    "efektif_satis": "60.3356",
     "ad": "İSVİÇRE FRANGI"
    },
    "JPY": {
-    "alis": "31.5113",
-    "satis": "31.7200",
-    "efektif_alis": "31.3947",
-    "efektif_satis": "31.8405",
+    "alis": "31.4275",
+    "satis": "31.6356",
+    "efektif_alis": "31.3112",
+    "efektif_satis": "31.7558",
     "ad": "JAPON YENİ"
    }
   }
  },
- "altin": null,
- "alindi": "2026-10-27 13:46"
+ "altin": {
+  "guncelleme": "2026-10-27 18:15:03",
+  "gram-altin": {
+   "ad": "Gram altın",
+   "alis": "6.494,98",
+   "satis": "6.495,85",
+   "degisim": "%1,09"
+  },
+  "ceyrek-altin": {
+   "ad": "Çeyrek altın",
+   "alis": "10.322,50",
+   "satis": "10.558,61",
+   "degisim": "%0,61"
+  },
+  "yarim-altin": {
+   "ad": "Yarım altın",
+   "alis": "20.580,49",
+   "satis": "21.117,23",
+   "degisim": "%0,61"
+  },
+  "tam-altin": {
+   "ad": "Tam altın",
+   "alis": "41.290,02",
+   "satis": "42.105,30",
+   "degisim": "%0,61"
+  },
+  "ons": {
+   "ad": "Ons altın (USD)",
+   "alis": "$4.057,56",
+   "satis": "$4.058,10",
+   "degisim": "%1,02"
+  },
+  "gumus": {
+   "ad": "Gümüş",
+   "alis": "87,12",
+   "satis": "87,20",
+   "degisim": "%0,96"
+  }
+ },
+ "alindi": "2026-10-27 18:22"
 }
