@@ -1,33 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "atilla taş ın kızı",
-  "ayrinti": "haber başlığı hassas konu",
-  "zaman": "2026-10-10 12:53"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "ağaç",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CftMSarKCnhtBt7gEy6Bp\"}",
-  "zaman": "2026-10-10 12:53"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-10 14:17"
- },
- {
   "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "İyi konut projesi üretmek yetmiyor doğru anlatmak gerekiyor - GAYRİMEN",
@@ -2951,5 +2923,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgSyJesVoaTFdXAZqPtWG\"}",
   "zaman": "2026-10-27 18:23"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-27 21:35"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "الطقس غدًا",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-10-27 21:35"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "müjde uzman",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgTDy1JG1Pk9nRW6giAXg\"}",
+  "zaman": "2026-10-27 21:35"
  }
 ]
