@@ -1,39 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "zeynep sönmez",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-11 08:53"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "weer",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-11 08:54"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "şanlıurfa",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-11 08:54"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-11 14:31"
- },
- {
   "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "İyi konut projesi üretmek yetmiyor doğru anlatmak gerekiyor - GAYRİMEN",
@@ -2979,5 +2945,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgWLQBtQekSSsMkfun2pn\"}",
   "zaman": "2026-10-29 13:01"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-29 14:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "İstanbul'un göbeğine 980 milyon TL yatırımla 245 odalı yeni otel - Tur",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgWTrphkEiGTJDe39hZRD\"}",
+  "zaman": "2026-10-29 14:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-29 14:39"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "sinem dedetaş",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgWTtGKQGTna3YWBqr8iY\"}",
+  "zaman": "2026-10-29 14:39"
  }
 ]
