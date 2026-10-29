@@ -2,20 +2,6 @@
  {
   "olay": "atlandi",
   "tur": "konu",
-  "baslik": "avrupa kış saati",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-11 08:52"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "erman toroğlu",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-11 08:53"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
   "baslik": "bim aktüel",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-10-11 08:53"
@@ -2965,5 +2951,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgVFYyDZsRgPoNHYQTzJX\"}",
   "zaman": "2026-10-28 23:17"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-29 04:00"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "merkez bankası fed faiz kararı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgVd7fZnic8GVPnocy5Md\"}",
+  "zaman": "2026-10-29 04:00"
  }
 ]
