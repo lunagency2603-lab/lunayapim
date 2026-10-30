@@ -1,55 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "cem öğretir",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfwQTTPjSq12NJn6uNCNi\"}",
-  "zaman": "2026-10-12 03:35"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-12 13:54"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "otomobil",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfxDh98kM9uuZVK7wYG8q\"}",
-  "zaman": "2026-10-12 13:54"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-12 16:23"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bir Video Milyonlarca İzlenmeye Nasıl Ulaşır? İşte Viral Olmanın Sırla",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfxR3C8AACN2Xg5fZ4kQU\"}",
-  "zaman": "2026-10-12 16:23"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2980,5 +2930,54 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgYEToShxGG3utXfz1qvp\"}",
   "zaman": "2026-10-30 13:04"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-30 14:30"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "CHP’li Orhan Sarıbal: İnegöl’de üretim ve ihracat desteklenmeli - Burs",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgYLyka6Wphc4Z38TAzke\"}",
+  "zaman": "2026-10-30 14:30"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-30 14:30"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "gözaltı",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-10-30 14:30"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "voleybol",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgYM1SBcjtLK4PHniyiDx\"}",
+  "zaman": "2026-10-30 14:30"
  }
 ]
