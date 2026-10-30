@@ -1640,3 +1640,6 @@ section:not(.acik) .vk span{color:rgba(239,237,232,.72)}
 .iz-canli{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 28px}
 .iz-canli span{font-size:14px;color:var(--gri-2)}
 @media(max-width:640px){.vk-rakam{grid-template-columns:repeat(2,1fr);gap:10px}.vk{padding:13px 14px 12px}.vk b{font-size:24px}}
+/* 30.10.2026: statik iş kartı kapak görseli (JS basmadan önce ve JS'siz tarayıcıda görünür) */
+.is-kart{overflow:hidden}
+.is-kart .is-kapak{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin:0 0 10px}

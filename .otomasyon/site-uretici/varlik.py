@@ -274,8 +274,20 @@ def _is_karti(d, on, il=None):
         dis = ' target="_blank" rel="noopener"'
     else:
         adres, dis = on + "isler", ""
-    return ('<a class="is-kart" href="%s"%s>%s<b>%s</b>%s%s</a>'
-            % (adres, dis, d.get("_rozet", ""), _kacir(d.get("baslik", "")),
+    # 30.10.2026: kapak görseli statik karta da basılıyor. Ölçüm: il sayfalarının
+    # ham HTML'inde logo dışında tek görsel yoktu; rakip il sayfalarında 0-11 galeri
+    # var. JS ile basılan kartla aynı kaynak (yerel jpg ya da YouTube kapağı);
+    # width/height verildi ki yükleme sırasında sayfa kaymasın.
+    if d.get("yerel"):
+        afis = on + "assets/video/" + d["yerel"] + ".jpg"
+    elif d.get("id"):
+        afis = "https://i.ytimg.com/vi/%s/hqdefault.jpg" % d["id"]
+    else:
+        afis = ""
+    kapak = ('<img class="is-kapak" src="%s" alt="%s" width="480" height="360" loading="lazy">'
+             % (afis, _kacir(d.get("baslik", "")))) if afis else ""
+    return ('<a class="is-kart" href="%s"%s>%s%s<b>%s</b>%s%s</a>'
+            % (adres, dis, kapak, d.get("_rozet", ""), _kacir(d.get("baslik", "")),
                ('<span class="is-kunye">%s</span>' % _kacir(kunye)) if kunye else "",
                ('<span class="is-teslim">%s</span>' % _kacir(d["teslim"])) if d.get("teslim") else ""))
 
@@ -303,6 +315,37 @@ def _video_sema(liste):
         d.append(v)
     return "".join('<script type="application/ld+json">%s</script>' % json.dumps(v, ensure_ascii=False)
                    for v in d)
+
+
+_AYLAR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz",
+          "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+
+
+def _ay_yil(yil):
+    m = re.match(r"(\d{4})-(\d{2})", yil or "")
+    if not m:
+        return ""
+    try:
+        return "%s %s" % (_AYLAR[int(m.group(2)) - 1], m.group(1))
+    except Exception:
+        return ""
+
+
+def _il_cumlesi(s, etiket, yerel, il):
+    """Vitrin açıklamasını o ilin gerçek işleriyle değiştirir (tek bölüm)."""
+    ad = next((x.get("sehir") for x in yerel if x.get("sehir")), il.capitalize())
+    parca = []
+    for x in yerel[:3]:
+        t = _ay_yil(x.get("yil"))
+        parca.append(_kacir(x.get("baslik", "")) + ((" (%s)" % t) if t else ""))
+    if _il_norm(ad) == "bursa":
+        metin = ("Bursa için yaptığımız işler önde: %s. Çekim ekibi Bursa'da; burada çözüm "
+                 "ortağına gerek yok. Oynatmak için işin üzerine dokun." % ", ".join(parca))
+    else:
+        metin = ("%s için yaptığımız işler önde: %s. Diğerleri başka illerden. "
+                 "Oynatmak için işin üzerine dokun." % (_kacir(ad), ", ".join(parca)))
+    desen = re.compile(r'(<p class="aciklama">)[^<]*(</p>(?:(?!</section>).)*?data-video="%s")' % re.escape(etiket), re.S)
+    return desen.sub(lambda m: m.group(1) + metin + m.group(2), s, count=1)
 
 
 def isler_bas(s, yol, kok):
@@ -352,13 +395,23 @@ def isler_bas(s, yol, kok):
             bos_etiket.append(etiket)
             return m.group(1) + m.group(4)
         kullanilan.extend(liste)
+        if il:
+            yerel = [x for x in liste if _il_norm(x.get("sehir")) == _il_norm(il)]
+            if yerel:
+                yerel_isler[etiket] = yerel
         return m.group(1) + "".join(_is_karti(x, on, il) for x in liste) + m.group(4)
 
     # önceki koşudan kalan VideoObject şemalarını temizle — şema, sayfada
     # GÖRÜNEN işle birebir aynı olmalı; vitrin boşaldıysa şema da gitmeli
     s = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema\.org", "@type": "VideoObject".*?</script>\n?',
                "", s, flags=re.S)
+    yerel_isler = {}
     s = _IS_KAP.sub(_doldur, s)
+    # 30.10.2026: o ilde gerçek iş varsa bölüm açıklaması onu söyler — tarihli,
+    # adlı; yapılmamış iş yazılmaz. Bursa'da ekip kendimiziz, ortak yok; başka
+    # ilde yalnız "o il için yaptığımız işler" denir, çekim iddiası eklenmez.
+    for etiket, yerel in yerel_isler.items():
+        s = _il_cumlesi(s, etiket, yerel, il)
     # işi olmayan vitrin bölümü JS'siz tarayıcıda da görünmesin (JS de gizliyor)
     s = s.replace("<section class=\"acik\" data-video-bolum hidden>", "<section class=\"acik\" data-video-bolum>")
     if bos_etiket:

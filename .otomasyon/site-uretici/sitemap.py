@@ -4,6 +4,8 @@ import os, glob, datetime
 KOK = "https://lunayapim.com"
 SITE = os.path.expanduser("~/Documents/GitHub/lunayapim")
 if not os.path.isdir(SITE):
+    SITE = os.path.expanduser("~/mnt/lunayapim")   # 30.10.2026: Claude VM bağlı klasörü
+if not os.path.isdir(SITE):
     SITE = os.path.expanduser("~/mnt/Documents/GitHub/lunayapim")
 
 ONCELIK = {"index.html":"1.0","hizmetler/index.html":"0.9","sehir/index.html":"0.9",

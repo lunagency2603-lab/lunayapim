@@ -14,6 +14,8 @@ from sektor_anlatim import sektor_bloku, uc_ihtiyac
 
 HEDEF = os.path.expanduser("~/Documents/GitHub/lunayapim/sehir")
 if not os.path.isdir(HEDEF):
+    HEDEF = os.path.expanduser("~/mnt/lunayapim/sehir")   # 30.10.2026: Claude VM bağlı klasörü
+if not os.path.isdir(HEDEF):
     HEDEF = os.path.expanduser("~/mnt/Documents/GitHub/lunayapim/sehir")
 KOK = "https://lunayapim.com"
 TEL = "+905542182603"
