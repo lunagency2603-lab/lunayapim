@@ -1,48 +1,6 @@
 [
  {
   "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-13 15:51"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Çayyolu'nun en iyi emlakçısı Gayrimenkul PR'dan müşteri oluşturma yönt",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfzGSAyJkVa3E8jCXHxjA\"}",
-  "zaman": "2026-10-13 15:51"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-13 15:51"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "serap belovacıklı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CfzGTTo86Ljuc9fxqqbix\"}",
-  "zaman": "2026-10-13 15:51"
- },
- {
-  "olay": "tur",
   "tur": "konu",
   "aday": 21,
   "anahtar": {
@@ -2979,5 +2937,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgZncvSrwvENSTqUvp3d8\"}",
   "zaman": "2026-10-31 08:47"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-31 14:02"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "1986 yılında Bursa'da kurulan ve Edremit Körfezi'nde çok sayıda konut ",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgaCenefFJ7grBmD7Tr5b\"}",
+  "zaman": "2026-10-31 14:02"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-10-31 14:02"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "erzurumspor - çorum",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgaCgK9jvd1uLkyNjgNv6\"}",
+  "zaman": "2026-10-31 14:02"
  }
 ]
