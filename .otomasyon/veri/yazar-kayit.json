@@ -1,27 +1,6 @@
 [
  {
   "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-14 13:25"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Çayyolu'nun en iyi emlakçısı Gayrimenkul PR'dan müşteri oluşturma yönt",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg1y6wiakJpvPiHrSfRSP\"}",
-  "zaman": "2026-10-14 13:25"
- },
- {
-  "olay": "tur",
   "tur": "konu",
   "aday": 21,
   "anahtar": {
@@ -2979,5 +2958,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgbEf3sSDcsgtgSTFJ13D\"}",
   "zaman": "2026-11-01 03:09"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-01 09:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "altın",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgbiEJ8F2zrkAMbjjGwKV\"}",
+  "zaman": "2026-11-01 09:10"
  }
 ]
