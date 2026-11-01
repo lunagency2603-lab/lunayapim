@@ -2,48 +2,6 @@
  {
   "olay": "api_hatasi",
   "tur": "konu",
-  "baslik": "nenad bjelica",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg263x3Quz6d92QKCJnba\"}",
-  "zaman": "2026-10-14 14:56"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-14 20:13"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "antalyaspor - kayserispor",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg2WFeAWsqcNuSqADhJ8N\"}",
-  "zaman": "2026-10-14 20:14"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-14 20:49"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
   "baslik": "now canlı yayın",
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg2YyovYB7AWaaFtbQ4f1\"}",
@@ -2980,5 +2938,40 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgcAdmt26dc5skxQwgzXe\"}",
   "zaman": "2026-11-01 14:57"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-01 16:29"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "başakşehir - samsunspor",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-01 16:29"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ikindi ezanı",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-01 16:29"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "kasımpaşa beşiktaş",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgcHh2zFswghE1ycYpF2c\"}",
+  "zaman": "2026-11-01 16:29"
  }
 ]
