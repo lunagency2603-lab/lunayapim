@@ -1,27 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Aydın’ın turizm markası Aymira Otel’de krizi bitiren anlaşma - Turizm ",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg3qjhpXtR1CCuFmMHqom\"}",
-  "zaman": "2026-10-15 13:10"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-15 13:10"
- },
- {
-  "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "promosyon",
   "kod": 400,
@@ -2973,5 +2952,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgdBMV5A7eGkrrg28iPSe\"}",
   "zaman": "2026-11-02 03:47"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-02 14:13"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "luka doncic",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cge171JGRq4PNJeWLMCu8\"}",
+  "zaman": "2026-11-02 14:13"
  }
 ]
