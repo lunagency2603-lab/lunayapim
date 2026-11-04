@@ -1,46 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 18,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-17 07:30"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "الطقس",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-17 07:30"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "weather",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cg7BUxyXG3zQeCJmP9s9W\"}",
-  "zaman": "2026-10-17 07:30"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-17 12:34"
- },
- {
   "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "Eskişehir'e 5 yıldızlı termal otel projesi! 250 odalı olacak - Turizm ",
@@ -2965,5 +2924,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CghQyU2S8oBFM2fJGDsQU\"}",
   "zaman": "2026-11-04 09:28"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-04 16:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "İzmir Mobilyacılar Odası Köln'deki Orgatec Fuarı'na damga vurdu: “Hede",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cghwf7SHohBvquxKzNf47\"}",
+  "zaman": "2026-11-04 16:10"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-04 16:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "akom",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CghwgukP1Trn7kP1qhVhc\"}",
+  "zaman": "2026-11-04 16:10"
  }
 ]
