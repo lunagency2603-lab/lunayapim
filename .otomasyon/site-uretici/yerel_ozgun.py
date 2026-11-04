@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# 04.11.2026 — ÇALIŞTIRMA: il sayfaları (sehir/) 14.09.2026 sürümüne döndürüldü ve donduruldu (sahibinin kararı).
+# Bu modülün 15.10.2026 geçişi sayfaları kısalttı; yeniden çalıştırmak o değişikliği geri getirir.
 """
 YEREL ÖZGÜN SAYFA YAZICI — 11.10.2026
 

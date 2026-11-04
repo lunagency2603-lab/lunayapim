@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# 04.11.2026 — ÇALIŞTIRMA: il sayfaları (sehir/) 14.09.2026 sürümüne döndürüldü ve donduruldu (sahibinin kararı).
+# Bu modülün 15.10.2026 geçişi sayfaları kısalttı; yeniden çalıştırmak o değişikliği geri getirir.
 """
 YERELLEŞTİRME — il × hizmet sayfalarındaki ORTAK hizmet metnini inceltir,
 ilin kendi verisinden gelen bölümü kalınlaştırır.
