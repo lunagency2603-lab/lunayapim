@@ -1,0 +1,46 @@
+{
+ "tarih": "2026-11-02",
+ "tcmb": {
+  "tarih": "02.11.2026",
+  "bulten": "2026/205",
+  "kurlar": {
+   "USD": {
+    "alis": "49.8827",
+    "satis": "49.9726",
+    "efektif_alis": "49.8478",
+    "efektif_satis": "50.0476",
+    "ad": "ABD DOLARI"
+   },
+   "EUR": {
+    "alis": "55.8953",
+    "satis": "55.9960",
+    "efektif_alis": "55.8561",
+    "efektif_satis": "56.0800",
+    "ad": "EURO"
+   },
+   "GBP": {
+    "alis": "66.8096",
+    "satis": "67.1579",
+    "efektif_alis": "66.7629",
+    "efektif_satis": "67.2587",
+    "ad": "İNGİLİZ STERLİNİ"
+   },
+   "CHF": {
+    "alis": "60.5934",
+    "satis": "60.9825",
+    "efektif_alis": "60.5025",
+    "efektif_satis": "61.0739",
+    "ad": "İSVİÇRE FRANGI"
+   },
+   "JPY": {
+    "alis": "31.5251",
+    "satis": "31.7339",
+    "efektif_alis": "31.4085",
+    "efektif_satis": "31.8544",
+    "ad": "JAPON YENİ"
+   }
+  }
+ },
+ "altin": null,
+ "alindi": "2026-11-02 16:43"
+}
