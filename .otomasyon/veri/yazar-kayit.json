@@ -2,27 +2,6 @@
  {
   "olay": "api_hatasi",
   "tur": "konu",
-  "baslik": "dušan vlahović",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgHzu2TYd3P7e5LV8k2EB\"}",
-  "zaman": "2026-10-23 00:38"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-23 07:54"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
   "baslik": "hava durumu istanbul",
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgJa7SqBs9S5RDG49j4hi\"}",
@@ -2966,5 +2945,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgwAz3S2jT7k14rN1CUY2\"}",
   "zaman": "2026-11-11 15:52"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-11 20:10"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "enes ünal",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgwWf9du2zBiZxPkDWiLE\"}",
+  "zaman": "2026-11-11 20:10"
  }
 ]
