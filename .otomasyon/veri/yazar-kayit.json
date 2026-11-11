@@ -2,55 +2,6 @@
  {
   "olay": "api_hatasi",
   "tur": "konu",
-  "baslik": "demet akalın",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgHefnisK7wbCCKo3zksH\"}",
-  "zaman": "2026-10-22 20:13"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-22 20:52"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "muhammed salah",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgHhfrwiNtnftL5MeCTvk\"}",
-  "zaman": "2026-10-22 20:52"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-23 00:38"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "juventus fc",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-23 00:38"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
   "baslik": "dušan vlahović",
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgHzu2TYd3P7e5LV8k2EB\"}",
@@ -2966,5 +2917,54 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgvfccnjjyYwgm41cAten\"}",
   "zaman": "2026-11-11 09:27"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-11 15:52"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Ankara'da konut fiyatları ilanda yükseldi kasada kaybetti - GAYRİMENKU",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgwAxBxSsiSiLUU4uH2zA\"}",
+  "zaman": "2026-11-11 15:52"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-11 15:52"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ikindi namazı",
+  "ayrinti": "haber başlığı hassas konu",
+  "zaman": "2026-11-11 15:52"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "miras",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgwAz3S2jT7k14rN1CUY2\"}",
+  "zaman": "2026-11-11 15:52"
  }
 ]
