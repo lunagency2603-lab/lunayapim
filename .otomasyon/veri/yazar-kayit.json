@@ -1,110 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "cuma namazı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgK16f8jY3wYs7VrBCq5Q\"}",
-  "zaman": "2026-10-23 13:21"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-23 14:42"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "bursa ezan saatleri",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-23 14:42"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "kültür ve turizm bakanlığı kütüphaneci alımı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgK7Fvrznj6ZdJEa8wUJS\"}",
-  "zaman": "2026-10-23 14:42"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-23 20:11"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "yatsı namazı kaçta",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-23 20:11"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "alanyaspor - kocaelispor",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgKYKJ8ArEgyXxgaAjXbd\"}",
-  "zaman": "2026-10-23 20:11"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-23 20:45"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "brent petrol",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgKavkimsgSmuEfN6Axmi\"}",
-  "zaman": "2026-10-23 20:45"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-24 00:26"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "burak yörük",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-24 00:26"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "kızılcık şerbeti fragman",
@@ -2966,5 +2861,88 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cgx7PfojkZ7ndRHHFYGzV\"}",
   "zaman": "2026-11-12 03:46"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 10,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-12 14:19"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "memur maaşları",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:19"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fiyat",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:19"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "sercan sayal",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:20"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "gta ne zaman çıkıyor",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:20"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "exxen",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:20"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "atatürk'ü anma günü",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:20"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "konyaaltı belediyesi",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:21"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "mahinur özdemir göktaş",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:21"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "michael carrick",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:21"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "de bruyne",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-12 14:21"
  }
 ]
