@@ -1,33 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "büşra develi",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-24 12:47"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "osmangazi köprüsü",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-24 12:47"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "مطر",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-24 12:47"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "new zealand vs india",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-10-24 12:47"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 20,
@@ -2972,5 +2944,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgzpAshGjdppZjrrGmGBP\"}",
   "zaman": "2026-11-13 14:02"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-13 16:19"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Ankara'da konut fiyatları ilanda yükseldi kasada kaybetti - GAYRİMENKU",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgzzcFLtNWME9HvSEU1Ds\"}",
+  "zaman": "2026-11-13 16:19"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-13 16:19"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "ali sami yen spor kompleksi rams park",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cgzzdh4yigQjcsNZvoGQ6\"}",
+  "zaman": "2026-11-13 16:19"
  }
 ]
