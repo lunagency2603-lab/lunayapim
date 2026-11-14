@@ -1,40 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "porto",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgMj2EE5EYzqHzXeZYRnq\"}",
-  "zaman": "2026-10-24 23:52"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 02:17"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "mustafa sarıgül ve koruması",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-10-25 02:17"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "kompany",
-  "ayrinti": "haber başlığı hassas konu",
-  "zaman": "2026-10-25 02:17"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "islam makhachev",
@@ -2987,5 +2952,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch2fVwcA7xquuz9aAPKwG\"}",
   "zaman": "2026-11-14 13:29"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-14 15:23"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Ankara'da konut fiyatları ilanda yükseldi kasada kaybetti - GAYRİMENKU",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch2pA1Q7DmtqJtVozBbA1\"}",
+  "zaman": "2026-11-14 15:23"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-14 15:23"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "masterchef te ödül oyununu kim kazandı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch2pBHmsLByDiJDPtb188\"}",
+  "zaman": "2026-11-14 15:23"
  }
 ]
