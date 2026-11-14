@@ -1,25 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-24 23:52"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "25 ekim bim kataloğu 2026",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-24 23:52"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "porto",
@@ -2986,5 +2966,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch1xB4g16pBMsq7ZUYZKj\"}",
   "zaman": "2026-11-14 04:27"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-14 13:29"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "tivibu spor",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch2fVwcA7xquuz9aAPKwG\"}",
+  "zaman": "2026-11-14 13:29"
  }
 ]
