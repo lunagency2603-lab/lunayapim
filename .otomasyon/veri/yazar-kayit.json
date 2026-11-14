@@ -10,48 +10,6 @@
    "kaynak": "ortam"
   },
   "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 07:45"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "van hava durumu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNM3d7CkMDAJEAEuvonA\"}",
-  "zaman": "2026-10-25 07:45"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 12:59"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bursa'nın bu ilçesine yeni konut projesi - Olay Gazetesi Bursa - Olay ",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNm2TDR8PHo6SVZBNbuS\"}",
-  "zaman": "2026-10-25 12:59"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
   "zaman": "2026-10-25 12:59"
  },
  {
@@ -3007,5 +2965,40 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch3Jt8j4nExHxYcGPqeCX\"}",
   "zaman": "2026-11-14 21:40"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-15 01:27"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "tev burs sonuçları",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-15 01:27"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "haiti - abd",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-15 01:27"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "gönül dağı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch3cFCFTMMw1dTmffBTAT\"}",
+  "zaman": "2026-11-15 01:27"
  }
 ]
