@@ -1,67 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 14:34"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "pendikspor - kayserispor",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgNtHyChKzoZRoveePYYb\"}",
-  "zaman": "2026-10-25 14:34"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 19:25"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "premier lig",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgPGRwn9q9mwcrJNADbUj\"}",
-  "zaman": "2026-10-25 19:25"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-25 19:58"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "yatsı namazı kaçta",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-25 19:58"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "pazar günü hangi diziler var 2026",
@@ -3000,5 +2938,61 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch4FciDuYHAfQfey1cHXg\"}",
   "zaman": "2026-11-15 09:37"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-15 15:53"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Zonguldak’ın ünlü oteli 140 milyona satışa çıktı - Turizm Aktüel",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch4kHcVDZqCff7XfgyMkZ\"}",
+  "zaman": "2026-11-15 15:53"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-15 15:54"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ikindi namazı",
+  "ayrinti": "haber başlığı hassas konu",
+  "zaman": "2026-11-15 15:54"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "kaza",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-11-15 15:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "tivibu spor canlı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch4kKN1tKRxAd9c1TPfJJ\"}",
+  "zaman": "2026-11-15 15:54"
  }
 ]
