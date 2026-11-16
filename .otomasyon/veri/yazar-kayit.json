@@ -1,20 +1,5 @@
 [
  {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "yandex",
-  "ayrinti": "haber başlığı hassas konu",
-  "zaman": "2026-10-26 22:03"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "sarsıntı",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgRNLWN1HmBcvs1wwjyLe\"}",
-  "zaman": "2026-10-26 22:03"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2987,5 +2972,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch6ifXhsJepN1jRVvJngp\"}",
   "zaman": "2026-11-16 16:53"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-16 22:38"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "ömür usta oyuncuları",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Ch7AwgbPZ65iKEr147gMd\"}",
+  "zaman": "2026-11-16 22:38"
  }
 ]
