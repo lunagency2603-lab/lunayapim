@@ -1,25 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-10-31 08:46"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "sözcü",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-10-31 08:46"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "tahkim kurulu",
@@ -2936,5 +2916,26 @@
   "baslik": "Trump, siber güvenlik direktörünü görevden aldı",
   "ayrinti": "bağımsız kaynak 0 (<2)",
   "zaman": "2026-11-20 05:22"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-20 14:44"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "çaykur rizespor",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChE83ewWStWr6sFqmRYin\"}",
+  "zaman": "2026-11-20 14:44"
  }
 ]
