@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-01 14:56"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "1986 yılında Bursa'da kurulan ve Edremit Körfezi'nde çok sayıda konut ",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgcAcTVhikjgtdcurTEwM\"}",
-  "zaman": "2026-11-01 14:56"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-01 14:56"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "fenerbahçe - tofaş",
@@ -2943,5 +2909,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChGAYvyDUP8NYoUCJQiUG\"}",
   "zaman": "2026-11-21 16:38"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-21 22:18"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "donyell malen",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-21 22:19"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "tayyip erdoğan",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChGcXvThwTNgkd2X7dZoh\"}",
+  "zaman": "2026-11-21 22:19"
  }
 ]
