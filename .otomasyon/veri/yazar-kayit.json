@@ -1,26 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "fenerbahçe - tofaş",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgcAdmt26dc5skxQwgzXe\"}",
-  "zaman": "2026-11-01 14:57"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-01 16:29"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "başakşehir - samsunspor",
@@ -2937,5 +2916,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChGcXvThwTNgkd2X7dZoh\"}",
   "zaman": "2026-11-21 22:19"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 19,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-21 22:58"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "iller",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChGfXDxVaXVLjt2cqFByq\"}",
+  "zaman": "2026-11-21 22:58"
  }
 ]
