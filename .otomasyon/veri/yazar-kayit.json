@@ -1,167 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "luka doncic",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cge171JGRq4PNJeWLMCu8\"}",
-  "zaman": "2026-11-02 14:13"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "İstanbul'da otel fiyatları ekimde ne kadar arttı? - Turizm News",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgeCaPrcPJ3KdZwyxq2eg\"}",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "ikindi ezanı",
-  "ayrinti": "bağımsız kaynak 1 (<2)",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "pahtakor - al nassr",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "باختاكور ضد النصر",
-  "ayrinti": "bağımsız kaynak 0 (<2)",
-  "zaman": "2026-11-02 16:43"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "boşanma",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgeCbyxzDtGm6w4scvhXS\"}",
-  "zaman": "2026-11-02 16:44"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-03 00:43"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "alanya hava durumu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgeqAfR8GHwG1ZKB6fnxQ\"}",
-  "zaman": "2026-11-03 00:43"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-03 01:11"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "alanya hava durumu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgesL6cvwBYsLCbCSM3B5\"}",
-  "zaman": "2026-11-03 01:11"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-03 09:51"
- },
- {
-  "olay": "atlandi",
-  "tur": "konu",
-  "baslik": "saat",
-  "ayrinti": "hassas konu — otomatik yazılmaz",
-  "zaman": "2026-11-03 09:51"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "kenan koçak",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgfYy85ozBKp5CjjD4Dbi\"}",
-  "zaman": "2026-11-03 09:51"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-03 15:55"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Sivas'ta \"Eski Sanayi Kentsel Dönüşüm Projesi\"nin üçüncü etabına başla",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cgg2izMb6juSptYqzCVNh\"}",
-  "zaman": "2026-11-03 15:55"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 21,
@@ -2944,5 +2782,130 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChJYCitxRLgF1vUjzSNGv\"}",
   "zaman": "2026-11-22 22:43"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-22 23:11"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "mbaye diagne",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:11"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "getafe - atletico madrid",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "charles de gaulle airport",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "murat yıldırım",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "خيتافي ضد أتلتيكو مدريد",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ankara elektrik kesintisi",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "fomo",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "atalanta",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "kanada",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "özcan deniz son yemek",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Bessent'ten Fed'e uyarı: Aşırı faiz artırımı ekonomiyi riske atabilir",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Aralık ayında izlenmesi gereken 10 yeni dizi",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Marsilya - Le Mans maçı canlı izle: Marsilya - Le Mans maçı ne zaman, saat kaçta ve hangi kanalda?",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Ahmet Güneştekin'den 60. yaşına özel sergi: 'Kaldığımız Yerden'",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Aptallaşma korkusu: Ödevleri ChatGPT yaparsa öğrenci ne öğrenecek?",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-22 23:12"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "Süpermarket dondurucuları, hastaneler ve uçaklar hedefte: Avrupa'da 1 ay siber saldırılarla geçti",
+  "ayrinti": "hassas konu — otomatik yazılmaz",
+  "zaman": "2026-11-22 23:12"
  }
 ]
