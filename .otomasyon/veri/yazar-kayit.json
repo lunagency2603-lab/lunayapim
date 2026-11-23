@@ -1,47 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "merkez bankası",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CggNLnomJREvQdN4Zqn2r\"}",
-  "zaman": "2026-11-03 20:12"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-03 22:59"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "şampiyonlar ligi puan durumu",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cggb5eAhfUZWKCZfHWZ5F\"}",
-  "zaman": "2026-11-03 22:59"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-04 02:25"
- },
- {
   "olay": "atlandi",
   "tur": "konu",
   "baslik": "ترتيبات أتلتيكو مدريد – بايرن ميونخ",
@@ -2908,5 +2866,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChKtWqj3UrGEnp6UPy4yv\"}",
   "zaman": "2026-11-23 15:50"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-23 19:18"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Antalya'da tartışma yaratan 900 yataklı otel projesi - Turizm Güncel",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChLAQRt35SZpuEApvA1v6\"}",
+  "zaman": "2026-11-23 19:18"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 20,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-23 19:19"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "kar",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChLAS64jT9gqkwXXyf97r\"}",
+  "zaman": "2026-11-23 19:19"
  }
 ]
