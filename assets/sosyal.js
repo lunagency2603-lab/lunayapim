@@ -17,7 +17,7 @@
 
 window.LUNA_SOSYAL = [
   { ag:"instagram", ad:"Instagram", kullanici:"luna.yapim", adres:"https://www.instagram.com/%s" },
-  { ag:"youtube",   ad:"YouTube",   kullanici:"", adres:"https://www.youtube.com/@%s" },
+  { ag:"youtube",   ad:"YouTube",   kullanici:"Luna-Yapim", adres:"https://www.youtube.com/@%s" },
   { ag:"linkedin",  ad:"LinkedIn",  kullanici:"", adres:"https://www.linkedin.com/company/%s" },
   { ag:"tiktok",    ad:"TikTok",    kullanici:"", adres:"https://www.tiktok.com/@%s" },
   { ag:"x",         ad:"X",         kullanici:"", adres:"https://x.com/%s" },
