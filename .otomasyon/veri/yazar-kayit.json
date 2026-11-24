@@ -1,27 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "brent petrol",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CghQyU2S8oBFM2fJGDsQU\"}",
-  "zaman": "2026-11-04 09:28"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-04 16:10"
- },
- {
-  "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "İzmir Mobilyacılar Odası Köln'deki Orgatec Fuarı'na damga vurdu: “Hede",
   "kod": 400,
@@ -2922,5 +2901,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChMrcc9fmcoxYRxDrdpdm\"}",
   "zaman": "2026-11-24 16:46"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-24 19:06"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "galatasaray",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChN3GRhLpB1kNp3CAaDrX\"}",
+  "zaman": "2026-11-24 19:06"
  }
 ]
