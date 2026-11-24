@@ -1,34 +1,5 @@
 [
  {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "İzmir Mobilyacılar Odası Köln'deki Orgatec Fuarı'na damga vurdu: “Hede",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cghwf7SHohBvquxKzNf47\"}",
-  "zaman": "2026-11-04 16:10"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-04 16:10"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "akom",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CghwgukP1Trn7kP1qhVhc\"}",
-  "zaman": "2026-11-04 16:10"
- },
- {
   "olay": "tur",
   "tur": "konu",
   "aday": 18,
@@ -2922,5 +2893,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChN3GRhLpB1kNp3CAaDrX\"}",
   "zaman": "2026-11-24 19:06"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-25 01:56"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "tuzlu kahve fragman",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-25 01:56"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "hayati yazıcı istifa etti",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChNaVpzXpDaYAeagczi5q\"}",
+  "zaman": "2026-11-25 01:56"
  }
 ]
