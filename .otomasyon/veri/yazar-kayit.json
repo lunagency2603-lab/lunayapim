@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 18,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-04 20:16"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "fenerbahçe",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgiGTFvexv41Dn3rrQocK\"}",
-  "zaman": "2026-11-04 20:16"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-04 23:19"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "lask",
@@ -2921,5 +2887,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChNaVpzXpDaYAeagczi5q\"}",
   "zaman": "2026-11-25 01:56"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-25 02:54"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "ترتيبات ريال مدريد – بى اس فى ايندهوفن",
+  "ayrinti": "bağımsız kaynak 0 (<2)",
+  "zaman": "2026-11-25 02:54"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "anne yarısı",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChNezFhqM6twJWQJDdxZ8\"}",
+  "zaman": "2026-11-25 02:54"
  }
 ]
