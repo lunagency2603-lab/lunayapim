@@ -1,48 +1,6 @@
 [
  {
   "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "como",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgimqJ4dJT4WcZdghmgRU\"}",
-  "zaman": "2026-11-05 02:42"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-05 09:51"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "altinkaynak",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011CgjLZ2D37pcLiQPMxpiSW\"}",
-  "zaman": "2026-11-05 09:51"
- },
- {
-  "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-05 16:23"
- },
- {
-  "olay": "api_hatasi",
   "tur": "gundem",
   "baslik": "Bursa'da Üniversitelilerden İklim Değişikliğiyle Mücadeleye Sanayi Oda",
   "kod": 400,
@@ -2915,5 +2873,47 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChPLx1siwAn1NwiCbsoNu\"}",
   "zaman": "2026-11-25 11:39"
+ },
+ {
+  "olay": "tur",
+  "tur": "gundem",
+  "madde": 5,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-25 18:53"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "gundem",
+  "baslik": "Grok Imagine kapandı: Görsel ve video üretimi Grok sohbetine taşındı -",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChPv6AELVSoDDNP6ZFN5w\"}",
+  "zaman": "2026-11-25 18:53"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-25 18:53"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "basketbol",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChPv9T1EEQMRMFgQfDtmZ\"}",
+  "zaman": "2026-11-25 18:54"
  }
 ]
