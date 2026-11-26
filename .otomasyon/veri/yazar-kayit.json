@@ -1,27 +1,6 @@
 [
  {
   "olay": "tur",
-  "tur": "gundem",
-  "madde": 5,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-06 16:07"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "gundem",
-  "baslik": "Bursa'da Üniversitelilerden İklim Değişikliğiyle Mücadeleye Sanayi Oda",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cgmj2sYEp4EQXFHxSBUTL\"}",
-  "zaman": "2026-11-06 16:07"
- },
- {
-  "olay": "tur",
   "tur": "konu",
   "aday": 21,
   "anahtar": {
@@ -2921,5 +2900,26 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChRtkGq3qEF6py7HGjxgd\"}",
   "zaman": "2026-11-26 19:57"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-27 01:09"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "jablonec",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChSJZndfCCAsqfttu9spf\"}",
+  "zaman": "2026-11-27 01:09"
  }
 ]
