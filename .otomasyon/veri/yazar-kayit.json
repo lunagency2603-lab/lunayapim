@@ -1,39 +1,5 @@
 [
  {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-06 16:07"
- },
- {
-  "olay": "api_hatasi",
-  "tur": "konu",
-  "baslik": "mustafa eskihellaç",
-  "kod": 400,
-  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011Cgmj4NQqvXQHkSP8Yp94S\"}",
-  "zaman": "2026-11-06 16:07"
- },
- {
-  "olay": "tur",
-  "tur": "konu",
-  "aday": 21,
-  "anahtar": {
-   "var": true,
-   "uzunluk": 108,
-   "bicim": true,
-   "kaynak": "ortam"
-  },
-  "model": "claude-sonnet-4-5",
-  "zaman": "2026-11-06 19:47"
- },
- {
   "olay": "api_hatasi",
   "tur": "konu",
   "baslik": "gaziantep fk - kasımpaşa",
@@ -2921,5 +2887,33 @@
   "kod": 400,
   "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChSJZndfCCAsqfttu9spf\"}",
   "zaman": "2026-11-27 01:09"
+ },
+ {
+  "olay": "tur",
+  "tur": "konu",
+  "aday": 21,
+  "anahtar": {
+   "var": true,
+   "uzunluk": 108,
+   "bicim": true,
+   "kaynak": "ortam"
+  },
+  "model": "claude-sonnet-4-5",
+  "zaman": "2026-11-27 04:45"
+ },
+ {
+  "olay": "atlandi",
+  "tur": "konu",
+  "baslik": "sevdiğim sensin son bölüm",
+  "ayrinti": "bağımsız kaynak 1 (<2)",
+  "zaman": "2026-11-27 04:45"
+ },
+ {
+  "olay": "api_hatasi",
+  "tur": "konu",
+  "baslik": "yusuf kenan bağır",
+  "kod": 400,
+  "ayrinti": "{\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.\"},\"request_id\":\"req_011ChSb2ZraYwi6PF6QCzSpq\"}",
+  "zaman": "2026-11-27 04:45"
  }
 ]
